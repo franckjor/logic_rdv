@@ -1,0 +1,10 @@
+export './register_screen.dart';
+export 'card_payement/payment_method_screen.dart';
+export 'doctor_profil_screen.dart';
+export 'forgot_password_screen.dart';
+export 'login_screen.dart';
+export 'patient_list_screen.dart';
+export 'search_doctor_result_screens/doctor_location_screen.dart';
+export 'search_doctor_result_screens/search_result_screen.dart';
+export 'splash_screen.dart';
+export 'welcome_screen.dart';

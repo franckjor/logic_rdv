@@ -7,13 +7,13 @@ import '../../../common.dart';
 
 class RdvDialogHour extends StatefulWidget {
   final List<Creneaux> crenaux;
-  final String currentSession;
-  final String tokenAppointment;
-  final String tokenUser;
-  final String doctorName;
+  final String? currentSession;
+  final String? tokenAppointment;
+  final String? tokenUser;
+  final String? doctorName;
 
   RdvDialogHour({
-    this.crenaux,
+    required this.crenaux,
     this.tokenUser,
     this.tokenAppointment,
     this.currentSession,
@@ -25,8 +25,8 @@ class RdvDialogHour extends StatefulWidget {
 }
 
 class _RdvDialogHourState extends State<RdvDialogHour> {
-  String onclickData;
-  String onclickAction;
+  late String onclickData;
+  late String onclickAction;
 
   @override
   Widget build(BuildContext context) {
@@ -82,14 +82,14 @@ class _RdvDialogHourState extends State<RdvDialogHour> {
                           Navigator.pop(
                             context,
                             GetPatientPageArguments(
-                              session: widget.currentSession,
+                              session: widget.currentSession!,
                               data: onclickData,
                               action: onclickAction,
                               source: 'rdv',
-                              doctorName: widget.doctorName,
-                              tokenappointment: widget.tokenAppointment,
-                              tokenDoctor: widget.tokenAppointment,
-                              tokenuser: widget.tokenUser,
+                              doctorName: widget.doctorName!,
+                              tokenappointment: widget.tokenAppointment!,
+                              tokenDoctor: widget.tokenAppointment!,
+                              tokenuser: widget.tokenUser!,
                             ),
                           );
                         },

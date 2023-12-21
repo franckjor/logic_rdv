@@ -4,7 +4,7 @@ import 'package:logic_rdv_v0/src/core/models/message_rdv/message_request.dart';
 import 'package:logic_rdv_v0/src/core/models/message_rdv/message_response.dart';
 
 class MessageRepository extends AbstractRepository {
-  Future getMessage({MessageRequest messageRequest}) async {
+  Future getMessage({required MessageRequest messageRequest}) async {
     final String path = '/${getControllerName()}messages/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,

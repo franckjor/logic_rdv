@@ -35,25 +35,25 @@ class _$NotificationListResponseSerializer
     final result = <Object>[
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int)),
+          specifiedType: const FullType(int))!,
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(NotificationResponseParams)),
+          specifiedType: const FullType(NotificationResponseParams))!,
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'data',
       serializers.serialize(object.data,
-          specifiedType: const FullType(NotificationResponseData)),
+          specifiedType: const FullType(NotificationResponseData))!,
     ];
 
     return result;
@@ -61,7 +61,7 @@ class _$NotificationListResponseSerializer
 
   @override
   NotificationListResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new NotificationListResponseBuilder();
 
@@ -69,7 +69,7 @@ class _$NotificationListResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
@@ -125,9 +125,9 @@ class _$NotificationResponseParamsSerializer
     final result = <Object>[
       'installationkey',
       serializers.serialize(object.installationkey,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'page',
-      serializers.serialize(object.page, specifiedType: const FullType(String)),
+      serializers.serialize(object.page, specifiedType: const FullType(String))!,
     ];
     Object value;
     value = object.tokeruser;
@@ -135,14 +135,14 @@ class _$NotificationResponseParamsSerializer
       result
         ..add('tokeruser')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     return result;
   }
 
   @override
   NotificationResponseParams deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new NotificationResponseParamsBuilder();
 
@@ -150,7 +150,7 @@ class _$NotificationResponseParamsSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'installationkey':
           result.installationkey = serializers.deserialize(value,
@@ -189,10 +189,10 @@ class _$NotificationResponseDataSerializer
       'list',
       serializers.serialize(object.list,
           specifiedType: const FullType(
-              BuiltList, const [const FullType(NotificationResponseList)])),
+              BuiltList, const [const FullType(NotificationResponseList)]))!,
       'pagination',
       serializers.serialize(object.pagination,
-          specifiedType: const FullType(NotificationResponsePagination)),
+          specifiedType: const FullType(NotificationResponsePagination))!,
     ];
 
     return result;
@@ -200,7 +200,7 @@ class _$NotificationResponseDataSerializer
 
   @override
   NotificationResponseData deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new NotificationResponseDataBuilder();
 
@@ -208,7 +208,7 @@ class _$NotificationResponseDataSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'list':
           result.list.replace(serializers.deserialize(value,
@@ -244,15 +244,15 @@ class _$NotificationResponseListSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'date',
-      serializers.serialize(object.date, specifiedType: const FullType(String)),
+      serializers.serialize(object.date, specifiedType: const FullType(String))!,
       'nature',
       serializers.serialize(object.nature,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'nom',
-      serializers.serialize(object.nom, specifiedType: const FullType(String)),
+      serializers.serialize(object.nom, specifiedType: const FullType(String))!,
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -260,7 +260,7 @@ class _$NotificationResponseListSerializer
 
   @override
   NotificationResponseList deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new NotificationResponseListBuilder();
 
@@ -268,7 +268,7 @@ class _$NotificationResponseListSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'date':
           result.date = serializers.deserialize(value,
@@ -310,16 +310,16 @@ class _$NotificationResponsePaginationSerializer
     final result = <Object>[
       'result',
       serializers.serialize(object.result,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'current',
       serializers.serialize(object.current,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'maxpage',
       serializers.serialize(object.maxpage,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'perpage',
       serializers.serialize(object.perpage,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -327,7 +327,7 @@ class _$NotificationResponsePaginationSerializer
 
   @override
   NotificationResponsePagination deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new NotificationResponsePaginationBuilder();
 
@@ -335,7 +335,7 @@ class _$NotificationResponsePaginationSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'result':
           result.result = serializers.deserialize(value,
@@ -377,17 +377,18 @@ class _$NotificationListResponse extends NotificationListResponse {
   final NotificationResponseData data;
 
   factory _$NotificationListResponse(
-          [void Function(NotificationListResponseBuilder) updates]) =>
-      (new NotificationListResponseBuilder()..update(updates)).build();
+          [void Function(NotificationListResponseBuilder)? updates]) =>
+      (new NotificationListResponseBuilder()..update(updates!)).build();
 
   _$NotificationListResponse._(
-      {this.httpstatut,
-      this.version,
-      this.request,
-      this.params,
-      this.error,
-      this.message,
-      this.data})
+      {
+      required this.httpstatut,
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.error,
+      required this.message,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         httpstatut, 'NotificationListResponse', 'httpstatut');
@@ -408,7 +409,7 @@ class _$NotificationListResponse extends NotificationListResponse {
   @override
   NotificationListResponse rebuild(
           void Function(NotificationListResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   NotificationListResponseBuilder toBuilder() =>
@@ -458,35 +459,35 @@ class _$NotificationListResponse extends NotificationListResponse {
 class NotificationListResponseBuilder
     implements
         Builder<NotificationListResponse, NotificationListResponseBuilder> {
-  _$NotificationListResponse _$v;
+  _$NotificationListResponse? _$v = _$NotificationListResponse();
 
-  int _httpstatut;
+  int _httpstatut = 0;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _version;
+  String _version = '';
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request;
+  String _request = '';
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  NotificationResponseParamsBuilder _params;
+  NotificationResponseParamsBuilder _params = NotificationResponseParamsBuilder();
   NotificationResponseParamsBuilder get params =>
       _$this._params ??= new NotificationResponseParamsBuilder();
   set params(NotificationResponseParamsBuilder params) =>
       _$this._params = params;
 
-  String _error;
+  String _error = '';
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  String _message;
+  String _message = '';
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  NotificationResponseDataBuilder _data;
+  NotificationResponseDataBuilder _data = NotificationResponseDataBuilder();
   NotificationResponseDataBuilder get data =>
       _$this._data ??= new NotificationResponseDataBuilder();
   set data(NotificationResponseDataBuilder data) => _$this._data = data;
@@ -515,7 +516,7 @@ class NotificationListResponseBuilder
   }
 
   @override
-  void update(void Function(NotificationListResponseBuilder) updates) {
+  void update(void Function(NotificationListResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -538,7 +539,7 @@ class NotificationListResponseBuilder
                   message, 'NotificationListResponse', 'message'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'params';
         params.build();
@@ -565,11 +566,11 @@ class _$NotificationResponseParams extends NotificationResponseParams {
   final String tokeruser;
 
   factory _$NotificationResponseParams(
-          [void Function(NotificationResponseParamsBuilder) updates]) =>
-      (new NotificationResponseParamsBuilder()..update(updates)).build();
+          [void Function(NotificationResponseParamsBuilder)? updates]) =>
+      (new NotificationResponseParamsBuilder()..update(updates!)).build();
 
   _$NotificationResponseParams._(
-      {this.installationkey, this.page, this.tokeruser})
+      {required this.installationkey,required this.page,required this.tokeruser})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         installationkey, 'NotificationResponseParams', 'installationkey');
@@ -580,7 +581,7 @@ class _$NotificationResponseParams extends NotificationResponseParams {
   @override
   NotificationResponseParams rebuild(
           void Function(NotificationResponseParamsBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   NotificationResponseParamsBuilder toBuilder() =>
@@ -614,18 +615,18 @@ class _$NotificationResponseParams extends NotificationResponseParams {
 class NotificationResponseParamsBuilder
     implements
         Builder<NotificationResponseParams, NotificationResponseParamsBuilder> {
-  _$NotificationResponseParams _$v;
+  _$NotificationResponseParams? _$v = _$NotificationResponseParams();
 
-  String _installationkey;
+  String _installationkey = '';
   String get installationkey => _$this._installationkey;
   set installationkey(String installationkey) =>
       _$this._installationkey = installationkey;
 
-  String _page;
+  String _page = '';
   String get page => _$this._page;
   set page(String page) => _$this._page = page;
 
-  String _tokeruser;
+  String _tokeruser = '';
   String get tokeruser => _$this._tokeruser;
   set tokeruser(String tokeruser) => _$this._tokeruser = tokeruser;
 
@@ -649,7 +650,7 @@ class NotificationResponseParamsBuilder
   }
 
   @override
-  void update(void Function(NotificationResponseParamsBuilder) updates) {
+  void update(void Function(NotificationResponseParamsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -676,10 +677,10 @@ class _$NotificationResponseData extends NotificationResponseData {
   final NotificationResponsePagination pagination;
 
   factory _$NotificationResponseData(
-          [void Function(NotificationResponseDataBuilder) updates]) =>
-      (new NotificationResponseDataBuilder()..update(updates)).build();
+          [void Function(NotificationResponseDataBuilder)? updates]) =>
+      (new NotificationResponseDataBuilder()..update(updates!)).build();
 
-  _$NotificationResponseData._({this.list, this.pagination}) : super._() {
+  _$NotificationResponseData._({required this.list,required this.pagination}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         list, 'NotificationResponseData', 'list');
     BuiltValueNullFieldError.checkNotNull(
@@ -689,7 +690,7 @@ class _$NotificationResponseData extends NotificationResponseData {
   @override
   NotificationResponseData rebuild(
           void Function(NotificationResponseDataBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   NotificationResponseDataBuilder toBuilder() =>
@@ -720,14 +721,14 @@ class _$NotificationResponseData extends NotificationResponseData {
 class NotificationResponseDataBuilder
     implements
         Builder<NotificationResponseData, NotificationResponseDataBuilder> {
-  _$NotificationResponseData _$v;
+  _$NotificationResponseData? _$v = _$NotificationResponseData();
 
-  ListBuilder<NotificationResponseList> _list;
+  ListBuilder<NotificationResponseList> _list = ListBuilder();
   ListBuilder<NotificationResponseList> get list =>
       _$this._list ??= new ListBuilder<NotificationResponseList>();
   set list(ListBuilder<NotificationResponseList> list) => _$this._list = list;
 
-  NotificationResponsePaginationBuilder _pagination;
+  NotificationResponsePaginationBuilder _pagination = NotificationResponsePaginationBuilder();
   NotificationResponsePaginationBuilder get pagination =>
       _$this._pagination ??= new NotificationResponsePaginationBuilder();
   set pagination(NotificationResponsePaginationBuilder pagination) =>
@@ -752,7 +753,7 @@ class NotificationResponseDataBuilder
   }
 
   @override
-  void update(void Function(NotificationResponseDataBuilder) updates) {
+  void update(void Function(NotificationResponseDataBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -764,7 +765,7 @@ class NotificationResponseDataBuilder
           new _$NotificationResponseData._(
               list: list.build(), pagination: pagination.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'list';
         list.build();
@@ -792,10 +793,10 @@ class _$NotificationResponseList extends NotificationResponseList {
   final String message;
 
   factory _$NotificationResponseList(
-          [void Function(NotificationResponseListBuilder) updates]) =>
-      (new NotificationResponseListBuilder()..update(updates)).build();
+          [void Function(NotificationResponseListBuilder)? updates]) =>
+      (new NotificationResponseListBuilder()..update(updates!)).build();
 
-  _$NotificationResponseList._({this.date, this.nature, this.nom, this.message})
+  _$NotificationResponseList._({required this.date,required this.nature,required this.nom,required  this.message})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         date, 'NotificationResponseList', 'date');
@@ -810,7 +811,7 @@ class _$NotificationResponseList extends NotificationResponseList {
   @override
   NotificationResponseList rebuild(
           void Function(NotificationResponseListBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   NotificationResponseListBuilder toBuilder() =>
@@ -847,21 +848,21 @@ class _$NotificationResponseList extends NotificationResponseList {
 class NotificationResponseListBuilder
     implements
         Builder<NotificationResponseList, NotificationResponseListBuilder> {
-  _$NotificationResponseList _$v;
+  _$NotificationResponseList? _$v = _$NotificationResponseList();
 
-  String _date;
+  String _date = '';
   String get date => _$this._date;
   set date(String date) => _$this._date = date;
 
-  String _nature;
+  String _nature = '';
   String get nature => _$this._nature;
   set nature(String nature) => _$this._nature = nature;
 
-  String _nom;
+  String _nom = '';
   String get nom => _$this._nom;
   set nom(String nom) => _$this._nom = nom;
 
-  String _message;
+  String _message = '';
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
@@ -886,7 +887,7 @@ class NotificationResponseListBuilder
   }
 
   @override
-  void update(void Function(NotificationResponseListBuilder) updates) {
+  void update(void Function(NotificationResponseListBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -918,11 +919,11 @@ class _$NotificationResponsePagination extends NotificationResponsePagination {
   final String perpage;
 
   factory _$NotificationResponsePagination(
-          [void Function(NotificationResponsePaginationBuilder) updates]) =>
-      (new NotificationResponsePaginationBuilder()..update(updates)).build();
+          [void Function(NotificationResponsePaginationBuilder)? updates]) =>
+      (new NotificationResponsePaginationBuilder()..update(updates!)).build();
 
   _$NotificationResponsePagination._(
-      {this.result, this.current, this.maxpage, this.perpage})
+      {required this.result,required this.current,required this.maxpage,required this.perpage})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         result, 'NotificationResponsePagination', 'result');
@@ -937,7 +938,7 @@ class _$NotificationResponsePagination extends NotificationResponsePagination {
   @override
   NotificationResponsePagination rebuild(
           void Function(NotificationResponsePaginationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   NotificationResponsePaginationBuilder toBuilder() =>
@@ -975,21 +976,21 @@ class NotificationResponsePaginationBuilder
     implements
         Builder<NotificationResponsePagination,
             NotificationResponsePaginationBuilder> {
-  _$NotificationResponsePagination _$v;
+  _$NotificationResponsePagination? _$v =_$NotificationResponsePagination();
 
-  String _result;
+  String _result = '';
   String get result => _$this._result;
   set result(String result) => _$this._result = result;
 
-  String _current;
+  String _current = '';
   String get current => _$this._current;
   set current(String current) => _$this._current = current;
 
-  String _maxpage;
+  String _maxpage = '';
   String get maxpage => _$this._maxpage;
   set maxpage(String maxpage) => _$this._maxpage = maxpage;
 
-  String _perpage;
+  String _perpage = '';
   String get perpage => _$this._perpage;
   set perpage(String perpage) => _$this._perpage = perpage;
 
@@ -1014,7 +1015,7 @@ class NotificationResponsePaginationBuilder
   }
 
   @override
-  void update(void Function(NotificationResponsePaginationBuilder) updates) {
+  void update(void Function(NotificationResponsePaginationBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

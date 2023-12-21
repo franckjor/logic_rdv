@@ -39,25 +39,25 @@ class _$GetApointmentTimeResponseSerializer
     final result = <Object>[
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsGetApointmentTimeResponse)),
+          specifiedType: const FullType(ParamsGetApointmentTimeResponse))!,
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int)),
+          specifiedType: const FullType(int))!,
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'data',
       serializers.serialize(object.data,
-          specifiedType: const FullType(DataGetApointmentTimeResponse)),
+          specifiedType: const FullType(DataGetApointmentTimeResponse))!,
     ];
 
     return result;
@@ -65,7 +65,7 @@ class _$GetApointmentTimeResponseSerializer
 
   @override
   GetApointmentTimeResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new GetApointmentTimeResponseBuilder();
 
@@ -73,7 +73,7 @@ class _$GetApointmentTimeResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
@@ -134,49 +134,49 @@ class _$ParamsGetApointmentTimeResponseSerializer
       result
         ..add('tokenuser')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.tokenappointment;
     if (value != null) {
       result
         ..add('tokenappointment')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.week;
     if (value != null) {
       result
         ..add('week')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.data;
     if (value != null) {
       result
         ..add('data')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.action;
     if (value != null) {
       result
         ..add('action')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.session;
     if (value != null) {
       result
         ..add('session')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     return result;
   }
 
   @override
   ParamsGetApointmentTimeResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsGetApointmentTimeResponseBuilder();
 
@@ -184,7 +184,7 @@ class _$ParamsGetApointmentTimeResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -233,7 +233,7 @@ class _$DataGetApointmentTimeResponseSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'type',
-      serializers.serialize(object.type, specifiedType: const FullType(String)),
+      serializers.serialize(object.type, specifiedType: const FullType(String))!,
     ];
     Object value;
     value = object.session;
@@ -241,21 +241,21 @@ class _$DataGetApointmentTimeResponseSerializer
       result
         ..add('session')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.navigation;
     if (value != null) {
       result
         ..add('navigation')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Navigation)));
+            specifiedType: const FullType(Navigation))!);
     }
     value = object.headermessage;
     if (value != null) {
       result
         ..add('headermessage')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.data;
     if (value != null) {
@@ -263,14 +263,14 @@ class _$DataGetApointmentTimeResponseSerializer
         ..add('data')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
-                BuiltList, const [const FullType(DataTimeRdv)])));
+                BuiltList, const [const FullType(DataTimeRdv)]))!);
     }
     return result;
   }
 
   @override
   DataGetApointmentTimeResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataGetApointmentTimeResponseBuilder();
 
@@ -278,7 +278,7 @@ class _$DataGetApointmentTimeResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'session':
           result.session = serializers.deserialize(value,
@@ -325,28 +325,28 @@ class _$DataTimeRdvSerializer implements StructuredSerializer<DataTimeRdv> {
       result
         ..add('label')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.label2;
     if (value != null) {
       result
         ..add('label2')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.label3;
     if (value != null) {
       result
         ..add('label3')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.message;
     if (value != null) {
       result
         ..add('message')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.creneaux;
     if (value != null) {
@@ -354,13 +354,13 @@ class _$DataTimeRdvSerializer implements StructuredSerializer<DataTimeRdv> {
         ..add('creneaux')
         ..add(serializers.serialize(value,
             specifiedType:
-                const FullType(BuiltList, const [const FullType(Creneaux)])));
+                const FullType(BuiltList, const [const FullType(Creneaux)]))!);
     }
     return result;
   }
 
   @override
-  DataTimeRdv deserialize(Serializers serializers, Iterable<Object> serialized,
+  DataTimeRdv deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataTimeRdvBuilder();
 
@@ -368,7 +368,7 @@ class _$DataTimeRdvSerializer implements StructuredSerializer<DataTimeRdv> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'label':
           result.label = serializers.deserialize(value,
@@ -415,62 +415,62 @@ class _$CreneauxSerializer implements StructuredSerializer<Creneaux> {
       result
         ..add('fromhour')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.tohour;
     if (value != null) {
       result
         ..add('tohour')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.doctor;
     if (value != null) {
       result
         ..add('doctor')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclick;
     if (value != null) {
       result
         ..add('onclick')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickMessage;
     if (value != null) {
       result
         ..add('onclick_message')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickData;
     if (value != null) {
       result
         ..add('onclick_data')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickAction;
     if (value != null) {
       result
         ..add('onclick_action')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickWeek;
     if (value != null) {
       result
         ..add('onclick_week')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     return result;
   }
 
   @override
-  Creneaux deserialize(Serializers serializers, Iterable<Object> serialized,
+  Creneaux deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CreneauxBuilder();
 
@@ -478,7 +478,7 @@ class _$CreneauxSerializer implements StructuredSerializer<Creneaux> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'fromhour':
           result.fromhour = serializers.deserialize(value,
@@ -535,34 +535,34 @@ class _$NavigationSerializer implements StructuredSerializer<Navigation> {
       result
         ..add('begin')
         ..add(
-            serializers.serialize(value, specifiedType: const FullType(Begin)));
+            serializers.serialize(value, specifiedType: const FullType(Begin))!);
     }
     value = object.prev;
     if (value != null) {
       result
         ..add('prev')
         ..add(
-            serializers.serialize(value, specifiedType: const FullType(Prev)));
+            serializers.serialize(value, specifiedType: const FullType(Prev))!);
     }
     value = object.prevweek;
     if (value != null) {
       result
         ..add('prevweek')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Prevweek)));
+            specifiedType: const FullType(Prevweek))!);
     }
     value = object.nextweek;
     if (value != null) {
       result
         ..add('nextweek')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Nextweek)));
+            specifiedType: const FullType(Nextweek))!);
     }
     return result;
   }
 
   @override
-  Navigation deserialize(Serializers serializers, Iterable<Object> serialized,
+  Navigation deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new NavigationBuilder();
 
@@ -570,7 +570,7 @@ class _$NavigationSerializer implements StructuredSerializer<Navigation> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'begin':
           result.begin.replace(serializers.deserialize(value,
@@ -607,23 +607,23 @@ class _$BeginSerializer implements StructuredSerializer<Begin> {
     final result = <Object>[
       'label',
       serializers.serialize(object.label,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'onclick_action',
       serializers.serialize(object.onclickAction,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'onclick_data',
       serializers.serialize(object.onclickData,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'onclick_week',
       serializers.serialize(object.onclickWeek,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
   }
 
   @override
-  Begin deserialize(Serializers serializers, Iterable<Object> serialized,
+  Begin deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new BeginBuilder();
 
@@ -631,7 +631,7 @@ class _$BeginSerializer implements StructuredSerializer<Begin> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'label':
           result.label = serializers.deserialize(value,
@@ -668,23 +668,23 @@ class _$PrevSerializer implements StructuredSerializer<Prev> {
     final result = <Object>[
       'label',
       serializers.serialize(object.label,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'onclick_action',
       serializers.serialize(object.onclickAction,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'onclick_data',
       serializers.serialize(object.onclickData,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'onclick_week',
       serializers.serialize(object.onclickWeek,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
   }
 
   @override
-  Prev deserialize(Serializers serializers, Iterable<Object> serialized,
+  Prev deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PrevBuilder();
 
@@ -692,7 +692,7 @@ class _$PrevSerializer implements StructuredSerializer<Prev> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'label':
           result.label = serializers.deserialize(value,
@@ -733,34 +733,34 @@ class _$PrevweekSerializer implements StructuredSerializer<Prevweek> {
       result
         ..add('label')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickAction;
     if (value != null) {
       result
         ..add('onclick_action')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickData;
     if (value != null) {
       result
         ..add('onclick_data')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickWeek;
     if (value != null) {
       result
         ..add('onclick_week')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     return result;
   }
 
   @override
-  Prevweek deserialize(Serializers serializers, Iterable<Object> serialized,
+  Prevweek deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PrevweekBuilder();
 
@@ -768,7 +768,7 @@ class _$PrevweekSerializer implements StructuredSerializer<Prevweek> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'label':
           result.label = serializers.deserialize(value,
@@ -805,23 +805,23 @@ class _$NextweekSerializer implements StructuredSerializer<Nextweek> {
     final result = <Object>[
       'label',
       serializers.serialize(object.label,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'onclick_action',
       serializers.serialize(object.onclickAction,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'onclick_data',
       serializers.serialize(object.onclickData,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'onclick_week',
       serializers.serialize(object.onclickWeek,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
   }
 
   @override
-  Nextweek deserialize(Serializers serializers, Iterable<Object> serialized,
+  Nextweek deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new NextweekBuilder();
 
@@ -829,7 +829,7 @@ class _$NextweekSerializer implements StructuredSerializer<Nextweek> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'label':
           result.label = serializers.deserialize(value,
@@ -871,17 +871,18 @@ class _$GetApointmentTimeResponse extends GetApointmentTimeResponse {
   final DataGetApointmentTimeResponse data;
 
   factory _$GetApointmentTimeResponse(
-          [void Function(GetApointmentTimeResponseBuilder) updates]) =>
-      (new GetApointmentTimeResponseBuilder()..update(updates)).build();
+          [void Function(GetApointmentTimeResponseBuilder)? updates]) =>
+      (new GetApointmentTimeResponseBuilder()..update(updates!)).build();
 
   _$GetApointmentTimeResponse._(
-      {this.version,
-      this.request,
-      this.params,
-      this.message,
-      this.httpstatut,
-      this.error,
-      this.data})
+      {
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.message,
+      required this.httpstatut,
+      required this.error,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         version, 'GetApointmentTimeResponse', 'version');
@@ -902,7 +903,7 @@ class _$GetApointmentTimeResponse extends GetApointmentTimeResponse {
   @override
   GetApointmentTimeResponse rebuild(
           void Function(GetApointmentTimeResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   GetApointmentTimeResponseBuilder toBuilder() =>
@@ -952,35 +953,35 @@ class _$GetApointmentTimeResponse extends GetApointmentTimeResponse {
 class GetApointmentTimeResponseBuilder
     implements
         Builder<GetApointmentTimeResponse, GetApointmentTimeResponseBuilder> {
-  _$GetApointmentTimeResponse _$v;
+  _$GetApointmentTimeResponse? _$v =_$GetApointmentTimeResponse();
 
-  String _version;
+  String _version = '';
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request;
+  String _request = '';
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsGetApointmentTimeResponseBuilder _params;
+  ParamsGetApointmentTimeResponseBuilder _params =ParamsGetApointmentTimeResponseBuilder();
   ParamsGetApointmentTimeResponseBuilder get params =>
       _$this._params ??= new ParamsGetApointmentTimeResponseBuilder();
   set params(ParamsGetApointmentTimeResponseBuilder params) =>
       _$this._params = params;
 
-  String _message;
+  String _message = '';
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  int _httpstatut;
+  int _httpstatut = 0;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
+  String _error = '';
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  DataGetApointmentTimeResponseBuilder _data;
+  DataGetApointmentTimeResponseBuilder _data =DataGetApointmentTimeResponseBuilder();
   DataGetApointmentTimeResponseBuilder get data =>
       _$this._data ??= new DataGetApointmentTimeResponseBuilder();
   set data(DataGetApointmentTimeResponseBuilder data) => _$this._data = data;
@@ -1009,7 +1010,7 @@ class GetApointmentTimeResponseBuilder
   }
 
   @override
-  void update(void Function(GetApointmentTimeResponseBuilder) updates) {
+  void update(void Function(GetApointmentTimeResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1032,7 +1033,7 @@ class GetApointmentTimeResponseBuilder
                   error, 'GetApointmentTimeResponse', 'error'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'params';
         params.build();
@@ -1066,22 +1067,23 @@ class _$ParamsGetApointmentTimeResponse
   final String session;
 
   factory _$ParamsGetApointmentTimeResponse(
-          [void Function(ParamsGetApointmentTimeResponseBuilder) updates]) =>
-      (new ParamsGetApointmentTimeResponseBuilder()..update(updates)).build();
+          [void Function(ParamsGetApointmentTimeResponseBuilder)? updates]) =>
+      (new ParamsGetApointmentTimeResponseBuilder()..update(updates!)).build();
 
   _$ParamsGetApointmentTimeResponse._(
-      {this.tokenuser,
-      this.tokenappointment,
-      this.week,
-      this.data,
-      this.action,
-      this.session})
+      {
+      required this.tokenuser,
+      required this.tokenappointment,
+      required this.week,
+      required this.data,
+      required this.action,
+      required this.session})
       : super._();
 
   @override
   ParamsGetApointmentTimeResponse rebuild(
           void Function(ParamsGetApointmentTimeResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   ParamsGetApointmentTimeResponseBuilder toBuilder() =>
@@ -1128,30 +1130,30 @@ class ParamsGetApointmentTimeResponseBuilder
     implements
         Builder<ParamsGetApointmentTimeResponse,
             ParamsGetApointmentTimeResponseBuilder> {
-  _$ParamsGetApointmentTimeResponse _$v;
+  _$ParamsGetApointmentTimeResponse? _$v =_$ParamsGetApointmentTimeResponse();
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappointment;
+  String _tokenappointment ='';
   String get tokenappointment => _$this._tokenappointment;
   set tokenappointment(String tokenappointment) =>
       _$this._tokenappointment = tokenappointment;
 
-  String _week;
+  String _week ='';
   String get week => _$this._week;
   set week(String week) => _$this._week = week;
 
-  String _data;
+  String _data ='';
   String get data => _$this._data;
   set data(String data) => _$this._data = data;
 
-  String _action;
+  String _action ='';
   String get action => _$this._action;
   set action(String action) => _$this._action = action;
 
-  String _session;
+  String _session = '';
   String get session => _$this._session;
   set session(String session) => _$this._session = session;
 
@@ -1178,7 +1180,7 @@ class ParamsGetApointmentTimeResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsGetApointmentTimeResponseBuilder) updates) {
+  void update(void Function(ParamsGetApointmentTimeResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1210,11 +1212,11 @@ class _$DataGetApointmentTimeResponse extends DataGetApointmentTimeResponse {
   final BuiltList<DataTimeRdv> data;
 
   factory _$DataGetApointmentTimeResponse(
-          [void Function(DataGetApointmentTimeResponseBuilder) updates]) =>
-      (new DataGetApointmentTimeResponseBuilder()..update(updates)).build();
+          [void Function(DataGetApointmentTimeResponseBuilder)? updates]) =>
+      (new DataGetApointmentTimeResponseBuilder()..update(updates!)).build();
 
   _$DataGetApointmentTimeResponse._(
-      {this.session, this.navigation, this.headermessage, this.type, this.data})
+      {required this.session,required this.navigation,required this.headermessage,required this.type,required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         type, 'DataGetApointmentTimeResponse', 'type');
@@ -1223,7 +1225,7 @@ class _$DataGetApointmentTimeResponse extends DataGetApointmentTimeResponse {
   @override
   DataGetApointmentTimeResponse rebuild(
           void Function(DataGetApointmentTimeResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   DataGetApointmentTimeResponseBuilder toBuilder() =>
@@ -1266,28 +1268,28 @@ class DataGetApointmentTimeResponseBuilder
     implements
         Builder<DataGetApointmentTimeResponse,
             DataGetApointmentTimeResponseBuilder> {
-  _$DataGetApointmentTimeResponse _$v;
+  _$DataGetApointmentTimeResponse? _$v =_$DataGetApointmentTimeResponse();
 
-  String _session;
+  String _session = '';
   String get session => _$this._session;
   set session(String session) => _$this._session = session;
 
-  NavigationBuilder _navigation;
+  NavigationBuilder _navigation =NavigationBuilder();
   NavigationBuilder get navigation =>
       _$this._navigation ??= new NavigationBuilder();
   set navigation(NavigationBuilder navigation) =>
       _$this._navigation = navigation;
 
-  String _headermessage;
+  String _headermessage ='';
   String get headermessage => _$this._headermessage;
   set headermessage(String headermessage) =>
       _$this._headermessage = headermessage;
 
-  String _type;
+  String _type ='';
   String get type => _$this._type;
   set type(String type) => _$this._type = type;
 
-  ListBuilder<DataTimeRdv> _data;
+  ListBuilder<DataTimeRdv> _data =ListBuilder();
   ListBuilder<DataTimeRdv> get data =>
       _$this._data ??= new ListBuilder<DataTimeRdv>();
   set data(ListBuilder<DataTimeRdv> data) => _$this._data = data;
@@ -1298,10 +1300,10 @@ class DataGetApointmentTimeResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _session = $v.session;
-      _navigation = $v.navigation?.toBuilder();
+      _navigation = $v.navigation.toBuilder();
       _headermessage = $v.headermessage;
       _type = $v.type;
-      _data = $v.data?.toBuilder();
+      _data = $v.data.toBuilder();
       _$v = null;
     }
     return this;
@@ -1314,7 +1316,7 @@ class DataGetApointmentTimeResponseBuilder
   }
 
   @override
-  void update(void Function(DataGetApointmentTimeResponseBuilder) updates) {
+  void update(void Function(DataGetApointmentTimeResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1325,13 +1327,13 @@ class DataGetApointmentTimeResponseBuilder
       _$result = _$v ??
           new _$DataGetApointmentTimeResponse._(
               session: session,
-              navigation: _navigation?.build(),
+              navigation: _navigation.build(),
               headermessage: headermessage,
               type: BuiltValueNullFieldError.checkNotNull(
                   type, 'DataGetApointmentTimeResponse', 'type'),
-              data: _data?.build());
+              data: _data.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'navigation';
         _navigation?.build();
@@ -1361,16 +1363,16 @@ class _$DataTimeRdv extends DataTimeRdv {
   @override
   final BuiltList<Creneaux> creneaux;
 
-  factory _$DataTimeRdv([void Function(DataTimeRdvBuilder) updates]) =>
-      (new DataTimeRdvBuilder()..update(updates)).build();
+  factory _$DataTimeRdv([void Function(DataTimeRdvBuilder)? updates]) =>
+      (new DataTimeRdvBuilder()..update(updates!)).build();
 
   _$DataTimeRdv._(
-      {this.label, this.label2, this.label3, this.message, this.creneaux})
+      {required this.label,required this.label2,required this.label3,required this.message,required this.creneaux})
       : super._();
 
   @override
   DataTimeRdv rebuild(void Function(DataTimeRdvBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   DataTimeRdvBuilder toBuilder() => new DataTimeRdvBuilder()..replace(this);
@@ -1407,25 +1409,25 @@ class _$DataTimeRdv extends DataTimeRdv {
 }
 
 class DataTimeRdvBuilder implements Builder<DataTimeRdv, DataTimeRdvBuilder> {
-  _$DataTimeRdv _$v;
+  _$DataTimeRdv? _$v =_$DataTimeRdv();
 
-  String _label;
+  String _label = '';
   String get label => _$this._label;
   set label(String label) => _$this._label = label;
 
-  String _label2;
+  String _label2 ='';
   String get label2 => _$this._label2;
   set label2(String label2) => _$this._label2 = label2;
 
-  String _label3;
+  String _label3 ='';
   String get label3 => _$this._label3;
   set label3(String label3) => _$this._label3 = label3;
 
-  String _message;
+  String _message = '';
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  ListBuilder<Creneaux> _creneaux;
+  ListBuilder<Creneaux> _creneaux = ListBuilder();
   ListBuilder<Creneaux> get creneaux =>
       _$this._creneaux ??= new ListBuilder<Creneaux>();
   set creneaux(ListBuilder<Creneaux> creneaux) => _$this._creneaux = creneaux;
@@ -1439,7 +1441,7 @@ class DataTimeRdvBuilder implements Builder<DataTimeRdv, DataTimeRdvBuilder> {
       _label2 = $v.label2;
       _label3 = $v.label3;
       _message = $v.message;
-      _creneaux = $v.creneaux?.toBuilder();
+      _creneaux = $v.creneaux.toBuilder();
       _$v = null;
     }
     return this;
@@ -1452,7 +1454,7 @@ class DataTimeRdvBuilder implements Builder<DataTimeRdv, DataTimeRdvBuilder> {
   }
 
   @override
-  void update(void Function(DataTimeRdvBuilder) updates) {
+  void update(void Function(DataTimeRdvBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1466,9 +1468,9 @@ class DataTimeRdvBuilder implements Builder<DataTimeRdv, DataTimeRdvBuilder> {
               label2: label2,
               label3: label3,
               message: message,
-              creneaux: _creneaux?.build());
+              creneaux: _creneaux.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'creneaux';
         _creneaux?.build();
@@ -1501,23 +1503,24 @@ class _$Creneaux extends Creneaux {
   @override
   final String onclickWeek;
 
-  factory _$Creneaux([void Function(CreneauxBuilder) updates]) =>
-      (new CreneauxBuilder()..update(updates)).build();
+  factory _$Creneaux([void Function(CreneauxBuilder)? updates]) =>
+      (new CreneauxBuilder()..update(updates!)).build();
 
   _$Creneaux._(
-      {this.fromhour,
-      this.tohour,
-      this.doctor,
-      this.onclick,
-      this.onclickMessage,
-      this.onclickData,
-      this.onclickAction,
-      this.onclickWeek})
+      {
+      required this.fromhour,
+      required this.tohour,
+      required this.doctor,
+      required this.onclick,
+      required this.onclickMessage,
+      required this.onclickData,
+      required this.onclickAction,
+      required this.onclickWeek})
       : super._();
 
   @override
   Creneaux rebuild(void Function(CreneauxBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   CreneauxBuilder toBuilder() => new CreneauxBuilder()..replace(this);
@@ -1568,39 +1571,39 @@ class _$Creneaux extends Creneaux {
 }
 
 class CreneauxBuilder implements Builder<Creneaux, CreneauxBuilder> {
-  _$Creneaux _$v;
+  _$Creneaux? _$v = _$Creneaux();
 
-  String _fromhour;
+  String _fromhour ='';
   String get fromhour => _$this._fromhour;
   set fromhour(String fromhour) => _$this._fromhour = fromhour;
 
-  String _tohour;
+  String _tohour ='';
   String get tohour => _$this._tohour;
   set tohour(String tohour) => _$this._tohour = tohour;
 
-  String _doctor;
+  String _doctor = '';
   String get doctor => _$this._doctor;
   set doctor(String doctor) => _$this._doctor = doctor;
 
-  String _onclick;
+  String _onclick = '';
   String get onclick => _$this._onclick;
   set onclick(String onclick) => _$this._onclick = onclick;
 
-  String _onclickMessage;
+  String _onclickMessage = '';
   String get onclickMessage => _$this._onclickMessage;
   set onclickMessage(String onclickMessage) =>
       _$this._onclickMessage = onclickMessage;
 
-  String _onclickData;
+  String _onclickData = '';
   String get onclickData => _$this._onclickData;
   set onclickData(String onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickAction;
+  String _onclickAction = '';
   String get onclickAction => _$this._onclickAction;
   set onclickAction(String onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickWeek;
+  String _onclickWeek ='';
   String get onclickWeek => _$this._onclickWeek;
   set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
 
@@ -1629,7 +1632,7 @@ class CreneauxBuilder implements Builder<Creneaux, CreneauxBuilder> {
   }
 
   @override
-  void update(void Function(CreneauxBuilder) updates) {
+  void update(void Function(CreneauxBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1660,15 +1663,15 @@ class _$Navigation extends Navigation {
   @override
   final Nextweek nextweek;
 
-  factory _$Navigation([void Function(NavigationBuilder) updates]) =>
-      (new NavigationBuilder()..update(updates)).build();
+  factory _$Navigation([void Function(NavigationBuilder)? updates]) =>
+      (new NavigationBuilder()..update(updates!)).build();
 
-  _$Navigation._({this.begin, this.prev, this.prevweek, this.nextweek})
+  _$Navigation._({ required this.begin,required this.prev,required this.prevweek,required this.nextweek})
       : super._();
 
   @override
   Navigation rebuild(void Function(NavigationBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   NavigationBuilder toBuilder() => new NavigationBuilder()..replace(this);
@@ -1702,21 +1705,21 @@ class _$Navigation extends Navigation {
 }
 
 class NavigationBuilder implements Builder<Navigation, NavigationBuilder> {
-  _$Navigation _$v;
+  _$Navigation? _$v = _$Navigation();
 
-  BeginBuilder _begin;
+  BeginBuilder _begin = BeginBuilder();
   BeginBuilder get begin => _$this._begin ??= new BeginBuilder();
   set begin(BeginBuilder begin) => _$this._begin = begin;
 
-  PrevBuilder _prev;
+  PrevBuilder _prev =PrevBuilder();
   PrevBuilder get prev => _$this._prev ??= new PrevBuilder();
   set prev(PrevBuilder prev) => _$this._prev = prev;
 
-  PrevweekBuilder _prevweek;
+  PrevweekBuilder _prevweek =PrevweekBuilder();
   PrevweekBuilder get prevweek => _$this._prevweek ??= new PrevweekBuilder();
   set prevweek(PrevweekBuilder prevweek) => _$this._prevweek = prevweek;
 
-  NextweekBuilder _nextweek;
+  NextweekBuilder _nextweek =NextweekBuilder();
   NextweekBuilder get nextweek => _$this._nextweek ??= new NextweekBuilder();
   set nextweek(NextweekBuilder nextweek) => _$this._nextweek = nextweek;
 
@@ -1725,10 +1728,10 @@ class NavigationBuilder implements Builder<Navigation, NavigationBuilder> {
   NavigationBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _begin = $v.begin?.toBuilder();
-      _prev = $v.prev?.toBuilder();
-      _prevweek = $v.prevweek?.toBuilder();
-      _nextweek = $v.nextweek?.toBuilder();
+      _begin = $v.begin.toBuilder();
+      _prev = $v.prev.toBuilder();
+      _prevweek = $v.prevweek.toBuilder();
+      _nextweek = $v.nextweek.toBuilder();
       _$v = null;
     }
     return this;
@@ -1741,7 +1744,7 @@ class NavigationBuilder implements Builder<Navigation, NavigationBuilder> {
   }
 
   @override
-  void update(void Function(NavigationBuilder) updates) {
+  void update(void Function(NavigationBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1751,21 +1754,21 @@ class NavigationBuilder implements Builder<Navigation, NavigationBuilder> {
     try {
       _$result = _$v ??
           new _$Navigation._(
-              begin: _begin?.build(),
-              prev: _prev?.build(),
-              prevweek: _prevweek?.build(),
-              nextweek: _nextweek?.build());
+              begin: _begin.build(),
+              prev: _prev.build(),
+              prevweek: _prevweek.build(),
+              nextweek: _nextweek.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'begin';
-        _begin?.build();
+        _begin.build();
         _$failedField = 'prev';
-        _prev?.build();
+        _prev.build();
         _$failedField = 'prevweek';
-        _prevweek?.build();
+        _prevweek.build();
         _$failedField = 'nextweek';
-        _nextweek?.build();
+        _nextweek.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'Navigation', _$failedField, e.toString());
@@ -1787,11 +1790,11 @@ class _$Begin extends Begin {
   @override
   final String onclickWeek;
 
-  factory _$Begin([void Function(BeginBuilder) updates]) =>
-      (new BeginBuilder()..update(updates)).build();
+  factory _$Begin([void Function(BeginBuilder)? updates]) =>
+      (new BeginBuilder()..update(updates!)).build();
 
   _$Begin._(
-      {this.label, this.onclickAction, this.onclickData, this.onclickWeek})
+      {required this.label,required this.onclickAction,required this.onclickData,required this.onclickWeek})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(label, 'Begin', 'label');
     BuiltValueNullFieldError.checkNotNull(
@@ -1802,7 +1805,7 @@ class _$Begin extends Begin {
 
   @override
   Begin rebuild(void Function(BeginBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   BeginBuilder toBuilder() => new BeginBuilder()..replace(this);
@@ -1837,22 +1840,22 @@ class _$Begin extends Begin {
 }
 
 class BeginBuilder implements Builder<Begin, BeginBuilder> {
-  _$Begin _$v;
+  _$Begin? _$v =_$Begin();
 
-  String _label;
+  String _label = '';
   String get label => _$this._label;
   set label(String label) => _$this._label = label;
 
-  String _onclickAction;
+  String _onclickAction = '';
   String get onclickAction => _$this._onclickAction;
   set onclickAction(String onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickData;
+  String _onclickData = '';
   String get onclickData => _$this._onclickData;
   set onclickData(String onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickWeek;
+  String _onclickWeek ='';
   String get onclickWeek => _$this._onclickWeek;
   set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
 
@@ -1877,7 +1880,7 @@ class BeginBuilder implements Builder<Begin, BeginBuilder> {
   }
 
   @override
-  void update(void Function(BeginBuilder) updates) {
+  void update(void Function(BeginBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1908,10 +1911,10 @@ class _$Prev extends Prev {
   @override
   final String onclickWeek;
 
-  factory _$Prev([void Function(PrevBuilder) updates]) =>
-      (new PrevBuilder()..update(updates)).build();
+  factory _$Prev([void Function(PrevBuilder)? updates]) =>
+      (new PrevBuilder()..update(updates!)).build();
 
-  _$Prev._({this.label, this.onclickAction, this.onclickData, this.onclickWeek})
+  _$Prev._({required this.label,required this.onclickAction,required this.onclickData,required this.onclickWeek})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(label, 'Prev', 'label');
     BuiltValueNullFieldError.checkNotNull(
@@ -1922,7 +1925,7 @@ class _$Prev extends Prev {
 
   @override
   Prev rebuild(void Function(PrevBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   PrevBuilder toBuilder() => new PrevBuilder()..replace(this);
@@ -1957,22 +1960,22 @@ class _$Prev extends Prev {
 }
 
 class PrevBuilder implements Builder<Prev, PrevBuilder> {
-  _$Prev _$v;
+  _$Prev? _$v = _$Prev();
 
-  String _label;
+  String _label = '';
   String get label => _$this._label;
   set label(String label) => _$this._label = label;
 
-  String _onclickAction;
+  String _onclickAction = '';
   String get onclickAction => _$this._onclickAction;
   set onclickAction(String onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickData;
+  String _onclickData = '';
   String get onclickData => _$this._onclickData;
   set onclickData(String onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickWeek;
+  String _onclickWeek ='';
   String get onclickWeek => _$this._onclickWeek;
   set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
 
@@ -1997,7 +2000,7 @@ class PrevBuilder implements Builder<Prev, PrevBuilder> {
   }
 
   @override
-  void update(void Function(PrevBuilder) updates) {
+  void update(void Function(PrevBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -2028,16 +2031,16 @@ class _$Prevweek extends Prevweek {
   @override
   final String onclickWeek;
 
-  factory _$Prevweek([void Function(PrevweekBuilder) updates]) =>
-      (new PrevweekBuilder()..update(updates)).build();
+  factory _$Prevweek([void Function(PrevweekBuilder)? updates]) =>
+      (new PrevweekBuilder()..update(updates!)).build();
 
   _$Prevweek._(
-      {this.label, this.onclickAction, this.onclickData, this.onclickWeek})
+      {required this.label,required this.onclickAction,required this.onclickData,required this.onclickWeek})
       : super._();
 
   @override
   Prevweek rebuild(void Function(PrevweekBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   PrevweekBuilder toBuilder() => new PrevweekBuilder()..replace(this);
@@ -2072,22 +2075,22 @@ class _$Prevweek extends Prevweek {
 }
 
 class PrevweekBuilder implements Builder<Prevweek, PrevweekBuilder> {
-  _$Prevweek _$v;
+  _$Prevweek? _$v = _$Prevweek();
 
-  String _label;
+  String _label = '';
   String get label => _$this._label;
   set label(String label) => _$this._label = label;
 
-  String _onclickAction;
+  String _onclickAction = '';
   String get onclickAction => _$this._onclickAction;
   set onclickAction(String onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickData;
+  String _onclickData = '';
   String get onclickData => _$this._onclickData;
   set onclickData(String onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickWeek;
+  String _onclickWeek ='';
   String get onclickWeek => _$this._onclickWeek;
   set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
 
@@ -2112,7 +2115,7 @@ class PrevweekBuilder implements Builder<Prevweek, PrevweekBuilder> {
   }
 
   @override
-  void update(void Function(PrevweekBuilder) updates) {
+  void update(void Function(PrevweekBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -2139,11 +2142,11 @@ class _$Nextweek extends Nextweek {
   @override
   final String onclickWeek;
 
-  factory _$Nextweek([void Function(NextweekBuilder) updates]) =>
-      (new NextweekBuilder()..update(updates)).build();
+  factory _$Nextweek([void Function(NextweekBuilder)? updates]) =>
+      (new NextweekBuilder()..update(updates!)).build();
 
   _$Nextweek._(
-      {this.label, this.onclickAction, this.onclickData, this.onclickWeek})
+      {required this.label,required this.onclickAction,required this.onclickData,required this.onclickWeek})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(label, 'Nextweek', 'label');
     BuiltValueNullFieldError.checkNotNull(
@@ -2156,7 +2159,7 @@ class _$Nextweek extends Nextweek {
 
   @override
   Nextweek rebuild(void Function(NextweekBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   NextweekBuilder toBuilder() => new NextweekBuilder()..replace(this);
@@ -2191,22 +2194,22 @@ class _$Nextweek extends Nextweek {
 }
 
 class NextweekBuilder implements Builder<Nextweek, NextweekBuilder> {
-  _$Nextweek _$v;
+  _$Nextweek? _$v = _$Nextweek();
 
-  String _label;
+  String _label = '';
   String get label => _$this._label;
   set label(String label) => _$this._label = label;
 
-  String _onclickAction;
+  String _onclickAction = '';
   String get onclickAction => _$this._onclickAction;
   set onclickAction(String onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickData;
+  String _onclickData = '';
   String get onclickData => _$this._onclickData;
   set onclickData(String onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickWeek;
+  String _onclickWeek ='';
   String get onclickWeek => _$this._onclickWeek;
   set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
 
@@ -2231,7 +2234,7 @@ class NextweekBuilder implements Builder<Nextweek, NextweekBuilder> {
   }
 
   @override
-  void update(void Function(NextweekBuilder) updates) {
+  void update(void Function(NextweekBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

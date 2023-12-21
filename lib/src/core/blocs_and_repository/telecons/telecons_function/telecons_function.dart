@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/telecons/bloc/telecons.dart';
 import 'package:logic_rdv_v0/src/core/models/telecons_model/teleconsultationrequest.dart';
 
-getTeleocns({BuildContext context, String tokentelecons}) {
+getTeleocns({required BuildContext context,required String tokentelecons}) {
   TeleconsRequest _getTelecons =
       TeleconsRequest((builder) => builder..tokentelecons = tokentelecons);
 

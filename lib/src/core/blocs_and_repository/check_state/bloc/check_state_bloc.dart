@@ -8,7 +8,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/check_state/repositor
 class CheckStateBloc extends Bloc<CheckStateEvent, CheckStateSate> {
   final CheckStateRepository repository;
 
-  CheckStateBloc({@required this.repository}) : super(CheckStateLoading());
+  CheckStateBloc({required this.repository}) : super(CheckStateLoading());
 
   @override
   Stream<CheckStateSate> mapEventToState(CheckStateEvent event) async* {

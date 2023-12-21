@@ -12,7 +12,7 @@ abstract class PatientEvent extends Equatable {
 class AddPatientPressed extends PatientEvent {
   final PatientRequest patientRequest;
 
-  AddPatientPressed({this.patientRequest});
+  AddPatientPressed({required this.patientRequest});
 
   @override
   List<Object> get props => [patientRequest];
@@ -24,7 +24,7 @@ class AddPatientPressed extends PatientEvent {
 class GetListOfPatient extends PatientEvent {
   final GetListOfPatientRequest listOfPatientRequest;
 
-  GetListOfPatient({this.listOfPatientRequest});
+  GetListOfPatient({required this.listOfPatientRequest});
 
   @override
   List<Object> get props => [listOfPatientRequest];
@@ -37,7 +37,7 @@ class GetListOfPatient extends PatientEvent {
 class ModifyPatient extends PatientEvent {
   final PatientRequest patientRequest;
 
-  ModifyPatient({this.patientRequest});
+  ModifyPatient({required this.patientRequest});
 
   @override
   List<Object> get props => [patientRequest];
@@ -49,7 +49,7 @@ class ModifyPatient extends PatientEvent {
 class RemovePatient extends PatientEvent {
   final RemovePatientRequest patientRequest;
 
-  RemovePatient({this.patientRequest});
+  RemovePatient({required this.patientRequest});
 
   @override
   List<Object> get props => [patientRequest];

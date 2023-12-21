@@ -15,9 +15,9 @@ class AppointmentDetailsPageArguments implements PagesArgumentType {
   final AppointmentDataResponse appointmentDataResponse;
 
   AppointmentDetailsPageArguments({
-    this.cabinetResponse,
-    this.patientResponse,
-    this.appointmentDataResponse,
+    required this.cabinetResponse,
+    required this.patientResponse,
+    required this.appointmentDataResponse,
   });
 
   @override
@@ -29,7 +29,7 @@ class AppointmentDetailsPageArguments implements PagesArgumentType {
 class AppointmentDetails extends StatefulWidget {
   final AppointmentDetailsPageArguments arguments;
 
-  AppointmentDetails({this.arguments});
+  AppointmentDetails({required this.arguments});
 
   @override
   _AppointmentDetailsState createState() => _AppointmentDetailsState();
@@ -40,15 +40,15 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
 
   DateFormat format = DateFormat("dd/MM/yy");
   var formatterDate = new DateFormat('dd/MM/yy', 'fr').format(DateTime.now());
-  String _rdvDate;
-  String _dateOfAppointement;
-  DateTime _realyDateOfAppointement;
-  List<String> value;
+  String _rdvDate ='';
+  String _dateOfAppointement ='';
+  DateTime _realyDateOfAppointement =  DateTime.now() ;
+  List<String> value =[];
   double _currentTime = toDoubleHour(TimeOfDay.now());
-  TimeOfDay _startTime;
-  double _rdvTime;
+  TimeOfDay _startTime = TimeOfDay.now();
+  double _rdvTime = 0.0;
 
-  DateTime _currentDate;
+  DateTime _currentDate =  DateTime.now() ;
 
   _getRdvDate() {
     _rdvDate = widget.arguments.appointmentDataResponse.date;
@@ -129,7 +129,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
     return Scaffold(
       appBar: AdaptativeAppBar(
         title: 'Détails du Rdv',
-        leading: DefaultBackButton(),
+        leading: DefaultBackButton(), actions: [],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -165,7 +165,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                     Row(
                       children: [
                         Transform.rotate(
-                          child: const Icon(
+                          child:  Icon(
                             Icons.calendar_today,
                             color: Colors.white,
                             size: 14,
@@ -185,7 +185,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                     ),
                     Row(
                       children: [
-                        const Icon(
+                         Icon(
                           Icons.schedule,
                           size: 14,
                           color: Colors.white,
@@ -245,7 +245,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                         shape: BoxShape.circle,
                         color: AppColors.colorPrimary.withOpacity(.5),
                       ),
-                      child: const Icon(
+                      child:  Icon(
                         Icons.gite,
                         color: AppColors.colorWhite,
                         size: 50,
@@ -329,7 +329,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                         shape: BoxShape.circle,
                         color: AppColors.colorPrimary.withOpacity(.5),
                       ),
-                      child: const Icon(
+                      child:  Icon(
                         Icons.person,
                         color: AppColors.colorWhite,
                         size: 50,
@@ -430,8 +430,8 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                                 arguments: TeleconsArgument(
                                     tokentelecon: widget
                                         .arguments
-                                        ?.appointmentDataResponse
-                                        ?.tokentelecons));
+                                        .appointmentDataResponse
+                                        .tokentelecons));
                           },
                         ),
                       ),
@@ -491,7 +491,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
     ),
     Row(
     children: [
-    const Icon(
+     Icon(
     Icons.schedule,
     size: 14,
     color: Colors.white,

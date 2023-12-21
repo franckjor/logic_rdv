@@ -1,7 +1,7 @@
 import 'package:logic_rdv_v0/src/common.dart';
 
 class DefaultBackButton extends StatelessWidget {
-  final Function onPressed;
+  final void Function()? onPressed;
 
   DefaultBackButton({this.onPressed});
 
@@ -11,7 +11,7 @@ class DefaultBackButton extends StatelessWidget {
       color: Colors.transparent,
       child: IconButton(
         splashRadius: 20,
-        icon: const Icon(
+        icon:  Icon(
           Icons.arrow_back_ios,
           size: 20,
           color: Colors.white,

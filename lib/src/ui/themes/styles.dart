@@ -133,7 +133,7 @@ class AppTextStyles {
 
   static const AppBarTheme appBarTheme = AppBarTheme(
     iconTheme: IconThemeData(color: whiteColor),
-    textTheme: TextTheme(headline6: display21Style),
+   // textTheme: TextTheme(headline6: display21Style),
   );
 
   /// Font family for the button label

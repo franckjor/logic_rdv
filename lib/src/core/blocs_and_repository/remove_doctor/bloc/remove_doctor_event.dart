@@ -9,7 +9,7 @@ abstract class RemoveDoctorEvent extends Equatable {
 class RemoveDoctorPressed extends RemoveDoctorEvent {
   final RemoveDoctorRequest removeDoctorRequest;
 
-  RemoveDoctorPressed({this.removeDoctorRequest});
+  RemoveDoctorPressed({required this.removeDoctorRequest});
 
   @override
   List<Object> get props => [removeDoctorRequest];

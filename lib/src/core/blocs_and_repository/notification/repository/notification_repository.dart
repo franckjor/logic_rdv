@@ -5,7 +5,7 @@ import 'package:logic_rdv_v0/src/core/models/notification/notification_list_resp
 
 class NotificationRepository extends AbstractRepository {
   Future getAllNotification(
-      {NotificationListRequest notificationListRequest}) async {
+      {required NotificationListRequest notificationListRequest}) async {
     final String path = '/${getControllerName()}list/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,

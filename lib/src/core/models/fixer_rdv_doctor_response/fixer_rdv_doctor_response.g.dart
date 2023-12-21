@@ -31,25 +31,25 @@ class _$FixerRdvDoctorResponseSerializer
     final result = <Object>[
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsFixerRdvDoctorResponse)),
+          specifiedType: const FullType(ParamsFixerRdvDoctorResponse))!,
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int)),
+          specifiedType: const FullType(int))!,
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'data',
       serializers.serialize(object.data,
-          specifiedType: const FullType(DataFixerRdvDoctorResponse)),
+          specifiedType: const FullType(DataFixerRdvDoctorResponse))!,
     ];
 
     return result;
@@ -57,7 +57,7 @@ class _$FixerRdvDoctorResponseSerializer
 
   @override
   FixerRdvDoctorResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new FixerRdvDoctorResponseBuilder();
 
@@ -65,7 +65,7 @@ class _$FixerRdvDoctorResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
@@ -121,7 +121,7 @@ class _$ParamsFixerRdvDoctorResponseSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -129,7 +129,7 @@ class _$ParamsFixerRdvDoctorResponseSerializer
 
   @override
   ParamsFixerRdvDoctorResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsFixerRdvDoctorResponseBuilder();
 
@@ -137,7 +137,7 @@ class _$ParamsFixerRdvDoctorResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -168,11 +168,11 @@ class _$DataFixerRdvDoctorResponseSerializer
       'activeEtabs',
       serializers.serialize(object.activeEtabs,
           specifiedType: const FullType(
-              BuiltList, const [const FullType(ObjectNameOfSearch)])),
+              BuiltList, const [const FullType(ObjectNameOfSearch)]))!,
       'sameCabinetEtabs',
       serializers.serialize(object.sameCabinetEtabs,
           specifiedType: const FullType(
-              BuiltList, const [const FullType(ObjectNameOfSearch)])),
+              BuiltList, const [const FullType(ObjectNameOfSearch)]))!,
     ];
 
     return result;
@@ -180,7 +180,7 @@ class _$DataFixerRdvDoctorResponseSerializer
 
   @override
   DataFixerRdvDoctorResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataFixerRdvDoctorResponseBuilder();
 
@@ -188,7 +188,7 @@ class _$DataFixerRdvDoctorResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'activeEtabs':
           result.activeEtabs.replace(serializers.deserialize(value,
@@ -226,17 +226,18 @@ class _$FixerRdvDoctorResponse extends FixerRdvDoctorResponse {
   final DataFixerRdvDoctorResponse data;
 
   factory _$FixerRdvDoctorResponse(
-          [void Function(FixerRdvDoctorResponseBuilder) updates]) =>
-      (new FixerRdvDoctorResponseBuilder()..update(updates)).build();
+          [void Function(FixerRdvDoctorResponseBuilder)? updates]) =>
+      (new FixerRdvDoctorResponseBuilder()..update(updates!)).build();
 
   _$FixerRdvDoctorResponse._(
-      {this.version,
-      this.request,
-      this.params,
-      this.message,
-      this.httpstatut,
-      this.error,
-      this.data})
+      {
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.message,
+      required this.httpstatut,
+      required this.error,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         version, 'FixerRdvDoctorResponse', 'version');
@@ -257,7 +258,7 @@ class _$FixerRdvDoctorResponse extends FixerRdvDoctorResponse {
   @override
   FixerRdvDoctorResponse rebuild(
           void Function(FixerRdvDoctorResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   FixerRdvDoctorResponseBuilder toBuilder() =>
@@ -306,35 +307,35 @@ class _$FixerRdvDoctorResponse extends FixerRdvDoctorResponse {
 
 class FixerRdvDoctorResponseBuilder
     implements Builder<FixerRdvDoctorResponse, FixerRdvDoctorResponseBuilder> {
-  _$FixerRdvDoctorResponse _$v;
+  _$FixerRdvDoctorResponse? _$v;
 
-  String _version;
+  String _version = '';
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request;
+  String _request = '';
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsFixerRdvDoctorResponseBuilder _params;
+  ParamsFixerRdvDoctorResponseBuilder _params = ParamsFixerRdvDoctorResponseBuilder() ;
   ParamsFixerRdvDoctorResponseBuilder get params =>
       _$this._params ??= new ParamsFixerRdvDoctorResponseBuilder();
   set params(ParamsFixerRdvDoctorResponseBuilder params) =>
       _$this._params = params;
 
-  String _message;
+  String _message = '';
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  int _httpstatut;
+  int _httpstatut = 0;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
+  String _error = '';
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  DataFixerRdvDoctorResponseBuilder _data;
+  DataFixerRdvDoctorResponseBuilder _data = DataFixerRdvDoctorResponseBuilder();
   DataFixerRdvDoctorResponseBuilder get data =>
       _$this._data ??= new DataFixerRdvDoctorResponseBuilder();
   set data(DataFixerRdvDoctorResponseBuilder data) => _$this._data = data;
@@ -363,7 +364,7 @@ class FixerRdvDoctorResponseBuilder
   }
 
   @override
-  void update(void Function(FixerRdvDoctorResponseBuilder) updates) {
+  void update(void Function(FixerRdvDoctorResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -386,7 +387,7 @@ class FixerRdvDoctorResponseBuilder
                   error, 'FixerRdvDoctorResponse', 'error'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'params';
         params.build();
@@ -409,10 +410,10 @@ class _$ParamsFixerRdvDoctorResponse extends ParamsFixerRdvDoctorResponse {
   final String tokenuser;
 
   factory _$ParamsFixerRdvDoctorResponse(
-          [void Function(ParamsFixerRdvDoctorResponseBuilder) updates]) =>
-      (new ParamsFixerRdvDoctorResponseBuilder()..update(updates)).build();
+          [void Function(ParamsFixerRdvDoctorResponseBuilder)? updates]) =>
+      (new ParamsFixerRdvDoctorResponseBuilder()..update(updates!)).build();
 
-  _$ParamsFixerRdvDoctorResponse._({this.tokenuser}) : super._() {
+  _$ParamsFixerRdvDoctorResponse._({required this.tokenuser}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'ParamsFixerRdvDoctorResponse', 'tokenuser');
   }
@@ -420,7 +421,7 @@ class _$ParamsFixerRdvDoctorResponse extends ParamsFixerRdvDoctorResponse {
   @override
   ParamsFixerRdvDoctorResponse rebuild(
           void Function(ParamsFixerRdvDoctorResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   ParamsFixerRdvDoctorResponseBuilder toBuilder() =>
@@ -450,9 +451,9 @@ class ParamsFixerRdvDoctorResponseBuilder
     implements
         Builder<ParamsFixerRdvDoctorResponse,
             ParamsFixerRdvDoctorResponseBuilder> {
-  _$ParamsFixerRdvDoctorResponse _$v;
+  _$ParamsFixerRdvDoctorResponse? _$v =_$ParamsFixerRdvDoctorResponse();
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
@@ -474,7 +475,7 @@ class ParamsFixerRdvDoctorResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsFixerRdvDoctorResponseBuilder) updates) {
+  void update(void Function(ParamsFixerRdvDoctorResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -496,10 +497,10 @@ class _$DataFixerRdvDoctorResponse extends DataFixerRdvDoctorResponse {
   final BuiltList<ObjectNameOfSearch> sameCabinetEtabs;
 
   factory _$DataFixerRdvDoctorResponse(
-          [void Function(DataFixerRdvDoctorResponseBuilder) updates]) =>
-      (new DataFixerRdvDoctorResponseBuilder()..update(updates)).build();
+          [void Function(DataFixerRdvDoctorResponseBuilder)? updates]) =>
+      (new DataFixerRdvDoctorResponseBuilder()..update(updates!)).build();
 
-  _$DataFixerRdvDoctorResponse._({this.activeEtabs, this.sameCabinetEtabs})
+  _$DataFixerRdvDoctorResponse._({required this.activeEtabs,required this.sameCabinetEtabs})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         activeEtabs, 'DataFixerRdvDoctorResponse', 'activeEtabs');
@@ -510,7 +511,7 @@ class _$DataFixerRdvDoctorResponse extends DataFixerRdvDoctorResponse {
   @override
   DataFixerRdvDoctorResponse rebuild(
           void Function(DataFixerRdvDoctorResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   DataFixerRdvDoctorResponseBuilder toBuilder() =>
@@ -541,15 +542,15 @@ class _$DataFixerRdvDoctorResponse extends DataFixerRdvDoctorResponse {
 class DataFixerRdvDoctorResponseBuilder
     implements
         Builder<DataFixerRdvDoctorResponse, DataFixerRdvDoctorResponseBuilder> {
-  _$DataFixerRdvDoctorResponse _$v;
+  _$DataFixerRdvDoctorResponse? _$v = _$DataFixerRdvDoctorResponse();
 
-  ListBuilder<ObjectNameOfSearch> _activeEtabs;
+  ListBuilder<ObjectNameOfSearch> _activeEtabs = ListBuilder();
   ListBuilder<ObjectNameOfSearch> get activeEtabs =>
       _$this._activeEtabs ??= new ListBuilder<ObjectNameOfSearch>();
   set activeEtabs(ListBuilder<ObjectNameOfSearch> activeEtabs) =>
       _$this._activeEtabs = activeEtabs;
 
-  ListBuilder<ObjectNameOfSearch> _sameCabinetEtabs;
+  ListBuilder<ObjectNameOfSearch> _sameCabinetEtabs = ListBuilder();
   ListBuilder<ObjectNameOfSearch> get sameCabinetEtabs =>
       _$this._sameCabinetEtabs ??= new ListBuilder<ObjectNameOfSearch>();
   set sameCabinetEtabs(ListBuilder<ObjectNameOfSearch> sameCabinetEtabs) =>
@@ -574,7 +575,7 @@ class DataFixerRdvDoctorResponseBuilder
   }
 
   @override
-  void update(void Function(DataFixerRdvDoctorResponseBuilder) updates) {
+  void update(void Function(DataFixerRdvDoctorResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -587,7 +588,7 @@ class DataFixerRdvDoctorResponseBuilder
               activeEtabs: activeEtabs.build(),
               sameCabinetEtabs: sameCabinetEtabs.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'activeEtabs';
         activeEtabs.build();

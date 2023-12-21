@@ -5,7 +5,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/inscription_rapide/bl
 import 'package:logic_rdv_v0/src/core/models/incription_model/create_patient_request.dart';
 import 'package:logic_rdv_v0/src/core/models/incription_model/inscription_check_request.dart';
 
-onPressedCheckDoctorButton({BuildContext context, String phoneNumberCabinet}) {
+onPressedCheckDoctorButton({required BuildContext context,required String phoneNumberCabinet}) {
   InscriptionCheckRequest _checkDoctor =
       InscriptionCheckRequest((builder) => builder..phone = phoneNumberCabinet);
   BlocProvider.of<InscriptionRapidBloc>(context)
@@ -13,17 +13,18 @@ onPressedCheckDoctorButton({BuildContext context, String phoneNumberCabinet}) {
 }
 
 onPressedCreatePatientButton(
-    {BuildContext context,
-    String mobile,
-    String phone,
-    String nom,
-    String prenom,
-    String cgu,
-    String code,
-    String id,
-    String pass1,
-    String pass2,
-    String email}) {
+    {
+    required BuildContext context,
+    required String mobile,
+    required String phone,
+    required String nom,
+    required String prenom,
+    required String cgu,
+    required String code,
+    required String id,
+    required String pass1,
+    required String pass2,
+    required String email}) {
   CreatePatientRequest _createPatientRequest =
       CreatePatientRequest((builder) => builder
         ..email = email

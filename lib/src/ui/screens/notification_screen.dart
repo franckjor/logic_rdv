@@ -28,20 +28,20 @@ bool get isAndroid =>
 bool get isWeb => foundation.kIsWeb;
 
 class NotificationScreen extends StatefulWidget {
-  const NotificationScreen({Key key}) : super(key: key);
+  const NotificationScreen({Key? key}) : super(key: key);
 
   @override
   _NotificationScreenState createState() => _NotificationScreenState();
 }
 
 class _NotificationScreenState extends State<NotificationScreen> {
-  String _installationIdKey;
-  String _email;
-  String _fullName;
-  String _tokenUser;
+  late String _installationIdKey;
+  String _email = '';
+  String _fullName = '';
+  String _tokenuser = '';
   ScrollController _scrollController = new ScrollController();
   int currentPage = 1;
-  int totalOfPage;
+  int totalOfPage =0;
   bool isRefreshList = false;
   bool _isLoading = false;
   List<NotificationResponseList> notification = [];
@@ -51,12 +51,12 @@ class _NotificationScreenState extends State<NotificationScreen> {
 
   Future<String> _getInstalationIdKey() async {
     final prefs = await SharedPreferences.getInstance();
-    _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey);
+    _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey)!;
     print("InstallationIdHome: $_installationIdKey");
     getAllNotificationList(
       context: context,
       installationKey: _installationIdKey,
-      tokenUser: _tokenUser,
+      tokenUser: _tokenuser,
       page: currentPage.toString(),
     );
     return _installationIdKey;
@@ -75,7 +75,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
           getAllNotificationList(
             context: context,
             installationKey: _installationIdKey,
-            tokenUser: _tokenUser,
+            tokenUser: _tokenuser,
             page: currentPage.toString(),
           );
         });
@@ -89,7 +89,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
     super.initState();
     BlocProvider.of<SharedPreferenceBloc>(context)
       ..add(GetSharedPreferenceObject(objectKey: PreferenceKey.objectKey));
-    if (_tokenUser == null) {
+    if (_tokenuser == null) {
       _getInstalationIdKey();
     }
   }
@@ -98,7 +98,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      endDrawer: _tokenUser == null
+      endDrawer: _tokenuser == null
           ? StartedDrawer()
           : MultiBlocProvider(
               providers: [
@@ -110,10 +110,10 @@ class _NotificationScreenState extends State<NotificationScreen> {
                 }),
               ],
               child: MyDrawer(
-                tokenUser: _tokenUser,
+                tokenUser: _tokenuser,
                 page: '7',
                 email: _email,
-                fullNme: _fullName,
+                fullNme: _fullName, notification: false,
               ),
             ),
       backgroundColor: Color(0xFFeff4fb),
@@ -123,16 +123,16 @@ class _NotificationScreenState extends State<NotificationScreen> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                : const Icon(
+                :  Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -155,11 +155,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
             if (state is SharedPreferenceReadObjectState) {
               setState(() {
                 notification.clear();
-                _tokenUser = state.sharePreferenceObject.token;
-                _email = state.sharePreferenceObject.email;
-                _fullName = state.sharePreferenceObject.firstName +
+                _tokenuser = state.sharePreferenceObject!.token;
+                _email = state.sharePreferenceObject!.email;
+                _fullName = state.sharePreferenceObject!.firstName +
                     " " +
-                    state.sharePreferenceObject.lastName;
+                    state.sharePreferenceObject!.lastName;
 
                 _getInstalationIdKey();
               });
@@ -195,7 +195,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -215,7 +215,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else {
                 flushBarError(state.error, context);
@@ -262,11 +262,11 @@ class _NotificationItem extends StatelessWidget {
   final String date;
 
   const _NotificationItem({
-    Key key,
-    this.icon,
-    this.title,
-    this.description,
-    this.date,
+    Key? key,
+    required this.icon,
+    required this.title,
+    required this.description,
+    required this.date,
   }) : super(key: key);
 
   @override

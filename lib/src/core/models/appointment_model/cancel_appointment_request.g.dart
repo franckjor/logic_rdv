@@ -26,10 +26,10 @@ class _$CancelAppointmentRequestSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'token',
       serializers.serialize(object.token,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -37,7 +37,7 @@ class _$CancelAppointmentRequestSerializer
 
   @override
   CancelAppointmentRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CancelAppointmentRequestBuilder();
 
@@ -45,7 +45,7 @@ class _$CancelAppointmentRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -69,10 +69,10 @@ class _$CancelAppointmentRequest extends CancelAppointmentRequest {
   final String token;
 
   factory _$CancelAppointmentRequest(
-          [void Function(CancelAppointmentRequestBuilder) updates]) =>
-      (new CancelAppointmentRequestBuilder()..update(updates)).build();
+          [void Function(CancelAppointmentRequestBuilder)? updates]) =>
+      (new CancelAppointmentRequestBuilder()..update(updates!)).build();
 
-  _$CancelAppointmentRequest._({this.tokenuser, this.token}) : super._() {
+  _$CancelAppointmentRequest._({required this.tokenuser,required this.token}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'CancelAppointmentRequest', 'tokenuser');
     BuiltValueNullFieldError.checkNotNull(
@@ -82,7 +82,7 @@ class _$CancelAppointmentRequest extends CancelAppointmentRequest {
   @override
   CancelAppointmentRequest rebuild(
           void Function(CancelAppointmentRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   CancelAppointmentRequestBuilder toBuilder() =>
@@ -113,13 +113,13 @@ class _$CancelAppointmentRequest extends CancelAppointmentRequest {
 class CancelAppointmentRequestBuilder
     implements
         Builder<CancelAppointmentRequest, CancelAppointmentRequestBuilder> {
-  _$CancelAppointmentRequest _$v;
+  _$CancelAppointmentRequest? _$v;
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _token;
+  String _token = '';
   String get token => _$this._token;
   set token(String token) => _$this._token = token;
 
@@ -142,7 +142,7 @@ class CancelAppointmentRequestBuilder
   }
 
   @override
-  void update(void Function(CancelAppointmentRequestBuilder) updates) {
+  void update(void Function(CancelAppointmentRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

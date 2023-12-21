@@ -28,7 +28,7 @@ abstract class AddDoctorRequest
 
   static AddDoctorRequest fromJson(String jsonString) {
     return serializers.deserializeWith(
-        AddDoctorRequest.serializer, json.decode(jsonString));
+        AddDoctorRequest.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<AddDoctorRequest> get serializer =>

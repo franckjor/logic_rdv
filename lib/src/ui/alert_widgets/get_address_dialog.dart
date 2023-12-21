@@ -15,7 +15,7 @@ class AddressInformation {
   String cityName;
   String cityId;
 
-  AddressInformation({this.cityName, this.cityId});
+  AddressInformation({required this.cityName,required this.cityId});
 }
 
 class DialogOfAddress extends StatefulWidget {
@@ -24,14 +24,14 @@ class DialogOfAddress extends StatefulWidget {
 }
 
 class _DialogOfAddressState extends State<DialogOfAddress> {
-  String _cityId;
+  String _cityId ='';
   TextEditingController _searchValueCity = TextEditingController();
   TextEditingController _cityController = TextEditingController();
   TextEditingController _addressController = TextEditingController();
 
   List<ClientInfosResponseSearchCity> clientInfoSearchCity = [];
-  AddressInformation addressInformation;
-  SearchDialogResponse searchDialogResponse;
+  late AddressInformation addressInformation;
+  SearchDialogResponse searchDialogResponse = SearchDialogResponse();
   bool _showList = false;
 
   final _formKey = GlobalKey<FormState>();
@@ -111,7 +111,7 @@ class _DialogOfAddressState extends State<DialogOfAddress> {
                         AdaptativeTextFormField(
                           hintText: 'Entrez une adresse',
                           controller: _addressController,
-                          validator: (value) => verifyEmpty(value),
+                          validator: (value) => verifyEmpty(value!), focusNode: null, textInputAction: null,
                         ),
                       ],
                     ),
@@ -179,7 +179,7 @@ class _DialogOfAddressState extends State<DialogOfAddress> {
                                           terms: _searchValueCity.text));
                                 });
                               },
-                              validator: (value) => verifyEmpty(value),
+                              validator: (value) => verifyEmpty(value!), focusNode: null, textInputAction: null,
                             ),
                           ],
                         ),
@@ -202,7 +202,7 @@ class _DialogOfAddressState extends State<DialogOfAddress> {
                         AdaptativeTextFormField(
                           hintText: 'Entrez une ville',
                           controller: _cityController,
-                          validator: (value) => verifyEmpty(value),
+                          validator: (value) => verifyEmpty(value!), focusNode: null, textInputAction: null,
                         ),
                       ],
                     ),
@@ -231,7 +231,7 @@ class _DialogOfAddressState extends State<DialogOfAddress> {
                           child: ElevatedButton(
                             onPressed: () {
                               final _form = _formKey.currentState;
-                              if (_form.validate()) {
+                              if (_form!.validate()) {
                                 onSearchAddress(
                                     address: _addressController.text,
                                     city: _cityController.text,

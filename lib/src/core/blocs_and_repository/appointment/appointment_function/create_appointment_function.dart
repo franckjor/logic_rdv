@@ -4,7 +4,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/appointment/bloc/crea
 import 'package:logic_rdv_v0/src/core/models/appointment_model/create_appointment_request.dart';
 
 getAppointmentType(
-    {BuildContext context, String tokenUser, String tokenAppointment}) {
+    {required BuildContext context,required String tokenUser,required String tokenAppointment}) {
   CreateAppointmentRequest _getAppointmentTypeRequest =
       CreateAppointmentRequest((builder) => builder
         ..tokenuser = tokenUser
@@ -19,13 +19,13 @@ getAppointmentType(
 }
 
 getAppointmentTimeAndDay({
-  BuildContext context,
-  String tokenUser,
-  String tokenAppointment,
-  String week,
-  String data,
-  String action,
-  String session,
+  required BuildContext context,
+  required String tokenUser,
+  required String tokenAppointment,
+  required String week,
+  required String data,
+  required String action,
+  required String session,
 }) {
   CreateAppointmentRequest _getAppointmentTypeRequest =
       CreateAppointmentRequest((builder) => builder
@@ -41,13 +41,13 @@ getAppointmentTimeAndDay({
 }
 
 getNextAppointmentTimeAndDay({
-  BuildContext context,
-  String tokenUser,
-  String tokenAppointment,
-  String week,
-  String data,
-  String action,
-  String session,
+  required BuildContext context,
+  required String tokenUser,
+  required String tokenAppointment,
+  required String week,
+  required String data,
+  required String action,
+  required String session,
 }) {
   CreateAppointmentRequest _getAppointmentTypeRequest =
       CreateAppointmentRequest((builder) => builder
@@ -63,13 +63,13 @@ getNextAppointmentTimeAndDay({
 }
 
 getPrevAppointmentTimeAndDay({
-  BuildContext context,
-  String tokenUser,
-  String tokenAppointment,
-  String week,
-  String data,
-  String action,
-  String session,
+  required BuildContext context,
+  required String tokenUser,
+  required String tokenAppointment,
+  required String week,
+  required String data,
+  required String action,
+  required String session,
 }) {
   CreateAppointmentRequest _getAppointmentTypeRequest =
       CreateAppointmentRequest((builder) => builder
@@ -85,13 +85,13 @@ getPrevAppointmentTimeAndDay({
 }
 
 getPatientList({
-  BuildContext context,
-  String tokenUser,
-  String tokenAppointment,
-  String week,
-  String data,
-  String action,
-  String session,
+  required BuildContext context,
+  required String tokenUser,
+  required String tokenAppointment,
+  required String week,
+  required String data,
+  required String action,
+  required String session,
 }) {
   CreateAppointmentRequest _getAppointmentTypeRequest =
       CreateAppointmentRequest((builder) => builder
@@ -107,13 +107,13 @@ getPatientList({
 }
 
 patientSelectedForRdv({
-  BuildContext context,
-  String tokenUser,
-  String tokenAppointment,
-  String week,
-  String data,
-  String action,
-  String session,
+  required BuildContext context,
+  required String tokenUser,
+  required String tokenAppointment,
+  required String week,
+  required String data,
+  required String action,
+  required String session,
 }) {
   CreateAppointmentRequest _getAppointmentTypeRequest =
       CreateAppointmentRequest((builder) => builder
@@ -129,13 +129,13 @@ patientSelectedForRdv({
 }
 
 validateAppointmentWithTc({
-  BuildContext context,
-  String tokenUser,
-  String tokenAppointment,
-  String week,
-  String data,
-  String action,
-  String session,
+  required BuildContext context,
+  required String tokenUser,
+  required String tokenAppointment,
+  required String week,
+  required String data,
+  required String action,
+  required String session,
 }) {
   CreateAppointmentRequest _getAppointmentTypeRequest =
       CreateAppointmentRequest((builder) => builder
@@ -151,13 +151,13 @@ validateAppointmentWithTc({
 }
 
 validateAppointment({
-  BuildContext context,
-  String tokenUser,
-  String tokenAppointment,
-  String week,
-  String data,
-  String action,
-  String session,
+  required BuildContext context,
+  required String tokenUser,
+  required String tokenAppointment,
+  required String week,
+  required String data,
+  required String action,
+  required String session,
 }) {
   CreateAppointmentRequest _getAppointmentTypeRequest =
       CreateAppointmentRequest((builder) => builder
@@ -173,13 +173,13 @@ validateAppointment({
 }
 
 rdvTypeState({
-  BuildContext context,
-  String tokenUser,
-  String tokenAppointment,
-  String week,
-  String data,
-  String action,
-  String session,
+  required BuildContext context,
+  required String tokenUser,
+  required String tokenAppointment,
+  required String week,
+  required String data,
+  required String action,
+  required String session,
 }) {
   CreateAppointmentRequest _getAppointmentTypeRequest =
       CreateAppointmentRequest((builder) => builder
@@ -195,13 +195,13 @@ rdvTypeState({
 }
 
 confirmAppointmentWithTc({
-  BuildContext context,
-  String tokenUser,
-  String tokenAppointment,
-  String week,
-  String data,
-  String action,
-  String session,
+  required BuildContext context,
+  required String tokenUser,
+  required String tokenAppointment,
+  required String week,
+  required String data,
+  required String action,
+  required String session,
 }) {
   CreateAppointmentRequest _getAppointmentTypeRequest =
       CreateAppointmentRequest((builder) => builder

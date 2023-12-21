@@ -14,7 +14,7 @@ class TeleconsLoading extends TeleconsState {}
 class TeleconsLoadingSuccess extends TeleconsState {
   final TeleconsResponse response;
 
-  TeleconsLoadingSuccess({this.response});
+  TeleconsLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -26,7 +26,7 @@ class TeleconsLoadingSuccess extends TeleconsState {
 class TeleconsFailure extends TeleconsState {
   final String error;
 
-  TeleconsFailure({@required this.error});
+  TeleconsFailure({required this.error});
 
   @override
   List<Object> get props => [error];

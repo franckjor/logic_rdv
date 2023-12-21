@@ -14,7 +14,7 @@ class VersionLoading extends VersionState {}
 
 class VersionLoadingSuccess extends VersionState {
   final AppVersionSummary response;
-  VersionLoadingSuccess({this.response});
+  VersionLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -26,7 +26,7 @@ class VersionLoadingSuccess extends VersionState {
 class VersionFailure extends VersionState {
   final String error;
 
-  VersionFailure({@required this.error});
+  VersionFailure({required this.error});
 
   @override
   List<Object> get props => [error];

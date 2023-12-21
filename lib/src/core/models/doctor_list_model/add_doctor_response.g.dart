@@ -30,25 +30,25 @@ class _$AddDoctorResponseSerializer
     final result = <Object>[
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsAddDoctor)),
+          specifiedType: const FullType(ParamsAddDoctor))!,
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int)),
+          specifiedType: const FullType(int))!,
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'data',
       serializers.serialize(object.data,
-          specifiedType: const FullType(DataAddDoctor)),
+          specifiedType: const FullType(DataAddDoctor))!,
     ];
 
     return result;
@@ -56,7 +56,7 @@ class _$AddDoctorResponseSerializer
 
   @override
   AddDoctorResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AddDoctorResponseBuilder();
 
@@ -64,7 +64,7 @@ class _$AddDoctorResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
@@ -115,12 +115,12 @@ class _$ParamsAddDoctorSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
+      serializers.serialize(object.id, specifiedType: const FullType(String))!,
       'phone',
       serializers.serialize(object.phone,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -128,7 +128,7 @@ class _$ParamsAddDoctorSerializer
 
   @override
   ParamsAddDoctor deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsAddDoctorBuilder();
 
@@ -136,7 +136,7 @@ class _$ParamsAddDoctorSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -169,7 +169,7 @@ class _$DataAddDoctorSerializer implements StructuredSerializer<DataAddDoctor> {
     final result = <Object>[
       'etablissement',
       serializers.serialize(object.etablissement,
-          specifiedType: const FullType(EtablissementAddDoctor)),
+          specifiedType: const FullType(EtablissementAddDoctor))!,
     ];
 
     return result;
@@ -177,7 +177,7 @@ class _$DataAddDoctorSerializer implements StructuredSerializer<DataAddDoctor> {
 
   @override
   DataAddDoctor deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataAddDoctorBuilder();
 
@@ -185,7 +185,7 @@ class _$DataAddDoctorSerializer implements StructuredSerializer<DataAddDoctor> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'etablissement':
           result.etablissement.replace(serializers.deserialize(value,
@@ -215,53 +215,53 @@ class _$EtablissementAddDoctorSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
+      serializers.serialize(object.id, specifiedType: const FullType(String))!,
       'nom',
-      serializers.serialize(object.nom, specifiedType: const FullType(String)),
+      serializers.serialize(object.nom, specifiedType: const FullType(String))!,
       'address',
       serializers.serialize(object.address,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'zip',
-      serializers.serialize(object.zip, specifiedType: const FullType(String)),
+      serializers.serialize(object.zip, specifiedType: const FullType(String))!,
       'city',
-      serializers.serialize(object.city, specifiedType: const FullType(String)),
+      serializers.serialize(object.city, specifiedType: const FullType(String))!,
       'internet',
       serializers.serialize(object.internet,
-          specifiedType: const FullType(int)),
+          specifiedType: const FullType(int))!,
       'id_city',
       serializers.serialize(object.idCity,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'telnospace',
       serializers.serialize(object.telnospace,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'lat',
-      serializers.serialize(object.lat, specifiedType: const FullType(String)),
+      serializers.serialize(object.lat, specifiedType: const FullType(String))!,
       'lng',
-      serializers.serialize(object.lng, specifiedType: const FullType(String)),
+      serializers.serialize(object.lng, specifiedType: const FullType(String))!,
       'category',
       serializers.serialize(object.category,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'id_category',
       serializers.serialize(object.idCategory,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'icon',
-      serializers.serialize(object.icon, specifiedType: const FullType(String)),
+      serializers.serialize(object.icon, specifiedType: const FullType(String))!,
       'km_diff',
       serializers.serialize(object.kmDiff,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'civility',
       serializers.serialize(object.civility,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'tel',
-      serializers.serialize(object.tel, specifiedType: const FullType(String)),
+      serializers.serialize(object.tel, specifiedType: const FullType(String))!,
       'id_agenda',
       serializers.serialize(object.idAgenda,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'appointment',
       serializers.serialize(object.appointment,
-          specifiedType: const FullType(AppointmentAddDoctor)),
+          specifiedType: const FullType(AppointmentAddDoctor))!,
       'isother',
-      serializers.serialize(object.isother, specifiedType: const FullType(int)),
+      serializers.serialize(object.isother, specifiedType: const FullType(int))!,
     ];
 
     return result;
@@ -269,7 +269,7 @@ class _$EtablissementAddDoctorSerializer
 
   @override
   EtablissementAddDoctor deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new EtablissementAddDoctorBuilder();
 
@@ -277,7 +277,7 @@ class _$EtablissementAddDoctorSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
@@ -380,7 +380,7 @@ class _$AppointmentAddDoctorSerializer
     final result = <Object>[
       'token',
       serializers.serialize(object.token,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -388,7 +388,7 @@ class _$AppointmentAddDoctorSerializer
 
   @override
   AppointmentAddDoctor deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AppointmentAddDoctorBuilder();
 
@@ -396,7 +396,7 @@ class _$AppointmentAddDoctorSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'token':
           result.token = serializers.deserialize(value,
@@ -426,17 +426,18 @@ class _$AddDoctorResponse extends AddDoctorResponse {
   final DataAddDoctor data;
 
   factory _$AddDoctorResponse(
-          [void Function(AddDoctorResponseBuilder) updates]) =>
-      (new AddDoctorResponseBuilder()..update(updates)).build();
+          [void Function(AddDoctorResponseBuilder)? updates]) =>
+      (new AddDoctorResponseBuilder()..update(updates!)).build();
 
   _$AddDoctorResponse._(
-      {this.version,
-      this.request,
-      this.params,
-      this.message,
-      this.httpstatut,
-      this.error,
-      this.data})
+      {
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.message,
+      required this.httpstatut,
+      required this.error,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         version, 'AddDoctorResponse', 'version');
@@ -454,7 +455,7 @@ class _$AddDoctorResponse extends AddDoctorResponse {
 
   @override
   AddDoctorResponse rebuild(void Function(AddDoctorResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   AddDoctorResponseBuilder toBuilder() =>
@@ -503,34 +504,34 @@ class _$AddDoctorResponse extends AddDoctorResponse {
 
 class AddDoctorResponseBuilder
     implements Builder<AddDoctorResponse, AddDoctorResponseBuilder> {
-  _$AddDoctorResponse _$v;
+  late _$AddDoctorResponse? _$v;
 
-  String _version;
+  String _version = '';
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request;
+  String _request = '';
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsAddDoctorBuilder _params;
+  late ParamsAddDoctorBuilder _params;
   ParamsAddDoctorBuilder get params =>
       _$this._params ??= new ParamsAddDoctorBuilder();
   set params(ParamsAddDoctorBuilder params) => _$this._params = params;
 
-  String _message;
+  String _message = '';
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  int _httpstatut;
+  int _httpstatut = 0;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
+  String _error = '';
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  DataAddDoctorBuilder _data;
+  late DataAddDoctorBuilder _data;
   DataAddDoctorBuilder get data => _$this._data ??= new DataAddDoctorBuilder();
   set data(DataAddDoctorBuilder data) => _$this._data = data;
 
@@ -558,13 +559,13 @@ class AddDoctorResponseBuilder
   }
 
   @override
-  void update(void Function(AddDoctorResponseBuilder) updates) {
+  void update(void Function(AddDoctorResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
   _$AddDoctorResponse build() {
-    _$AddDoctorResponse _$result;
+    late _$AddDoctorResponse _$result;
     try {
       _$result = _$v ??
           new _$AddDoctorResponse._(
@@ -581,7 +582,7 @@ class AddDoctorResponseBuilder
                   error, 'AddDoctorResponse', 'error'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'params';
         params.build();
@@ -607,10 +608,10 @@ class _$ParamsAddDoctor extends ParamsAddDoctor {
   @override
   final String phone;
 
-  factory _$ParamsAddDoctor([void Function(ParamsAddDoctorBuilder) updates]) =>
-      (new ParamsAddDoctorBuilder()..update(updates)).build();
+  factory _$ParamsAddDoctor([void Function(ParamsAddDoctorBuilder)? updates]) =>
+      (new ParamsAddDoctorBuilder()..update(updates!)).build();
 
-  _$ParamsAddDoctor._({this.tokenuser, this.id, this.phone}) : super._() {
+  _$ParamsAddDoctor._({required this.tokenuser,required this.id,required this.phone}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'ParamsAddDoctor', 'tokenuser');
     BuiltValueNullFieldError.checkNotNull(id, 'ParamsAddDoctor', 'id');
@@ -619,7 +620,7 @@ class _$ParamsAddDoctor extends ParamsAddDoctor {
 
   @override
   ParamsAddDoctor rebuild(void Function(ParamsAddDoctorBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   ParamsAddDoctorBuilder toBuilder() =>
@@ -652,17 +653,17 @@ class _$ParamsAddDoctor extends ParamsAddDoctor {
 
 class ParamsAddDoctorBuilder
     implements Builder<ParamsAddDoctor, ParamsAddDoctorBuilder> {
-  _$ParamsAddDoctor _$v;
+  late _$ParamsAddDoctor? _$v;
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _id;
+  String _id = '';
   String get id => _$this._id;
   set id(String id) => _$this._id = id;
 
-  String _phone;
+  String _phone = '';
   String get phone => _$this._phone;
   set phone(String phone) => _$this._phone = phone;
 
@@ -686,7 +687,7 @@ class ParamsAddDoctorBuilder
   }
 
   @override
-  void update(void Function(ParamsAddDoctorBuilder) updates) {
+  void update(void Function(ParamsAddDoctorBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -709,17 +710,17 @@ class _$DataAddDoctor extends DataAddDoctor {
   @override
   final EtablissementAddDoctor etablissement;
 
-  factory _$DataAddDoctor([void Function(DataAddDoctorBuilder) updates]) =>
-      (new DataAddDoctorBuilder()..update(updates)).build();
+  factory _$DataAddDoctor([void Function(DataAddDoctorBuilder)? updates]) =>
+      (new DataAddDoctorBuilder()..update(updates!)).build();
 
-  _$DataAddDoctor._({this.etablissement}) : super._() {
+  _$DataAddDoctor._({required this.etablissement}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         etablissement, 'DataAddDoctor', 'etablissement');
   }
 
   @override
   DataAddDoctor rebuild(void Function(DataAddDoctorBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   DataAddDoctorBuilder toBuilder() => new DataAddDoctorBuilder()..replace(this);
@@ -745,9 +746,9 @@ class _$DataAddDoctor extends DataAddDoctor {
 
 class DataAddDoctorBuilder
     implements Builder<DataAddDoctor, DataAddDoctorBuilder> {
-  _$DataAddDoctor _$v;
+  late _$DataAddDoctor? _$v;
 
-  EtablissementAddDoctorBuilder _etablissement;
+  late EtablissementAddDoctorBuilder _etablissement;
   EtablissementAddDoctorBuilder get etablissement =>
       _$this._etablissement ??= new EtablissementAddDoctorBuilder();
   set etablissement(EtablissementAddDoctorBuilder etablissement) =>
@@ -771,18 +772,18 @@ class DataAddDoctorBuilder
   }
 
   @override
-  void update(void Function(DataAddDoctorBuilder) updates) {
+  void update(void Function(DataAddDoctorBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
   _$DataAddDoctor build() {
-    _$DataAddDoctor _$result;
+    late _$DataAddDoctor _$result;
     try {
       _$result =
           _$v ?? new _$DataAddDoctor._(etablissement: etablissement.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'etablissement';
         etablissement.build();
@@ -838,29 +839,30 @@ class _$EtablissementAddDoctor extends EtablissementAddDoctor {
   final int isother;
 
   factory _$EtablissementAddDoctor(
-          [void Function(EtablissementAddDoctorBuilder) updates]) =>
-      (new EtablissementAddDoctorBuilder()..update(updates)).build();
+          [void Function(EtablissementAddDoctorBuilder)? updates]) =>
+      (new EtablissementAddDoctorBuilder()..update(updates!)).build();
 
   _$EtablissementAddDoctor._(
-      {this.id,
-      this.nom,
-      this.address,
-      this.zip,
-      this.city,
-      this.internet,
-      this.idCity,
-      this.telnospace,
-      this.lat,
-      this.lng,
-      this.category,
-      this.idCategory,
-      this.icon,
-      this.kmDiff,
-      this.civility,
-      this.tel,
-      this.idAgenda,
-      this.appointment,
-      this.isother})
+      {
+      required this.id,
+      required this.nom,
+      required this.address,
+      required this.zip,
+      required this.city,
+      required this.internet,
+      required this.idCity,
+      required this.telnospace,
+      required this.lat,
+      required this.lng,
+      required this.category,
+      required this.idCategory,
+      required this.icon,
+      required this.kmDiff,
+      required this.civility,
+      required this.tel,
+      required this.idAgenda,
+      required this.appointment,
+      required this.isother})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'EtablissementAddDoctor', 'id');
     BuiltValueNullFieldError.checkNotNull(nom, 'EtablissementAddDoctor', 'nom');
@@ -899,7 +901,7 @@ class _$EtablissementAddDoctor extends EtablissementAddDoctor {
   @override
   EtablissementAddDoctor rebuild(
           void Function(EtablissementAddDoctorBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   EtablissementAddDoctorBuilder toBuilder() =>
@@ -1000,83 +1002,83 @@ class _$EtablissementAddDoctor extends EtablissementAddDoctor {
 
 class EtablissementAddDoctorBuilder
     implements Builder<EtablissementAddDoctor, EtablissementAddDoctorBuilder> {
-  _$EtablissementAddDoctor _$v;
+  _$EtablissementAddDoctor? _$v =_$EtablissementAddDoctor();
 
-  String _id;
+  String _id = '';
   String get id => _$this._id;
   set id(String id) => _$this._id = id;
 
-  String _nom;
+  String _nom = '';
   String get nom => _$this._nom;
   set nom(String nom) => _$this._nom = nom;
 
-  String _address;
+  String _address = '';
   String get address => _$this._address;
   set address(String address) => _$this._address = address;
 
-  String _zip;
+  String _zip = '';
   String get zip => _$this._zip;
   set zip(String zip) => _$this._zip = zip;
 
-  String _city;
+  String _city = '';
   String get city => _$this._city;
   set city(String city) => _$this._city = city;
 
-  int _internet;
+  int _internet = 0;
   int get internet => _$this._internet;
   set internet(int internet) => _$this._internet = internet;
 
-  String _idCity;
+  String _idCity ='';
   String get idCity => _$this._idCity;
   set idCity(String idCity) => _$this._idCity = idCity;
 
-  String _telnospace;
+  String _telnospace = '';
   String get telnospace => _$this._telnospace;
   set telnospace(String telnospace) => _$this._telnospace = telnospace;
 
-  String _lat;
+  String _lat ='';
   String get lat => _$this._lat;
   set lat(String lat) => _$this._lat = lat;
 
-  String _lng;
+  String _lng ='';
   String get lng => _$this._lng;
   set lng(String lng) => _$this._lng = lng;
 
-  String _category;
+  String _category ='';
   String get category => _$this._category;
   set category(String category) => _$this._category = category;
 
-  String _idCategory;
+  String _idCategory = '';
   String get idCategory => _$this._idCategory;
   set idCategory(String idCategory) => _$this._idCategory = idCategory;
 
-  String _icon;
+  String _icon = '';
   String get icon => _$this._icon;
   set icon(String icon) => _$this._icon = icon;
 
-  String _kmDiff;
+  String _kmDiff ='';
   String get kmDiff => _$this._kmDiff;
   set kmDiff(String kmDiff) => _$this._kmDiff = kmDiff;
 
-  String _civility;
+  String _civility='';
   String get civility => _$this._civility;
   set civility(String civility) => _$this._civility = civility;
 
-  String _tel;
+  String _tel = '';
   String get tel => _$this._tel;
   set tel(String tel) => _$this._tel = tel;
 
-  String _idAgenda;
+  String _idAgenda ='';
   String get idAgenda => _$this._idAgenda;
   set idAgenda(String idAgenda) => _$this._idAgenda = idAgenda;
 
-  AppointmentAddDoctorBuilder _appointment;
+  AppointmentAddDoctorBuilder _appointment = AppointmentAddDoctorBuilder();
   AppointmentAddDoctorBuilder get appointment =>
       _$this._appointment ??= new AppointmentAddDoctorBuilder();
   set appointment(AppointmentAddDoctorBuilder appointment) =>
       _$this._appointment = appointment;
 
-  int _isother;
+  int _isother =0;
   int get isother => _$this._isother;
   set isother(int isother) => _$this._isother = isother;
 
@@ -1116,13 +1118,13 @@ class EtablissementAddDoctorBuilder
   }
 
   @override
-  void update(void Function(EtablissementAddDoctorBuilder) updates) {
+  void update(void Function(EtablissementAddDoctorBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
   _$EtablissementAddDoctor build() {
-    _$EtablissementAddDoctor _$result;
+    late _$EtablissementAddDoctor _$result;
     try {
       _$result = _$v ??
           new _$EtablissementAddDoctor._(
@@ -1155,7 +1157,7 @@ class EtablissementAddDoctorBuilder
               appointment: appointment.build(),
               isother: BuiltValueNullFieldError.checkNotNull(isother, 'EtablissementAddDoctor', 'isother'));
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'appointment';
         appointment.build();
@@ -1175,10 +1177,10 @@ class _$AppointmentAddDoctor extends AppointmentAddDoctor {
   final String token;
 
   factory _$AppointmentAddDoctor(
-          [void Function(AppointmentAddDoctorBuilder) updates]) =>
-      (new AppointmentAddDoctorBuilder()..update(updates)).build();
+          [void Function(AppointmentAddDoctorBuilder)? updates]) =>
+      (new AppointmentAddDoctorBuilder()..update(updates!)).build();
 
-  _$AppointmentAddDoctor._({this.token}) : super._() {
+  _$AppointmentAddDoctor._({required this.token}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         token, 'AppointmentAddDoctor', 'token');
   }
@@ -1213,9 +1215,9 @@ class _$AppointmentAddDoctor extends AppointmentAddDoctor {
 
 class AppointmentAddDoctorBuilder
     implements Builder<AppointmentAddDoctor, AppointmentAddDoctorBuilder> {
-  _$AppointmentAddDoctor _$v;
+  late _$AppointmentAddDoctor? _$v;
 
-  String _token;
+  String _token = '';
   String get token => _$this._token;
   set token(String token) => _$this._token = token;
 
@@ -1237,7 +1239,7 @@ class AppointmentAddDoctorBuilder
   }
 
   @override
-  void update(void Function(AppointmentAddDoctorBuilder) updates) {
+  void update(void Function(AppointmentAddDoctorBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

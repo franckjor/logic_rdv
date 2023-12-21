@@ -24,22 +24,22 @@ class _$RemoveUserResponseSerializer
     final result = <Object>[
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsRemoveUserResponse)),
+          specifiedType: const FullType(ParamsRemoveUserResponse))!,
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int)),
+          specifiedType: const FullType(int))!,
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -47,7 +47,7 @@ class _$RemoveUserResponseSerializer
 
   @override
   RemoveUserResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new RemoveUserResponseBuilder();
 
@@ -55,7 +55,7 @@ class _$RemoveUserResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
@@ -106,7 +106,7 @@ class _$ParamsRemoveUserResponseSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -114,7 +114,7 @@ class _$ParamsRemoveUserResponseSerializer
 
   @override
   ParamsRemoveUserResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsRemoveUserResponseBuilder();
 
@@ -122,7 +122,7 @@ class _$ParamsRemoveUserResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -150,16 +150,17 @@ class _$RemoveUserResponse extends RemoveUserResponse {
   final String error;
 
   factory _$RemoveUserResponse(
-          [void Function(RemoveUserResponseBuilder) updates]) =>
-      (new RemoveUserResponseBuilder()..update(updates)).build();
+          [void Function(RemoveUserResponseBuilder)? updates]) =>
+      (new RemoveUserResponseBuilder()..update(updates!)).build();
 
   _$RemoveUserResponse._(
-      {this.version,
-      this.request,
-      this.params,
-      this.message,
-      this.httpstatut,
-      this.error})
+      {
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.message,
+      required this.httpstatut,
+      required this.error})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         version, 'RemoveUserResponse', 'version');
@@ -177,7 +178,7 @@ class _$RemoveUserResponse extends RemoveUserResponse {
   @override
   RemoveUserResponse rebuild(
           void Function(RemoveUserResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   RemoveUserResponseBuilder toBuilder() =>
@@ -222,30 +223,30 @@ class _$RemoveUserResponse extends RemoveUserResponse {
 
 class RemoveUserResponseBuilder
     implements Builder<RemoveUserResponse, RemoveUserResponseBuilder> {
-  _$RemoveUserResponse _$v;
+  _$RemoveUserResponse? _$v =_$RemoveUserResponse();
 
-  String _version;
+  String _version = '';
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request;
+  String _request = '';
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsRemoveUserResponseBuilder _params;
+  ParamsRemoveUserResponseBuilder _params =ParamsRemoveUserResponseBuilder();
   ParamsRemoveUserResponseBuilder get params =>
       _$this._params ??= new ParamsRemoveUserResponseBuilder();
   set params(ParamsRemoveUserResponseBuilder params) => _$this._params = params;
 
-  String _message;
+  String _message = '';
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  int _httpstatut;
+  int _httpstatut = 0;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
+  String _error = '';
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
@@ -272,7 +273,7 @@ class RemoveUserResponseBuilder
   }
 
   @override
-  void update(void Function(RemoveUserResponseBuilder) updates) {
+  void update(void Function(RemoveUserResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -294,7 +295,7 @@ class RemoveUserResponseBuilder
               error: BuiltValueNullFieldError.checkNotNull(
                   error, 'RemoveUserResponse', 'error'));
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'params';
         params.build();
@@ -314,10 +315,10 @@ class _$ParamsRemoveUserResponse extends ParamsRemoveUserResponse {
   final String tokenuser;
 
   factory _$ParamsRemoveUserResponse(
-          [void Function(ParamsRemoveUserResponseBuilder) updates]) =>
-      (new ParamsRemoveUserResponseBuilder()..update(updates)).build();
+          [void Function(ParamsRemoveUserResponseBuilder)? updates]) =>
+      (new ParamsRemoveUserResponseBuilder()..update(updates!)).build();
 
-  _$ParamsRemoveUserResponse._({this.tokenuser}) : super._() {
+  _$ParamsRemoveUserResponse._({required  this.tokenuser}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'ParamsRemoveUserResponse', 'tokenuser');
   }
@@ -353,9 +354,9 @@ class _$ParamsRemoveUserResponse extends ParamsRemoveUserResponse {
 class ParamsRemoveUserResponseBuilder
     implements
         Builder<ParamsRemoveUserResponse, ParamsRemoveUserResponseBuilder> {
-  _$ParamsRemoveUserResponse _$v;
+  _$ParamsRemoveUserResponse? _$v = _$ParamsRemoveUserResponse();
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
@@ -377,7 +378,7 @@ class ParamsRemoveUserResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsRemoveUserResponseBuilder) updates) {
+  void update(void Function(ParamsRemoveUserResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

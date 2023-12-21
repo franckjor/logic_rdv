@@ -3,8 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart' as foundation;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_credit_card/credit_card_form.dart';
-import 'package:flutter_credit_card/credit_card_model.dart';
+import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:intl/intl.dart';
 import 'package:logic_rdv_v0/src/common.dart';
 import 'package:logic_rdv_v0/src/core/bloc/bloc_of_shapreference/shared_preference.dart';
@@ -47,10 +46,10 @@ class ValidateRdvPageArguments implements PagesArgumentType {
   final String session;
 
   ValidateRdvPageArguments({
-    this.selectedPatientResponseForRdv,
-    this.birthdate,
-    this.session,
-    this.socialNumber,
+    required this.selectedPatientResponseForRdv,
+    required this.birthdate,
+    required this.session,
+    required this.socialNumber,
   });
 
   @override
@@ -62,7 +61,7 @@ class ValidateRdvPageArguments implements PagesArgumentType {
 class RdvValidate extends StatefulWidget {
   final ValidateRdvPageArguments arguments;
 
-  RdvValidate({this.arguments});
+  RdvValidate({required this.arguments});
 
   @override
   _RdvValidateState createState() => _RdvValidateState();
@@ -76,8 +75,8 @@ class _RdvValidateState extends State<RdvValidate> {
   TextEditingController _birthDateController = TextEditingController();
   TextEditingController _socialNumberController = TextEditingController();
   TextEditingController _rdvMotifController = TextEditingController();
-  String _data;
-  String _typState;
+  String _data ='';
+  String _typState ='';
 
   String cardNumber = '';
   String expiryDate = '';
@@ -85,7 +84,7 @@ class _RdvValidateState extends State<RdvValidate> {
   String cvvCode = '';
   bool isCvvFocused = false;
 
-  String _error;
+  String _error = '';
 
   _dialogToSayThatThisPatientHaveOneRdv() {
     if (widget.arguments.selectedPatientResponseForRdv.data.data.apptsinprogress
@@ -104,10 +103,10 @@ class _RdvValidateState extends State<RdvValidate> {
     widget.arguments.selectedPatientResponseForRdv.data.data.apptinput
         .forEach((p0) {
       if (p0.name == "client_birthday") {
-        _birthDateController.text = p0?.value ?? widget?.arguments?.birthdate;
+        _birthDateController.text = p0.value ?? widget.arguments.birthdate;
       } else if (p0.name == "client_nir") {
         _socialNumberController.text =
-            p0?.value ?? widget?.arguments?.socialNumber;
+            p0.value ?? widget.arguments.socialNumber;
       }
     });
 
@@ -138,9 +137,9 @@ class _RdvValidateState extends State<RdvValidate> {
     });
   }
 
-  String _email;
-  String _fullName;
-  String _tokenUser;
+  String _email = '';
+  String _fullName = '';
+  String _tokenuser = '';
   int _sendRequest = 0;
 
   @override
@@ -159,10 +158,10 @@ class _RdvValidateState extends State<RdvValidate> {
           }),
         ],
         child: MyDrawer(
-          tokenUser: _tokenUser,
+          tokenUser: _tokenuser,
           page: '0',
           email: _email,
-          fullNme: _fullName,
+          fullNme: _fullName, notification: false,
         ),
       ),
       appBar: AdaptativeAppBar(
@@ -172,16 +171,16 @@ class _RdvValidateState extends State<RdvValidate> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                : const Icon(
+                :  Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           )
         ],
       ),
@@ -217,7 +216,7 @@ class _RdvValidateState extends State<RdvValidate> {
                           buttonLabel: "Ok",
                           action: () {
                             Navigator.pop(context);
-                          });
+                          }, title: '', willPop: false);
                     } else if (state is AppointmentFailure) {
                       if (state.error == messageErrorTokenInvalid ||
                           state.error == messageErrorTokenExpired) {
@@ -238,7 +237,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
-                          ),
+                          ), title: '', buttonLabel: '',
                         );
                       } else if (state.error == invalidTokenUser) {
                         customAlert(
@@ -258,7 +257,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
-                          ),
+                          ), title: '', buttonLabel: '',
                         );
                       } else {
                         flushBarError(state.error, context);
@@ -344,8 +343,8 @@ class _RdvValidateState extends State<RdvValidate> {
                                             .data
                                             .data
                                             .apptbuttonvalidation
-                                            .onclickAction));
-                              });
+                                            .onclickAction, idDoctor: '', doctorName: '', tel: ''));
+                              }, alertType: null, title: '', buttonLabel: '', willPop: false);
                         }
                       });
                     } else if (state is CheckStateFailure) {
@@ -369,7 +368,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
-                          ),
+                          ), title: '', buttonLabel: '',
                         );
                       } else if (state.error == invalidTokenUser) {
                         customAlert(
@@ -389,7 +388,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
-                          ),
+                          ), title: '', buttonLabel: '',
                         );
                       } else {
                         if (state.error
@@ -409,7 +408,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                 state.error,
                                 textAlign: TextAlign.center,
                               ),
-                            ),
+                            ), title: '', buttonLabel: '', action: () {  }, willPop: false,
                           );
                         }
                       }
@@ -447,7 +446,7 @@ class _RdvValidateState extends State<RdvValidate> {
                             state.error,
                             textAlign: TextAlign.center,
                           ),
-                        ),
+                        ), title: '', buttonLabel: '', action: () {  }, willPop: false,
                       );
                     }
                   }),
@@ -455,11 +454,11 @@ class _RdvValidateState extends State<RdvValidate> {
                       listener: (context, state) {
                     if (state is SharedPreferenceReadObjectState) {
                       setState(() {
-                        _email = state.sharePreferenceObject.email;
-                        _fullName = state.sharePreferenceObject.firstName +
+                        _email = state.sharePreferenceObject!.email;
+                        _fullName = state.sharePreferenceObject!.firstName +
                             " " +
-                            state.sharePreferenceObject.lastName;
-                        _tokenUser = state.sharePreferenceObject.token;
+                            state.sharePreferenceObject!.lastName;
+                        _tokenuser = state.sharePreferenceObject!.token;
                       });
                     }
                   }),
@@ -523,7 +522,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                             horizontal: 16, vertical: 2),
                                         child: Row(
                                           children: [
-                                            const Icon(
+                                             Icon(
                                               Icons.schedule,
                                               color: AppColors.colorPrimary,
                                               size: 20,
@@ -546,7 +545,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                             horizontal: 16, vertical: 2),
                                         child: Row(
                                           children: [
-                                            const Icon(
+                                             Icon(
                                               Icons.person,
                                               color: AppColors.colorPrimary,
                                               size: 20,
@@ -567,7 +566,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                             horizontal: 16, vertical: 2),
                                         child: Row(
                                           children: [
-                                            const Icon(
+                                             Icon(
                                               Icons.shopping_bag,
                                               color: AppColors.colorPrimary,
                                               size: 20,
@@ -588,7 +587,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                             horizontal: 16, vertical: 2),
                                         child: Row(
                                           children: [
-                                            const Icon(
+                                             Icon(
                                               Icons.people,
                                               color: AppColors.colorPrimary,
                                               size: 20,
@@ -724,39 +723,39 @@ class _RdvValidateState extends State<RdvValidate> {
                                       .amount !=
                                   null,
                               child: CreditCardForm(
-                                cardNumber: null,
-                                expiryDate: null,
-                                cardHolderName: null,
-                                cvvCode: null,
-                                themeColor: Colors.grey,
+                                cardNumber: '',
+                                expiryDate: '',
+                                cardHolderName: '',
+                                cvvCode: '',
+                                //themeColor: Colors.grey,
                                 formKey: formKey,
                                 onCreditCardModelChange:
                                     onCreditCardModelChange,
                                 obscureCvv: false,
                                 obscureNumber: false,
                                 isHolderNameVisible: false,
-                                cardNumberDecoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: 'Numéro de la carte',
-                                  hintText: 'XXXX XXXX XXXX XXXX',
-                                ),
-                                expiryDateDecoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: 'Date expiration',
-                                  hintText: 'XX/XX',
-                                ),
-                                cvvCodeDecoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: 'CVV',
-                                  hintText: 'XXX',
-                                ),
-                                cardHolderDecoration: const InputDecoration(
-                                  enabled: false,
-                                  border: InputBorder.none,
-                                  labelStyle:
-                                      TextStyle(color: Colors.transparent),
-                                  labelText: 'CVV',
-                                ),
+                                // cardNumberDecoration: const InputDecoration(
+                                //   border: OutlineInputBorder(),
+                                //   labelText: 'Numéro de la carte',
+                                //   hintText: 'XXXX XXXX XXXX XXXX',
+                                // ),
+                                // expiryDateDecoration: const InputDecoration(
+                                //   border: OutlineInputBorder(),
+                                //   labelText: 'Date expiration',
+                                //   hintText: 'XX/XX',
+                                // ),
+                                // cvvCodeDecoration: const InputDecoration(
+                                //   border: OutlineInputBorder(),
+                                //   labelText: 'CVV',
+                                //   hintText: 'XXX',
+                                // ),
+                                // cardHolderDecoration: const InputDecoration(
+                                //   enabled: false,
+                                //   border: InputBorder.none,
+                                //   labelStyle:
+                                //       TextStyle(color: Colors.transparent),
+                                //   labelText: 'CVV',
+                                // ),
                               ),
                             ),
                             const SizedBox(height: 20),
@@ -893,11 +892,11 @@ class _RdvValidateState extends State<RdvValidate> {
                                             .label,
                                         style: TextStyle(fontSize: 11),
                                       ),
-                                      icon: const Icon(Icons.save),
+                                      icon:  Icon(Icons.save),
                                       onPressed: () {
                                         if (_birthDateController.text.isEmpty ||
                                             _rdvMotifController.text.isEmpty ||
-                                            !formKey.currentState.validate()) {
+                                            !formKey.currentState!.validate()) {
                                           customAlert(
                                             context: context,
                                             content: const Text(
@@ -905,7 +904,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                               textAlign: TextAlign.center,
                                             ),
                                             alertType: AlertType.info,
-                                            buttonLabel: "Ok",
+                                            buttonLabel: "Ok", title: '', action: () {  }, willPop: false,
                                           );
                                         } else {
                                           _data =
@@ -991,7 +990,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                             .label,
                                         style: const TextStyle(fontSize: 11),
                                       ),
-                                      icon: const Icon(Icons.save),
+                                      icon:  Icon(Icons.save),
                                       onPressed: () {
                                         if (_birthDateController.text.isEmpty ||
                                             _rdvMotifController.text.isEmpty) {
@@ -1002,7 +1001,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                               textAlign: TextAlign.center,
                                             ),
                                             alertType: AlertType.info,
-                                            buttonLabel: "Ok",
+                                            buttonLabel: "Ok", title: '', action: () {  }, willPop: false,
                                           );
                                         } else {
                                           _ackRdvProgressDialog

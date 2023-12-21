@@ -10,7 +10,7 @@ abstract class UserEvent extends Equatable {
 class UpdateUser extends UserEvent {
   final UserRequest userRequest;
 
-  UpdateUser({this.userRequest});
+  UpdateUser({required this.userRequest});
 
   @override
   List<Object> get props => [userRequest];
@@ -22,7 +22,7 @@ class UpdateUser extends UserEvent {
 class CheckOutUser extends UserEvent {
   final TokenUser tokenUser;
 
-  CheckOutUser({this.tokenUser});
+  CheckOutUser({required this.tokenUser});
 
   @override
   List<Object> get props => [tokenUser];

@@ -30,49 +30,49 @@ class _$CreateAppointmentRequestSerializer
       result
         ..add('tokenuser')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.tokenappointment;
     if (value != null) {
       result
         ..add('tokenappointment')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.week;
     if (value != null) {
       result
         ..add('week')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.data;
     if (value != null) {
       result
         ..add('data')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.action;
     if (value != null) {
       result
         ..add('action')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.session;
     if (value != null) {
       result
         ..add('session')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     return result;
   }
 
   @override
   CreateAppointmentRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CreateAppointmentRequestBuilder();
 
@@ -80,7 +80,7 @@ class _$CreateAppointmentRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -128,22 +128,23 @@ class _$CreateAppointmentRequest extends CreateAppointmentRequest {
   final String session;
 
   factory _$CreateAppointmentRequest(
-          [void Function(CreateAppointmentRequestBuilder) updates]) =>
-      (new CreateAppointmentRequestBuilder()..update(updates)).build();
+          [void Function(CreateAppointmentRequestBuilder)? updates]) =>
+      (new CreateAppointmentRequestBuilder()..update(updates!)).build();
 
   _$CreateAppointmentRequest._(
-      {this.tokenuser,
-      this.tokenappointment,
-      this.week,
-      this.data,
-      this.action,
-      this.session})
+      {
+      required this.tokenuser,
+      required this.tokenappointment,
+      required this.week,
+      required this.data,
+      required this.action,
+      required this.session})
       : super._();
 
   @override
   CreateAppointmentRequest rebuild(
           void Function(CreateAppointmentRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   CreateAppointmentRequestBuilder toBuilder() =>
@@ -189,30 +190,30 @@ class _$CreateAppointmentRequest extends CreateAppointmentRequest {
 class CreateAppointmentRequestBuilder
     implements
         Builder<CreateAppointmentRequest, CreateAppointmentRequestBuilder> {
-  _$CreateAppointmentRequest _$v;
+  _$CreateAppointmentRequest? _$v;
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappointment;
+  String _tokenappointment ='';
   String get tokenappointment => _$this._tokenappointment;
   set tokenappointment(String tokenappointment) =>
       _$this._tokenappointment = tokenappointment;
 
-  String _week;
+  String _week ='';
   String get week => _$this._week;
   set week(String week) => _$this._week = week;
 
-  String _data;
+  String _data ='';
   String get data => _$this._data;
   set data(String data) => _$this._data = data;
 
-  String _action;
+  String _action ='';
   String get action => _$this._action;
   set action(String action) => _$this._action = action;
 
-  String _session;
+  String _session = '';
   String get session => _$this._session;
   set session(String session) => _$this._session = session;
 
@@ -239,7 +240,7 @@ class CreateAppointmentRequestBuilder
   }
 
   @override
-  void update(void Function(CreateAppointmentRequestBuilder) updates) {
+  void update(void Function(CreateAppointmentRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

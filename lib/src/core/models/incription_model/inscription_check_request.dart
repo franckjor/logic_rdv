@@ -25,7 +25,7 @@ abstract class InscriptionCheckRequest
 
   static InscriptionCheckRequest fromJson(String jsonString) {
     return serializers.deserializeWith(
-        InscriptionCheckRequest.serializer, json.decode(jsonString));
+        InscriptionCheckRequest.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<InscriptionCheckRequest> get serializer =>

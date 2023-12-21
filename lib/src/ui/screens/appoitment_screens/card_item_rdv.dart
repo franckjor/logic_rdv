@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:intl/intl.dart';
 import 'package:logic_rdv_v0/src/common.dart';
@@ -13,13 +14,13 @@ class CardItemRdv extends StatefulWidget {
   final CabinetResponse cabinetResponse;
   final PatientResponse patientResponse;
   final AppointmentDataResponse appointmentDataResponse;
-  final Function onCancelAppointmentHandler;
+  final Function()? onCancelAppointmentHandler;
 
   CardItemRdv({
-    this.cabinetResponse,
-    this.patientResponse,
-    this.appointmentDataResponse,
-    this.onCancelAppointmentHandler,
+    required this.cabinetResponse,
+    required this.patientResponse,
+    required this.appointmentDataResponse,
+    required this.onCancelAppointmentHandler,
   });
 
   @override
@@ -29,16 +30,16 @@ class CardItemRdv extends StatefulWidget {
 class _CardItemRdvState extends State<CardItemRdv> {
   DateFormat format = DateFormat("dd/MM/yy");
   var formatterDate = new DateFormat('dd/MM/yy', 'fr').format(DateTime.now());
-  String _rdvDate;
-  String _dateOfAppointement;
-  DateTime _realyDateOfAppointement;
-  List<String> value;
+  String _rdvDate ='';
+  String _dateOfAppointement ='';
+  DateTime _realyDateOfAppointement = DateTime.now();
+  List<String> value = [];
   bool _enableRdv = false;
   bool _isTcBtnVisible = false;
-  DateTime _currentDate;
+  DateTime _currentDate =  DateTime.now() ;
   double _currentTime = toDoubleHour(TimeOfDay.now());
-  TimeOfDay _startTime;
-  double _rdvTime;
+  TimeOfDay _startTime = TimeOfDay.now();
+  double _rdvTime = 0.0;
 
   _getRdvDate() {
     _rdvDate = widget.appointmentDataResponse.date;
@@ -185,7 +186,7 @@ class _CardItemRdvState extends State<CardItemRdv> {
                         ),
                         Row(
                           children: [
-                            const Icon(
+                             Icon(
                               Icons.schedule,
                               size: 14,
                               color: Colors.white,
@@ -306,12 +307,19 @@ class _CardItemRdvState extends State<CardItemRdv> {
                             ),
                             child: CircleAvatar(
                               radius: 20,
-                              backgroundImage: widget.patientResponse.photo ==
-                                      ""
-                                  ? AssetImage('assets/images/medecin.png')
+                              backgroundImage: widget.patientResponse.photo == ""
+                                  ? AssetImage('assets/images/medecin.png') as ImageProvider<Object>?
                                   : NetworkImage(widget.patientResponse.photo),
                               backgroundColor: Colors.white,
                             ),
+                            // child: CircleAvatar(
+                            //   radius: 20,
+                            //   backgroundImage: widget.patientResponse.photo ==
+                            //           ""
+                            //       ? AssetImage('assets/images/medecin.png')
+                            //       : NetworkImage(widget.patientResponse.photo),
+                            //   backgroundColor: Colors.white,
+                            // ),
                           ),
                           title: Text(
                             widget.patientResponse.nom ?? '',
@@ -446,7 +454,7 @@ class _CardItemRdvState extends State<CardItemRdv> {
                                   shape: BoxShape.circle,
                                 ),
                                 child: IconButton(
-                                  icon: const Icon(
+                                  icon:  Icon(
                                     Icons.call,
                                     color: AppColors.whiteColor,
                                     size: 16,
@@ -482,7 +490,7 @@ class _CardItemRdvState extends State<CardItemRdv> {
                                 arguments: TeleconsArgument(
                                     tokentelecon: widget.appointmentDataResponse
                                         .tokentelecons)),
-                            icon: const Icon(
+                            icon:  Icon(
                               Icons.videocam,
                               size: 20,
                               color: Colors.transparent,
@@ -559,7 +567,7 @@ class _CardItemRdvState extends State<CardItemRdv> {
 /*
 class _CustomDivider extends StatelessWidget {
   const _CustomDivider({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -576,10 +584,10 @@ class _ContactButton extends StatelessWidget {
   final String label;
   final Function onTap;
   const _ContactButton({
-    Key key,
-    @required this.iconPath,
-    @required this.label,
-    @required this.onTap,
+    Key? key,
+    required this.iconPath,
+    required this.label,
+    required this.onTap,
   }) : super(key: key);
 
   @override

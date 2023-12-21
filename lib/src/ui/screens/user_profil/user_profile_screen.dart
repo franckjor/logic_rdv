@@ -35,26 +35,26 @@ class UserProfileScreen extends StatefulWidget {
 }
 
 class _UserProfileScreenState extends State<UserProfileScreen> {
-  String _email;
-  String _fullName;
-  String _tokenUser;
+  String _email = '';
+  String _fullName = '';
+  String _tokenuser = '';
   final _key = GlobalKey();
   bool _obscureText = true;
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final _formKey = GlobalKey<FormState>();
   double _textFieldHeight = 50;
-  FocusNode _focusNodeConnectButton;
+  late FocusNode _focusNodeConnectButton;
 
-  TextEditingController _nameController;
-  TextEditingController _surNameController;
-  TextEditingController _mobileController;
-  TextEditingController _emailController;
-  TextEditingController _adressController;
-  TextEditingController _villeController;
-  TextEditingController _postalCodeController;
-  TextEditingController _passwordController;
-  TextEditingController _passwordConfirmController;
+  late TextEditingController _nameController;
+  late TextEditingController _surNameController;
+  late TextEditingController _mobileController;
+  late TextEditingController _emailController;
+  late TextEditingController _adressController;
+  late TextEditingController _villeController;
+  late TextEditingController _postalCodeController;
+  late TextEditingController _passwordController;
+  late TextEditingController _passwordConfirmController;
 
   @override
   void initState() {
@@ -83,13 +83,13 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     prefs.remove(PreferenceKey.objectKey);
   }
 
-  String _installationIdKey;
-  String _isSubscribe;
-  bool _notification;
+  late String _installationIdKey;
+  late String _isSubscribe;
+  late bool _notification;
 
   Future<String> getInstalationIdKey() async {
     final prefs = await SharedPreferences.getInstance();
-    _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey);
+    _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey)!;
     print("InstallationIdHome: $_installationIdKey");
     return _installationIdKey;
   }
@@ -101,7 +101,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
 
   Future<String> getVerifyIfIsSubscribe() async {
     final prefs = await SharedPreferences.getInstance();
-    _isSubscribe = prefs.getString(PreferenceKey.isSubscribe);
+    _isSubscribe = prefs.getString(PreferenceKey.isSubscribe)!;
     print("_isSubscribe: $_isSubscribe");
     setState(() {
       if (_isSubscribe == "0") {
@@ -133,10 +133,10 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
           }),
         ],
         child: MyDrawer(
-          tokenUser: _tokenUser,
+          tokenUser: _tokenuser,
           page: '5',
           email: _email,
-          fullNme: _fullName,
+          fullNme: _fullName, notification: false,
         ),
       ),
       backgroundColor: AppColors.primaryColor,
@@ -146,16 +146,16 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                : const Icon(
+                :  Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -188,7 +188,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -208,7 +208,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else {
                 customAlert(
@@ -216,7 +216,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                   context: context,
                   content: Container(
                     child: Text(state.error),
-                  ),
+                  ), title: '', buttonLabel: '', action: () {  }, willPop: false,
                 );
               }
             }
@@ -270,16 +270,16 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
               listener: (context, state) {
             if (state is SharedPreferenceReadObjectState) {
               setState(() {
-                _tokenUser = state.sharePreferenceObject.token;
-                _email = state.sharePreferenceObject.email;
-                _fullName = state.sharePreferenceObject.firstName +
+                _tokenuser = state.sharePreferenceObject!.token;
+                _email = state.sharePreferenceObject!.email;
+                _fullName = state.sharePreferenceObject!.firstName +
                     " " +
-                    state.sharePreferenceObject.lastName;
-                _nameController.text = state.sharePreferenceObject.firstName;
-                _surNameController.text = state.sharePreferenceObject.lastName;
-                _emailController.text = state.sharePreferenceObject.email;
+                    state.sharePreferenceObject!.lastName;
+                _nameController.text = state.sharePreferenceObject!.firstName;
+                _surNameController.text = state.sharePreferenceObject!.lastName;
+                _emailController.text = state.sharePreferenceObject!.email;
                 _mobileController.text =
-                    state.sharePreferenceObject.phoneNumber;
+                    state.sharePreferenceObject!.phoneNumber;
               });
             }
           })
@@ -372,11 +372,11 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                               ? unSubscribe(
                                   context: context,
                                   installationkey: _installationIdKey,
-                                  tokenuser: _tokenUser)
+                                  tokenuser: _tokenuser)
                               : subscribe(
                                   context: context,
                                   installationkey: _installationIdKey,
-                                  tokenuser: _tokenUser);
+                                  tokenuser: _tokenuser);
                         },
                         activeTrackColor: AppColors.primaryColor,
                         activeColor: AppColors.primaryColor,
@@ -402,15 +402,15 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
 }
 
 class _ProfilMenuOption extends StatelessWidget {
-  final Function onTap;
+  final Function()? onTap;
   final IconData icon;
   final String title;
-  final Widget trailing;
+  final Widget? trailing;
   const _ProfilMenuOption({
-    Key key,
+    Key? key,
     this.onTap,
-    @required this.icon,
-    @required this.title,
+    required this.icon,
+    required this.title,
     this.trailing,
   }) : super(key: key);
 

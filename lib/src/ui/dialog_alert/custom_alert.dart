@@ -3,13 +3,13 @@ import 'package:logic_rdv_v0/src/ui/themes/sizes.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 customAlert({
-  @required BuildContext context,
-  AlertType alertType,
-  String title,
-  String buttonLabel,
-  Function action,
-  bool willPop,
-  @required Widget content,
+  required BuildContext context,
+  required AlertType? alertType,
+  required String title,
+  required String buttonLabel,
+  required Function()? action,
+  required bool willPop,
+  required Widget content,
   bool showCloseIcon = true,
 }) {
   return Alert(
@@ -19,7 +19,7 @@ customAlert({
     type: alertType,
     closeFunction: () => showCloseIcon ? null : Navigator.pop(context),
     closeIcon:
-        showCloseIcon ? const SizedBox.shrink() : const Icon(Icons.close),
+        showCloseIcon ? const SizedBox.shrink() :  Icon(Icons.close),
     style: AlertStyle(
         titleStyle: TextStyle(
       color: Theme.of(context).primaryColor,

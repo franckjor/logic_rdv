@@ -5,21 +5,21 @@ import 'package:logic_rdv_v0/src/core/models/login_model/forgot_password_request
 import 'package:logic_rdv_v0/src/core/models/login_model/login_request.dart';
 import 'package:logic_rdv_v0/src/core/models/login_model/login_started_request.dart';
 
-onPressedLoginButton({BuildContext context, String login, String password}) {
+onPressedLoginButton({required BuildContext context,required String login,required String password}) {
   LoginRequest _login = LoginRequest((builder) => builder
     ..password = password
     ..email = login);
   BlocProvider.of<LoginBloc>(context)..add(Login(loginRequest: _login));
 }
 
-onPressedResetPasswordButton({BuildContext context, String email}) {
+onPressedResetPasswordButton({required BuildContext context,required String email}) {
   ForgotPasswordRequest _resetPassword =
       ForgotPasswordRequest((builder) => builder..email = email);
   BlocProvider.of<LoginBloc>(context)
     ..add(ForgotPassword(email: _resetPassword));
 }
 
-onPressedLoginButtonForStarted({BuildContext context}) {
+onPressedLoginButtonForStarted({required BuildContext context}) {
   LoginStartedRequest _login = LoginStartedRequest((builder) => builder
     ..data = ""
     ..action = ""
@@ -28,7 +28,7 @@ onPressedLoginButtonForStarted({BuildContext context}) {
     ..add(LoginStarted(loginStartedRequest: _login));
 }
 
-onPressedLoginButtonForSearchEmail({BuildContext context,String data,String action,String session}) {
+onPressedLoginButtonForSearchEmail({required BuildContext context,required String data,required String action,required String session}) {
   LoginStartedRequest _login = LoginStartedRequest((builder) => builder
     ..data = data
     ..action = action
@@ -37,7 +37,7 @@ onPressedLoginButtonForSearchEmail({BuildContext context,String data,String acti
     ..add(LoginSearchEmail(loginStartedRequest: _login));
 }
 
-onPressedLoginButtonForSearchPass({BuildContext context,String data,String action,String session}) {
+onPressedLoginButtonForSearchPass({required BuildContext context,required String data,required String action,required String session}) {
   LoginStartedRequest _login = LoginStartedRequest((builder) =>
   builder
     ..data = data
@@ -46,7 +46,7 @@ onPressedLoginButtonForSearchPass({BuildContext context,String data,String actio
   BlocProvider.of<LoginBloc>(context)
     ..add(LoginSearchPass(loginStartedRequest: _login));
 }
-onPressedLoginButtonForForgotPassword({BuildContext context,String data,String action,String session}) {
+onPressedLoginButtonForForgotPassword({required BuildContext context,required String data,required String action,required String session}) {
   LoginStartedRequest _login = LoginStartedRequest((builder) => builder
     ..data = data
     ..action = action
@@ -56,7 +56,7 @@ onPressedLoginButtonForForgotPassword({BuildContext context,String data,String a
 }
 
 
-onPressedLoginButtonForSendCode({BuildContext context,String data,String action,String session}) {
+onPressedLoginButtonForSendCode({required BuildContext context,required String data,required String action,required String session}) {
   LoginStartedRequest _login = LoginStartedRequest((builder) => builder
     ..data = data
     ..action = action
@@ -65,7 +65,7 @@ onPressedLoginButtonForSendCode({BuildContext context,String data,String action,
     ..add(LoginForSendCode(loginStartedRequest: _login));
 }
 
-onPressedLoginButtonForNewPassword({BuildContext context,String data,String action,String session}) {
+onPressedLoginButtonForNewPassword({required BuildContext context,required String data,required String action,required String session}) {
   LoginStartedRequest _login = LoginStartedRequest((builder) => builder
     ..data = data
     ..action = action
@@ -74,7 +74,7 @@ onPressedLoginButtonForNewPassword({BuildContext context,String data,String acti
     ..add(LoginForNewPassword(loginStartedRequest: _login));
 }
 
-onPressedLoginButtonAskCodeSms({BuildContext context,String data,String action,String session}) {
+onPressedLoginButtonAskCodeSms({required BuildContext context,required String data,required String action,required String session}) {
   LoginStartedRequest _login = LoginStartedRequest((builder) => builder
     ..data = data
     ..action = action

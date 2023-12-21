@@ -38,7 +38,7 @@ abstract class MessageResponse
 
   static MessageResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        MessageResponse.serializer, json.decode(jsonString));
+        MessageResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<MessageResponse> get serializer =>
@@ -63,7 +63,7 @@ abstract class ParamsMessageResponse
 
   static ParamsMessageResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsMessageResponse.serializer, json.decode(jsonString));
+        ParamsMessageResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<ParamsMessageResponse> get serializer =>
@@ -88,7 +88,7 @@ abstract class DataMessageResponse
 
   static DataMessageResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        DataMessageResponse.serializer, json.decode(jsonString));
+        DataMessageResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<DataMessageResponse> get serializer =>
@@ -129,7 +129,7 @@ abstract class MessageDataResponse
 
   static MessageDataResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        MessageDataResponse.serializer, json.decode(jsonString));
+        MessageDataResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<MessageDataResponse> get serializer =>

@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/notification/reposito
 class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
   final NotificationRepository repository;
 
-  NotificationBloc({@required this.repository}) : super(NotificationLoading());
+  NotificationBloc({required this.repository}) : super(NotificationLoading());
 
   @override
   NotificationState get initialState => NotificationLoading();

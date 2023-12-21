@@ -8,7 +8,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/version/repository/ve
 class VersionBloc extends Bloc<VersionEvent, VersionState> {
   final VersionRepository repository;
 
-  VersionBloc({@required this.repository}) : super(VersionLoading());
+  VersionBloc({required this.repository}) : super(VersionLoading());
 
   @override
   Stream<VersionState> mapEventToState(VersionEvent event) async* {

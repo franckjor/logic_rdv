@@ -25,13 +25,14 @@ class GetCredentialsTokboxPageArguments implements PagesArgumentType {
   final String Patient;
 
   GetCredentialsTokboxPageArguments(
-      {this.API_KEY,
-      this.SESSION_ID,
-      this.TOKENTELECONS,
-      this.TOKEN,
-      this.Date,
-      this.Doctor,
-      this.Patient});
+      {
+      required this.API_KEY,
+      required this.SESSION_ID,
+      required this.TOKENTELECONS,
+      required this.TOKEN,
+      required this.Date,
+      required this.Doctor,
+      required this.Patient});
 
   @override
   getArguments() {
@@ -42,7 +43,7 @@ class GetCredentialsTokboxPageArguments implements PagesArgumentType {
 class TeleconsultationScreen extends StatefulWidget {
   final GetCredentialsTokboxPageArguments arguments;
 
-  TeleconsultationScreen({this.arguments});
+  TeleconsultationScreen({required this.arguments});
 
   @override
   _TeleconsultationScreenState createState() => _TeleconsultationScreenState();
@@ -356,7 +357,7 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
               surfaceFactory:
                   (BuildContext context, PlatformViewController controller) {
                 return AndroidViewSurface(
-                  controller: controller,
+                  controller: controller as AndroidViewController,
                   gestureRecognizers: const <
                       Factory<OneSequenceGestureRecognizer>>{},
                   hitTestBehavior: PlatformViewHitTestBehavior.opaque,

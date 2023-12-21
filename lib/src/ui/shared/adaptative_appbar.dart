@@ -11,14 +11,14 @@ bool get isWeb => foundation.kIsWeb;
 class AdaptativeAppBar extends StatelessWidget implements PreferredSize {
   final String title;
   final Color backgroundColor;
-  final Widget leading;
+  final Widget? leading;
   final List<Widget> actions;
   const AdaptativeAppBar({
-    Key key,
-    this.title,
+    Key? key,
+    required this.title,
     this.backgroundColor = AppColors.primaryColor,
-    this.leading,
-    this.actions,
+    required this.leading,
+    required this.actions,
   }) : super(key: key);
 
   @override

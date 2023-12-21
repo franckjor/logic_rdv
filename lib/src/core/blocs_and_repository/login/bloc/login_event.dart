@@ -11,7 +11,7 @@ abstract class LoginEvent extends Equatable {
 class Login extends LoginEvent {
   final LoginRequest loginRequest;
 
-  Login({this.loginRequest});
+  Login({required this.loginRequest});
 
   @override
   List<Object> get props => [loginRequest];
@@ -23,7 +23,7 @@ class Login extends LoginEvent {
 class LoginStarted extends LoginEvent {
   final LoginStartedRequest loginStartedRequest;
 
-  LoginStarted({this.loginStartedRequest});
+  LoginStarted({required this.loginStartedRequest});
 
   @override
   List<Object> get props => [loginStartedRequest];
@@ -35,7 +35,7 @@ class LoginStarted extends LoginEvent {
 class LoginSearchEmail extends LoginEvent {
   final LoginStartedRequest loginStartedRequest;
 
-  LoginSearchEmail({this.loginStartedRequest});
+  LoginSearchEmail({required this.loginStartedRequest});
 
   @override
   List<Object> get props => [loginStartedRequest];
@@ -47,7 +47,7 @@ class LoginSearchEmail extends LoginEvent {
 class LoginSearchPass extends LoginEvent {
   final LoginStartedRequest loginStartedRequest;
 
-  LoginSearchPass({this.loginStartedRequest});
+  LoginSearchPass({required this.loginStartedRequest});
 
   @override
   List<Object> get props => [loginStartedRequest];
@@ -59,7 +59,7 @@ class LoginSearchPass extends LoginEvent {
 class LoginForForgotPassword extends LoginEvent {
   final LoginStartedRequest loginStartedRequest;
 
-  LoginForForgotPassword({this.loginStartedRequest});
+  LoginForForgotPassword({required this.loginStartedRequest});
 
   @override
   List<Object> get props => [loginStartedRequest];
@@ -71,7 +71,7 @@ class LoginForForgotPassword extends LoginEvent {
 class LoginForSendCode extends LoginEvent {
   final LoginStartedRequest loginStartedRequest;
 
-  LoginForSendCode({this.loginStartedRequest});
+  LoginForSendCode({required this.loginStartedRequest});
 
   @override
   List<Object> get props => [loginStartedRequest];
@@ -82,7 +82,7 @@ class LoginForSendCode extends LoginEvent {
 class LoginForNewPassword extends LoginEvent {
   final LoginStartedRequest loginStartedRequest;
 
-  LoginForNewPassword({this.loginStartedRequest});
+  LoginForNewPassword({required this.loginStartedRequest});
 
   @override
   List<Object> get props => [loginStartedRequest];
@@ -93,7 +93,7 @@ class LoginForNewPassword extends LoginEvent {
 class LoginForAsckcode extends LoginEvent {
   final LoginStartedRequest loginStartedRequest;
 
-  LoginForAsckcode({this.loginStartedRequest});
+  LoginForAsckcode({required this.loginStartedRequest});
 
   @override
   List<Object> get props => [loginStartedRequest];
@@ -105,7 +105,7 @@ class LoginForAsckcode extends LoginEvent {
 class ForgotPassword extends LoginEvent {
   final ForgotPasswordRequest email;
 
-  ForgotPassword({this.email});
+  ForgotPassword({required this.email});
 
   @override
   List<Object> get props => [email];

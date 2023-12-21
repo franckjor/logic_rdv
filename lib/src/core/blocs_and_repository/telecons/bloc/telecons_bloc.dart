@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/telecons/telecons_rep
 class TeleconsBloc extends Bloc<TeleconsEvent, TeleconsState> {
   final TeleconsRepository repository;
 
-  TeleconsBloc({@required this.repository}) : super(TeleconsLoading());
+  TeleconsBloc({required this.repository}) : super(TeleconsLoading());
 
   @override
   TeleconsState get initialState => TeleconsLoading();

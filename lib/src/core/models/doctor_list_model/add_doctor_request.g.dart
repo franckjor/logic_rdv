@@ -22,12 +22,12 @@ class _$AddDoctorRequestSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
+      serializers.serialize(object.id, specifiedType: const FullType(String))!,
       'phone',
       serializers.serialize(object.phone,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -35,7 +35,7 @@ class _$AddDoctorRequestSerializer
 
   @override
   AddDoctorRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AddDoctorRequestBuilder();
 
@@ -43,7 +43,7 @@ class _$AddDoctorRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -73,10 +73,10 @@ class _$AddDoctorRequest extends AddDoctorRequest {
   final String phone;
 
   factory _$AddDoctorRequest(
-          [void Function(AddDoctorRequestBuilder) updates]) =>
-      (new AddDoctorRequestBuilder()..update(updates)).build();
+          [void Function(AddDoctorRequestBuilder)? updates]) =>
+      (new AddDoctorRequestBuilder()..update(updates!)).build();
 
-  _$AddDoctorRequest._({this.tokenuser, this.id, this.phone}) : super._() {
+  _$AddDoctorRequest._({required this.tokenuser,required this.id,required  this.phone}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'AddDoctorRequest', 'tokenuser');
     BuiltValueNullFieldError.checkNotNull(id, 'AddDoctorRequest', 'id');
@@ -85,7 +85,7 @@ class _$AddDoctorRequest extends AddDoctorRequest {
 
   @override
   AddDoctorRequest rebuild(void Function(AddDoctorRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   AddDoctorRequestBuilder toBuilder() =>
@@ -118,17 +118,17 @@ class _$AddDoctorRequest extends AddDoctorRequest {
 
 class AddDoctorRequestBuilder
     implements Builder<AddDoctorRequest, AddDoctorRequestBuilder> {
-  _$AddDoctorRequest _$v;
+  _$AddDoctorRequest? _$v;
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _id;
+  String _id = '';
   String get id => _$this._id;
   set id(String id) => _$this._id = id;
 
-  String _phone;
+  String _phone = '';
   String get phone => _$this._phone;
   set phone(String phone) => _$this._phone = phone;
 
@@ -152,7 +152,7 @@ class AddDoctorRequestBuilder
   }
 
   @override
-  void update(void Function(AddDoctorRequestBuilder) updates) {
+  void update(void Function(AddDoctorRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

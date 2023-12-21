@@ -25,31 +25,31 @@ class _$CreatePatientRequestSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
+      serializers.serialize(object.id, specifiedType: const FullType(String))!,
       'code',
-      serializers.serialize(object.code, specifiedType: const FullType(String)),
+      serializers.serialize(object.code, specifiedType: const FullType(String))!,
       'nom',
-      serializers.serialize(object.nom, specifiedType: const FullType(String)),
+      serializers.serialize(object.nom, specifiedType: const FullType(String))!,
       'prenom',
       serializers.serialize(object.prenom,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'mobile',
       serializers.serialize(object.mobile,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'email',
       serializers.serialize(object.email,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'pass1',
       serializers.serialize(object.pass1,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'pass2',
       serializers.serialize(object.pass2,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'cgu',
-      serializers.serialize(object.cgu, specifiedType: const FullType(String)),
+      serializers.serialize(object.cgu, specifiedType: const FullType(String))!,
       'phone',
       serializers.serialize(object.phone,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -57,7 +57,7 @@ class _$CreatePatientRequestSerializer
 
   @override
   CreatePatientRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CreatePatientRequestBuilder();
 
@@ -65,7 +65,7 @@ class _$CreatePatientRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
@@ -137,20 +137,21 @@ class _$CreatePatientRequest extends CreatePatientRequest {
   final String phone;
 
   factory _$CreatePatientRequest(
-          [void Function(CreatePatientRequestBuilder) updates]) =>
-      (new CreatePatientRequestBuilder()..update(updates)).build();
+          [void Function(CreatePatientRequestBuilder)? updates]) =>
+      (new CreatePatientRequestBuilder()..update(updates!)).build();
 
   _$CreatePatientRequest._(
-      {this.id,
-      this.code,
-      this.nom,
-      this.prenom,
-      this.mobile,
-      this.email,
-      this.pass1,
-      this.pass2,
-      this.cgu,
-      this.phone})
+      {
+      required this.id,
+      required this.code,
+      required this.nom,
+      required this.prenom,
+      required this.mobile,
+      required this.email,
+      required this.pass1,
+      required this.pass2,
+      required this.cgu,
+      required this.phone})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'CreatePatientRequest', 'id');
     BuiltValueNullFieldError.checkNotNull(code, 'CreatePatientRequest', 'code');
@@ -173,7 +174,7 @@ class _$CreatePatientRequest extends CreatePatientRequest {
   @override
   CreatePatientRequest rebuild(
           void Function(CreatePatientRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   CreatePatientRequestBuilder toBuilder() =>
@@ -234,45 +235,45 @@ class _$CreatePatientRequest extends CreatePatientRequest {
 
 class CreatePatientRequestBuilder
     implements Builder<CreatePatientRequest, CreatePatientRequestBuilder> {
-  _$CreatePatientRequest _$v;
+  _$CreatePatientRequest? _$v =_$CreatePatientRequest();
 
-  String _id;
+  String _id = '';
   String get id => _$this._id;
   set id(String id) => _$this._id = id;
 
-  String _code;
+  String _code= '';
   String get code => _$this._code;
   set code(String code) => _$this._code = code;
 
-  String _nom;
+  String _nom = '';
   String get nom => _$this._nom;
   set nom(String nom) => _$this._nom = nom;
 
-  String _prenom;
+  String _prenom = '';
   String get prenom => _$this._prenom;
   set prenom(String prenom) => _$this._prenom = prenom;
 
-  String _mobile;
+  String _mobile ='';
   String get mobile => _$this._mobile;
   set mobile(String mobile) => _$this._mobile = mobile;
 
-  String _email;
+  String _email = '';
   String get email => _$this._email;
   set email(String email) => _$this._email = email;
 
-  String _pass1;
+  String _pass1='';
   String get pass1 => _$this._pass1;
   set pass1(String pass1) => _$this._pass1 = pass1;
 
-  String _pass2;
+  String _pass2='';
   String get pass2 => _$this._pass2;
   set pass2(String pass2) => _$this._pass2 = pass2;
 
-  String _cgu;
+  String _cgu ='';
   String get cgu => _$this._cgu;
   set cgu(String cgu) => _$this._cgu = cgu;
 
-  String _phone;
+  String _phone = '';
   String get phone => _$this._phone;
   set phone(String phone) => _$this._phone = phone;
 
@@ -303,7 +304,7 @@ class CreatePatientRequestBuilder
   }
 
   @override
-  void update(void Function(CreatePatientRequestBuilder) updates) {
+  void update(void Function(CreatePatientRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

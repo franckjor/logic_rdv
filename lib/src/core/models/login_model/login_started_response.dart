@@ -37,7 +37,7 @@ abstract class LoginStartedResponse
 
   static LoginStartedResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        LoginStartedResponse.serializer, json.decode(jsonString));
+        LoginStartedResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<LoginStartedResponse> get serializer =>
@@ -61,7 +61,7 @@ abstract class ParamsLoginStartedResponse implements Built<ParamsLoginStartedRes
 
   static ParamsLoginStartedResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsLoginStartedResponse.serializer, json.decode(jsonString));
+        ParamsLoginStartedResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<ParamsLoginStartedResponse> get serializer => _$paramsLoginStartedResponseSerializer;
@@ -90,7 +90,7 @@ abstract class DataLoginStartedResponse implements Built<DataLoginStartedRespons
 
   static DataLoginStartedResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        DataLoginStartedResponse.serializer, json.decode(jsonString));
+        DataLoginStartedResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<DataLoginStartedResponse> get serializer => _$dataLoginStartedResponseSerializer;
@@ -122,7 +122,7 @@ abstract class InputloginStartedResponse
 
   static InputloginStartedResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        InputloginStartedResponse.serializer, json.decode(jsonString));
+        InputloginStartedResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<InputloginStartedResponse> get serializer =>
@@ -156,7 +156,7 @@ abstract class ButtonvalidationloginStartedResponse
   static ButtonvalidationloginStartedResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
         ButtonvalidationloginStartedResponse.serializer,
-        json.decode(jsonString));
+        json.decode(jsonString))!;
   }
 
   static Serializer<ButtonvalidationloginStartedResponse> get serializer =>

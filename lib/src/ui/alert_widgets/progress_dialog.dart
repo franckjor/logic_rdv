@@ -13,11 +13,12 @@ double _progress = 0.0;
 bool _isShowing = false;
 
 class ProgressDialog {
-  _MyDialog _dialog;
+  late _MyDialog _dialog;
 
-  BuildContext _buildContext, _context;
+  BuildContext _buildContext;
 
   ProgressDialog(this._buildContext, ProgressDialogType progressDialogtype) {
+    
     _progressDialogType = progressDialogtype;
   }
 
@@ -26,7 +27,7 @@ class ProgressDialog {
     debugPrint("ProgressDialog message changed: $mess");
   }
 
-  void update({double progress, String message}) {
+  void update({required double progress,required String message}) {
     debugPrint("ProgressDialog message changed: ");
     if (_progressDialogType == ProgressDialogType.Download) {
       debugPrint("Old Progress: $_progress, New Progress: $progress");
@@ -58,7 +59,6 @@ class ProgressDialog {
         context: _buildContext,
         barrierDismissible: false,
         builder: (BuildContext context) {
-          _context = context;
           return Dialog(
               insetAnimationCurve: Curves.easeInOut,
               backgroundColor: AppColors.whiteColor,
@@ -149,7 +149,7 @@ class MessageBox {
     _showDialog();
   }
 
-  Future _showDialog() {
+  Future? _showDialog() {
     showDialog(
       context: buildContext,
       barrierDismissible: false,

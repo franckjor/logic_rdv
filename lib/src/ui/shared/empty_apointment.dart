@@ -3,7 +3,7 @@ import 'package:logic_rdv_v0/src/ui/themes/colors.dart';
 
 class EmptyApointmentWidget extends StatelessWidget {
   const EmptyApointmentWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

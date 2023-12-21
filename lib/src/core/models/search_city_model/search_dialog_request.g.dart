@@ -26,11 +26,11 @@ class _$SearchDialogRequestSerializer
     final result = <Object>[
       'address',
       serializers.serialize(object.address,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'zip',
-      serializers.serialize(object.zip, specifiedType: const FullType(String)),
+      serializers.serialize(object.zip, specifiedType: const FullType(String))!,
       'city',
-      serializers.serialize(object.city, specifiedType: const FullType(String)),
+      serializers.serialize(object.city, specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -38,7 +38,7 @@ class _$SearchDialogRequestSerializer
 
   @override
   SearchDialogRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SearchDialogRequestBuilder();
 
@@ -46,7 +46,7 @@ class _$SearchDialogRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'address':
           result.address = serializers.deserialize(value,
@@ -76,10 +76,10 @@ class _$SearchDialogRequest extends SearchDialogRequest {
   final String city;
 
   factory _$SearchDialogRequest(
-          [void Function(SearchDialogRequestBuilder) updates]) =>
-      (new SearchDialogRequestBuilder()..update(updates)).build();
+          [void Function(SearchDialogRequestBuilder)? updates]) =>
+      (new SearchDialogRequestBuilder()..update(updates!)).build();
 
-  _$SearchDialogRequest._({this.address, this.zip, this.city}) : super._() {
+  _$SearchDialogRequest._({required this.address,required this.zip,required this.city}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         address, 'SearchDialogRequest', 'address');
     BuiltValueNullFieldError.checkNotNull(zip, 'SearchDialogRequest', 'zip');
@@ -89,7 +89,7 @@ class _$SearchDialogRequest extends SearchDialogRequest {
   @override
   SearchDialogRequest rebuild(
           void Function(SearchDialogRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   SearchDialogRequestBuilder toBuilder() =>
@@ -121,17 +121,17 @@ class _$SearchDialogRequest extends SearchDialogRequest {
 
 class SearchDialogRequestBuilder
     implements Builder<SearchDialogRequest, SearchDialogRequestBuilder> {
-  _$SearchDialogRequest _$v;
+  _$SearchDialogRequest? _$v = _$SearchDialogRequest();
 
-  String _address;
+  String _address = '';
   String get address => _$this._address;
   set address(String address) => _$this._address = address;
 
-  String _zip;
+  String _zip = '';
   String get zip => _$this._zip;
   set zip(String zip) => _$this._zip = zip;
 
-  String _city;
+  String _city = '';
   String get city => _$this._city;
   set city(String city) => _$this._city = city;
 
@@ -155,7 +155,7 @@ class SearchDialogRequestBuilder
   }
 
   @override
-  void update(void Function(SearchDialogRequestBuilder) updates) {
+  void update(void Function(SearchDialogRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

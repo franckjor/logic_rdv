@@ -1,6 +1,6 @@
 class RdvDate {
-  String day;
-  List<MomentRdv> momentRdv;
+  String? day;
+  List<MomentRdv>? momentRdv;
 
   RdvDate({
     this.day,
@@ -9,8 +9,8 @@ class RdvDate {
 }
 
 class MomentRdv {
-  String startedTime;
-  String doctorName;
+  String ?startedTime;
+  String? doctorName;
 
   MomentRdv({
     this.startedTime,

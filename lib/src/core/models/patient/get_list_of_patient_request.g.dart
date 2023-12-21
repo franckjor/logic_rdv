@@ -26,10 +26,10 @@ class _$GetListOfPatientRequestSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'tokenappt',
       serializers.serialize(object.tokenappt,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -37,7 +37,7 @@ class _$GetListOfPatientRequestSerializer
 
   @override
   GetListOfPatientRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new GetListOfPatientRequestBuilder();
 
@@ -45,7 +45,7 @@ class _$GetListOfPatientRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -69,10 +69,10 @@ class _$GetListOfPatientRequest extends GetListOfPatientRequest {
   final String tokenappt;
 
   factory _$GetListOfPatientRequest(
-          [void Function(GetListOfPatientRequestBuilder) updates]) =>
-      (new GetListOfPatientRequestBuilder()..update(updates)).build();
+          [void Function(GetListOfPatientRequestBuilder)? updates]) =>
+      (new GetListOfPatientRequestBuilder()..update(updates!)).build();
 
-  _$GetListOfPatientRequest._({this.tokenuser, this.tokenappt}) : super._() {
+  _$GetListOfPatientRequest._({required this.tokenuser,required this.tokenappt}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'GetListOfPatientRequest', 'tokenuser');
     BuiltValueNullFieldError.checkNotNull(
@@ -82,7 +82,7 @@ class _$GetListOfPatientRequest extends GetListOfPatientRequest {
   @override
   GetListOfPatientRequest rebuild(
           void Function(GetListOfPatientRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   GetListOfPatientRequestBuilder toBuilder() =>
@@ -113,13 +113,13 @@ class _$GetListOfPatientRequest extends GetListOfPatientRequest {
 class GetListOfPatientRequestBuilder
     implements
         Builder<GetListOfPatientRequest, GetListOfPatientRequestBuilder> {
-  _$GetListOfPatientRequest _$v;
+  _$GetListOfPatientRequest? _$v =_$GetListOfPatientRequest();
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappt;
+  String _tokenappt = '';
   String get tokenappt => _$this._tokenappt;
   set tokenappt(String tokenappt) => _$this._tokenappt = tokenappt;
 
@@ -142,7 +142,7 @@ class GetListOfPatientRequestBuilder
   }
 
   @override
-  void update(void Function(GetListOfPatientRequestBuilder) updates) {
+  void update(void Function(GetListOfPatientRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

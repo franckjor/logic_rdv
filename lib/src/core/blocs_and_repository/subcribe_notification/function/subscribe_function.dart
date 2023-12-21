@@ -4,9 +4,9 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/subcribe_notification
 import 'package:logic_rdv_v0/src/core/models/subscribe_notification/subscribe_request.dart';
 
 subscribe({
-  BuildContext context,
-  String tokenuser,
-  String installationkey,
+  required BuildContext context,
+  required String tokenuser,
+  required String installationkey,
 }) {
   SubscribeRequest subscribe = SubscribeRequest((builder) => builder
       ..tokenuser = tokenuser
@@ -18,9 +18,9 @@ subscribe({
 }
 
 unSubscribe({
-  BuildContext context,
-  String tokenuser,
-  String installationkey,
+ required BuildContext context,
+ required String tokenuser,
+ required String installationkey,
 }) {
   SubscribeRequest subscribe = SubscribeRequest((builder) => builder
       ..tokenuser = tokenuser
@@ -31,9 +31,9 @@ unSubscribe({
 
 }
 isSubscribe({
-  BuildContext context,
-  String tokenuser,
-  String installationkey,
+ required  BuildContext context,
+ required  String tokenuser,
+ required  String installationkey,
 }) {
   SubscribeRequest subscribe = SubscribeRequest((builder) => builder
       ..tokenuser = tokenuser

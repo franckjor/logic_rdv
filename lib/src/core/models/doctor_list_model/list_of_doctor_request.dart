@@ -40,7 +40,7 @@ abstract class ListOfDoctorRequest
 
   static ListOfDoctorRequest fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ListOfDoctorRequest.serializer, json.decode(jsonString));
+        ListOfDoctorRequest.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<ListOfDoctorRequest> get serializer =>

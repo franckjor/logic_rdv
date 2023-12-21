@@ -7,21 +7,21 @@ class ErrorInterceptor {
 
   ErrorInterceptor(this._loggingInterceptor);
 
-  DioError getErrorInterceptors(DioError dioError) {
-    if (checkConnection(dioError)) {
-      return dioError;
+  DioException getErrorInterceptors(DioException DioException) {
+    if (checkConnection(DioException)) {
+      return DioException;
     }
 
-    _loggingInterceptor.printError(dioError);
-    return dioError;
+    _loggingInterceptor.printError(DioException);
+    return DioException;
   }
 
   /// Method to verify if there is a problem connecting to the internet so that we can show a message
   /// to the user with the problem
   ///
   /// This is given by the Dio Error Type of `DEFAULT`
-  bool checkConnection(DioError error) {
-    if (error.type == DioErrorType.DEFAULT) {
+  bool checkConnection(DioException error) {
+    if (error.type == DioExceptionType.unknown) {
       return true;
     }
     return false;

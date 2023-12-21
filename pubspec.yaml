@@ -58,7 +58,7 @@ dependencies:
   permission_handler: ^11.0.0
   #  flutter_stripe: ^2.0.2
   image_picker: ^1.0.5
-  flutter_stripe: ^9.6.0
+  flutter_stripe: ^10.0.0
   #screen: ^0.0.5
 
 dev_dependencies:

@@ -14,18 +14,18 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 class TokenAppoitment {
   String tokenApp;
 
-  TokenAppoitment({this.tokenApp});
+  TokenAppoitment({required this.tokenApp});
 }
 
 class WhenPatientHaveRdv extends StatefulWidget {
   final SelectedPatientResponseForRdv selectedPatientResponseForRdv;
   final String tokenUser;
-  final Function onPressedContinueApp;
+  final Function()? onPressedContinueApp;
 
   WhenPatientHaveRdv({
-    this.selectedPatientResponseForRdv,
-    this.tokenUser,
-    this.onPressedContinueApp,
+    required this.selectedPatientResponseForRdv,
+    required this.tokenUser,
+    required this.onPressedContinueApp,
   });
 
   @override
@@ -33,8 +33,8 @@ class WhenPatientHaveRdv extends StatefulWidget {
 }
 
 class _WhenPatientHaveRdvState extends State<WhenPatientHaveRdv> {
-  TokenAppoitment _mytoken;
-  int _currentIndex;
+  late TokenAppoitment _mytoken;
+  int _currentIndex = 0;
   List<Appts> _myApptsList = [];
   List<Appts> _myCancelApptsList = [];
   @override
@@ -73,7 +73,7 @@ class _WhenPatientHaveRdvState extends State<WhenPatientHaveRdv> {
                     _myApptsList = _myCancelApptsList;
                     Navigator.pop(context);
                   });
-                });
+                }, title: '', buttonLabel: '', willPop: false);
           } else if (state is AppointmentFailure) {
             if (state.error == messageErrorTokenInvalid ||
                 state.error == messageErrorTokenExpired) {
@@ -94,7 +94,7 @@ class _WhenPatientHaveRdvState extends State<WhenPatientHaveRdv> {
                       fontWeight: FontWeight.normal,
                     ),
                   ),
-                ),
+                ), title: '', buttonLabel: '',
               );
             } else {
               flushBarError(state.error, context);
@@ -180,7 +180,7 @@ class _WhenPatientHaveRdvState extends State<WhenPatientHaveRdv> {
                               tokenUser: widget.tokenUser,
                               tokenAppointment: _myApptsList[i].token,
                             );
-                          },
+                          }, alertType: null, confirmButtonLabel: '', cancelButtonLabel: '',
                         );
                       },
                     ),

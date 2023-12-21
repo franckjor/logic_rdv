@@ -43,25 +43,25 @@ class _$GetPaientForRdvResponseSerializer
     final result = <Object>[
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsGetPaientForRdvResponse)),
+          specifiedType: const FullType(ParamsGetPaientForRdvResponse))!,
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int)),
+          specifiedType: const FullType(int))!,
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'data',
       serializers.serialize(object.data,
-          specifiedType: const FullType(DataGetPaientForRdvResponse)),
+          specifiedType: const FullType(DataGetPaientForRdvResponse))!,
     ];
 
     return result;
@@ -69,7 +69,7 @@ class _$GetPaientForRdvResponseSerializer
 
   @override
   GetPaientForRdvResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new GetPaientForRdvResponseBuilder();
 
@@ -77,7 +77,7 @@ class _$GetPaientForRdvResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
@@ -133,20 +133,20 @@ class _$ParamsGetPaientForRdvResponseSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'tokenappointment',
       serializers.serialize(object.tokenappointment,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'week',
-      serializers.serialize(object.week, specifiedType: const FullType(String)),
+      serializers.serialize(object.week, specifiedType: const FullType(String))!,
       'data',
-      serializers.serialize(object.data, specifiedType: const FullType(String)),
+      serializers.serialize(object.data, specifiedType: const FullType(String))!,
       'action',
       serializers.serialize(object.action,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'session',
       serializers.serialize(object.session,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -154,7 +154,7 @@ class _$ParamsGetPaientForRdvResponseSerializer
 
   @override
   ParamsGetPaientForRdvResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsGetPaientForRdvResponseBuilder();
 
@@ -162,7 +162,7 @@ class _$ParamsGetPaientForRdvResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -212,15 +212,15 @@ class _$DataGetPaientForRdvResponseSerializer
     final result = <Object>[
       'session',
       serializers.serialize(object.session,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'navigation',
       serializers.serialize(object.navigation,
-          specifiedType: const FullType(NavigationGetPaientForRdvResponse)),
+          specifiedType: const FullType(NavigationGetPaientForRdvResponse))!,
       'headermessage',
       serializers.serialize(object.headermessage,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'type',
-      serializers.serialize(object.type, specifiedType: const FullType(String)),
+      serializers.serialize(object.type, specifiedType: const FullType(String))!,
     ];
     Object value;
     value = object.messageInternet;
@@ -228,7 +228,7 @@ class _$DataGetPaientForRdvResponseSerializer
       result
         ..add('messageinternet')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.data;
     if (value != null) {
@@ -236,14 +236,14 @@ class _$DataGetPaientForRdvResponseSerializer
         ..add('data')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
-                BuiltList, const [const FullType(PatientDataResponseDrv)])));
+                BuiltList, const [const FullType(PatientDataResponseDrv)]))!);
     }
     return result;
   }
 
   @override
   DataGetPaientForRdvResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataGetPaientForRdvResponseBuilder();
 
@@ -251,7 +251,7 @@ class _$DataGetPaientForRdvResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'session':
           result.session = serializers.deserialize(value,
@@ -309,147 +309,147 @@ class _$PatientDataResponseDrvSerializer
       result
         ..add('nom')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.prenom;
     if (value != null) {
       result
         ..add('prenom')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.email;
     if (value != null) {
       result
         ..add('email')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.spacephone;
     if (value != null) {
       result
         ..add('spacephone')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.phone;
     if (value != null) {
       result
         ..add('phone')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.dob;
     if (value != null) {
       result
         ..add('dob')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.token;
     if (value != null) {
       result
         ..add('token')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.locked;
     if (value != null) {
       result
         ..add('locked')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.blacklist;
     if (value != null) {
       result
         ..add('blacklist')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.nplocked;
     if (value != null) {
       result
         ..add('nplocked')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.etaballowinternet;
     if (value != null) {
       result
         ..add('etaballowinternet')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.etaballownpinternet;
     if (value != null) {
       result
         ..add('etaballownpinternet')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.lockmessage;
     if (value != null) {
       result
         ..add('lockmessage')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclick;
     if (value != null) {
       result
         ..add('onclick')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickMessage;
     if (value != null) {
       result
         ..add('onclick_message')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickData;
     if (value != null) {
       result
         ..add('onclick_data')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickAction;
     if (value != null) {
       result
         ..add('onclick_action')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickWeek;
     if (value != null) {
       result
         ..add('onclick_week')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.messageInternet;
     if (value != null) {
       result
         ..add('messageinternet')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.photo;
     if (value != null) {
       result
         ..add('photo')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     return result;
   }
 
   @override
   PatientDataResponseDrv deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PatientDataResponseDrvBuilder();
 
@@ -457,7 +457,7 @@ class _$PatientDataResponseDrvSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'nom':
           result.nom = serializers.deserialize(value,
@@ -567,21 +567,21 @@ class _$NavigationGetPaientForRdvResponseSerializer
       result
         ..add('begin')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(BeginGetPaientForRdvResponse)));
+            specifiedType: const FullType(BeginGetPaientForRdvResponse))!);
     }
     value = object.prev;
     if (value != null) {
       result
         ..add('prev')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(PrevGetPaientForRdvResponse)));
+            specifiedType: const FullType(PrevGetPaientForRdvResponse))!);
     }
     return result;
   }
 
   @override
   NavigationGetPaientForRdvResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new NavigationGetPaientForRdvResponseBuilder();
 
@@ -589,7 +589,7 @@ class _$NavigationGetPaientForRdvResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'begin':
           result.begin.replace(serializers.deserialize(value,
@@ -629,35 +629,35 @@ class _$BeginGetPaientForRdvResponseSerializer
       result
         ..add('label')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickAction;
     if (value != null) {
       result
         ..add('onclick_action')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickData;
     if (value != null) {
       result
         ..add('onclick_data')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickWeek;
     if (value != null) {
       result
         ..add('onclick_week')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     return result;
   }
 
   @override
   BeginGetPaientForRdvResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new BeginGetPaientForRdvResponseBuilder();
 
@@ -665,7 +665,7 @@ class _$BeginGetPaientForRdvResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'label':
           result.label = serializers.deserialize(value,
@@ -711,35 +711,35 @@ class _$PrevGetPaientForRdvResponseSerializer
       result
         ..add('label')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickAction;
     if (value != null) {
       result
         ..add('onclick_action')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickData;
     if (value != null) {
       result
         ..add('onclick_data')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.onclickWeek;
     if (value != null) {
       result
         ..add('onclick_week')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     return result;
   }
 
   @override
   PrevGetPaientForRdvResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PrevGetPaientForRdvResponseBuilder();
 
@@ -747,7 +747,7 @@ class _$PrevGetPaientForRdvResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'label':
           result.label = serializers.deserialize(value,
@@ -789,17 +789,18 @@ class _$GetPaientForRdvResponse extends GetPaientForRdvResponse {
   final DataGetPaientForRdvResponse data;
 
   factory _$GetPaientForRdvResponse(
-          [void Function(GetPaientForRdvResponseBuilder) updates]) =>
-      (new GetPaientForRdvResponseBuilder()..update(updates)).build();
+          [void Function(GetPaientForRdvResponseBuilder)? updates]) =>
+      (new GetPaientForRdvResponseBuilder()..update(updates!)).build();
 
   _$GetPaientForRdvResponse._(
-      {this.version,
-      this.request,
-      this.params,
-      this.message,
-      this.httpstatut,
-      this.error,
-      this.data})
+      {
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.message,
+      required this.httpstatut,
+      required this.error,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         version, 'GetPaientForRdvResponse', 'version');
@@ -820,7 +821,7 @@ class _$GetPaientForRdvResponse extends GetPaientForRdvResponse {
   @override
   GetPaientForRdvResponse rebuild(
           void Function(GetPaientForRdvResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   GetPaientForRdvResponseBuilder toBuilder() =>
@@ -870,35 +871,35 @@ class _$GetPaientForRdvResponse extends GetPaientForRdvResponse {
 class GetPaientForRdvResponseBuilder
     implements
         Builder<GetPaientForRdvResponse, GetPaientForRdvResponseBuilder> {
-  _$GetPaientForRdvResponse _$v;
+  _$GetPaientForRdvResponse? _$v =_$GetPaientForRdvResponse();
 
-  String _version;
+  String _version = '';
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request;
+  String _request = '';
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsGetPaientForRdvResponseBuilder _params;
+  ParamsGetPaientForRdvResponseBuilder _params =ParamsGetPaientForRdvResponseBuilder();
   ParamsGetPaientForRdvResponseBuilder get params =>
       _$this._params ??= new ParamsGetPaientForRdvResponseBuilder();
   set params(ParamsGetPaientForRdvResponseBuilder params) =>
       _$this._params = params;
 
-  String _message;
+  String _message = '';
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  int _httpstatut;
+  int _httpstatut = 0;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
+  String _error = '';
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  DataGetPaientForRdvResponseBuilder _data;
+  DataGetPaientForRdvResponseBuilder _data = DataGetPaientForRdvResponseBuilder();
   DataGetPaientForRdvResponseBuilder get data =>
       _$this._data ??= new DataGetPaientForRdvResponseBuilder();
   set data(DataGetPaientForRdvResponseBuilder data) => _$this._data = data;
@@ -927,7 +928,7 @@ class GetPaientForRdvResponseBuilder
   }
 
   @override
-  void update(void Function(GetPaientForRdvResponseBuilder) updates) {
+  void update(void Function(GetPaientForRdvResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -950,7 +951,7 @@ class GetPaientForRdvResponseBuilder
                   error, 'GetPaientForRdvResponse', 'error'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'params';
         params.build();
@@ -983,16 +984,17 @@ class _$ParamsGetPaientForRdvResponse extends ParamsGetPaientForRdvResponse {
   final String session;
 
   factory _$ParamsGetPaientForRdvResponse(
-          [void Function(ParamsGetPaientForRdvResponseBuilder) updates]) =>
-      (new ParamsGetPaientForRdvResponseBuilder()..update(updates)).build();
+          [void Function(ParamsGetPaientForRdvResponseBuilder)? updates]) =>
+      (new ParamsGetPaientForRdvResponseBuilder()..update(updates!)).build();
 
   _$ParamsGetPaientForRdvResponse._(
-      {this.tokenuser,
-      this.tokenappointment,
-      this.week,
-      this.data,
-      this.action,
-      this.session})
+      {
+      required this.tokenuser,
+      required this.tokenappointment,
+      required this.week,
+      required this.data,
+      required this.action,
+      required this.session})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'ParamsGetPaientForRdvResponse', 'tokenuser');
@@ -1011,7 +1013,7 @@ class _$ParamsGetPaientForRdvResponse extends ParamsGetPaientForRdvResponse {
   @override
   ParamsGetPaientForRdvResponse rebuild(
           void Function(ParamsGetPaientForRdvResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   ParamsGetPaientForRdvResponseBuilder toBuilder() =>
@@ -1058,30 +1060,30 @@ class ParamsGetPaientForRdvResponseBuilder
     implements
         Builder<ParamsGetPaientForRdvResponse,
             ParamsGetPaientForRdvResponseBuilder> {
-  _$ParamsGetPaientForRdvResponse _$v;
+  _$ParamsGetPaientForRdvResponse? _$v =_$ParamsGetPaientForRdvResponse();
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappointment;
+  String _tokenappointment ='';
   String get tokenappointment => _$this._tokenappointment;
   set tokenappointment(String tokenappointment) =>
       _$this._tokenappointment = tokenappointment;
 
-  String _week;
+  String _week ='';
   String get week => _$this._week;
   set week(String week) => _$this._week = week;
 
-  String _data;
+  String _data ='';
   String get data => _$this._data;
   set data(String data) => _$this._data = data;
 
-  String _action;
+  String _action ='';
   String get action => _$this._action;
   set action(String action) => _$this._action = action;
 
-  String _session;
+  String _session = '';
   String get session => _$this._session;
   set session(String session) => _$this._session = session;
 
@@ -1108,7 +1110,7 @@ class ParamsGetPaientForRdvResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsGetPaientForRdvResponseBuilder) updates) {
+  void update(void Function(ParamsGetPaientForRdvResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1150,16 +1152,17 @@ class _$DataGetPaientForRdvResponse extends DataGetPaientForRdvResponse {
   final BuiltList<PatientDataResponseDrv> data;
 
   factory _$DataGetPaientForRdvResponse(
-          [void Function(DataGetPaientForRdvResponseBuilder) updates]) =>
-      (new DataGetPaientForRdvResponseBuilder()..update(updates)).build();
+          [void Function(DataGetPaientForRdvResponseBuilder)? updates]) =>
+      (new DataGetPaientForRdvResponseBuilder()..update(updates!)).build();
 
   _$DataGetPaientForRdvResponse._(
-      {this.session,
-      this.navigation,
-      this.headermessage,
-      this.type,
-      this.messageInternet,
-      this.data})
+      {
+      required this.session,
+      required this.navigation,
+      required this.headermessage,
+      required this.type,
+      required this.messageInternet,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         session, 'DataGetPaientForRdvResponse', 'session');
@@ -1174,7 +1177,7 @@ class _$DataGetPaientForRdvResponse extends DataGetPaientForRdvResponse {
   @override
   DataGetPaientForRdvResponse rebuild(
           void Function(DataGetPaientForRdvResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   DataGetPaientForRdvResponseBuilder toBuilder() =>
@@ -1221,33 +1224,33 @@ class DataGetPaientForRdvResponseBuilder
     implements
         Builder<DataGetPaientForRdvResponse,
             DataGetPaientForRdvResponseBuilder> {
-  _$DataGetPaientForRdvResponse _$v;
+  _$DataGetPaientForRdvResponse? _$v =_$DataGetPaientForRdvResponse();
 
-  String _session;
+  String _session = '';
   String get session => _$this._session;
   set session(String session) => _$this._session = session;
 
-  NavigationGetPaientForRdvResponseBuilder _navigation;
+  NavigationGetPaientForRdvResponseBuilder _navigation =NavigationGetPaientForRdvResponseBuilder();
   NavigationGetPaientForRdvResponseBuilder get navigation =>
       _$this._navigation ??= new NavigationGetPaientForRdvResponseBuilder();
   set navigation(NavigationGetPaientForRdvResponseBuilder navigation) =>
       _$this._navigation = navigation;
 
-  String _headermessage;
+  String _headermessage ='';
   String get headermessage => _$this._headermessage;
   set headermessage(String headermessage) =>
       _$this._headermessage = headermessage;
 
-  String _type;
+  String _type ='';
   String get type => _$this._type;
   set type(String type) => _$this._type = type;
 
-  String _messageInternet;
+  String _messageInternet = '';
   String get messageInternet => _$this._messageInternet;
   set messageInternet(String messageInternet) =>
       _$this._messageInternet = messageInternet;
 
-  ListBuilder<PatientDataResponseDrv> _data;
+  ListBuilder<PatientDataResponseDrv> _data =ListBuilder();
   ListBuilder<PatientDataResponseDrv> get data =>
       _$this._data ??= new ListBuilder<PatientDataResponseDrv>();
   set data(ListBuilder<PatientDataResponseDrv> data) => _$this._data = data;
@@ -1262,7 +1265,7 @@ class DataGetPaientForRdvResponseBuilder
       _headermessage = $v.headermessage;
       _type = $v.type;
       _messageInternet = $v.messageInternet;
-      _data = $v.data?.toBuilder();
+      _data = $v.data.toBuilder();
       _$v = null;
     }
     return this;
@@ -1275,7 +1278,7 @@ class DataGetPaientForRdvResponseBuilder
   }
 
   @override
-  void update(void Function(DataGetPaientForRdvResponseBuilder) updates) {
+  void update(void Function(DataGetPaientForRdvResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1295,9 +1298,9 @@ class DataGetPaientForRdvResponseBuilder
               type: BuiltValueNullFieldError.checkNotNull(
                   type, 'DataGetPaientForRdvResponse', 'type'),
               messageInternet: messageInternet,
-              data: _data?.build());
+              data: _data.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'navigation';
         navigation.build();
@@ -1358,36 +1361,37 @@ class _$PatientDataResponseDrv extends PatientDataResponseDrv {
   final String photo;
 
   factory _$PatientDataResponseDrv(
-          [void Function(PatientDataResponseDrvBuilder) updates]) =>
-      (new PatientDataResponseDrvBuilder()..update(updates)).build();
+          [void Function(PatientDataResponseDrvBuilder)? updates]) =>
+      (new PatientDataResponseDrvBuilder()..update(updates!)).build();
 
   _$PatientDataResponseDrv._(
-      {this.nom,
-      this.prenom,
-      this.email,
-      this.spacephone,
-      this.phone,
-      this.dob,
-      this.token,
-      this.locked,
-      this.blacklist,
-      this.nplocked,
-      this.etaballowinternet,
-      this.etaballownpinternet,
-      this.lockmessage,
-      this.onclick,
-      this.onclickMessage,
-      this.onclickData,
-      this.onclickAction,
-      this.onclickWeek,
-      this.messageInternet,
-      this.photo})
+      {
+      required this.nom,
+      required this.prenom,
+      required this.email,
+      required this.spacephone,
+      required this.phone,
+      required this.dob,
+      required this.token,
+      required this.locked,
+      required this.blacklist,
+      required this.nplocked,
+      required this.etaballowinternet,
+      required this.etaballownpinternet,
+      required this.lockmessage,
+      required this.onclick,
+      required this.onclickMessage,
+      required this.onclickData,
+      required this.onclickAction,
+      required this.onclickWeek,
+      required this.messageInternet,
+      required this.photo})
       : super._();
 
   @override
   PatientDataResponseDrv rebuild(
           void Function(PatientDataResponseDrvBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   PatientDataResponseDrvBuilder toBuilder() =>
@@ -1490,90 +1494,90 @@ class _$PatientDataResponseDrv extends PatientDataResponseDrv {
 
 class PatientDataResponseDrvBuilder
     implements Builder<PatientDataResponseDrv, PatientDataResponseDrvBuilder> {
-  _$PatientDataResponseDrv _$v;
+  _$PatientDataResponseDrv? _$v = _$PatientDataResponseDrv();
 
-  String _nom;
+  String _nom = '';
   String get nom => _$this._nom;
   set nom(String nom) => _$this._nom = nom;
 
-  String _prenom;
+  String _prenom = '';
   String get prenom => _$this._prenom;
   set prenom(String prenom) => _$this._prenom = prenom;
 
-  String _email;
+  String _email = '';
   String get email => _$this._email;
   set email(String email) => _$this._email = email;
 
-  String _spacephone;
+  String _spacephone = '';
   String get spacephone => _$this._spacephone;
   set spacephone(String spacephone) => _$this._spacephone = spacephone;
 
-  String _phone;
+  String _phone = '';
   String get phone => _$this._phone;
   set phone(String phone) => _$this._phone = phone;
 
-  String _dob;
+  String _dob = '';
   String get dob => _$this._dob;
   set dob(String dob) => _$this._dob = dob;
 
-  String _token;
+  String _token = '';
   String get token => _$this._token;
   set token(String token) => _$this._token = token;
 
-  String _locked;
+  String _locked = '';
   String get locked => _$this._locked;
   set locked(String locked) => _$this._locked = locked;
 
-  String _blacklist;
+  String _blacklist = '';
   String get blacklist => _$this._blacklist;
   set blacklist(String blacklist) => _$this._blacklist = blacklist;
 
-  String _nplocked;
+  String _nplocked = '';
   String get nplocked => _$this._nplocked;
   set nplocked(String nplocked) => _$this._nplocked = nplocked;
 
-  String _etaballowinternet;
+  String _etaballowinternet = '';
   String get etaballowinternet => _$this._etaballowinternet;
   set etaballowinternet(String etaballowinternet) =>
       _$this._etaballowinternet = etaballowinternet;
 
-  String _etaballownpinternet;
+  String _etaballownpinternet = '';
   String get etaballownpinternet => _$this._etaballownpinternet;
   set etaballownpinternet(String etaballownpinternet) =>
       _$this._etaballownpinternet = etaballownpinternet;
 
-  String _lockmessage;
+  String _lockmessage = '';
   String get lockmessage => _$this._lockmessage;
   set lockmessage(String lockmessage) => _$this._lockmessage = lockmessage;
 
-  String _onclick;
+  String _onclick = '';
   String get onclick => _$this._onclick;
   set onclick(String onclick) => _$this._onclick = onclick;
 
-  String _onclickMessage;
+  String _onclickMessage = '';
   String get onclickMessage => _$this._onclickMessage;
   set onclickMessage(String onclickMessage) =>
       _$this._onclickMessage = onclickMessage;
 
-  String _onclickData;
+  String _onclickData = '';
   String get onclickData => _$this._onclickData;
   set onclickData(String onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickAction;
+  String _onclickAction = '';
   String get onclickAction => _$this._onclickAction;
   set onclickAction(String onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickWeek;
+  String _onclickWeek ='';
   String get onclickWeek => _$this._onclickWeek;
   set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
 
-  String _messageInternet;
+  String _messageInternet = '';
   String get messageInternet => _$this._messageInternet;
   set messageInternet(String messageInternet) =>
       _$this._messageInternet = messageInternet;
 
-  String _photo;
+  String _photo = '';
   String get photo => _$this._photo;
   set photo(String photo) => _$this._photo = photo;
 
@@ -1614,7 +1618,7 @@ class PatientDataResponseDrvBuilder
   }
 
   @override
-  void update(void Function(PatientDataResponseDrvBuilder) updates) {
+  void update(void Function(PatientDataResponseDrvBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1655,15 +1659,15 @@ class _$NavigationGetPaientForRdvResponse
   final PrevGetPaientForRdvResponse prev;
 
   factory _$NavigationGetPaientForRdvResponse(
-          [void Function(NavigationGetPaientForRdvResponseBuilder) updates]) =>
-      (new NavigationGetPaientForRdvResponseBuilder()..update(updates)).build();
+          [void Function(NavigationGetPaientForRdvResponseBuilder)? updates]) =>
+      (new NavigationGetPaientForRdvResponseBuilder()..update(updates!)).build();
 
-  _$NavigationGetPaientForRdvResponse._({this.begin, this.prev}) : super._();
+  _$NavigationGetPaientForRdvResponse._({required this.begin,required  this.prev}) : super._();
 
   @override
   NavigationGetPaientForRdvResponse rebuild(
           void Function(NavigationGetPaientForRdvResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   NavigationGetPaientForRdvResponseBuilder toBuilder() =>
@@ -1695,14 +1699,14 @@ class NavigationGetPaientForRdvResponseBuilder
     implements
         Builder<NavigationGetPaientForRdvResponse,
             NavigationGetPaientForRdvResponseBuilder> {
-  _$NavigationGetPaientForRdvResponse _$v;
+  _$NavigationGetPaientForRdvResponse? _$v =_$NavigationGetPaientForRdvResponse();
 
-  BeginGetPaientForRdvResponseBuilder _begin;
+  BeginGetPaientForRdvResponseBuilder _begin =BeginGetPaientForRdvResponseBuilder();
   BeginGetPaientForRdvResponseBuilder get begin =>
       _$this._begin ??= new BeginGetPaientForRdvResponseBuilder();
   set begin(BeginGetPaientForRdvResponseBuilder begin) => _$this._begin = begin;
 
-  PrevGetPaientForRdvResponseBuilder _prev;
+  PrevGetPaientForRdvResponseBuilder _prev =PrevGetPaientForRdvResponseBuilder();
   PrevGetPaientForRdvResponseBuilder get prev =>
       _$this._prev ??= new PrevGetPaientForRdvResponseBuilder();
   set prev(PrevGetPaientForRdvResponseBuilder prev) => _$this._prev = prev;
@@ -1712,8 +1716,8 @@ class NavigationGetPaientForRdvResponseBuilder
   NavigationGetPaientForRdvResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _begin = $v.begin?.toBuilder();
-      _prev = $v.prev?.toBuilder();
+      _begin = $v.begin.toBuilder();
+      _prev = $v.prev.toBuilder();
       _$v = null;
     }
     return this;
@@ -1726,19 +1730,19 @@ class NavigationGetPaientForRdvResponseBuilder
   }
 
   @override
-  void update(void Function(NavigationGetPaientForRdvResponseBuilder) updates) {
+  void update(void Function(NavigationGetPaientForRdvResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
   _$NavigationGetPaientForRdvResponse build() {
-    _$NavigationGetPaientForRdvResponse _$result;
+   late _$NavigationGetPaientForRdvResponse _$result;
     try {
       _$result = _$v ??
           new _$NavigationGetPaientForRdvResponse._(
-              begin: _begin?.build(), prev: _prev?.build());
+              begin: _begin.build(), prev: _prev.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'begin';
         _begin?.build();
@@ -1766,17 +1770,17 @@ class _$BeginGetPaientForRdvResponse extends BeginGetPaientForRdvResponse {
   final String onclickWeek;
 
   factory _$BeginGetPaientForRdvResponse(
-          [void Function(BeginGetPaientForRdvResponseBuilder) updates]) =>
-      (new BeginGetPaientForRdvResponseBuilder()..update(updates)).build();
+          [void Function(BeginGetPaientForRdvResponseBuilder)? updates]) =>
+      (new BeginGetPaientForRdvResponseBuilder()..update(updates!)).build();
 
   _$BeginGetPaientForRdvResponse._(
-      {this.label, this.onclickAction, this.onclickData, this.onclickWeek})
+      {required this.label,required this.onclickAction,required this.onclickData,required this.onclickWeek})
       : super._();
 
   @override
   BeginGetPaientForRdvResponse rebuild(
           void Function(BeginGetPaientForRdvResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   BeginGetPaientForRdvResponseBuilder toBuilder() =>
@@ -1815,22 +1819,22 @@ class BeginGetPaientForRdvResponseBuilder
     implements
         Builder<BeginGetPaientForRdvResponse,
             BeginGetPaientForRdvResponseBuilder> {
-  _$BeginGetPaientForRdvResponse _$v;
+  _$BeginGetPaientForRdvResponse? _$v =_$BeginGetPaientForRdvResponse();
 
-  String _label;
+  String _label = '';
   String get label => _$this._label;
   set label(String label) => _$this._label = label;
 
-  String _onclickAction;
+  String _onclickAction = '';
   String get onclickAction => _$this._onclickAction;
   set onclickAction(String onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickData;
+  String _onclickData = '';
   String get onclickData => _$this._onclickData;
   set onclickData(String onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickWeek;
+  String _onclickWeek ='';
   String get onclickWeek => _$this._onclickWeek;
   set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
 
@@ -1855,7 +1859,7 @@ class BeginGetPaientForRdvResponseBuilder
   }
 
   @override
-  void update(void Function(BeginGetPaientForRdvResponseBuilder) updates) {
+  void update(void Function(BeginGetPaientForRdvResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1883,17 +1887,17 @@ class _$PrevGetPaientForRdvResponse extends PrevGetPaientForRdvResponse {
   final String onclickWeek;
 
   factory _$PrevGetPaientForRdvResponse(
-          [void Function(PrevGetPaientForRdvResponseBuilder) updates]) =>
-      (new PrevGetPaientForRdvResponseBuilder()..update(updates)).build();
+          [void Function(PrevGetPaientForRdvResponseBuilder)? updates]) =>
+      (new PrevGetPaientForRdvResponseBuilder()..update(updates!)).build();
 
   _$PrevGetPaientForRdvResponse._(
-      {this.label, this.onclickAction, this.onclickData, this.onclickWeek})
+      {required this.label,required this.onclickAction,required this.onclickData,required this.onclickWeek})
       : super._();
 
   @override
   PrevGetPaientForRdvResponse rebuild(
           void Function(PrevGetPaientForRdvResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   PrevGetPaientForRdvResponseBuilder toBuilder() =>
@@ -1932,22 +1936,22 @@ class PrevGetPaientForRdvResponseBuilder
     implements
         Builder<PrevGetPaientForRdvResponse,
             PrevGetPaientForRdvResponseBuilder> {
-  _$PrevGetPaientForRdvResponse _$v;
+  _$PrevGetPaientForRdvResponse? _$v =_$PrevGetPaientForRdvResponse();
 
-  String _label;
+  String _label = '';
   String get label => _$this._label;
   set label(String label) => _$this._label = label;
 
-  String _onclickAction;
+  String _onclickAction = '';
   String get onclickAction => _$this._onclickAction;
   set onclickAction(String onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickData;
+  String _onclickData = '';
   String get onclickData => _$this._onclickData;
   set onclickData(String onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickWeek;
+  String _onclickWeek ='';
   String get onclickWeek => _$this._onclickWeek;
   set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
 
@@ -1972,7 +1976,7 @@ class PrevGetPaientForRdvResponseBuilder
   }
 
   @override
-  void update(void Function(PrevGetPaientForRdvResponseBuilder) updates) {
+  void update(void Function(PrevGetPaientForRdvResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

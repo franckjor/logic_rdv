@@ -29,22 +29,22 @@ class _$CreatePatientResponseSerializer
     final result = <Object>[
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsCreatePatientResponse)),
+          specifiedType: const FullType(ParamsCreatePatientResponse))!,
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int)),
+          specifiedType: const FullType(int))!,
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -52,7 +52,7 @@ class _$CreatePatientResponseSerializer
 
   @override
   CreatePatientResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CreatePatientResponseBuilder();
 
@@ -60,7 +60,7 @@ class _$CreatePatientResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
@@ -111,30 +111,30 @@ class _$ParamsCreatePatientResponseSerializer
     final result = <Object>[
       'phone',
       serializers.serialize(object.phone,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
+      serializers.serialize(object.id, specifiedType: const FullType(String))!,
       'code',
-      serializers.serialize(object.code, specifiedType: const FullType(String)),
+      serializers.serialize(object.code, specifiedType: const FullType(String))!,
       'nom',
-      serializers.serialize(object.nom, specifiedType: const FullType(String)),
+      serializers.serialize(object.nom, specifiedType: const FullType(String))!,
       'prenom',
       serializers.serialize(object.prenom,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'mobile',
       serializers.serialize(object.mobile,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'email',
       serializers.serialize(object.email,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'pass1',
       serializers.serialize(object.pass1,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'pass2',
       serializers.serialize(object.pass2,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'cgu',
-      serializers.serialize(object.cgu, specifiedType: const FullType(String)),
+      serializers.serialize(object.cgu, specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -142,7 +142,7 @@ class _$ParamsCreatePatientResponseSerializer
 
   @override
   ParamsCreatePatientResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsCreatePatientResponseBuilder();
 
@@ -150,7 +150,7 @@ class _$ParamsCreatePatientResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'phone':
           result.phone = serializers.deserialize(value,
@@ -214,16 +214,17 @@ class _$CreatePatientResponse extends CreatePatientResponse {
   final String error;
 
   factory _$CreatePatientResponse(
-          [void Function(CreatePatientResponseBuilder) updates]) =>
-      (new CreatePatientResponseBuilder()..update(updates)).build();
+          [void Function(CreatePatientResponseBuilder)? updates]) =>
+      (new CreatePatientResponseBuilder()..update(updates!)).build();
 
   _$CreatePatientResponse._(
-      {this.version,
-      this.request,
-      this.params,
-      this.message,
-      this.httpstatut,
-      this.error})
+      {
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.message,
+      required this.httpstatut,
+      required this.error})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         version, 'CreatePatientResponse', 'version');
@@ -242,7 +243,7 @@ class _$CreatePatientResponse extends CreatePatientResponse {
   @override
   CreatePatientResponse rebuild(
           void Function(CreatePatientResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   CreatePatientResponseBuilder toBuilder() =>
@@ -287,31 +288,31 @@ class _$CreatePatientResponse extends CreatePatientResponse {
 
 class CreatePatientResponseBuilder
     implements Builder<CreatePatientResponse, CreatePatientResponseBuilder> {
-  _$CreatePatientResponse _$v;
+  _$CreatePatientResponse? _$v = _$CreatePatientResponse();
 
-  String _version;
+  String _version = '';
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request;
+  String _request = '';
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsCreatePatientResponseBuilder _params;
+  ParamsCreatePatientResponseBuilder _params =ParamsCreatePatientResponseBuilder();
   ParamsCreatePatientResponseBuilder get params =>
       _$this._params ??= new ParamsCreatePatientResponseBuilder();
   set params(ParamsCreatePatientResponseBuilder params) =>
       _$this._params = params;
 
-  String _message;
+  String _message = '';
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  int _httpstatut;
+  int _httpstatut = 0;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
+  String _error = '';
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
@@ -338,13 +339,13 @@ class CreatePatientResponseBuilder
   }
 
   @override
-  void update(void Function(CreatePatientResponseBuilder) updates) {
+  void update(void Function(CreatePatientResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
   _$CreatePatientResponse build() {
-    _$CreatePatientResponse _$result;
+    _$CreatePatientResponse _$result =_$CreatePatientResponse();
     try {
       _$result = _$v ??
           new _$CreatePatientResponse._(
@@ -360,7 +361,7 @@ class CreatePatientResponseBuilder
               error: BuiltValueNullFieldError.checkNotNull(
                   error, 'CreatePatientResponse', 'error'));
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'params';
         params.build();
@@ -398,20 +399,21 @@ class _$ParamsCreatePatientResponse extends ParamsCreatePatientResponse {
   final String cgu;
 
   factory _$ParamsCreatePatientResponse(
-          [void Function(ParamsCreatePatientResponseBuilder) updates]) =>
-      (new ParamsCreatePatientResponseBuilder()..update(updates)).build();
+          [void Function(ParamsCreatePatientResponseBuilder)? updates]) =>
+      (new ParamsCreatePatientResponseBuilder()..update(updates!)).build();
 
   _$ParamsCreatePatientResponse._(
-      {this.phone,
-      this.id,
-      this.code,
-      this.nom,
-      this.prenom,
-      this.mobile,
-      this.email,
-      this.pass1,
-      this.pass2,
-      this.cgu})
+      {
+      required this.phone,
+      required this.id,
+      required this.code,
+      required this.nom,
+      required this.prenom,
+      required this.mobile,
+      required this.email,
+      required this.pass1,
+      required this.pass2,
+      required this.cgu})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         phone, 'ParamsCreatePatientResponse', 'phone');
@@ -438,7 +440,7 @@ class _$ParamsCreatePatientResponse extends ParamsCreatePatientResponse {
   @override
   ParamsCreatePatientResponse rebuild(
           void Function(ParamsCreatePatientResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   ParamsCreatePatientResponseBuilder toBuilder() =>
@@ -501,45 +503,45 @@ class ParamsCreatePatientResponseBuilder
     implements
         Builder<ParamsCreatePatientResponse,
             ParamsCreatePatientResponseBuilder> {
-  _$ParamsCreatePatientResponse _$v;
+  _$ParamsCreatePatientResponse? _$v =_$ParamsCreatePatientResponse();
 
-  String _phone;
+  String _phone = '';
   String get phone => _$this._phone;
   set phone(String phone) => _$this._phone = phone;
 
-  String _id;
+  String _id = '';
   String get id => _$this._id;
   set id(String id) => _$this._id = id;
 
-  String _code;
+  String _code= '';
   String get code => _$this._code;
   set code(String code) => _$this._code = code;
 
-  String _nom;
+  String _nom = '';
   String get nom => _$this._nom;
   set nom(String nom) => _$this._nom = nom;
 
-  String _prenom;
+  String _prenom = '';
   String get prenom => _$this._prenom;
   set prenom(String prenom) => _$this._prenom = prenom;
 
-  String _mobile;
+  String _mobile ='';
   String get mobile => _$this._mobile;
   set mobile(String mobile) => _$this._mobile = mobile;
 
-  String _email;
+  String _email = '';
   String get email => _$this._email;
   set email(String email) => _$this._email = email;
 
-  String _pass1;
+  String _pass1='';
   String get pass1 => _$this._pass1;
   set pass1(String pass1) => _$this._pass1 = pass1;
 
-  String _pass2;
+  String _pass2 ='';
   String get pass2 => _$this._pass2;
   set pass2(String pass2) => _$this._pass2 = pass2;
 
-  String _cgu;
+  String _cgu = '';
   String get cgu => _$this._cgu;
   set cgu(String cgu) => _$this._cgu = cgu;
 
@@ -570,7 +572,7 @@ class ParamsCreatePatientResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsCreatePatientResponseBuilder) updates) {
+  void update(void Function(ParamsCreatePatientResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

@@ -14,7 +14,7 @@ import 'package:logic_rdv_v0/src/core/models/subscribe_notification/subscribe_re
 import 'package:logic_rdv_v0/src/core/models/subscribe_notification/verify_notif_subscribtion.dart';
 
 class SubscribeRepository extends AbstractRepository {
-  Future getSubscribe({SubscribeRequest subscribeRequest}) async {
+  Future getSubscribe({required SubscribeRequest subscribeRequest}) async {
     final String path = '/${getControllerName()}subscribe/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,
@@ -24,7 +24,7 @@ class SubscribeRepository extends AbstractRepository {
     return subscribeResponse;
   }
 
-  Future getUnSubscribe({SubscribeRequest subscribeRequest}) async {
+  Future getUnSubscribe({required SubscribeRequest subscribeRequest}) async {
     final String path = '/${getControllerName()}unsubscribe/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,
@@ -35,7 +35,7 @@ class SubscribeRepository extends AbstractRepository {
   }
 
 
-  Future getIsSubscribe({SubscribeRequest subscribeRequest}) async {
+  Future getIsSubscribe({required SubscribeRequest subscribeRequest}) async {
     final String path = '/${getControllerName()}issubscribed/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,

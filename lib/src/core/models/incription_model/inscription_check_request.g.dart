@@ -26,7 +26,7 @@ class _$InscriptionCheckRequestSerializer
     final result = <Object>[
       'phone',
       serializers.serialize(object.phone,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -34,7 +34,7 @@ class _$InscriptionCheckRequestSerializer
 
   @override
   InscriptionCheckRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new InscriptionCheckRequestBuilder();
 
@@ -42,7 +42,7 @@ class _$InscriptionCheckRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'phone':
           result.phone = serializers.deserialize(value,
@@ -60,10 +60,10 @@ class _$InscriptionCheckRequest extends InscriptionCheckRequest {
   final String phone;
 
   factory _$InscriptionCheckRequest(
-          [void Function(InscriptionCheckRequestBuilder) updates]) =>
-      (new InscriptionCheckRequestBuilder()..update(updates)).build();
+          [void Function(InscriptionCheckRequestBuilder)? updates]) =>
+      (new InscriptionCheckRequestBuilder()..update(updates!)).build();
 
-  _$InscriptionCheckRequest._({this.phone}) : super._() {
+  _$InscriptionCheckRequest._({required this.phone}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         phone, 'InscriptionCheckRequest', 'phone');
   }
@@ -71,7 +71,7 @@ class _$InscriptionCheckRequest extends InscriptionCheckRequest {
   @override
   InscriptionCheckRequest rebuild(
           void Function(InscriptionCheckRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   InscriptionCheckRequestBuilder toBuilder() =>
@@ -99,9 +99,9 @@ class _$InscriptionCheckRequest extends InscriptionCheckRequest {
 class InscriptionCheckRequestBuilder
     implements
         Builder<InscriptionCheckRequest, InscriptionCheckRequestBuilder> {
-  _$InscriptionCheckRequest _$v;
+  _$InscriptionCheckRequest? _$v;
 
-  String _phone;
+  String _phone = '';
   String get phone => _$this._phone;
   set phone(String phone) => _$this._phone = phone;
 
@@ -123,7 +123,7 @@ class InscriptionCheckRequestBuilder
   }
 
   @override
-  void update(void Function(InscriptionCheckRequestBuilder) updates) {
+  void update(void Function(InscriptionCheckRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

@@ -17,7 +17,7 @@ class YataSharedPreferences {
 
   Future<String> getStringValuesFromSharedPreference(String keyOfValue) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String stringValue = prefs.getString(keyOfValue);
+    String stringValue = prefs.getString(keyOfValue)!;
     return stringValue;
   }
 
@@ -33,7 +33,7 @@ class YataSharedPreferences {
 
   getIntValuesFromSharedPreference(String keOfValue) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    int intValue = prefs.getInt(keOfValue);
+    int intValue = prefs.getInt(keOfValue)!;
     return intValue;
   }
 
@@ -50,7 +50,7 @@ class YataSharedPreferences {
   getDoubleValuesFromSharedPreference(String keyOkValue) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     //Return double
-    double doubleValue = prefs.getDouble(keyOkValue);
+    double doubleValue = prefs.getDouble(keyOkValue)!;
     return doubleValue;
   }
 
@@ -66,7 +66,7 @@ class YataSharedPreferences {
 
   getBoolValuesFromSharedPreference(String keOfValue) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool boolValue = prefs.getBool(keOfValue);
+    bool boolValue = prefs.getBool(keOfValue)!;
     return boolValue;
   }
 

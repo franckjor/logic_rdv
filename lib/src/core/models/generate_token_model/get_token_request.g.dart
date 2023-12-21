@@ -22,10 +22,10 @@ class _$GetTokenRequestSerializer
     final result = <Object>[
       'client_project',
       serializers.serialize(object.clientProject,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'client_secret',
       serializers.serialize(object.clientSecret,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -33,7 +33,7 @@ class _$GetTokenRequestSerializer
 
   @override
   GetTokenRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new GetTokenRequestBuilder();
 
@@ -41,7 +41,7 @@ class _$GetTokenRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'client_project':
           result.clientProject = serializers.deserialize(value,
@@ -64,10 +64,10 @@ class _$GetTokenRequest extends GetTokenRequest {
   @override
   final String clientSecret;
 
-  factory _$GetTokenRequest([void Function(GetTokenRequestBuilder) updates]) =>
-      (new GetTokenRequestBuilder()..update(updates)).build();
+  factory _$GetTokenRequest([void Function(GetTokenRequestBuilder)? updates]) =>
+      (new GetTokenRequestBuilder()..update(updates!)).build();
 
-  _$GetTokenRequest._({this.clientProject, this.clientSecret}) : super._() {
+  _$GetTokenRequest._({required this.clientProject,required  this.clientSecret}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         clientProject, 'GetTokenRequest', 'clientProject');
     BuiltValueNullFieldError.checkNotNull(
@@ -76,7 +76,7 @@ class _$GetTokenRequest extends GetTokenRequest {
 
   @override
   GetTokenRequest rebuild(void Function(GetTokenRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   GetTokenRequestBuilder toBuilder() =>
@@ -106,14 +106,14 @@ class _$GetTokenRequest extends GetTokenRequest {
 
 class GetTokenRequestBuilder
     implements Builder<GetTokenRequest, GetTokenRequestBuilder> {
-  _$GetTokenRequest _$v;
+  late _$GetTokenRequest? _$v;
 
-  String _clientProject;
+  late String _clientProject;
   String get clientProject => _$this._clientProject;
   set clientProject(String clientProject) =>
       _$this._clientProject = clientProject;
 
-  String _clientSecret;
+  late String _clientSecret;
   String get clientSecret => _$this._clientSecret;
   set clientSecret(String clientSecret) => _$this._clientSecret = clientSecret;
 
@@ -136,7 +136,7 @@ class GetTokenRequestBuilder
   }
 
   @override
-  void update(void Function(GetTokenRequestBuilder) updates) {
+  void update(void Function(GetTokenRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

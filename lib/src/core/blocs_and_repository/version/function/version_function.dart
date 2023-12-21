@@ -4,7 +4,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/add_doctor/bloc/add_d
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/version/bloc/version.dart';
 import 'package:logic_rdv_v0/src/core/models/doctor_list_model/add_doctor_request.dart';
 
-getVersionApp({BuildContext context}) {
+getVersionApp({required BuildContext context}) {
   BlocProvider.of<VersionBloc>(context)
     ..add(VersionRequestEvent());
 }

@@ -37,7 +37,7 @@ abstract class AppVersionSummary
 
   static AppVersionSummary fromJson(String jsonString) {
     return serializers.deserializeWith(
-        AppVersionSummary.serializer, json.decode(jsonString));
+        AppVersionSummary.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<AppVersionSummary> get serializer =>
@@ -59,7 +59,7 @@ abstract class ParamsAppVersionSummary implements Built<ParamsAppVersionSummary,
 
   static ParamsAppVersionSummary fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsAppVersionSummary.serializer, json.decode(jsonString));
+        ParamsAppVersionSummary.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<ParamsAppVersionSummary> get serializer => _$paramsAppVersionSummarySerializer;
@@ -78,7 +78,7 @@ abstract class DataAppVersionSummary implements Built<DataAppVersionSummary, Dat
 
   static DataAppVersionSummary fromJson(String jsonString) {
     return serializers.deserializeWith(
-        DataAppVersionSummary.serializer, json.decode(jsonString));
+        DataAppVersionSummary.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<DataAppVersionSummary> get serializer => _$dataAppVersionSummarySerializer;
@@ -99,7 +99,7 @@ abstract class Version implements Built<Version, VersionBuilder> {
 
   static Version fromJson(String jsonString) {
     return serializers.deserializeWith(
-        Version.serializer, json.decode(jsonString));
+        Version.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<Version> get serializer => _$versionSerializer;

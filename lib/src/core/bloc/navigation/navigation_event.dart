@@ -7,7 +7,7 @@ abstract class NavigationEvent extends Equatable {
 class GoToPreSignInPage extends NavigationEvent {
   final LoginPageArguments arguments;
 
-  GoToPreSignInPage({this.arguments});
+  GoToPreSignInPage({required this.arguments});
 
   @override
   List<Object> get props => [arguments];
@@ -20,7 +20,7 @@ class GoToPreSignInPage extends NavigationEvent {
 class GoToListOfDoctor extends NavigationEvent {
   final SearchResultPageArguments arguments;
 
-  GoToListOfDoctor({this.arguments});
+  GoToListOfDoctor({required this.arguments});
 
   @override
   List<Object> get props => [arguments];

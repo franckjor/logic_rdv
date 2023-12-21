@@ -8,7 +8,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/message/repository/me
 class MessageBloc extends Bloc<MessageEvent, MessageState> {
   final MessageRepository repository;
 
-  MessageBloc({@required this.repository}) : super(MessageLoading());
+  MessageBloc({required this.repository}) : super(MessageLoading());
 
   @override
   MessageState get initialState => MessageLoading();

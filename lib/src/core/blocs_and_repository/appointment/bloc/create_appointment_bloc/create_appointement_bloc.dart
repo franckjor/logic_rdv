@@ -7,7 +7,7 @@ class CreateAppointmentBloc
     extends Bloc<CreateAppointmentEvent, CreateAppointmentState> {
   final CreateAppointmentRepository repository;
 
-  CreateAppointmentBloc({@required this.repository})
+  CreateAppointmentBloc({required this.repository})
       : super(CreateAppointmentLoading());
 
   @override

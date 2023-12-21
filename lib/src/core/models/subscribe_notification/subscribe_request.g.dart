@@ -28,10 +28,10 @@ class _$SubscribeRequestSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'installationkey',
       serializers.serialize(object.installationkey,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -39,7 +39,7 @@ class _$SubscribeRequestSerializer
 
   @override
   SubscribeRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SubscribeRequestBuilder();
 
@@ -47,7 +47,7 @@ class _$SubscribeRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -77,22 +77,22 @@ class _$SubscribeResponseSerializer
     final result = <Object>[
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int)),
+          specifiedType: const FullType(int))!,
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsSubscribeResponse)),
+          specifiedType: const FullType(ParamsSubscribeResponse))!,
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
     Object value;
     value = object.data;
@@ -100,14 +100,14 @@ class _$SubscribeResponseSerializer
       result
         ..add('data')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(DataSubscribeResponse)));
+            specifiedType: const FullType(DataSubscribeResponse))!);
     }
     return result;
   }
 
   @override
   SubscribeResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SubscribeResponseBuilder();
 
@@ -115,7 +115,7 @@ class _$SubscribeResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
@@ -171,10 +171,10 @@ class _$ParamsSubscribeResponseSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'installationkey',
       serializers.serialize(object.installationkey,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -182,7 +182,7 @@ class _$ParamsSubscribeResponseSerializer
 
   @override
   ParamsSubscribeResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsSubscribeResponseBuilder();
 
@@ -190,7 +190,7 @@ class _$ParamsSubscribeResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -224,7 +224,7 @@ class _$DataSubscribeResponseSerializer
     final result = <Object>[
       'total',
       serializers.serialize(object.total,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -232,7 +232,7 @@ class _$DataSubscribeResponseSerializer
 
   @override
   DataSubscribeResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataSubscribeResponseBuilder();
 
@@ -240,7 +240,7 @@ class _$DataSubscribeResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'total':
           result.total = serializers.deserialize(value,
@@ -260,10 +260,10 @@ class _$SubscribeRequest extends SubscribeRequest {
   final String installationkey;
 
   factory _$SubscribeRequest(
-          [void Function(SubscribeRequestBuilder) updates]) =>
-      (new SubscribeRequestBuilder()..update(updates)).build();
+          [void Function(SubscribeRequestBuilder)? updates]) =>
+      (new SubscribeRequestBuilder()..update(updates!)).build();
 
-  _$SubscribeRequest._({this.tokenuser, this.installationkey}) : super._() {
+  _$SubscribeRequest._({required this.tokenuser,required this.installationkey}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'SubscribeRequest', 'tokenuser');
     BuiltValueNullFieldError.checkNotNull(
@@ -272,7 +272,7 @@ class _$SubscribeRequest extends SubscribeRequest {
 
   @override
   SubscribeRequest rebuild(void Function(SubscribeRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   SubscribeRequestBuilder toBuilder() =>
@@ -302,13 +302,13 @@ class _$SubscribeRequest extends SubscribeRequest {
 
 class SubscribeRequestBuilder
     implements Builder<SubscribeRequest, SubscribeRequestBuilder> {
-  _$SubscribeRequest _$v;
+  _$SubscribeRequest? _$v =_$SubscribeRequest();
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _installationkey;
+  String _installationkey = '';
   String get installationkey => _$this._installationkey;
   set installationkey(String installationkey) =>
       _$this._installationkey = installationkey;
@@ -332,7 +332,7 @@ class SubscribeRequestBuilder
   }
 
   @override
-  void update(void Function(SubscribeRequestBuilder) updates) {
+  void update(void Function(SubscribeRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -366,17 +366,18 @@ class _$SubscribeResponse extends SubscribeResponse {
   final DataSubscribeResponse data;
 
   factory _$SubscribeResponse(
-          [void Function(SubscribeResponseBuilder) updates]) =>
-      (new SubscribeResponseBuilder()..update(updates)).build();
+          [void Function(SubscribeResponseBuilder)? updates]) =>
+      (new SubscribeResponseBuilder()..update(updates!)).build();
 
   _$SubscribeResponse._(
-      {this.httpstatut,
-      this.version,
-      this.request,
-      this.params,
-      this.error,
-      this.message,
-      this.data})
+      {
+      required this.httpstatut,
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.error,
+      required this.message,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         httpstatut, 'SubscribeResponse', 'httpstatut');
@@ -393,7 +394,7 @@ class _$SubscribeResponse extends SubscribeResponse {
 
   @override
   SubscribeResponse rebuild(void Function(SubscribeResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   SubscribeResponseBuilder toBuilder() =>
@@ -442,34 +443,34 @@ class _$SubscribeResponse extends SubscribeResponse {
 
 class SubscribeResponseBuilder
     implements Builder<SubscribeResponse, SubscribeResponseBuilder> {
-  _$SubscribeResponse _$v;
+  _$SubscribeResponse? _$v =_$SubscribeResponse();
 
-  int _httpstatut;
+  int _httpstatut = 0;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _version;
+  String _version = '';
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request;
+  String _request = '';
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsSubscribeResponseBuilder _params;
+  ParamsSubscribeResponseBuilder _params =ParamsSubscribeResponseBuilder();
   ParamsSubscribeResponseBuilder get params =>
       _$this._params ??= new ParamsSubscribeResponseBuilder();
   set params(ParamsSubscribeResponseBuilder params) => _$this._params = params;
 
-  String _error;
+  String _error = '';
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  String _message;
+  String _message = '';
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  DataSubscribeResponseBuilder _data;
+  DataSubscribeResponseBuilder _data =DataSubscribeResponseBuilder();
   DataSubscribeResponseBuilder get data =>
       _$this._data ??= new DataSubscribeResponseBuilder();
   set data(DataSubscribeResponseBuilder data) => _$this._data = data;
@@ -485,7 +486,7 @@ class SubscribeResponseBuilder
       _params = $v.params.toBuilder();
       _error = $v.error;
       _message = $v.message;
-      _data = $v.data?.toBuilder();
+      _data = $v.data.toBuilder();
       _$v = null;
     }
     return this;
@@ -498,7 +499,7 @@ class SubscribeResponseBuilder
   }
 
   @override
-  void update(void Function(SubscribeResponseBuilder) updates) {
+  void update(void Function(SubscribeResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -519,9 +520,9 @@ class SubscribeResponseBuilder
                   error, 'SubscribeResponse', 'error'),
               message: BuiltValueNullFieldError.checkNotNull(
                   message, 'SubscribeResponse', 'message'),
-              data: _data?.build());
+              data: _data.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'params';
         params.build();
@@ -546,10 +547,10 @@ class _$ParamsSubscribeResponse extends ParamsSubscribeResponse {
   final String installationkey;
 
   factory _$ParamsSubscribeResponse(
-          [void Function(ParamsSubscribeResponseBuilder) updates]) =>
-      (new ParamsSubscribeResponseBuilder()..update(updates)).build();
+          [void Function(ParamsSubscribeResponseBuilder)? updates]) =>
+      (new ParamsSubscribeResponseBuilder()..update(updates!)).build();
 
-  _$ParamsSubscribeResponse._({this.tokenuser, this.installationkey})
+  _$ParamsSubscribeResponse._({required this.tokenuser,required this.installationkey})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'ParamsSubscribeResponse', 'tokenuser');
@@ -560,7 +561,7 @@ class _$ParamsSubscribeResponse extends ParamsSubscribeResponse {
   @override
   ParamsSubscribeResponse rebuild(
           void Function(ParamsSubscribeResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   ParamsSubscribeResponseBuilder toBuilder() =>
@@ -591,13 +592,13 @@ class _$ParamsSubscribeResponse extends ParamsSubscribeResponse {
 class ParamsSubscribeResponseBuilder
     implements
         Builder<ParamsSubscribeResponse, ParamsSubscribeResponseBuilder> {
-  _$ParamsSubscribeResponse _$v;
+  _$ParamsSubscribeResponse? _$v = _$ParamsSubscribeResponse();
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _installationkey;
+  String _installationkey = '';
   String get installationkey => _$this._installationkey;
   set installationkey(String installationkey) =>
       _$this._installationkey = installationkey;
@@ -621,7 +622,7 @@ class ParamsSubscribeResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsSubscribeResponseBuilder) updates) {
+  void update(void Function(ParamsSubscribeResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -643,10 +644,10 @@ class _$DataSubscribeResponse extends DataSubscribeResponse {
   final String total;
 
   factory _$DataSubscribeResponse(
-          [void Function(DataSubscribeResponseBuilder) updates]) =>
-      (new DataSubscribeResponseBuilder()..update(updates)).build();
+          [void Function(DataSubscribeResponseBuilder)? updates]) =>
+      (new DataSubscribeResponseBuilder()..update(updates!)).build();
 
-  _$DataSubscribeResponse._({this.total}) : super._() {
+  _$DataSubscribeResponse._({ required this.total}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         total, 'DataSubscribeResponse', 'total');
   }
@@ -654,7 +655,7 @@ class _$DataSubscribeResponse extends DataSubscribeResponse {
   @override
   DataSubscribeResponse rebuild(
           void Function(DataSubscribeResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   DataSubscribeResponseBuilder toBuilder() =>
@@ -681,9 +682,9 @@ class _$DataSubscribeResponse extends DataSubscribeResponse {
 
 class DataSubscribeResponseBuilder
     implements Builder<DataSubscribeResponse, DataSubscribeResponseBuilder> {
-  _$DataSubscribeResponse _$v;
+  _$DataSubscribeResponse? _$v =_$DataSubscribeResponse();
 
-  String _total;
+  String _total = '';
   String get total => _$this._total;
   set total(String total) => _$this._total = total;
 
@@ -705,7 +706,7 @@ class DataSubscribeResponseBuilder
   }
 
   @override
-  void update(void Function(DataSubscribeResponseBuilder) updates) {
+  void update(void Function(DataSubscribeResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

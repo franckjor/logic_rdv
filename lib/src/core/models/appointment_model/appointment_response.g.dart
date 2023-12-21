@@ -38,25 +38,25 @@ class _$AppointmentResponseSerializer
     final result = <Object>[
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsAppointmentResponse)),
+          specifiedType: const FullType(ParamsAppointmentResponse))!,
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int)),
+          specifiedType: const FullType(int))!,
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'data',
       serializers.serialize(object.data,
-          specifiedType: const FullType(DataAppointmentResponse)),
+          specifiedType: const FullType(DataAppointmentResponse))!,
     ];
 
     return result;
@@ -64,7 +64,7 @@ class _$AppointmentResponseSerializer
 
   @override
   AppointmentResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AppointmentResponseBuilder();
 
@@ -72,7 +72,7 @@ class _$AppointmentResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
@@ -128,9 +128,9 @@ class _$ParamsAppointmentResponseSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'page',
-      serializers.serialize(object.page, specifiedType: const FullType(String)),
+      serializers.serialize(object.page, specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -138,7 +138,7 @@ class _$ParamsAppointmentResponseSerializer
 
   @override
   ParamsAppointmentResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsAppointmentResponseBuilder();
 
@@ -146,7 +146,7 @@ class _$ParamsAppointmentResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -181,10 +181,10 @@ class _$DataAppointmentResponseSerializer
       'list',
       serializers.serialize(object.list,
           specifiedType: const FullType(
-              BuiltList, const [const FullType(AllAppoinmentResponse)])),
+              BuiltList, const [const FullType(AllAppoinmentResponse)]))!,
       'pagination',
       serializers.serialize(object.pagination,
-          specifiedType: const FullType(PaginationListOfDoctor)),
+          specifiedType: const FullType(PaginationListOfDoctor))!,
     ];
 
     return result;
@@ -192,7 +192,7 @@ class _$DataAppointmentResponseSerializer
 
   @override
   DataAppointmentResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataAppointmentResponseBuilder();
 
@@ -200,7 +200,7 @@ class _$DataAppointmentResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'list':
           result.list.replace(serializers.deserialize(value,
@@ -232,25 +232,25 @@ class _$CabinetResponseSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'nom',
-      serializers.serialize(object.nom, specifiedType: const FullType(String)),
+      serializers.serialize(object.nom, specifiedType: const FullType(String))!,
       'address',
       serializers.serialize(object.address,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'city',
-      serializers.serialize(object.city, specifiedType: const FullType(String)),
+      serializers.serialize(object.city, specifiedType: const FullType(String))!,
       'phone',
       serializers.serialize(object.phone,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'spacephone',
       serializers.serialize(object.spacephone,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'lat',
-      serializers.serialize(object.lat, specifiedType: const FullType(String)),
+      serializers.serialize(object.lat, specifiedType: const FullType(String))!,
       'lng',
-      serializers.serialize(object.lng, specifiedType: const FullType(String)),
+      serializers.serialize(object.lng, specifiedType: const FullType(String))!,
       'token',
       serializers.serialize(object.token,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -258,7 +258,7 @@ class _$CabinetResponseSerializer
 
   @override
   CabinetResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CabinetResponseBuilder();
 
@@ -266,7 +266,7 @@ class _$CabinetResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'nom':
           result.nom = serializers.deserialize(value,
@@ -319,24 +319,24 @@ class _$PatientResponseSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'nom',
-      serializers.serialize(object.nom, specifiedType: const FullType(String)),
+      serializers.serialize(object.nom, specifiedType: const FullType(String))!,
       'birthdate',
       serializers.serialize(object.birthdate,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'email',
       serializers.serialize(object.email,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'nir',
-      serializers.serialize(object.nir, specifiedType: const FullType(String)),
+      serializers.serialize(object.nir, specifiedType: const FullType(String))!,
       'phone',
       serializers.serialize(object.phone,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'spacephone',
       serializers.serialize(object.spacephone,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'photo',
       serializers.serialize(object.photo,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -344,7 +344,7 @@ class _$PatientResponseSerializer
 
   @override
   PatientResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PatientResponseBuilder();
 
@@ -352,7 +352,7 @@ class _$PatientResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'nom':
           result.nom = serializers.deserialize(value,
@@ -405,29 +405,29 @@ class _$AppointmentDataResponseSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'date',
-      serializers.serialize(object.date, specifiedType: const FullType(String)),
+      serializers.serialize(object.date, specifiedType: const FullType(String))!,
       'time',
-      serializers.serialize(object.time, specifiedType: const FullType(String)),
+      serializers.serialize(object.time, specifiedType: const FullType(String))!,
       'label',
       serializers.serialize(object.label,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'duration',
       serializers.serialize(object.duration,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'status',
       serializers.serialize(object.status,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'token',
       serializers.serialize(object.token,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'tokentelecons',
       serializers.serialize(object.tokentelecons,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'with',
-      serializers.serialize(object.avec, specifiedType: const FullType(String)),
+      serializers.serialize(object.avec, specifiedType: const FullType(String))!,
       'informations',
       serializers.serialize(object.informations,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
     Object value;
     value = object.buttonlabeltelecons;
@@ -435,21 +435,21 @@ class _$AppointmentDataResponseSerializer
       result
         ..add('buttonlabeltelecons')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.past;
     if (value != null) {
       result
         ..add('past')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     return result;
   }
 
   @override
   AppointmentDataResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AppointmentDataResponseBuilder();
 
@@ -457,7 +457,7 @@ class _$AppointmentDataResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'date':
           result.date = serializers.deserialize(value,
@@ -527,13 +527,13 @@ class _$AllAppoinmentResponseSerializer
     final result = <Object>[
       'cabinet',
       serializers.serialize(object.cabinet,
-          specifiedType: const FullType(CabinetResponse)),
+          specifiedType: const FullType(CabinetResponse))!,
       'patient',
       serializers.serialize(object.patient,
-          specifiedType: const FullType(PatientResponse)),
+          specifiedType: const FullType(PatientResponse))!,
       'appointment',
       serializers.serialize(object.appointment,
-          specifiedType: const FullType(AppointmentDataResponse)),
+          specifiedType: const FullType(AppointmentDataResponse))!,
     ];
 
     return result;
@@ -541,7 +541,7 @@ class _$AllAppoinmentResponseSerializer
 
   @override
   AllAppoinmentResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AllAppoinmentResponseBuilder();
 
@@ -549,7 +549,7 @@ class _$AllAppoinmentResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'cabinet':
           result.cabinet.replace(serializers.deserialize(value,
@@ -590,17 +590,18 @@ class _$AppointmentResponse extends AppointmentResponse {
   final DataAppointmentResponse data;
 
   factory _$AppointmentResponse(
-          [void Function(AppointmentResponseBuilder) updates]) =>
-      (new AppointmentResponseBuilder()..update(updates)).build();
+          [void Function(AppointmentResponseBuilder)? updates]) =>
+      (new AppointmentResponseBuilder()..update(updates!)).build();
 
   _$AppointmentResponse._(
-      {this.version,
-      this.request,
-      this.params,
-      this.message,
-      this.httpstatut,
-      this.error,
-      this.data})
+      {
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.message,
+      required this.httpstatut,
+      required this.error,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         version, 'AppointmentResponse', 'version');
@@ -620,7 +621,7 @@ class _$AppointmentResponse extends AppointmentResponse {
   @override
   AppointmentResponse rebuild(
           void Function(AppointmentResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   AppointmentResponseBuilder toBuilder() =>
@@ -669,35 +670,35 @@ class _$AppointmentResponse extends AppointmentResponse {
 
 class AppointmentResponseBuilder
     implements Builder<AppointmentResponse, AppointmentResponseBuilder> {
-  _$AppointmentResponse _$v;
+  _$AppointmentResponse? _$v =_$AppointmentResponse();
 
-  String _version;
+  String _version = '';
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request;
+  String _request = '';
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsAppointmentResponseBuilder _params;
+  ParamsAppointmentResponseBuilder _params =ParamsAppointmentResponseBuilder();
   ParamsAppointmentResponseBuilder get params =>
       _$this._params ??= new ParamsAppointmentResponseBuilder();
   set params(ParamsAppointmentResponseBuilder params) =>
       _$this._params = params;
 
-  String _message;
+  String _message = '';
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  int _httpstatut;
+  int _httpstatut = 0;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
+  String _error = '';
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  DataAppointmentResponseBuilder _data;
+  DataAppointmentResponseBuilder _data =DataAppointmentResponseBuilder();
   DataAppointmentResponseBuilder get data =>
       _$this._data ??= new DataAppointmentResponseBuilder();
   set data(DataAppointmentResponseBuilder data) => _$this._data = data;
@@ -726,7 +727,7 @@ class AppointmentResponseBuilder
   }
 
   @override
-  void update(void Function(AppointmentResponseBuilder) updates) {
+  void update(void Function(AppointmentResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -749,7 +750,7 @@ class AppointmentResponseBuilder
                   error, 'AppointmentResponse', 'error'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'params';
         params.build();
@@ -774,10 +775,10 @@ class _$ParamsAppointmentResponse extends ParamsAppointmentResponse {
   final String page;
 
   factory _$ParamsAppointmentResponse(
-          [void Function(ParamsAppointmentResponseBuilder) updates]) =>
-      (new ParamsAppointmentResponseBuilder()..update(updates)).build();
+          [void Function(ParamsAppointmentResponseBuilder)? updates]) =>
+      (new ParamsAppointmentResponseBuilder()..update(updates!)).build();
 
-  _$ParamsAppointmentResponse._({this.tokenuser, this.page}) : super._() {
+  _$ParamsAppointmentResponse._({required this.tokenuser,required this.page}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'ParamsAppointmentResponse', 'tokenuser');
     BuiltValueNullFieldError.checkNotNull(
@@ -787,7 +788,7 @@ class _$ParamsAppointmentResponse extends ParamsAppointmentResponse {
   @override
   ParamsAppointmentResponse rebuild(
           void Function(ParamsAppointmentResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   ParamsAppointmentResponseBuilder toBuilder() =>
@@ -818,13 +819,13 @@ class _$ParamsAppointmentResponse extends ParamsAppointmentResponse {
 class ParamsAppointmentResponseBuilder
     implements
         Builder<ParamsAppointmentResponse, ParamsAppointmentResponseBuilder> {
-  _$ParamsAppointmentResponse _$v;
+  _$ParamsAppointmentResponse? _$v =_$ParamsAppointmentResponse();
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _page;
+  String _page = '';
   String get page => _$this._page;
   set page(String page) => _$this._page = page;
 
@@ -847,7 +848,7 @@ class ParamsAppointmentResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsAppointmentResponseBuilder) updates) {
+  void update(void Function(ParamsAppointmentResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -871,10 +872,10 @@ class _$DataAppointmentResponse extends DataAppointmentResponse {
   final PaginationListOfDoctor pagination;
 
   factory _$DataAppointmentResponse(
-          [void Function(DataAppointmentResponseBuilder) updates]) =>
-      (new DataAppointmentResponseBuilder()..update(updates)).build();
+          [void Function(DataAppointmentResponseBuilder)? updates]) =>
+      (new DataAppointmentResponseBuilder()..update(updates!)).build();
 
-  _$DataAppointmentResponse._({this.list, this.pagination}) : super._() {
+  _$DataAppointmentResponse._({required this.list,required this.pagination}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         list, 'DataAppointmentResponse', 'list');
     BuiltValueNullFieldError.checkNotNull(
@@ -884,7 +885,7 @@ class _$DataAppointmentResponse extends DataAppointmentResponse {
   @override
   DataAppointmentResponse rebuild(
           void Function(DataAppointmentResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   DataAppointmentResponseBuilder toBuilder() =>
@@ -915,14 +916,14 @@ class _$DataAppointmentResponse extends DataAppointmentResponse {
 class DataAppointmentResponseBuilder
     implements
         Builder<DataAppointmentResponse, DataAppointmentResponseBuilder> {
-  _$DataAppointmentResponse _$v;
+  _$DataAppointmentResponse? _$v = _$DataAppointmentResponse();
 
-  ListBuilder<AllAppoinmentResponse> _list;
+  ListBuilder<AllAppoinmentResponse> _list =ListBuilder();
   ListBuilder<AllAppoinmentResponse> get list =>
       _$this._list ??= new ListBuilder<AllAppoinmentResponse>();
   set list(ListBuilder<AllAppoinmentResponse> list) => _$this._list = list;
 
-  PaginationListOfDoctorBuilder _pagination;
+  PaginationListOfDoctorBuilder _pagination =PaginationListOfDoctorBuilder();
   PaginationListOfDoctorBuilder get pagination =>
       _$this._pagination ??= new PaginationListOfDoctorBuilder();
   set pagination(PaginationListOfDoctorBuilder pagination) =>
@@ -947,7 +948,7 @@ class DataAppointmentResponseBuilder
   }
 
   @override
-  void update(void Function(DataAppointmentResponseBuilder) updates) {
+  void update(void Function(DataAppointmentResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -959,7 +960,7 @@ class DataAppointmentResponseBuilder
           new _$DataAppointmentResponse._(
               list: list.build(), pagination: pagination.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'list';
         list.build();
@@ -994,18 +995,19 @@ class _$CabinetResponse extends CabinetResponse {
   @override
   final String token;
 
-  factory _$CabinetResponse([void Function(CabinetResponseBuilder) updates]) =>
-      (new CabinetResponseBuilder()..update(updates)).build();
+  factory _$CabinetResponse([void Function(CabinetResponseBuilder)? updates]) =>
+      (new CabinetResponseBuilder()..update(updates!)).build();
 
   _$CabinetResponse._(
-      {this.nom,
-      this.address,
-      this.city,
-      this.phone,
-      this.spacephone,
-      this.lat,
-      this.lng,
-      this.token})
+      {
+      required this.nom,
+      required this.address,
+      required this.city,
+      required this.phone,
+      required this.spacephone,
+      required this.lat,
+      required this.lng,
+      required this.token})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(nom, 'CabinetResponse', 'nom');
     BuiltValueNullFieldError.checkNotNull(
@@ -1021,7 +1023,7 @@ class _$CabinetResponse extends CabinetResponse {
 
   @override
   CabinetResponse rebuild(void Function(CabinetResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   CabinetResponseBuilder toBuilder() =>
@@ -1074,37 +1076,37 @@ class _$CabinetResponse extends CabinetResponse {
 
 class CabinetResponseBuilder
     implements Builder<CabinetResponse, CabinetResponseBuilder> {
-  _$CabinetResponse _$v;
+  _$CabinetResponse? _$v =_$CabinetResponse();
 
-  String _nom;
+  String _nom = '';
   String get nom => _$this._nom;
   set nom(String nom) => _$this._nom = nom;
 
-  String _address;
+  String _address = '';
   String get address => _$this._address;
   set address(String address) => _$this._address = address;
 
-  String _city;
+  String _city = '';
   String get city => _$this._city;
   set city(String city) => _$this._city = city;
 
-  String _phone;
+  String _phone = '';
   String get phone => _$this._phone;
   set phone(String phone) => _$this._phone = phone;
 
-  String _spacephone;
+  String _spacephone = '';
   String get spacephone => _$this._spacephone;
   set spacephone(String spacephone) => _$this._spacephone = spacephone;
 
-  String _lat;
+  String _lat ='';
   String get lat => _$this._lat;
   set lat(String lat) => _$this._lat = lat;
 
-  String _lng;
+  String _lng ='';
   String get lng => _$this._lng;
   set lng(String lng) => _$this._lng = lng;
 
-  String _token;
+  String _token = '';
   String get token => _$this._token;
   set token(String token) => _$this._token = token;
 
@@ -1133,7 +1135,7 @@ class CabinetResponseBuilder
   }
 
   @override
-  void update(void Function(CabinetResponseBuilder) updates) {
+  void update(void Function(CabinetResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1178,17 +1180,18 @@ class _$PatientResponse extends PatientResponse {
   @override
   final String photo;
 
-  factory _$PatientResponse([void Function(PatientResponseBuilder) updates]) =>
-      (new PatientResponseBuilder()..update(updates)).build();
+  factory _$PatientResponse([void Function(PatientResponseBuilder)? updates]) =>
+      (new PatientResponseBuilder()..update(updates!)).build();
 
   _$PatientResponse._(
-      {this.nom,
-      this.birthdate,
-      this.email,
-      this.nir,
-      this.phone,
-      this.spacephone,
-      this.photo})
+      {
+      required this.nom,
+      required this.birthdate,
+      required this.email,
+      required this.nir,
+      required this.phone,
+      required this.spacephone,
+      required this.photo})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(nom, 'PatientResponse', 'nom');
     BuiltValueNullFieldError.checkNotNull(
@@ -1203,7 +1206,7 @@ class _$PatientResponse extends PatientResponse {
 
   @override
   PatientResponse rebuild(void Function(PatientResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   PatientResponseBuilder toBuilder() =>
@@ -1252,33 +1255,33 @@ class _$PatientResponse extends PatientResponse {
 
 class PatientResponseBuilder
     implements Builder<PatientResponse, PatientResponseBuilder> {
-  _$PatientResponse _$v;
+  _$PatientResponse? _$v = _$PatientResponse();
 
-  String _nom;
+  String _nom = '';
   String get nom => _$this._nom;
   set nom(String nom) => _$this._nom = nom;
 
-  String _birthdate;
+  String _birthdate ='';
   String get birthdate => _$this._birthdate;
   set birthdate(String birthdate) => _$this._birthdate = birthdate;
 
-  String _email;
+  String _email = '';
   String get email => _$this._email;
   set email(String email) => _$this._email = email;
 
-  String _nir;
+  String _nir='';
   String get nir => _$this._nir;
   set nir(String nir) => _$this._nir = nir;
 
-  String _phone;
+  String _phone = '';
   String get phone => _$this._phone;
   set phone(String phone) => _$this._phone = phone;
 
-  String _spacephone;
+  String _spacephone = '';
   String get spacephone => _$this._spacephone;
   set spacephone(String spacephone) => _$this._spacephone = spacephone;
 
-  String _photo;
+  String _photo = '';
   String get photo => _$this._photo;
   set photo(String photo) => _$this._photo = photo;
 
@@ -1306,7 +1309,7 @@ class PatientResponseBuilder
   }
 
   @override
-  void update(void Function(PatientResponseBuilder) updates) {
+  void update(void Function(PatientResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1358,21 +1361,22 @@ class _$AppointmentDataResponse extends AppointmentDataResponse {
   final String past;
 
   factory _$AppointmentDataResponse(
-          [void Function(AppointmentDataResponseBuilder) updates]) =>
-      (new AppointmentDataResponseBuilder()..update(updates)).build();
+          [void Function(AppointmentDataResponseBuilder)? updates]) =>
+      (new AppointmentDataResponseBuilder()..update(updates!)).build();
 
   _$AppointmentDataResponse._(
-      {this.date,
-      this.time,
-      this.label,
-      this.duration,
-      this.status,
-      this.token,
-      this.tokentelecons,
-      this.buttonlabeltelecons,
-      this.avec,
-      this.informations,
-      this.past})
+      {
+      required this.date,
+      required this.time,
+      required this.label,
+      required this.duration,
+      required this.status,
+      required this.token,
+      required this.tokentelecons,
+      required this.buttonlabeltelecons,
+      required this.avec,
+      required this.informations,
+      required this.past})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         date, 'AppointmentDataResponse', 'date');
@@ -1397,7 +1401,7 @@ class _$AppointmentDataResponse extends AppointmentDataResponse {
   @override
   AppointmentDataResponse rebuild(
           void Function(AppointmentDataResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   AppointmentDataResponseBuilder toBuilder() =>
@@ -1465,51 +1469,51 @@ class _$AppointmentDataResponse extends AppointmentDataResponse {
 class AppointmentDataResponseBuilder
     implements
         Builder<AppointmentDataResponse, AppointmentDataResponseBuilder> {
-  _$AppointmentDataResponse _$v;
+  _$AppointmentDataResponse? _$v =_$AppointmentDataResponse();
 
-  String _date;
+  String _date = '';
   String get date => _$this._date;
   set date(String date) => _$this._date = date;
 
-  String _time;
+  String _time ='';
   String get time => _$this._time;
   set time(String time) => _$this._time = time;
 
-  String _label;
+  String _label = '';
   String get label => _$this._label;
   set label(String label) => _$this._label = label;
 
-  String _duration;
+  String _duration = '';
   String get duration => _$this._duration;
   set duration(String duration) => _$this._duration = duration;
 
-  String _status;
+  String _status = '';
   String get status => _$this._status;
   set status(String status) => _$this._status = status;
 
-  String _token;
+  String _token = '';
   String get token => _$this._token;
   set token(String token) => _$this._token = token;
 
-  String _tokentelecons;
+  String _tokentelecons = '';
   String get tokentelecons => _$this._tokentelecons;
   set tokentelecons(String tokentelecons) =>
       _$this._tokentelecons = tokentelecons;
 
-  String _buttonlabeltelecons;
+  String _buttonlabeltelecons ='';
   String get buttonlabeltelecons => _$this._buttonlabeltelecons;
   set buttonlabeltelecons(String buttonlabeltelecons) =>
       _$this._buttonlabeltelecons = buttonlabeltelecons;
 
-  String _avec;
+  String _avec = '';
   String get avec => _$this._avec;
   set avec(String avec) => _$this._avec = avec;
 
-  String _informations;
+  String _informations = '';
   String get informations => _$this._informations;
   set informations(String informations) => _$this._informations = informations;
 
-  String _past;
+  String _past ='';
   String get past => _$this._past;
   set past(String past) => _$this._past = past;
 
@@ -1541,7 +1545,7 @@ class AppointmentDataResponseBuilder
   }
 
   @override
-  void update(void Function(AppointmentDataResponseBuilder) updates) {
+  void update(void Function(AppointmentDataResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1583,10 +1587,10 @@ class _$AllAppoinmentResponse extends AllAppoinmentResponse {
   final AppointmentDataResponse appointment;
 
   factory _$AllAppoinmentResponse(
-          [void Function(AllAppoinmentResponseBuilder) updates]) =>
-      (new AllAppoinmentResponseBuilder()..update(updates)).build();
+          [void Function(AllAppoinmentResponseBuilder)? updates]) =>
+      (new AllAppoinmentResponseBuilder()..update(updates!)).build();
 
-  _$AllAppoinmentResponse._({this.cabinet, this.patient, this.appointment})
+  _$AllAppoinmentResponse._({required this.cabinet,required this.patient,required  this.appointment})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         cabinet, 'AllAppoinmentResponse', 'cabinet');
@@ -1599,7 +1603,7 @@ class _$AllAppoinmentResponse extends AllAppoinmentResponse {
   @override
   AllAppoinmentResponse rebuild(
           void Function(AllAppoinmentResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   AllAppoinmentResponseBuilder toBuilder() =>
@@ -1632,19 +1636,19 @@ class _$AllAppoinmentResponse extends AllAppoinmentResponse {
 
 class AllAppoinmentResponseBuilder
     implements Builder<AllAppoinmentResponse, AllAppoinmentResponseBuilder> {
-  _$AllAppoinmentResponse _$v;
+  _$AllAppoinmentResponse? _$v =_$AllAppoinmentResponse();
 
-  CabinetResponseBuilder _cabinet;
+  late CabinetResponseBuilder _cabinet;
   CabinetResponseBuilder get cabinet =>
       _$this._cabinet ??= new CabinetResponseBuilder();
   set cabinet(CabinetResponseBuilder cabinet) => _$this._cabinet = cabinet;
 
-  PatientResponseBuilder _patient;
+  late PatientResponseBuilder _patient;
   PatientResponseBuilder get patient =>
       _$this._patient ??= new PatientResponseBuilder();
   set patient(PatientResponseBuilder patient) => _$this._patient = patient;
 
-  AppointmentDataResponseBuilder _appointment;
+  late AppointmentDataResponseBuilder _appointment;
   AppointmentDataResponseBuilder get appointment =>
       _$this._appointment ??= new AppointmentDataResponseBuilder();
   set appointment(AppointmentDataResponseBuilder appointment) =>
@@ -1670,7 +1674,7 @@ class AllAppoinmentResponseBuilder
   }
 
   @override
-  void update(void Function(AllAppoinmentResponseBuilder) updates) {
+  void update(void Function(AllAppoinmentResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1684,7 +1688,7 @@ class AllAppoinmentResponseBuilder
               patient: patient.build(),
               appointment: appointment.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'cabinet';
         cabinet.build();

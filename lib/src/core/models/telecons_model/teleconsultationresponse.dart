@@ -37,7 +37,7 @@ abstract class TeleconsResponse
 
   static TeleconsResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        TeleconsResponse.serializer, json.decode(jsonString));
+        TeleconsResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<TeleconsResponse> get serializer =>
@@ -57,7 +57,7 @@ abstract class ParamsTc implements Built<ParamsTc, ParamsTcBuilder> {
 
   static ParamsTc fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsTc.serializer, json.decode(jsonString));
+        ParamsTc.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<ParamsTc> get serializer => _$paramsTcSerializer;
@@ -84,7 +84,7 @@ abstract class DataTc implements Built<DataTc, DataTcBuilder> {
 
   static DataTc fromJson(String jsonString) {
     return serializers.deserializeWith(
-        DataTc.serializer, json.decode(jsonString));
+        DataTc.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<DataTc> get serializer => _$dataTcSerializer;
@@ -116,7 +116,7 @@ abstract class EtablissementTc
 
   static EtablissementTc fromJson(String jsonString) {
     return serializers.deserializeWith(
-        EtablissementTc.serializer, json.decode(jsonString));
+        EtablissementTc.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<EtablissementTc> get serializer =>
@@ -148,7 +148,7 @@ abstract class ApptTc implements Built<ApptTc, ApptTcBuilder> {
 
   static ApptTc fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ApptTc.serializer, json.decode(jsonString));
+        ApptTc.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<ApptTc> get serializer => _$apptTcSerializer;
@@ -171,7 +171,7 @@ abstract class InfosTc implements Built<InfosTc, InfosTcBuilder> {
 
   static InfosTc fromJson(String jsonString) {
     return serializers.deserializeWith(
-        InfosTc.serializer, json.decode(jsonString));
+        InfosTc.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<InfosTc> get serializer => _$infosTcSerializer;
@@ -198,7 +198,7 @@ abstract class PaymentTc implements Built<PaymentTc, PaymentTcBuilder> {
 
   static PaymentTc fromJson(String jsonString) {
     return serializers.deserializeWith(
-        PaymentTc.serializer, json.decode(jsonString));
+        PaymentTc.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<PaymentTc> get serializer => _$paymentTcSerializer;
@@ -225,7 +225,7 @@ abstract class TokboxTc implements Built<TokboxTc, TokboxTcBuilder> {
 
   static TokboxTc fromJson(String jsonString) {
     return serializers.deserializeWith(
-        TokboxTc.serializer, json.decode(jsonString));
+        TokboxTc.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<TokboxTc> get serializer => _$tokboxTcSerializer;

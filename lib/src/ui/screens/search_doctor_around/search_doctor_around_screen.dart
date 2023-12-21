@@ -28,11 +28,11 @@ class SearchDoctorAroundResultPageArguments implements PagesArgumentType {
   final String nameOrSpeciality;
 
   SearchDoctorAroundResultPageArguments({
-    this.city,
-    this.nameOrSpeciality,
-    this.cityId,
-    this.categoryId,
-    this.cityOrOther,
+    required this.city,
+    required this.nameOrSpeciality,
+    required this.cityId,
+    required this.categoryId,
+    required this.cityOrOther,
   });
 
   @override
@@ -44,7 +44,7 @@ class SearchDoctorAroundResultPageArguments implements PagesArgumentType {
 class SearchDoctorAround extends StatefulWidget {
   final SearchDoctorAroundResultPageArguments arguments;
 
-  SearchDoctorAround({this.arguments});
+  SearchDoctorAround({required this.arguments});
 
   @override
   _SearchDoctorAroundState createState() => _SearchDoctorAroundState();
@@ -53,7 +53,7 @@ class SearchDoctorAround extends StatefulWidget {
 class _SearchDoctorAroundState extends State<SearchDoctorAround> {
   ScrollController _scrollController = new ScrollController();
   int currentPage = 1;
-  int totalOfPage;
+  int totalOfPage =0;
   bool isRefreshList = false;
   bool _isLoading = false;
 
@@ -206,7 +206,7 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                    ),
+                    ), title: '', buttonLabel: '',
                   );
                 } else if (state.error == invalidTokenUser) {
                   customAlert(
@@ -226,7 +226,7 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                    ),
+                    ), title: '', buttonLabel: '',
                   );
                 } else {
                   flushBarError(state.error, context);
@@ -329,7 +329,7 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
                                                                   arguments: GetDoctorIdPageArguments(
                                                                       id: doctors[
                                                                               i]
-                                                                          .id)),
+                                                                          .id, tokenAppointment: '', tokenDoctor: '')),
                                                               child: Text(
                                                                   'Profil'),
                                                               style:
@@ -524,7 +524,7 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
                                                                     child:
                                                                         IconButton(
                                                                       icon:
-                                                                          const Icon(
+                                                                           Icon(
                                                                         Icons
                                                                             .call,
                                                                         color: AppColors
@@ -591,10 +591,10 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
                                                           _openGoogleMapApp(
                                                               double.parse(
                                                                   doctors[i]
-                                                                      ?.lat),
+                                                                      .lat),
                                                               double.parse(
                                                                   doctors[i]
-                                                                      ?.lng)),
+                                                                      .lng)),
                                                     ),
                                                     Padding(
                                                       padding:
@@ -661,12 +661,12 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
 
 class SocialIcon extends StatelessWidget {
   final String imageUrl;
-  final Function onPressed;
+  final void Function()? onPressed;
 
   const SocialIcon({
-    Key key,
-    @required this.imageUrl,
-    @required this.onPressed,
+    Key? key,
+    required this.imageUrl,
+    required this.onPressed,
   }) : super(key: key);
 
   @override

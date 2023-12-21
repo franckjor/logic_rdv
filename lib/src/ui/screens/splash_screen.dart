@@ -17,7 +17,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  String _tokenUser;
+  String _tokenuser = '';
   int i = 0;
   @override
   void initState() {
@@ -61,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   content: Text(
                     state.error,
                     textAlign: TextAlign.center,
-                  ));
+                  ), title: '', buttonLabel: '', action: () {  }, willPop: false);
             } else {
               setState(() {
                 i++;
@@ -80,8 +80,8 @@ class _SplashScreenState extends State<SplashScreen> {
               ..add(CheckTokenAuthorisationEvent());
           } else if (state is SharedPreferenceReadObjectState) {
             setState(() {
-              _tokenUser = state.sharePreferenceObject.token;
-              if (_tokenUser != null) {
+              _tokenuser = state.sharePreferenceObject!.token;
+              if (_tokenuser != null) {
                 navigateToHomePage(context);
               } else {
                 generateAnotherToken(context);

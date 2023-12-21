@@ -21,12 +21,12 @@ class _$SearchCityRequestSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'kind',
-      serializers.serialize(object.kind, specifiedType: const FullType(String)),
+      serializers.serialize(object.kind, specifiedType: const FullType(String))!,
       'proxy_istelecons',
       serializers.serialize(object.proxyIstelecons,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'term',
-      serializers.serialize(object.term, specifiedType: const FullType(String)),
+      serializers.serialize(object.term, specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -34,7 +34,7 @@ class _$SearchCityRequestSerializer
 
   @override
   SearchCityRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SearchCityRequestBuilder();
 
@@ -42,7 +42,7 @@ class _$SearchCityRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'kind':
           result.kind = serializers.deserialize(value,
@@ -72,10 +72,10 @@ class _$SearchCityRequest extends SearchCityRequest {
   final String term;
 
   factory _$SearchCityRequest(
-          [void Function(SearchCityRequestBuilder) updates]) =>
-      (new SearchCityRequestBuilder()..update(updates)).build();
+          [void Function(SearchCityRequestBuilder)? updates]) =>
+      (new SearchCityRequestBuilder()..update(updates!)).build();
 
-  _$SearchCityRequest._({this.kind, this.proxyIstelecons, this.term})
+  _$SearchCityRequest._({required this.kind,required this.proxyIstelecons,required  this.term})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(kind, 'SearchCityRequest', 'kind');
     BuiltValueNullFieldError.checkNotNull(
@@ -85,7 +85,7 @@ class _$SearchCityRequest extends SearchCityRequest {
 
   @override
   SearchCityRequest rebuild(void Function(SearchCityRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   SearchCityRequestBuilder toBuilder() =>
@@ -118,18 +118,18 @@ class _$SearchCityRequest extends SearchCityRequest {
 
 class SearchCityRequestBuilder
     implements Builder<SearchCityRequest, SearchCityRequestBuilder> {
-  _$SearchCityRequest _$v;
+  _$SearchCityRequest? _$v =_$SearchCityRequest();
 
-  String _kind;
+  String _kind = '';
   String get kind => _$this._kind;
   set kind(String kind) => _$this._kind = kind;
 
-  String _proxyIstelecons;
+  String _proxyIstelecons = '';
   String get proxyIstelecons => _$this._proxyIstelecons;
   set proxyIstelecons(String proxyIstelecons) =>
       _$this._proxyIstelecons = proxyIstelecons;
 
-  String _term;
+  String _term = '';
   String get term => _$this._term;
   set term(String term) => _$this._term = term;
 
@@ -153,7 +153,7 @@ class SearchCityRequestBuilder
   }
 
   @override
-  void update(void Function(SearchCityRequestBuilder) updates) {
+  void update(void Function(SearchCityRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

@@ -9,7 +9,7 @@ abstract class TeleconsEvent extends Equatable {
 class GetTeleconsEvent extends TeleconsEvent {
   final TeleconsRequest teleconsRequest;
 
-  GetTeleconsEvent({this.teleconsRequest});
+  GetTeleconsEvent({required this.teleconsRequest});
 
   @override
   List<Object> get props => [teleconsRequest];

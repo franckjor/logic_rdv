@@ -4,7 +4,7 @@ import 'package:logic_rdv_v0/src/core/models/doctor_list_model/add_doctor_reques
 import 'package:logic_rdv_v0/src/core/models/doctor_list_model/add_doctor_response.dart';
 
 class AddDoctorRepository extends AbstractRepository {
-  Future addDoctor({AddDoctorRequest addDoctorRequest}) async {
+  Future addDoctor({required AddDoctorRequest addDoctorRequest}) async {
     final String path = '/${getControllerName()}doctoradd/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,

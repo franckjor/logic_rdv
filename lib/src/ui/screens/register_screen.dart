@@ -34,7 +34,7 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-  FocusNode _focusNodeConnectButton;
+  FocusNode _focusNodeConnectButton = FocusNode();
 
   double _textFieldHeight = 0;
   final _key = GlobalKey();
@@ -58,10 +58,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _isdoctorChecked = false;
   String _dropDownSelected = "";
 
-  Etabs _etabs;
-  String code;
-  String _idDoctor;
-  String _checkedCondition = '0';
+  late Etabs _etabs;
+  late String code;
+  late String _idDoctor;
+  late String _checkedCondition = '0';
 
   @override
   void initState() {
@@ -69,7 +69,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _focusNodeConnectButton = FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        _textFieldHeight = _key.currentContext.size.height;
+        _textFieldHeight = _key.currentContext!.size!.height;
       });
     });
   }
@@ -101,16 +101,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
             actions: [
           IconButton(
             icon: Platform.isAndroid 
-                ? const Icon(
+                ?  Icon(
               MdiIcons.menu,
               color: Color.fromARGB(255, 255, 255, 255),
             )
-                : const Icon(
+                :  Icon(
               MdiIcons.menu,
               color: Color.fromARGB(255, 255, 255, 255),
             ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
         ),
@@ -178,7 +178,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                    ),
+                    ), title: '', buttonLabel: '',
                   );
                 } else if (state.error == invalidTokenUser) {
                   customAlert(
@@ -198,7 +198,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                    ),
+                    ), title: '', buttonLabel: '',
                   );
                 } else {
                   customAlert(
@@ -208,7 +208,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       content: Text(
                         state.error,
                         textAlign: TextAlign.center,
-                      ));
+                      ), buttonLabel: '', action: () {  }, willPop: false);
                 }
               }
             })
@@ -303,17 +303,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                             'Téléphone du cabinet médical',
                                         controller: _cabinetPhoneController,
                                         validator: (value) =>
-                                            verifyEmpty(value),
+                                            verifyEmpty(value!),
                                         onEditingComplete: () {
                                           final _form = _formKey1.currentState;
-                                          if (_form.validate()) {
+                                          if (_form!.validate()) {
                                             onPressedCheckDoctorButton(
                                                 context: context,
                                                 phoneNumberCabinet:
                                                     _cabinetPhoneController
                                                         .text);
                                           }
-                                        },
+                                        }, suffixIcon: null, textInputAction: null, focusNode: null,
                                       ),
                                     ),
                                     const SizedBox(width: 10),
@@ -332,7 +332,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                           onPressed: () {
                                             final _form =
                                                 _formKey1.currentState;
-                                            if (_form.validate()) {
+                                            if (_form!.validate()) {
                                               onPressedCheckDoctorButton(
                                                   context: context,
                                                   phoneNumberCabinet:
@@ -362,7 +362,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(15.0),
                                     border: Border.all(
-                                        color: Colors.grey[200],
+                                        //color: Colors.grey[200],
                                         style: BorderStyle.solid,
                                         width: 0.80),
                                   ),
@@ -374,7 +374,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     hint: Text('selectionner une valeur'),
                                     onChanged: (value) {
                                       setState(() {
-                                        _etabs = value;
+                                        _etabs = value!;
                                         _etabsList.forEach((element) {
                                           if (element.name == value.name) {
                                             _idDoctor = element.id;
@@ -406,8 +406,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       AdaptativeTextFormField(
                                         hintText: 'Nom',
                                         validator: (value) =>
-                                            verifyEmpty(value),
-                                        controller: _nameController,
+                                            verifyEmpty(value!),
+                                        controller: _nameController, suffixIcon: null, focusNode: null, textInputAction: null,
                                       ),
                                       Visibility(
                                           visible: _isdoctorChecked &&
@@ -421,39 +421,43 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         child: AdaptativeTextFormField(
                                           hintText: 'Code fourni par le Dr',
                                           controller: _codeController,
+                                          suffixIcon: null, focusNode: null, textInputAction: null,
                                         ),
                                       ),
                                       const SizedBox(height: 8),
                                       AdaptativeTextFormField(
                                         hintText: 'Prénom',
                                         validator: (value) =>
-                                            verifyEmpty(value),
+                                            verifyEmpty(value!),
                                         controller: _prenomController,
+                                        suffixIcon: null, focusNode: null, textInputAction: null,
                                       ),
                                       const SizedBox(height: 8),
                                       AdaptativeTextFormField(
                                         hintText: 'Numèro de téléphone',
                                         textInputType: TextInputType.phone,
                                         validator: (value) =>
-                                            verifyEmpty(value),
+                                            verifyEmpty(value!),
                                         controller: _phoneController,
+                                        suffixIcon: null, focusNode: null, textInputAction: null,
                                       ),
                                       const SizedBox(height: 8),
                                       AdaptativeTextFormField(
                                         hintText: 'Email',
                                         textInputType:
                                             TextInputType.emailAddress,
-                                        validator: (val) => verifyEmpty(val),
+                                        validator: (val) => verifyEmpty(val!),
                                         controller: _emailController,
+                                        suffixIcon: null, focusNode: null, textInputAction: null,
                                       ),
                                       const SizedBox(height: 8),
                                       TextFormField(
                                         controller: _passwordController,
                                         obscureText: _password1,
                                         validator: (value) =>
-                                            verifyEmpty(value),
+                                            verifyEmpty(value!),
                                         decoration: InputDecoration(
-                                          prefixIcon: const Icon(
+                                          prefixIcon:  Icon(
                                             Icons.lock,
                                             color: Color(0xFFd3e0ea),
                                           ),
@@ -527,9 +531,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         controller: _confirmPasswordController,
                                         obscureText: _password2,
                                         validator: (value) =>
-                                            verifyEmpty(value),
+                                            verifyEmpty(value!),
                                         decoration: InputDecoration(
-                                          prefixIcon: const Icon(
+                                          prefixIcon:  Icon(
                                             Icons.lock,
                                             color: Color(0xFFd3e0ea),
                                           ),
@@ -612,7 +616,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                   _checkedCondition = '0';
                                                 }
                                               });
-                                            },
+                                            }, inactiveColor: null,
                                           ),
                                           const SizedBox(width: 16),
                                           Expanded(
@@ -666,7 +670,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 onPressed: () {
                                   if (!_isdoctorChecked) {
                                     final _form = _formKey1.currentState;
-                                    if (_form.validate()) {
+                                    if (_form!.validate()) {
                                       onPressedCheckDoctorButton(
                                           context: context,
                                           phoneNumberCabinet:
@@ -674,7 +678,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     }
                                   } else {
                                     final _form = _formKey.currentState;
-                                    if (_form.validate()) {
+                                    if (_form!.validate()) {
                                       if (_passwordController.text ==
                                           _confirmPasswordController.text) {
                                         if (_checkedCondition == '1') {

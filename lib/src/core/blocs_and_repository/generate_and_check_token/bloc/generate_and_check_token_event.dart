@@ -9,7 +9,7 @@ abstract class GenerateAndCheckTokenEvent extends Equatable {
 class GetTokenAuthorisationEvent extends GenerateAndCheckTokenEvent {
   final GetTokenRequest getTokenRequest;
 
-  GetTokenAuthorisationEvent({this.getTokenRequest});
+  GetTokenAuthorisationEvent({required this.getTokenRequest});
 
   @override
   List<Object> get props => [getTokenRequest];

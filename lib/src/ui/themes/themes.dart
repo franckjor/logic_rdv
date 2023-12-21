@@ -10,9 +10,9 @@ class AppThemes {
         appBarTheme: AppBarTheme(
           elevation: 0,
           backgroundColor: AppColors.primaryColor,
-          brightness: Brightness.dark,
+          //brightness: Brightness.dark,
         ),
-        accentColor: AppColors.primaryColor,
+       // accentColor: AppColors.primaryColor,
         primaryTextTheme: TextTheme(
           headline6: TextStyle(
             color: AppColors.whiteColor,

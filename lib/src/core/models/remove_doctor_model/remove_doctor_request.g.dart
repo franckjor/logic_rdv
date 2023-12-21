@@ -26,9 +26,9 @@ class _$RemoveDoctorRequestSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenUser,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
+      serializers.serialize(object.id, specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -36,7 +36,7 @@ class _$RemoveDoctorRequestSerializer
 
   @override
   RemoveDoctorRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new RemoveDoctorRequestBuilder();
 
@@ -44,7 +44,7 @@ class _$RemoveDoctorRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenUser = serializers.deserialize(value,
@@ -68,10 +68,10 @@ class _$RemoveDoctorRequest extends RemoveDoctorRequest {
   final String id;
 
   factory _$RemoveDoctorRequest(
-          [void Function(RemoveDoctorRequestBuilder) updates]) =>
-      (new RemoveDoctorRequestBuilder()..update(updates)).build();
+          [void Function(RemoveDoctorRequestBuilder)? updates]) =>
+      (new RemoveDoctorRequestBuilder()..update(updates!)).build();
 
-  _$RemoveDoctorRequest._({this.tokenUser, this.id}) : super._() {
+  _$RemoveDoctorRequest._({required this.tokenUser,required this.id}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenUser, 'RemoveDoctorRequest', 'tokenUser');
     BuiltValueNullFieldError.checkNotNull(id, 'RemoveDoctorRequest', 'id');
@@ -80,7 +80,7 @@ class _$RemoveDoctorRequest extends RemoveDoctorRequest {
   @override
   RemoveDoctorRequest rebuild(
           void Function(RemoveDoctorRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   RemoveDoctorRequestBuilder toBuilder() =>
@@ -110,13 +110,13 @@ class _$RemoveDoctorRequest extends RemoveDoctorRequest {
 
 class RemoveDoctorRequestBuilder
     implements Builder<RemoveDoctorRequest, RemoveDoctorRequestBuilder> {
-  _$RemoveDoctorRequest _$v;
+  _$RemoveDoctorRequest? _$v;
 
-  String _tokenUser;
-  String get tokenUser => _$this._tokenUser;
-  set tokenUser(String tokenUser) => _$this._tokenUser = tokenUser;
+  String _tokenuser = '';
+  String get tokenUser => _$this.tokenUser;
+  set tokenUser(String tokenUser) => _$this._tokenuser = tokenUser;
 
-  String _id;
+  String _id = '';
   String get id => _$this._id;
   set id(String id) => _$this._id = id;
 
@@ -125,7 +125,7 @@ class RemoveDoctorRequestBuilder
   RemoveDoctorRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _tokenUser = $v.tokenUser;
+      _tokenuser = $v.tokenUser;
       _id = $v.id;
       _$v = null;
     }
@@ -139,7 +139,7 @@ class RemoveDoctorRequestBuilder
   }
 
   @override
-  void update(void Function(RemoveDoctorRequestBuilder) updates) {
+  void update(void Function(RemoveDoctorRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

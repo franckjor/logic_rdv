@@ -28,22 +28,22 @@ class _$RemoveDoctorResponseSerializer
     final result = <Object>[
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsRemoveDoctorResponse)),
+          specifiedType: const FullType(ParamsRemoveDoctorResponse))!,
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int)),
+          specifiedType: const FullType(int))!,
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -51,7 +51,7 @@ class _$RemoveDoctorResponseSerializer
 
   @override
   RemoveDoctorResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new RemoveDoctorResponseBuilder();
 
@@ -59,7 +59,7 @@ class _$RemoveDoctorResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
@@ -110,9 +110,9 @@ class _$ParamsRemoveDoctorResponseSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
+      serializers.serialize(object.id, specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -120,7 +120,7 @@ class _$ParamsRemoveDoctorResponseSerializer
 
   @override
   ParamsRemoveDoctorResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsRemoveDoctorResponseBuilder();
 
@@ -128,7 +128,7 @@ class _$ParamsRemoveDoctorResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -160,16 +160,17 @@ class _$RemoveDoctorResponse extends RemoveDoctorResponse {
   final String error;
 
   factory _$RemoveDoctorResponse(
-          [void Function(RemoveDoctorResponseBuilder) updates]) =>
-      (new RemoveDoctorResponseBuilder()..update(updates)).build();
+          [void Function(RemoveDoctorResponseBuilder)? updates]) =>
+      (new RemoveDoctorResponseBuilder()..update(updates!)).build();
 
   _$RemoveDoctorResponse._(
-      {this.version,
-      this.request,
-      this.params,
-      this.message,
-      this.httpstatut,
-      this.error})
+      {
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.message,
+      required this.httpstatut,
+      required this.error})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         version, 'RemoveDoctorResponse', 'version');
@@ -188,7 +189,7 @@ class _$RemoveDoctorResponse extends RemoveDoctorResponse {
   @override
   RemoveDoctorResponse rebuild(
           void Function(RemoveDoctorResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   RemoveDoctorResponseBuilder toBuilder() =>
@@ -233,31 +234,31 @@ class _$RemoveDoctorResponse extends RemoveDoctorResponse {
 
 class RemoveDoctorResponseBuilder
     implements Builder<RemoveDoctorResponse, RemoveDoctorResponseBuilder> {
-  _$RemoveDoctorResponse _$v;
+  _$RemoveDoctorResponse? _$v =_$RemoveDoctorResponse();
 
-  String _version;
+  String _version = '';
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request;
+  String _request = '';
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsRemoveDoctorResponseBuilder _params;
+  ParamsRemoveDoctorResponseBuilder _params =ParamsRemoveDoctorResponseBuilder();
   ParamsRemoveDoctorResponseBuilder get params =>
       _$this._params ??= new ParamsRemoveDoctorResponseBuilder();
   set params(ParamsRemoveDoctorResponseBuilder params) =>
       _$this._params = params;
 
-  String _message;
+  String _message = '';
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  int _httpstatut;
+  int _httpstatut = 0;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
+  String _error = '';
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
@@ -284,7 +285,7 @@ class RemoveDoctorResponseBuilder
   }
 
   @override
-  void update(void Function(RemoveDoctorResponseBuilder) updates) {
+  void update(void Function(RemoveDoctorResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -306,7 +307,7 @@ class RemoveDoctorResponseBuilder
               error: BuiltValueNullFieldError.checkNotNull(
                   error, 'RemoveDoctorResponse', 'error'));
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'params';
         params.build();
@@ -328,10 +329,10 @@ class _$ParamsRemoveDoctorResponse extends ParamsRemoveDoctorResponse {
   final String id;
 
   factory _$ParamsRemoveDoctorResponse(
-          [void Function(ParamsRemoveDoctorResponseBuilder) updates]) =>
-      (new ParamsRemoveDoctorResponseBuilder()..update(updates)).build();
+          [void Function(ParamsRemoveDoctorResponseBuilder)? updates]) =>
+      (new ParamsRemoveDoctorResponseBuilder()..update(updates!)).build();
 
-  _$ParamsRemoveDoctorResponse._({this.tokenuser, this.id}) : super._() {
+  _$ParamsRemoveDoctorResponse._({required this.tokenuser,required  this.id}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'ParamsRemoveDoctorResponse', 'tokenuser');
     BuiltValueNullFieldError.checkNotNull(
@@ -341,7 +342,7 @@ class _$ParamsRemoveDoctorResponse extends ParamsRemoveDoctorResponse {
   @override
   ParamsRemoveDoctorResponse rebuild(
           void Function(ParamsRemoveDoctorResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   ParamsRemoveDoctorResponseBuilder toBuilder() =>
@@ -372,13 +373,13 @@ class _$ParamsRemoveDoctorResponse extends ParamsRemoveDoctorResponse {
 class ParamsRemoveDoctorResponseBuilder
     implements
         Builder<ParamsRemoveDoctorResponse, ParamsRemoveDoctorResponseBuilder> {
-  _$ParamsRemoveDoctorResponse _$v;
+  _$ParamsRemoveDoctorResponse? _$v;
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _id;
+  String _id = '';
   String get id => _$this._id;
   set id(String id) => _$this._id = id;
 
@@ -401,7 +402,7 @@ class ParamsRemoveDoctorResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsRemoveDoctorResponseBuilder) updates) {
+  void update(void Function(ParamsRemoveDoctorResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

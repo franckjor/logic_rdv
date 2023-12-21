@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/search_city/search_ci
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
   final SearchCityRepository repository;
 
-  SearchBloc({@required this.repository}) : super(SearchStateLoading());
+  SearchBloc({required this.repository}) : super(SearchStateLoading());
 
   @override
   SearchState get initialState => SearchStateLoading();

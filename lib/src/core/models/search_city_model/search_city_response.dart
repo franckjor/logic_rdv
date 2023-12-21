@@ -37,7 +37,7 @@ abstract class SearchCityResponse
 
   static SearchCityResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        SearchCityResponse.serializer, json.decode(jsonString));
+        SearchCityResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<SearchCityResponse> get serializer =>
@@ -66,7 +66,7 @@ abstract class ParamsSearchCityResponse
 
   static ParamsSearchCityResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsSearchCityResponse.serializer, json.decode(jsonString));
+        ParamsSearchCityResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<ParamsSearchCityResponse> get serializer =>
@@ -97,7 +97,7 @@ abstract class DataSearchCityResponse
 
   static DataSearchCityResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        DataSearchCityResponse.serializer, json.decode(jsonString));
+        DataSearchCityResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<DataSearchCityResponse> get serializer =>
@@ -125,7 +125,7 @@ abstract class ClientInfosResponseSearchCity
 
   static ClientInfosResponseSearchCity fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ClientInfosResponseSearchCity.serializer, json.decode(jsonString));
+        ClientInfosResponseSearchCity.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<ClientInfosResponseSearchCity> get serializer =>

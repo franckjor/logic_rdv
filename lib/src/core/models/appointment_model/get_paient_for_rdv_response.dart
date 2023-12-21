@@ -37,7 +37,7 @@ abstract class GetPaientForRdvResponse
 
   static GetPaientForRdvResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        GetPaientForRdvResponse.serializer, json.decode(jsonString));
+        GetPaientForRdvResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<GetPaientForRdvResponse> get serializer =>
@@ -73,7 +73,7 @@ abstract class ParamsGetPaientForRdvResponse
 
   static ParamsGetPaientForRdvResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsGetPaientForRdvResponse.serializer, json.decode(jsonString));
+        ParamsGetPaientForRdvResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<ParamsGetPaientForRdvResponse> get serializer =>
@@ -110,7 +110,7 @@ abstract class DataGetPaientForRdvResponse
 
   static DataGetPaientForRdvResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        DataGetPaientForRdvResponse.serializer, json.decode(jsonString));
+        DataGetPaientForRdvResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<DataGetPaientForRdvResponse> get serializer =>
@@ -191,7 +191,7 @@ abstract class PatientDataResponseDrv
 
   static PatientDataResponseDrv fromJson(String jsonString) {
     return serializers.deserializeWith(
-        PatientDataResponseDrv.serializer, json.decode(jsonString));
+        PatientDataResponseDrv.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<PatientDataResponseDrv> get serializer =>
@@ -221,7 +221,7 @@ abstract class NavigationGetPaientForRdvResponse
 
   static NavigationGetPaientForRdvResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        NavigationGetPaientForRdvResponse.serializer, json.decode(jsonString));
+        NavigationGetPaientForRdvResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<NavigationGetPaientForRdvResponse> get serializer =>
@@ -257,7 +257,7 @@ abstract class BeginGetPaientForRdvResponse
 
   static BeginGetPaientForRdvResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        BeginGetPaientForRdvResponse.serializer, json.decode(jsonString));
+        BeginGetPaientForRdvResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<BeginGetPaientForRdvResponse> get serializer =>
@@ -292,7 +292,7 @@ abstract class PrevGetPaientForRdvResponse
 
   static PrevGetPaientForRdvResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        PrevGetPaientForRdvResponse.serializer, json.decode(jsonString));
+        PrevGetPaientForRdvResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<PrevGetPaientForRdvResponse> get serializer =>

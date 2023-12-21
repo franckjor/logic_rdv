@@ -26,56 +26,56 @@ class _$PatientRequestSerializer
       result
         ..add('tokenuser')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.tokenappt;
     if (value != null) {
       result
         ..add('tokenappt')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.tokenpatient;
     if (value != null) {
       result
         ..add('tokenpatient')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.nom;
     if (value != null) {
       result
         ..add('nom')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.prenom;
     if (value != null) {
       result
         ..add('prenom')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.email;
     if (value != null) {
       result
         ..add('email')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.phone;
     if (value != null) {
       result
         ..add('phone')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     return result;
   }
 
   @override
   PatientRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PatientRequestBuilder();
 
@@ -83,7 +83,7 @@ class _$PatientRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -136,22 +136,23 @@ class _$PatientRequest extends PatientRequest {
   @override
   final String phone;
 
-  factory _$PatientRequest([void Function(PatientRequestBuilder) updates]) =>
-      (new PatientRequestBuilder()..update(updates)).build();
+  factory _$PatientRequest([void Function(PatientRequestBuilder)? updates]) =>
+      (new PatientRequestBuilder()..update(updates!)).build();
 
   _$PatientRequest._(
-      {this.tokenuser,
-      this.tokenappt,
-      this.tokenpatient,
-      this.nom,
-      this.prenom,
-      this.email,
-      this.phone})
+      {
+      required this.tokenuser,
+      required this.tokenappt,
+      required this.tokenpatient,
+      required this.nom,
+      required this.prenom,
+      required this.email,
+      required this.phone})
       : super._();
 
   @override
   PatientRequest rebuild(void Function(PatientRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   PatientRequestBuilder toBuilder() =>
@@ -200,33 +201,33 @@ class _$PatientRequest extends PatientRequest {
 
 class PatientRequestBuilder
     implements Builder<PatientRequest, PatientRequestBuilder> {
-  _$PatientRequest _$v;
+  _$PatientRequest? _$v = _$PatientRequest();
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappt;
+  String _tokenappt = '';
   String get tokenappt => _$this._tokenappt;
   set tokenappt(String tokenappt) => _$this._tokenappt = tokenappt;
 
-  String _tokenpatient;
+  String _tokenpatient = '';
   String get tokenpatient => _$this._tokenpatient;
   set tokenpatient(String tokenpatient) => _$this._tokenpatient = tokenpatient;
 
-  String _nom;
+  String _nom = '';
   String get nom => _$this._nom;
   set nom(String nom) => _$this._nom = nom;
 
-  String _prenom;
+  String _prenom = '';
   String get prenom => _$this._prenom;
   set prenom(String prenom) => _$this._prenom = prenom;
 
-  String _email;
+  String _email = '';
   String get email => _$this._email;
   set email(String email) => _$this._email = email;
 
-  String _phone;
+  String _phone = '';
   String get phone => _$this._phone;
   set phone(String phone) => _$this._phone = phone;
 
@@ -254,7 +255,7 @@ class PatientRequestBuilder
   }
 
   @override
-  void update(void Function(PatientRequestBuilder) updates) {
+  void update(void Function(PatientRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

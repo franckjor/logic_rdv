@@ -26,7 +26,7 @@ abstract class MessageRequest
 
   static MessageRequest fromJson(String jsonString) {
     return serializers.deserializeWith(
-        MessageRequest.serializer, json.decode(jsonString));
+        MessageRequest.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<MessageRequest> get serializer =>

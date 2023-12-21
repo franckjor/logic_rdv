@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/appointment/repositor
 class AppointmentBloc extends Bloc<AppointmentEvent, AppointmentState> {
   final AppointmentRepository repository;
 
-  AppointmentBloc({@required this.repository}) : super(AppointmentLoading());
+  AppointmentBloc({required this.repository}) : super(AppointmentLoading());
 
   @override
   AppointmentState get initialState => AppointmentLoading();

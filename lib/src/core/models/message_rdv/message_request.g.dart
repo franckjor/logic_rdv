@@ -22,9 +22,9 @@ class _$MessageRequestSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'page',
-      serializers.serialize(object.page, specifiedType: const FullType(String)),
+      serializers.serialize(object.page, specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -32,7 +32,7 @@ class _$MessageRequestSerializer
 
   @override
   MessageRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new MessageRequestBuilder();
 
@@ -40,7 +40,7 @@ class _$MessageRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -63,10 +63,10 @@ class _$MessageRequest extends MessageRequest {
   @override
   final String page;
 
-  factory _$MessageRequest([void Function(MessageRequestBuilder) updates]) =>
-      (new MessageRequestBuilder()..update(updates)).build();
+  factory _$MessageRequest([void Function(MessageRequestBuilder)? updates]) =>
+      (new MessageRequestBuilder()..update(updates!)).build();
 
-  _$MessageRequest._({this.tokenuser, this.page}) : super._() {
+  _$MessageRequest._({required this.tokenuser,required  this.page}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'MessageRequest', 'tokenuser');
     BuiltValueNullFieldError.checkNotNull(page, 'MessageRequest', 'page');
@@ -74,7 +74,7 @@ class _$MessageRequest extends MessageRequest {
 
   @override
   MessageRequest rebuild(void Function(MessageRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   MessageRequestBuilder toBuilder() =>
@@ -104,13 +104,13 @@ class _$MessageRequest extends MessageRequest {
 
 class MessageRequestBuilder
     implements Builder<MessageRequest, MessageRequestBuilder> {
-  _$MessageRequest _$v;
+  _$MessageRequest? _$v =_$MessageRequest();
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _page;
+  String _page = '';
   String get page => _$this._page;
   set page(String page) => _$this._page = page;
 
@@ -133,7 +133,7 @@ class MessageRequestBuilder
   }
 
   @override
-  void update(void Function(MessageRequestBuilder) updates) {
+  void update(void Function(MessageRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

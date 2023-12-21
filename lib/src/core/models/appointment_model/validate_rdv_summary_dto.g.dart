@@ -37,25 +37,25 @@ class _$ValidateRdvSummaryDtoSerializer
     final result = <Object>[
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsValidateRdvSummaryDto)),
+          specifiedType: const FullType(ParamsValidateRdvSummaryDto))!,
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int)),
+          specifiedType: const FullType(int))!,
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'data',
       serializers.serialize(object.data,
-          specifiedType: const FullType(DataValidateRdvSummaryDto)),
+          specifiedType: const FullType(DataValidateRdvSummaryDto))!,
     ];
 
     return result;
@@ -63,7 +63,7 @@ class _$ValidateRdvSummaryDtoSerializer
 
   @override
   ValidateRdvSummaryDto deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ValidateRdvSummaryDtoBuilder();
 
@@ -71,7 +71,7 @@ class _$ValidateRdvSummaryDtoSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
@@ -127,20 +127,20 @@ class _$ParamsValidateRdvSummaryDtoSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'tokenappointment',
       serializers.serialize(object.tokenappointment,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'week',
-      serializers.serialize(object.week, specifiedType: const FullType(String)),
+      serializers.serialize(object.week, specifiedType: const FullType(String))!,
       'data',
-      serializers.serialize(object.data, specifiedType: const FullType(String)),
+      serializers.serialize(object.data, specifiedType: const FullType(String))!,
       'action',
       serializers.serialize(object.action,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'session',
       serializers.serialize(object.session,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -148,7 +148,7 @@ class _$ParamsValidateRdvSummaryDtoSerializer
 
   @override
   ParamsValidateRdvSummaryDto deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsValidateRdvSummaryDtoBuilder();
 
@@ -156,7 +156,7 @@ class _$ParamsValidateRdvSummaryDtoSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -210,21 +210,21 @@ class _$DataValidateRdvSummaryDto2Serializer
       result
         ..add('appointment')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     value = object.apptbuttonvalidation;
     if (value != null) {
       result
         ..add('apptbuttonvalidation')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(Apptbuttonvalidation)));
+            specifiedType: const FullType(Apptbuttonvalidation))!);
     }
     return result;
   }
 
   @override
   DataValidateRdvSummaryDto2 deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataValidateRdvSummaryDto2Builder();
 
@@ -232,7 +232,7 @@ class _$DataValidateRdvSummaryDto2Serializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'appointment':
           result.appointment = serializers.deserialize(value,
@@ -267,14 +267,14 @@ class _$AppointmentSummarySerializer
       result
         ..add('appointment')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     return result;
   }
 
   @override
   AppointmentSummary deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AppointmentSummaryBuilder();
 
@@ -282,7 +282,7 @@ class _$AppointmentSummarySerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'appointment':
           result.appointment = serializers.deserialize(value,
@@ -316,14 +316,14 @@ class _$PaymentIntentSummarySerializer
       result
         ..add('stripeClientSecret')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
+            specifiedType: const FullType(String))!);
     }
     return result;
   }
 
   @override
   PaymentIntentSummary deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PaymentIntentSummaryBuilder();
 
@@ -331,7 +331,7 @@ class _$PaymentIntentSummarySerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'stripeClientSecret':
           result.stripeClientSecret = serializers.deserialize(value,
@@ -361,12 +361,12 @@ class _$DataValidateRdvSummaryDtoSerializer
     final result = <Object>[
       'session',
       serializers.serialize(object.session,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'headermessage',
       serializers.serialize(object.headermessage,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'type',
-      serializers.serialize(object.type, specifiedType: const FullType(String)),
+      serializers.serialize(object.type, specifiedType: const FullType(String))!,
     ];
     Object value;
     value = object.data;
@@ -374,21 +374,21 @@ class _$DataValidateRdvSummaryDtoSerializer
       result
         ..add('data')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(DataValidateRdvSummaryDto2)));
+            specifiedType: const FullType(DataValidateRdvSummaryDto2))!);
     }
     value = object.paymentIntent;
     if (value != null) {
       result
         ..add('payment_intent')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(PaymentIntentSummary)));
+            specifiedType: const FullType(PaymentIntentSummary))!);
     }
     return result;
   }
 
   @override
   DataValidateRdvSummaryDto deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataValidateRdvSummaryDtoBuilder();
 
@@ -396,7 +396,7 @@ class _$DataValidateRdvSummaryDtoSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'session':
           result.session = serializers.deserialize(value,
@@ -444,17 +444,18 @@ class _$ValidateRdvSummaryDto extends ValidateRdvSummaryDto {
   final DataValidateRdvSummaryDto data;
 
   factory _$ValidateRdvSummaryDto(
-          [void Function(ValidateRdvSummaryDtoBuilder) updates]) =>
-      (new ValidateRdvSummaryDtoBuilder()..update(updates)).build();
+          [void Function(ValidateRdvSummaryDtoBuilder)? updates]) =>
+      (new ValidateRdvSummaryDtoBuilder()..update(updates!)).build();
 
   _$ValidateRdvSummaryDto._(
-      {this.version,
-      this.request,
-      this.params,
-      this.message,
-      this.httpstatut,
-      this.error,
-      this.data})
+      {
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.message,
+      required this.httpstatut,
+      required this.error,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         version, 'ValidateRdvSummaryDto', 'version');
@@ -475,7 +476,7 @@ class _$ValidateRdvSummaryDto extends ValidateRdvSummaryDto {
   @override
   ValidateRdvSummaryDto rebuild(
           void Function(ValidateRdvSummaryDtoBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   ValidateRdvSummaryDtoBuilder toBuilder() =>
@@ -524,35 +525,35 @@ class _$ValidateRdvSummaryDto extends ValidateRdvSummaryDto {
 
 class ValidateRdvSummaryDtoBuilder
     implements Builder<ValidateRdvSummaryDto, ValidateRdvSummaryDtoBuilder> {
-  _$ValidateRdvSummaryDto _$v;
+  _$ValidateRdvSummaryDto? _$v =_$ValidateRdvSummaryDto();
 
-  String _version;
+  String _version = '';
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request;
+  String _request = '';
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsValidateRdvSummaryDtoBuilder _params;
+  ParamsValidateRdvSummaryDtoBuilder _params =ParamsValidateRdvSummaryDtoBuilder();
   ParamsValidateRdvSummaryDtoBuilder get params =>
       _$this._params ??= new ParamsValidateRdvSummaryDtoBuilder();
   set params(ParamsValidateRdvSummaryDtoBuilder params) =>
       _$this._params = params;
 
-  String _message;
+  String _message = '';
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  int _httpstatut;
+  int _httpstatut = 0;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
+  String _error = '';
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  DataValidateRdvSummaryDtoBuilder _data;
+  DataValidateRdvSummaryDtoBuilder _data =DataValidateRdvSummaryDtoBuilder();
   DataValidateRdvSummaryDtoBuilder get data =>
       _$this._data ??= new DataValidateRdvSummaryDtoBuilder();
   set data(DataValidateRdvSummaryDtoBuilder data) => _$this._data = data;
@@ -581,7 +582,7 @@ class ValidateRdvSummaryDtoBuilder
   }
 
   @override
-  void update(void Function(ValidateRdvSummaryDtoBuilder) updates) {
+  void update(void Function(ValidateRdvSummaryDtoBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -604,7 +605,7 @@ class ValidateRdvSummaryDtoBuilder
                   error, 'ValidateRdvSummaryDto', 'error'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'params';
         params.build();
@@ -637,16 +638,17 @@ class _$ParamsValidateRdvSummaryDto extends ParamsValidateRdvSummaryDto {
   final String session;
 
   factory _$ParamsValidateRdvSummaryDto(
-          [void Function(ParamsValidateRdvSummaryDtoBuilder) updates]) =>
-      (new ParamsValidateRdvSummaryDtoBuilder()..update(updates)).build();
+          [void Function(ParamsValidateRdvSummaryDtoBuilder)? updates]) =>
+      (new ParamsValidateRdvSummaryDtoBuilder()..update(updates!)).build();
 
   _$ParamsValidateRdvSummaryDto._(
-      {this.tokenuser,
-      this.tokenappointment,
-      this.week,
-      this.data,
-      this.action,
-      this.session})
+      {
+      required this.tokenuser,
+      required this.tokenappointment,
+      required this.week,
+      required this.data,
+      required this.action,
+      required this.session})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'ParamsValidateRdvSummaryDto', 'tokenuser');
@@ -665,7 +667,7 @@ class _$ParamsValidateRdvSummaryDto extends ParamsValidateRdvSummaryDto {
   @override
   ParamsValidateRdvSummaryDto rebuild(
           void Function(ParamsValidateRdvSummaryDtoBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   ParamsValidateRdvSummaryDtoBuilder toBuilder() =>
@@ -712,30 +714,30 @@ class ParamsValidateRdvSummaryDtoBuilder
     implements
         Builder<ParamsValidateRdvSummaryDto,
             ParamsValidateRdvSummaryDtoBuilder> {
-  _$ParamsValidateRdvSummaryDto _$v;
+  _$ParamsValidateRdvSummaryDto? _$v = _$ParamsValidateRdvSummaryDto();
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappointment;
+  String _tokenappointment ='';
   String get tokenappointment => _$this._tokenappointment;
   set tokenappointment(String tokenappointment) =>
       _$this._tokenappointment = tokenappointment;
 
-  String _week;
+  String _week ='';
   String get week => _$this._week;
   set week(String week) => _$this._week = week;
 
-  String _data;
+  String _data ='';
   String get data => _$this._data;
   set data(String data) => _$this._data = data;
 
-  String _action;
+  String _action ='';
   String get action => _$this._action;
   set action(String action) => _$this._action = action;
 
-  String _session;
+  String _session = '';
   String get session => _$this._session;
   set session(String session) => _$this._session = session;
 
@@ -762,7 +764,7 @@ class ParamsValidateRdvSummaryDtoBuilder
   }
 
   @override
-  void update(void Function(ParamsValidateRdvSummaryDtoBuilder) updates) {
+  void update(void Function(ParamsValidateRdvSummaryDtoBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -796,16 +798,16 @@ class _$DataValidateRdvSummaryDto2 extends DataValidateRdvSummaryDto2 {
   final Apptbuttonvalidation apptbuttonvalidation;
 
   factory _$DataValidateRdvSummaryDto2(
-          [void Function(DataValidateRdvSummaryDto2Builder) updates]) =>
-      (new DataValidateRdvSummaryDto2Builder()..update(updates)).build();
+          [void Function(DataValidateRdvSummaryDto2Builder)? updates]) =>
+      (new DataValidateRdvSummaryDto2Builder()..update(updates!)).build();
 
-  _$DataValidateRdvSummaryDto2._({this.appointment, this.apptbuttonvalidation})
+  _$DataValidateRdvSummaryDto2._({required  this.appointment,required this.apptbuttonvalidation})
       : super._();
 
   @override
   DataValidateRdvSummaryDto2 rebuild(
           void Function(DataValidateRdvSummaryDto2Builder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   DataValidateRdvSummaryDto2Builder toBuilder() =>
@@ -837,13 +839,13 @@ class _$DataValidateRdvSummaryDto2 extends DataValidateRdvSummaryDto2 {
 class DataValidateRdvSummaryDto2Builder
     implements
         Builder<DataValidateRdvSummaryDto2, DataValidateRdvSummaryDto2Builder> {
-  _$DataValidateRdvSummaryDto2 _$v;
+  _$DataValidateRdvSummaryDto2? _$v =_$DataValidateRdvSummaryDto2();
 
-  String _appointment;
+  String _appointment ='';
   String get appointment => _$this._appointment;
   set appointment(String appointment) => _$this._appointment = appointment;
 
-  ApptbuttonvalidationBuilder _apptbuttonvalidation;
+  ApptbuttonvalidationBuilder _apptbuttonvalidation =ApptbuttonvalidationBuilder();
   ApptbuttonvalidationBuilder get apptbuttonvalidation =>
       _$this._apptbuttonvalidation ??= new ApptbuttonvalidationBuilder();
   set apptbuttonvalidation(ApptbuttonvalidationBuilder apptbuttonvalidation) =>
@@ -855,7 +857,7 @@ class DataValidateRdvSummaryDto2Builder
     final $v = _$v;
     if ($v != null) {
       _appointment = $v.appointment;
-      _apptbuttonvalidation = $v.apptbuttonvalidation?.toBuilder();
+      _apptbuttonvalidation = $v.apptbuttonvalidation.toBuilder();
       _$v = null;
     }
     return this;
@@ -868,7 +870,7 @@ class DataValidateRdvSummaryDto2Builder
   }
 
   @override
-  void update(void Function(DataValidateRdvSummaryDto2Builder) updates) {
+  void update(void Function(DataValidateRdvSummaryDto2Builder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -879,9 +881,9 @@ class DataValidateRdvSummaryDto2Builder
       _$result = _$v ??
           new _$DataValidateRdvSummaryDto2._(
               appointment: appointment,
-              apptbuttonvalidation: _apptbuttonvalidation?.build());
+              apptbuttonvalidation: _apptbuttonvalidation.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'apptbuttonvalidation';
         _apptbuttonvalidation?.build();
@@ -901,15 +903,15 @@ class _$AppointmentSummary extends AppointmentSummary {
   final String appointment;
 
   factory _$AppointmentSummary(
-          [void Function(AppointmentSummaryBuilder) updates]) =>
-      (new AppointmentSummaryBuilder()..update(updates)).build();
+          [void Function(AppointmentSummaryBuilder)? updates]) =>
+      (new AppointmentSummaryBuilder()..update(updates!)).build();
 
-  _$AppointmentSummary._({this.appointment}) : super._();
+  _$AppointmentSummary._({required this.appointment}) : super._();
 
   @override
   AppointmentSummary rebuild(
           void Function(AppointmentSummaryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   AppointmentSummaryBuilder toBuilder() =>
@@ -936,9 +938,9 @@ class _$AppointmentSummary extends AppointmentSummary {
 
 class AppointmentSummaryBuilder
     implements Builder<AppointmentSummary, AppointmentSummaryBuilder> {
-  _$AppointmentSummary _$v;
+  _$AppointmentSummary? _$v =_$AppointmentSummary();
 
-  String _appointment;
+  String _appointment ='';
   String get appointment => _$this._appointment;
   set appointment(String appointment) => _$this._appointment = appointment;
 
@@ -960,7 +962,7 @@ class AppointmentSummaryBuilder
   }
 
   @override
-  void update(void Function(AppointmentSummaryBuilder) updates) {
+  void update(void Function(AppointmentSummaryBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -978,15 +980,15 @@ class _$PaymentIntentSummary extends PaymentIntentSummary {
   final String stripeClientSecret;
 
   factory _$PaymentIntentSummary(
-          [void Function(PaymentIntentSummaryBuilder) updates]) =>
-      (new PaymentIntentSummaryBuilder()..update(updates)).build();
+          [void Function(PaymentIntentSummaryBuilder)? updates]) =>
+      (new PaymentIntentSummaryBuilder()..update(updates!)).build();
 
-  _$PaymentIntentSummary._({this.stripeClientSecret}) : super._();
+  _$PaymentIntentSummary._({required this.stripeClientSecret}) : super._();
 
   @override
   PaymentIntentSummary rebuild(
           void Function(PaymentIntentSummaryBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   PaymentIntentSummaryBuilder toBuilder() =>
@@ -1014,9 +1016,9 @@ class _$PaymentIntentSummary extends PaymentIntentSummary {
 
 class PaymentIntentSummaryBuilder
     implements Builder<PaymentIntentSummary, PaymentIntentSummaryBuilder> {
-  _$PaymentIntentSummary _$v;
+  _$PaymentIntentSummary? _$v =_$PaymentIntentSummary();
 
-  String _stripeClientSecret;
+  String _stripeClientSecret = '';
   String get stripeClientSecret => _$this._stripeClientSecret;
   set stripeClientSecret(String stripeClientSecret) =>
       _$this._stripeClientSecret = stripeClientSecret;
@@ -1039,7 +1041,7 @@ class PaymentIntentSummaryBuilder
   }
 
   @override
-  void update(void Function(PaymentIntentSummaryBuilder) updates) {
+  void update(void Function(PaymentIntentSummaryBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1065,15 +1067,16 @@ class _$DataValidateRdvSummaryDto extends DataValidateRdvSummaryDto {
   final PaymentIntentSummary paymentIntent;
 
   factory _$DataValidateRdvSummaryDto(
-          [void Function(DataValidateRdvSummaryDtoBuilder) updates]) =>
-      (new DataValidateRdvSummaryDtoBuilder()..update(updates)).build();
+          [void Function(DataValidateRdvSummaryDtoBuilder)? updates]) =>
+      (new DataValidateRdvSummaryDtoBuilder()..update(updates!)).build();
 
   _$DataValidateRdvSummaryDto._(
-      {this.session,
-      this.headermessage,
-      this.type,
-      this.data,
-      this.paymentIntent})
+      {
+      required this.session,
+      required this.headermessage,
+      required this.type,
+      required this.data,
+      required this.paymentIntent})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         session, 'DataValidateRdvSummaryDto', 'session');
@@ -1086,7 +1089,7 @@ class _$DataValidateRdvSummaryDto extends DataValidateRdvSummaryDto {
   @override
   DataValidateRdvSummaryDto rebuild(
           void Function(DataValidateRdvSummaryDtoBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   DataValidateRdvSummaryDtoBuilder toBuilder() =>
@@ -1128,27 +1131,27 @@ class _$DataValidateRdvSummaryDto extends DataValidateRdvSummaryDto {
 class DataValidateRdvSummaryDtoBuilder
     implements
         Builder<DataValidateRdvSummaryDto, DataValidateRdvSummaryDtoBuilder> {
-  _$DataValidateRdvSummaryDto _$v;
+  _$DataValidateRdvSummaryDto? _$v =_$DataValidateRdvSummaryDto();
 
-  String _session;
+  String _session = '';
   String get session => _$this._session;
   set session(String session) => _$this._session = session;
 
-  String _headermessage;
+  String _headermessage ='';
   String get headermessage => _$this._headermessage;
   set headermessage(String headermessage) =>
       _$this._headermessage = headermessage;
 
-  String _type;
+  String _type ='';
   String get type => _$this._type;
   set type(String type) => _$this._type = type;
 
-  DataValidateRdvSummaryDto2Builder _data;
+  DataValidateRdvSummaryDto2Builder _data =DataValidateRdvSummaryDto2Builder();
   DataValidateRdvSummaryDto2Builder get data =>
       _$this._data ??= new DataValidateRdvSummaryDto2Builder();
   set data(DataValidateRdvSummaryDto2Builder data) => _$this._data = data;
 
-  PaymentIntentSummaryBuilder _paymentIntent;
+  PaymentIntentSummaryBuilder _paymentIntent =PaymentIntentSummaryBuilder();
   PaymentIntentSummaryBuilder get paymentIntent =>
       _$this._paymentIntent ??= new PaymentIntentSummaryBuilder();
   set paymentIntent(PaymentIntentSummaryBuilder paymentIntent) =>
@@ -1162,8 +1165,8 @@ class DataValidateRdvSummaryDtoBuilder
       _session = $v.session;
       _headermessage = $v.headermessage;
       _type = $v.type;
-      _data = $v.data?.toBuilder();
-      _paymentIntent = $v.paymentIntent?.toBuilder();
+      _data = $v.data.toBuilder();
+      _paymentIntent = $v.paymentIntent.toBuilder();
       _$v = null;
     }
     return this;
@@ -1176,7 +1179,7 @@ class DataValidateRdvSummaryDtoBuilder
   }
 
   @override
-  void update(void Function(DataValidateRdvSummaryDtoBuilder) updates) {
+  void update(void Function(DataValidateRdvSummaryDtoBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -1192,10 +1195,10 @@ class DataValidateRdvSummaryDtoBuilder
                   headermessage, 'DataValidateRdvSummaryDto', 'headermessage'),
               type: BuiltValueNullFieldError.checkNotNull(
                   type, 'DataValidateRdvSummaryDto', 'type'),
-              data: _data?.build(),
-              paymentIntent: _paymentIntent?.build());
+              data: _data.build(),
+              paymentIntent: _paymentIntent.build());
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'data';
         _data?.build();

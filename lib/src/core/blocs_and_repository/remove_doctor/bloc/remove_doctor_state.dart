@@ -13,7 +13,7 @@ class RemoveDoctorLoading extends RemoveDoctorState {}
 
 class RemoveDoctorLoadingSuccess extends RemoveDoctorState {
   final RemoveDoctorResponse response;
-  RemoveDoctorLoadingSuccess({this.response});
+  RemoveDoctorLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -25,7 +25,7 @@ class RemoveDoctorLoadingSuccess extends RemoveDoctorState {
 class RemoveDoctorFailure extends RemoveDoctorState {
   final String error;
 
-  RemoveDoctorFailure({@required this.error});
+  RemoveDoctorFailure({required this.error});
 
   @override
   List<Object> get props => [error];

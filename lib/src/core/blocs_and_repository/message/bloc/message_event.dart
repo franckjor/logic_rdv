@@ -9,7 +9,7 @@ abstract class MessageEvent extends Equatable {
 class GetMessage extends MessageEvent {
   final MessageRequest messageRequest;
 
-  GetMessage({this.messageRequest});
+  GetMessage({required this.messageRequest});
 
   @override
   List<Object> get props => [messageRequest];

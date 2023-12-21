@@ -26,13 +26,13 @@ class _$RemovePatientRequestSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'tokenappt',
       serializers.serialize(object.tokenappt,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'tokenpatient',
       serializers.serialize(object.tokenpatient,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -40,7 +40,7 @@ class _$RemovePatientRequestSerializer
 
   @override
   RemovePatientRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new RemovePatientRequestBuilder();
 
@@ -48,7 +48,7 @@ class _$RemovePatientRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -78,10 +78,10 @@ class _$RemovePatientRequest extends RemovePatientRequest {
   final String tokenpatient;
 
   factory _$RemovePatientRequest(
-          [void Function(RemovePatientRequestBuilder) updates]) =>
-      (new RemovePatientRequestBuilder()..update(updates)).build();
+          [void Function(RemovePatientRequestBuilder)? updates]) =>
+      (new RemovePatientRequestBuilder()..update(updates!)).build();
 
-  _$RemovePatientRequest._({this.tokenuser, this.tokenappt, this.tokenpatient})
+  _$RemovePatientRequest._({required this.tokenuser,required this.tokenappt,required this.tokenpatient})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'RemovePatientRequest', 'tokenuser');
@@ -94,7 +94,7 @@ class _$RemovePatientRequest extends RemovePatientRequest {
   @override
   RemovePatientRequest rebuild(
           void Function(RemovePatientRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   RemovePatientRequestBuilder toBuilder() =>
@@ -127,17 +127,17 @@ class _$RemovePatientRequest extends RemovePatientRequest {
 
 class RemovePatientRequestBuilder
     implements Builder<RemovePatientRequest, RemovePatientRequestBuilder> {
-  _$RemovePatientRequest _$v;
+  _$RemovePatientRequest? _$v =_$RemovePatientRequest();
 
-  String _tokenuser;
+  String _tokenuser = '';
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappt;
+  String _tokenappt = '';
   String get tokenappt => _$this._tokenappt;
   set tokenappt(String tokenappt) => _$this._tokenappt = tokenappt;
 
-  String _tokenpatient;
+  String _tokenpatient = '';
   String get tokenpatient => _$this._tokenpatient;
   set tokenpatient(String tokenpatient) => _$this._tokenpatient = tokenpatient;
 
@@ -161,7 +161,7 @@ class RemovePatientRequestBuilder
   }
 
   @override
-  void update(void Function(RemovePatientRequestBuilder) updates) {
+  void update(void Function(RemovePatientRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

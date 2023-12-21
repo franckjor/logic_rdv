@@ -43,17 +43,17 @@ class ListOfRdv extends StatefulWidget {
 }
 
 class ListOfRdvState extends State<ListOfRdv> {
-  String _tokenUser;
-  String _email;
-  String _fullName;
+  String _tokenuser = '';
+  String _email = '';
+  String _fullName = '';
   ScrollController _scrollController = new ScrollController();
   int currentPage = 1;
-  int totalOfPage;
+  int totalOfPage =0;
   bool isRefreshList = false;
   bool _isLoading = false;
-  String _authorizationToke;
+  String _authorizationToke= '';
 
-  String _rdvDate, _doctorRdv;
+  String _rdvDate = '', _doctorRdv ='';
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -81,7 +81,7 @@ class ListOfRdvState extends State<ListOfRdv> {
           isRefreshList = true;
           getAppointmentList(
               context: context,
-              tokenUser: _tokenUser,
+              tokenUser: _tokenuser,
               page: currentPage.toString());
         });
       }
@@ -106,10 +106,11 @@ class ListOfRdvState extends State<ListOfRdv> {
           }),
         ],
         child: MyDrawer(
-          tokenUser: _tokenUser,
+          tokenUser: _tokenuser,
           page: '6',
           email: _email,
-          fullNme: _fullName,
+          fullNme: _fullName, 
+          notification: false,
         ),
       ),
       appBar: AdaptativeAppBar(
@@ -118,16 +119,16 @@ class ListOfRdvState extends State<ListOfRdv> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                : const Icon(
+                :  Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -138,14 +139,14 @@ class ListOfRdvState extends State<ListOfRdv> {
             if (state is SharedPreferenceReadObjectState) {
               setState(() {
                 appointments.clear();
-                _tokenUser = state.sharePreferenceObject.token;
-                _email = state.sharePreferenceObject.email;
-                _fullName = state.sharePreferenceObject.firstName +
+                _tokenuser = state.sharePreferenceObject!.token;
+                _email = state.sharePreferenceObject!.email;
+                _fullName = state.sharePreferenceObject!.firstName +
                     " " +
-                    state.sharePreferenceObject.lastName;
+                    state.sharePreferenceObject!.lastName;
                 getAppointmentList(
                     context: context,
-                    tokenUser: _tokenUser,
+                    tokenUser: _tokenuser,
                     page: currentPage.toString());
               });
             } else if (state is SharedPreferenceTokenAuthorizationWriteState) {
@@ -176,7 +177,7 @@ class ListOfRdvState extends State<ListOfRdv> {
             } else if (state is CancelAppointmentLoadingSuccess) {
               setState(() {
                 getAppointmentList(
-                    context: context, tokenUser: _tokenUser, page: '1');
+                    context: context, tokenUser: _tokenuser, page: '1');
                 _isLoading = true;
                 appointments.clear();
                 flushBarSuccess("Rdv annulé avec succès", context);
@@ -201,7 +202,7 @@ class ListOfRdvState extends State<ListOfRdv> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -221,7 +222,7 @@ class ListOfRdvState extends State<ListOfRdv> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else {
                 flushBarError(state.error, context);
@@ -331,7 +332,7 @@ class ListOfRdvState extends State<ListOfRdv> {
                                                     _isLoading = false;
                                                     cancelAppointment(
                                                       context: context,
-                                                      tokenUser: _tokenUser,
+                                                      tokenUser: _tokenuser,
                                                       tokenAppointment:
                                                           appointments[i]
                                                               .appointment
@@ -346,7 +347,7 @@ class ListOfRdvState extends State<ListOfRdv> {
                                                     // );
                                                   },
                                                 );
-                                              },
+                                              }, alertType: null, cancelButtonLabel: '', confirmButtonLabel: '',
                                             );
                                           },
                                           patientResponse:

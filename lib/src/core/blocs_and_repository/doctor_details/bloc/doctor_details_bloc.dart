@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/doctor_details/reposi
 class DoctorDetailsBloc extends Bloc<DoctorDetailsEvent, DoctorDetailsState> {
   final DoctorDetailsRepository repository;
 
-  DoctorDetailsBloc({@required this.repository})
+  DoctorDetailsBloc({required this.repository})
       : super(DoctorDetailsLoading());
 
   @override

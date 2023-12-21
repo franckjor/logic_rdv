@@ -28,25 +28,25 @@ class _$SearchDialogResponseSerializer
     final result = <Object>[
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int)),
+          specifiedType: const FullType(int))!,
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsSearchDialogResponse)),
+          specifiedType: const FullType(ParamsSearchDialogResponse))!,
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'localisation',
       serializers.serialize(object.localisation,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -54,7 +54,7 @@ class _$SearchDialogResponseSerializer
 
   @override
   SearchDialogResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SearchDialogResponseBuilder();
 
@@ -62,7 +62,7 @@ class _$SearchDialogResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
@@ -117,11 +117,11 @@ class _$ParamsSearchDialogResponseSerializer
     final result = <Object>[
       'address',
       serializers.serialize(object.address,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'zip',
-      serializers.serialize(object.zip, specifiedType: const FullType(String)),
+      serializers.serialize(object.zip, specifiedType: const FullType(String))!,
       'city',
-      serializers.serialize(object.city, specifiedType: const FullType(String)),
+      serializers.serialize(object.city, specifiedType: const FullType(String))!,
     ];
 
     return result;
@@ -129,7 +129,7 @@ class _$ParamsSearchDialogResponseSerializer
 
   @override
   ParamsSearchDialogResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsSearchDialogResponseBuilder();
 
@@ -137,7 +137,7 @@ class _$ParamsSearchDialogResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'address':
           result.address = serializers.deserialize(value,
@@ -175,17 +175,18 @@ class _$SearchDialogResponse extends SearchDialogResponse {
   final String localisation;
 
   factory _$SearchDialogResponse(
-          [void Function(SearchDialogResponseBuilder) updates]) =>
-      (new SearchDialogResponseBuilder()..update(updates)).build();
+          [void Function(SearchDialogResponseBuilder)? updates]) =>
+      (new SearchDialogResponseBuilder()..update(updates!)).build();
 
   _$SearchDialogResponse._(
-      {this.httpstatut,
-      this.version,
-      this.request,
-      this.params,
-      this.error,
-      this.message,
-      this.localisation})
+      {
+      required this.httpstatut,
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.error,
+      required this.message,
+      required this.localisation})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         httpstatut, 'SearchDialogResponse', 'httpstatut');
@@ -206,7 +207,7 @@ class _$SearchDialogResponse extends SearchDialogResponse {
   @override
   SearchDialogResponse rebuild(
           void Function(SearchDialogResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   SearchDialogResponseBuilder toBuilder() =>
@@ -255,35 +256,35 @@ class _$SearchDialogResponse extends SearchDialogResponse {
 
 class SearchDialogResponseBuilder
     implements Builder<SearchDialogResponse, SearchDialogResponseBuilder> {
-  _$SearchDialogResponse _$v;
+  _$SearchDialogResponse? _$v =_$SearchDialogResponse();
 
-  int _httpstatut;
+  int _httpstatut = 0;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _version;
+  String _version = '';
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request;
+  String _request = '';
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsSearchDialogResponseBuilder _params;
+  ParamsSearchDialogResponseBuilder _params =ParamsSearchDialogResponseBuilder();
   ParamsSearchDialogResponseBuilder get params =>
       _$this._params ??= new ParamsSearchDialogResponseBuilder();
   set params(ParamsSearchDialogResponseBuilder params) =>
       _$this._params = params;
 
-  String _error;
+  String _error = '';
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  String _message;
+  String _message = '';
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  String _localisation;
+  String _localisation = '';
   String get localisation => _$this._localisation;
   set localisation(String localisation) => _$this._localisation = localisation;
 
@@ -311,7 +312,7 @@ class SearchDialogResponseBuilder
   }
 
   @override
-  void update(void Function(SearchDialogResponseBuilder) updates) {
+  void update(void Function(SearchDialogResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -335,7 +336,7 @@ class SearchDialogResponseBuilder
               localisation: BuiltValueNullFieldError.checkNotNull(
                   localisation, 'SearchDialogResponse', 'localisation'));
     } catch (_) {
-      String _$failedField;
+      String _$failedField = '';
       try {
         _$failedField = 'params';
         params.build();
@@ -359,10 +360,10 @@ class _$ParamsSearchDialogResponse extends ParamsSearchDialogResponse {
   final String city;
 
   factory _$ParamsSearchDialogResponse(
-          [void Function(ParamsSearchDialogResponseBuilder) updates]) =>
-      (new ParamsSearchDialogResponseBuilder()..update(updates)).build();
+          [void Function(ParamsSearchDialogResponseBuilder)? updates]) =>
+      (new ParamsSearchDialogResponseBuilder()..update(updates!)).build();
 
-  _$ParamsSearchDialogResponse._({this.address, this.zip, this.city})
+  _$ParamsSearchDialogResponse._({required this.address,required this.zip,required this.city})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         address, 'ParamsSearchDialogResponse', 'address');
@@ -375,7 +376,7 @@ class _$ParamsSearchDialogResponse extends ParamsSearchDialogResponse {
   @override
   ParamsSearchDialogResponse rebuild(
           void Function(ParamsSearchDialogResponseBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   ParamsSearchDialogResponseBuilder toBuilder() =>
@@ -408,17 +409,17 @@ class _$ParamsSearchDialogResponse extends ParamsSearchDialogResponse {
 class ParamsSearchDialogResponseBuilder
     implements
         Builder<ParamsSearchDialogResponse, ParamsSearchDialogResponseBuilder> {
-  _$ParamsSearchDialogResponse _$v;
+  _$ParamsSearchDialogResponse? _$v =_$ParamsSearchDialogResponse();
 
-  String _address;
+  String _address = '';
   String get address => _$this._address;
   set address(String address) => _$this._address = address;
 
-  String _zip;
+  String _zip = '';
   String get zip => _$this._zip;
   set zip(String zip) => _$this._zip = zip;
 
-  String _city;
+  String _city = '';
   String get city => _$this._city;
   set city(String city) => _$this._city = city;
 
@@ -442,7 +443,7 @@ class ParamsSearchDialogResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsSearchDialogResponseBuilder) updates) {
+  void update(void Function(ParamsSearchDialogResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

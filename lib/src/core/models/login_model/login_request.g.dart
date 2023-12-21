@@ -21,17 +21,17 @@ class _$LoginRequestSerializer implements StructuredSerializer<LoginRequest> {
     final result = <Object>[
       'email',
       serializers.serialize(object.email,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
       'password',
       serializers.serialize(object.password,
-          specifiedType: const FullType(String)),
+          specifiedType: const FullType(String))!,
     ];
 
     return result;
   }
 
   @override
-  LoginRequest deserialize(Serializers serializers, Iterable<Object> serialized,
+  LoginRequest deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new LoginRequestBuilder();
 
@@ -39,7 +39,7 @@ class _$LoginRequestSerializer implements StructuredSerializer<LoginRequest> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object value = iterator.current!;
       switch (key) {
         case 'email':
           result.email = serializers.deserialize(value,
@@ -62,17 +62,17 @@ class _$LoginRequest extends LoginRequest {
   @override
   final String password;
 
-  factory _$LoginRequest([void Function(LoginRequestBuilder) updates]) =>
-      (new LoginRequestBuilder()..update(updates)).build();
+  factory _$LoginRequest([void Function(LoginRequestBuilder)? updates]) =>
+      (new LoginRequestBuilder()..update(updates!)).build();
 
-  _$LoginRequest._({this.email, this.password}) : super._() {
+  _$LoginRequest._({required this.email,required this.password}) : super._() {
     BuiltValueNullFieldError.checkNotNull(email, 'LoginRequest', 'email');
     BuiltValueNullFieldError.checkNotNull(password, 'LoginRequest', 'password');
   }
 
   @override
   LoginRequest rebuild(void Function(LoginRequestBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+      (toBuilder()..update(updates!)).build();
 
   @override
   LoginRequestBuilder toBuilder() => new LoginRequestBuilder()..replace(this);
@@ -101,13 +101,13 @@ class _$LoginRequest extends LoginRequest {
 
 class LoginRequestBuilder
     implements Builder<LoginRequest, LoginRequestBuilder> {
-  _$LoginRequest _$v;
+  _$LoginRequest? _$v = _$LoginRequest();
 
-  String _email;
+  String _email = '';
   String get email => _$this._email;
   set email(String email) => _$this._email = email;
 
-  String _password;
+  String _password = '';
   String get password => _$this._password;
   set password(String password) => _$this._password = password;
 
@@ -130,7 +130,7 @@ class LoginRequestBuilder
   }
 
   @override
-  void update(void Function(LoginRequestBuilder) updates) {
+  void update(void Function(LoginRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 

@@ -937,7 +937,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                                 .arguments
                                                 .selectedPatientResponseForRdv
                                                 .params
-                                                .tokenuser,
+                                                .tokenuser, week: '',
                                           );
                                           // validateAppointmentWithTc(
                                           //   session: widget
@@ -1033,7 +1033,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                                 .arguments
                                                 .selectedPatientResponseForRdv
                                                 .params
-                                                .tokenuser,
+                                                .tokenuser, week: '',
                                           );
 
                                           // validateAppointment(

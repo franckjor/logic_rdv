@@ -95,32 +95,32 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         setState(() {
           _currentPosition = position;
         });
-        _getAddressFromLatLng();
+        //_getAddressFromLatLng(); franck
       }).catchError((e) {
         print(e);
       });
     }
   }
 
-  _getAddressFromLatLng() async {
-    try {
-      if (kIsWeb) {
-        print('is web platform');
-      } else {
-        List<Placemark> p = await geolocator.placemarkFromCoordinates(
-            _currentPosition.latitude, _currentPosition.longitude);
-        Placemark place = p[0];
-        setState(() {
-          _searchValueCity.text = "Ma position";
-          _cityId =
-              'p${_currentPosition.latitude},${_currentPosition.longitude}';
-          isCurrentPositionAsk = !isCurrentPositionAsk;
-        });
-      }
-    } catch (e) {
-      print(e);
-    }
-  }
+  // _getAddressFromLatLng() async { franck
+  //   try {
+  //     if (kIsWeb) {
+  //       print('is web platform');
+  //     } else {
+  //       List<Placemark> p = await geolocator.placemarkFromCoordinates(
+  //           _currentPosition.latitude, _currentPosition.longitude);
+  //       Placemark place = p[0];
+  //       setState(() {
+  //         _searchValueCity.text = "Ma position";
+  //         _cityId =
+  //             'p${_currentPosition.latitude},${_currentPosition.longitude}';
+  //         isCurrentPositionAsk = !isCurrentPositionAsk;
+  //       });
+  //     }
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  // }
 
   @override
   void initState() {

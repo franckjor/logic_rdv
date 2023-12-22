@@ -144,7 +144,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
           mainAxisSize: MainAxisSize.min,
           children: [
             InkWell(
-              onTap: () => _takePicture(),
+             // onTap: () => _takePicture(), franck
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
@@ -380,11 +380,11 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                                       child: Container(
                                         child: CircleAvatar(
                                           radius: 40,
-                                          backgroundImage: _image == null
-                                              ? AssetImage(
-                                                  'assets/images/medecin.png',
-                                                )
-                                              : FileImage(_image),
+                                          // backgroundImage: _image == null
+                                          //     ? AssetImage(
+                                          //         'assets/images/medecin.png',
+                                          //       )
+                                          //     : FileImage(_image),
                                           backgroundColor: Colors.white,
                                         ),
                                         padding: EdgeInsets.all(2),

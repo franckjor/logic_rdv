@@ -815,13 +815,13 @@ class _MyTodayAppointmentItemForGetRdv extends StatelessWidget {
                         width: 35,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          image: DecorationImage(
-                            image: dataPatientResponseAfertCreate.photo == null
-                                ? AssetImage('assets/images/medecin.png') 
-                                : NetworkImage(
-                                    dataPatientResponseAfertCreate.photo),
-                            fit: BoxFit.cover,
-                          ),
+                          // image: DecorationImage(
+                          //   image: dataPatientResponseAfertCreate.photo == null
+                          //       ? AssetImage('assets/images/medecin.png')  
+                          //       : NetworkImage(
+                          //           dataPatientResponseAfertCreate.photo),
+                          //   fit: BoxFit.cover,
+                          // ),
                         ),
                       ),
                       Visibility(
@@ -897,16 +897,16 @@ class _MyTodayAppointmentItemForGetRdv extends StatelessWidget {
                             color: AppColors.colorPrimary,
                           ),
                           const SizedBox(width: 6),
-                          Text(
-                            dataPatientResponseAfertCreate?.dob.toString() 
-                                ?? '--/--/--'
-                                : dataPatientResponseAfertCreate?.dob,
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.grey.shade500,
-                            ),
-                          ),
+                          // Text(
+                          //   dataPatientResponseAfertCreate?.dob.toString() 
+                          //       ?? '--/--/--'
+                          //       : dataPatientResponseAfertCreate?.dob,
+                          //   style: TextStyle(
+                          //     fontSize: 12,
+                          //     fontWeight: FontWeight.w500,
+                          //     color: Colors.grey.shade500,
+                          //   ),
+                          // ),
                         ],
                       )
                     ],

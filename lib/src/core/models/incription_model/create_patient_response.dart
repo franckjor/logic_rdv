@@ -94,7 +94,6 @@ import 'dart:convert';
 
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:logic_rdv_v0/src/common.dart';
 import 'package:logic_rdv_v0/src/core/serializers/serializers.dart';
 
 part 'create_patient_response.g.dart';

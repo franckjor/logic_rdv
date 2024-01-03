@@ -1,8 +1,7 @@
-import 'dart:async';
 import 'dart:core';
 
-import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
 import 'package:logging/logging.dart';
 import 'package:path/path.dart';
 import 'package:universal_io/io.dart';
@@ -13,13 +12,13 @@ import 'interceptors/interceptors.dart';
 import 'service_constant.dart';
 
 class ApiManager {
-  Dio _dio;
+  late Dio _dio;
   final Logger _logger = new Logger("ApiEndpoints");
 
   ApiManager() {
     _dio = Dio();
-    _dio.options.connectTimeout = connectionTimeout;
-    _dio.options.receiveTimeout = connectionReadTimeout;
+    _dio.options.connectTimeout = Duration(milliseconds: connectionTimeout);
+    _dio.options.receiveTimeout = Duration(milliseconds: connectionReadTimeout);
 
     //Disable Certificate verification for development purpose (accept every
     // connection)
@@ -58,7 +57,7 @@ class ApiManager {
     return '$API_ENDPOINT_PDF' + path;
   }
 
-  Map<String, String> _getHttpHeaders(String authToken) {
+  Map<String, String> _getHttpHeaders(String? authToken) {
     if (authToken != null) {
       return {
         "content-type": "application/x-www-form-urlencoded",
@@ -112,7 +111,7 @@ class ApiManager {
     }
   }
 
-  Future<dynamic> get({String token, String path}) async {
+  Future<dynamic> get({required String token, required String path}) async {
     String url = _getFullUrlPathPdf(path);
     try {
       Response response = await _dio.get(
@@ -229,7 +228,7 @@ class ApiManager {
     return post(urlBasePath, null, data: data);
   }
 
-  Future<String> post(String urlBasePath, String token, {dynamic data}) async {
+  Future<String> post(String urlBasePath, String? token, {dynamic data}) async {
     String url = _getFullUrlPath(urlBasePath);
     try {
       Response response = await _dio.post(

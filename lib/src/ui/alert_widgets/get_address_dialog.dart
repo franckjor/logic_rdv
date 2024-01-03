@@ -15,7 +15,7 @@ class AddressInformation {
   String cityName;
   String cityId;
 
-  AddressInformation({this.cityName, this.cityId});
+  AddressInformation({required this.cityName, this.cityId});
 }
 
 class DialogOfAddress extends StatefulWidget {

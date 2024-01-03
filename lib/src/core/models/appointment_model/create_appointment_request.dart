@@ -2,7 +2,6 @@ library create_appointment_request;
 
 import 'dart:convert';
 
-import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:logic_rdv_v0/src/core/serializers/serializers.dart';
@@ -35,7 +34,7 @@ abstract class CreateAppointmentRequest
         serializers.serializeWith(CreateAppointmentRequest.serializer, this));
   }
 
-  static CreateAppointmentRequest fromJson(String jsonString) {
+  static CreateAppointmentRequest? fromJson(String jsonString) {
     return serializers.deserializeWith(
         CreateAppointmentRequest.serializer, json.decode(jsonString));
   }

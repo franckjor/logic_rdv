@@ -7,7 +7,7 @@ class InscriptionRapidBloc
     extends Bloc<InscriptionRapidEvent, InscriptionRapidState> {
   final InscriptionRapidRepository repository;
 
-  InscriptionRapidBloc({@required this.repository})
+  InscriptionRapidBloc({required this.repository})
       : super(InscriptionRapidStateEmpty());
 
   @override

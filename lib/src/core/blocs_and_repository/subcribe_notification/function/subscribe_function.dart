@@ -4,42 +4,37 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/subcribe_notification
 import 'package:logic_rdv_v0/src/core/models/subscribe_notification/subscribe_request.dart';
 
 subscribe({
-  BuildContext context,
-  String tokenuser,
-  String installationkey,
+  required BuildContext context,
+  required String tokenuser,
+  required String installationkey,
 }) {
   SubscribeRequest subscribe = SubscribeRequest((builder) => builder
-      ..tokenuser = tokenuser
-      ..installationkey = installationkey
-  );
-    BlocProvider.of<SubscribeBloc>(context)
-      ..add(Subscribe(subscribeRequest: subscribe));
-  
+    ..tokenuser = tokenuser
+    ..installationkey = installationkey);
+  BlocProvider.of<SubscribeBloc>(context)
+    ..add(Subscribe(subscribeRequest: subscribe));
 }
 
 unSubscribe({
-  BuildContext context,
-  String tokenuser,
-  String installationkey,
+  required BuildContext context,
+  required String tokenuser,
+  required String installationkey,
 }) {
   SubscribeRequest subscribe = SubscribeRequest((builder) => builder
-      ..tokenuser = tokenuser
-      ..installationkey = installationkey
-  );
-    BlocProvider.of<SubscribeBloc>(context)
-      ..add(UnSubscribe(subscribeRequest: subscribe));
-
+    ..tokenuser = tokenuser
+    ..installationkey = installationkey);
+  BlocProvider.of<SubscribeBloc>(context)
+    ..add(UnSubscribe(subscribeRequest: subscribe));
 }
+
 isSubscribe({
-  BuildContext context,
-  String tokenuser,
-  String installationkey,
+  required BuildContext context,
+  required String tokenuser,
+  required String installationkey,
 }) {
   SubscribeRequest subscribe = SubscribeRequest((builder) => builder
-      ..tokenuser = tokenuser
-      ..installationkey = installationkey
-  );
-    BlocProvider.of<SubscribeBloc>(context)
-      ..add(IsSubscribe(subscribeRequest: subscribe));
-
+    ..tokenuser = tokenuser
+    ..installationkey = installationkey);
+  BlocProvider.of<SubscribeBloc>(context)
+    ..add(IsSubscribe(subscribeRequest: subscribe));
 }

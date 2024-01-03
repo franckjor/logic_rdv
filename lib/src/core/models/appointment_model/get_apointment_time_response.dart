@@ -37,7 +37,7 @@ abstract class GetApointmentTimeResponse
         serializers.serializeWith(GetApointmentTimeResponse.serializer, this));
   }
 
-  static GetApointmentTimeResponse fromJson(String jsonString) {
+  static GetApointmentTimeResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         GetApointmentTimeResponse.serializer, json.decode(jsonString));
   }
@@ -73,7 +73,7 @@ abstract class ParamsGetApointmentTimeResponse
         ParamsGetApointmentTimeResponse.serializer, this));
   }
 
-  static ParamsGetApointmentTimeResponse fromJson(String jsonString) {
+  static ParamsGetApointmentTimeResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsGetApointmentTimeResponse.serializer, json.decode(jsonString));
   }
@@ -107,7 +107,7 @@ abstract class DataGetApointmentTimeResponse
         DataGetApointmentTimeResponse.serializer, this));
   }
 
-  static DataGetApointmentTimeResponse fromJson(String jsonString) {
+  static DataGetApointmentTimeResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataGetApointmentTimeResponse.serializer, json.decode(jsonString));
   }
@@ -135,7 +135,7 @@ abstract class DataTimeRdv implements Built<DataTimeRdv, DataTimeRdvBuilder> {
     return json.encode(serializers.serializeWith(DataTimeRdv.serializer, this));
   }
 
-  static DataTimeRdv fromJson(String jsonString) {
+  static DataTimeRdv? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataTimeRdv.serializer, json.decode(jsonString));
   }
@@ -168,7 +168,7 @@ abstract class Creneaux implements Built<Creneaux, CreneauxBuilder> {
     return json.encode(serializers.serializeWith(Creneaux.serializer, this));
   }
 
-  static Creneaux fromJson(String jsonString) {
+  static Creneaux? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Creneaux.serializer, json.decode(jsonString));
   }
@@ -193,7 +193,7 @@ abstract class Navigation implements Built<Navigation, NavigationBuilder> {
     return json.encode(serializers.serializeWith(Navigation.serializer, this));
   }
 
-  static Navigation fromJson(String jsonString) {
+  static Navigation? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Navigation.serializer, json.decode(jsonString));
   }
@@ -218,7 +218,7 @@ abstract class Begin implements Built<Begin, BeginBuilder> {
     return json.encode(serializers.serializeWith(Begin.serializer, this));
   }
 
-  static Begin fromJson(String jsonString) {
+  static Begin? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Begin.serializer, json.decode(jsonString));
   }
@@ -243,7 +243,7 @@ abstract class Prev implements Built<Prev, PrevBuilder> {
     return json.encode(serializers.serializeWith(Prev.serializer, this));
   }
 
-  static Prev fromJson(String jsonString) {
+  static Prev? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Prev.serializer, json.decode(jsonString));
   }
@@ -268,7 +268,7 @@ abstract class Prevweek implements Built<Prevweek, PrevweekBuilder> {
     return json.encode(serializers.serializeWith(Prevweek.serializer, this));
   }
 
-  static Prevweek fromJson(String jsonString) {
+  static Prevweek? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Prevweek.serializer, json.decode(jsonString));
   }
@@ -293,7 +293,7 @@ abstract class Nextweek implements Built<Nextweek, NextweekBuilder> {
     return json.encode(serializers.serializeWith(Nextweek.serializer, this));
   }
 
-  static Nextweek fromJson(String jsonString) {
+  static Nextweek? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Nextweek.serializer, json.decode(jsonString));
   }

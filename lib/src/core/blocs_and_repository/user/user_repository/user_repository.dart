@@ -6,19 +6,21 @@ import 'package:logic_rdv_v0/src/core/models/user_model/user_request.dart';
 import 'package:logic_rdv_v0/src/core/models/user_model/user_response.dart';
 
 class UserRepository extends AbstractRepository {
-  Future updateAccount({UserRequest userRequest}) async {
+  Future updateAccount({required UserRequest userRequest}) async {
     final String path = '/${getControllerName()}setinfos/';
+    final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+        token, path,
         data: userRequest.toJson());
     UserResponse userResponse = UserResponse.fromJson(response.toString());
     return userResponse;
   }
 
-  Future checkout({TokenUser tokenUser}) async {
+  Future checkout({required TokenUser tokenUser}) async {
     final String path = '/${getControllerName()}checkout/';
+    final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+        token, path,
         data: tokenUser.toJson());
     RemoveUserResponse checkoutReponse =
         RemoveUserResponse.fromJson(response.toString());

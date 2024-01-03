@@ -409,8 +409,8 @@ class _ProfilMenuOption extends StatelessWidget {
   const _ProfilMenuOption({
     Key key,
     this.onTap,
-    @required this.icon,
-    @required this.title,
+    required this.icon,
+    required this.title,
     this.trailing,
   }) : super(key: key);
 

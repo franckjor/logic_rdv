@@ -4,18 +4,20 @@ import 'package:logic_rdv_v0/src/core/models/generate_token_model/get_token_requ
 import 'package:logic_rdv_v0/src/core/models/generate_token_model/get_token_response.dart';
 
 class GenerateAndCheckTokenRepository extends AbstractRepository {
-  Future getTokenAuthorizationRequest({GetTokenRequest getTokenRequest}) async {
+  Future getTokenAuthorizationRequest(
+      {required GetTokenRequest getTokenRequest}) async {
     final String path = '/${getControllerName()}get/';
-    final response = await apiManager.postDynamic(
-        await getAuthToken(), path, getTokenRequest.toJson());
+    final String token = (await getAuthToken()) ?? '';
+    final response =
+        await apiManager.postDynamic(token, path, getTokenRequest.toJson());
     GetTokenResponse getToken = GetTokenResponse.fromJson(response.toString());
     return getToken;
   }
 
   Future verifyTokenAuthorizationRequest() async {
     final String path = '/${getControllerName()}check/';
-    final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path);
+    final String token = (await getTokenAuthorization()) ?? '';
+    final response = await apiManager.postDynamicWithVerifyToken(token, path);
     GetTokenResponse getToken = GetTokenResponse.fromJson(response.toString());
     return getToken;
   }

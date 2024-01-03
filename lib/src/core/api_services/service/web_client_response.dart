@@ -1,7 +1,7 @@
 class WebClientResponse<T> {
   Status status;
-  T data;
-  String message;
+  late T data;
+  late String message;
 
   WebClientResponse.loading(this.message) : status = Status.LOADING;
 

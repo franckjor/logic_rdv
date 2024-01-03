@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/remove_doctor/bloc/remove_doctor.dart';
 import 'package:logic_rdv_v0/src/core/models/remove_doctor_model/remove_doctor_request.dart';
 
-removeDoctorToList({BuildContext context, String tokenUser, String idDoctor}) {
+removeDoctorToList(
+    {required BuildContext context, required String tokenUser, required String idDoctor}) {
   RemoveDoctorRequest _removeDoctorRequest =
       RemoveDoctorRequest((builder) => builder
         ..tokenUser = tokenUser

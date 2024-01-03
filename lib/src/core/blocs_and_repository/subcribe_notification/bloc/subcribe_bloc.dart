@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/subcribe_notification
 class SubscribeBloc extends Bloc<SubscribeEvent, SubscribeState> {
   final SubscribeRepository repository;
 
-  SubscribeBloc({@required this.repository}) : super(SubscribeStateLoading());
+  SubscribeBloc({required this.repository}) : super(SubscribeStateLoading());
 
   @override
   SubscribeState get initialState => SubscribeStateLoading();
@@ -18,7 +18,7 @@ class SubscribeBloc extends Bloc<SubscribeEvent, SubscribeState> {
       yield* _mapGetSubscribeToState(event);
     } else if (event is UnSubscribe) {
       yield* _mapGetUnSubscribeToState(event);
-    }else if (event is IsSubscribe) {
+    } else if (event is IsSubscribe) {
       yield* _mapGetIsSubscribeToState(event);
     }
   }
@@ -52,5 +52,4 @@ class SubscribeBloc extends Bloc<SubscribeEvent, SubscribeState> {
       yield SubscribeStateLoadingFailure(error: error.toString());
     }
   }
-
 }

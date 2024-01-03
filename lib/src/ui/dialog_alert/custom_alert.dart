@@ -3,13 +3,13 @@ import 'package:logic_rdv_v0/src/ui/themes/sizes.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 customAlert({
-  @required BuildContext context,
+  required BuildContext context,
   AlertType alertType,
   String title,
   String buttonLabel,
   Function action,
   bool willPop,
-  @required Widget content,
+  required Widget content,
   bool showCloseIcon = true,
 }) {
   return Alert(

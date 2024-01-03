@@ -35,7 +35,7 @@ abstract class GetPaientForRdvResponse
         serializers.serializeWith(GetPaientForRdvResponse.serializer, this));
   }
 
-  static GetPaientForRdvResponse fromJson(String jsonString) {
+  static GetPaientForRdvResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         GetPaientForRdvResponse.serializer, json.decode(jsonString));
   }
@@ -71,7 +71,7 @@ abstract class ParamsGetPaientForRdvResponse
         ParamsGetPaientForRdvResponse.serializer, this));
   }
 
-  static ParamsGetPaientForRdvResponse fromJson(String jsonString) {
+  static ParamsGetPaientForRdvResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsGetPaientForRdvResponse.serializer, json.decode(jsonString));
   }
@@ -106,7 +106,7 @@ abstract class DataGetPaientForRdvResponse
         DataGetPaientForRdvResponse.serializer, this));
   }
 
-  static DataGetPaientForRdvResponse fromJson(String jsonString) {
+  static DataGetPaientForRdvResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataGetPaientForRdvResponse.serializer, json.decode(jsonString));
   }
@@ -167,7 +167,7 @@ abstract class PatientDataResponseDrv
         serializers.serializeWith(PatientDataResponseDrv.serializer, this));
   }
 
-  static PatientDataResponseDrv fromJson(String jsonString) {
+  static PatientDataResponseDrv? fromJson(String jsonString) {
     return serializers.deserializeWith(
         PatientDataResponseDrv.serializer, json.decode(jsonString));
   }
@@ -195,7 +195,7 @@ abstract class NavigationGetPaientForRdvResponse
         NavigationGetPaientForRdvResponse.serializer, this));
   }
 
-  static NavigationGetPaientForRdvResponse fromJson(String jsonString) {
+  static NavigationGetPaientForRdvResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         NavigationGetPaientForRdvResponse.serializer, json.decode(jsonString));
   }
@@ -227,7 +227,7 @@ abstract class BeginGetPaientForRdvResponse
         BeginGetPaientForRdvResponse.serializer, this));
   }
 
-  static BeginGetPaientForRdvResponse fromJson(String jsonString) {
+  static BeginGetPaientForRdvResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         BeginGetPaientForRdvResponse.serializer, json.decode(jsonString));
   }
@@ -258,7 +258,7 @@ abstract class PrevGetPaientForRdvResponse
         PrevGetPaientForRdvResponse.serializer, this));
   }
 
-  static PrevGetPaientForRdvResponse fromJson(String jsonString) {
+  static PrevGetPaientForRdvResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         PrevGetPaientForRdvResponse.serializer, json.decode(jsonString));
   }

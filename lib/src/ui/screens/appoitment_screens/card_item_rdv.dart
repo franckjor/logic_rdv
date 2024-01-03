@@ -577,9 +577,9 @@ class _ContactButton extends StatelessWidget {
   final Function onTap;
   const _ContactButton({
     Key key,
-    @required this.iconPath,
-    @required this.label,
-    @required this.onTap,
+    required this.iconPath,
+    required this.label,
+    required this.onTap,
   }) : super(key: key);
 
   @override

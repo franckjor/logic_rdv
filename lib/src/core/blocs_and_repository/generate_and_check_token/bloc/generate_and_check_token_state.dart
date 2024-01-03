@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:logic_rdv_v0/src/core/models/generate_token_model/get_token_response.dart';
 
 class GenerateAndCheckTokenState extends Equatable {
@@ -13,7 +12,7 @@ class GenerateAndCheckTokenStateLoading extends GenerateAndCheckTokenState {}
 
 class GenerateTokenStateLoadingSuccess extends GenerateAndCheckTokenState {
   final GetTokenResponse getToken;
-  GenerateTokenStateLoadingSuccess({this.getToken});
+  GenerateTokenStateLoadingSuccess({required this.getToken});
 
   @override
   List<Object> get props => [getToken];
@@ -26,7 +25,7 @@ class GenerateTokenStateLoadingSuccess extends GenerateAndCheckTokenState {
 class VerifyTokenStateLoadingSuccess extends GenerateAndCheckTokenState {
   final GetTokenResponse getToken;
 
-  VerifyTokenStateLoadingSuccess({this.getToken});
+  VerifyTokenStateLoadingSuccess({required this.getToken});
 
   @override
   List<Object> get props => [getToken];
@@ -39,7 +38,7 @@ class GenerateAndCheckTokenStateLoadingFailure
     extends GenerateAndCheckTokenState {
   final String error;
 
-  GenerateAndCheckTokenStateLoadingFailure({@required this.error});
+  GenerateAndCheckTokenStateLoadingFailure({required this.error});
 
   @override
   List<Object> get props => [error];

@@ -16,7 +16,7 @@ import '../../common.dart';
 class DialogSearchCityValue extends StatefulWidget {
   final String indexPage;
 
-  DialogSearchCityValue({this.indexPage});
+  DialogSearchCityValue({required this.indexPage});
 
   @override
   _DialogSearchCityState createState() => _DialogSearchCityState();
@@ -211,5 +211,5 @@ class CityValue {
   String cityName;
   String cityId;
 
-  CityValue({this.cityName, this.cityId});
+  CityValue({required this.cityName, this.cityId});
 }

@@ -4,10 +4,11 @@ import 'package:logic_rdv_v0/src/core/models/remove_doctor_model/remove_doctor_r
 import 'package:logic_rdv_v0/src/core/models/remove_doctor_model/remove_doctor_response.dart';
 
 class RemoveDoctorRepository extends AbstractRepository {
-  Future removeDoctor({RemoveDoctorRequest request}) async {
+  Future removeDoctor({required RemoveDoctorRequest request}) async {
     final String path = '/${getControllerName()}doctorremove/';
+    final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+        token, path,
         data: request.toJson());
     RemoveDoctorResponse removeDoctorResponse =
         RemoveDoctorResponse.fromJson(response.toString());

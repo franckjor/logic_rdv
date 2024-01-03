@@ -40,13 +40,13 @@ bool get isWeb => foundation.kIsWeb;
 class AppointementArg {
   int isforDrawer;
 
-  AppointementArg({this.isforDrawer});
+  AppointementArg({required this.isforDrawer});
 }
 
 class AppointmentScreen extends StatefulWidget {
   final AppointementArg appointementArg;
 
-  AppointmentScreen({this.appointementArg});
+  AppointmentScreen({required this.appointementArg});
 
   @override
   _AppointmentScreenState createState() => _AppointmentScreenState();
@@ -171,7 +171,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
         listeners: [
           BlocListener<SharedPreferenceBloc, SharedPreferenceState>(
               listener: (context, state) {
-                print(state);
+            print(state);
             if (state is SharedPreferenceReadObjectState) {
               setState(() {
                 getVersionApp(context: context);

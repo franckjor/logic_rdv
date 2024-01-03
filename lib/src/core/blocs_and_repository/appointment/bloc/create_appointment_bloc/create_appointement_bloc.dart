@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/appointment/bloc/create_appointment_bloc/create_appointement.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/appointment/repository/create_appointment_repository.dart';
@@ -7,7 +6,7 @@ class CreateAppointmentBloc
     extends Bloc<CreateAppointmentEvent, CreateAppointmentState> {
   final CreateAppointmentRepository repository;
 
-  CreateAppointmentBloc({@required this.repository})
+  CreateAppointmentBloc({required this.repository})
       : super(CreateAppointmentLoading());
 
   @override

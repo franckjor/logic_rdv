@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:logic_rdv_v0/src/core/models/appointment_model/create_appointment_response.dart';
 import 'package:logic_rdv_v0/src/core/models/appointment_model/get_apointment_time_response.dart';
 import 'package:logic_rdv_v0/src/core/models/appointment_model/get_paient_for_rdv_response.dart';
@@ -18,7 +17,7 @@ class CreateAppointmentLoading extends CreateAppointmentState {}
 
 class TypeOfAppointmentLoadingSuccess extends CreateAppointmentState {
   final CreateAppointmentResponse response;
-  TypeOfAppointmentLoadingSuccess({this.response});
+  TypeOfAppointmentLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -29,7 +28,7 @@ class TypeOfAppointmentLoadingSuccess extends CreateAppointmentState {
 
 class DayAndTimeOfAppointmentLoadingSuccess extends CreateAppointmentState {
   final GetApointmentTimeResponse response;
-  DayAndTimeOfAppointmentLoadingSuccess({this.response});
+  DayAndTimeOfAppointmentLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -41,7 +40,7 @@ class DayAndTimeOfAppointmentLoadingSuccess extends CreateAppointmentState {
 
 class NextDayAndTimeOfAppointmentLoadingSuccess extends CreateAppointmentState {
   final GetApointmentTimeResponse response;
-  NextDayAndTimeOfAppointmentLoadingSuccess({this.response});
+  NextDayAndTimeOfAppointmentLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -53,7 +52,7 @@ class NextDayAndTimeOfAppointmentLoadingSuccess extends CreateAppointmentState {
 
 class PrevDayAndTimeOfAppointmentLoadingSuccess extends CreateAppointmentState {
   final GetApointmentTimeResponse response;
-  PrevDayAndTimeOfAppointmentLoadingSuccess({this.response});
+  PrevDayAndTimeOfAppointmentLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -65,7 +64,7 @@ class PrevDayAndTimeOfAppointmentLoadingSuccess extends CreateAppointmentState {
 
 class PatientForAppointmentLoadingSuccess extends CreateAppointmentState {
   final GetPaientForRdvResponse response;
-  PatientForAppointmentLoadingSuccess({this.response});
+  PatientForAppointmentLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -78,7 +77,7 @@ class PatientForAppointmentLoadingSuccess extends CreateAppointmentState {
 class PatientSelectedForAppointmentLoadingSuccess
     extends CreateAppointmentState {
   final SelectedPatientResponseForRdv response;
-  PatientSelectedForAppointmentLoadingSuccess({this.response});
+  PatientSelectedForAppointmentLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -90,7 +89,7 @@ class PatientSelectedForAppointmentLoadingSuccess
 
 class ValidateAppointmentWithTCLoadingSuccess extends CreateAppointmentState {
   final ValidateRdvSummaryDto response;
-  ValidateAppointmentWithTCLoadingSuccess({this.response});
+  ValidateAppointmentWithTCLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -102,7 +101,7 @@ class ValidateAppointmentWithTCLoadingSuccess extends CreateAppointmentState {
 
 class ValidateAppointmentLoadingSuccess extends CreateAppointmentState {
   final GetApointmentTimeResponse response;
-  ValidateAppointmentLoadingSuccess({this.response});
+  ValidateAppointmentLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -114,7 +113,7 @@ class ValidateAppointmentLoadingSuccess extends CreateAppointmentState {
 
 class RdvTypeStateLoadingSuccess extends CreateAppointmentState {
   final RdvType response;
-  RdvTypeStateLoadingSuccess({this.response});
+  RdvTypeStateLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -125,7 +124,7 @@ class RdvTypeStateLoadingSuccess extends CreateAppointmentState {
 
 class ConfirmAppointmentLoadingSuccess extends CreateAppointmentState {
   final GetApointmentTimeResponse response;
-  ConfirmAppointmentLoadingSuccess({this.response});
+  ConfirmAppointmentLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -137,7 +136,7 @@ class ConfirmAppointmentLoadingSuccess extends CreateAppointmentState {
 class CreateAppointmentFailure extends CreateAppointmentState {
   final String error;
 
-  CreateAppointmentFailure({@required this.error});
+  CreateAppointmentFailure({required this.error});
 
   @override
   List<Object> get props => [error];

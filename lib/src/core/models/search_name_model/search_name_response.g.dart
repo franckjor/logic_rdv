@@ -1380,7 +1380,7 @@ class _$AppointmentSearchNameResponse extends AppointmentSearchNameResponse {
           [void Function(AppointmentSearchNameResponseBuilder)? updates]) =>
       (new AppointmentSearchNameResponseBuilder()..update(updates))._build();
 
-  _$AppointmentSearchNameResponse._({this.token}) : super._();
+  _$AppointmentSearchNameResponse._({required this.token}) : super._();
 
   @override
   AppointmentSearchNameResponse rebuild(

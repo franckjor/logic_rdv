@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/fixer_rdv_doctor/bloc/fixer_rdv_doctor.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/fixer_rdv_doctor/fixer_rdv_doctor_response_repository/fixer_rdv_doctor_repository.dart';
@@ -7,7 +6,7 @@ class FixerRdvDoctorBloc
     extends Bloc<FixerRdvDoctorEvent, FixerRdvDoctorState> {
   final FixerRdvDoctorRepository repository;
 
-  FixerRdvDoctorBloc({@required this.repository})
+  FixerRdvDoctorBloc({required this.repository})
       : super(FixerRdvDoctorLoading());
 
   @override

@@ -5,7 +5,8 @@ import 'package:logic_rdv_v0/src/core/models/patient/get_list_of_patient_request
 import 'package:logic_rdv_v0/src/core/models/patient/patient_request.dart';
 import 'package:logic_rdv_v0/src/core/models/patient/remove_patient_request.dart';
 
-getListOfPatient({BuildContext context, String tokenUser, String tokenDoctor}) {
+getListOfPatient(
+    {required BuildContext context, required String tokenUser,required  String tokenDoctor}) {
   GetListOfPatientRequest _getListOfPatient =
       GetListOfPatientRequest((builder) => builder
         ..tokenuser = tokenUser
@@ -16,10 +17,10 @@ getListOfPatient({BuildContext context, String tokenUser, String tokenDoctor}) {
 }
 
 removePatient(
-    {BuildContext context,
-    String tokenUser,
-    String tokenDoctor,
-    String tokenPatient}) {
+    {required BuildContext context,
+  required   String tokenUser,
+ required    String tokenDoctor,
+  required   String tokenPatient}) {
   RemovePatientRequest _removePatient =
       RemovePatientRequest((builder) => builder
         ..tokenuser = tokenUser
@@ -31,7 +32,7 @@ removePatient(
     ..add(RemovePatient(patientRequest: _removePatient));
 }
 
-editPatient({BuildContext context, PatientRequest patientRequest}) {
+editPatient({required BuildContext context, required PatientRequest patientRequest}) {
   PatientRequest _updatePatient = PatientRequest((builder) => builder
     ..tokenuser = patientRequest.tokenuser
     ..tokenappt = patientRequest.tokenappt
@@ -44,7 +45,7 @@ editPatient({BuildContext context, PatientRequest patientRequest}) {
     ..add(ModifyPatient(patientRequest: _updatePatient));
 }
 
-addPatient({BuildContext context, PatientRequest patientRequest}) {
+addPatient({required BuildContext context, required PatientRequest patientRequest}) {
   PatientRequest _updatePatient = PatientRequest((builder) => builder
     ..tokenuser = patientRequest.tokenuser
     ..tokenappt = patientRequest.tokenappt

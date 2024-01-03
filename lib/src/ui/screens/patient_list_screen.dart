@@ -66,7 +66,7 @@ class GetPatientPageArguments implements PagesArgumentType {
 class PatientListScreen extends StatefulWidget {
   final GetPatientPageArguments arguments;
 
-  PatientListScreen({this.arguments});
+  PatientListScreen({required this.arguments});
 
   @override
   _PatientListScreenState createState() => _PatientListScreenState();

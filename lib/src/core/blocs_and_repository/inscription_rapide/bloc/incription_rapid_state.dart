@@ -1,7 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
-import 'package:logic_rdv_v0/src/core/models/generate_token_model/get_token_response.dart';
-import 'package:logic_rdv_v0/src/core/models/incription_model/create_patient_request.dart';
 import 'package:logic_rdv_v0/src/core/models/incription_model/create_patient_response.dart';
 import 'package:logic_rdv_v0/src/core/models/incription_model/inscription_check_response.dart';
 
@@ -17,7 +14,7 @@ class InscriptionRapidStateLoading extends InscriptionRapidState {}
 class CheckDoctorLoadingSuccess extends InscriptionRapidState {
   final InscriptionCheckResponse checkResponse;
 
-  CheckDoctorLoadingSuccess({this.checkResponse});
+  CheckDoctorLoadingSuccess({required this.checkResponse});
 
   @override
   List<Object> get props => [checkResponse];
@@ -30,7 +27,7 @@ class CheckDoctorLoadingSuccess extends InscriptionRapidState {
 class CreatePatientLoadingSuccess extends InscriptionRapidState {
   final CreatePatientResponse createPatientResponse;
 
-  CreatePatientLoadingSuccess({this.createPatientResponse});
+  CreatePatientLoadingSuccess({required this.createPatientResponse});
 
   @override
   List<Object> get props => [createPatientResponse];
@@ -43,7 +40,7 @@ class CreatePatientLoadingSuccess extends InscriptionRapidState {
 class InscriptionRapidStateLoadingFailure extends InscriptionRapidState {
   final String error;
 
-  InscriptionRapidStateLoadingFailure({@required this.error});
+  InscriptionRapidStateLoadingFailure({required this.error});
 
   @override
   List<Object> get props => [error];

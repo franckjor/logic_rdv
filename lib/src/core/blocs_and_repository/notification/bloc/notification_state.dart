@@ -13,7 +13,7 @@ class NotificationLoading extends NotificationState {}
 
 class NotificationListLoadingSuccess extends NotificationState {
   final NotificationListResponse response;
-  NotificationListLoadingSuccess({this.response});
+  NotificationListLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -25,7 +25,7 @@ class NotificationListLoadingSuccess extends NotificationState {
 class NotificationFailure extends NotificationState {
   final String error;
 
-  NotificationFailure({@required this.error});
+  NotificationFailure({required this.error});
 
   @override
   List<Object> get props => [error];

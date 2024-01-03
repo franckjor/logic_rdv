@@ -2,13 +2,10 @@ library validate_rdv_summary_dto;
 
 import 'dart:convert';
 
-import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:logic_rdv_v0/src/core/models/appointment_model/selected_patient_response_for_rdv.dart';
 import 'package:logic_rdv_v0/src/core/serializers/serializers.dart';
-
-import 'get_apointment_time_response.dart';
 
 part 'validate_rdv_summary_dto.g.dart';
 
@@ -38,7 +35,7 @@ abstract class ValidateRdvSummaryDto
         serializers.serializeWith(ValidateRdvSummaryDto.serializer, this));
   }
 
-  static ValidateRdvSummaryDto fromJson(String jsonString) {
+  static ValidateRdvSummaryDto? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ValidateRdvSummaryDto.serializer, json.decode(jsonString));
   }
@@ -73,7 +70,7 @@ abstract class ParamsValidateRdvSummaryDto
         ParamsValidateRdvSummaryDto.serializer, this));
   }
 
-  static ParamsValidateRdvSummaryDto fromJson(String jsonString) {
+  static ParamsValidateRdvSummaryDto? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsValidateRdvSummaryDto.serializer, json.decode(jsonString));
   }
@@ -100,7 +97,7 @@ abstract class DataValidateRdvSummaryDto2
         serializers.serializeWith(DataValidateRdvSummaryDto2.serializer, this));
   }
 
-  static DataValidateRdvSummaryDto2 fromJson(String jsonString) {
+  static DataValidateRdvSummaryDto2? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataValidateRdvSummaryDto2.serializer, json.decode(jsonString));
   }
@@ -123,7 +120,7 @@ abstract class AppointmentSummary
         .encode(serializers.serializeWith(AppointmentSummary.serializer, this));
   }
 
-  static AppointmentSummary fromJson(String jsonString) {
+  static AppointmentSummary? fromJson(String jsonString) {
     return serializers.deserializeWith(
         AppointmentSummary.serializer, json.decode(jsonString));
   }
@@ -146,7 +143,7 @@ abstract class PaymentIntentSummary
         serializers.serializeWith(PaymentIntentSummary.serializer, this));
   }
 
-  static PaymentIntentSummary fromJson(String jsonString) {
+  static PaymentIntentSummary? fromJson(String jsonString) {
     return serializers.deserializeWith(
         PaymentIntentSummary.serializer, json.decode(jsonString));
   }
@@ -181,7 +178,7 @@ abstract class DataValidateRdvSummaryDto
         serializers.serializeWith(DataValidateRdvSummaryDto.serializer, this));
   }
 
-  static DataValidateRdvSummaryDto fromJson(String jsonString) {
+  static DataValidateRdvSummaryDto? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataValidateRdvSummaryDto.serializer, json.decode(jsonString));
   }

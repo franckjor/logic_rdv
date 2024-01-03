@@ -44,9 +44,9 @@ class TeleconsArgument implements PagesArgumentType {
 }
 
 class CallWidget extends StatefulWidget {
-  final TeleconsArgument argument;
+  final TeleconsArgument? argument;
 
-  CallWidget({@required this.argument});
+  CallWidget({this.argument});
 
   _CallWidgetState createState() => _CallWidgetState();
 }
@@ -65,7 +65,7 @@ class _CallWidgetState extends State<CallWidget> {
   @override
   void initState() {
     getTeleocns(context: context, tokentelecons: widget.argument?.tokentelecon);
-   
+
     StripeServiceTc.init();
     super.initState();
   }
@@ -108,7 +108,7 @@ class _CallWidgetState extends State<CallWidget> {
       appBar: AdaptativeAppBar(
         title: 'Paiement',
         leading: DefaultBackButton(
-          onPressed: ()=>Navigator.pushReplacementNamed(
+          onPressed: () => Navigator.pushReplacementNamed(
               context, RouteGenerator.appointmentScreen),
         ),
       ),
@@ -116,7 +116,6 @@ class _CallWidgetState extends State<CallWidget> {
         listeners: [
           BlocListener<TeleconsBloc, TeleconsState>(listener: (context, state) {
             if (state is TeleconsLoadingSuccess) {
-      
               setState(() {
                 _progressDialog.hide();
                 _etablissementTc = state.response.data.etablissement;
@@ -493,111 +492,118 @@ class _CallWidgetState extends State<CallWidget> {
                               _stripeClient == ""
                                   ? Container(
                                       child: Center(
-                                     child: (_tokboxTc.error != "")
-                                            ? Card(
-                                                child: Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(12),
-                                                  child: Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .stretch,
-                                                    mainAxisSize:
-                                                        MainAxisSize.min,
-                                                    children: [
-                                                      Row(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Icon(
-                                                              FontAwesomeIcons
-                                                                  .info,
-                                                              size: 20),
-                                                          const SizedBox(
-                                                              width: 8),
-                                                          Text(
-                                                            "Information",
+                                          child: (_tokboxTc.error != "")
+                                              ? Card(
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            12),
+                                                    child: Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .stretch,
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: [
+                                                        Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Icon(
+                                                                FontAwesomeIcons
+                                                                    .info,
+                                                                size: 20),
+                                                            const SizedBox(
+                                                                width: 8),
+                                                            Text(
+                                                              "Information",
+                                                              style: TextStyle(
+                                                                fontSize: 14,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        const SizedBox(
+                                                            height: 4),
+                                                        Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          children: <Widget>[
+                                                            Flexible(
+                                                                child: new Text(
+                                                                    _tokboxTc
+                                                                        .error))
+                                                          ],
+                                                        )
+                                                      ],
+                                                    ),
+                                                  ),
+                                                )
+                                              : (_infostc.buttonstartteleconsdisabled ==
+                                                      "1")
+                                                  ? Container()
+                                                  : Padding(
+                                                      padding:
+                                                          const EdgeInsets.only(
+                                                        top: 8,
+                                                        left: 16,
+                                                        right: 16,
+                                                      ),
+                                                      child: Container(
+                                                        height: 48,
+                                                        width: double.infinity,
+                                                        child:
+                                                            ElevatedButton.icon(
+                                                          onPressed: () async {
+                                                            await Navigator.of(context).pushNamed(
+                                                                RouteGenerator
+                                                                    .teleconsultationScreen,
+                                                                arguments: GetCredentialsTokboxPageArguments(
+                                                                    API_KEY:
+                                                                        _apiKey,
+                                                                    SESSION_ID:
+                                                                        _sessionId,
+                                                                    TOKENTELECONS: widget
+                                                                        .argument
+                                                                        ?.tokentelecon,
+                                                                    TOKEN:
+                                                                        _token,
+                                                                    Date: _apptTc
+                                                                        .date,
+                                                                    Doctor: _apptTc
+                                                                        .doctor,
+                                                                    Patient: _apptTc
+                                                                        .patient));
+                                                          },
+                                                          icon: Icon(Icons
+                                                              .featured_video_rounded),
+                                                          label: Text(
+                                                            'Lancer la téléconsultation',
                                                             style: TextStyle(
-                                                              fontSize: 14,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
+                                                              fontSize: 16,
                                                             ),
                                                           ),
-                                                        ],
+                                                          style: ElevatedButton
+                                                              .styleFrom(
+                                                            primary: AppColors
+                                                                .colorPrimary,
+                                                            elevation: 0,
+                                                            shape:
+                                                                RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          12),
+                                                            ),
+                                                          ),
+                                                        ),
                                                       ),
-                                                      const SizedBox(height: 4),
-                                                      Row(
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .start,
-                                                        children: <Widget>[
-                                                          Flexible(
-                                                              child: new Text(
-                                                                  _tokboxTc
-                                                                      .error))
-                                                        ],
-                                                      )
-                                                    ],
-                                                  ),
-                                                ),
-                                              )
-                                            : (_infostc.buttonstartteleconsdisabled == "1") ? Container():
-                                             Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 8,
-                                                  left: 16,
-                                                  right: 16,
-                                                ),
-                                                child: Container(
-                                                  height: 48,
-                                                  width: double.infinity,
-                                                  child: ElevatedButton.icon(
-                                                    onPressed: () async {
-                                                      await Navigator.of(context).pushNamed(
-                                                          RouteGenerator
-                                                              .teleconsultationScreen,
-                                                          arguments:
-                                                              GetCredentialsTokboxPageArguments(
-                                                                  API_KEY:
-                                                                      _apiKey,
-                                                                  SESSION_ID:
-                                                                      _sessionId,
-                                                                  TOKENTELECONS: 
-                                                                  widget.argument?.tokentelecon,
-                                                                  TOKEN: _token,
-                                                                  Date: _apptTc
-                                                                      .date,
-                                                                  Doctor: _apptTc
-                                                                      .doctor,
-                                                                  Patient: _apptTc
-                                                                      .patient) );
-                                                    },
-                                                    icon: Icon(Icons
-                                                        .featured_video_rounded),
-                                                    label: Text(
-                                                      'Lancer la téléconsultation',
-                                                      style: TextStyle(
-                                                        fontSize: 16,
-                                                      ),
-                                                    ),
-                                                    style: ElevatedButton
-                                                        .styleFrom(
-                                                      primary: AppColors
-                                                          .colorPrimary,
-                                                      elevation: 0,
-                                                      shape:
-                                                          RoundedRectangleBorder(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(12),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              )
-                                      ),
+                                                    )),
                                     )
                                   : Container(
                                       alignment: Alignment.center,

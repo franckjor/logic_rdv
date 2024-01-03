@@ -7,8 +7,8 @@ class SocialIcon extends StatelessWidget {
 
   const SocialIcon({
     Key key,
-    @required this.imageUrl,
-    @required this.onPressed,
+    required this.imageUrl,
+    required this.onPressed,
   }) : super(key: key);
 
   @override

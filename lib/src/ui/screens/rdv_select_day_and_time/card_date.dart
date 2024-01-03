@@ -134,17 +134,17 @@ class _Hour extends StatefulWidget {
 
   const _Hour({
     Key key,
-    @required this.hour,
-    @required this.doctorName,
-    @required this.context,
-    @required this.tokenUser,
-    @required this.tokenAppointment,
-    @required this.currentSession,
-    @required this.data,
-    @required this.action,
-    @required this.onClickMessage,
-    @required this.dataFunction,
-    @required this.actionFunction,
+    required this.hour,
+    required this.doctorName,
+    required this.context,
+    required this.tokenUser,
+    required this.tokenAppointment,
+    required this.currentSession,
+    required this.data,
+    required this.action,
+    required this.onClickMessage,
+    required this.dataFunction,
+    required this.actionFunction,
     this.onTap,
   }) : super(key: key);
 

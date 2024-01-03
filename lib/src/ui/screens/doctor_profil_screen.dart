@@ -35,7 +35,8 @@ class GetDoctorIdPageArguments implements PagesArgumentType {
   final String tokenAppointment;
   final String tokenDoctor;
 
-  GetDoctorIdPageArguments({this.id, this.tokenAppointment, this.tokenDoctor});
+  GetDoctorIdPageArguments(
+      {required this.id, this.tokenAppointment, this.tokenDoctor});
 
   @override
   getArguments() {
@@ -46,7 +47,7 @@ class GetDoctorIdPageArguments implements PagesArgumentType {
 class DoctorProfileScreen extends StatefulWidget {
   final GetDoctorIdPageArguments arguments;
 
-  const DoctorProfileScreen({this.arguments});
+  const DoctorProfileScreen({required this.arguments});
 
   @override
   _DoctorProfileScreenState createState() => _DoctorProfileScreenState();
@@ -122,59 +123,58 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      endDrawer: _tokenUser == null ?
-      StartedDrawer() 
-      :  MultiBlocProvider(
-        providers: [
-          BlocProvider(create: (context) {
-            return SharedPreferenceBloc();
-          }),
-          BlocProvider<SubscribeBloc>(create: (context) {
-            return SubscribeBloc(repository: SubscribeRepository());
-          }),
-        ],
-        child: MyDrawer(
-          tokenUser: _tokenUser,
-          page: '0',
-          email: _email,
-          fullNme: _fullName,
-        ),
-      ),
+      endDrawer: _tokenUser == null
+          ? StartedDrawer()
+          : MultiBlocProvider(
+              providers: [
+                BlocProvider(create: (context) {
+                  return SharedPreferenceBloc();
+                }),
+                BlocProvider<SubscribeBloc>(create: (context) {
+                  return SubscribeBloc(repository: SubscribeRepository());
+                }),
+              ],
+              child: MyDrawer(
+                tokenUser: _tokenUser,
+                page: '0',
+                email: _email,
+                fullNme: _fullName,
+              ),
+            ),
       appBar: AdaptativeAppBar(
         title: 'Détail du médecin',
         leading: DefaultBackButton(),
         actions: [
-          _tokenUser == null ?
-            IconButton(
-            icon: isAndroid || isWeb
-                ? const Icon(
-              MdiIcons.menu,
-              color: Color.fromARGB(255, 255, 255, 255),
-            )
-                : const Icon(
-              MdiIcons.menu,
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-            splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
-          )
-          :
-          Visibility(
-            visible: _tokenUser != null,
-            child: IconButton(
-              icon: isAndroid || isWeb
-                  ? const Icon(
-                      MdiIcons.accountCircle,
-                      color: Colors.white,
-                    )
-                  : const Icon(
-                      CupertinoIcons.person_alt_circle_fill,
-                      color: Colors.white,
-                    ),
-              splashRadius: 20,
-              onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
-            ),
-          ),
+          _tokenUser == null
+              ? IconButton(
+                  icon: isAndroid || isWeb
+                      ? const Icon(
+                          MdiIcons.menu,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                        )
+                      : const Icon(
+                          MdiIcons.menu,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                        ),
+                  splashRadius: 20,
+                  onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                )
+              : Visibility(
+                  visible: _tokenUser != null,
+                  child: IconButton(
+                    icon: isAndroid || isWeb
+                        ? const Icon(
+                            MdiIcons.accountCircle,
+                            color: Colors.white,
+                          )
+                        : const Icon(
+                            CupertinoIcons.person_alt_circle_fill,
+                            color: Colors.white,
+                          ),
+                    splashRadius: 20,
+                    onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                  ),
+                ),
         ],
       ),
       body: MultiBlocListener(
@@ -478,7 +478,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                                                             width: 25,
                                                             margin:
                                                                 const EdgeInsets
-                                                                        .only(
+                                                                    .only(
                                                                     left: 8),
                                                             decoration:
                                                                 BoxDecoration(
@@ -499,7 +499,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                                                                   EdgeInsets
                                                                       .zero,
                                                               onPressed: () async =>
-                                                               await   _makeCall(
+                                                                  await _makeCall(
                                                                       _searchDoctorDetailsResponse
                                                                           .data
                                                                           .telnospace),
@@ -716,8 +716,8 @@ class _DoctorInfo extends StatelessWidget {
 
   const _DoctorInfo({
     Key key,
-    @required this.info,
-    @required this.icon,
+    required this.info,
+    required this.icon,
     this.textStyle,
   }) : super(key: key);
 
@@ -746,7 +746,7 @@ class _ChaptersInfos extends StatelessWidget {
   final String title;
   final String description;
 
-  const _ChaptersInfos({this.title, this.description});
+  const _ChaptersInfos({required this.title, this.description});
 
   Widget build(BuildContext context) {
     return Column(

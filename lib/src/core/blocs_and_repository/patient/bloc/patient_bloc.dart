@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/patient/patient_repos
 class PatientBloc extends Bloc<PatientEvent, PatientState> {
   final PatientRepository repository;
 
-  PatientBloc({@required this.repository}) : super(PatientLoading());
+  PatientBloc({required this.repository}) : super(PatientLoading());
 
   @override
   PatientState get initialState => PatientLoading();

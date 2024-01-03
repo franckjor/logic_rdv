@@ -140,7 +140,7 @@ class _MyDialogState extends State<_MyDialog> {
 }
 
 class MessageBox {
-  BuildContext buildContext;
+  required BuildContext buildContext;
   String message = " ", title = " ";
 
   MessageBox(this.buildContext, this.message, this.title);

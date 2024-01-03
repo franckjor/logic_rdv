@@ -19,41 +19,41 @@ class SubscribeStateLoading extends SubscribeState {}
 class SubscribeStateLoadingSuccess extends SubscribeState {
   final SubscribeResponse subscribeResponse;
 
-  SubscribeStateLoadingSuccess({this.subscribeResponse});
+  SubscribeStateLoadingSuccess({required this.subscribeResponse});
   @override
   List<Object> get props => [subscribeResponse];
 
   @override
-  String toString() => 'SubscribeStateLoadingSuccess {subscribeResponse : $subscribeResponse}';
+  String toString() =>
+      'SubscribeStateLoadingSuccess {subscribeResponse : $subscribeResponse}';
 }
 
 class UnSubscribeStateLoadingSuccess extends SubscribeState {
   final SubscribeResponse subscribeResponse;
 
-  UnSubscribeStateLoadingSuccess({this.subscribeResponse});
+  UnSubscribeStateLoadingSuccess({required this.subscribeResponse});
   @override
   List<Object> get props => [subscribeResponse];
   @override
-  String toString() => 'UnSubscribeStateLoadingSuccess {subscribeResponse :$subscribeResponse}';
+  String toString() =>
+      'UnSubscribeStateLoadingSuccess {subscribeResponse :$subscribeResponse}';
 }
 
 class IsSubscribeStateLoadingSuccess extends SubscribeState {
   final VerifyNotifSubscribtion verifyNotifSubscribtion;
 
-  IsSubscribeStateLoadingSuccess({this.verifyNotifSubscribtion});
+  IsSubscribeStateLoadingSuccess({required this.verifyNotifSubscribtion});
   @override
   List<Object> get props => [verifyNotifSubscribtion];
   @override
-  String toString() => 'IsSubscribeStateLoadingSuccess {verifyNotifSubscribtion :$verifyNotifSubscribtion}';
+  String toString() =>
+      'IsSubscribeStateLoadingSuccess {verifyNotifSubscribtion :$verifyNotifSubscribtion}';
 }
 
-
-
 class SubscribeStateLoadingFailure extends SubscribeState {
-
   final String error;
 
-  SubscribeStateLoadingFailure({@required this.error});
+  SubscribeStateLoadingFailure({required this.error});
 
   @override
   List<Object> get props => [error];

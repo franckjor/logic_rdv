@@ -9,7 +9,7 @@ abstract class DoctorDetailsEvent extends Equatable {
 class GetDoctorDetailsEvent extends DoctorDetailsEvent {
   final SearchDoctorDetailsRequest doctorDetailsResponse;
 
-  GetDoctorDetailsEvent({this.doctorDetailsResponse});
+  GetDoctorDetailsEvent({required this.doctorDetailsResponse});
 
   @override
   List<Object> get props => [doctorDetailsResponse];

@@ -6,10 +6,11 @@ import 'package:logic_rdv_v0/src/core/models/incription_model/inscription_check_
 import 'package:logic_rdv_v0/src/core/models/incription_model/inscription_check_response.dart';
 
 class InscriptionRapidRepository extends AbstractRepository {
-  Future verifyDoctor({InscriptionCheckRequest inscriptionCheckRequest}) async {
+  Future verifyDoctor({required InscriptionCheckRequest inscriptionCheckRequest}) async {
     final String path = '/${getControllerName()}check/';
+    final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+        token, path,
         data: inscriptionCheckRequest.toJson());
     InscriptionCheckResponse verifyDoctor =
         InscriptionCheckResponse.fromJson(response.toString());
@@ -17,10 +18,11 @@ class InscriptionRapidRepository extends AbstractRepository {
   }
 
   Future createPatientAccount(
-      {CreatePatientRequest createPatientRequest}) async {
+      {required CreatePatientRequest createPatientRequest}) async {
     final String path = '/${getControllerName()}add/';
+    final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+        token, path,
         data: createPatientRequest.toJson());
     CreatePatientResponse createPatientResponse =
         CreatePatientResponse.fromJson(response.toString());

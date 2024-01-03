@@ -14,7 +14,7 @@ abstract class AppVersionSummary
   AppVersionSummary._();
 
   factory AppVersionSummary([updates(AppVersionSummaryBuilder b)]) =
-  _$AppVersionSummary;
+      _$AppVersionSummary;
 
   @BuiltValueField(wireName: 'httpstatut')
   int get httpstatut;
@@ -35,7 +35,7 @@ abstract class AppVersionSummary
         .encode(serializers.serializeWith(AppVersionSummary.serializer, this));
   }
 
-  static AppVersionSummary fromJson(String jsonString) {
+  static AppVersionSummary? fromJson(String jsonString) {
     return serializers.deserializeWith(
         AppVersionSummary.serializer, json.decode(jsonString));
   }
@@ -44,44 +44,52 @@ abstract class AppVersionSummary
       _$appVersionSummarySerializer;
 }
 
-abstract class ParamsAppVersionSummary implements Built<ParamsAppVersionSummary, ParamsAppVersionSummaryBuilder> {
+abstract class ParamsAppVersionSummary
+    implements Built<ParamsAppVersionSummary, ParamsAppVersionSummaryBuilder> {
   ParamsAppVersionSummary._();
 
-  factory ParamsAppVersionSummary([updates(ParamsAppVersionSummaryBuilder b)]) = _$ParamsAppVersionSummary;
+  factory ParamsAppVersionSummary([updates(ParamsAppVersionSummaryBuilder b)]) =
+      _$ParamsAppVersionSummary;
 
   @BuiltValueField(wireName: 'android')
   String get android;
   @BuiltValueField(wireName: 'iphone')
   String get iphone;
   String toJson() {
-    return json.encode(serializers.serializeWith(ParamsAppVersionSummary.serializer, this));
+    return json.encode(
+        serializers.serializeWith(ParamsAppVersionSummary.serializer, this));
   }
 
-  static ParamsAppVersionSummary fromJson(String jsonString) {
+  static ParamsAppVersionSummary? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsAppVersionSummary.serializer, json.decode(jsonString));
   }
 
-  static Serializer<ParamsAppVersionSummary> get serializer => _$paramsAppVersionSummarySerializer;
+  static Serializer<ParamsAppVersionSummary> get serializer =>
+      _$paramsAppVersionSummarySerializer;
 }
 
-abstract class DataAppVersionSummary implements Built<DataAppVersionSummary, DataAppVersionSummaryBuilder> {
+abstract class DataAppVersionSummary
+    implements Built<DataAppVersionSummary, DataAppVersionSummaryBuilder> {
   DataAppVersionSummary._();
 
-  factory DataAppVersionSummary([updates(DataAppVersionSummaryBuilder b)]) = _$DataAppVersionSummary;
+  factory DataAppVersionSummary([updates(DataAppVersionSummaryBuilder b)]) =
+      _$DataAppVersionSummary;
 
   @BuiltValueField(wireName: 'version')
   Version get version;
   String toJson() {
-    return json.encode(serializers.serializeWith(DataAppVersionSummary.serializer, this));
+    return json.encode(
+        serializers.serializeWith(DataAppVersionSummary.serializer, this));
   }
 
-  static DataAppVersionSummary fromJson(String jsonString) {
+  static DataAppVersionSummary? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataAppVersionSummary.serializer, json.decode(jsonString));
   }
 
-  static Serializer<DataAppVersionSummary> get serializer => _$dataAppVersionSummarySerializer;
+  static Serializer<DataAppVersionSummary> get serializer =>
+      _$dataAppVersionSummarySerializer;
 }
 
 abstract class Version implements Built<Version, VersionBuilder> {
@@ -97,7 +105,7 @@ abstract class Version implements Built<Version, VersionBuilder> {
     return json.encode(serializers.serializeWith(Version.serializer, this));
   }
 
-  static Version fromJson(String jsonString) {
+  static Version? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Version.serializer, json.decode(jsonString));
   }

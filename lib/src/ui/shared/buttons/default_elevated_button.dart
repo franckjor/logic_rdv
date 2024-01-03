@@ -9,8 +9,8 @@ class DefaultElevatedButton extends StatelessWidget {
   const DefaultElevatedButton({
     double textFieldHeight,
     Key key,
-    @required this.text,
-    @required this.onPressed,
+    required this.text,
+    required this.onPressed,
     this.primary = AppColors.primaryColor,
     this.onPrimary = AppColors.whiteColor,
   })  : height = textFieldHeight,

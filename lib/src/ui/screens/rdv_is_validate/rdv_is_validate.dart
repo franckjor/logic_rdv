@@ -20,7 +20,7 @@ class RdvIsValidatePageArguments implements PagesArgumentType {
 class RdvIsValidate extends StatefulWidget {
   final RdvIsValidatePageArguments arguments;
 
-  RdvIsValidate({this.arguments});
+  RdvIsValidate({required this.arguments});
 
   @override
   _RdvIsValidateState createState() => _RdvIsValidateState();

@@ -35,7 +35,7 @@ abstract class AddDoctorResponse
         .encode(serializers.serializeWith(AddDoctorResponse.serializer, this));
   }
 
-  static AddDoctorResponse fromJson(String jsonString) {
+  static AddDoctorResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         AddDoctorResponse.serializer, json.decode(jsonString));
   }

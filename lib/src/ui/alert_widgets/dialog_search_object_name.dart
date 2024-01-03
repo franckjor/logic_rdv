@@ -304,5 +304,5 @@ class ObjectName {
   String fullName;
   String catId;
 
-  ObjectName({this.fullName, this.catId});
+  ObjectName({required this.fullName, this.catId});
 }

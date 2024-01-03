@@ -1654,7 +1654,8 @@ class _$NavigationGetPaientForRdvResponse
       (new NavigationGetPaientForRdvResponseBuilder()..update(updates))
           ._build();
 
-  _$NavigationGetPaientForRdvResponse._({this.begin, this.prev}) : super._();
+  _$NavigationGetPaientForRdvResponse._({required this.begin, this.prev})
+      : super._();
 
   @override
   NavigationGetPaientForRdvResponse rebuild(

@@ -12,7 +12,7 @@ class AppException implements Exception {
 }
 
 class FetchDataException extends AppException {
-  FetchDataException([String message]) : super(message);
+  FetchDataException([String? message]) : super(message);
 }
 
 class BadRequestException extends AppException {
@@ -24,16 +24,16 @@ class UnauthorizedException extends AppException {
 }
 
 class InvalidInputException extends AppException {
-  InvalidInputException([String message]) : super(("error.invalid_data"));
+  InvalidInputException([String? message]) : super(("error.invalid_data"));
 }
 
 AppException handleResponseError(Response response) {
   dynamic errorJsonValue = response.data;
-  List<dynamic> fieldErrors = (errorJsonValue['fieldErrors'] as List)
+  List<dynamic>? errorFields = (errorJsonValue['fieldErrors'] as List?)
       ?.map((e) => ErrorMessage.fromJson(e))
-      ?.toList();
+      .toList();
   String errorMessage = errorJsonValue['message'] ?? errorJsonValue['message'];
-  // fieldErrors != null ? fieldErrors[0].message : errorJsonValue['message'];
+
   switch (response.statusCode) {
     case 400:
       throw BadRequestException(errorMessage);
@@ -50,20 +50,18 @@ AppException handleResponseError(Response response) {
 
 AppException handleDioError(DioError error) {
   switch (error.type) {
-    case DioErrorType.CANCEL:
+    case DioErrorType.cancel:
       throw FetchDataException(("Votre demande a été annulée."));
-    case DioErrorType.CONNECT_TIMEOUT:
+    case DioErrorType.connectionTimeout:
       throw FetchDataException(
           ("Vérifier l'état de votre connexion internet."));
-    case DioErrorType.SEND_TIMEOUT:
+    case DioErrorType.sendTimeout:
       throw FetchDataException(("Attente très longue, réessayer."));
-    case DioErrorType.RECEIVE_TIMEOUT:
+    case DioErrorType.receiveTimeout:
       throw FetchDataException(("Durée d'exécution de la requête terminer."));
-    case DioErrorType.DEFAULT:
-      throw FetchDataException(
-          ("Problème rencontré lors de l'exécution de votre demande. Essayez plus tard."));
-    case DioErrorType.RESPONSE:
-      throw handleResponseError(error.response);
+    case DioErrorType.badResponse:
+      throw handleResponseError(error.message as Response);
+    default:
+      throw AppException(("server"));
   }
-  return new AppException(("server"));
 }

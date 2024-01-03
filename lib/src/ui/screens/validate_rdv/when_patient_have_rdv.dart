@@ -14,7 +14,7 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 class TokenAppoitment {
   String tokenApp;
 
-  TokenAppoitment({this.tokenApp});
+  TokenAppoitment({required this.tokenApp});
 }
 
 class WhenPatientHaveRdv extends StatefulWidget {

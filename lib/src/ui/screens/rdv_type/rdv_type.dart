@@ -66,7 +66,7 @@ class GetRdvTypePageArguments implements PagesArgumentType {
 class RdvType extends StatefulWidget {
   final GetRdvTypePageArguments arguments;
 
-  RdvType({this.arguments});
+  RdvType({required this.arguments});
 
   @override
   _RdvTypeState createState() => _RdvTypeState();

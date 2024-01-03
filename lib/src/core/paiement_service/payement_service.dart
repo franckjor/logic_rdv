@@ -1,15 +1,14 @@
 import 'dart:convert';
 
+import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:http/http.dart' as http;
 import 'package:logic_rdv_v0/src/common.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/appointment/appointment_function/appointment_function.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/appointment/appointment_function/create_appointment_function.dart';
 import 'package:logic_rdv_v0/src/ui/alert_widgets/progress_dialog.dart';
-import 'package:logic_rdv_v0/src/ui/dialog_alert/custom_alert.dart';
-import 'package:logic_rdv_v0/src/ui/dialog_alert/custom_confirm_alert.dart';
-import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:flutter_stripe/flutter_stripe.dart';
-import 'package:http/http.dart' as http;
-createPaymentIntent(String amount, String currency, String stripeClientSecret ) async {
+
+createPaymentIntent(
+    String amount, String currency, String stripeClientSecret) async {
   try {
     //Request body
     Map<String, dynamic> body = {
@@ -37,8 +36,8 @@ class StripeTransactionResponse {
   bool success;
 
   StripeTransactionResponse({
-    this.message,
-    this.success,
+    required this.message,
+    required this.success,
   });
 }
 
@@ -59,76 +58,69 @@ class StripeService {
   }
 
   static Future<StripeTransactionResponse> payNowHandler({
-    String stripeClientSecret,
-    BuildContext context,
-    String onclickAction,
-    String onclickData,
-    String tokenappointment,
-    String tokenuser,
-    String session,
-    String cardNumber,
-    int expMonth,
-    int expYear,
-    ProgressDialog ackRdvProgressDialog,
-    String newTokenappointment,
+    required String stripeClientSecret,
+    required BuildContext context,
+    required String onclickAction,
+    required String onclickData,
+    required String tokenappointment,
+    required String tokenuser,
+    required String session,
+    required String cardNumber,
+    required int expMonth,
+    required int expYear,
+    required ProgressDialog ackRdvProgressDialog,
+    required String newTokenappointment,
   }) async {
     try {
       // var paymentMethod = await StripePayment.paymentRequestWithCardForm(
       //     CardFormPaymentRequest());
 
       //final CreditCard testCard = CreditCard(
-        //number: cardNumber,
-        //expMonth: expMonth,
-        //expYear: expYear,
+      //number: cardNumber,
+      //expMonth: expMonth,
+      //expYear: expYear,
       //);
 
-
-     // var paymentMethod1 = await Stripe.instance.createPaymentMethod(PaymentMethodParams.fromJson({ 'number': cardNumber, 'expMonth': expMonth, 'expYear': expYear }));
-       var response = null;
+      // var paymentMethod1 = await Stripe.instance.createPaymentMethod(PaymentMethodParams.fromJson({ 'number': cardNumber, 'expMonth': expMonth, 'expYear': expYear }));
+      var response = null;
 //      var response = await Stripe.instance.confirmSetupIntent(paymentIntentClientSecret, params);
 
       //Stripe.instance.
       //confirmPaymentIntent(PaymentIntent(
-       //   clientSecret: stripeClientSecret,
-       //   paymentMethodId: paymentMethod1.id));
+      //   clientSecret: stripeClientSecret,
+      //   paymentMethodId: paymentMethod1.id));
 
       //print("response paiement : ${response.status}");
-      var paymentIntent = await  createPaymentIntent('100', 'USD', stripeClientSecret);
+      var paymentIntent =
+          await createPaymentIntent('100', 'USD', stripeClientSecret);
       //STEP 2: Initialize Payment Sheet
       await Stripe.instance
           .initPaymentSheet(
+              paymentSheetParameters: SetupPaymentSheetParameters(
 
-          paymentSheetParameters: SetupPaymentSheetParameters(
-
-              testEnv: true,
-              paymentIntentClientSecret: paymentIntent[
-              'client_secret'], //Gotten from payment intent
-              style: ThemeMode.light,
-              merchantDisplayName: 'LogicRdv'))
+                  // testEnv: true,
+                  paymentIntentClientSecret: paymentIntent[
+                      'client_secret'], //Gotten from payment intent
+                  style: ThemeMode.light,
+                  merchantDisplayName: 'LogicRdv'))
           .then((value) {});
       try {
         await Stripe.instance.presentPaymentSheet().then((value) {
-
           //Clear paymentIntent variable after successful payment
           paymentIntent = null;
           return StripeTransactionResponse(
               message: 'Transaction failed', success: false);
-
-        })
-            .onError((error, stackTrace) {
+        }).onError((error, stackTrace) {
           throw Exception(error);
         });
-      }
-      on StripeException catch (e) {
+      } on StripeException catch (e) {
         print('Error is:---> $e');
         return StripeTransactionResponse(
             message: 'Transaction failed', success: false);
-      }
-      catch (e) {
+      } catch (e) {
         print('$e');
         return StripeTransactionResponse(
             message: 'Transaction failed', success: false);
-
       }
       if (response.status == "requires_capture") {
         confirmAppointmentWithTc(
@@ -136,7 +128,6 @@ class StripeService {
           action: onclickAction,
           data: onclickData,
           session: session,
-
           tokenAppointment: tokenappointment,
           tokenUser: tokenuser,
         );

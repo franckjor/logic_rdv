@@ -36,7 +36,7 @@ abstract class AppointmentResponse
         serializers.serializeWith(AppointmentResponse.serializer, this));
   }
 
-  static AppointmentResponse fromJson(String jsonString) {
+  static AppointmentResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         AppointmentResponse.serializer, json.decode(jsonString));
   }
@@ -63,7 +63,7 @@ abstract class ParamsAppointmentResponse
         serializers.serializeWith(ParamsAppointmentResponse.serializer, this));
   }
 
-  static ParamsAppointmentResponse fromJson(String jsonString) {
+  static ParamsAppointmentResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsAppointmentResponse.serializer, json.decode(jsonString));
   }
@@ -88,7 +88,7 @@ abstract class DataAppointmentResponse
         serializers.serializeWith(DataAppointmentResponse.serializer, this));
   }
 
-  static DataAppointmentResponse fromJson(String jsonString) {
+  static DataAppointmentResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataAppointmentResponse.serializer, json.decode(jsonString));
   }
@@ -125,7 +125,7 @@ abstract class CabinetResponse
         .encode(serializers.serializeWith(CabinetResponse.serializer, this));
   }
 
-  static CabinetResponse fromJson(String jsonString) {
+  static CabinetResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         CabinetResponse.serializer, json.decode(jsonString));
   }
@@ -160,7 +160,7 @@ abstract class PatientResponse
         .encode(serializers.serializeWith(PatientResponse.serializer, this));
   }
 
-  static PatientResponse fromJson(String jsonString) {
+  static PatientResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         PatientResponse.serializer, json.decode(jsonString));
   }
@@ -203,7 +203,7 @@ abstract class AppointmentDataResponse
         serializers.serializeWith(AppointmentDataResponse.serializer, this));
   }
 
-  static AppointmentDataResponse fromJson(String jsonString) {
+  static AppointmentDataResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         AppointmentDataResponse.serializer, json.decode(jsonString));
   }
@@ -230,7 +230,7 @@ abstract class AllAppoinmentResponse
         serializers.serializeWith(AllAppoinmentResponse.serializer, this));
   }
 
-  static AllAppoinmentResponse fromJson(String jsonString) {
+  static AllAppoinmentResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         AllAppoinmentResponse.serializer, json.decode(jsonString));
   }

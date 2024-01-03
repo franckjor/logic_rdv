@@ -317,7 +317,7 @@ class _$DataTokenResponse extends DataTokenResponse {
           [void Function(DataTokenResponseBuilder)? updates]) =>
       (new DataTokenResponseBuilder()..update(updates))._build();
 
-  _$DataTokenResponse._({this.authorization}) : super._();
+  _$DataTokenResponse._({required this.authorization}) : super._();
 
   @override
   DataTokenResponse rebuild(void Function(DataTokenResponseBuilder) updates) =>

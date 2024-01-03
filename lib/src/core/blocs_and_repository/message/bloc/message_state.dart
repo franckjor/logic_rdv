@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:logic_rdv_v0/src/core/models/message_rdv/message_response.dart';
 
 class MessageState extends Equatable {
@@ -13,7 +12,7 @@ class MessageLoading extends MessageState {}
 
 class MessageLoadingSuccess extends MessageState {
   final MessageResponse response;
-  MessageLoadingSuccess({this.response});
+  MessageLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -25,7 +24,7 @@ class MessageLoadingSuccess extends MessageState {
 class MessageFailure extends MessageState {
   final String error;
 
-  MessageFailure({@required this.error});
+  MessageFailure({required this.error});
 
   @override
   List<Object> get props => [error];

@@ -1644,7 +1644,7 @@ class _$Apptsinprogress extends Apptsinprogress {
   factory _$Apptsinprogress([void Function(ApptsinprogressBuilder)? updates]) =>
       (new ApptsinprogressBuilder()..update(updates))._build();
 
-  _$Apptsinprogress._({this.message, this.appts}) : super._();
+  _$Apptsinprogress._({required this.message, this.appts}) : super._();
 
   @override
   Apptsinprogress rebuild(void Function(ApptsinprogressBuilder) updates) =>
@@ -1752,7 +1752,8 @@ class _$Appts extends Appts {
   factory _$Appts([void Function(ApptsBuilder)? updates]) =>
       (new ApptsBuilder()..update(updates))._build();
 
-  _$Appts._({this.date, this.label, this.doctor, this.token}) : super._();
+  _$Appts._({required this.date, this.label, this.doctor, this.token})
+      : super._();
 
   @override
   Appts rebuild(void Function(ApptsBuilder) updates) =>
@@ -1861,7 +1862,8 @@ class _$Appttovalid extends Appttovalid {
   factory _$Appttovalid([void Function(AppttovalidBuilder)? updates]) =>
       (new AppttovalidBuilder()..update(updates))._build();
 
-  _$Appttovalid._({this.date, this.doctor, this.description, this.patient})
+  _$Appttovalid._(
+      {required this.date, this.doctor, this.description, this.patient})
       : super._();
 
   @override
@@ -1975,7 +1977,7 @@ class _$Apptinput extends Apptinput {
   factory _$Apptinput([void Function(ApptinputBuilder)? updates]) =>
       (new ApptinputBuilder()..update(updates))._build();
 
-  _$Apptinput._({this.name, this.mandatory, this.label, this.value})
+  _$Apptinput._({required this.name, this.mandatory, this.label, this.value})
       : super._();
 
   @override
@@ -2221,7 +2223,8 @@ class _$Payment extends Payment {
   factory _$Payment([void Function(PaymentBuilder)? updates]) =>
       (new PaymentBuilder()..update(updates))._build();
 
-  _$Payment._({this.amountlabel, this.amount, this.infos, this.pkAccount})
+  _$Payment._(
+      {required this.amountlabel, this.amount, this.infos, this.pkAccount})
       : super._();
 
   @override

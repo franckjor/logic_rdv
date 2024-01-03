@@ -29,7 +29,7 @@ class AppointmentDetailsPageArguments implements PagesArgumentType {
 class AppointmentDetails extends StatefulWidget {
   final AppointmentDetailsPageArguments arguments;
 
-  AppointmentDetails({this.arguments});
+  AppointmentDetails({required this.arguments});
 
   @override
   _AppointmentDetailsState createState() => _AppointmentDetailsState();

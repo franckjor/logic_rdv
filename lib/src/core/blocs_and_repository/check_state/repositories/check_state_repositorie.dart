@@ -6,11 +6,12 @@ import 'package:logic_rdv_v0/src/core/models/rdv_type/rdvType.dart';
 
 class CheckStateRepository extends AbstractRepository {
   Future getRdvTypeState(
-      {CreateAppointmentRequest createAppointmentRequest}) async {
+      {required CreateAppointmentRequest createAppointmentRequest}) async {
     RdvType _rdvType;
     final String path = '/${getControllerName()}create/';
+    final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+        token, path,
         data: createAppointmentRequest);
     String type = response.data['data']['type'];
     String message = response.data['data']['headermessage'];

@@ -12,40 +12,44 @@ import 'package:logic_rdv_v0/src/core/models/search_name_model/search_name_reque
 import 'package:logic_rdv_v0/src/core/models/search_name_model/search_name_response.dart';
 
 class SearchCityRepository extends AbstractRepository {
-  Future getCityOrAddress({SearchCityRequest searchRequestByCity}) async {
+  Future getCityOrAddress(
+      {required SearchCityRequest searchRequestByCity}) async {
     final String path = '/${getControllerName()}city/';
-    final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+    final String token = (await getTokenAuthorization()) ?? '';
+    final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: searchRequestByCity.toJson());
     SearchCityResponse searchCityResponse =
         SearchCityResponse.fromJson(response.toString());
     return searchCityResponse;
   }
 
-  Future getNameForSearch({SearchNameRequest searchNameRequest}) async {
+  Future getNameForSearch(
+      {required SearchNameRequest searchNameRequest}) async {
     final String path = '/${getControllerName()}city/';
-    final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+    final String token = (await getTokenAuthorization()) ?? '';
+    final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: searchNameRequest.toJson());
     SearchNameResponse searchNameResponse =
         SearchNameResponse.fromJson(response.toString());
     return searchNameResponse;
   }
 
-  Future getListOfDoctor({ListOfDoctorRequest listOfDoctorRequest}) async {
+  Future getListOfDoctor(
+      {required ListOfDoctorRequest listOfDoctorRequest}) async {
     final String path = '/${getControllerName()}list/';
-    final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+    final String token = (await getTokenAuthorization()) ?? '';
+    final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: listOfDoctorRequest.toJson());
     ListOfDoctorReponse listOfDoctorResponse =
         ListOfDoctorReponse.fromJson(response.toString());
     return listOfDoctorResponse;
   }
 
-  Future getMyAddressPosition({SearchDialogRequest searchDialogRequest}) async {
+  Future getMyAddressPosition(
+      {required SearchDialogRequest searchDialogRequest}) async {
     final String path = '/${getControllerName()}adrlocalisation/';
-    final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+    final String token = (await getTokenAuthorization()) ?? '';
+    final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: searchDialogRequest.toJson());
     SearchDialogResponse searchDialogResponse =
         SearchDialogResponse.fromJson(response.toString());
@@ -53,10 +57,10 @@ class SearchCityRepository extends AbstractRepository {
   }
 
   Future getListOfDoctorAround(
-      {ListOfDoctorRequest listOfDoctorRequest}) async {
+      {required ListOfDoctorRequest listOfDoctorRequest}) async {
     final String path = '/${getControllerName()}list/';
-    final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+    final String token = (await getTokenAuthorization()) ?? '';
+    final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: listOfDoctorRequest.toJson());
     ListOfDoctorReponse listOfDoctorResponse =
         ListOfDoctorReponse.fromJson(response.toString());

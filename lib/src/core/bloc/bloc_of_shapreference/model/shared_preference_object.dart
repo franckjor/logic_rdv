@@ -7,11 +7,11 @@ class SharePreferenceObject {
   // String currency;
 
   SharePreferenceObject({
-    this.token,
-    this.email,
-    this.phoneNumber,
-    this.firstName,
-    this.lastName,
+    required this.token,
+    required this.email,
+    required this.phoneNumber,
+    required this.firstName,
+    required this.lastName,
     // this.currency,
   });
 

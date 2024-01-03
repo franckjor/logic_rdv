@@ -48,7 +48,7 @@ class SearchResultPageArguments implements PagesArgumentType {
 class SearchResultScreen extends StatefulWidget {
   final SearchResultPageArguments arguments;
 
-  SearchResultScreen({this.arguments});
+  SearchResultScreen({required this.arguments});
 
   @override
   _SearchResultScreenState createState() => _SearchResultScreenState();
@@ -157,26 +157,26 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      endDrawer:_tokenUser == null ?
-      StartedDrawer() : Visibility(
-        visible: _tokenUser != null,
-        child: MultiBlocProvider(
-          providers: [
-            BlocProvider(create: (context) {
-              return SharedPreferenceBloc();
-            }),
-            BlocProvider<SubscribeBloc>(create: (context) {
-              return SubscribeBloc(repository: SubscribeRepository());
-            }),
-          ],
-          child: MyDrawer(
-            tokenUser: _tokenUser,
-            page: '0',
-            email: _email,
-            fullNme: _fullName,
-          ),
-        )
-      ),
+      endDrawer: _tokenUser == null
+          ? StartedDrawer()
+          : Visibility(
+              visible: _tokenUser != null,
+              child: MultiBlocProvider(
+                providers: [
+                  BlocProvider(create: (context) {
+                    return SharedPreferenceBloc();
+                  }),
+                  BlocProvider<SubscribeBloc>(create: (context) {
+                    return SubscribeBloc(repository: SubscribeRepository());
+                  }),
+                ],
+                child: MyDrawer(
+                  tokenUser: _tokenUser,
+                  page: '0',
+                  email: _email,
+                  fullNme: _fullName,
+                ),
+              )),
       appBar: AppBar(
         title: const Text(
           'Résultats',
@@ -189,36 +189,36 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
         backgroundColor: AppColors.colorPrimary,
         leading: DefaultBackButton(),
         actions: [
-          _tokenUser == null ?
-           IconButton(
-            icon: Platform.isAndroid 
-                ? const Icon(
-              MdiIcons.menu,
-              color: Color.fromARGB(255, 255, 255, 255),
-            )
-                : const Icon(
-              MdiIcons.menu,
-              color: Color.fromARGB(255, 255, 255, 255),
-            ),
-            splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
-          ):
-          Visibility(
-            visible: _tokenUser != null,
-            child: IconButton(
-              icon: isAndroid || isWeb
-                  ? const Icon(
-                      MdiIcons.accountCircle,
-                      color: Colors.white,
-                    )
-                  : const Icon(
-                      CupertinoIcons.person_alt_circle_fill,
-                      color: Colors.white,
-                    ),
-              splashRadius: 20,
-              onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
-            ),
-          ),
+          _tokenUser == null
+              ? IconButton(
+                  icon: Platform.isAndroid
+                      ? const Icon(
+                          MdiIcons.menu,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                        )
+                      : const Icon(
+                          MdiIcons.menu,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                        ),
+                  splashRadius: 20,
+                  onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                )
+              : Visibility(
+                  visible: _tokenUser != null,
+                  child: IconButton(
+                    icon: isAndroid || isWeb
+                        ? const Icon(
+                            MdiIcons.accountCircle,
+                            color: Colors.white,
+                          )
+                        : const Icon(
+                            CupertinoIcons.person_alt_circle_fill,
+                            color: Colors.white,
+                          ),
+                    splashRadius: 20,
+                    onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                  ),
+                ),
         ],
       ),
       body: MultiBlocListener(
@@ -465,8 +465,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                                                                     fontSize:
                                                                         16,
                                                                   ),
-                                                                  children: <
-                                                                      TextSpan>[
+                                                                  children: <TextSpan>[
                                                                     new TextSpan(
                                                                       text: " " +
                                                                           doctors[i]
@@ -592,7 +591,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                                                                     height: 25,
                                                                     width: 25,
                                                                     margin: const EdgeInsets
-                                                                            .only(
+                                                                        .only(
                                                                         left:
                                                                             8),
                                                                     decoration:

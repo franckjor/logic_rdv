@@ -37,7 +37,7 @@ abstract class SearchDoctorDetailsResponse
         SearchDoctorDetailsResponse.serializer, this));
   }
 
-  static SearchDoctorDetailsResponse fromJson(String jsonString) {
+  static SearchDoctorDetailsResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         SearchDoctorDetailsResponse.serializer, json.decode(jsonString));
   }
@@ -60,7 +60,7 @@ abstract class ParamsDoctorDetails
         serializers.serializeWith(ParamsDoctorDetails.serializer, this));
   }
 
-  static ParamsDoctorDetails fromJson(String jsonString) {
+  static ParamsDoctorDetails? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsDoctorDetails.serializer, json.decode(jsonString));
   }
@@ -119,7 +119,7 @@ abstract class DataDoctorDetails
         .encode(serializers.serializeWith(DataDoctorDetails.serializer, this));
   }
 
-  static DataDoctorDetails fromJson(String jsonString) {
+  static DataDoctorDetails? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataDoctorDetails.serializer, json.decode(jsonString));
   }
@@ -144,7 +144,7 @@ abstract class AppointmentDoctorDetails
         serializers.serializeWith(AppointmentDoctorDetails.serializer, this));
   }
 
-  static AppointmentDoctorDetails fromJson(String jsonString) {
+  static AppointmentDoctorDetails? fromJson(String jsonString) {
     return serializers.deserializeWith(
         AppointmentDoctorDetails.serializer, json.decode(jsonString));
   }
@@ -166,7 +166,7 @@ abstract class Chapters implements Built<Chapters, ChaptersBuilder> {
     return json.encode(serializers.serializeWith(Chapters.serializer, this));
   }
 
-  static Chapters fromJson(String jsonString) {
+  static Chapters? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Chapters.serializer, json.decode(jsonString));
   }

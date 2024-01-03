@@ -33,7 +33,7 @@ class ForgotPasswordRdvPageArguments implements PagesArgumentType {
 class ForgotPasswordScreen extends StatefulWidget {
   final ForgotPasswordRdvPageArguments arguments;
 
-  ForgotPasswordScreen({this.arguments});
+  ForgotPasswordScreen({required this.arguments});
 
   @override
   _ForgotPasswordScreenState createState() => _ForgotPasswordScreenState();

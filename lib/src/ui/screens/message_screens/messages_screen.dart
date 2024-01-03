@@ -79,7 +79,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         key: _scaffoldKey,
-        endDrawer:MultiBlocProvider(
+        endDrawer: MultiBlocProvider(
           providers: [
             BlocProvider(create: (context) {
               return SharedPreferenceBloc();
@@ -418,7 +418,7 @@ class _RowTitle extends StatelessWidget {
 
   const _RowTitle({
     Key key,
-    @required this.title,
+    required this.title,
   }) : super(key: key);
 
   @override

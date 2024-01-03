@@ -4,10 +4,11 @@ import 'package:logic_rdv_v0/src/core/models/telecons_model/teleconsultationrequ
 import 'package:logic_rdv_v0/src/core/models/telecons_model/teleconsultationresponse.dart';
 
 class TeleconsRepository extends AbstractRepository {
-  Future getTelecons({TeleconsRequest teleconsRequest}) async {
+  Future getTelecons({required TeleconsRequest teleconsRequest}) async {
     final String path = '/${getControllerName()}get/';
+    final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+        token, path,
         data: teleconsRequest.toJson());
     TeleconsResponse teleconsResponse =
         TeleconsResponse.fromJson(response.toString());

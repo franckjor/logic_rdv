@@ -3,7 +3,7 @@ import 'package:logic_rdv_v0/src/common.dart';
 class DefaultBackButton extends StatelessWidget {
   final Function onPressed;
 
-  DefaultBackButton({this.onPressed});
+  DefaultBackButton({required this.onPressed});
 
   @override
   Widget build(BuildContext context) {

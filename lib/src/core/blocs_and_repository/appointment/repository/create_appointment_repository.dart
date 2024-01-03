@@ -10,10 +10,11 @@ import 'package:logic_rdv_v0/src/core/models/rdv_type/rdvType.dart';
 
 class CreateAppointmentRepository extends AbstractRepository {
   Future getAppointmentType(
-      {CreateAppointmentRequest createAppointmentRequest}) async {
+      {required CreateAppointmentRequest createAppointmentRequest}) async {
     final String path = '/${getControllerName()}create/';
+    final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+        token, path,
         data: createAppointmentRequest);
     CreateAppointmentResponse appointmentResponse =
         CreateAppointmentResponse.fromJson(response.toString());
@@ -21,10 +22,11 @@ class CreateAppointmentRepository extends AbstractRepository {
   }
 
   Future getAppointmentTimeAndDay(
-      {CreateAppointmentRequest createAppointmentRequest}) async {
+      {required CreateAppointmentRequest createAppointmentRequest}) async {
     final String path = '/${getControllerName()}create/';
+    final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+        token, path,
         data: createAppointmentRequest);
     GetApointmentTimeResponse getApointmentTimeResponse =
         GetApointmentTimeResponse.fromJson(response.toString());
@@ -32,10 +34,11 @@ class CreateAppointmentRepository extends AbstractRepository {
   }
 
   Future getRdvTypeState(
-      {CreateAppointmentRequest createAppointmentRequest}) async {
+      {required CreateAppointmentRequest createAppointmentRequest}) async {
     final String path = '/${getControllerName()}create/';
+    final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+        token, path,
         data: createAppointmentRequest);
     String type = response.data['data']['type'];
     String message = response.data['data']['headermessage'];
@@ -44,10 +47,11 @@ class CreateAppointmentRepository extends AbstractRepository {
   }
 
   Future getAppointmentPatient(
-      {CreateAppointmentRequest createAppointmentRequest}) async {
+      {required CreateAppointmentRequest createAppointmentRequest}) async {
     final String path = '/${getControllerName()}create/';
+    final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+        token, path,
         data: createAppointmentRequest);
     GetPaientForRdvResponse getPaientForRdvResponse =
         GetPaientForRdvResponse.fromJson(response.toString());
@@ -55,10 +59,11 @@ class CreateAppointmentRepository extends AbstractRepository {
   }
 
   Future selectPatientForAppointment(
-      {CreateAppointmentRequest createAppointmentRequest}) async {
+      {required CreateAppointmentRequest createAppointmentRequest}) async {
     final String path = '/${getControllerName()}create/';
+    final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+        token, path,
         data: createAppointmentRequest);
     SelectedPatientResponseForRdv selectedPatientResponseForRdv =
         SelectedPatientResponseForRdv.fromJson(response.toString());
@@ -66,10 +71,11 @@ class CreateAppointmentRepository extends AbstractRepository {
   }
 
   Future validateAppointment(
-      {CreateAppointmentRequest createAppointmentRequest}) async {
+      {required CreateAppointmentRequest createAppointmentRequest}) async {
     final String path = '/${getControllerName()}create/';
+    final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+        token, path,
         data: createAppointmentRequest);
     ValidateRdvSummaryDto validateRdvSummaryDto =
         ValidateRdvSummaryDto.fromJson(response.toString());
@@ -77,10 +83,11 @@ class CreateAppointmentRepository extends AbstractRepository {
   }
 
   Future validateAppointmentWithOutTc(
-      {CreateAppointmentRequest createAppointmentRequest}) async {
+      {required CreateAppointmentRequest createAppointmentRequest}) async {
     final String path = '/${getControllerName()}create/';
+    final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+        token, path,
         data: createAppointmentRequest);
     GetApointmentTimeResponse validateRdvSummaryDto =
         GetApointmentTimeResponse.fromJson(response.toString());
@@ -88,10 +95,11 @@ class CreateAppointmentRepository extends AbstractRepository {
   }
 
   Future confirmAppointmentWithOutTc(
-      {CreateAppointmentRequest createAppointmentRequest}) async {
+      {required CreateAppointmentRequest createAppointmentRequest}) async {
     final String path = '/${getControllerName()}create/';
+    final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(
-        await getTokenAuthorization(), path,
+        token, path,
         data: createAppointmentRequest);
     GetApointmentTimeResponse validateRdvSummaryDto =
         GetApointmentTimeResponse.fromJson(response.toString());

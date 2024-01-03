@@ -1,7 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
-import 'package:logic_rdv_v0/src/core/models/appointment_model/appointment_response.dart';
-import 'package:logic_rdv_v0/src/core/models/appointment_model/cancel_appointment_response.dart';
 import 'package:logic_rdv_v0/src/core/models/rdv_type/rdvType.dart';
 
 class CheckStateSate extends Equatable {
@@ -15,7 +12,7 @@ class CheckStateLoading extends CheckStateSate {}
 
 class CheckStateLoadingSuccess extends CheckStateSate {
   final RdvType response;
-  CheckStateLoadingSuccess({this.response});
+  CheckStateLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -27,7 +24,7 @@ class CheckStateLoadingSuccess extends CheckStateSate {
 class CheckStateFailure extends CheckStateSate {
   final String error;
 
-  CheckStateFailure({@required this.error});
+  CheckStateFailure({required this.error});
 
   @override
   List<Object> get props => [error];

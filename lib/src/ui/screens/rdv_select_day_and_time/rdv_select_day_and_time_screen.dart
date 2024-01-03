@@ -69,7 +69,7 @@ class GetRdvTimeAndDayPageArguments implements PagesArgumentType {
 class RdvSelectDayAndTimeScreen extends StatefulWidget {
   final GetRdvTimeAndDayPageArguments arguments;
 
-  RdvSelectDayAndTimeScreen({this.arguments});
+  RdvSelectDayAndTimeScreen({required this.arguments});
 
   @override
   _RdvSelectDayAndTimeScreenState createState() =>

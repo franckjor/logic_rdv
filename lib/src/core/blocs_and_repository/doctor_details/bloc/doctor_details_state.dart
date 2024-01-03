@@ -13,7 +13,7 @@ class DoctorDetailsLoading extends DoctorDetailsState {}
 
 class DoctorDetailsLoadingSuccess extends DoctorDetailsState {
   final SearchDoctorDetailsResponse response;
-  DoctorDetailsLoadingSuccess({this.response});
+  DoctorDetailsLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -25,7 +25,7 @@ class DoctorDetailsLoadingSuccess extends DoctorDetailsState {
 class DoctorDetailsFailure extends DoctorDetailsState {
   final String error;
 
-  DoctorDetailsFailure({@required this.error});
+  DoctorDetailsFailure({required this.error});
 
   @override
   List<Object> get props => [error];

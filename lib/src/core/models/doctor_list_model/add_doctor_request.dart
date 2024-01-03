@@ -26,7 +26,7 @@ abstract class AddDoctorRequest
         .encode(serializers.serializeWith(AddDoctorRequest.serializer, this));
   }
 
-  static AddDoctorRequest fromJson(String jsonString) {
+  static AddDoctorRequest? fromJson(String jsonString) {
     return serializers.deserializeWith(
         AddDoctorRequest.serializer, json.decode(jsonString));
   }

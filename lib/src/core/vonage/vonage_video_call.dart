@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class FlutterVonageVideoCall {
@@ -6,9 +5,9 @@ class FlutterVonageVideoCall {
   static const _vonageChannel = const MethodChannel('vonage');
 
   static Future<void> init({
-    @required String session,
-    @required String token,
-    @required String apiKey,
+    required String session,
+    required String token,
+    required String apiKey,
   }) async {
     assert(session != null);
     assert(token != null);

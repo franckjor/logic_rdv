@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:logic_rdv_v0/src/core/models/login_model/login_process_response_end.dart';
 import 'package:logic_rdv_v0/src/core/models/login_model/login_response.dart';
 import 'package:logic_rdv_v0/src/core/models/login_model/login_started_response.dart';
@@ -15,7 +14,7 @@ class LoginLoading extends LoginState {}
 
 class LoginLoadingSuccess extends LoginState {
   final LoginResponse response;
-  LoginLoadingSuccess({this.response});
+  LoginLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -26,7 +25,7 @@ class LoginLoadingSuccess extends LoginState {
 
 class LoginStartedLoadingSuccess extends LoginState {
   final LoginStartedResponse response;
-  LoginStartedLoadingSuccess({this.response});
+  LoginStartedLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -34,9 +33,10 @@ class LoginStartedLoadingSuccess extends LoginState {
   @override
   String toString() => 'LoginStartedLoadingSuccess {response: $response}';
 }
+
 class LoginSearchEmailLoadingSuccess extends LoginState {
   final LoginStartedResponse response;
-  LoginSearchEmailLoadingSuccess({this.response});
+  LoginSearchEmailLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -47,7 +47,7 @@ class LoginSearchEmailLoadingSuccess extends LoginState {
 
 class LoginSearchPassLoadingSuccess extends LoginState {
   final LoginProcessResponseEnd response;
-  LoginSearchPassLoadingSuccess({this.response});
+  LoginSearchPassLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -58,7 +58,7 @@ class LoginSearchPassLoadingSuccess extends LoginState {
 
 class LoginForgotPassLoadingSuccess extends LoginState {
   final LoginStartedResponse response;
-  LoginForgotPassLoadingSuccess({this.response});
+  LoginForgotPassLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -69,7 +69,7 @@ class LoginForgotPassLoadingSuccess extends LoginState {
 
 class LoginForSendCodeLoadingSuccess extends LoginState {
   final LoginStartedResponse response;
-  LoginForSendCodeLoadingSuccess({this.response});
+  LoginForSendCodeLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -80,7 +80,7 @@ class LoginForSendCodeLoadingSuccess extends LoginState {
 
 class LoginForNewPassLoadingSuccess extends LoginState {
   final LoginProcessResponseEnd response;
-  LoginForNewPassLoadingSuccess({this.response});
+  LoginForNewPassLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -91,7 +91,7 @@ class LoginForNewPassLoadingSuccess extends LoginState {
 
 class LoginForAskNewCodeLoadingSuccess extends LoginState {
   final LoginStartedResponse response;
-  LoginForAskNewCodeLoadingSuccess({this.response});
+  LoginForAskNewCodeLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -102,7 +102,7 @@ class LoginForAskNewCodeLoadingSuccess extends LoginState {
 
 class PasswordChangeSuccessFully extends LoginState {
   final LoginResponse response;
-  PasswordChangeSuccessFully({this.response});
+  PasswordChangeSuccessFully({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -114,7 +114,7 @@ class PasswordChangeSuccessFully extends LoginState {
 class LoginFailure extends LoginState {
   final String error;
 
-  LoginFailure({@required this.error});
+  LoginFailure({required this.error});
 
   @override
   List<Object> get props => [error];

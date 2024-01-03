@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/login/bloc/login.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/login/login_repository/login_repository.dart';
@@ -6,7 +5,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/login/login_repositor
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final LoginRepository repository;
 
-  LoginBloc({@required this.repository}) : super(LoginLoading());
+  LoginBloc({required this.repository}) : super(LoginLoading());
 
   @override
   Stream<LoginState> mapEventToState(LoginEvent event) async* {
@@ -27,7 +26,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       yield* _mapGetUserForSendCodeLoginToState(event);
     } else if (event is LoginForNewPassword) {
       yield* _mapGetUserForNewPasswordLoginToState(event);
-    }else if (event is LoginForAsckcode) {
+    } else if (event is LoginForAsckcode) {
       yield* _mapGetUserForNewCodeLoginToState(event);
     }
   }
@@ -100,8 +99,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   Stream<LoginState> _mapGetUserForNewCodeLoginToState(
       LoginForAsckcode event) async* {
     try {
-      final userResponse = await repository.loginForNewCode(
-          login: event.loginStartedRequest);
+      final userResponse =
+          await repository.loginForNewCode(login: event.loginStartedRequest);
       yield LoginForAskNewCodeLoadingSuccess(response: userResponse);
     } catch (error) {
       yield LoginFailure(error: error.toString());

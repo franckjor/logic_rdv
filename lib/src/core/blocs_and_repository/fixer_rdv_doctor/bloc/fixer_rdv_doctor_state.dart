@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:logic_rdv_v0/src/core/models/fixer_rdv_doctor_response/fixer_rdv_doctor_response.dart';
 
 class FixerRdvDoctorState extends Equatable {
@@ -13,7 +12,7 @@ class FixerRdvDoctorLoading extends FixerRdvDoctorState {}
 
 class FixerRdvDoctorLoadingSuccess extends FixerRdvDoctorState {
   final FixerRdvDoctorResponse response;
-  FixerRdvDoctorLoadingSuccess({this.response});
+  FixerRdvDoctorLoadingSuccess({required this.response});
 
   @override
   List<Object> get props => [response];
@@ -25,7 +24,7 @@ class FixerRdvDoctorLoadingSuccess extends FixerRdvDoctorState {
 class FixerRdvDoctorFailure extends FixerRdvDoctorState {
   final String error;
 
-  FixerRdvDoctorFailure({@required this.error});
+  FixerRdvDoctorFailure({required this.error});
 
   @override
   List<Object> get props => [error];

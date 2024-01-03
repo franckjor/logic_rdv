@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 
 import 'model/shared_preference_object.dart';
 
@@ -13,7 +12,7 @@ class SharedPreferenceLoading extends SharedPreferenceState {}
 class SharedPreferenceWriteObjectState extends SharedPreferenceState {
   final bool isWriteSuccessfully;
 
-  SharedPreferenceWriteObjectState({this.isWriteSuccessfully});
+  SharedPreferenceWriteObjectState({required this.isWriteSuccessfully});
 
   @override
   List<Object> get props => [isWriteSuccessfully];
@@ -26,7 +25,7 @@ class SharedPreferenceWriteObjectState extends SharedPreferenceState {
 class SharedPreferenceReadObjectState extends SharedPreferenceState {
   final SharePreferenceObject sharePreferenceObject;
 
-  SharedPreferenceReadObjectState({this.sharePreferenceObject});
+  SharedPreferenceReadObjectState({required this.sharePreferenceObject});
 
   @override
   List<Object> get props => [sharePreferenceObject];
@@ -40,7 +39,7 @@ class SharedPreferenceTokenAuthorizationWriteState
     extends SharedPreferenceState {
   final bool isWriteSuccessfully;
 
-  SharedPreferenceTokenAuthorizationWriteState({this.isWriteSuccessfully});
+  SharedPreferenceTokenAuthorizationWriteState({required this.isWriteSuccessfully});
 
   @override
   List<Object> get props => [isWriteSuccessfully];
@@ -53,7 +52,7 @@ class SharedPreferenceTokenAuthorizationWriteState
 class SharedTokenAuthorizationLoadingSuccess extends SharedPreferenceState {
   final String tokenAuthorizationValue;
 
-  SharedTokenAuthorizationLoadingSuccess({this.tokenAuthorizationValue});
+  SharedTokenAuthorizationLoadingSuccess({required this.tokenAuthorizationValue});
 
   @override
   List<Object> get props => [tokenAuthorizationValue];
@@ -66,7 +65,7 @@ class SharedTokenAuthorizationLoadingSuccess extends SharedPreferenceState {
 class SharedSessionLoadingSuccess extends SharedPreferenceState {
   final String sessionValue;
 
-  SharedSessionLoadingSuccess({this.sessionValue});
+  SharedSessionLoadingSuccess({required this.sessionValue});
 
   @override
   List<Object> get props => [sessionValue];
@@ -79,7 +78,7 @@ class SharedSessionLoadingSuccess extends SharedPreferenceState {
 class SharedSessionWriteLoadingSuccess extends SharedPreferenceState {
   final bool sessionWrite;
 
-  SharedSessionWriteLoadingSuccess({this.sessionWrite});
+  SharedSessionWriteLoadingSuccess({required this.sessionWrite});
 
   @override
   List<Object> get props => [sessionWrite];
@@ -92,7 +91,7 @@ class SharedSessionWriteLoadingSuccess extends SharedPreferenceState {
 class SharedEmailLoadingSuccess extends SharedPreferenceState {
   final String email;
 
-  SharedEmailLoadingSuccess({this.email});
+  SharedEmailLoadingSuccess({required this.email});
 
   @override
   List<Object> get props => [email];
@@ -104,7 +103,7 @@ class SharedEmailLoadingSuccess extends SharedPreferenceState {
 class SharedPreferenceLoadingFailure extends SharedPreferenceState {
   final String error;
 
-  SharedPreferenceLoadingFailure({@required this.error});
+  SharedPreferenceLoadingFailure({required this.error});
 
   @override
   List<Object> get props => [error];

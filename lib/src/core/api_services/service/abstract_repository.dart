@@ -9,33 +9,38 @@ abstract class AbstractRepository<D extends AbstractDto,
     S extends AbstractSummaryDto> {
   final ApiManager apiManager = ApiManager();
 
-  Future<String> getAuthToken() async {
+  Future<String?> getAuthToken() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     return preferences.getString("token");
   }
 
-  Future<String> getTokenAuthorization() async {
+  Future<String?> getTokenAuthorization() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     return preferences.getString(PreferenceKey.tokenAuthorizationKey);
   }
 
   Future<S> create(D dto) async {
     final String _createPath = '/${getControllerName()}/create';
-    final responseJson = await apiManager
-        .post(_createPath, await getAuthToken(), data: dto.toJson());
+    // Retrieve the token
+    final String? authToken = await getAuthToken();
+    final responseJson =
+        await apiManager.post(_createPath, authToken ?? "", data: dto.toJson());
     return toSummaryDto(responseJson);
   }
 
   Future<void> delete(int id) async {
     assert(id != null);
     String _deletePath = '/${getControllerName()}/delete';
-    await apiManager.delete(await getAuthToken(), _deletePath + "/$id");
+    // Retrieve the token
+    final String? authToken = await getAuthToken();
+    await apiManager.delete(authToken ?? "", _deletePath + "/$id");
   }
 
   Future<S> update(D dto) async {
     String _updatePath = '/${getControllerName()}/edit';
-    final responseJson = await apiManager.put(await getAuthToken(), _updatePath,
-        data: dto.toJson());
+    final String? authToken = await getAuthToken();
+    final responseJson =
+        await apiManager.put(authToken ?? "", _updatePath, data: dto.toJson());
     return toSummaryDto(responseJson);
   }
 

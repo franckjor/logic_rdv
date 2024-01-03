@@ -42,7 +42,7 @@ class GetCredentialsTokboxPageArguments implements PagesArgumentType {
 class TeleconsultationScreen extends StatefulWidget {
   final GetCredentialsTokboxPageArguments arguments;
 
-  TeleconsultationScreen({this.arguments});
+  TeleconsultationScreen({required this.arguments});
 
   @override
   _TeleconsultationScreenState createState() => _TeleconsultationScreenState();
@@ -65,24 +65,24 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
   static const platformMethodChannel = const MethodChannel('com.vonage');
 
 //function timer
-  void startTimer()
-  {
+  void startTimer() {
     Timer(dur, keeprunning);
   }
 
-  void keeprunning()
-  {
-    if(swatch.isRunning){
+  void keeprunning() {
+    if (swatch.isRunning) {
       startTimer();
     }
     setState(() {
-      time = swatch.elapsed.inHours.toString().padLeft(2,'0') + ":" +(swatch.elapsed.inMinutes%60).toString().padLeft(2,'0') + ":" + (swatch.elapsed.inSeconds%60).toString().padLeft(2,'0');
+      time = swatch.elapsed.inHours.toString().padLeft(2, '0') +
+          ":" +
+          (swatch.elapsed.inMinutes % 60).toString().padLeft(2, '0') +
+          ":" +
+          (swatch.elapsed.inSeconds % 60).toString().padLeft(2, '0');
     });
   }
 
-
-  void startwatch()
-  {
+  void startwatch() {
     setState(() {
       isvisible = !isvisible;
       isnotvisible = !isnotvisible;
@@ -93,8 +93,7 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
     startTimer();
   }
 
-  void stopwatch()
-  {
+  void stopwatch() {
     setState(() {
       stoptispressed = true;
       resettispressed = false;
@@ -104,8 +103,7 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
     swatch.stop();
   }
 
-  void resetwatch()
-  {
+  void resetwatch() {
     setState(() {
       startispressed = true;
       resettispressed = true;
@@ -114,23 +112,16 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
     time = "00:00:00";
   }
 
-   String getTimer(String value)
-  {
-                       
-    if(value == "stop")
-    {
+  String getTimer(String value) {
+    if (value == "stop") {
       resetwatch();
-     return "En attente de votre interlocuteur...";
-    }
-    else
-    {
+      return "En attente de votre interlocuteur...";
+    } else {
       startwatch();
-     return "Teleconsultation en cours "+widget.arguments.Doctor;
+      return "Teleconsultation en cours " + widget.arguments.Doctor;
     }
-    
   }
 //end function timer
-
 
   Future<dynamic> methodCallHandler(MethodCall methodCall) async {
     switch (methodCall.method) {
@@ -153,7 +144,6 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
     await requestPermissions();
 
     dynamic params = {
-
 // 'apiKey':'47244724',
 // 'sessionId': '1_MX40NzI0NDcyNH5-MTY0NDc1MTY1OTcwMH4xZ0cxOVF4Y01kdDlTdkF5M0tPSU10TER-fg',
 // 'token': "T1==cGFydG5lcl9pZD00NzI0NDcyNCZzaWc9MWI4NmI1MmIyMGNjMjc5MWVlOWJmNGMwZGUyODVkMzE2ZjI2MGJlMDpzZXNzaW9uX2lkPTFfTVg0ME56STBORGN5Tkg1LU1UWTBORGMxTVRZMU9UY3dNSDR4WjBjeE9WRjRZMDFrZERsVGRrRjVNMHRQU1UxMFRFUi1mZyZjcmVhdGVfdGltZT0xNjQ0NzUxNzAwJm5vbmNlPTAuMDk1MDk0NzU5NTMzMDYzMTImcm9sZT1wdWJsaXNoZXImZXhwaXJlX3RpbWU9MTY0NzM0MzY5OCZpbml0aWFsX2xheW91dF9jbGFzc19saXN0PQ==",
@@ -161,7 +151,7 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
       'apiKey': widget.arguments.API_KEY,
       'sessionId': widget.arguments.SESSION_ID,
       'token': widget.arguments.TOKEN
-       };
+    };
 
     try {
       await platformMethodChannel.invokeMethod('initSession', params);
@@ -174,10 +164,7 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
     await requestPermissions();
     try {
       await platformMethodChannel.invokeMethod('closeSession');
-      Navigator.of(context).pushNamed(
-                RouteGenerator
-                    .appointmentScreen
-                    );
+      Navigator.of(context).pushNamed(RouteGenerator.appointmentScreen);
     } on PlatformException catch (e) {
       print(e);
     }
@@ -246,10 +233,12 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         elevation: 0,
-        leading: IconButton(onPressed: (){
-          Navigator.pushReplacementNamed(
-              context, RouteGenerator.appointmentScreen);
-        }, icon: Icon(Icons.arrow_back_ios)),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pushReplacementNamed(
+                  context, RouteGenerator.appointmentScreen);
+            },
+            icon: Icon(Icons.arrow_back_ios)),
         centerTitle: true,
         titleSpacing: 0,
         backgroundColor: Colors.transparent,
@@ -259,18 +248,14 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
           children: [
             Icon(
               Icons.lock,
-              color:  _sdkState == SdkState.LOGGED_OUT 
-                                          ? Colors.transparent
-                                          :Colors.grey.shade400,
+              color: _sdkState == SdkState.LOGGED_OUT
+                  ? Colors.transparent
+                  : Colors.grey.shade400,
               size: 18,
-            )
-            ,
+            ),
             const SizedBox(width: 8),
             Text(
-               _sdkState == SdkState.LOGGED_OUT 
-                                          ? ""
-                                          :'Chiffré de bout en bout'
-              ,
+              _sdkState == SdkState.LOGGED_OUT ? "" : 'Chiffré de bout en bout',
               style: TextStyle(color: Colors.grey.shade400, fontSize: 13.5),
             ),
           ],
@@ -346,7 +331,8 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
       return const Center(
         child: CircularProgressIndicator(),
       );
-    } else if (_sdkState == SdkState.LOGGED_IN || _sdkState == SdkState.ONE_USER) {
+    } else if (_sdkState == SdkState.LOGGED_IN ||
+        _sdkState == SdkState.ONE_USER) {
       return Stack(
         children: [
           SizedBox(
@@ -357,8 +343,8 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
                   (BuildContext context, PlatformViewController controller) {
                 return AndroidViewSurface(
                   controller: controller,
-                  gestureRecognizers: const <
-                      Factory<OneSequenceGestureRecognizer>>{},
+                  gestureRecognizers: const <Factory<
+                      OneSequenceGestureRecognizer>>{},
                   hitTestBehavior: PlatformViewHitTestBehavior.opaque,
                 );
               },
@@ -446,10 +432,8 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
                         _closeSession();
                         stopwatch();
                         _sdkState = SdkState.LOGGED_OUT;
-                       Navigator.of(context).pushNamed(
-                RouteGenerator
-                    .appointmentScreen
-                    );
+                        Navigator.of(context)
+                            .pushNamed(RouteGenerator.appointmentScreen);
                       });
                     } catch (e) {
                       print(e);
@@ -492,9 +476,9 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
                     const SizedBox(height: 70),
                     Container(
                       child: Text(
-                         _sdkState == SdkState.ONE_USER
-                                            ? getTimer("stop")
-                                            : getTimer("start"),
+                        _sdkState == SdkState.ONE_USER
+                            ? getTimer("stop")
+                            : getTimer("start"),
                         maxLines: 3,
                         textAlign: TextAlign.center,
                         overflow: TextOverflow.clip,
@@ -507,10 +491,7 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
                     ),
                     const SizedBox(height: 20),
                     Text(
-                      _sdkState == SdkState.ONE_USER 
-                                          ? ""
-                                          :time
-                      ,
+                      _sdkState == SdkState.ONE_USER ? "" : time,
                       style: TextStyle(
                         fontSize: 19.5,
                         color: Colors.grey.shade400,
@@ -523,24 +504,21 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
           ),
         ],
       );
-    } else  {
+    } else {
       return Center(
-        child: Column(
-         children: [Text("Téléconsultation Terminée  \n\n Durée :"+time+ "\n\n"),
+          child: Column(children: [
+        Text("Téléconsultation Terminée  \n\n Durée :" + time + "\n\n"),
         ElevatedButton(
           child: const Text('OK'),
-          onPressed: ()  async {
-          await   Navigator.of(context).pushNamed(
-                RouteGenerator
-                    .appointmentScreen
-                    );
+          onPressed: () async {
+            await Navigator.of(context)
+                .pushNamed(RouteGenerator.appointmentScreen);
           },
-        ),]
-        )
-      );
-    } 
+        ),
+      ]));
+    }
     // else {
-      
+
     //   WidgetsBinding.instance.addPostFrameCallback((_){
 
     //  showModal(
@@ -556,7 +534,7 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
     //                   Navigator.pop(context);
     //                   },
     //                   child: Text('OK'),
-    //                 ),   
+    //                 ),
     //               ],
     //             ),
     //           );

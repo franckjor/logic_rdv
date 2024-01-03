@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 
 import 'model/shared_preference_object.dart';
 
@@ -17,8 +16,8 @@ class SetSharedPreferenceObject extends SharedPreferenceEvent {
   final SharePreferenceObject object;
 
   SetSharedPreferenceObject({
-    @required this.objectKey,
-    @required this.object,
+    required this.objectKey,
+    required this.object,
   });
 
   @override
@@ -34,7 +33,7 @@ class GetSharedPreferenceObject extends SharedPreferenceEvent {
   final String objectKey;
 
   GetSharedPreferenceObject({
-    @required this.objectKey,
+    required this.objectKey,
   });
 
   @override
@@ -50,8 +49,8 @@ class SetSharedPreferenceTokenAuthorization extends SharedPreferenceEvent {
   final String tokenAuthorization;
 
   SetSharedPreferenceTokenAuthorization({
-    this.tokenAuthorizationKey,
-    this.tokenAuthorization,
+    required this.tokenAuthorizationKey,
+    required this.tokenAuthorization,
   });
 
   @override
@@ -68,8 +67,8 @@ class SetSharedPreferenceSession extends SharedPreferenceEvent {
   final String session;
 
   SetSharedPreferenceSession({
-    this.sessionKey,
-    this.session,
+    required this.sessionKey,
+    required this.session,
   });
 
   @override
@@ -84,7 +83,7 @@ class SetSharedPreferenceSession extends SharedPreferenceEvent {
 class GetSharedPreferenceSession extends SharedPreferenceEvent {
   final String sessionKey;
 
-  GetSharedPreferenceSession({@required this.sessionKey});
+  GetSharedPreferenceSession({required this.sessionKey});
 
   @override
   List<Object> get props => [sessionKey];
@@ -97,7 +96,7 @@ class GetSharedPreferenceSession extends SharedPreferenceEvent {
 class GetSharedPreferenceTokenAuthorization extends SharedPreferenceEvent {
   final String tokenAuthorizationKey;
 
-  GetSharedPreferenceTokenAuthorization({@required this.tokenAuthorizationKey});
+  GetSharedPreferenceTokenAuthorization({required this.tokenAuthorizationKey});
 
   @override
   List<Object> get props => [tokenAuthorizationKey];

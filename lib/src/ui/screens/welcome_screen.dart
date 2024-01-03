@@ -758,8 +758,8 @@ class _IntroText extends StatelessWidget {
 class SearchButton extends StatelessWidget {
   const SearchButton({
     Key key,
-    @required double textFieldHeight,
-    @required FocusNode searchButtonFocus,
+    required double textFieldHeight,
+    required FocusNode searchButtonFocus,
     this.width = double.infinity,
     this.onPressed,
   })  : _textFieldHeight = textFieldHeight,

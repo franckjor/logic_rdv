@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
-import 'package:logic_rdv_v0/src/core/paiement_service/payement_service.dart';
-import 'package:logic_rdv_v0/src/ui/alert_widgets/custom_snackbar.dart';
 import 'package:logic_rdv_v0/src/ui/alert_widgets/progress_dialog.dart';
 import 'package:logic_rdv_v0/src/ui/shared/adaptative_appbar.dart';
 import 'package:logic_rdv_v0/src/ui/shared/default_back_button.dart';
 //import 'package:flutter_stripe/flutter_stripe.dart';
 
 class ExistingCard extends StatefulWidget {
-  const ExistingCard({Key key}) : super(key: key);
+  const ExistingCard({super.key});
 
   @override
   _ExistingCardState createState() => _ExistingCardState();
@@ -41,7 +39,7 @@ class _ExistingCardState extends State<ExistingCard> {
     //CreditCard stripeCard = CreditCard(
     //  expMonth: int.parse(expiredArray[0]),
     //  number: card['cardNumber'],
-     // expYear: int.parse(expiredArray[1]),
+    // expYear: int.parse(expiredArray[1]),
     //);
     // var response = await StripeService.payViaAndExistingCard(
     //   amount: '2500',

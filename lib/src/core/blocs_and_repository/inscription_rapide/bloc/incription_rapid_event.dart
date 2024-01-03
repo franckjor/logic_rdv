@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:logic_rdv_v0/src/core/models/generate_token_model/get_token_request.dart';
 import 'package:logic_rdv_v0/src/core/models/incription_model/create_patient_request.dart';
 import 'package:logic_rdv_v0/src/core/models/incription_model/inscription_check_request.dart';
 
@@ -11,7 +10,7 @@ abstract class InscriptionRapidEvent extends Equatable {
 class VerifyDoctorEvent extends InscriptionRapidEvent {
   final InscriptionCheckRequest checkRequest;
 
-  VerifyDoctorEvent({this.checkRequest});
+  VerifyDoctorEvent({required this.checkRequest});
 
   @override
   List<Object> get props => [checkRequest];
@@ -23,7 +22,7 @@ class VerifyDoctorEvent extends InscriptionRapidEvent {
 class CreatePatientEvent extends InscriptionRapidEvent {
   final CreatePatientRequest createPatientRequest;
 
-  CreatePatientEvent({this.createPatientRequest});
+  CreatePatientEvent({required this.createPatientRequest});
 
   @override
   List<Object> get props => [createPatientRequest];

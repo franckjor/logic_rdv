@@ -26,7 +26,7 @@ abstract class CancelAppointmentRequest
         serializers.serializeWith(CancelAppointmentRequest.serializer, this));
   }
 
-  static CancelAppointmentRequest fromJson(String jsonString) {
+  static CancelAppointmentRequest? fromJson(String jsonString) {
     return serializers.deserializeWith(
         CancelAppointmentRequest.serializer, json.decode(jsonString));
   }

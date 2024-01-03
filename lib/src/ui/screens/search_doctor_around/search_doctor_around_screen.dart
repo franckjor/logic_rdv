@@ -44,7 +44,7 @@ class SearchDoctorAroundResultPageArguments implements PagesArgumentType {
 class SearchDoctorAround extends StatefulWidget {
   final SearchDoctorAroundResultPageArguments arguments;
 
-  SearchDoctorAround({this.arguments});
+  SearchDoctorAround({required this.arguments});
 
   @override
   _SearchDoctorAroundState createState() => _SearchDoctorAroundState();
@@ -150,7 +150,6 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
         backgroundColor: AppColors.colorPrimary,
         leading: DefaultBackButton(),
         actions: [
-          
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () => Navigator.pop(context),
@@ -384,8 +383,7 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
                                                                     fontSize:
                                                                         16,
                                                                   ),
-                                                                  children: <
-                                                                      TextSpan>[
+                                                                  children: <TextSpan>[
                                                                     new TextSpan(
                                                                       text: " " +
                                                                           doctors[i]
@@ -511,7 +509,7 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
                                                                     height: 25,
                                                                     width: 25,
                                                                     margin: const EdgeInsets
-                                                                            .only(
+                                                                        .only(
                                                                         left:
                                                                             8),
                                                                     decoration:
@@ -665,8 +663,8 @@ class SocialIcon extends StatelessWidget {
 
   const SocialIcon({
     Key key,
-    @required this.imageUrl,
-    @required this.onPressed,
+    required this.imageUrl,
+    required this.onPressed,
   }) : super(key: key);
 
   @override

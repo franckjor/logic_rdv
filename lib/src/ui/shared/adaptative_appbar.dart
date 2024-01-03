@@ -14,12 +14,12 @@ class AdaptativeAppBar extends StatelessWidget implements PreferredSize {
   final Widget leading;
   final List<Widget> actions;
   const AdaptativeAppBar({
-    Key key,
+    super.key,
     this.title,
     this.backgroundColor = AppColors.primaryColor,
     this.leading,
     this.actions,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

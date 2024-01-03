@@ -8,7 +8,7 @@ bool get isAndroid =>
     foundation.defaultTargetPlatform == TargetPlatform.android;
 
 class AdaptativeIndicator extends StatelessWidget {
-  const AdaptativeIndicator({Key key}) : super(key: key);
+  const AdaptativeIndicator({super.key});
 
   @override
   Widget build(BuildContext context) {

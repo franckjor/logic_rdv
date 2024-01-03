@@ -409,11 +409,11 @@ class _DrawerItem extends StatelessWidget {
   final IconData icon;
 
   const _DrawerItem({
-    Key key,
+    super.key,
     this.text,
     this.icon,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

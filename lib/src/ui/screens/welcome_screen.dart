@@ -603,9 +603,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 }
 
 class _SubscriptionButtons extends StatelessWidget {
-  const _SubscriptionButtons({
-    Key key,
-  }) : super(key: key);
+  const _SubscriptionButtons({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -707,9 +705,7 @@ class _SubscriptionButtons extends StatelessWidget {
 }
 
 class _IntroText extends StatelessWidget {
-  const _IntroText({
-    Key key,
-  }) : super(key: key);
+  const _IntroText({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -757,7 +753,7 @@ class _IntroText extends StatelessWidget {
 
 class SearchButton extends StatelessWidget {
   const SearchButton({
-    Key key,
+    super.key,
     required double textFieldHeight,
     required FocusNode searchButtonFocus,
     this.width = double.infinity,
@@ -800,9 +796,7 @@ class SearchButton extends StatelessWidget {
 }
 
 class DefaultElevatedButtonIcon extends StatelessWidget {
-  const DefaultElevatedButtonIcon({
-    Key key,
-  }) : super(key: key);
+  const DefaultElevatedButtonIcon({super.key});
 
   @override
   Widget build(BuildContext context) {

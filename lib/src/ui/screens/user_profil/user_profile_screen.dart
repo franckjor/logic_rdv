@@ -407,12 +407,12 @@ class _ProfilMenuOption extends StatelessWidget {
   final String title;
   final Widget trailing;
   const _ProfilMenuOption({
-    Key key,
+    super.key,
     this.onTap,
     required this.icon,
     required this.title,
     this.trailing,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

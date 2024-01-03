@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NewDialogAppointment extends StatefulWidget {
-  const NewDialogAppointment({Key key}) : super(key: key);
+  const NewDialogAppointment({super.key});
 
   @override
   _NewDialogAppointmentState createState() => _NewDialogAppointmentState();

@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:logic_rdv_v0/src/ui/themes/colors.dart';
 
 class EmptyApointmentWidget extends StatelessWidget {
-  const EmptyApointmentWidget({
-    Key key,
-  }) : super(key: key);
+  const EmptyApointmentWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

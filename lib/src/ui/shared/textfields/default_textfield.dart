@@ -9,7 +9,7 @@ class DefaultTextField extends StatelessWidget {
   final TextEditingController controller;
   final Function validator;
   const DefaultTextField({
-    Key key,
+    super.key,
     this.hintText,
     this.suffixIcon,
     this.obscureText = false,
@@ -17,7 +17,7 @@ class DefaultTextField extends StatelessWidget {
     this.textInputAction,
     this.controller,
     this.validator,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

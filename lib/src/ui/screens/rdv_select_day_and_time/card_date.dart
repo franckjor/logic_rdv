@@ -133,7 +133,7 @@ class _Hour extends StatefulWidget {
   final Function(String) actionFunction;
 
   const _Hour({
-    Key key,
+    super.key,
     required this.hour,
     required this.doctorName,
     required this.context,
@@ -146,7 +146,7 @@ class _Hour extends StatefulWidget {
     required this.dataFunction,
     required this.actionFunction,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   State<_Hour> createState() => _HourState();

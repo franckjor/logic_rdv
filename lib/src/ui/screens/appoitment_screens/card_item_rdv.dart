@@ -558,9 +558,7 @@ class _CardItemRdvState extends State<CardItemRdv> {
 }
 /*
 class _CustomDivider extends StatelessWidget {
-  const _CustomDivider({
-    Key key,
-  }) : super(key: key);
+  const _CustomDivider({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -575,12 +573,10 @@ class _ContactButton extends StatelessWidget {
   final String iconPath;
   final String label;
   final Function onTap;
-  const _ContactButton({
-    Key key,
-    required this.iconPath,
+  const _ContactButton({super.key, required this.iconPath,
     required this.label,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

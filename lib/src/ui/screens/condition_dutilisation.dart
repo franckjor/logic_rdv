@@ -125,9 +125,9 @@ class _ConditionDutilisationState extends State<ConditionDutilisation> {
 class _SectionTitle extends StatelessWidget {
   final String title;
   const _SectionTitle({
-    Key key,
-    this.title,
-  }) : super(key: key);
+    super.key,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -144,9 +144,9 @@ class _SectionTitle extends StatelessWidget {
 class _SectionContent extends StatelessWidget {
   final String content;
   const _SectionContent({
-    Key key,
+    super.key,
     this.content,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

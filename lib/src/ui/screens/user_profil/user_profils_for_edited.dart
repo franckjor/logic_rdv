@@ -28,8 +28,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../common.dart';
 
-
-
 bool get isAndroid =>
     foundation.defaultTargetPlatform == TargetPlatform.android;
 
@@ -659,9 +657,9 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
 class _LabelWidget extends StatelessWidget {
   final String label;
   const _LabelWidget({
-    Key key,
+    super.key,
     this.label,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

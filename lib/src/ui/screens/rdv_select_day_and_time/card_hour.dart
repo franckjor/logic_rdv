@@ -37,12 +37,12 @@ class CreneauxItem extends StatelessWidget {
   final String subInfo;
   final Function onTap;
   const CreneauxItem({
-    Key key,
+    super.key,
     this.doctorName,
     this.fromHour,
     this.onTap,
     this.subInfo,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

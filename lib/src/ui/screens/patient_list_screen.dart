@@ -965,10 +965,10 @@ class ContactIconButton extends StatelessWidget {
   final void Function() onTap;
 
   const ContactIconButton({
-    Key key,
+    super.key,
     this.icon,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

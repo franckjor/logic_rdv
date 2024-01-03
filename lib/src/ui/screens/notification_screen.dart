@@ -28,7 +28,7 @@ bool get isAndroid =>
 bool get isWeb => foundation.kIsWeb;
 
 class NotificationScreen extends StatefulWidget {
-  const NotificationScreen({Key key}) : super(key: key);
+  const NotificationScreen({super.key});
 
   @override
   _NotificationScreenState createState() => _NotificationScreenState();
@@ -262,12 +262,12 @@ class _NotificationItem extends StatelessWidget {
   final String date;
 
   const _NotificationItem({
-    Key key,
+    super.key,
     this.icon,
     this.title,
     this.description,
     this.date,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

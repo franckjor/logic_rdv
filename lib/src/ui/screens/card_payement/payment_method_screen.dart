@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/ui/shared/adaptative_appbar.dart';
 import '../../../common.dart';
 
 class PaymentMethodScreen extends StatefulWidget {
-  const PaymentMethodScreen({Key key}) : super(key: key);
+  const PaymentMethodScreen({super.key});
 
   @override
   _PaymentMethodScreenState createState() => _PaymentMethodScreenState();

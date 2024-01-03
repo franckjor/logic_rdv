@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class LoadingPageInfiniteScroll extends StatelessWidget {
   const LoadingPageInfiniteScroll({
-    Key key,
+    super.key,
     required this.isRefreshList,
-  }) : super(key: key);
+  });
 
   final bool isRefreshList;
 

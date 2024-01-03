@@ -715,11 +715,11 @@ class _DoctorInfo extends StatelessWidget {
   final TextStyle textStyle;
 
   const _DoctorInfo({
-    Key key,
+    super.key,
     required this.info,
     required this.icon,
-    this.textStyle,
-  }) : super(key: key);
+    required this.textStyle,
+  });
 
   @override
   Widget build(BuildContext context) {

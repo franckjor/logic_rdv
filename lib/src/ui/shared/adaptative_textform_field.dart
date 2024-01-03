@@ -17,7 +17,7 @@ class AdaptativeTextFormField extends StatelessWidget {
   final bool autoFocus;
   final bool readOnly;
   const AdaptativeTextFormField({
-    Key key,
+    super.key,
     this.hintText,
     this.suffixIcon,
     this.controller,
@@ -31,7 +31,7 @@ class AdaptativeTextFormField extends StatelessWidget {
     this.onTapeChangeHandler,
     this.textInputType = TextInputType.text,
     this.onTapeFocusChangeHandler,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

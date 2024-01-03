@@ -218,7 +218,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         context: context,
                         alertType: AlertType.error,
                         title: 'Echec de connexion',
-                        action: (){
+                        action: () {
                           Navigator.pop(context);
                         },
                         content: Text(
@@ -549,13 +549,13 @@ class CheckBoxRemenberMe extends StatefulWidget {
   final Color activeColor;
 
   const CheckBoxRemenberMe({
-    Key key,
+    super.key,
     this.isChecked,
     this.onCheckedBoxChanged,
     this.transitionDuration = const Duration(milliseconds: 300),
     this.inactiveColor,
     this.activeColor = const Color(0xFF4e8fda),
-  }) : super(key: key);
+  });
 
   @override
   _CheckBoxRemenberMeState createState() => _CheckBoxRemenberMeState();

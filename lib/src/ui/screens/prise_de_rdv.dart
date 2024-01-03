@@ -8,7 +8,7 @@ import 'package:universal_io/io.dart';
 bool get isWeb => foundation.kIsWeb;
 
 class PriseDeRdv extends StatefulWidget {
-  const PriseDeRdv({Key key}) : super(key: key);
+  const PriseDeRdv({super.key});
 
   @override
   _PriseDeRdvState createState() => _PriseDeRdvState();
@@ -106,9 +106,7 @@ class _PriseDeRdvState extends State<PriseDeRdv> {
 }
 
 class _RdvItem extends StatelessWidget {
-  const _RdvItem({
-    Key key,
-  }) : super(key: key);
+  const _RdvItem({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/user/user_repository/
 class UserBloc extends Bloc<UserEvent, UserState> {
   final UserRepository repository;
 
-  UserBloc({required this.repository}) : super(UserStateLoading());
+  UserBloc({@required this.repository}) : super(UserStateLoading());
 
   @override
   UserState get initialState => UserStateLoading();

@@ -36,7 +36,7 @@ abstract class CancelAppointmentResponse
 
   static CancelAppointmentResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        CancelAppointmentResponse.serializer, json.decode(jsonString))!;
+        CancelAppointmentResponse.serializer, json.decode(jsonString));
   }
 
   static Serializer<CancelAppointmentResponse> get serializer =>
@@ -64,7 +64,7 @@ abstract class ParamsCancelAppointmentResponse
 
   static ParamsCancelAppointmentResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsCancelAppointmentResponse.serializer, json.decode(jsonString))!;
+        ParamsCancelAppointmentResponse.serializer, json.decode(jsonString));
   }
 
   static Serializer<ParamsCancelAppointmentResponse> get serializer =>

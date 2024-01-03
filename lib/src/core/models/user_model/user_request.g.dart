@@ -20,41 +20,41 @@ class _$UserRequestSerializer implements StructuredSerializer<UserRequest> {
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'compte_nom',
       serializers.serialize(object.compteNom,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'compte_prenom',
       serializers.serialize(object.comptePrenom,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'compte_email',
       serializers.serialize(object.compteEmail,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'compte_mobile',
       serializers.serialize(object.compteMobile,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'compte_adresse',
       serializers.serialize(object.compteAdresse,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'compte_codepostal',
       serializers.serialize(object.compteCodepostal,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'compte_ville',
       serializers.serialize(object.compteVille,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'compte_password',
       serializers.serialize(object.comptePassword,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'compte_password_conf',
       serializers.serialize(object.comptePasswordConf,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
   }
 
   @override
-  UserRequest deserialize(Serializers serializers, Iterable<Object?> serialized,
+  UserRequest deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new UserRequestBuilder();
 
@@ -62,7 +62,7 @@ class _$UserRequestSerializer implements StructuredSerializer<UserRequest> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -133,21 +133,20 @@ class _$UserRequest extends UserRequest {
   @override
   final String comptePasswordConf;
 
-  factory _$UserRequest([void Function(UserRequestBuilder)? updates]) =>
-      (new UserRequestBuilder()..update(updates!)).build();
+  factory _$UserRequest([void Function(UserRequestBuilder) updates]) =>
+      (new UserRequestBuilder()..update(updates)).build();
 
   _$UserRequest._(
-      {
-      required this.tokenuser,
-      required this.compteNom,
-      required this.comptePrenom,
-      required this.compteEmail,
-      required this.compteMobile,
-      required this.compteAdresse,
-      required this.compteCodepostal,
-      required this.compteVille,
-      required this.comptePassword,
-      required this.comptePasswordConf})
+      {this.tokenuser,
+      this.compteNom,
+      this.comptePrenom,
+      this.compteEmail,
+      this.compteMobile,
+      this.compteAdresse,
+      this.compteCodepostal,
+      this.compteVille,
+      this.comptePassword,
+      this.comptePasswordConf})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'UserRequest', 'tokenuser');
@@ -173,7 +172,7 @@ class _$UserRequest extends UserRequest {
 
   @override
   UserRequest rebuild(void Function(UserRequestBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   UserRequestBuilder toBuilder() => new UserRequestBuilder()..replace(this);
@@ -234,48 +233,48 @@ class _$UserRequest extends UserRequest {
 }
 
 class UserRequestBuilder implements Builder<UserRequest, UserRequestBuilder> {
-  _$UserRequest? _$v = _$UserRequest();
+  _$UserRequest _$v;
 
-  String _tokenuser = '';
+  String _tokenuser;
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _compteNom = '';
+  String _compteNom;
   String get compteNom => _$this._compteNom;
   set compteNom(String compteNom) => _$this._compteNom = compteNom;
 
-  String _comptePrenom = '';
+  String _comptePrenom;
   String get comptePrenom => _$this._comptePrenom;
   set comptePrenom(String comptePrenom) => _$this._comptePrenom = comptePrenom;
 
-  String _compteEmail = '';
+  String _compteEmail;
   String get compteEmail => _$this._compteEmail;
   set compteEmail(String compteEmail) => _$this._compteEmail = compteEmail;
 
-  String _compteMobile = '';
+  String _compteMobile;
   String get compteMobile => _$this._compteMobile;
   set compteMobile(String compteMobile) => _$this._compteMobile = compteMobile;
 
-  String _compteAdresse = '';
+  String _compteAdresse;
   String get compteAdresse => _$this._compteAdresse;
   set compteAdresse(String compteAdresse) =>
       _$this._compteAdresse = compteAdresse;
 
-  String _compteCodepostal = '';
+  String _compteCodepostal;
   String get compteCodepostal => _$this._compteCodepostal;
   set compteCodepostal(String compteCodepostal) =>
       _$this._compteCodepostal = compteCodepostal;
 
-  String _compteVille = '';
+  String _compteVille;
   String get compteVille => _$this._compteVille;
   set compteVille(String compteVille) => _$this._compteVille = compteVille;
 
-  String _comptePassword = '';
+  String _comptePassword;
   String get comptePassword => _$this._comptePassword;
   set comptePassword(String comptePassword) =>
       _$this._comptePassword = comptePassword;
 
-  String _comptePasswordConf = '';
+  String _comptePasswordConf;
   String get comptePasswordConf => _$this._comptePasswordConf;
   set comptePasswordConf(String comptePasswordConf) =>
       _$this._comptePasswordConf = comptePasswordConf;
@@ -307,7 +306,7 @@ class UserRequestBuilder implements Builder<UserRequest, UserRequestBuilder> {
   }
 
   @override
-  void update(void Function(UserRequestBuilder)? updates) {
+  void update(void Function(UserRequestBuilder) updates) {
     if (updates != null) updates(this);
   }
 

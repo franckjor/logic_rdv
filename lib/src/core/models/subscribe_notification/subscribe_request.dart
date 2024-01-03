@@ -27,7 +27,7 @@ abstract class SubscribeRequest
 
   static SubscribeRequest fromJson(String jsonString) {
     return serializers.deserializeWith(
-        SubscribeRequest.serializer, json.decode(jsonString))!;
+        SubscribeRequest.serializer, json.decode(jsonString));
   }
 
   static Serializer<SubscribeRequest> get serializer =>
@@ -63,7 +63,7 @@ abstract class SubscribeResponse
 
   static SubscribeResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        SubscribeResponse.serializer, json.decode(jsonString))!;
+        SubscribeResponse.serializer, json.decode(jsonString));
   }
 
   static Serializer<SubscribeResponse> get serializer =>
@@ -85,7 +85,7 @@ abstract class ParamsSubscribeResponse implements Built<ParamsSubscribeResponse,
 
   static ParamsSubscribeResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsSubscribeResponse.serializer, json.decode(jsonString))!;
+        ParamsSubscribeResponse.serializer, json.decode(jsonString));
   }
 
   static Serializer<ParamsSubscribeResponse> get serializer => _$paramsSubscribeResponseSerializer;
@@ -105,7 +105,7 @@ abstract class DataSubscribeResponse implements Built<DataSubscribeResponse, Dat
 
   static DataSubscribeResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        DataSubscribeResponse.serializer, json.decode(jsonString))!;
+        DataSubscribeResponse.serializer, json.decode(jsonString));
   }
 
   static Serializer<DataSubscribeResponse> get serializer => _$dataSubscribeResponseSerializer;

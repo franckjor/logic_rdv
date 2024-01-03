@@ -3,12 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class SocialIcon extends StatelessWidget {
   final String imageUrl;
-  final void Function()? onPressed;
+  final Function onPressed;
 
   const SocialIcon({
-    required Key? key,
-    required this.imageUrl,
-    required this.onPressed,
+    Key key,
+    @required this.imageUrl,
+    @required this.onPressed,
   }) : super(key: key);
 
   @override

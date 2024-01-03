@@ -9,7 +9,7 @@ abstract class NotificationEvent extends Equatable {
 class GetAllNotification extends NotificationEvent {
   final NotificationListRequest notificationListRequest;
 
-  GetAllNotification({required this.notificationListRequest});
+  GetAllNotification({this.notificationListRequest});
 
   @override
   List<Object> get props => [notificationListRequest];

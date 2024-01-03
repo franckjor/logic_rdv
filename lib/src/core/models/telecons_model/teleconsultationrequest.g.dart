@@ -22,7 +22,7 @@ class _$TeleconsRequestSerializer
     final result = <Object>[
       'tokentelecons',
       serializers.serialize(object.tokentelecons,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -30,7 +30,7 @@ class _$TeleconsRequestSerializer
 
   @override
   TeleconsRequest deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new TeleconsRequestBuilder();
 
@@ -38,7 +38,7 @@ class _$TeleconsRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'tokentelecons':
           result.tokentelecons = serializers.deserialize(value,
@@ -55,17 +55,17 @@ class _$TeleconsRequest extends TeleconsRequest {
   @override
   final String tokentelecons;
 
-  factory _$TeleconsRequest([void Function(TeleconsRequestBuilder)? updates]) =>
-      (new TeleconsRequestBuilder()..update(updates!)).build();
+  factory _$TeleconsRequest([void Function(TeleconsRequestBuilder) updates]) =>
+      (new TeleconsRequestBuilder()..update(updates)).build();
 
-  _$TeleconsRequest._({required this.tokentelecons}) : super._() {
+  _$TeleconsRequest._({this.tokentelecons}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokentelecons, 'TeleconsRequest', 'tokentelecons');
   }
 
   @override
   TeleconsRequest rebuild(void Function(TeleconsRequestBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   TeleconsRequestBuilder toBuilder() =>
@@ -92,9 +92,9 @@ class _$TeleconsRequest extends TeleconsRequest {
 
 class TeleconsRequestBuilder
     implements Builder<TeleconsRequest, TeleconsRequestBuilder> {
-  _$TeleconsRequest? _$v =_$TeleconsRequest();
+  _$TeleconsRequest _$v;
 
-  String _tokentelecons = '';
+  String _tokentelecons;
   String get tokentelecons => _$this._tokentelecons;
   set tokentelecons(String tokentelecons) =>
       _$this._tokentelecons = tokentelecons;
@@ -117,7 +117,7 @@ class TeleconsRequestBuilder
   }
 
   @override
-  void update(void Function(TeleconsRequestBuilder)? updates) {
+  void update(void Function(TeleconsRequestBuilder) updates) {
     if (updates != null) updates(this);
   }
 

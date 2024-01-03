@@ -10,7 +10,7 @@ abstract class AppointmentEvent extends Equatable {
 class GetAppointment extends AppointmentEvent {
   final GetAppointmentRequest getAppointmentRequest;
 
-  GetAppointment({required this.getAppointmentRequest});
+  GetAppointment({this.getAppointmentRequest});
 
   @override
   List<Object> get props => [getAppointmentRequest];
@@ -23,7 +23,7 @@ class GetAppointment extends AppointmentEvent {
 class CancelAppointment extends AppointmentEvent {
   final CancelAppointmentRequest cancelAppointmentRequest;
 
-  CancelAppointment({required this.cancelAppointmentRequest});
+  CancelAppointment({this.cancelAppointmentRequest});
 
   @override
   List<Object> get props => [cancelAppointmentRequest];

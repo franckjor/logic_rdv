@@ -7,7 +7,7 @@ class GenerateAndCheckTokenBloc
     extends Bloc<GenerateAndCheckTokenEvent, GenerateAndCheckTokenState> {
   final GenerateAndCheckTokenRepository repository;
 
-  GenerateAndCheckTokenBloc({required this.repository})
+  GenerateAndCheckTokenBloc({@required this.repository})
       : super(GenerateAndCheckTokenStateLoading());
 
   @override

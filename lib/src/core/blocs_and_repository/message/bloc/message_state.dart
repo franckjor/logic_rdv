@@ -13,7 +13,7 @@ class MessageLoading extends MessageState {}
 
 class MessageLoadingSuccess extends MessageState {
   final MessageResponse response;
-  MessageLoadingSuccess({required this.response});
+  MessageLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -25,7 +25,7 @@ class MessageLoadingSuccess extends MessageState {
 class MessageFailure extends MessageState {
   final String error;
 
-  MessageFailure({required this.error});
+  MessageFailure({@required this.error});
 
   @override
   List<Object> get props => [error];

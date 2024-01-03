@@ -27,7 +27,7 @@ abstract class RemoveDoctorRequest
 
   static RemoveDoctorRequest fromJson(String jsonString) {
     return serializers.deserializeWith(
-        RemoveDoctorRequest.serializer, json.decode(jsonString))!;
+        RemoveDoctorRequest.serializer, json.decode(jsonString));
   }
 
   static Serializer<RemoveDoctorRequest> get serializer =>

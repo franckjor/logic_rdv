@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/login/login_repositor
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final LoginRepository repository;
 
-  LoginBloc({required this.repository}) : super(LoginLoading());
+  LoginBloc({@required this.repository}) : super(LoginLoading());
 
   @override
   Stream<LoginState> mapEventToState(LoginEvent event) async* {
@@ -35,7 +35,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   Stream<LoginState> _mapGetUserLoginStartedToState(LoginStarted event) async* {
     try {
       final userResponse =
-          await repository.loginStarted(login: event.loginStartedRequest, token: '');
+          await repository.loginStarted(login: event.loginStartedRequest);
       yield LoginStartedLoadingSuccess(response: userResponse);
     } catch (error) {
       yield LoginFailure(error: error.toString());
@@ -46,7 +46,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       LoginSearchEmail event) async* {
     try {
       final userResponse =
-          await repository.loginSearchEmail(login: event.loginStartedRequest, token: '');
+          await repository.loginSearchEmail(login: event.loginStartedRequest);
       yield LoginSearchEmailLoadingSuccess(response: userResponse);
     } catch (error) {
       yield LoginFailure(error: error.toString());
@@ -57,7 +57,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       LoginSearchPass event) async* {
     try {
       final userResponse =
-          await repository.loginSearchPass(login: event.loginStartedRequest, token: '');
+          await repository.loginSearchPass(login: event.loginStartedRequest);
       yield LoginSearchPassLoadingSuccess(response: userResponse);
     } catch (error) {
       yield LoginFailure(error: error.toString());
@@ -68,7 +68,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       LoginForForgotPassword event) async* {
     try {
       final userResponse =
-          await repository.loginForgotPass(login: event.loginStartedRequest, token: '');
+          await repository.loginForgotPass(login: event.loginStartedRequest);
       yield LoginForgotPassLoadingSuccess(response: userResponse);
     } catch (error) {
       yield LoginFailure(error: error.toString());
@@ -79,7 +79,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       LoginForSendCode event) async* {
     try {
       final userResponse =
-          await repository.loginForgotForSend(login: event.loginStartedRequest, token: '');
+          await repository.loginForgotForSend(login: event.loginStartedRequest);
       yield LoginForSendCodeLoadingSuccess(response: userResponse);
     } catch (error) {
       yield LoginFailure(error: error.toString());
@@ -90,7 +90,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       LoginForNewPassword event) async* {
     try {
       final userResponse = await repository.loginForNewPassword(
-          login: event.loginStartedRequest, token: '');
+          login: event.loginStartedRequest);
       yield LoginForNewPassLoadingSuccess(response: userResponse);
     } catch (error) {
       yield LoginFailure(error: error.toString());
@@ -101,7 +101,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       LoginForAsckcode event) async* {
     try {
       final userResponse = await repository.loginForNewCode(
-          login: event.loginStartedRequest, token: '');
+          login: event.loginStartedRequest);
       yield LoginForAskNewCodeLoadingSuccess(response: userResponse);
     } catch (error) {
       yield LoginFailure(error: error.toString());
@@ -111,7 +111,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   Stream<LoginState> _mapGetUserLoginToState(Login event) async* {
     try {
       final userResponse =
-          await repository.userLogin(login: event.loginRequest, token: '');
+          await repository.userLogin(login: event.loginRequest);
       yield LoginLoadingSuccess(response: userResponse);
     } catch (error) {
       yield LoginFailure(error: error.toString());

@@ -11,7 +11,7 @@ abstract class InscriptionRapidEvent extends Equatable {
 class VerifyDoctorEvent extends InscriptionRapidEvent {
   final InscriptionCheckRequest checkRequest;
 
-  VerifyDoctorEvent({required this.checkRequest});
+  VerifyDoctorEvent({this.checkRequest});
 
   @override
   List<Object> get props => [checkRequest];
@@ -23,7 +23,7 @@ class VerifyDoctorEvent extends InscriptionRapidEvent {
 class CreatePatientEvent extends InscriptionRapidEvent {
   final CreatePatientRequest createPatientRequest;
 
-  CreatePatientEvent({required this.createPatientRequest});
+  CreatePatientEvent({this.createPatientRequest});
 
   @override
   List<Object> get props => [createPatientRequest];

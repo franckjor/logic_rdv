@@ -24,22 +24,22 @@ class _$GetTokenResponseSerializer
     final result = <Object>[
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int))!,
+          specifiedType: const FullType(int)),
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'data',
       serializers.serialize(object.data,
-          specifiedType: const FullType(DataTokenResponse))!,
+          specifiedType: const FullType(DataTokenResponse)),
     ];
 
     return result;
@@ -47,7 +47,7 @@ class _$GetTokenResponseSerializer
 
   @override
   GetTokenResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new GetTokenResponseBuilder();
 
@@ -55,7 +55,7 @@ class _$GetTokenResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
@@ -106,14 +106,14 @@ class _$DataTokenResponseSerializer
       result
         ..add('authorization')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     return result;
   }
 
   @override
   DataTokenResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataTokenResponseBuilder();
 
@@ -121,7 +121,7 @@ class _$DataTokenResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'authorization':
           result.authorization = serializers.deserialize(value,
@@ -149,17 +149,16 @@ class _$GetTokenResponse extends GetTokenResponse {
   final DataTokenResponse data;
 
   factory _$GetTokenResponse(
-          [void Function(GetTokenResponseBuilder)? updates]) =>
-      (new GetTokenResponseBuilder()..update(updates!)).build();
+          [void Function(GetTokenResponseBuilder) updates]) =>
+      (new GetTokenResponseBuilder()..update(updates)).build();
 
   _$GetTokenResponse._(
-      {
-      required this.httpstatut,
-      required this.version,
-      required this.request,
-      required this.message,
-      required this.error,
-      required this.data})
+      {this.httpstatut,
+      this.version,
+      this.request,
+      this.message,
+      this.error,
+      this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         httpstatut, 'GetTokenResponse', 'httpstatut');
@@ -175,7 +174,7 @@ class _$GetTokenResponse extends GetTokenResponse {
 
   @override
   GetTokenResponse rebuild(void Function(GetTokenResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   GetTokenResponseBuilder toBuilder() =>
@@ -220,29 +219,29 @@ class _$GetTokenResponse extends GetTokenResponse {
 
 class GetTokenResponseBuilder
     implements Builder<GetTokenResponse, GetTokenResponseBuilder> {
-  late _$GetTokenResponse? _$v;
+  _$GetTokenResponse _$v;
 
-  int _httpstatut = 0;
+  int _httpstatut;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _version = '';
+  String _version;
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request = '';
+  String _request;
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  String _message = '';
+  String _message;
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  String _error = '';
+  String _error;
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  late DataTokenResponseBuilder _data;
+  DataTokenResponseBuilder _data;
   DataTokenResponseBuilder get data =>
       _$this._data ??= new DataTokenResponseBuilder();
   set data(DataTokenResponseBuilder data) => _$this._data = data;
@@ -270,7 +269,7 @@ class GetTokenResponseBuilder
   }
 
   @override
-  void update(void Function(GetTokenResponseBuilder)? updates) {
+  void update(void Function(GetTokenResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -292,7 +291,7 @@ class GetTokenResponseBuilder
                   error, 'GetTokenResponse', 'error'),
               data: data.build());
     } catch (_) {
-      String _$failedField = '';
+      String _$failedField;
       try {
         _$failedField = 'data';
         data.build();
@@ -312,14 +311,14 @@ class _$DataTokenResponse extends DataTokenResponse {
   final String authorization;
 
   factory _$DataTokenResponse(
-          [void Function(DataTokenResponseBuilder)? updates]) =>
-      (new DataTokenResponseBuilder()..update(updates!)).build();
+          [void Function(DataTokenResponseBuilder) updates]) =>
+      (new DataTokenResponseBuilder()..update(updates)).build();
 
-  _$DataTokenResponse._({required this.authorization}) : super._();
+  _$DataTokenResponse._({this.authorization}) : super._();
 
   @override
   DataTokenResponse rebuild(void Function(DataTokenResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   DataTokenResponseBuilder toBuilder() =>
@@ -346,9 +345,9 @@ class _$DataTokenResponse extends DataTokenResponse {
 
 class DataTokenResponseBuilder
     implements Builder<DataTokenResponse, DataTokenResponseBuilder> {
-  late _$DataTokenResponse? _$v;
+  _$DataTokenResponse _$v;
 
-  late String _authorization;
+  String _authorization;
   String get authorization => _$this._authorization;
   set authorization(String authorization) =>
       _$this._authorization = authorization;
@@ -371,7 +370,7 @@ class DataTokenResponseBuilder
   }
 
   @override
-  void update(void Function(DataTokenResponseBuilder)? updates) {
+  void update(void Function(DataTokenResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 

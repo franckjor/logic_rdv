@@ -30,49 +30,49 @@ class _$ListOfDoctorRequestSerializer
       result
         ..add('proxy_ville')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.proxyNom;
     if (value != null) {
       result
         ..add('proxy_nom')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.proxyVilleId;
     if (value != null) {
       result
         ..add('proxy_ville_id')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.proxyNomId;
     if (value != null) {
       result
         ..add('proxy_nom_id')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.proxySearch;
     if (value != null) {
       result
         ..add('proxy_search')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.proxyPage;
     if (value != null) {
       result
         ..add('proxy_page')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     return result;
   }
 
   @override
   ListOfDoctorRequest deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ListOfDoctorRequestBuilder();
 
@@ -80,7 +80,7 @@ class _$ListOfDoctorRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'proxy_ville':
           result.proxyVille = serializers.deserialize(value,
@@ -128,23 +128,22 @@ class _$ListOfDoctorRequest extends ListOfDoctorRequest {
   final String proxyPage;
 
   factory _$ListOfDoctorRequest(
-          [void Function(ListOfDoctorRequestBuilder)? updates]) =>
-      (new ListOfDoctorRequestBuilder()..update(updates!)).build();
+          [void Function(ListOfDoctorRequestBuilder) updates]) =>
+      (new ListOfDoctorRequestBuilder()..update(updates)).build();
 
   _$ListOfDoctorRequest._(
-      {
-      required this.proxyVille,
-      required this.proxyNom,
-      required this.proxyVilleId,
-      required this.proxyNomId,
-      required this.proxySearch,
-      required this.proxyPage})
+      {this.proxyVille,
+      this.proxyNom,
+      this.proxyVilleId,
+      this.proxyNomId,
+      this.proxySearch,
+      this.proxyPage})
       : super._();
 
   @override
   ListOfDoctorRequest rebuild(
           void Function(ListOfDoctorRequestBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   ListOfDoctorRequestBuilder toBuilder() =>
@@ -189,29 +188,29 @@ class _$ListOfDoctorRequest extends ListOfDoctorRequest {
 
 class ListOfDoctorRequestBuilder
     implements Builder<ListOfDoctorRequest, ListOfDoctorRequestBuilder> {
-  _$ListOfDoctorRequest? _$v;
+  _$ListOfDoctorRequest _$v;
 
-  String _proxyVille = '';
+  String _proxyVille;
   String get proxyVille => _$this._proxyVille;
   set proxyVille(String proxyVille) => _$this._proxyVille = proxyVille;
 
-  String _proxyNom = '';
+  String _proxyNom;
   String get proxyNom => _$this._proxyNom;
   set proxyNom(String proxyNom) => _$this._proxyNom = proxyNom;
 
-  String _proxyVilleId = '';
+  String _proxyVilleId;
   String get proxyVilleId => _$this._proxyVilleId;
   set proxyVilleId(String proxyVilleId) => _$this._proxyVilleId = proxyVilleId;
 
-  String _proxyNomId = '';
+  String _proxyNomId;
   String get proxyNomId => _$this._proxyNomId;
   set proxyNomId(String proxyNomId) => _$this._proxyNomId = proxyNomId;
 
-  String _proxySearch = '';
+  String _proxySearch;
   String get proxySearch => _$this._proxySearch;
   set proxySearch(String proxySearch) => _$this._proxySearch = proxySearch;
 
-  String _proxyPage ='';
+  String _proxyPage;
   String get proxyPage => _$this._proxyPage;
   set proxyPage(String proxyPage) => _$this._proxyPage = proxyPage;
 
@@ -238,7 +237,7 @@ class ListOfDoctorRequestBuilder
   }
 
   @override
-  void update(void Function(ListOfDoctorRequestBuilder)? updates) {
+  void update(void Function(ListOfDoctorRequestBuilder) updates) {
     if (updates != null) updates(this);
   }
 

@@ -26,7 +26,7 @@ class _$ForgotPasswordRequestSerializer
     final result = <Object>[
       'email',
       serializers.serialize(object.email,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -34,7 +34,7 @@ class _$ForgotPasswordRequestSerializer
 
   @override
   ForgotPasswordRequest deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ForgotPasswordRequestBuilder();
 
@@ -42,7 +42,7 @@ class _$ForgotPasswordRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'email':
           result.email = serializers.deserialize(value,
@@ -60,10 +60,10 @@ class _$ForgotPasswordRequest extends ForgotPasswordRequest {
   final String email;
 
   factory _$ForgotPasswordRequest(
-          [void Function(ForgotPasswordRequestBuilder)? updates]) =>
-      (new ForgotPasswordRequestBuilder()..update(updates!)).build();
+          [void Function(ForgotPasswordRequestBuilder) updates]) =>
+      (new ForgotPasswordRequestBuilder()..update(updates)).build();
 
-  _$ForgotPasswordRequest._({required this.email}) : super._() {
+  _$ForgotPasswordRequest._({this.email}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         email, 'ForgotPasswordRequest', 'email');
   }
@@ -71,7 +71,7 @@ class _$ForgotPasswordRequest extends ForgotPasswordRequest {
   @override
   ForgotPasswordRequest rebuild(
           void Function(ForgotPasswordRequestBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   ForgotPasswordRequestBuilder toBuilder() =>
@@ -98,9 +98,9 @@ class _$ForgotPasswordRequest extends ForgotPasswordRequest {
 
 class ForgotPasswordRequestBuilder
     implements Builder<ForgotPasswordRequest, ForgotPasswordRequestBuilder> {
-  _$ForgotPasswordRequest? _$v;
+  _$ForgotPasswordRequest _$v;
 
-  String _email = '';
+  String _email;
   String get email => _$this._email;
   set email(String email) => _$this._email = email;
 
@@ -122,7 +122,7 @@ class ForgotPasswordRequestBuilder
   }
 
   @override
-  void update(void Function(ForgotPasswordRequestBuilder)? updates) {
+  void update(void Function(ForgotPasswordRequestBuilder) updates) {
     if (updates != null) updates(this);
   }
 

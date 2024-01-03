@@ -4,9 +4,9 @@ class ErrorMessage {
   String message;
 
   ErrorMessage({
-    required this.objectName,
-    required this.field,
-    required this.message,
+    this.objectName,
+    this.field,
+    this.message,
   });
 
   ErrorMessage.fromJson(Map<String, dynamic> json)
@@ -19,7 +19,7 @@ class ErrorMessage {
 class FieldErrors {
   List<ErrorMessage> fieldErrors;
 
-  FieldErrors({required this.fieldErrors});
+  FieldErrors({this.fieldErrors});
 
   FieldErrors.fromJson(Map<String, dynamic> json)
       : fieldErrors = json['fieldErrors'];

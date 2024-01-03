@@ -21,7 +21,7 @@ class ForgotPasswordRdvPageArguments implements PagesArgumentType {
   final LoginStartedResponse loginStartedResponse;
 
   ForgotPasswordRdvPageArguments({
-    required this.loginStartedResponse,
+    this.loginStartedResponse,
   });
 
   @override
@@ -33,7 +33,7 @@ class ForgotPasswordRdvPageArguments implements PagesArgumentType {
 class ForgotPasswordScreen extends StatefulWidget {
   final ForgotPasswordRdvPageArguments arguments;
 
-  ForgotPasswordScreen({required this.arguments});
+  ForgotPasswordScreen({this.arguments});
 
   @override
   _ForgotPasswordScreenState createState() => _ForgotPasswordScreenState();
@@ -46,8 +46,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   TextEditingController _newPasswordController = new TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
-  late LoginStartedResponse _loginStartedResponse;
-  late SharePreferenceObject _object;
+  LoginStartedResponse _loginStartedResponse;
+  SharePreferenceObject _object;
   bool _codeController = true;
 
   _setEmail() {
@@ -63,7 +63,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     _setEmail();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        _textFieldHeight = _key.currentContext!.size!.height;
+        _textFieldHeight = _key.currentContext.size.height;
       });
     });
   }
@@ -75,7 +75,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
     return AdaptativeScaffold(
       appBar: AdaptativeAppBar(
         title: 'Mot de passe oublié',
-        leading: DefaultBackButton(), actions: [],
+        leading: DefaultBackButton(),
       ),
       body: MultiBlocListener(
         listeners: [
@@ -92,7 +92,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   action: () {
                     Navigator.pushReplacementNamed(
                         context, RouteGenerator.loginScreen);
-                  }, title: '', buttonLabel: '', willPop: false);
+                  });
             } else if (state is LoginForSendCodeLoadingSuccess) {
               progressDialog.hide();
               setState(() {
@@ -105,7 +105,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         state.response.data.headererror,
                         textAlign: TextAlign.center,
                       ),
-                    ), title: '', buttonLabel: '', action: () {  }, willPop: false,
+                    ),
                   );
                 } else {
                   _codeController = !_codeController;
@@ -124,7 +124,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         state.response.data.headererror,
                         textAlign: TextAlign.center,
                       ),
-                    ), title: '', buttonLabel: '', action: () {  }, willPop: false,
+                    ),
                   );
                 } else {
                   _object = SharePreferenceObject(
@@ -176,7 +176,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -196,7 +196,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else {
                 customAlert(
@@ -207,7 +207,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       state.error,
                       textAlign: TextAlign.center,
                     ),
-                  ), title: '', buttonLabel: '', action: () {  }, willPop: false,
+                  ),
                 );
               }
             }
@@ -242,7 +242,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     Padding(
                       padding: const EdgeInsets.only(right: 16),
                       child: Text(
-                        _loginStartedResponse.data.headermessage,
+                        _loginStartedResponse.data?.headermessage,
                         style: TextStyle(
                           color: AppColors.primaryColor.withOpacity(.5),
                           fontSize: 16,
@@ -257,7 +257,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           key: _key,
                           hintText: 'Entrez le code a 6 Chiffres',
                           controller: _emailController,
-                          validator: (value) => verifyEmpty(value!), focusNode: null, textInputAction: null,
+                          validator: (value) => verifyEmpty(value),
                         ),
                       ),
                     ),
@@ -268,7 +268,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           key: _key,
                           hintText: 'Nouveau mot de passe',
                           controller: _newPasswordController,
-                          validator: (value) => verifyEmpty(value!), focusNode: null, textInputAction: null,
+                          validator: (value) => verifyEmpty(value),
                         ),
                       ),
                     ),
@@ -366,7 +366,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             ),
           );
         }),
-      ), title: '', leading: null, actions: [], scaffoldBackgroundColor: null,
+      ),
     );
   }
 }

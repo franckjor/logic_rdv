@@ -8,7 +8,7 @@ import 'package:logic_rdv_v0/src/ui/shared/default_back_button.dart';
 //import 'package:flutter_stripe/flutter_stripe.dart';
 
 class ExistingCard extends StatefulWidget {
-  const ExistingCard({Key? key}) : super(key: key);
+  const ExistingCard({Key key}) : super(key: key);
 
   @override
   _ExistingCardState createState() => _ExistingCardState();
@@ -59,7 +59,7 @@ class _ExistingCardState extends State<ExistingCard> {
     return Scaffold(
       appBar: AdaptativeAppBar(
         leading: DefaultBackButton(),
-        title: 'Carte existante', actions: [],
+        title: 'Carte existante',
       ),
       body: Container(
         padding: EdgeInsets.all(20),
@@ -75,7 +75,7 @@ class _ExistingCardState extends State<ExistingCard> {
                   expiryDate: cards[i]['expiryDate'],
                   cardHolderName: cards[i]['cardHolderName'],
                   cvvCode: cards[i]['cvvCode'],
-                  showBackView: cards[i]['showBackView'], onCreditCardWidgetChange: (CreditCardBrand ) {  },
+                  showBackView: cards[i]['showBackView'],
                 ),
               );
             }),

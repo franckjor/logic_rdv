@@ -37,7 +37,7 @@ abstract class VerifyNotifSubscribtion
 
   static VerifyNotifSubscribtion fromJson(String jsonString) {
     return serializers.deserializeWith(
-        VerifyNotifSubscribtion.serializer, json.decode(jsonString))!;
+        VerifyNotifSubscribtion.serializer, json.decode(jsonString));
   }
 
   static Serializer<VerifyNotifSubscribtion> get serializer =>
@@ -59,7 +59,7 @@ abstract class ParamsVerifyNotifSubscribtion implements Built<ParamsVerifyNotifS
 
   static ParamsVerifyNotifSubscribtion fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsVerifyNotifSubscribtion.serializer, json.decode(jsonString))!;
+        ParamsVerifyNotifSubscribtion.serializer, json.decode(jsonString));
   }
 
   static Serializer<ParamsVerifyNotifSubscribtion> get serializer => _$paramsVerifyNotifSubscribtionSerializer;
@@ -80,7 +80,7 @@ abstract class DataVerifyNotifSubscribtion implements Built<DataVerifyNotifSubsc
 
   static DataVerifyNotifSubscribtion fromJson(String jsonString) {
     return serializers.deserializeWith(
-        DataVerifyNotifSubscribtion.serializer, json.decode(jsonString))!;
+        DataVerifyNotifSubscribtion.serializer, json.decode(jsonString));
   }
 
   static Serializer<DataVerifyNotifSubscribtion> get serializer => _$dataVerifyNotifSubscribtionSerializer;

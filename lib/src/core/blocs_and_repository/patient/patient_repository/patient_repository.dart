@@ -7,7 +7,7 @@ import 'package:logic_rdv_v0/src/core/models/patient/remove_patient_request.dart
 import 'package:logic_rdv_v0/src/core/models/patient/remove_patient_response.dart';
 
 class PatientRepository extends AbstractRepository {
-  Future addPatient({required PatientRequest patientRequest}) async {
+  Future addPatient({PatientRequest patientRequest}) async {
     final String path = '/${getControllerName()}add/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,
@@ -17,7 +17,7 @@ class PatientRepository extends AbstractRepository {
     return patientResponseAfertCreate;
   }
 
-  Future modifyPatient({required PatientRequest patientRequest}) async {
+  Future modifyPatient({PatientRequest patientRequest}) async {
     final String path = '/${getControllerName()}modify/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,
@@ -27,7 +27,7 @@ class PatientRepository extends AbstractRepository {
     return newPatient;
   }
 
-  Future removePatient({required RemovePatientRequest removePatientRequest}) async {
+  Future removePatient({RemovePatientRequest removePatientRequest}) async {
     final String path = '/${getControllerName()}remove/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,
@@ -38,7 +38,7 @@ class PatientRepository extends AbstractRepository {
   }
 
   Future getListOfPatient(
-      {required GetListOfPatientRequest getListOfPatientRequest}) async {
+      {GetListOfPatientRequest getListOfPatientRequest}) async {
     final String path = '/${getControllerName()}list/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,

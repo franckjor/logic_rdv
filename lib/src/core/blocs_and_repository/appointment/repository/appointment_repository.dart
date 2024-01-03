@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/core/models/appointment_model/cancel_appointmen
 import 'package:logic_rdv_v0/src/core/models/appointment_model/get_appointment_request.dart';
 
 class AppointmentRepository extends AbstractRepository {
-  Future getAppointment({required GetAppointmentRequest appointmentRequest}) async {
+  Future getAppointment({GetAppointmentRequest appointmentRequest}) async {
     final String path = '/${getControllerName()}appointments/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,
@@ -17,7 +17,7 @@ class AppointmentRepository extends AbstractRepository {
   }
 
   Future appointmentCancel(
-      {required CancelAppointmentRequest cancelAppointmentRequest}) async {
+      {CancelAppointmentRequest cancelAppointmentRequest}) async {
     final String path = '/${getControllerName()}appcancel/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,

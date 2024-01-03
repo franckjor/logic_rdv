@@ -3,12 +3,12 @@ import 'package:logic_rdv_v0/src/common.dart';
 import 'package:logic_rdv_v0/src/core/models/appointment_model/selected_patient_response_for_rdv.dart';
 
 class CustomApptsItem extends StatelessWidget {
-  final Function()? onCancelAppointmentHandler;
-  final Appts appts ;
+  final Function onCancelAppointmentHandler;
+  final Appts appts;
 
   CustomApptsItem({
-    required this.onCancelAppointmentHandler,
-    required this.appts,
+    this.onCancelAppointmentHandler,
+    this.appts,
   });
 
   @override

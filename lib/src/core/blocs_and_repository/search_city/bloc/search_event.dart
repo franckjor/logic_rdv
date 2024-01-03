@@ -12,7 +12,7 @@ abstract class SearchEvent extends Equatable {
 class GetListOfCity extends SearchEvent {
   final SearchCityRequest searchRequest;
 
-  GetListOfCity({required this.searchRequest});
+  GetListOfCity({this.searchRequest});
 
   @override
   List<Object> get props => [searchRequest];
@@ -24,7 +24,7 @@ class GetListOfCity extends SearchEvent {
 class GetListOfName extends SearchEvent {
   final SearchNameRequest searchRequest;
 
-  GetListOfName({required this.searchRequest});
+  GetListOfName({this.searchRequest});
 
   @override
   List<Object> get props => [searchRequest];
@@ -36,7 +36,7 @@ class GetListOfName extends SearchEvent {
 class GetListOfDoctor extends SearchEvent {
   final ListOfDoctorRequest searchRequest;
 
-  GetListOfDoctor({required this.searchRequest});
+  GetListOfDoctor({this.searchRequest});
 
   @override
   List<Object> get props => [searchRequest];
@@ -48,7 +48,7 @@ class GetListOfDoctor extends SearchEvent {
 class GetListOfDoctorAround extends SearchEvent {
   final ListOfDoctorRequest searchRequest;
 
-  GetListOfDoctorAround({required this.searchRequest});
+  GetListOfDoctorAround({this.searchRequest});
 
   @override
   List<Object> get props => [searchRequest];
@@ -60,7 +60,7 @@ class GetListOfDoctorAround extends SearchEvent {
 class GetAddressDialog extends SearchEvent {
   final SearchDialogRequest searchDialogRequest;
 
-  GetAddressDialog({required this.searchDialogRequest});
+  GetAddressDialog({this.searchDialogRequest});
 
   @override
   List<Object> get props => [searchDialogRequest];

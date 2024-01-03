@@ -7,7 +7,7 @@ class FixerRdvDoctorBloc
     extends Bloc<FixerRdvDoctorEvent, FixerRdvDoctorState> {
   final FixerRdvDoctorRepository repository;
 
-  FixerRdvDoctorBloc({required this.repository})
+  FixerRdvDoctorBloc({@required this.repository})
       : super(FixerRdvDoctorLoading());
 
   @override

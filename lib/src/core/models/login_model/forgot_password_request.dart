@@ -25,7 +25,7 @@ abstract class ForgotPasswordRequest
 
   static ForgotPasswordRequest fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ForgotPasswordRequest.serializer, json.decode(jsonString))!;
+        ForgotPasswordRequest.serializer, json.decode(jsonString));
   }
 
   static Serializer<ForgotPasswordRequest> get serializer =>

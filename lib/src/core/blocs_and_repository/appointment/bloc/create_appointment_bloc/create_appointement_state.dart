@@ -18,7 +18,7 @@ class CreateAppointmentLoading extends CreateAppointmentState {}
 
 class TypeOfAppointmentLoadingSuccess extends CreateAppointmentState {
   final CreateAppointmentResponse response;
-  TypeOfAppointmentLoadingSuccess({required this.response});
+  TypeOfAppointmentLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -29,7 +29,7 @@ class TypeOfAppointmentLoadingSuccess extends CreateAppointmentState {
 
 class DayAndTimeOfAppointmentLoadingSuccess extends CreateAppointmentState {
   final GetApointmentTimeResponse response;
-  DayAndTimeOfAppointmentLoadingSuccess({required this.response});
+  DayAndTimeOfAppointmentLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -41,7 +41,7 @@ class DayAndTimeOfAppointmentLoadingSuccess extends CreateAppointmentState {
 
 class NextDayAndTimeOfAppointmentLoadingSuccess extends CreateAppointmentState {
   final GetApointmentTimeResponse response;
-  NextDayAndTimeOfAppointmentLoadingSuccess({required this.response});
+  NextDayAndTimeOfAppointmentLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -53,7 +53,7 @@ class NextDayAndTimeOfAppointmentLoadingSuccess extends CreateAppointmentState {
 
 class PrevDayAndTimeOfAppointmentLoadingSuccess extends CreateAppointmentState {
   final GetApointmentTimeResponse response;
-  PrevDayAndTimeOfAppointmentLoadingSuccess({required this.response});
+  PrevDayAndTimeOfAppointmentLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -65,7 +65,7 @@ class PrevDayAndTimeOfAppointmentLoadingSuccess extends CreateAppointmentState {
 
 class PatientForAppointmentLoadingSuccess extends CreateAppointmentState {
   final GetPaientForRdvResponse response;
-  PatientForAppointmentLoadingSuccess({required this.response});
+  PatientForAppointmentLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -78,7 +78,7 @@ class PatientForAppointmentLoadingSuccess extends CreateAppointmentState {
 class PatientSelectedForAppointmentLoadingSuccess
     extends CreateAppointmentState {
   final SelectedPatientResponseForRdv response;
-  PatientSelectedForAppointmentLoadingSuccess({required this.response});
+  PatientSelectedForAppointmentLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -90,7 +90,7 @@ class PatientSelectedForAppointmentLoadingSuccess
 
 class ValidateAppointmentWithTCLoadingSuccess extends CreateAppointmentState {
   final ValidateRdvSummaryDto response;
-  ValidateAppointmentWithTCLoadingSuccess({required this.response});
+  ValidateAppointmentWithTCLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -102,7 +102,7 @@ class ValidateAppointmentWithTCLoadingSuccess extends CreateAppointmentState {
 
 class ValidateAppointmentLoadingSuccess extends CreateAppointmentState {
   final GetApointmentTimeResponse response;
-  ValidateAppointmentLoadingSuccess({required this.response});
+  ValidateAppointmentLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -114,7 +114,7 @@ class ValidateAppointmentLoadingSuccess extends CreateAppointmentState {
 
 class RdvTypeStateLoadingSuccess extends CreateAppointmentState {
   final RdvType response;
-  RdvTypeStateLoadingSuccess({required this.response});
+  RdvTypeStateLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -125,7 +125,7 @@ class RdvTypeStateLoadingSuccess extends CreateAppointmentState {
 
 class ConfirmAppointmentLoadingSuccess extends CreateAppointmentState {
   final GetApointmentTimeResponse response;
-  ConfirmAppointmentLoadingSuccess({required this.response});
+  ConfirmAppointmentLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -137,7 +137,7 @@ class ConfirmAppointmentLoadingSuccess extends CreateAppointmentState {
 class CreateAppointmentFailure extends CreateAppointmentState {
   final String error;
 
-  CreateAppointmentFailure({required this.error});
+  CreateAppointmentFailure({@required this.error});
 
   @override
   List<Object> get props => [error];

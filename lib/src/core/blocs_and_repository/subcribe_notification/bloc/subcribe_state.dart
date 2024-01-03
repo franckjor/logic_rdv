@@ -19,7 +19,7 @@ class SubscribeStateLoading extends SubscribeState {}
 class SubscribeStateLoadingSuccess extends SubscribeState {
   final SubscribeResponse subscribeResponse;
 
-  SubscribeStateLoadingSuccess({required this.subscribeResponse});
+  SubscribeStateLoadingSuccess({this.subscribeResponse});
   @override
   List<Object> get props => [subscribeResponse];
 
@@ -30,7 +30,7 @@ class SubscribeStateLoadingSuccess extends SubscribeState {
 class UnSubscribeStateLoadingSuccess extends SubscribeState {
   final SubscribeResponse subscribeResponse;
 
-  UnSubscribeStateLoadingSuccess({required this.subscribeResponse});
+  UnSubscribeStateLoadingSuccess({this.subscribeResponse});
   @override
   List<Object> get props => [subscribeResponse];
   @override
@@ -40,7 +40,7 @@ class UnSubscribeStateLoadingSuccess extends SubscribeState {
 class IsSubscribeStateLoadingSuccess extends SubscribeState {
   final VerifyNotifSubscribtion verifyNotifSubscribtion;
 
-  IsSubscribeStateLoadingSuccess({required this.verifyNotifSubscribtion});
+  IsSubscribeStateLoadingSuccess({this.verifyNotifSubscribtion});
   @override
   List<Object> get props => [verifyNotifSubscribtion];
   @override
@@ -53,7 +53,7 @@ class SubscribeStateLoadingFailure extends SubscribeState {
 
   final String error;
 
-  SubscribeStateLoadingFailure({required this.error});
+  SubscribeStateLoadingFailure({@required this.error});
 
   @override
   List<Object> get props => [error];

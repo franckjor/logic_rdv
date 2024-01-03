@@ -30,7 +30,7 @@ abstract class SearchDialogRequest
 
   static SearchDialogRequest fromJson(String jsonString) {
     return serializers.deserializeWith(
-        SearchDialogRequest.serializer, json.decode(jsonString))!;
+        SearchDialogRequest.serializer, json.decode(jsonString));
   }
 
   static Serializer<SearchDialogRequest> get serializer =>

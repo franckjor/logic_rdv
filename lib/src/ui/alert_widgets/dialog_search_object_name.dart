@@ -15,8 +15,8 @@ class DialogSearchObjectFName extends StatefulWidget {
   final String indexPage;
 
   DialogSearchObjectFName({
-    required this.cityId,
-    required this.indexPage,
+    this.cityId,
+    this.indexPage,
   });
 
   @override
@@ -27,8 +27,8 @@ class DialogSearchObjectFName extends StatefulWidget {
 class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
   TextEditingController _searchValueName = TextEditingController();
   List<ObjectNameOfSearch> objectNameOfSearch = [];
-  String _categoryId ='';
-  late ObjectName _objectName;
+  String _categoryId;
+  ObjectName _objectName;
   bool _loading = true;
 
   @override
@@ -63,7 +63,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                       fontWeight: FontWeight.normal,
                     ),
                   ),
-                ), title: '', buttonLabel: '', willPop: false,
+                ),
               );
             } else {
               customAlert(
@@ -74,7 +74,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                     state.error,
                     textAlign: TextAlign.center,
                   ),
-                ), title: '', buttonLabel: '', willPop: false, action: () {  },
+                ),
               );
             }
           }
@@ -116,7 +116,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                           hintText: 'Nom, Spécialité, Téléphone',
                           autoFocus: true,
                           controller: _searchValueName,
-                          validator: (value) => verifyEmpty(value!),
+                          validator: (value) => verifyEmpty(value),
                           suffixIcon: _searchValueName.text != ''
                               ? InkWell(
                                   onTap: () {
@@ -141,7 +141,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                                             : '0',
                                       ));
                             });
-                          }, focusNode: null, textInputAction: null,
+                          },
                         ),
                       ),
                       IconButton(
@@ -166,9 +166,9 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                   width: 300,
                   color: Colors.white,
                   child: Scrollbar(
-                    //hoverThickness: 4,
+                    hoverThickness: 4,
                     thickness: 4,
-                    //isAlwaysShown: true,
+                    isAlwaysShown: true,
                     child: ListView.builder(
                       shrinkWrap: true,
                       itemCount: objectNameOfSearch.length,
@@ -304,5 +304,5 @@ class ObjectName {
   String fullName;
   String catId;
 
-  ObjectName({required this.fullName,required this.catId});
+  ObjectName({this.fullName, this.catId});
 }

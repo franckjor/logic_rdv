@@ -33,10 +33,10 @@ class SearchResultPageArguments implements PagesArgumentType {
   final String nameOrSpeciality;
 
   SearchResultPageArguments({
-    required this.city,
-    required this.nameOrSpeciality,
-    required this.cityId,
-    required this.categoryId,
+    this.city,
+    this.nameOrSpeciality,
+    this.cityId,
+    this.categoryId,
   });
 
   @override
@@ -48,7 +48,7 @@ class SearchResultPageArguments implements PagesArgumentType {
 class SearchResultScreen extends StatefulWidget {
   final SearchResultPageArguments arguments;
 
-  SearchResultScreen({required this.arguments});
+  SearchResultScreen({this.arguments});
 
   @override
   _SearchResultScreenState createState() => _SearchResultScreenState();
@@ -58,10 +58,10 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   ScrollController _scrollController = new ScrollController();
   int currentPage = 1;
-  int totalOfPage =0;
+  int totalOfPage;
   bool isRefreshList = false;
   bool _isLoading = false;
-  String _tokenuser = '';
+  String _tokenUser;
 
   List<ObjectNameOfSearch> doctors = [];
 
@@ -150,16 +150,16 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
     return false;
   }
 
-  String _email = '';
-  String _fullName = '';
+  String _email;
+  String _fullName;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      endDrawer:_tokenuser == null ?
+      endDrawer:_tokenUser == null ?
       StartedDrawer() : Visibility(
-        visible: _tokenuser != null,
+        visible: _tokenUser != null,
         child: MultiBlocProvider(
           providers: [
             BlocProvider(create: (context) {
@@ -170,10 +170,10 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
             }),
           ],
           child: MyDrawer(
-            tokenUser: _tokenuser,
+            tokenUser: _tokenUser,
             page: '0',
             email: _email,
-            fullNme: _fullName, notification: false,
+            fullNme: _fullName,
           ),
         )
       ),
@@ -189,34 +189,34 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
         backgroundColor: AppColors.colorPrimary,
         leading: DefaultBackButton(),
         actions: [
-          _tokenuser == null ?
+          _tokenUser == null ?
            IconButton(
             icon: Platform.isAndroid 
-                ?  Icon(
+                ? const Icon(
               MdiIcons.menu,
               color: Color.fromARGB(255, 255, 255, 255),
             )
-                :  Icon(
+                : const Icon(
               MdiIcons.menu,
               color: Color.fromARGB(255, 255, 255, 255),
             ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
           ):
           Visibility(
-            visible: _tokenuser != null,
+            visible: _tokenUser != null,
             child: IconButton(
               icon: isAndroid || isWeb
-                  ?  Icon(
+                  ? const Icon(
                       MdiIcons.accountCircle,
                       color: Colors.white,
                     )
-                  :  Icon(
+                  : const Icon(
                       CupertinoIcons.person_alt_circle_fill,
                       color: Colors.white,
                     ),
               splashRadius: 20,
-              onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+              onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
             ),
           ),
         ],
@@ -227,11 +227,11 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
               listener: (context, state) {
             if (state is SharedPreferenceReadObjectState) {
               setState(() {
-                _tokenuser = state.sharePreferenceObject!.token;
-                _email = state.sharePreferenceObject!.email;
-                _fullName = state.sharePreferenceObject!.firstName +
+                _tokenUser = state.sharePreferenceObject.token;
+                _email = state.sharePreferenceObject.email;
+                _fullName = state.sharePreferenceObject.firstName +
                     " " +
-                    state.sharePreferenceObject!.lastName;
+                    state.sharePreferenceObject.lastName;
               });
             }
             if (state is SharedPreferenceTokenAuthorizationWriteState) {
@@ -287,7 +287,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -307,7 +307,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else {
                 flushBarError(state.error, context);
@@ -410,7 +410,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                                                                   arguments: GetDoctorIdPageArguments(
                                                                       id: doctors[
                                                                               i]
-                                                                          .id, tokenAppointment: '', tokenDoctor: '')),
+                                                                          .id)),
                                                               child: Text(
                                                                   'Profil'),
                                                               style:
@@ -605,7 +605,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                                                                     child:
                                                                         IconButton(
                                                                       icon:
-                                                                           Icon(
+                                                                          const Icon(
                                                                         Icons
                                                                             .call,
                                                                         color: AppColors
@@ -644,7 +644,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                                                           'assets/images/whatsapp.svg',
                                                       onPressed: () => _openWhatsApp(
                                                           '${doctors[i].telnospace}',
-                                                          '${doctors[i].fullName} : ${doctors[i].address}, ${doctors[i].zip} ${doctors[i].city}. Position : https://maps.google.com/?q=${doctors[i].lat},${doctors[i].lng}'), key: null,
+                                                          '${doctors[i].fullName} : ${doctors[i].address}, ${doctors[i].zip} ${doctors[i].city}. Position : https://maps.google.com/?q=${doctors[i].lat},${doctors[i].lng}'),
                                                     ),
                                                     SocialIcon(
                                                       imageUrl:
@@ -652,7 +652,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                                                       onPressed: () =>
                                                           _sendWazeCoordonate(
                                                               '${doctors[i].lat}',
-                                                              '${doctors[i].lng}'), key: null,
+                                                              '${doctors[i].lng}'),
                                                     ),
                                                     SocialIcon(
                                                       imageUrl:
@@ -664,7 +664,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                                                                       .lat),
                                                               double.parse(
                                                                   doctors[i]
-                                                                      .lng)), key: null,
+                                                                      .lng)),
                                                     ),
                                                     // Padding(
                                                     //   padding:
@@ -733,7 +733,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
 
 // class ResultMedecinItem extends StatelessWidget {
 //   const ResultMedecinItem({
-//     Key? key,
+//     Key key,
 //   }) : super(key: key);
 
 //   @override

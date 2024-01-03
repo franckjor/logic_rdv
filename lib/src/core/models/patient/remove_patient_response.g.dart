@@ -29,22 +29,22 @@ class _$RemovePatientResponseSerializer
     final result = <Object>[
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int))!,
+          specifiedType: const FullType(int)),
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsRemovePatientResponse))!,
+          specifiedType: const FullType(ParamsRemovePatientResponse)),
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -52,7 +52,7 @@ class _$RemovePatientResponseSerializer
 
   @override
   RemovePatientResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new RemovePatientResponseBuilder();
 
@@ -60,7 +60,7 @@ class _$RemovePatientResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
@@ -111,10 +111,10 @@ class _$ParamsRemovePatientResponseSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'tokenappt',
       serializers.serialize(object.tokenappt,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
     Object value;
     value = object.tokenpatient;
@@ -122,14 +122,14 @@ class _$ParamsRemovePatientResponseSerializer
       result
         ..add('tokenpatient')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     return result;
   }
 
   @override
   ParamsRemovePatientResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsRemovePatientResponseBuilder();
 
@@ -137,7 +137,7 @@ class _$ParamsRemovePatientResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -173,17 +173,16 @@ class _$RemovePatientResponse extends RemovePatientResponse {
   final String message;
 
   factory _$RemovePatientResponse(
-          [void Function(RemovePatientResponseBuilder)? updates]) =>
-      (new RemovePatientResponseBuilder()..update(updates!)).build();
+          [void Function(RemovePatientResponseBuilder) updates]) =>
+      (new RemovePatientResponseBuilder()..update(updates)).build();
 
   _$RemovePatientResponse._(
-      {
-      required this.httpstatut,
-      required this.version,
-      required this.request,
-      required this.params,
-      required this.error,
-      required this.message})
+      {this.httpstatut,
+      this.version,
+      this.request,
+      this.params,
+      this.error,
+      this.message})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         httpstatut, 'RemovePatientResponse', 'httpstatut');
@@ -202,7 +201,7 @@ class _$RemovePatientResponse extends RemovePatientResponse {
   @override
   RemovePatientResponse rebuild(
           void Function(RemovePatientResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   RemovePatientResponseBuilder toBuilder() =>
@@ -247,31 +246,31 @@ class _$RemovePatientResponse extends RemovePatientResponse {
 
 class RemovePatientResponseBuilder
     implements Builder<RemovePatientResponse, RemovePatientResponseBuilder> {
-  _$RemovePatientResponse? _$v =_$RemovePatientResponse();
+  _$RemovePatientResponse _$v;
 
-  int _httpstatut = 0;
+  int _httpstatut;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _version = '';
+  String _version;
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request = '';
+  String _request;
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsRemovePatientResponseBuilder _params =ParamsRemovePatientResponseBuilder();
+  ParamsRemovePatientResponseBuilder _params;
   ParamsRemovePatientResponseBuilder get params =>
       _$this._params ??= new ParamsRemovePatientResponseBuilder();
   set params(ParamsRemovePatientResponseBuilder params) =>
       _$this._params = params;
 
-  String _error = '';
+  String _error;
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  String _message = '';
+  String _message;
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
@@ -298,7 +297,7 @@ class RemovePatientResponseBuilder
   }
 
   @override
-  void update(void Function(RemovePatientResponseBuilder)? updates) {
+  void update(void Function(RemovePatientResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -320,7 +319,7 @@ class RemovePatientResponseBuilder
               message: BuiltValueNullFieldError.checkNotNull(
                   message, 'RemovePatientResponse', 'message'));
     } catch (_) {
-      String _$failedField = '';
+      String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -344,11 +343,11 @@ class _$ParamsRemovePatientResponse extends ParamsRemovePatientResponse {
   final String tokenpatient;
 
   factory _$ParamsRemovePatientResponse(
-          [void Function(ParamsRemovePatientResponseBuilder)? updates]) =>
-      (new ParamsRemovePatientResponseBuilder()..update(updates!)).build();
+          [void Function(ParamsRemovePatientResponseBuilder) updates]) =>
+      (new ParamsRemovePatientResponseBuilder()..update(updates)).build();
 
   _$ParamsRemovePatientResponse._(
-      {required this.tokenuser,required this.tokenappt,required this.tokenpatient})
+      {this.tokenuser, this.tokenappt, this.tokenpatient})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'ParamsRemovePatientResponse', 'tokenuser');
@@ -359,7 +358,7 @@ class _$ParamsRemovePatientResponse extends ParamsRemovePatientResponse {
   @override
   ParamsRemovePatientResponse rebuild(
           void Function(ParamsRemovePatientResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   ParamsRemovePatientResponseBuilder toBuilder() =>
@@ -394,17 +393,17 @@ class ParamsRemovePatientResponseBuilder
     implements
         Builder<ParamsRemovePatientResponse,
             ParamsRemovePatientResponseBuilder> {
-  _$ParamsRemovePatientResponse? _$v =_$ParamsRemovePatientResponse();
+  _$ParamsRemovePatientResponse _$v;
 
-  String _tokenuser = '';
+  String _tokenuser;
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappt = '';
+  String _tokenappt;
   String get tokenappt => _$this._tokenappt;
   set tokenappt(String tokenappt) => _$this._tokenappt = tokenappt;
 
-  String _tokenpatient = '';
+  String _tokenpatient;
   String get tokenpatient => _$this._tokenpatient;
   set tokenpatient(String tokenpatient) => _$this._tokenpatient = tokenpatient;
 
@@ -428,7 +427,7 @@ class ParamsRemovePatientResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsRemovePatientResponseBuilder)? updates) {
+  void update(void Function(ParamsRemovePatientResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 

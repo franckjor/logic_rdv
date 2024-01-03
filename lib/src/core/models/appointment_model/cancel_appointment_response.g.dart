@@ -29,22 +29,22 @@ class _$CancelAppointmentResponseSerializer
     final result = <Object>[
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int))!,
+          specifiedType: const FullType(int)),
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsCancelAppointmentResponse))!,
+          specifiedType: const FullType(ParamsCancelAppointmentResponse)),
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -52,7 +52,7 @@ class _$CancelAppointmentResponseSerializer
 
   @override
   CancelAppointmentResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CancelAppointmentResponseBuilder();
 
@@ -60,7 +60,7 @@ class _$CancelAppointmentResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
@@ -112,10 +112,10 @@ class _$ParamsCancelAppointmentResponseSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'token',
       serializers.serialize(object.token,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -123,7 +123,7 @@ class _$ParamsCancelAppointmentResponseSerializer
 
   @override
   ParamsCancelAppointmentResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsCancelAppointmentResponseBuilder();
 
@@ -131,7 +131,7 @@ class _$ParamsCancelAppointmentResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -163,17 +163,16 @@ class _$CancelAppointmentResponse extends CancelAppointmentResponse {
   final String message;
 
   factory _$CancelAppointmentResponse(
-          [void Function(CancelAppointmentResponseBuilder)? updates]) =>
-      (new CancelAppointmentResponseBuilder()..update(updates!)).build();
+          [void Function(CancelAppointmentResponseBuilder) updates]) =>
+      (new CancelAppointmentResponseBuilder()..update(updates)).build();
 
   _$CancelAppointmentResponse._(
-      {
-      required this.httpstatut,
-      required this.version,
-      required this.request,
-      required this.params,
-      required this.error,
-      required this.message})
+      {this.httpstatut,
+      this.version,
+      this.request,
+      this.params,
+      this.error,
+      this.message})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         httpstatut, 'CancelAppointmentResponse', 'httpstatut');
@@ -192,7 +191,7 @@ class _$CancelAppointmentResponse extends CancelAppointmentResponse {
   @override
   CancelAppointmentResponse rebuild(
           void Function(CancelAppointmentResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   CancelAppointmentResponseBuilder toBuilder() =>
@@ -238,31 +237,31 @@ class _$CancelAppointmentResponse extends CancelAppointmentResponse {
 class CancelAppointmentResponseBuilder
     implements
         Builder<CancelAppointmentResponse, CancelAppointmentResponseBuilder> {
-  _$CancelAppointmentResponse? _$v =_$CancelAppointmentResponse();
+  _$CancelAppointmentResponse _$v;
 
-  int _httpstatut = 0;
+  int _httpstatut;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _version = '';
+  String _version;
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request = '';
+  String _request;
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsCancelAppointmentResponseBuilder _params =ParamsCancelAppointmentResponseBuilder();
+  ParamsCancelAppointmentResponseBuilder _params;
   ParamsCancelAppointmentResponseBuilder get params =>
       _$this._params ??= new ParamsCancelAppointmentResponseBuilder();
   set params(ParamsCancelAppointmentResponseBuilder params) =>
       _$this._params = params;
 
-  String _error = '';
+  String _error;
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  String _message = '';
+  String _message;
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
@@ -289,7 +288,7 @@ class CancelAppointmentResponseBuilder
   }
 
   @override
-  void update(void Function(CancelAppointmentResponseBuilder)? updates) {
+  void update(void Function(CancelAppointmentResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -311,7 +310,7 @@ class CancelAppointmentResponseBuilder
               message: BuiltValueNullFieldError.checkNotNull(
                   message, 'CancelAppointmentResponse', 'message'));
     } catch (_) {
-      String _$failedField = '';
+      String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -334,10 +333,10 @@ class _$ParamsCancelAppointmentResponse
   final String token;
 
   factory _$ParamsCancelAppointmentResponse(
-          [void Function(ParamsCancelAppointmentResponseBuilder)? updates]) =>
-      (new ParamsCancelAppointmentResponseBuilder()..update(updates!)).build();
+          [void Function(ParamsCancelAppointmentResponseBuilder) updates]) =>
+      (new ParamsCancelAppointmentResponseBuilder()..update(updates)).build();
 
-  _$ParamsCancelAppointmentResponse._({required this.tokenuser,required this.token})
+  _$ParamsCancelAppointmentResponse._({this.tokenuser, this.token})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'ParamsCancelAppointmentResponse', 'tokenuser');
@@ -348,7 +347,7 @@ class _$ParamsCancelAppointmentResponse
   @override
   ParamsCancelAppointmentResponse rebuild(
           void Function(ParamsCancelAppointmentResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   ParamsCancelAppointmentResponseBuilder toBuilder() =>
@@ -380,13 +379,13 @@ class ParamsCancelAppointmentResponseBuilder
     implements
         Builder<ParamsCancelAppointmentResponse,
             ParamsCancelAppointmentResponseBuilder> {
-  _$ParamsCancelAppointmentResponse? _$v =_$ParamsCancelAppointmentResponse();
+  _$ParamsCancelAppointmentResponse _$v;
 
-  String _tokenuser = '';
+  String _tokenuser;
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _token = '';
+  String _token;
   String get token => _$this._token;
   set token(String token) => _$this._token = token;
 
@@ -409,7 +408,7 @@ class ParamsCancelAppointmentResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsCancelAppointmentResponseBuilder)? updates) {
+  void update(void Function(ParamsCancelAppointmentResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 

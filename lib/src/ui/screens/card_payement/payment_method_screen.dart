@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/ui/shared/adaptative_appbar.dart';
 import '../../../common.dart';
 
 class PaymentMethodScreen extends StatefulWidget {
-  const PaymentMethodScreen({Key? key}) : super(key: key);
+  const PaymentMethodScreen({Key key}) : super(key: key);
 
   @override
   _PaymentMethodScreenState createState() => _PaymentMethodScreenState();
@@ -48,13 +48,13 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
     return Scaffold(
       appBar: AdaptativeAppBar(
         leading: DefaultBackButton(),
-        title: 'Méthode de paiement', actions: [],
+        title: 'Méthode de paiement',
       ),
       body: Container(
         child: ListView.separated(
             itemBuilder: (context, i) {
-              Icon? icon;
-              Text? text;
+              Icon icon;
+              Text text;
 
               switch (i) {
                 case 0:

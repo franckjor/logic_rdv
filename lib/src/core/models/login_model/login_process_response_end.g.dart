@@ -35,25 +35,25 @@ class _$LoginProcessResponseEndSerializer
     final result = <Object>[
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsLoginProcessResponseEnd))!,
+          specifiedType: const FullType(ParamsLoginProcessResponseEnd)),
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'data',
       serializers.serialize(object.data,
-          specifiedType: const FullType(DataLoginProcessResponseEnd))!,
+          specifiedType: const FullType(DataLoginProcessResponseEnd)),
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int))!,
+          specifiedType: const FullType(int)),
     ];
 
     return result;
@@ -61,7 +61,7 @@ class _$LoginProcessResponseEndSerializer
 
   @override
   LoginProcessResponseEnd deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new LoginProcessResponseEndBuilder();
 
@@ -69,7 +69,7 @@ class _$LoginProcessResponseEndSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
@@ -124,13 +124,13 @@ class _$ParamsLoginProcessResponseEndSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'data',
-      serializers.serialize(object.data, specifiedType: const FullType(String))!,
+      serializers.serialize(object.data, specifiedType: const FullType(String)),
       'action',
       serializers.serialize(object.action,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'session',
       serializers.serialize(object.session,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -138,7 +138,7 @@ class _$ParamsLoginProcessResponseEndSerializer
 
   @override
   ParamsLoginProcessResponseEnd deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsLoginProcessResponseEndBuilder();
 
@@ -146,7 +146,7 @@ class _$ParamsLoginProcessResponseEndSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'data':
           result.data = serializers.deserialize(value,
@@ -184,15 +184,15 @@ class _$DataLoginProcessResponseEndSerializer
     final result = <Object>[
       'headererror',
       serializers.serialize(object.headererror,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'type',
-      serializers.serialize(object.type, specifiedType: const FullType(String))!,
+      serializers.serialize(object.type, specifiedType: const FullType(String)),
       'headermessage',
       serializers.serialize(object.headermessage,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'session',
       serializers.serialize(object.session,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
     Object value;
     value = object.user;
@@ -200,7 +200,7 @@ class _$DataLoginProcessResponseEndSerializer
       result
         ..add('user')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(UserLoginProcessResponseEnd))!);
+            specifiedType: const FullType(UserLoginProcessResponseEnd)));
     }
     value = object.input;
     if (value != null) {
@@ -208,7 +208,7 @@ class _$DataLoginProcessResponseEndSerializer
         ..add('input')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
-                BuiltList, const [const FullType(InputloginStartedResponse)]))!);
+                BuiltList, const [const FullType(InputloginStartedResponse)])));
     }
     value = object.buttonvalidation;
     if (value != null) {
@@ -216,14 +216,14 @@ class _$DataLoginProcessResponseEndSerializer
         ..add('buttonvalidation')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(BuiltList,
-                const [const FullType(ButtonvalidationloginStartedResponse)]))!);
+                const [const FullType(ButtonvalidationloginStartedResponse)])));
     }
     return result;
   }
 
   @override
   DataLoginProcessResponseEnd deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataLoginProcessResponseEndBuilder();
 
@@ -231,7 +231,7 @@ class _$DataLoginProcessResponseEndSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'headererror':
           result.headererror = serializers.deserialize(value,
@@ -290,21 +290,21 @@ class _$UserLoginProcessResponseEndSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'nom',
-      serializers.serialize(object.nom, specifiedType: const FullType(String))!,
+      serializers.serialize(object.nom, specifiedType: const FullType(String)),
       'prenom',
       serializers.serialize(object.prenom,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'email',
       serializers.serialize(object.email,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'mobile',
       serializers.serialize(object.mobile,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'timeout',
       serializers.serialize(object.timeout,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -312,7 +312,7 @@ class _$UserLoginProcessResponseEndSerializer
 
   @override
   UserLoginProcessResponseEnd deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new UserLoginProcessResponseEndBuilder();
 
@@ -320,7 +320,7 @@ class _$UserLoginProcessResponseEndSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -370,18 +370,17 @@ class _$LoginProcessResponseEnd extends LoginProcessResponseEnd {
   final int httpstatut;
 
   factory _$LoginProcessResponseEnd(
-          [void Function(LoginProcessResponseEndBuilder)? updates]) =>
-      (new LoginProcessResponseEndBuilder()..update(updates!)).build();
+          [void Function(LoginProcessResponseEndBuilder) updates]) =>
+      (new LoginProcessResponseEndBuilder()..update(updates)).build();
 
   _$LoginProcessResponseEnd._(
-      {
-      required this.version,
-      required this.request,
-      required this.params,
-      required this.message,
-      required this.error,
-      required this.data,
-      required this.httpstatut})
+      {this.version,
+      this.request,
+      this.params,
+      this.message,
+      this.error,
+      this.data,
+      this.httpstatut})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         version, 'LoginProcessResponseEnd', 'version');
@@ -402,7 +401,7 @@ class _$LoginProcessResponseEnd extends LoginProcessResponseEnd {
   @override
   LoginProcessResponseEnd rebuild(
           void Function(LoginProcessResponseEndBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   LoginProcessResponseEndBuilder toBuilder() =>
@@ -452,36 +451,36 @@ class _$LoginProcessResponseEnd extends LoginProcessResponseEnd {
 class LoginProcessResponseEndBuilder
     implements
         Builder<LoginProcessResponseEnd, LoginProcessResponseEndBuilder> {
-  _$LoginProcessResponseEnd? _$v = _$LoginProcessResponseEnd();
+  _$LoginProcessResponseEnd _$v;
 
-  String _version = '';
+  String _version;
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request = '';
+  String _request;
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsLoginProcessResponseEndBuilder _params = ParamsLoginProcessResponseEndBuilder();
+  ParamsLoginProcessResponseEndBuilder _params;
   ParamsLoginProcessResponseEndBuilder get params =>
       _$this._params ??= new ParamsLoginProcessResponseEndBuilder();
   set params(ParamsLoginProcessResponseEndBuilder params) =>
       _$this._params = params;
 
-  String _message = '';
+  String _message;
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  String _error = '';
+  String _error;
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  DataLoginProcessResponseEndBuilder _data = DataLoginProcessResponseEndBuilder();
+  DataLoginProcessResponseEndBuilder _data;
   DataLoginProcessResponseEndBuilder get data =>
       _$this._data ??= new DataLoginProcessResponseEndBuilder();
   set data(DataLoginProcessResponseEndBuilder data) => _$this._data = data;
 
-  int _httpstatut = 0;
+  int _httpstatut;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
@@ -509,7 +508,7 @@ class LoginProcessResponseEndBuilder
   }
 
   @override
-  void update(void Function(LoginProcessResponseEndBuilder)? updates) {
+  void update(void Function(LoginProcessResponseEndBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -532,7 +531,7 @@ class LoginProcessResponseEndBuilder
               httpstatut: BuiltValueNullFieldError.checkNotNull(
                   httpstatut, 'LoginProcessResponseEnd', 'httpstatut'));
     } catch (_) {
-      String _$failedField = '';
+      String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -559,10 +558,10 @@ class _$ParamsLoginProcessResponseEnd extends ParamsLoginProcessResponseEnd {
   final String session;
 
   factory _$ParamsLoginProcessResponseEnd(
-          [void Function(ParamsLoginProcessResponseEndBuilder)? updates]) =>
-      (new ParamsLoginProcessResponseEndBuilder()..update(updates!)).build();
+          [void Function(ParamsLoginProcessResponseEndBuilder) updates]) =>
+      (new ParamsLoginProcessResponseEndBuilder()..update(updates)).build();
 
-  _$ParamsLoginProcessResponseEnd._({required this.data,required this.action,required this.session})
+  _$ParamsLoginProcessResponseEnd._({this.data, this.action, this.session})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         data, 'ParamsLoginProcessResponseEnd', 'data');
@@ -575,7 +574,7 @@ class _$ParamsLoginProcessResponseEnd extends ParamsLoginProcessResponseEnd {
   @override
   ParamsLoginProcessResponseEnd rebuild(
           void Function(ParamsLoginProcessResponseEndBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   ParamsLoginProcessResponseEndBuilder toBuilder() =>
@@ -610,17 +609,17 @@ class ParamsLoginProcessResponseEndBuilder
     implements
         Builder<ParamsLoginProcessResponseEnd,
             ParamsLoginProcessResponseEndBuilder> {
-  _$ParamsLoginProcessResponseEnd? _$v =_$ParamsLoginProcessResponseEnd();
+  _$ParamsLoginProcessResponseEnd _$v;
 
-  String _data ='';
+  String _data;
   String get data => _$this._data;
   set data(String data) => _$this._data = data;
 
-  String _action ='';
+  String _action;
   String get action => _$this._action;
   set action(String action) => _$this._action = action;
 
-  String _session = '';
+  String _session;
   String get session => _$this._session;
   set session(String session) => _$this._session = session;
 
@@ -644,7 +643,7 @@ class ParamsLoginProcessResponseEndBuilder
   }
 
   @override
-  void update(void Function(ParamsLoginProcessResponseEndBuilder)? updates) {
+  void update(void Function(ParamsLoginProcessResponseEndBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -680,18 +679,17 @@ class _$DataLoginProcessResponseEnd extends DataLoginProcessResponseEnd {
   final String session;
 
   factory _$DataLoginProcessResponseEnd(
-          [void Function(DataLoginProcessResponseEndBuilder)? updates]) =>
-      (new DataLoginProcessResponseEndBuilder()..update(updates!)).build();
+          [void Function(DataLoginProcessResponseEndBuilder) updates]) =>
+      (new DataLoginProcessResponseEndBuilder()..update(updates)).build();
 
   _$DataLoginProcessResponseEnd._(
-      {
-      required this.headererror,
-      required this.user,
-      required this.type,
-      required this.headermessage,
-      required this.input,
-      required this.buttonvalidation,
-      required this.session})
+      {this.headererror,
+      this.user,
+      this.type,
+      this.headermessage,
+      this.input,
+      this.buttonvalidation,
+      this.session})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         headererror, 'DataLoginProcessResponseEnd', 'headererror');
@@ -706,7 +704,7 @@ class _$DataLoginProcessResponseEnd extends DataLoginProcessResponseEnd {
   @override
   DataLoginProcessResponseEnd rebuild(
           void Function(DataLoginProcessResponseEndBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   DataLoginProcessResponseEndBuilder toBuilder() =>
@@ -757,33 +755,33 @@ class DataLoginProcessResponseEndBuilder
     implements
         Builder<DataLoginProcessResponseEnd,
             DataLoginProcessResponseEndBuilder> {
-  _$DataLoginProcessResponseEnd? _$v = _$DataLoginProcessResponseEnd();
+  _$DataLoginProcessResponseEnd _$v;
 
-  String _headererror = '';
+  String _headererror;
   String get headererror => _$this._headererror;
   set headererror(String headererror) => _$this._headererror = headererror;
 
-  UserLoginProcessResponseEndBuilder _user = UserLoginProcessResponseEndBuilder();
+  UserLoginProcessResponseEndBuilder _user;
   UserLoginProcessResponseEndBuilder get user =>
       _$this._user ??= new UserLoginProcessResponseEndBuilder();
   set user(UserLoginProcessResponseEndBuilder user) => _$this._user = user;
 
-  String _type ='';
+  String _type;
   String get type => _$this._type;
   set type(String type) => _$this._type = type;
 
-  String _headermessage ='';
+  String _headermessage;
   String get headermessage => _$this._headermessage;
   set headermessage(String headermessage) =>
       _$this._headermessage = headermessage;
 
-  ListBuilder<InputloginStartedResponse> _input = ListBuilder();
+  ListBuilder<InputloginStartedResponse> _input;
   ListBuilder<InputloginStartedResponse> get input =>
       _$this._input ??= new ListBuilder<InputloginStartedResponse>();
   set input(ListBuilder<InputloginStartedResponse> input) =>
       _$this._input = input;
 
-  ListBuilder<ButtonvalidationloginStartedResponse> _buttonvalidation = ListBuilder();
+  ListBuilder<ButtonvalidationloginStartedResponse> _buttonvalidation;
   ListBuilder<ButtonvalidationloginStartedResponse> get buttonvalidation =>
       _$this._buttonvalidation ??=
           new ListBuilder<ButtonvalidationloginStartedResponse>();
@@ -791,7 +789,7 @@ class DataLoginProcessResponseEndBuilder
           ListBuilder<ButtonvalidationloginStartedResponse> buttonvalidation) =>
       _$this._buttonvalidation = buttonvalidation;
 
-  String _session = '';
+  String _session;
   String get session => _$this._session;
   set session(String session) => _$this._session = session;
 
@@ -801,11 +799,11 @@ class DataLoginProcessResponseEndBuilder
     final $v = _$v;
     if ($v != null) {
       _headererror = $v.headererror;
-      _user = $v.user.toBuilder();
+      _user = $v.user?.toBuilder();
       _type = $v.type;
       _headermessage = $v.headermessage;
-      _input = $v.input.toBuilder();
-      _buttonvalidation = $v.buttonvalidation.toBuilder();
+      _input = $v.input?.toBuilder();
+      _buttonvalidation = $v.buttonvalidation?.toBuilder();
       _session = $v.session;
       _$v = null;
     }
@@ -819,7 +817,7 @@ class DataLoginProcessResponseEndBuilder
   }
 
   @override
-  void update(void Function(DataLoginProcessResponseEndBuilder)? updates) {
+  void update(void Function(DataLoginProcessResponseEndBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -831,19 +829,19 @@ class DataLoginProcessResponseEndBuilder
           new _$DataLoginProcessResponseEnd._(
               headererror: BuiltValueNullFieldError.checkNotNull(
                   headererror, 'DataLoginProcessResponseEnd', 'headererror'),
-              user: _user.build(),
+              user: _user?.build(),
               type: BuiltValueNullFieldError.checkNotNull(
                   type, 'DataLoginProcessResponseEnd', 'type'),
               headermessage: BuiltValueNullFieldError.checkNotNull(
                   headermessage,
                   'DataLoginProcessResponseEnd',
                   'headermessage'),
-              input: _input.build(),
-              buttonvalidation: _buttonvalidation.build(),
+              input: _input?.build(),
+              buttonvalidation: _buttonvalidation?.build(),
               session: BuiltValueNullFieldError.checkNotNull(
                   session, 'DataLoginProcessResponseEnd', 'session'));
     } catch (_) {
-      String _$failedField = '';
+      String _$failedField;
       try {
         _$failedField = 'user';
         _user?.build();
@@ -878,17 +876,16 @@ class _$UserLoginProcessResponseEnd extends UserLoginProcessResponseEnd {
   final String timeout;
 
   factory _$UserLoginProcessResponseEnd(
-          [void Function(UserLoginProcessResponseEndBuilder)? updates]) =>
-      (new UserLoginProcessResponseEndBuilder()..update(updates!)).build();
+          [void Function(UserLoginProcessResponseEndBuilder) updates]) =>
+      (new UserLoginProcessResponseEndBuilder()..update(updates)).build();
 
   _$UserLoginProcessResponseEnd._(
-      {
-      required this.tokenuser,
-      required this.nom,
-      required this.prenom,
-      required this.email,
-      required this.mobile,
-      required this.timeout})
+      {this.tokenuser,
+      this.nom,
+      this.prenom,
+      this.email,
+      this.mobile,
+      this.timeout})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'UserLoginProcessResponseEnd', 'tokenuser');
@@ -907,7 +904,7 @@ class _$UserLoginProcessResponseEnd extends UserLoginProcessResponseEnd {
   @override
   UserLoginProcessResponseEnd rebuild(
           void Function(UserLoginProcessResponseEndBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   UserLoginProcessResponseEndBuilder toBuilder() =>
@@ -954,29 +951,29 @@ class UserLoginProcessResponseEndBuilder
     implements
         Builder<UserLoginProcessResponseEnd,
             UserLoginProcessResponseEndBuilder> {
-  _$UserLoginProcessResponseEnd? _$v = _$UserLoginProcessResponseEnd();
+  _$UserLoginProcessResponseEnd _$v;
 
-  String _tokenuser = '';
+  String _tokenuser;
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _nom = '';
+  String _nom;
   String get nom => _$this._nom;
   set nom(String nom) => _$this._nom = nom;
 
-  String _prenom = '';
+  String _prenom;
   String get prenom => _$this._prenom;
   set prenom(String prenom) => _$this._prenom = prenom;
 
-  String _email = '';
+  String _email;
   String get email => _$this._email;
   set email(String email) => _$this._email = email;
 
-  String _mobile ='';
+  String _mobile;
   String get mobile => _$this._mobile;
   set mobile(String mobile) => _$this._mobile = mobile;
 
-  String _timeout ='';
+  String _timeout;
   String get timeout => _$this._timeout;
   set timeout(String timeout) => _$this._timeout = timeout;
 
@@ -1003,7 +1000,7 @@ class UserLoginProcessResponseEndBuilder
   }
 
   @override
-  void update(void Function(UserLoginProcessResponseEndBuilder)? updates) {
+  void update(void Function(UserLoginProcessResponseEndBuilder) updates) {
     if (updates != null) updates(this);
   }
 

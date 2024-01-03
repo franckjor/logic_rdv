@@ -26,7 +26,7 @@ abstract class LoginRequest
 
   static LoginRequest fromJson(String jsonString) {
     return serializers.deserializeWith(
-        LoginRequest.serializer, json.decode(jsonString))!;
+        LoginRequest.serializer, json.decode(jsonString));
   }
 
   static Serializer<LoginRequest> get serializer => _$loginRequestSerializer;

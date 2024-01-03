@@ -49,7 +49,7 @@ abstract class SelectedPatientResponseForRdv
 
   static SelectedPatientResponseForRdv fromJson(String jsonString) {
     return serializers.deserializeWith(
-        SelectedPatientResponseForRdv.serializer, json.decode(jsonString))!;
+        SelectedPatientResponseForRdv.serializer, json.decode(jsonString));
   }
 
   static Serializer<SelectedPatientResponseForRdv> get serializer =>
@@ -92,7 +92,7 @@ abstract class ParamsSelectedPatientResponseForRdv
   static ParamsSelectedPatientResponseForRdv fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsSelectedPatientResponseForRdv.serializer,
-        json.decode(jsonString))!;
+        json.decode(jsonString));
   }
 
   static Serializer<ParamsSelectedPatientResponseForRdv> get serializer =>
@@ -131,7 +131,7 @@ abstract class DataSelectedPatientResponseForRdv
 
   static DataSelectedPatientResponseForRdv fromJson(String jsonString) {
     return serializers.deserializeWith(
-        DataSelectedPatientResponseForRdv.serializer, json.decode(jsonString))!;
+        DataSelectedPatientResponseForRdv.serializer, json.decode(jsonString));
   }
 
   static Serializer<DataSelectedPatientResponseForRdv> get serializer =>
@@ -180,7 +180,7 @@ abstract class DataSelectedPatientResponseForRdvBody
   static DataSelectedPatientResponseForRdvBody fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataSelectedPatientResponseForRdvBody.serializer,
-        json.decode(jsonString))!;
+        json.decode(jsonString));
   }
 
   static Serializer<DataSelectedPatientResponseForRdvBody> get serializer =>
@@ -207,7 +207,7 @@ abstract class Apptsinprogress
 
   static Apptsinprogress fromJson(String jsonString) {
     return serializers.deserializeWith(
-        Apptsinprogress.serializer, json.decode(jsonString))!;
+        Apptsinprogress.serializer, json.decode(jsonString));
   }
 
   static Serializer<Apptsinprogress> get serializer =>
@@ -237,7 +237,7 @@ abstract class Appts implements Built<Appts, ApptsBuilder> {
 
   static Appts fromJson(String jsonString) {
     return serializers.deserializeWith(
-        Appts.serializer, json.decode(jsonString))!;
+        Appts.serializer, json.decode(jsonString));
   }
 
   static Serializer<Appts> get serializer => _$apptsSerializer;
@@ -266,7 +266,7 @@ abstract class Appttovalid implements Built<Appttovalid, AppttovalidBuilder> {
 
   static Appttovalid fromJson(String jsonString) {
     return serializers.deserializeWith(
-        Appttovalid.serializer, json.decode(jsonString))!;
+        Appttovalid.serializer, json.decode(jsonString));
   }
 
   static Serializer<Appttovalid> get serializer => _$appttovalidSerializer;
@@ -295,7 +295,7 @@ abstract class Apptinput implements Built<Apptinput, ApptinputBuilder> {
 
   static Apptinput fromJson(String jsonString) {
     return serializers.deserializeWith(
-        Apptinput.serializer, json.decode(jsonString))!;
+        Apptinput.serializer, json.decode(jsonString));
   }
 
   static Serializer<Apptinput> get serializer => _$apptinputSerializer;
@@ -330,7 +330,7 @@ abstract class Apptbuttonvalidation
 
   static Apptbuttonvalidation fromJson(String jsonString) {
     return serializers.deserializeWith(
-        Apptbuttonvalidation.serializer, json.decode(jsonString))!;
+        Apptbuttonvalidation.serializer, json.decode(jsonString));
   }
 
   static Serializer<Apptbuttonvalidation> get serializer =>
@@ -360,7 +360,7 @@ abstract class Payment implements Built<Payment, PaymentBuilder> {
 
   static Payment fromJson(String jsonString) {
     return serializers.deserializeWith(
-        Payment.serializer, json.decode(jsonString))!;
+        Payment.serializer, json.decode(jsonString));
   }
 
   static Serializer<Payment> get serializer => _$paymentSerializer;

@@ -13,7 +13,7 @@ class FixerRdvDoctorLoading extends FixerRdvDoctorState {}
 
 class FixerRdvDoctorLoadingSuccess extends FixerRdvDoctorState {
   final FixerRdvDoctorResponse response;
-  FixerRdvDoctorLoadingSuccess({required this.response});
+  FixerRdvDoctorLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -25,7 +25,7 @@ class FixerRdvDoctorLoadingSuccess extends FixerRdvDoctorState {
 class FixerRdvDoctorFailure extends FixerRdvDoctorState {
   final String error;
 
-  FixerRdvDoctorFailure({required this.error});
+  FixerRdvDoctorFailure({@required this.error});
 
   @override
   List<Object> get props => [error];

@@ -9,7 +9,7 @@ abstract class CheckStateEvent extends Equatable {
 class GetStateRdv extends CheckStateEvent {
   final CreateAppointmentRequest createAppointmentRequest;
 
-  GetStateRdv({ required this.createAppointmentRequest});
+  GetStateRdv({this.createAppointmentRequest});
 
   @override
   List<Object> get props => [createAppointmentRequest];

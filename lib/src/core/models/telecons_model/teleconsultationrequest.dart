@@ -25,7 +25,7 @@ abstract class TeleconsRequest
 
   static TeleconsRequest fromJson(String jsonString) {
     return serializers.deserializeWith(
-        TeleconsRequest.serializer, json.decode(jsonString))!;
+        TeleconsRequest.serializer, json.decode(jsonString));
   }
 
   static Serializer<TeleconsRequest> get serializer =>

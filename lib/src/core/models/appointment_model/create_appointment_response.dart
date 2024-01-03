@@ -46,7 +46,7 @@ abstract class CreateAppointmentResponse
 
   static CreateAppointmentResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        CreateAppointmentResponse.serializer, json.decode(jsonString))!;
+        CreateAppointmentResponse.serializer, json.decode(jsonString));
   }
 
   static Serializer<CreateAppointmentResponse> get serializer =>
@@ -88,7 +88,7 @@ abstract class ParamsCreateAppointmentResponse
 
   static ParamsCreateAppointmentResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsCreateAppointmentResponse.serializer, json.decode(jsonString))!;
+        ParamsCreateAppointmentResponse.serializer, json.decode(jsonString));
   }
 
   static Serializer<ParamsCreateAppointmentResponse> get serializer =>
@@ -127,7 +127,7 @@ abstract class DataCreateAppointmentResponse
 
   static DataCreateAppointmentResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        DataCreateAppointmentResponse.serializer, json.decode(jsonString))!;
+        DataCreateAppointmentResponse.serializer, json.decode(jsonString));
   }
 
   static Serializer<DataCreateAppointmentResponse> get serializer =>
@@ -166,7 +166,7 @@ abstract class AppointmentTypeResponse
 
   static AppointmentTypeResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        AppointmentTypeResponse.serializer, json.decode(jsonString))!;
+        AppointmentTypeResponse.serializer, json.decode(jsonString));
   }
 
   static Serializer<AppointmentTypeResponse> get serializer =>
@@ -205,7 +205,7 @@ abstract class AppointmentNavigation
 
   static AppointmentNavigation fromJson(String jsonString) {
     return serializers.deserializeWith(
-        AppointmentNavigation.serializer, json.decode(jsonString))!;
+        AppointmentNavigation.serializer, json.decode(jsonString));
   }
 
   static Serializer<AppointmentNavigation> get serializer =>

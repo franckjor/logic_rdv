@@ -40,55 +40,55 @@ class _$CreateAppointmentResponseSerializer
       result
         ..add('version')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.request;
     if (value != null) {
       result
         ..add('request')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.params;
     if (value != null) {
       result
         ..add('params')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(ParamsCreateAppointmentResponse))!);
+            specifiedType: const FullType(ParamsCreateAppointmentResponse)));
     }
     value = object.message;
     if (value != null) {
       result
         ..add('message')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.httpstatut;
     if (value != null) {
       result
         ..add('httpstatut')
-        ..add(serializers.serialize(value, specifiedType: const FullType(int))!);
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
     }
     value = object.error;
     if (value != null) {
       result
         ..add('error')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.data;
     if (value != null) {
       result
         ..add('data')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(DataCreateAppointmentResponse))!);
+            specifiedType: const FullType(DataCreateAppointmentResponse)));
     }
     return result;
   }
 
   @override
   CreateAppointmentResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CreateAppointmentResponseBuilder();
 
@@ -96,7 +96,7 @@ class _$CreateAppointmentResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
@@ -157,49 +157,49 @@ class _$ParamsCreateAppointmentResponseSerializer
       result
         ..add('tokenuser')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.tokenappointment;
     if (value != null) {
       result
         ..add('tokenappointment')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.week;
     if (value != null) {
       result
         ..add('week')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.data;
     if (value != null) {
       result
         ..add('data')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.action;
     if (value != null) {
       result
         ..add('action')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.session;
     if (value != null) {
       result
         ..add('session')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     return result;
   }
 
   @override
   ParamsCreateAppointmentResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsCreateAppointmentResponseBuilder();
 
@@ -207,7 +207,7 @@ class _$ParamsCreateAppointmentResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -261,7 +261,7 @@ class _$DataCreateAppointmentResponseSerializer
       result
         ..add('session')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.navigation;
     if (value != null) {
@@ -269,21 +269,21 @@ class _$DataCreateAppointmentResponseSerializer
         ..add('navigation')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
-                BuiltList, const [const FullType(AppointmentNavigation)]))!);
+                BuiltList, const [const FullType(AppointmentNavigation)])));
     }
     value = object.headermessage;
     if (value != null) {
       result
         ..add('headermessage')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.type;
     if (value != null) {
       result
         ..add('type')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.data;
     if (value != null) {
@@ -291,14 +291,14 @@ class _$DataCreateAppointmentResponseSerializer
         ..add('data')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
-                BuiltList, const [const FullType(AppointmentTypeResponse)]))!);
+                BuiltList, const [const FullType(AppointmentTypeResponse)])));
     }
     return result;
   }
 
   @override
   DataCreateAppointmentResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataCreateAppointmentResponseBuilder();
 
@@ -306,7 +306,7 @@ class _$DataCreateAppointmentResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'session':
           result.session = serializers.deserialize(value,
@@ -360,49 +360,49 @@ class _$AppointmentTypeResponseSerializer
       result
         ..add('labelplace')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.color;
     if (value != null) {
       result
         ..add('color')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.description;
     if (value != null) {
       result
         ..add('description')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.onclickData;
     if (value != null) {
       result
         ..add('onclick_data')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.onclickAction;
     if (value != null) {
       result
         ..add('onclick_action')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.onclickWeek;
     if (value != null) {
       result
         ..add('onclick_week')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     return result;
   }
 
   @override
   AppointmentTypeResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AppointmentTypeResponseBuilder();
 
@@ -410,7 +410,7 @@ class _$AppointmentTypeResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'labelplace':
           result.labelplace = serializers.deserialize(value,
@@ -464,49 +464,49 @@ class _$AppointmentNavigationSerializer
       result
         ..add('labelplace')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.color;
     if (value != null) {
       result
         ..add('color')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.description;
     if (value != null) {
       result
         ..add('description')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.onclickData;
     if (value != null) {
       result
         ..add('onclick_data')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.onclickAction;
     if (value != null) {
       result
         ..add('onclick_action')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.onclickWeek;
     if (value != null) {
       result
         ..add('onclick_week')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     return result;
   }
 
   @override
   AppointmentNavigation deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AppointmentNavigationBuilder();
 
@@ -514,7 +514,7 @@ class _$AppointmentNavigationSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'labelplace':
           result.labelplace = serializers.deserialize(value,
@@ -564,24 +564,23 @@ class _$CreateAppointmentResponse extends CreateAppointmentResponse {
   final DataCreateAppointmentResponse data;
 
   factory _$CreateAppointmentResponse(
-          [void Function(CreateAppointmentResponseBuilder)? updates]) =>
-      (new CreateAppointmentResponseBuilder()..update(updates!)).build();
+          [void Function(CreateAppointmentResponseBuilder) updates]) =>
+      (new CreateAppointmentResponseBuilder()..update(updates)).build();
 
   _$CreateAppointmentResponse._(
-      {
-      required this.version,
-      required this.request,
-      required this.params,
-      required this.message,
-      required this.httpstatut,
-      required this.error,
-      required this.data})
+      {this.version,
+      this.request,
+      this.params,
+      this.message,
+      this.httpstatut,
+      this.error,
+      this.data})
       : super._();
 
   @override
   CreateAppointmentResponse rebuild(
           void Function(CreateAppointmentResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   CreateAppointmentResponseBuilder toBuilder() =>
@@ -631,35 +630,35 @@ class _$CreateAppointmentResponse extends CreateAppointmentResponse {
 class CreateAppointmentResponseBuilder
     implements
         Builder<CreateAppointmentResponse, CreateAppointmentResponseBuilder> {
-  _$CreateAppointmentResponse? _$v = _$CreateAppointmentResponse();
+  _$CreateAppointmentResponse _$v;
 
-  String _version = '';
+  String _version;
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request = '';
+  String _request;
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsCreateAppointmentResponseBuilder _params = ParamsCreateAppointmentResponseBuilder();
+  ParamsCreateAppointmentResponseBuilder _params;
   ParamsCreateAppointmentResponseBuilder get params =>
       _$this._params ??= new ParamsCreateAppointmentResponseBuilder();
   set params(ParamsCreateAppointmentResponseBuilder params) =>
       _$this._params = params;
 
-  String _message = '';
+  String _message;
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  int _httpstatut = 0;
+  int _httpstatut;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error = '';
+  String _error;
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  DataCreateAppointmentResponseBuilder _data = DataCreateAppointmentResponseBuilder();
+  DataCreateAppointmentResponseBuilder _data;
   DataCreateAppointmentResponseBuilder get data =>
       _$this._data ??= new DataCreateAppointmentResponseBuilder();
   set data(DataCreateAppointmentResponseBuilder data) => _$this._data = data;
@@ -671,11 +670,11 @@ class CreateAppointmentResponseBuilder
     if ($v != null) {
       _version = $v.version;
       _request = $v.request;
-      _params = $v.params.toBuilder();
+      _params = $v.params?.toBuilder();
       _message = $v.message;
       _httpstatut = $v.httpstatut;
       _error = $v.error;
-      _data = $v.data.toBuilder();
+      _data = $v.data?.toBuilder();
       _$v = null;
     }
     return this;
@@ -688,7 +687,7 @@ class CreateAppointmentResponseBuilder
   }
 
   @override
-  void update(void Function(CreateAppointmentResponseBuilder)? updates) {
+  void update(void Function(CreateAppointmentResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -700,13 +699,13 @@ class CreateAppointmentResponseBuilder
           new _$CreateAppointmentResponse._(
               version: version,
               request: request,
-              params: _params.build(),
+              params: _params?.build(),
               message: message,
               httpstatut: httpstatut,
               error: error,
-              data: _data.build());
+              data: _data?.build());
     } catch (_) {
-      String _$failedField = '';
+      String _$failedField;
       try {
         _$failedField = 'params';
         _params?.build();
@@ -740,23 +739,22 @@ class _$ParamsCreateAppointmentResponse
   final String session;
 
   factory _$ParamsCreateAppointmentResponse(
-          [void Function(ParamsCreateAppointmentResponseBuilder)? updates]) =>
-      (new ParamsCreateAppointmentResponseBuilder()..update(updates!)).build();
+          [void Function(ParamsCreateAppointmentResponseBuilder) updates]) =>
+      (new ParamsCreateAppointmentResponseBuilder()..update(updates)).build();
 
   _$ParamsCreateAppointmentResponse._(
-      {
-      required this.tokenuser,
-      required this.tokenappointment,
-      required this.week,
-      required this.data,
-      required this.action,
-      required this.session})
+      {this.tokenuser,
+      this.tokenappointment,
+      this.week,
+      this.data,
+      this.action,
+      this.session})
       : super._();
 
   @override
   ParamsCreateAppointmentResponse rebuild(
           void Function(ParamsCreateAppointmentResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   ParamsCreateAppointmentResponseBuilder toBuilder() =>
@@ -803,30 +801,30 @@ class ParamsCreateAppointmentResponseBuilder
     implements
         Builder<ParamsCreateAppointmentResponse,
             ParamsCreateAppointmentResponseBuilder> {
-  _$ParamsCreateAppointmentResponse? _$v = _$ParamsCreateAppointmentResponse();
+  _$ParamsCreateAppointmentResponse _$v;
 
-  String _tokenuser = '';
+  String _tokenuser;
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappointment ='';
+  String _tokenappointment;
   String get tokenappointment => _$this._tokenappointment;
   set tokenappointment(String tokenappointment) =>
       _$this._tokenappointment = tokenappointment;
 
-  String _week = '';
+  String _week;
   String get week => _$this._week;
   set week(String week) => _$this._week = week;
 
-  String _data ='';
+  String _data;
   String get data => _$this._data;
   set data(String data) => _$this._data = data;
 
-  String _action ='';
+  String _action;
   String get action => _$this._action;
   set action(String action) => _$this._action = action;
 
-  String _session = '';
+  String _session;
   String get session => _$this._session;
   set session(String session) => _$this._session = session;
 
@@ -853,7 +851,7 @@ class ParamsCreateAppointmentResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsCreateAppointmentResponseBuilder)? updates) {
+  void update(void Function(ParamsCreateAppointmentResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -885,17 +883,17 @@ class _$DataCreateAppointmentResponse extends DataCreateAppointmentResponse {
   final BuiltList<AppointmentTypeResponse> data;
 
   factory _$DataCreateAppointmentResponse(
-          [void Function(DataCreateAppointmentResponseBuilder)? updates]) =>
-      (new DataCreateAppointmentResponseBuilder()..update(updates!)).build();
+          [void Function(DataCreateAppointmentResponseBuilder) updates]) =>
+      (new DataCreateAppointmentResponseBuilder()..update(updates)).build();
 
   _$DataCreateAppointmentResponse._(
-      {required this.session,required this.navigation,required this.headermessage,required this.type,required this.data})
+      {this.session, this.navigation, this.headermessage, this.type, this.data})
       : super._();
 
   @override
   DataCreateAppointmentResponse rebuild(
           void Function(DataCreateAppointmentResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   DataCreateAppointmentResponseBuilder toBuilder() =>
@@ -938,28 +936,28 @@ class DataCreateAppointmentResponseBuilder
     implements
         Builder<DataCreateAppointmentResponse,
             DataCreateAppointmentResponseBuilder> {
-  _$DataCreateAppointmentResponse? _$v = _$DataCreateAppointmentResponse();
+  _$DataCreateAppointmentResponse _$v;
 
-  String _session = '';
+  String _session;
   String get session => _$this._session;
   set session(String session) => _$this._session = session;
 
-  ListBuilder<AppointmentNavigation> _navigation = ListBuilder();
+  ListBuilder<AppointmentNavigation> _navigation;
   ListBuilder<AppointmentNavigation> get navigation =>
       _$this._navigation ??= new ListBuilder<AppointmentNavigation>();
   set navigation(ListBuilder<AppointmentNavigation> navigation) =>
       _$this._navigation = navigation;
 
-  String _headermessage ='';
+  String _headermessage;
   String get headermessage => _$this._headermessage;
   set headermessage(String headermessage) =>
       _$this._headermessage = headermessage;
 
-  String _type ='';
+  String _type;
   String get type => _$this._type;
   set type(String type) => _$this._type = type;
 
-  ListBuilder<AppointmentTypeResponse> _data = ListBuilder();
+  ListBuilder<AppointmentTypeResponse> _data;
   ListBuilder<AppointmentTypeResponse> get data =>
       _$this._data ??= new ListBuilder<AppointmentTypeResponse>();
   set data(ListBuilder<AppointmentTypeResponse> data) => _$this._data = data;
@@ -970,10 +968,10 @@ class DataCreateAppointmentResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _session = $v.session;
-      _navigation = $v.navigation.toBuilder();
+      _navigation = $v.navigation?.toBuilder();
       _headermessage = $v.headermessage;
       _type = $v.type;
-      _data = $v.data.toBuilder();
+      _data = $v.data?.toBuilder();
       _$v = null;
     }
     return this;
@@ -986,7 +984,7 @@ class DataCreateAppointmentResponseBuilder
   }
 
   @override
-  void update(void Function(DataCreateAppointmentResponseBuilder)? updates) {
+  void update(void Function(DataCreateAppointmentResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -997,12 +995,12 @@ class DataCreateAppointmentResponseBuilder
       _$result = _$v ??
           new _$DataCreateAppointmentResponse._(
               session: session,
-              navigation: _navigation.build(),
+              navigation: _navigation?.build(),
               headermessage: headermessage,
               type: type,
-              data: _data.build());
+              data: _data?.build());
     } catch (_) {
-      String _$failedField = '';
+      String _$failedField;
       try {
         _$failedField = 'navigation';
         _navigation?.build();
@@ -1035,23 +1033,22 @@ class _$AppointmentTypeResponse extends AppointmentTypeResponse {
   final String onclickWeek;
 
   factory _$AppointmentTypeResponse(
-          [void Function(AppointmentTypeResponseBuilder)? updates]) =>
-      (new AppointmentTypeResponseBuilder()..update(updates!)).build();
+          [void Function(AppointmentTypeResponseBuilder) updates]) =>
+      (new AppointmentTypeResponseBuilder()..update(updates)).build();
 
   _$AppointmentTypeResponse._(
-      {
-      required this.labelplace,
-      required this.color,
-      required this.description,
-      required this.onclickData,
-      required this.onclickAction,
-      required this.onclickWeek})
+      {this.labelplace,
+      this.color,
+      this.description,
+      this.onclickData,
+      this.onclickAction,
+      this.onclickWeek})
       : super._();
 
   @override
   AppointmentTypeResponse rebuild(
           void Function(AppointmentTypeResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   AppointmentTypeResponseBuilder toBuilder() =>
@@ -1097,30 +1094,30 @@ class _$AppointmentTypeResponse extends AppointmentTypeResponse {
 class AppointmentTypeResponseBuilder
     implements
         Builder<AppointmentTypeResponse, AppointmentTypeResponseBuilder> {
-  _$AppointmentTypeResponse? _$v =_$AppointmentTypeResponse();
+  _$AppointmentTypeResponse _$v;
 
-  String _labelplace ='';
+  String _labelplace;
   String get labelplace => _$this._labelplace;
   set labelplace(String labelplace) => _$this._labelplace = labelplace;
 
-  String _color ='';
+  String _color;
   String get color => _$this._color;
   set color(String color) => _$this._color = color;
 
-  String _description = '';
+  String _description;
   String get description => _$this._description;
   set description(String description) => _$this._description = description;
 
-  String _onclickData = '';
+  String _onclickData;
   String get onclickData => _$this._onclickData;
   set onclickData(String onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickAction = '';
+  String _onclickAction;
   String get onclickAction => _$this._onclickAction;
   set onclickAction(String onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickWeek ='';
+  String _onclickWeek;
   String get onclickWeek => _$this._onclickWeek;
   set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
 
@@ -1147,7 +1144,7 @@ class AppointmentTypeResponseBuilder
   }
 
   @override
-  void update(void Function(AppointmentTypeResponseBuilder)? updates) {
+  void update(void Function(AppointmentTypeResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -1181,23 +1178,22 @@ class _$AppointmentNavigation extends AppointmentNavigation {
   final String onclickWeek;
 
   factory _$AppointmentNavigation(
-          [void Function(AppointmentNavigationBuilder)? updates]) =>
-      (new AppointmentNavigationBuilder()..update(updates!)).build();
+          [void Function(AppointmentNavigationBuilder) updates]) =>
+      (new AppointmentNavigationBuilder()..update(updates)).build();
 
   _$AppointmentNavigation._(
-      {
-      required this.labelplace,
-      required this.color,
-      required this.description,
-      required this.onclickData,
-      required this.onclickAction,
-      required this.onclickWeek})
+      {this.labelplace,
+      this.color,
+      this.description,
+      this.onclickData,
+      this.onclickAction,
+      this.onclickWeek})
       : super._();
 
   @override
   AppointmentNavigation rebuild(
           void Function(AppointmentNavigationBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   AppointmentNavigationBuilder toBuilder() =>
@@ -1242,30 +1238,30 @@ class _$AppointmentNavigation extends AppointmentNavigation {
 
 class AppointmentNavigationBuilder
     implements Builder<AppointmentNavigation, AppointmentNavigationBuilder> {
-  _$AppointmentNavigation? _$v = _$AppointmentNavigation();
+  _$AppointmentNavigation _$v;
 
-  String _labelplace = '';
+  String _labelplace;
   String get labelplace => _$this._labelplace;
   set labelplace(String labelplace) => _$this._labelplace = labelplace;
 
-  String _color = '';
+  String _color;
   String get color => _$this._color;
   set color(String color) => _$this._color = color;
 
-  String _description = '';
+  String _description;
   String get description => _$this._description;
   set description(String description) => _$this._description = description;
 
-  String _onclickData = '';
+  String _onclickData;
   String get onclickData => _$this._onclickData;
   set onclickData(String onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickAction = '';
+  String _onclickAction;
   String get onclickAction => _$this._onclickAction;
   set onclickAction(String onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickWeek ='';
+  String _onclickWeek;
   String get onclickWeek => _$this._onclickWeek;
   set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
 
@@ -1292,7 +1288,7 @@ class AppointmentNavigationBuilder
   }
 
   @override
-  void update(void Function(AppointmentNavigationBuilder)? updates) {
+  void update(void Function(AppointmentNavigationBuilder) updates) {
     if (updates != null) updates(this);
   }
 

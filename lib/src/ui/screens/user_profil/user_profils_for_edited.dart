@@ -26,9 +26,6 @@ import 'package:logic_rdv_v0/src/ui/shared/my_drawer.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-
 import '../../../common.dart';
 
 
@@ -44,26 +41,26 @@ class UserEditedProfile extends StatefulWidget {
 }
 
 class _UserEditedProfileState extends State<UserEditedProfile> {
-  String _email = '';
-  String _fullName = '';
-  String _tokenuser = '';
+  String _email;
+  String _fullName;
+  String _tokenUser;
   final _key = GlobalKey();
   bool _obscureText = true;
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final _formKey = GlobalKey<FormState>();
   double _textFieldHeight = 50;
-  late FocusNode _focusNodeConnectButton;
+  FocusNode _focusNodeConnectButton;
 
-  late TextEditingController _nameController;
-  late TextEditingController _surNameController;
-  late TextEditingController _mobileController;
-  late TextEditingController _emailController;
-  late TextEditingController _adressController;
-  late TextEditingController _villeController;
-  late TextEditingController _postalCodeController;
-  late TextEditingController _passwordController;
-  late TextEditingController _passwordConfirmController;
+  TextEditingController _nameController;
+  TextEditingController _surNameController;
+  TextEditingController _mobileController;
+  TextEditingController _emailController;
+  TextEditingController _adressController;
+  TextEditingController _villeController;
+  TextEditingController _postalCodeController;
+  TextEditingController _passwordController;
+  TextEditingController _passwordConfirmController;
 
   @override
   void initState() {
@@ -87,44 +84,28 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
     prefs.remove(PreferenceKey.objectKey);
   }
 
-  late SharePreferenceObject _object;
-  late File _image;
+  SharePreferenceObject _object;
+  File _image;
   final picker = ImagePicker();
 
-  Future<void> _takePicture(BuildContext context) async {
-  Navigator.of(context).pop();
+  Future<void> _takePicture() async {
+    Navigator.of(context).pop();
 
-  final pickedFile = await ImagePicker().pickImage(source: ImageSource.camera);
+    final pickedFile = await ImagePicker.pickImage(source: ImageSource.camera);
 
-  setState(() {
-    if (pickedFile != null) {
-      _image = File(pickedFile.path);
-    } else {
-      print('No image selected.');
-    }
-  });
-}
-
-  // Future<void> _takePicture() async {
-  //   Navigator.of(context).pop();
-    
-  //   final pickedFile = await ImagePicker.pickImage(source: ImageSource.camera);
-
-  //   setState(() {
-  //     if (pickedFile != null) {
-  //       _image = File(pickedFile.path);
-  //     } else {
-  //       print('No image selected.');
-  //     }
-  //   });
-  // }
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
 
   Future<void> _selectFromGallerie() async {
     Navigator.of(context).pop();
 
-     final pickedFile = await ImagePicker().pickImage(source: ImageSource.gallery);
-
-    //final pickedFile = await ImagePicker.pickImage(source: ImageSource.gallery);
+    final pickedFile = await ImagePicker.pickImage(source: ImageSource.gallery);
 
     setState(() {
       if (pickedFile != null) {
@@ -144,7 +125,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
           mainAxisSize: MainAxisSize.min,
           children: [
             InkWell(
-             // onTap: () => _takePicture(), franck
+              onTap: () => _takePicture(),
               child: Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
@@ -205,10 +186,10 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
           }),
         ],
         child: MyDrawer(
-          tokenUser: _tokenuser,
+          tokenUser: _tokenUser,
           page: '0',
           email: _email,
-          fullNme: _fullName, notification: false,
+          fullNme: _fullName,
         ),
       ),
       backgroundColor: AppColors.primaryColor,
@@ -218,16 +199,16 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ?  Icon(
+                ? const Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                :  Icon(
+                : const Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
           ),
         ],
       ),
@@ -238,7 +219,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
               progressDialog.hide();
               flushBarSuccess(state.userResponse.message, context);
               _object = SharePreferenceObject(
-                  token: _tokenuser,
+                  token: _tokenUser,
                   email: state.userResponse.params.compteEmail,
                   firstName: state.userResponse.params.comptePrenom,
                   lastName: state.userResponse.params.compteNom,
@@ -274,7 +255,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else if (state.error == invalidTokenUser) {
                 progressDialog.hide();
@@ -295,7 +276,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else {
                 progressDialog.hide();
@@ -304,7 +285,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                     context: context,
                     content: Container(
                       child: Text(state.error),
-                    ), title: '', buttonLabel: '', action: () {  }, willPop: false);
+                    ));
               }
             }
           }),
@@ -324,16 +305,16 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
               listener: (context, state) {
             if (state is SharedPreferenceReadObjectState) {
               setState(() {
-                _email = state.sharePreferenceObject!.email;
-                _fullName = state.sharePreferenceObject!.firstName +
+                _email = state.sharePreferenceObject.email;
+                _fullName = state.sharePreferenceObject.firstName +
                     " " +
-                    state.sharePreferenceObject!.lastName;
-                _tokenuser = state.sharePreferenceObject!.token;
-                _nameController.text = state.sharePreferenceObject!.firstName;
-                _surNameController.text = state.sharePreferenceObject!.lastName;
-                _emailController.text = state.sharePreferenceObject!.email;
+                    state.sharePreferenceObject.lastName;
+                _tokenUser = state.sharePreferenceObject.token;
+                _nameController.text = state.sharePreferenceObject.firstName;
+                _surNameController.text = state.sharePreferenceObject.lastName;
+                _emailController.text = state.sharePreferenceObject.email;
                 _mobileController.text =
-                    state.sharePreferenceObject!.phoneNumber;
+                    state.sharePreferenceObject.phoneNumber;
               });
             } else if (state is SharedPreferenceWriteObjectState) {
               Navigator.of(context)
@@ -380,11 +361,11 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                                       child: Container(
                                         child: CircleAvatar(
                                           radius: 40,
-                                          // backgroundImage: _image == null
-                                          //     ? AssetImage(
-                                          //         'assets/images/medecin.png',
-                                          //       )
-                                          //     : FileImage(_image),
+                                          backgroundImage: _image == null
+                                              ? AssetImage(
+                                                  'assets/images/medecin.png',
+                                                )
+                                              : FileImage(_image),
                                           backgroundColor: Colors.white,
                                         ),
                                         padding: EdgeInsets.all(2),
@@ -442,82 +423,79 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                           ),
                           const SizedBox(height: 30),
                           _LabelWidget(
-                            label: 'Nom', key: null,
+                            label: 'Nom',
                           ),
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
                             hintText: 'Nom',
                             controller: _nameController,
                             validator: (value) {
-                              return verifyEmpty(value!);
-                            }, suffixIcon: null, focusNode: null, textInputAction: null,
+                              return verifyEmpty(value);
+                            },
                           ),
                           const SizedBox(height: 10),
                           _LabelWidget(
-                            label: 'Prénom', key: null,
+                            label: 'Prénom',
                           ),
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
                             hintText: 'Prénom',
-                            controller: _surNameController, suffixIcon: null, focusNode: null, textInputAction: null,
+                            controller: _surNameController,
                           ),
                           const SizedBox(height: 10),
                           _LabelWidget(
-                            label: 'Numéro de téléphone', key: null,
+                            label: 'Numéro de téléphone',
                           ),
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
                             hintText: 'Numero de telephone',
                             controller: _mobileController,
                             validator: (value) {
-                              return verifyEmpty(value!);
-                            }, textInputAction: null, suffixIcon: null, focusNode: null,
+                              return verifyEmpty(value);
+                            },
                           ),
                           const SizedBox(height: 10),
                           _LabelWidget(
-                            label: 'Email', key: null,
+                            label: 'Email',
                           ),
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
                             hintText: 'Email',
                             controller: _emailController,
                             validator: (value) {
-                              return verifyEmpty(value!);
-                            },textInputAction: null, suffixIcon: null, focusNode: null,
+                              return verifyEmpty(value);
+                            },
                           ),
                           SizedBox(height: 10),
                           _LabelWidget(
-                            label: 'Adresse', key: null,
+                            label: 'Adresse',
                           ),
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
                             hintText: 'Adresse',
-                            controller: _adressController, 
-                            textInputAction: null, suffixIcon: null, focusNode: null,
+                            controller: _adressController,
                           ),
                           SizedBox(height: 10),
                           _LabelWidget(
-                            label: 'Ville', key: null,
+                            label: 'Ville',
                           ),
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
                             hintText: 'Ville',
                             controller: _villeController,
-                            textInputAction: null, suffixIcon: null, focusNode: null,
                           ),
                           SizedBox(height: 10),
                           _LabelWidget(
-                            label: 'Code Postal', key: null,
+                            label: 'Code Postal',
                           ),
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
                             hintText: 'Code postal',
                             controller: _postalCodeController,
-                            textInputAction: null, suffixIcon: null, focusNode: null,
                           ),
                           SizedBox(height: 10),
                           _LabelWidget(
-                            label: 'Mot de passe', key: null,
+                            label: 'Mot de passe',
                           ),
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
@@ -537,11 +515,11 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                                     ? MdiIcons.eyeOutline
                                     : MdiIcons.eyeOffOutline),
                               ),
-                            ), focusNode: null, textInputAction: null,
+                            ),
                           ),
                           SizedBox(height: 10),
                           _LabelWidget(
-                            label: 'Confirmation mot de passe', key: null,
+                            label: 'Confirmation mot de passe',
                           ),
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
@@ -561,7 +539,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                                     ? MdiIcons.eyeOutline
                                     : MdiIcons.eyeOffOutline),
                               ),
-                            ), focusNode: null, textInputAction: null,
+                            ),
                           ),
                           SizedBox(
                             height: 20,
@@ -579,12 +557,12 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                                 final _form = _formKey.currentState;
                                 if (_passwordController.text ==
                                     _passwordConfirmController.text) {
-                                  if (_form!.validate()) {
+                                  if (_form.validate()) {
                                     progressDialog.setMessage('Chargment...');
                                     progressDialog.show();
                                     updateUserAccount(
                                         context: context,
-                                        tokenUser: _tokenuser,
+                                        tokenUser: _tokenUser,
                                         compte_ville: _villeController.text,
                                         compte_prenom: _surNameController.text,
                                         compte_password_conf:
@@ -643,9 +621,9 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                                     ),
                                     onYesAction: () {
                                       checkoutUserAccount(
-                                          tokenUser: _tokenuser,
+                                          tokenUser: _tokenUser,
                                           context: context);
-                                    }, confirmButtonLabel: '', cancelButtonLabel: '');
+                                    });
                               },
                               icon: Icon(MdiIcons.delete),
                               label: Text(
@@ -681,8 +659,8 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
 class _LabelWidget extends StatelessWidget {
   final String label;
   const _LabelWidget({
-    required Key? key,
-    required this.label,
+    Key key,
+    this.label,
   }) : super(key: key);
 
   @override

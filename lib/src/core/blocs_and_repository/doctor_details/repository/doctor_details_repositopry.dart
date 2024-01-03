@@ -5,7 +5,7 @@ import 'package:logic_rdv_v0/src/core/models/doctor_details_model/search_doctor_
 
 class DoctorDetailsRepository extends AbstractRepository {
   Future getDoctorDetails(
-      {required SearchDoctorDetailsRequest searchDoctorDetail}) async {
+      {SearchDoctorDetailsRequest searchDoctorDetail}) async {
     final String path = '/${getControllerName()}profil/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,

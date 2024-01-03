@@ -145,7 +145,7 @@ class RouteGenerator {
                 }),
               ],
               child: RdvSelectDayAndTimeScreen(
-                arguments: args as GetRdvTimeAndDayPageArguments,
+                arguments: args,
               )),
         );
       case existingCard:
@@ -164,7 +164,7 @@ class RouteGenerator {
                 }),
               ],
               child: CallWidget(
-                argument: args as TeleconsArgument,
+                argument: args,
               )),
         );
       case rdvType:
@@ -183,7 +183,7 @@ class RouteGenerator {
                 }),
               ],
               child: RdvType(
-                arguments: args as GetRdvTypePageArguments,
+                arguments: args,
               )),
         );
 
@@ -213,7 +213,7 @@ class RouteGenerator {
               }),
             ],
             child: SearchResultScreen(
-              arguments: args as SearchResultPageArguments,
+              arguments: args,
             ),
           ),
         );
@@ -232,7 +232,7 @@ class RouteGenerator {
               }),
             ],
             child: RdvIsValidate(
-              arguments: args as RdvIsValidatePageArguments,
+              arguments: args,
             ),
           ),
         );
@@ -278,7 +278,7 @@ class RouteGenerator {
               ),
             ],
             child: SearchDoctorAround(
-              arguments: args as SearchDoctorAroundResultPageArguments,
+              arguments: args,
             ),
           ),
         );
@@ -337,7 +337,7 @@ class RouteGenerator {
                 })
               ],
               child: ForgotPasswordScreen(
-                arguments: args as ForgotPasswordRdvPageArguments,
+                arguments: args,
               )),
         );
       case messagesScreen:
@@ -386,7 +386,7 @@ class RouteGenerator {
             BlocProvider<SubscribeBloc>(create: (context) {
               return SubscribeBloc(repository: SubscribeRepository());
             }),
-          ], child: AppointmentScreen(appointementArg: null,)),
+          ], child: AppointmentScreen()),
         );
       case listOfRdv:
         return MaterialPageRoute<dynamic>(
@@ -408,7 +408,7 @@ class RouteGenerator {
         );
       case appointmentDetails:
         return MaterialPageRoute<dynamic>(
-          builder: (_) => AppointmentDetails(arguments: args as AppointmentDetailsPageArguments),
+          builder: (_) => AppointmentDetails(arguments: args),
         );
       case notificationScreen:
         return MaterialPageRoute<dynamic>(
@@ -432,7 +432,7 @@ class RouteGenerator {
                 ));
       case paymentMethodScreen:
         return MaterialPageRoute<dynamic>(
-          builder: (_) =>  PaymentMethodScreen(),
+          builder: (_) => const PaymentMethodScreen(),
         );
       case registerScreen:
         return MaterialPageRoute<dynamic>(
@@ -479,7 +479,7 @@ class RouteGenerator {
               })
             ],
             child: PatientListScreen(
-              arguments: args as GetPatientPageArguments,
+              arguments: args,
             ),
           ),
         );
@@ -493,7 +493,7 @@ class RouteGenerator {
               })
             ],
             child: TeleconsultationScreen(
-              arguments: args as GetCredentialsTokboxPageArguments,
+              arguments: args,
             ),
           ),
         );
@@ -516,7 +516,7 @@ class RouteGenerator {
               })
             ],
             child: RdvValidate(
-              arguments: args as ValidateRdvPageArguments,
+              arguments: args,
             ),
           ),
         );
@@ -535,7 +535,7 @@ class RouteGenerator {
               }),
             ],
             child: DoctorProfileScreen(
-              arguments: args as GetDoctorIdPageArguments,
+              arguments: args,
             ),
           ),
         );

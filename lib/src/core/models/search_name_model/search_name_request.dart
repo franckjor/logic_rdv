@@ -30,7 +30,7 @@ abstract class SearchNameRequest
 
   static SearchNameRequest fromJson(String jsonString) {
     return serializers.deserializeWith(
-        SearchNameRequest.serializer, json.decode(jsonString))!;
+        SearchNameRequest.serializer, json.decode(jsonString));
   }
 
   static Serializer<SearchNameRequest> get serializer =>

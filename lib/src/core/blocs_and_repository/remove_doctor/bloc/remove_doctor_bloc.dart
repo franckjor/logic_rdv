@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/remove_doctor/reposit
 class RemoveDoctorBloc extends Bloc<RemoveDoctorEvent, RemoveDoctorState> {
   final RemoveDoctorRepository repository;
 
-  RemoveDoctorBloc({required this.repository}) : super(RemoveDoctorLoading());
+  RemoveDoctorBloc({@required this.repository}) : super(RemoveDoctorLoading());
 
   @override
   RemoveDoctorState get initialState => RemoveDoctorLoading();

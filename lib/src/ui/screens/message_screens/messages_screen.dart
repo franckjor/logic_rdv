@@ -37,11 +37,11 @@ class MessagesScreen extends StatefulWidget {
 
 class _MessagesScreenState extends State<MessagesScreen> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  String _tokenuser = '';
-  String _email = '';
-  String _fullName = '';
+  String _tokenUser;
+  String _email;
+  String _fullName;
   int currentPage = 1;
-  int totalOfPage =0;
+  int totalOfPage;
   bool isRefreshList = false;
   bool _isLoading = false;
   List<MessageDataResponse> message = [];
@@ -67,7 +67,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
           isRefreshList = true;
           getMessageList(
               context: context,
-              tokenUser: _tokenuser,
+              tokenUser: _tokenUser,
               page: currentPage.toString());
         });
       }
@@ -89,10 +89,10 @@ class _MessagesScreenState extends State<MessagesScreen> {
             }),
           ],
           child: MyDrawer(
-            tokenUser: _tokenuser,
+            tokenUser: _tokenUser,
             page: '3',
             email: _email,
-            fullNme: _fullName, notification: false,
+            fullNme: _fullName,
           ),
         ),
         appBar: AdaptativeAppBar(
@@ -101,16 +101,16 @@ class _MessagesScreenState extends State<MessagesScreen> {
           actions: [
             IconButton(
               icon: isAndroid || isWeb
-                  ?  Icon(
+                  ? const Icon(
                       MdiIcons.accountCircle,
                       color: Colors.white,
                     )
-                  :  Icon(
+                  : const Icon(
                       CupertinoIcons.person_alt_circle_fill,
                       color: Colors.white,
                     ),
               splashRadius: 20,
-              onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+              onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
             ),
           ],
         ),
@@ -120,14 +120,14 @@ class _MessagesScreenState extends State<MessagesScreen> {
                 listener: (context, state) {
               if (state is SharedPreferenceReadObjectState) {
                 setState(() {
-                  _tokenuser = state.sharePreferenceObject!.token;
-                  _email = state.sharePreferenceObject!.email;
-                  _fullName = state.sharePreferenceObject!.firstName +
+                  _tokenUser = state.sharePreferenceObject.token;
+                  _email = state.sharePreferenceObject.email;
+                  _fullName = state.sharePreferenceObject.firstName +
                       " " +
-                      state.sharePreferenceObject!.lastName;
+                      state.sharePreferenceObject.lastName;
                   getMessageList(
                       context: context,
-                      tokenUser: _tokenuser,
+                      tokenUser: _tokenUser,
                       page: currentPage.toString());
                 });
               } else if (state
@@ -173,7 +173,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                      ), title: '', buttonLabel: '',
+                      ),
                     );
                   } else if (state.error == invalidTokenUser) {
                     customAlert(
@@ -193,7 +193,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                      ), title: '', buttonLabel: '',
+                      ),
                     );
                   } else {
                     flushBarError(state.error, context);
@@ -227,7 +227,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                             itemCount: message.length,
                             padding: EdgeInsets.all(16),
                             itemBuilder: (context, i) => _MessageItem(
-                              messageDataResponse: message[i], onPressPdfReader: null,
+                              messageDataResponse: message[i],
                             ),
                           ),
                         )
@@ -245,7 +245,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                           ),
                         )
                   : Center(
-                      child:  AdaptativeIndicator(),
+                      child: const AdaptativeIndicator(),
                     ),
             );
           }),
@@ -255,11 +255,11 @@ class _MessagesScreenState extends State<MessagesScreen> {
 
 class _MessageItem extends StatelessWidget {
   final MessageDataResponse messageDataResponse;
-  final Function()? onPressPdfReader;
+  final Function onPressPdfReader;
 
   _MessageItem({
-    required this.messageDataResponse,
-    required this.onPressPdfReader,
+    this.messageDataResponse,
+    this.onPressPdfReader,
   });
 
   @override
@@ -303,7 +303,7 @@ class _MessageItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       _RowTitle(
-                        title: 'Fichier', key: null,
+                        title: 'Fichier',
                       ),
                       const SizedBox(width: 20),
                       InkWell(
@@ -313,10 +313,10 @@ class _MessageItem extends StatelessWidget {
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            //  Icon(
-                            //   MdiIcons.pdfBox,
-                            //   color: Colors.blue,
-                            // ),
+                            const Icon(
+                              MdiIcons.pdfBox,
+                              color: Colors.blue,
+                            ),
                             Container(
                               width: MediaQuery.of(context).size.height * 0.15,
                               child: Text(
@@ -341,7 +341,7 @@ class _MessageItem extends StatelessWidget {
                   children: [
                     Expanded(
                       child: _RowTitle(
-                        title: 'Médecin:', key: null,
+                        title: 'Médecin:',
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -364,7 +364,7 @@ class _MessageItem extends StatelessWidget {
                   children: [
                     Expanded(
                       child: _RowTitle(
-                        title: 'Patient:', key: null,
+                        title: 'Patient:',
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -387,7 +387,7 @@ class _MessageItem extends StatelessWidget {
                   children: [
                     Expanded(
                       child: _RowTitle(
-                        title: 'Sujet:', key: null,
+                        title: 'Sujet:',
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -417,8 +417,8 @@ class _RowTitle extends StatelessWidget {
   final String title;
 
   const _RowTitle({
-    required Key? key,
-    required this.title,
+    Key key,
+    @required this.title,
   }) : super(key: key);
 
   @override

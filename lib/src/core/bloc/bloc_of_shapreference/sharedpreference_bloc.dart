@@ -38,7 +38,7 @@ class SharedPreferenceBloc
     try {
       final result = prefs.getString(event.objectKey);
       SharePreferenceObject object =
-          SharePreferenceObject.fromJson(jsonDecode(result!));
+          SharePreferenceObject.fromJson(jsonDecode(result));
       yield SharedPreferenceReadObjectState(sharePreferenceObject: object);
     } catch (e) {
       yield SharedPreferenceLoadingFailure(error: e.toString());
@@ -63,7 +63,7 @@ class SharedPreferenceBloc
     try {
       final result = prefs.getString(event.tokenAuthorizationKey);
       yield SharedTokenAuthorizationLoadingSuccess(
-          tokenAuthorizationValue: result!);
+          tokenAuthorizationValue: result);
     } catch (e) {
       yield SharedPreferenceLoadingFailure(error: e.toString());
     }
@@ -87,7 +87,7 @@ class SharedPreferenceBloc
     SharedPreferences prefs = await SharedPreferences.getInstance();
     try {
       final result = prefs.getString(event.sessionKey);
-      yield SharedSessionLoadingSuccess(sessionValue: result!);
+      yield SharedSessionLoadingSuccess(sessionValue: result);
     } catch (e) {
       yield SharedPreferenceLoadingFailure(error: e.toString());
     }

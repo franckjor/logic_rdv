@@ -34,7 +34,7 @@ abstract class UserResponse
 
   static UserResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        UserResponse.serializer, json.decode(jsonString))!;
+        UserResponse.serializer, json.decode(jsonString));
   }
 
   static Serializer<UserResponse> get serializer => _$userResponseSerializer;
@@ -74,7 +74,7 @@ abstract class ParamsUserResponse
 
   static ParamsUserResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsUserResponse.serializer, json.decode(jsonString))!;
+        ParamsUserResponse.serializer, json.decode(jsonString));
   }
 
   static Serializer<ParamsUserResponse> get serializer =>

@@ -35,25 +35,25 @@ class _$LoginStartedResponseSerializer
     final result = <Object>[
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsLoginStartedResponse))!,
+          specifiedType: const FullType(ParamsLoginStartedResponse)),
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'data',
       serializers.serialize(object.data,
-          specifiedType: const FullType(DataLoginStartedResponse))!,
+          specifiedType: const FullType(DataLoginStartedResponse)),
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int))!,
+          specifiedType: const FullType(int)),
     ];
 
     return result;
@@ -61,7 +61,7 @@ class _$LoginStartedResponseSerializer
 
   @override
   LoginStartedResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new LoginStartedResponseBuilder();
 
@@ -69,7 +69,7 @@ class _$LoginStartedResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
@@ -124,13 +124,13 @@ class _$ParamsLoginStartedResponseSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'data',
-      serializers.serialize(object.data, specifiedType: const FullType(String))!,
+      serializers.serialize(object.data, specifiedType: const FullType(String)),
       'action',
       serializers.serialize(object.action,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'session',
       serializers.serialize(object.session,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -138,7 +138,7 @@ class _$ParamsLoginStartedResponseSerializer
 
   @override
   ParamsLoginStartedResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsLoginStartedResponseBuilder();
 
@@ -146,7 +146,7 @@ class _$ParamsLoginStartedResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'data':
           result.data = serializers.deserialize(value,
@@ -184,23 +184,23 @@ class _$DataLoginStartedResponseSerializer
     final result = <Object>[
       'headererror',
       serializers.serialize(object.headererror,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'type',
-      serializers.serialize(object.type, specifiedType: const FullType(String))!,
+      serializers.serialize(object.type, specifiedType: const FullType(String)),
       'headermessage',
       serializers.serialize(object.headermessage,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'input',
       serializers.serialize(object.input,
           specifiedType: const FullType(
-              BuiltList, const [const FullType(InputloginStartedResponse)]))!,
+              BuiltList, const [const FullType(InputloginStartedResponse)])),
       'buttonvalidation',
       serializers.serialize(object.buttonvalidation,
           specifiedType: const FullType(BuiltList,
-              const [const FullType(ButtonvalidationloginStartedResponse)]))!,
+              const [const FullType(ButtonvalidationloginStartedResponse)])),
       'session',
       serializers.serialize(object.session,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -208,7 +208,7 @@ class _$DataLoginStartedResponseSerializer
 
   @override
   DataLoginStartedResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataLoginStartedResponseBuilder();
 
@@ -216,7 +216,7 @@ class _$DataLoginStartedResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'headererror':
           result.headererror = serializers.deserialize(value,
@@ -269,19 +269,19 @@ class _$InputloginStartedResponseSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'name',
-      serializers.serialize(object.name, specifiedType: const FullType(String))!,
+      serializers.serialize(object.name, specifiedType: const FullType(String)),
       'mandatory',
       serializers.serialize(object.mandatory,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'readonly',
       serializers.serialize(object.readonly,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'label',
       serializers.serialize(object.label,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'value',
       serializers.serialize(object.value,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -289,7 +289,7 @@ class _$InputloginStartedResponseSerializer
 
   @override
   InputloginStartedResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new InputloginStartedResponseBuilder();
 
@@ -297,7 +297,7 @@ class _$InputloginStartedResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value,
@@ -343,16 +343,16 @@ class _$ButtonvalidationloginStartedResponseSerializer
     final result = <Object>[
       'onclick',
       serializers.serialize(object.onclick,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'label',
       serializers.serialize(object.label,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'onclick_data',
       serializers.serialize(object.onclickData,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'onclick_action',
       serializers.serialize(object.onclickAction,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -360,7 +360,7 @@ class _$ButtonvalidationloginStartedResponseSerializer
 
   @override
   ButtonvalidationloginStartedResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ButtonvalidationloginStartedResponseBuilder();
 
@@ -368,7 +368,7 @@ class _$ButtonvalidationloginStartedResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'onclick':
           result.onclick = serializers.deserialize(value,
@@ -410,18 +410,17 @@ class _$LoginStartedResponse extends LoginStartedResponse {
   final int httpstatut;
 
   factory _$LoginStartedResponse(
-          [void Function(LoginStartedResponseBuilder)? updates]) =>
-      (new LoginStartedResponseBuilder()..update(updates!)).build();
+          [void Function(LoginStartedResponseBuilder) updates]) =>
+      (new LoginStartedResponseBuilder()..update(updates)).build();
 
   _$LoginStartedResponse._(
-      {
-      required this.version,
-      required this.request,
-      required this.params,
-      required this.message,
-      required this.error,
-      required this.data,
-      required this.httpstatut})
+      {this.version,
+      this.request,
+      this.params,
+      this.message,
+      this.error,
+      this.data,
+      this.httpstatut})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         version, 'LoginStartedResponse', 'version');
@@ -441,7 +440,7 @@ class _$LoginStartedResponse extends LoginStartedResponse {
   @override
   LoginStartedResponse rebuild(
           void Function(LoginStartedResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   LoginStartedResponseBuilder toBuilder() =>
@@ -490,36 +489,36 @@ class _$LoginStartedResponse extends LoginStartedResponse {
 
 class LoginStartedResponseBuilder
     implements Builder<LoginStartedResponse, LoginStartedResponseBuilder> {
-  _$LoginStartedResponse? _$v = _$LoginStartedResponse();
+  _$LoginStartedResponse _$v;
 
-  String _version = '';
+  String _version;
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request = '';
+  String _request;
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsLoginStartedResponseBuilder _params = ParamsLoginStartedResponseBuilder();
+  ParamsLoginStartedResponseBuilder _params;
   ParamsLoginStartedResponseBuilder get params =>
       _$this._params ??= new ParamsLoginStartedResponseBuilder();
   set params(ParamsLoginStartedResponseBuilder params) =>
       _$this._params = params;
 
-  String _message = '';
+  String _message;
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  String _error = '';
+  String _error;
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  DataLoginStartedResponseBuilder _data = DataLoginStartedResponseBuilder();
+  DataLoginStartedResponseBuilder _data;
   DataLoginStartedResponseBuilder get data =>
       _$this._data ??= new DataLoginStartedResponseBuilder();
   set data(DataLoginStartedResponseBuilder data) => _$this._data = data;
 
-  int _httpstatut = 0;
+  int _httpstatut;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
@@ -547,7 +546,7 @@ class LoginStartedResponseBuilder
   }
 
   @override
-  void update(void Function(LoginStartedResponseBuilder)? updates) {
+  void update(void Function(LoginStartedResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -570,7 +569,7 @@ class LoginStartedResponseBuilder
               httpstatut: BuiltValueNullFieldError.checkNotNull(
                   httpstatut, 'LoginStartedResponse', 'httpstatut'));
     } catch (_) {
-      String _$failedField = '';
+      String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -597,10 +596,10 @@ class _$ParamsLoginStartedResponse extends ParamsLoginStartedResponse {
   final String session;
 
   factory _$ParamsLoginStartedResponse(
-          [void Function(ParamsLoginStartedResponseBuilder)? updates]) =>
-      (new ParamsLoginStartedResponseBuilder()..update(updates!)).build();
+          [void Function(ParamsLoginStartedResponseBuilder) updates]) =>
+      (new ParamsLoginStartedResponseBuilder()..update(updates)).build();
 
-  _$ParamsLoginStartedResponse._({required this.data,required this.action,required this.session})
+  _$ParamsLoginStartedResponse._({this.data, this.action, this.session})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         data, 'ParamsLoginStartedResponse', 'data');
@@ -613,7 +612,7 @@ class _$ParamsLoginStartedResponse extends ParamsLoginStartedResponse {
   @override
   ParamsLoginStartedResponse rebuild(
           void Function(ParamsLoginStartedResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   ParamsLoginStartedResponseBuilder toBuilder() =>
@@ -647,17 +646,17 @@ class _$ParamsLoginStartedResponse extends ParamsLoginStartedResponse {
 class ParamsLoginStartedResponseBuilder
     implements
         Builder<ParamsLoginStartedResponse, ParamsLoginStartedResponseBuilder> {
-  _$ParamsLoginStartedResponse? _$v = _$ParamsLoginStartedResponse();
+  _$ParamsLoginStartedResponse _$v;
 
-  String _data ='';
+  String _data;
   String get data => _$this._data;
   set data(String data) => _$this._data = data;
 
-  String _action ='';
+  String _action;
   String get action => _$this._action;
   set action(String action) => _$this._action = action;
 
-  String _session = '';
+  String _session;
   String get session => _$this._session;
   set session(String session) => _$this._session = session;
 
@@ -681,7 +680,7 @@ class ParamsLoginStartedResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsLoginStartedResponseBuilder)? updates) {
+  void update(void Function(ParamsLoginStartedResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -715,17 +714,16 @@ class _$DataLoginStartedResponse extends DataLoginStartedResponse {
   final String session;
 
   factory _$DataLoginStartedResponse(
-          [void Function(DataLoginStartedResponseBuilder)? updates]) =>
-      (new DataLoginStartedResponseBuilder()..update(updates!)).build();
+          [void Function(DataLoginStartedResponseBuilder) updates]) =>
+      (new DataLoginStartedResponseBuilder()..update(updates)).build();
 
   _$DataLoginStartedResponse._(
-      {
-      required this.headererror,
-      required this.type,
-      required this.headermessage,
-      required this.input,
-      required this.buttonvalidation,
-      required this.session})
+      {this.headererror,
+      this.type,
+      this.headermessage,
+      this.input,
+      this.buttonvalidation,
+      this.session})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         headererror, 'DataLoginStartedResponse', 'headererror');
@@ -744,7 +742,7 @@ class _$DataLoginStartedResponse extends DataLoginStartedResponse {
   @override
   DataLoginStartedResponse rebuild(
           void Function(DataLoginStartedResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   DataLoginStartedResponseBuilder toBuilder() =>
@@ -790,28 +788,28 @@ class _$DataLoginStartedResponse extends DataLoginStartedResponse {
 class DataLoginStartedResponseBuilder
     implements
         Builder<DataLoginStartedResponse, DataLoginStartedResponseBuilder> {
-  _$DataLoginStartedResponse? _$v;
+  _$DataLoginStartedResponse _$v;
 
-  String _headererror = '';
+  String _headererror;
   String get headererror => _$this._headererror;
   set headererror(String headererror) => _$this._headererror = headererror;
 
-  String _type ='';
+  String _type;
   String get type => _$this._type;
   set type(String type) => _$this._type = type;
 
-  String _headermessage ='';
+  String _headermessage;
   String get headermessage => _$this._headermessage;
   set headermessage(String headermessage) =>
       _$this._headermessage = headermessage;
 
-  ListBuilder<InputloginStartedResponse> _input = ListBuilder();
+  ListBuilder<InputloginStartedResponse> _input;
   ListBuilder<InputloginStartedResponse> get input =>
       _$this._input ??= new ListBuilder<InputloginStartedResponse>();
   set input(ListBuilder<InputloginStartedResponse> input) =>
       _$this._input = input;
 
-  ListBuilder<ButtonvalidationloginStartedResponse> _buttonvalidation = ListBuilder();
+  ListBuilder<ButtonvalidationloginStartedResponse> _buttonvalidation;
   ListBuilder<ButtonvalidationloginStartedResponse> get buttonvalidation =>
       _$this._buttonvalidation ??=
           new ListBuilder<ButtonvalidationloginStartedResponse>();
@@ -819,7 +817,7 @@ class DataLoginStartedResponseBuilder
           ListBuilder<ButtonvalidationloginStartedResponse> buttonvalidation) =>
       _$this._buttonvalidation = buttonvalidation;
 
-  String _session = '';
+  String _session;
   String get session => _$this._session;
   set session(String session) => _$this._session = session;
 
@@ -846,7 +844,7 @@ class DataLoginStartedResponseBuilder
   }
 
   @override
-  void update(void Function(DataLoginStartedResponseBuilder)? updates) {
+  void update(void Function(DataLoginStartedResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -867,7 +865,7 @@ class DataLoginStartedResponseBuilder
               session: BuiltValueNullFieldError.checkNotNull(
                   session, 'DataLoginStartedResponse', 'session'));
     } catch (_) {
-      String _$failedField = '';
+      String _$failedField;
       try {
         _$failedField = 'input';
         input.build();
@@ -897,11 +895,11 @@ class _$InputloginStartedResponse extends InputloginStartedResponse {
   final String value;
 
   factory _$InputloginStartedResponse(
-          [void Function(InputloginStartedResponseBuilder)? updates]) =>
-      (new InputloginStartedResponseBuilder()..update(updates!)).build();
+          [void Function(InputloginStartedResponseBuilder) updates]) =>
+      (new InputloginStartedResponseBuilder()..update(updates)).build();
 
   _$InputloginStartedResponse._(
-      {required this.name,required this.mandatory,required this.readonly,required this.label,required this.value})
+      {this.name, this.mandatory, this.readonly, this.label, this.value})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         name, 'InputloginStartedResponse', 'name');
@@ -918,7 +916,7 @@ class _$InputloginStartedResponse extends InputloginStartedResponse {
   @override
   InputloginStartedResponse rebuild(
           void Function(InputloginStartedResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   InputloginStartedResponseBuilder toBuilder() =>
@@ -960,25 +958,25 @@ class _$InputloginStartedResponse extends InputloginStartedResponse {
 class InputloginStartedResponseBuilder
     implements
         Builder<InputloginStartedResponse, InputloginStartedResponseBuilder> {
-  _$InputloginStartedResponse? _$v =_$InputloginStartedResponse();
+  _$InputloginStartedResponse _$v;
 
-  String _name='';
+  String _name;
   String get name => _$this._name;
   set name(String name) => _$this._name = name;
 
-  String _mandatory ='';
+  String _mandatory;
   String get mandatory => _$this._mandatory;
   set mandatory(String mandatory) => _$this._mandatory = mandatory;
 
-  String _readonly = '';
+  String _readonly;
   String get readonly => _$this._readonly;
   set readonly(String readonly) => _$this._readonly = readonly;
 
-  String _label = '';
+  String _label;
   String get label => _$this._label;
   set label(String label) => _$this._label = label;
 
-  String _value = '';
+  String _value;
   String get value => _$this._value;
   set value(String value) => _$this._value = value;
 
@@ -1004,7 +1002,7 @@ class InputloginStartedResponseBuilder
   }
 
   @override
-  void update(void Function(InputloginStartedResponseBuilder)? updates) {
+  void update(void Function(InputloginStartedResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -1039,13 +1037,13 @@ class _$ButtonvalidationloginStartedResponse
   final String onclickAction;
 
   factory _$ButtonvalidationloginStartedResponse(
-          [void Function(ButtonvalidationloginStartedResponseBuilder)?
+          [void Function(ButtonvalidationloginStartedResponseBuilder)
               updates]) =>
-      (new ButtonvalidationloginStartedResponseBuilder()..update(updates!))
+      (new ButtonvalidationloginStartedResponseBuilder()..update(updates))
           .build();
 
   _$ButtonvalidationloginStartedResponse._(
-      {required this.onclick,required this.label,required this.onclickData,required this.onclickAction})
+      {this.onclick, this.label, this.onclickData, this.onclickAction})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         onclick, 'ButtonvalidationloginStartedResponse', 'onclick');
@@ -1060,7 +1058,7 @@ class _$ButtonvalidationloginStartedResponse
   @override
   ButtonvalidationloginStartedResponse rebuild(
           void Function(ButtonvalidationloginStartedResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   ButtonvalidationloginStartedResponseBuilder toBuilder() =>
@@ -1099,21 +1097,21 @@ class ButtonvalidationloginStartedResponseBuilder
     implements
         Builder<ButtonvalidationloginStartedResponse,
             ButtonvalidationloginStartedResponseBuilder> {
-  _$ButtonvalidationloginStartedResponse? _$v =_$ButtonvalidationloginStartedResponse();
+  _$ButtonvalidationloginStartedResponse _$v;
 
-  String _onclick = '';
+  String _onclick;
   String get onclick => _$this._onclick;
   set onclick(String onclick) => _$this._onclick = onclick;
 
-  String _label = '';
+  String _label;
   String get label => _$this._label;
   set label(String label) => _$this._label = label;
 
-  String _onclickData = '';
+  String _onclickData;
   String get onclickData => _$this._onclickData;
   set onclickData(String onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickAction = '';
+  String _onclickAction;
   String get onclickAction => _$this._onclickAction;
   set onclickAction(String onclickAction) =>
       _$this._onclickAction = onclickAction;
@@ -1140,7 +1138,7 @@ class ButtonvalidationloginStartedResponseBuilder
 
   @override
   void update(
-      void Function(ButtonvalidationloginStartedResponseBuilder)? updates) {
+      void Function(ButtonvalidationloginStartedResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 

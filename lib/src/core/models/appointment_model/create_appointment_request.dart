@@ -43,7 +43,7 @@ abstract class CreateAppointmentRequest
 
   static CreateAppointmentRequest fromJson(String jsonString) {
     return serializers.deserializeWith(
-        CreateAppointmentRequest.serializer, json.decode(jsonString))!;
+        CreateAppointmentRequest.serializer, json.decode(jsonString));
   }
 
   static Serializer<CreateAppointmentRequest> get serializer =>

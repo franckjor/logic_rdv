@@ -32,14 +32,14 @@ class _LoginfDialogState extends State<LoginfDialog> {
   final _formKey = GlobalKey<FormState>();
 
   bool _obscureText = true;
-  SharePreferenceObject _object =SharePreferenceObject(token: '', email: '', phoneNumber: '', firstName: '', lastName: '');
+  SharePreferenceObject _object;
   TextEditingController _loginController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   bool _isLoginViewVisible = true;
   bool _isSignInViewVisible = false;
-  String _tokenuser = '';
+  String _tokenUser;
 
-  FocusNode _focusNodeConnectButton = FocusNode();
+  FocusNode _focusNodeConnectButton;
 
   double _textFieldHeight = 0;
   final _key = GlobalKey();
@@ -67,12 +67,12 @@ class _LoginfDialogState extends State<LoginfDialog> {
   List<ButtonvalidationloginStartedResponse>
       _buttonvalidationloginStartedResponse = [];
 
-  Etabs _etabs =Etabs();
-  String code ='';
-  String _idDoctor ='';
+  Etabs _etabs;
+  String code;
+  String _idDoctor;
   String _checkedCondition = '0';
 
-  Widget loginView(BuildContext context, {Function()? onTapToSignUp}) {
+  Widget loginView(BuildContext context, {Function onTapToSignUp}) {
     return Container(
       child: Column(
         children: [
@@ -110,17 +110,17 @@ class _LoginfDialogState extends State<LoginfDialog> {
                 AdaptativeTextFormField(
                   hintText: 'Adresse email ou numéro de téléphone',
                   controller: _loginController,
-                  validator: (value) => verifyEmpty(value!), focusNode: null, textInputAction: null,
+                  validator: (value) => verifyEmpty(value),
                 ),
                 const SizedBox(height: 8),
                 Visibility(
                   visible: _ispasswordvisible,
                   child: TextFormField(
-                    validator: (value) => verifyEmpty(value!),
+                    validator: (value) => verifyEmpty(value),
                     obscureText: _obscureText,
                     controller: _passwordController,
                     decoration: InputDecoration(
-                      prefixIcon:  Icon(
+                      prefixIcon: const Icon(
                         Icons.lock,
                         color: Color(0xFFd3e0ea),
                       ),
@@ -131,7 +131,7 @@ class _LoginfDialogState extends State<LoginfDialog> {
                                   _obscureText = !_obscureText;
                                 });
                               },
-                              child:  Icon(
+                              child: const Icon(
                                 Icons.remove_red_eye_outlined,
                                 color: AppColors.colorHintText,
                               ),
@@ -142,7 +142,7 @@ class _LoginfDialogState extends State<LoginfDialog> {
                                   _obscureText = !_obscureText;
                                 });
                               },
-                              child:  Icon(
+                              child: const Icon(
                                 MdiIcons.eyeOffOutline,
                                 color: AppColors.colorHintText,
                               ),
@@ -310,7 +310,7 @@ class _LoginfDialogState extends State<LoginfDialog> {
     );
   }
 
-  Widget signInViewVisible(BuildContext context, {Function()? onTapToSignIn}) {
+  Widget signInViewVisible(BuildContext context, {Function onTapToSignIn}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -383,36 +383,36 @@ class _LoginfDialogState extends State<LoginfDialog> {
                       const SizedBox(height: 16),
                       AdaptativeTextFormField(
                         hintText: 'Nom',
-                        validator: (value) => verifyEmpty(value!),
-                        controller: _nameController, focusNode: null, textInputAction: null,
+                        validator: (value) => verifyEmpty(value),
+                        controller: _nameController,
                       ),
                       const SizedBox(height: 8),
                       AdaptativeTextFormField(
                         hintText: 'Prénom',
-                        validator: (value) => verifyEmpty(value!),
-                        controller: _prenomController, focusNode: null, textInputAction: null,
+                        validator: (value) => verifyEmpty(value),
+                        controller: _prenomController,
                       ),
                       const SizedBox(height: 8),
                       AdaptativeTextFormField(
                         hintText: 'Numèro de téléphone',
                         textInputType: TextInputType.phone,
-                        validator: (value) => verifyEmpty(value!),
-                        controller: _phoneController, focusNode: null, textInputAction: null,
+                        validator: (value) => verifyEmpty(value),
+                        controller: _phoneController,
                       ),
                       const SizedBox(height: 8),
                       AdaptativeTextFormField(
                         hintText: 'Email',
                         textInputType: TextInputType.emailAddress,
-                        validator: (val) => verifyEmpty(val!),
-                        controller: _emailController, focusNode: null, textInputAction: null,
+                        validator: (val) => verifyEmpty(val),
+                        controller: _emailController,
                       ),
                       const SizedBox(height: 8),
                       TextFormField(
                         controller: _passwordController,
                         obscureText: _password1,
-                        validator: (value) => verifyEmpty(value!),
+                        validator: (value) => verifyEmpty(value),
                         decoration: InputDecoration(
-                          prefixIcon:  Icon(
+                          prefixIcon: const Icon(
                             Icons.lock,
                             color: Color(0xFFd3e0ea),
                           ),
@@ -478,9 +478,9 @@ class _LoginfDialogState extends State<LoginfDialog> {
                       TextFormField(
                         controller: _confirmPasswordController,
                         obscureText: _password2,
-                        validator: (value) => verifyEmpty(value!),
+                        validator: (value) => verifyEmpty(value),
                         decoration: InputDecoration(
-                          prefixIcon:  Icon(
+                          prefixIcon: const Icon(
                             Icons.lock,
                             color: Color(0xFFd3e0ea),
                           ),
@@ -556,7 +556,7 @@ class _LoginfDialogState extends State<LoginfDialog> {
                                   _checkedCondition = '0';
                                 }
                               });
-                            }, key: null, inactiveColor: null,
+                            },
                           ),
                           const SizedBox(width: 8),
                           Expanded(
@@ -599,7 +599,7 @@ class _LoginfDialogState extends State<LoginfDialog> {
                   textFieldHeight: 50,
                   onPressed: () {
                     final _form = _formKey.currentState;
-                    if (_form!.validate()) {
+                    if (_form.validate()) {
                       if (_passwordController.text ==
                           _confirmPasswordController.text) {
                         if (_checkedCondition == '1') {
@@ -647,7 +647,7 @@ class _LoginfDialogState extends State<LoginfDialog> {
     return WillPopScope(
       onWillPop: () async {
         Navigator.pop(context, 0);
-        return false;
+        return null;
       },
       child: MultiBlocListener(
         listeners: [
@@ -660,8 +660,8 @@ class _LoginfDialogState extends State<LoginfDialog> {
               setState(() {
                 _ispasswordvisible = false;
                 type = state.response.data.type;
-                _headerText = state.response.data.headermessage;
-                _session = state.response.data.session;
+                _headerText = state.response?.data?.headermessage;
+                _session = state.response?.data?.session;
                 _buttonvalidationloginStartedResponse =
                     state.response.data.buttonvalidation.toList();
               });
@@ -676,13 +676,13 @@ class _LoginfDialogState extends State<LoginfDialog> {
                     content: Text(
                       state.response.data.headererror,
                       textAlign: TextAlign.center,
-                    ), buttonLabel: '',  willPop: true, action: () {  },
+                    ),
                   );
                 } else {
                   _ispasswordvisible = !_ispasswordvisible;
                   type = state.response.data.type;
-                  _headerText = state.response.data.headermessage;
-                  _session = state.response.data.session;
+                  _headerText = state.response?.data?.headermessage;
+                  _session = state.response?.data?.session;
                   _buttonvalidationloginStartedResponse =
                       state.response.data.buttonvalidation.toList();
                 }
@@ -698,10 +698,10 @@ class _LoginfDialogState extends State<LoginfDialog> {
                     content: Text(
                       state.response.data.headererror,
                       textAlign: TextAlign.center,
-                    ), buttonLabel: '', action: () {  }, willPop: true,
+                    ),
                   );
                 } else {
-                  _tokenuser = state.response.data.user.tokenuser;
+                  _tokenUser = state.response.data.user.tokenuser;
                   _object = SharePreferenceObject(
                       token: state.response.data.user.tokenuser,
                       email: state.response.data.user.email,
@@ -744,7 +744,7 @@ class _LoginfDialogState extends State<LoginfDialog> {
                   content: Text(
                     state.error,
                     textAlign: TextAlign.center,
-                  ), buttonLabel: '', action: () {  }, willPop: false);
+                  ));
             }
           }),
           BlocListener<InscriptionRapidBloc, InscriptionRapidState>(
@@ -781,14 +781,14 @@ class _LoginfDialogState extends State<LoginfDialog> {
                     state.error,
                     textAlign: TextAlign.center,
                   ),
-                  alertType: AlertType.error, buttonLabel: '', action: () {  }, willPop: false);
+                  alertType: AlertType.error);
             }
           }),
           BlocListener<SharedPreferenceBloc, SharedPreferenceState>(
               listener: (context, state) {
             if (state is SharedPreferenceWriteObjectState) {
               _progressDialog.hide();
-              Navigator.pop(context, _tokenuser);
+              Navigator.pop(context, _tokenUser);
             }
           }),
         ],

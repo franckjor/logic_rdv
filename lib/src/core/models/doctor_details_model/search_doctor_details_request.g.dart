@@ -25,7 +25,7 @@ class _$SearchDoctorDetailsRequestSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String))!,
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -33,7 +33,7 @@ class _$SearchDoctorDetailsRequestSerializer
 
   @override
   SearchDoctorDetailsRequest deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SearchDoctorDetailsRequestBuilder();
 
@@ -41,7 +41,7 @@ class _$SearchDoctorDetailsRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
@@ -59,10 +59,10 @@ class _$SearchDoctorDetailsRequest extends SearchDoctorDetailsRequest {
   final String id;
 
   factory _$SearchDoctorDetailsRequest(
-          [void Function(SearchDoctorDetailsRequestBuilder)? updates]) =>
-      (new SearchDoctorDetailsRequestBuilder()..update(updates!)).build();
+          [void Function(SearchDoctorDetailsRequestBuilder) updates]) =>
+      (new SearchDoctorDetailsRequestBuilder()..update(updates)).build();
 
-  _$SearchDoctorDetailsRequest._({required this.id}) : super._() {
+  _$SearchDoctorDetailsRequest._({this.id}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         id, 'SearchDoctorDetailsRequest', 'id');
   }
@@ -70,7 +70,7 @@ class _$SearchDoctorDetailsRequest extends SearchDoctorDetailsRequest {
   @override
   SearchDoctorDetailsRequest rebuild(
           void Function(SearchDoctorDetailsRequestBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   SearchDoctorDetailsRequestBuilder toBuilder() =>
@@ -98,9 +98,9 @@ class _$SearchDoctorDetailsRequest extends SearchDoctorDetailsRequest {
 class SearchDoctorDetailsRequestBuilder
     implements
         Builder<SearchDoctorDetailsRequest, SearchDoctorDetailsRequestBuilder> {
-  _$SearchDoctorDetailsRequest? _$v = _$SearchDoctorDetailsRequest();
+  _$SearchDoctorDetailsRequest _$v;
 
-  String _id = '';
+  String _id;
   String get id => _$this._id;
   set id(String id) => _$this._id = id;
 
@@ -122,7 +122,7 @@ class SearchDoctorDetailsRequestBuilder
   }
 
   @override
-  void update(void Function(SearchDoctorDetailsRequestBuilder)? updates) {
+  void update(void Function(SearchDoctorDetailsRequestBuilder) updates) {
     if (updates != null) updates(this);
   }
 

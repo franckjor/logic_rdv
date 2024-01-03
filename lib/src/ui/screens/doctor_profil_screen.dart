@@ -35,7 +35,7 @@ class GetDoctorIdPageArguments implements PagesArgumentType {
   final String tokenAppointment;
   final String tokenDoctor;
 
-  GetDoctorIdPageArguments({required this.id,required this.tokenAppointment,required this.tokenDoctor});
+  GetDoctorIdPageArguments({this.id, this.tokenAppointment, this.tokenDoctor});
 
   @override
   getArguments() {
@@ -46,17 +46,17 @@ class GetDoctorIdPageArguments implements PagesArgumentType {
 class DoctorProfileScreen extends StatefulWidget {
   final GetDoctorIdPageArguments arguments;
 
-  const DoctorProfileScreen({required this.arguments});
+  const DoctorProfileScreen({this.arguments});
 
   @override
   _DoctorProfileScreenState createState() => _DoctorProfileScreenState();
 }
 
 class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
-  late SearchDoctorDetailsResponse _searchDoctorDetailsResponse;
+  SearchDoctorDetailsResponse _searchDoctorDetailsResponse;
   List<Chapters> _chapter = [];
   bool _isLoadingData = false;
-  String _tokenuser = '';
+  String _tokenUser;
 
   @override
   void initState() {
@@ -67,8 +67,8 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
   }
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  String _email = '';
-  String _fullName = '';
+  String _email;
+  String _fullName;
 
   void _openWhatsApp(
     String phone,
@@ -122,7 +122,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      endDrawer: _tokenuser == null ?
+      endDrawer: _tokenUser == null ?
       StartedDrawer() 
       :  MultiBlocProvider(
         providers: [
@@ -134,45 +134,45 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
           }),
         ],
         child: MyDrawer(
-          tokenUser: _tokenuser,
+          tokenUser: _tokenUser,
           page: '0',
           email: _email,
-          fullNme: _fullName, notification: false,
+          fullNme: _fullName,
         ),
       ),
       appBar: AdaptativeAppBar(
         title: 'Détail du médecin',
         leading: DefaultBackButton(),
         actions: [
-          _tokenuser == null ?
+          _tokenUser == null ?
             IconButton(
             icon: isAndroid || isWeb
-                ?  Icon(
+                ? const Icon(
               MdiIcons.menu,
               color: Color.fromARGB(255, 255, 255, 255),
             )
-                :  Icon(
+                : const Icon(
               MdiIcons.menu,
               color: Color.fromARGB(255, 255, 255, 255),
             ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
           )
           :
           Visibility(
-            visible: _tokenuser != null,
+            visible: _tokenUser != null,
             child: IconButton(
               icon: isAndroid || isWeb
-                  ?  Icon(
+                  ? const Icon(
                       MdiIcons.accountCircle,
                       color: Colors.white,
                     )
-                  :  Icon(
+                  : const Icon(
                       CupertinoIcons.person_alt_circle_fill,
                       color: Colors.white,
                     ),
               splashRadius: 20,
-              onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+              onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
             ),
           ),
         ],
@@ -207,7 +207,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -227,7 +227,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else {
                 customAlert(
@@ -238,7 +238,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                       state.error,
                       textAlign: TextAlign.center,
                     ),
-                  ), title: '', buttonLabel: '', action: () {  }, willPop: false,
+                  ),
                 );
               }
             }
@@ -247,11 +247,11 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
               listener: (context, state) {
             if (state is SharedPreferenceReadObjectState) {
               setState(() {
-                _tokenuser = state.sharePreferenceObject!.token;
-                _email = state.sharePreferenceObject!.email;
-                _fullName = state.sharePreferenceObject!.firstName +
+                _tokenUser = state.sharePreferenceObject.token;
+                _email = state.sharePreferenceObject.email;
+                _fullName = state.sharePreferenceObject.firstName +
                     " " +
-                    state.sharePreferenceObject!.lastName;
+                    state.sharePreferenceObject.lastName;
               });
             }
           }),
@@ -488,7 +488,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                                                                   .circle,
                                                             ),
                                                             child: IconButton(
-                                                              icon:  Icon(
+                                                              icon: const Icon(
                                                                 Icons.call,
                                                                 color: AppColors
                                                                     .whiteColor,
@@ -686,7 +686,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                     ),
                   ),
                 )
-              :  Center(
+              : const Center(
                   child: AdaptativeIndicator(),
                 );
         }),
@@ -715,10 +715,10 @@ class _DoctorInfo extends StatelessWidget {
   final TextStyle textStyle;
 
   const _DoctorInfo({
-    required Key? key,
-    required this.info,
-    required this.icon,
-    required this.textStyle,
+    Key key,
+    @required this.info,
+    @required this.icon,
+    this.textStyle,
   }) : super(key: key);
 
   @override
@@ -746,7 +746,7 @@ class _ChaptersInfos extends StatelessWidget {
   final String title;
   final String description;
 
-  const _ChaptersInfos({required this.title,required this.description});
+  const _ChaptersInfos({this.title, this.description});
 
   Widget build(BuildContext context) {
     return Column(

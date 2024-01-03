@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/add_doctor/repository
 class AddDoctorBloc extends Bloc<AddDoctorEvent, AddDoctorState> {
   final AddDoctorRepository repository;
 
-  AddDoctorBloc({required this.repository}) : super(AddDoctorLoading());
+  AddDoctorBloc({@required this.repository}) : super(AddDoctorLoading());
 
   @override
   Stream<AddDoctorState> mapEventToState(AddDoctorEvent event) async* {

@@ -38,7 +38,7 @@ abstract class LoginProcessResponseEnd
 
   static LoginProcessResponseEnd fromJson(String jsonString) {
     return serializers.deserializeWith(
-        LoginProcessResponseEnd.serializer, json.decode(jsonString))!;
+        LoginProcessResponseEnd.serializer, json.decode(jsonString));
   }
 
   static Serializer<LoginProcessResponseEnd> get serializer =>
@@ -62,7 +62,7 @@ abstract class ParamsLoginProcessResponseEnd implements Built<ParamsLoginProcess
 
   static ParamsLoginProcessResponseEnd fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsLoginProcessResponseEnd.serializer, json.decode(jsonString))!;
+        ParamsLoginProcessResponseEnd.serializer, json.decode(jsonString));
   }
 
   static Serializer<ParamsLoginProcessResponseEnd> get serializer => _$paramsLoginProcessResponseEndSerializer;
@@ -96,7 +96,7 @@ abstract class DataLoginProcessResponseEnd implements Built<DataLoginProcessResp
 
   static DataLoginProcessResponseEnd fromJson(String jsonString) {
     return serializers.deserializeWith(
-        DataLoginProcessResponseEnd.serializer, json.decode(jsonString))!;
+        DataLoginProcessResponseEnd.serializer, json.decode(jsonString));
   }
 
   static Serializer<DataLoginProcessResponseEnd> get serializer => _$dataLoginProcessResponseEndSerializer;
@@ -130,7 +130,7 @@ abstract class UserLoginProcessResponseEnd
 
   static UserLoginProcessResponseEnd fromJson(String jsonString) {
     return serializers.deserializeWith(
-        UserLoginProcessResponseEnd.serializer, json.decode(jsonString))!;
+        UserLoginProcessResponseEnd.serializer, json.decode(jsonString));
   }
 
   static Serializer<UserLoginProcessResponseEnd> get serializer =>

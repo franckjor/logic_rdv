@@ -21,14 +21,14 @@ class _$SearchNameRequestSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'kind',
-      serializers.serialize(object.kind, specifiedType: const FullType(String))!,
+      serializers.serialize(object.kind, specifiedType: const FullType(String)),
       'cp',
-      serializers.serialize(object.cp, specifiedType: const FullType(String))!,
+      serializers.serialize(object.cp, specifiedType: const FullType(String)),
       'proxy_istelecons',
       serializers.serialize(object.proxyIstelecons,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'term',
-      serializers.serialize(object.term, specifiedType: const FullType(String))!,
+      serializers.serialize(object.term, specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -36,7 +36,7 @@ class _$SearchNameRequestSerializer
 
   @override
   SearchNameRequest deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SearchNameRequestBuilder();
 
@@ -44,7 +44,7 @@ class _$SearchNameRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'kind':
           result.kind = serializers.deserialize(value,
@@ -80,10 +80,10 @@ class _$SearchNameRequest extends SearchNameRequest {
   final String term;
 
   factory _$SearchNameRequest(
-          [void Function(SearchNameRequestBuilder)? updates]) =>
-      (new SearchNameRequestBuilder()..update(updates!)).build();
+          [void Function(SearchNameRequestBuilder) updates]) =>
+      (new SearchNameRequestBuilder()..update(updates)).build();
 
-  _$SearchNameRequest._({required this.kind,required this.cp,required this.proxyIstelecons,required this.term})
+  _$SearchNameRequest._({this.kind, this.cp, this.proxyIstelecons, this.term})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(kind, 'SearchNameRequest', 'kind');
     BuiltValueNullFieldError.checkNotNull(cp, 'SearchNameRequest', 'cp');
@@ -94,7 +94,7 @@ class _$SearchNameRequest extends SearchNameRequest {
 
   @override
   SearchNameRequest rebuild(void Function(SearchNameRequestBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   SearchNameRequestBuilder toBuilder() =>
@@ -130,22 +130,22 @@ class _$SearchNameRequest extends SearchNameRequest {
 
 class SearchNameRequestBuilder
     implements Builder<SearchNameRequest, SearchNameRequestBuilder> {
-  _$SearchNameRequest? _$v = _$SearchNameRequest();
+  _$SearchNameRequest _$v;
 
-  String _kind = '';
+  String _kind;
   String get kind => _$this._kind;
   set kind(String kind) => _$this._kind = kind;
 
-  String _cp = '';
+  String _cp;
   String get cp => _$this._cp;
   set cp(String cp) => _$this._cp = cp;
 
-  String _proxyIstelecons = '';
+  String _proxyIstelecons;
   String get proxyIstelecons => _$this._proxyIstelecons;
   set proxyIstelecons(String proxyIstelecons) =>
       _$this._proxyIstelecons = proxyIstelecons;
 
-  String _term = '';
+  String _term;
   String get term => _$this._term;
   set term(String term) => _$this._term = term;
 
@@ -170,7 +170,7 @@ class SearchNameRequestBuilder
   }
 
   @override
-  void update(void Function(SearchNameRequestBuilder)? updates) {
+  void update(void Function(SearchNameRequestBuilder) updates) {
     if (updates != null) updates(this);
   }
 

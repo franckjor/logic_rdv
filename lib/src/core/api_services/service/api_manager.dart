@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:core';
 
+import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
-import 'package:dio/io.dart';
 import 'package:logging/logging.dart';
 import 'package:path/path.dart';
 import 'package:universal_io/io.dart';
@@ -13,13 +13,14 @@ import 'interceptors/interceptors.dart';
 import 'service_constant.dart';
 
 class ApiManager {
-  Dio _dio = Dio();
+  Dio _dio;
   final Logger _logger = new Logger("ApiEndpoints");
 
   ApiManager() {
     _dio = Dio();
-    _dio.options.connectTimeout = Duration(milliseconds: connectionTimeout);
-    _dio.options.receiveTimeout = Duration(milliseconds: connectionReadTimeout);
+    _dio.options.connectTimeout = connectionTimeout;
+    _dio.options.receiveTimeout = connectionReadTimeout;
+
     //Disable Certificate verification for development purpose (accept every
     // connection)
 
@@ -41,12 +42,12 @@ class ApiManager {
     var requestInterceptor = getRequestInterceptor(loggingInterceptor);
 
     _dio.interceptors.add(InterceptorsWrapper(
-        onRequest: (RequestOptions options, ResponseInterceptorHandler) async =>
+        onRequest: (RequestOptions options) async =>
             await requestInterceptor.getRequestInterceptor(options),
-        onResponse: (Response response, ResponseInterceptorHandler) =>
+        onResponse: (Response response) =>
             responseInterceptor.getResponseInterceptor(response),
-        onError: (DioException DioException, ResponseInterceptorHandler) =>
-            errorInterceptor.getErrorInterceptors(DioException)));
+        onError: (DioError dioError) =>
+            errorInterceptor.getErrorInterceptors(dioError)));
   }
 
   String _getFullUrlPath(String path) {
@@ -103,15 +104,15 @@ class ApiManager {
   }
 
   dynamic _handleError(dynamic error, dynamic stacktrace) {
-    if (error is DioException) {
-      throw handleDioException(error);
+    if (error is DioError) {
+      throw handleDioError(error);
     } else {
       throw BadRequestException(
           "Exception occured: $error stack trace: ${stacktrace.toString()}");
     }
   }
 
-  Future<dynamic> get({required  String token,required String path}) async {
+  Future<dynamic> get({String token, String path}) async {
     String url = _getFullUrlPathPdf(path);
     try {
       Response response = await _dio.get(
@@ -225,7 +226,7 @@ class ApiManager {
   }
 
   Future<String> postWithoutToken(String urlBasePath, {dynamic data}) async {
-    return post(urlBasePath, '', data: data);
+    return post(urlBasePath, null, data: data);
   }
 
   Future<String> post(String urlBasePath, String token, {dynamic data}) async {

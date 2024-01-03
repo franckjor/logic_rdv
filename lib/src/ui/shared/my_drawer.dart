@@ -23,10 +23,10 @@ class MyDrawer extends StatefulWidget {
   final bool notification;
 
   MyDrawer({
-    required this.fullNme,
-    required this.email,
-    required this.tokenUser,
-    required this.notification,
+    this.fullNme,
+    this.email,
+    this.tokenUser,
+    this.notification,
     this.page = '0',
   });
 
@@ -35,14 +35,14 @@ class MyDrawer extends StatefulWidget {
 }
 
 class _MyDrawerState extends State<MyDrawer> {
-  String _installationIdKey ='';
-  String _isSubscribe ='';
-  String _tokenuser = '';
-  bool _notification =false;
+  String _installationIdKey;
+  String _isSubscribe;
+  String _tokenUser;
+  bool _notification;
 
   Future<String> getInstalationIdKey() async {
     final prefs = await SharedPreferences.getInstance();
-    _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey)!;
+    _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey);
     print("InstallationIdHome: $_installationIdKey");
     return _installationIdKey;
   }
@@ -54,7 +54,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
   Future<String> getVerifyIfIsSubscribe() async {
     final prefs = await SharedPreferences.getInstance();
-    _isSubscribe = prefs.getString(PreferenceKey.isSubscribe)!;
+    _isSubscribe = prefs.getString(PreferenceKey.isSubscribe);
     print("_isSubscribe: $_isSubscribe");
     setState(() {
       if (_isSubscribe == "0") {
@@ -89,7 +89,7 @@ class _MyDrawerState extends State<MyDrawer> {
             listener: (context, state) {
           if (state is SharedPreferenceReadObjectState) {
             setState(() {
-              _tokenuser = state.sharePreferenceObject!.token;
+              _tokenUser = state.sharePreferenceObject.token;
             });
           }
         }),
@@ -186,7 +186,7 @@ class _MyDrawerState extends State<MyDrawer> {
                                                 exit(0);
                                               }
                                             },
-                                            title: '', confirmButtonLabel: '', cancelButtonLabel: '');
+                                            title: '');
                                       },
                                     ),
                                   ),
@@ -235,7 +235,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         onTap: () {
                           Navigator.of(context)
                               .pushNamed(RouteGenerator.appointmentScreen);
-                        }, key: null,
+                        },
                       ),
                       _DrawerItem(
                         text: 'Fixez rendez-vous',
@@ -251,7 +251,7 @@ class _MyDrawerState extends State<MyDrawer> {
                             Navigator.of(context)
                                 .pushNamed(RouteGenerator.homeScreen);
                           }
-                        }, key: null,
+                        },
                       ),
                       // _DrawerItem(
                       //   text: 'Mes rendez-vous',
@@ -280,7 +280,7 @@ class _MyDrawerState extends State<MyDrawer> {
                             Navigator.of(context)
                                 .pushNamed(RouteGenerator.messagesScreen);
                           }
-                        }, key: null,
+                        },
                       ),
                       _DrawerItem(
                         text: 'Gestion de la famille',
@@ -295,7 +295,7 @@ class _MyDrawerState extends State<MyDrawer> {
                             Navigator.of(context)
                                 .pushNamed(RouteGenerator.patientManagement);
                           }
-                        }, key: null,
+                        },
                       ),
                       _DrawerItem(
                         text: 'Mon compte',
@@ -310,7 +310,7 @@ class _MyDrawerState extends State<MyDrawer> {
                             Navigator.of(context)
                                 .pushNamed(RouteGenerator.userProfileScreen);
                           }
-                        }, key: null,
+                        },
                       ),
                       _DrawerItem(
                         icon: isAndroid || isWeb
@@ -325,7 +325,7 @@ class _MyDrawerState extends State<MyDrawer> {
                             Navigator.of(context)
                                 .pushNamed(RouteGenerator.searchDoctorInApp);
                           }
-                        }, key: null,
+                        },
                       ),
                       _DrawerItem(
                         icon: Icons.notifications,
@@ -338,7 +338,7 @@ class _MyDrawerState extends State<MyDrawer> {
                             Navigator.of(context)
                                 .pushNamed(RouteGenerator.notificationScreen);
                           }
-                        }, key: null,
+                        },
                       ),
                       _DrawerItem(
                         text: 'Déconnexion',
@@ -350,7 +350,7 @@ class _MyDrawerState extends State<MyDrawer> {
                           Navigator.of(context).pop();
                           Navigator.of(context).pushNamedAndRemoveUntil(
                               RouteGenerator.welcomeScreen, (route) => false);
-                        }, key: null,
+                        },
                       ),
                     ],
                   ),
@@ -362,7 +362,7 @@ class _MyDrawerState extends State<MyDrawer> {
                         child: _DrawerItem(
                           text: 'Notification',
                           icon: Icons.notifications_active,
-                          onTap: () {}, key: null,
+                          onTap: () {},
                         ),
                       ),
                       Switch(
@@ -372,11 +372,11 @@ class _MyDrawerState extends State<MyDrawer> {
                               ? unSubscribe(
                                   context: context,
                                   installationkey: _installationIdKey,
-                                  tokenuser: _tokenuser)
+                                  tokenuser: _tokenUser)
                               : subscribe(
                                   context: context,
                                   installationkey: _installationIdKey,
-                                  tokenuser: _tokenuser);
+                                  tokenuser: _tokenUser);
                         },
                         activeTrackColor: AppColors.primaryColor,
                         activeColor: AppColors.primaryColor,
@@ -405,14 +405,14 @@ class _MyDrawerState extends State<MyDrawer> {
 
 class _DrawerItem extends StatelessWidget {
   final String text;
-  final Function()? onTap;
+  final Function onTap;
   final IconData icon;
 
   const _DrawerItem({
-    required Key? key,
-    required this.text,
-    required this.icon,
-    required this.onTap,
+    Key key,
+    this.text,
+    this.icon,
+    this.onTap,
   }) : super(key: key);
 
   @override

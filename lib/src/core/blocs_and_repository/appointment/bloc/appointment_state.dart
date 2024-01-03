@@ -14,7 +14,7 @@ class AppointmentLoading extends AppointmentState {}
 
 class AppointmentLoadingSuccess extends AppointmentState {
   final AppointmentResponse response;
-  AppointmentLoadingSuccess({required this.response});
+  AppointmentLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -25,7 +25,7 @@ class AppointmentLoadingSuccess extends AppointmentState {
 
 class CancelAppointmentLoadingSuccess extends AppointmentState {
   final CancelAppointmentResponse response;
-  CancelAppointmentLoadingSuccess({required this.response});
+  CancelAppointmentLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -37,7 +37,7 @@ class CancelAppointmentLoadingSuccess extends AppointmentState {
 class AppointmentFailure extends AppointmentState {
   final String error;
 
-  AppointmentFailure({required this.error});
+  AppointmentFailure({@required this.error});
 
   @override
   List<Object> get props => [error];

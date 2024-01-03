@@ -5,7 +5,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/doctor_details/bloc/d
 import 'package:logic_rdv_v0/src/core/models/doctor_details_model/search_doctor_details_request.dart';
 import 'package:logic_rdv_v0/src/core/models/doctor_list_model/add_doctor_request.dart';
 
-getDoctorDetails({required BuildContext context,required  String id}) {
+getDoctorDetails({BuildContext context, String id}) {
   SearchDoctorDetailsRequest _doctorDetailsRequest = SearchDoctorDetailsRequest((builder) => builder
     ..id = id);
   BlocProvider.of<DoctorDetailsBloc>(context)

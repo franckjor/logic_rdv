@@ -4,7 +4,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/appointment/bloc/appo
 import 'package:logic_rdv_v0/src/core/models/appointment_model/cancel_appointment_request.dart';
 import 'package:logic_rdv_v0/src/core/models/appointment_model/get_appointment_request.dart';
 
-getAppointmentList({required BuildContext context,required String tokenUser,required String page}) {
+getAppointmentList({BuildContext context, String tokenUser, String page}) {
   GetAppointmentRequest _getAppointmentRequest =
       GetAppointmentRequest((builder) => builder
         ..tokenuser = tokenUser
@@ -14,7 +14,7 @@ getAppointmentList({required BuildContext context,required String tokenUser,requ
 }
 
 cancelAppointment(
-    {required BuildContext context,required String tokenUser,required String tokenAppointment}) {
+    {BuildContext context, String tokenUser, String tokenAppointment}) {
   CancelAppointmentRequest _cancelAppointmentRequest =
       CancelAppointmentRequest((builder) => builder
         ..tokenuser = tokenUser

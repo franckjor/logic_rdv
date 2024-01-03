@@ -34,25 +34,25 @@ class _$SearchDoctorDetailsResponseSerializer
     final result = <Object>[
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int))!,
+          specifiedType: const FullType(int)),
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsDoctorDetails))!,
+          specifiedType: const FullType(ParamsDoctorDetails)),
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'data',
       serializers.serialize(object.data,
-          specifiedType: const FullType(DataDoctorDetails))!,
+          specifiedType: const FullType(DataDoctorDetails)),
     ];
 
     return result;
@@ -60,7 +60,7 @@ class _$SearchDoctorDetailsResponseSerializer
 
   @override
   SearchDoctorDetailsResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SearchDoctorDetailsResponseBuilder();
 
@@ -68,7 +68,7 @@ class _$SearchDoctorDetailsResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
@@ -123,7 +123,7 @@ class _$ParamsDoctorDetailsSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String))!,
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -131,7 +131,7 @@ class _$ParamsDoctorDetailsSerializer
 
   @override
   ParamsDoctorDetails deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsDoctorDetailsBuilder();
 
@@ -139,7 +139,7 @@ class _$ParamsDoctorDetailsSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
@@ -165,48 +165,48 @@ class _$DataDoctorDetailsSerializer
     final result = <Object>[
       'category',
       serializers.serialize(object.category,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'id_category',
       serializers.serialize(object.idCategory,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'icon',
-      serializers.serialize(object.icon, specifiedType: const FullType(String))!,
+      serializers.serialize(object.icon, specifiedType: const FullType(String)),
       'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String))!,
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'civility',
       serializers.serialize(object.civility,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'nom',
-      serializers.serialize(object.nom, specifiedType: const FullType(String))!,
+      serializers.serialize(object.nom, specifiedType: const FullType(String)),
       'address',
       serializers.serialize(object.address,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'zip',
-      serializers.serialize(object.zip, specifiedType: const FullType(String))!,
+      serializers.serialize(object.zip, specifiedType: const FullType(String)),
       'city',
-      serializers.serialize(object.city, specifiedType: const FullType(String))!,
+      serializers.serialize(object.city, specifiedType: const FullType(String)),
       'id_city',
       serializers.serialize(object.idCity,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'lat',
-      serializers.serialize(object.lat, specifiedType: const FullType(String))!,
+      serializers.serialize(object.lat, specifiedType: const FullType(String)),
       'lng',
-      serializers.serialize(object.lng, specifiedType: const FullType(String))!,
+      serializers.serialize(object.lng, specifiedType: const FullType(String)),
       'tel',
-      serializers.serialize(object.tel, specifiedType: const FullType(String))!,
+      serializers.serialize(object.tel, specifiedType: const FullType(String)),
       'telnospace',
       serializers.serialize(object.telnospace,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'appointment',
       serializers.serialize(object.appointment,
-          specifiedType: const FullType(AppointmentDoctorDetails))!,
+          specifiedType: const FullType(AppointmentDoctorDetails)),
       'chapters',
       serializers.serialize(object.chapters,
           specifiedType:
-              const FullType(BuiltList, const [const FullType(Chapters)]))!,
+              const FullType(BuiltList, const [const FullType(Chapters)])),
       'id_agenda',
       serializers.serialize(object.idAgenda,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
     Object value;
     value = object.kmDiff;
@@ -214,21 +214,21 @@ class _$DataDoctorDetailsSerializer
       result
         ..add('km_diff')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.prenom;
     if (value != null) {
       result
         ..add('prenom')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     return result;
   }
 
   @override
   DataDoctorDetails deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataDoctorDetailsBuilder();
 
@@ -236,7 +236,7 @@ class _$DataDoctorDetailsSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'category':
           result.category = serializers.deserialize(value,
@@ -341,7 +341,7 @@ class _$AppointmentDoctorDetailsSerializer
     final result = <Object>[
       'token',
       serializers.serialize(object.token,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -349,7 +349,7 @@ class _$AppointmentDoctorDetailsSerializer
 
   @override
   AppointmentDoctorDetails deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AppointmentDoctorDetailsBuilder();
 
@@ -357,7 +357,7 @@ class _$AppointmentDoctorDetailsSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'token':
           result.token = serializers.deserialize(value,
@@ -382,17 +382,17 @@ class _$ChaptersSerializer implements StructuredSerializer<Chapters> {
     final result = <Object>[
       'title',
       serializers.serialize(object.title,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'description',
       serializers.serialize(object.description,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
   }
 
   @override
-  Chapters deserialize(Serializers serializers, Iterable<Object?> serialized,
+  Chapters deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ChaptersBuilder();
 
@@ -400,7 +400,7 @@ class _$ChaptersSerializer implements StructuredSerializer<Chapters> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'title':
           result.title = serializers.deserialize(value,
@@ -434,18 +434,17 @@ class _$SearchDoctorDetailsResponse extends SearchDoctorDetailsResponse {
   final DataDoctorDetails data;
 
   factory _$SearchDoctorDetailsResponse(
-          [void Function(SearchDoctorDetailsResponseBuilder)? updates]) =>
-      (new SearchDoctorDetailsResponseBuilder()..update(updates!)).build();
+          [void Function(SearchDoctorDetailsResponseBuilder) updates]) =>
+      (new SearchDoctorDetailsResponseBuilder()..update(updates)).build();
 
   _$SearchDoctorDetailsResponse._(
-      {
-      required this.httpstatut,
-      required this.version,
-      required this.request,
-      required this.params,
-      required this.error,
-      required this.message,
-      required this.data})
+      {this.httpstatut,
+      this.version,
+      this.request,
+      this.params,
+      this.error,
+      this.message,
+      this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         httpstatut, 'SearchDoctorDetailsResponse', 'httpstatut');
@@ -466,7 +465,7 @@ class _$SearchDoctorDetailsResponse extends SearchDoctorDetailsResponse {
   @override
   SearchDoctorDetailsResponse rebuild(
           void Function(SearchDoctorDetailsResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   SearchDoctorDetailsResponseBuilder toBuilder() =>
@@ -517,34 +516,34 @@ class SearchDoctorDetailsResponseBuilder
     implements
         Builder<SearchDoctorDetailsResponse,
             SearchDoctorDetailsResponseBuilder> {
-  _$SearchDoctorDetailsResponse? _$v =_$SearchDoctorDetailsResponse();
+  _$SearchDoctorDetailsResponse _$v;
 
-  int _httpstatut = 0;
+  int _httpstatut;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _version = '';
+  String _version;
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request = '';
+  String _request;
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsDoctorDetailsBuilder _params =ParamsDoctorDetailsBuilder();
+  ParamsDoctorDetailsBuilder _params;
   ParamsDoctorDetailsBuilder get params =>
       _$this._params ??= new ParamsDoctorDetailsBuilder();
   set params(ParamsDoctorDetailsBuilder params) => _$this._params = params;
 
-  String _error = '';
+  String _error;
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  String _message = '';
+  String _message;
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  DataDoctorDetailsBuilder _data =DataDoctorDetailsBuilder();
+  DataDoctorDetailsBuilder _data;
   DataDoctorDetailsBuilder get data =>
       _$this._data ??= new DataDoctorDetailsBuilder();
   set data(DataDoctorDetailsBuilder data) => _$this._data = data;
@@ -573,13 +572,13 @@ class SearchDoctorDetailsResponseBuilder
   }
 
   @override
-  void update(void Function(SearchDoctorDetailsResponseBuilder)? updates) {
+  void update(void Function(SearchDoctorDetailsResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 
   @override
   _$SearchDoctorDetailsResponse build() {
-    _$SearchDoctorDetailsResponse _$result =_$SearchDoctorDetailsResponse();
+    _$SearchDoctorDetailsResponse _$result;
     try {
       _$result = _$v ??
           new _$SearchDoctorDetailsResponse._(
@@ -596,7 +595,7 @@ class SearchDoctorDetailsResponseBuilder
                   message, 'SearchDoctorDetailsResponse', 'message'),
               data: data.build());
     } catch (_) {
-      String _$failedField = '';
+      String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -619,10 +618,10 @@ class _$ParamsDoctorDetails extends ParamsDoctorDetails {
   final String id;
 
   factory _$ParamsDoctorDetails(
-          [void Function(ParamsDoctorDetailsBuilder)? updates]) =>
-      (new ParamsDoctorDetailsBuilder()..update(updates!)).build();
+          [void Function(ParamsDoctorDetailsBuilder) updates]) =>
+      (new ParamsDoctorDetailsBuilder()..update(updates)).build();
 
-  _$ParamsDoctorDetails._({required this.id}) : super._() {
+  _$ParamsDoctorDetails._({this.id}) : super._() {
     BuiltValueNullFieldError.checkNotNull(id, 'ParamsDoctorDetails', 'id');
   }
 
@@ -655,9 +654,9 @@ class _$ParamsDoctorDetails extends ParamsDoctorDetails {
 
 class ParamsDoctorDetailsBuilder
     implements Builder<ParamsDoctorDetails, ParamsDoctorDetailsBuilder> {
-  _$ParamsDoctorDetails? _$v = _$ParamsDoctorDetails();
+  _$ParamsDoctorDetails _$v;
 
-  String _id = '';
+  String _id;
   String get id => _$this._id;
   set id(String id) => _$this._id = id;
 
@@ -679,7 +678,7 @@ class ParamsDoctorDetailsBuilder
   }
 
   @override
-  void update(void Function(ParamsDoctorDetailsBuilder)? updates) {
+  void update(void Function(ParamsDoctorDetailsBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -735,30 +734,29 @@ class _$DataDoctorDetails extends DataDoctorDetails {
   final String idAgenda;
 
   factory _$DataDoctorDetails(
-          [void Function(DataDoctorDetailsBuilder)? updates]) =>
-      (new DataDoctorDetailsBuilder()..update(updates!)).build();
+          [void Function(DataDoctorDetailsBuilder) updates]) =>
+      (new DataDoctorDetailsBuilder()..update(updates)).build();
 
   _$DataDoctorDetails._(
-      {
-      required this.category,
-      required this.idCategory,
-      required this.icon,
-      required this.kmDiff,
-      required this.id,
-      required this.civility,
-      required this.nom,
-      required this.address,
-      required this.zip,
-      required this.city,
-      required this.idCity,
-      required this.lat,
-      required this.lng,
-      required this.tel,
-      required this.telnospace,
-      required this.appointment,
-      required this.chapters,
-      required this.prenom,
-      required this.idAgenda})
+      {this.category,
+      this.idCategory,
+      this.icon,
+      this.kmDiff,
+      this.id,
+      this.civility,
+      this.nom,
+      this.address,
+      this.zip,
+      this.city,
+      this.idCity,
+      this.lat,
+      this.lng,
+      this.tel,
+      this.telnospace,
+      this.appointment,
+      this.chapters,
+      this.prenom,
+      this.idAgenda})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         category, 'DataDoctorDetails', 'category');
@@ -891,84 +889,84 @@ class _$DataDoctorDetails extends DataDoctorDetails {
 
 class DataDoctorDetailsBuilder
     implements Builder<DataDoctorDetails, DataDoctorDetailsBuilder> {
-  _$DataDoctorDetails? _$v =_$DataDoctorDetails();
+  _$DataDoctorDetails _$v;
 
-  String _category ='';
+  String _category;
   String get category => _$this._category;
   set category(String category) => _$this._category = category;
 
-  String _idCategory = '';
+  String _idCategory;
   String get idCategory => _$this._idCategory;
   set idCategory(String idCategory) => _$this._idCategory = idCategory;
 
-  String _icon = '';
+  String _icon;
   String get icon => _$this._icon;
   set icon(String icon) => _$this._icon = icon;
 
-  String _kmDiff ='';
+  String _kmDiff;
   String get kmDiff => _$this._kmDiff;
   set kmDiff(String kmDiff) => _$this._kmDiff = kmDiff;
 
-  String _id = '';
+  String _id;
   String get id => _$this._id;
   set id(String id) => _$this._id = id;
 
-  String _civility='';
+  String _civility;
   String get civility => _$this._civility;
   set civility(String civility) => _$this._civility = civility;
 
-  String _nom = '';
+  String _nom;
   String get nom => _$this._nom;
   set nom(String nom) => _$this._nom = nom;
 
-  String _address = '';
+  String _address;
   String get address => _$this._address;
   set address(String address) => _$this._address = address;
 
-  String _zip = '';
+  String _zip;
   String get zip => _$this._zip;
   set zip(String zip) => _$this._zip = zip;
 
-  String _city = '';
+  String _city;
   String get city => _$this._city;
   set city(String city) => _$this._city = city;
 
-  String _idCity ='';
+  String _idCity;
   String get idCity => _$this._idCity;
   set idCity(String idCity) => _$this._idCity = idCity;
 
-  String _lat ='';
+  String _lat;
   String get lat => _$this._lat;
   set lat(String lat) => _$this._lat = lat;
 
-  String _lng ='';
+  String _lng;
   String get lng => _$this._lng;
   set lng(String lng) => _$this._lng = lng;
 
-  String _tel = '';
+  String _tel;
   String get tel => _$this._tel;
   set tel(String tel) => _$this._tel = tel;
 
-  String _telnospace = '';
+  String _telnospace;
   String get telnospace => _$this._telnospace;
   set telnospace(String telnospace) => _$this._telnospace = telnospace;
 
-  AppointmentDoctorDetailsBuilder _appointment =AppointmentDoctorDetailsBuilder();
+  AppointmentDoctorDetailsBuilder _appointment;
   AppointmentDoctorDetailsBuilder get appointment =>
       _$this._appointment ??= new AppointmentDoctorDetailsBuilder();
   set appointment(AppointmentDoctorDetailsBuilder appointment) =>
       _$this._appointment = appointment;
 
-  ListBuilder<Chapters> _chapters = ListBuilder();
+  ListBuilder<Chapters> _chapters;
   ListBuilder<Chapters> get chapters =>
       _$this._chapters ??= new ListBuilder<Chapters>();
   set chapters(ListBuilder<Chapters> chapters) => _$this._chapters = chapters;
 
-  String _prenom = '';
+  String _prenom;
   String get prenom => _$this._prenom;
   set prenom(String prenom) => _$this._prenom = prenom;
 
-  String _idAgenda ='';
+  String _idAgenda;
   String get idAgenda => _$this._idAgenda;
   set idAgenda(String idAgenda) => _$this._idAgenda = idAgenda;
 
@@ -1008,7 +1006,7 @@ class DataDoctorDetailsBuilder
   }
 
   @override
-  void update(void Function(DataDoctorDetailsBuilder)? updates) {
+  void update(void Function(DataDoctorDetailsBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -1047,7 +1045,7 @@ class DataDoctorDetailsBuilder
               prenom: prenom,
               idAgenda: BuiltValueNullFieldError.checkNotNull(idAgenda, 'DataDoctorDetails', 'idAgenda'));
     } catch (_) {
-      String _$failedField = '';
+      String _$failedField;
       try {
         _$failedField = 'appointment';
         appointment.build();
@@ -1069,10 +1067,10 @@ class _$AppointmentDoctorDetails extends AppointmentDoctorDetails {
   final String token;
 
   factory _$AppointmentDoctorDetails(
-          [void Function(AppointmentDoctorDetailsBuilder)? updates]) =>
-      (new AppointmentDoctorDetailsBuilder()..update(updates!)).build();
+          [void Function(AppointmentDoctorDetailsBuilder) updates]) =>
+      (new AppointmentDoctorDetailsBuilder()..update(updates)).build();
 
-  _$AppointmentDoctorDetails._({required this.token}) : super._() {
+  _$AppointmentDoctorDetails._({this.token}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         token, 'AppointmentDoctorDetails', 'token');
   }
@@ -1080,7 +1078,7 @@ class _$AppointmentDoctorDetails extends AppointmentDoctorDetails {
   @override
   AppointmentDoctorDetails rebuild(
           void Function(AppointmentDoctorDetailsBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   AppointmentDoctorDetailsBuilder toBuilder() =>
@@ -1108,9 +1106,9 @@ class _$AppointmentDoctorDetails extends AppointmentDoctorDetails {
 class AppointmentDoctorDetailsBuilder
     implements
         Builder<AppointmentDoctorDetails, AppointmentDoctorDetailsBuilder> {
-  _$AppointmentDoctorDetails? _$v;
+  _$AppointmentDoctorDetails _$v;
 
-  String _token = '';
+  String _token;
   String get token => _$this._token;
   set token(String token) => _$this._token = token;
 
@@ -1132,7 +1130,7 @@ class AppointmentDoctorDetailsBuilder
   }
 
   @override
-  void update(void Function(AppointmentDoctorDetailsBuilder)? updates) {
+  void update(void Function(AppointmentDoctorDetailsBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -1153,10 +1151,10 @@ class _$Chapters extends Chapters {
   @override
   final String description;
 
-  factory _$Chapters([void Function(ChaptersBuilder)? updates]) =>
-      (new ChaptersBuilder()..update(updates!)).build();
+  factory _$Chapters([void Function(ChaptersBuilder) updates]) =>
+      (new ChaptersBuilder()..update(updates)).build();
 
-  _$Chapters._({ required this.title, required  this.description}) : super._() {
+  _$Chapters._({this.title, this.description}) : super._() {
     BuiltValueNullFieldError.checkNotNull(title, 'Chapters', 'title');
     BuiltValueNullFieldError.checkNotNull(
         description, 'Chapters', 'description');
@@ -1164,7 +1162,7 @@ class _$Chapters extends Chapters {
 
   @override
   Chapters rebuild(void Function(ChaptersBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   ChaptersBuilder toBuilder() => new ChaptersBuilder()..replace(this);
@@ -1192,13 +1190,13 @@ class _$Chapters extends Chapters {
 }
 
 class ChaptersBuilder implements Builder<Chapters, ChaptersBuilder> {
-  _$Chapters? _$v;
+  _$Chapters _$v;
 
-  String _title = '';
+  String _title;
   String get title => _$this._title;
   set title(String title) => _$this._title = title;
 
-  String _description = '';
+  String _description;
   String get description => _$this._description;
   set description(String description) => _$this._description = description;
 
@@ -1221,7 +1219,7 @@ class ChaptersBuilder implements Builder<Chapters, ChaptersBuilder> {
   }
 
   @override
-  void update(void Function(ChaptersBuilder)? updates) {
+  void update(void Function(ChaptersBuilder) updates) {
     if (updates != null) updates(this);
   }
 

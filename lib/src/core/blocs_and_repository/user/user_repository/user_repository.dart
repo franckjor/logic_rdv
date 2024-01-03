@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/core/models/user_model/user_request.dart';
 import 'package:logic_rdv_v0/src/core/models/user_model/user_response.dart';
 
 class UserRepository extends AbstractRepository {
-  Future updateAccount({required UserRequest userRequest}) async {
+  Future updateAccount({UserRequest userRequest}) async {
     final String path = '/${getControllerName()}setinfos/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,
@@ -15,7 +15,7 @@ class UserRepository extends AbstractRepository {
     return userResponse;
   }
 
-  Future checkout({required TokenUser tokenUser}) async {
+  Future checkout({TokenUser tokenUser}) async {
     final String path = '/${getControllerName()}checkout/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,

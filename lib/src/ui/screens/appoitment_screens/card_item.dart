@@ -9,13 +9,13 @@ class CardItem extends StatefulWidget {
   final CabinetResponse cabinetResponse;
   final PatientResponse patientResponse;
   final AppointmentDataResponse appointmentDataResponse;
-  final Function() onCancelAppointmentHandler;
+  final Function onCancelAppointmentHandler;
 
   CardItem({
-    required this.cabinetResponse,
-    required this.patientResponse,
-    required this.appointmentDataResponse,
-    required this.onCancelAppointmentHandler,
+    this.cabinetResponse,
+    this.patientResponse,
+    this.appointmentDataResponse,
+    this.onCancelAppointmentHandler,
   });
 
   @override
@@ -25,16 +25,16 @@ class CardItem extends StatefulWidget {
 class _CardItemState extends State<CardItem> {
   DateFormat format = DateFormat("dd/MM/yy");
   var formatterDate = new DateFormat('dd/MM/yy', 'fr').format(DateTime.now());
-  String _rdvDate ='';
-  String _dateOfAppointement ='';
-  DateTime _realyDateOfAppointement =  DateTime.now() ;
-  List<String> value =[];
+  String _rdvDate;
+  String _dateOfAppointement;
+  DateTime _realyDateOfAppointement;
+  List<String> value;
   bool _enableRdv = false;
   bool _isTcBtnVisible = false;
-  DateTime _currentDate =  DateTime.now() ;
+  DateTime _currentDate;
   double _currentTime = toDoubleHour(TimeOfDay.now());
-  TimeOfDay _startTime = TimeOfDay.now();
-  double _rdvTime = 0.0;
+  TimeOfDay _startTime;
+  double _rdvTime;
 
   _getRdvDate() {
     _rdvDate = widget.appointmentDataResponse.date;
@@ -173,7 +173,7 @@ class _CardItemState extends State<CardItem> {
                         ),
                         Row(
                           children: [
-                             Icon(
+                            const Icon(
                               Icons.schedule,
                               size: 14,
                               color: Colors.white,
@@ -292,7 +292,7 @@ class _CardItemState extends State<CardItem> {
                   //       const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                   //   child: Row(
                   //     children: [
-                  //        Icon(Icons.person, size: 20),
+                  //       const Icon(Icons.person, size: 20),
                   //       const SizedBox(width: 8),
                   //       Text(
                   //         widget.patientResponse.nom ?? '',
@@ -309,7 +309,7 @@ class _CardItemState extends State<CardItem> {
                   //       const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                   //   child: Row(
                   //     children: [
-                  //        Icon(Icons.phone, size: 20),
+                  //       const Icon(Icons.phone, size: 20),
                   //       const SizedBox(width: 8),
                   //       Text(
                   //         widget.patientResponse.phone ?? '--',
@@ -326,7 +326,7 @@ class _CardItemState extends State<CardItem> {
                   //       const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                   //   child: Row(
                   //     children: [
-                  //        Icon(Icons.email, size: 20),
+                  //       const Icon(Icons.email, size: 20),
                   //       const SizedBox(width: 8),
                   //       Text(
                   //         widget.patientResponse.email ?? '--',
@@ -359,7 +359,7 @@ class _CardItemState extends State<CardItem> {
                   //       const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                   //   child: Row(
                   //     children: [
-                  //        Icon(Icons.gite, size: 20),
+                  //       const Icon(Icons.gite, size: 20),
                   //       const SizedBox(width: 8),
                   //       Text(
                   //         widget.cabinetResponse.nom ?? '--',
@@ -376,7 +376,7 @@ class _CardItemState extends State<CardItem> {
                   //       const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                   //   child: Row(
                   //     children: [
-                  //        Icon(Icons.phone, size: 20),
+                  //       const Icon(Icons.phone, size: 20),
                   //       const SizedBox(width: 8),
                   //       Text(
                   //         widget.cabinetResponse.phone ?? '--',
@@ -393,7 +393,7 @@ class _CardItemState extends State<CardItem> {
                   //       const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                   //   child: Row(
                   //     children: [
-                  //        Icon(Icons.contact_mail, size: 20),
+                  //       const Icon(Icons.contact_mail, size: 20),
                   //       const SizedBox(width: 8),
                   //       Text(
                   //         widget.cabinetResponse.city ?? '--',
@@ -410,7 +410,7 @@ class _CardItemState extends State<CardItem> {
                   //       const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                   //   child: Row(
                   //     children: [
-                  //        Icon(Icons.location_on, size: 20),
+                  //       const Icon(Icons.location_on, size: 20),
                   //       const SizedBox(width: 8),
                   //       Text(
                   //         widget.cabinetResponse.address ?? '--',
@@ -435,7 +435,7 @@ class _CardItemState extends State<CardItem> {
                       child: ElevatedButton.icon(
                         onPressed: () => Navigator.pushNamed(
                             context, RouteGenerator.openTok),
-                        icon:  Icon(
+                        icon: const Icon(
                           Icons.videocam,
                           size: 20,
                         ),
@@ -497,7 +497,7 @@ class _CardItemState extends State<CardItem> {
 /*
 class _CustomDivider extends StatelessWidget {
   const _CustomDivider({
-    Key? key,
+    Key key,
   }) : super(key: key);
 
   @override
@@ -514,10 +514,10 @@ class _ContactButton extends StatelessWidget {
   final String label;
   final Function onTap;
   const _ContactButton({
-    Key? key,
-    required this.iconPath,
-    required this.label,
-    required this.onTap,
+    Key key,
+    @required this.iconPath,
+    @required this.label,
+    @required this.onTap,
   }) : super(key: key);
 
   @override

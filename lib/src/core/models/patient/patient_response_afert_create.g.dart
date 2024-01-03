@@ -32,26 +32,26 @@ class _$PatientResponseAfertCreateSerializer
     final result = <Object>[
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int))!,
+          specifiedType: const FullType(int)),
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsPatientResponseAfertCreate))!,
+          specifiedType: const FullType(ParamsPatientResponseAfertCreate)),
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'data',
       serializers.serialize(object.data,
           specifiedType: const FullType(BuiltList,
-              const [const FullType(DataPatientResponseAfertCreate)]))!,
+              const [const FullType(DataPatientResponseAfertCreate)])),
     ];
 
     return result;
@@ -59,7 +59,7 @@ class _$PatientResponseAfertCreateSerializer
 
   @override
   PatientResponseAfertCreate deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PatientResponseAfertCreateBuilder();
 
@@ -67,7 +67,7 @@ class _$PatientResponseAfertCreateSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
@@ -129,49 +129,49 @@ class _$ParamsPatientResponseAfertCreateSerializer
       result
         ..add('tokenuser')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.tokenappt;
     if (value != null) {
       result
         ..add('tokenappt')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.nom;
     if (value != null) {
       result
         ..add('nom')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.prenom;
     if (value != null) {
       result
         ..add('prenom')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.email;
     if (value != null) {
       result
         ..add('email')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.phone;
     if (value != null) {
       result
         ..add('phone')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     return result;
   }
 
   @override
   ParamsPatientResponseAfertCreate deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsPatientResponseAfertCreateBuilder();
 
@@ -179,7 +179,7 @@ class _$ParamsPatientResponseAfertCreateSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -229,30 +229,30 @@ class _$DataPatientResponseAfertCreateSerializer
     final result = <Object>[
       'prenom',
       serializers.serialize(object.prenom,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'email',
       serializers.serialize(object.email,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'dob',
-      serializers.serialize(object.dob, specifiedType: const FullType(String))!,
+      serializers.serialize(object.dob, specifiedType: const FullType(String)),
       'token',
       serializers.serialize(object.token,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'locked',
       serializers.serialize(object.locked,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'blacklist',
       serializers.serialize(object.blacklist,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'nplocked',
       serializers.serialize(object.nplocked,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'etaballowinternet',
       serializers.serialize(object.etaballowinternet,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'etaballownpinternet',
       serializers.serialize(object.etaballownpinternet,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
     Object value;
     value = object.nom;
@@ -260,42 +260,42 @@ class _$DataPatientResponseAfertCreateSerializer
       result
         ..add('nom')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.spacephone;
     if (value != null) {
       result
         ..add('spacephone')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.phone;
     if (value != null) {
       result
         ..add('phone')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.lockmessage;
     if (value != null) {
       result
         ..add('lockmessage')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.photo;
     if (value != null) {
       result
         ..add('photo')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     return result;
   }
 
   @override
   DataPatientResponseAfertCreate deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataPatientResponseAfertCreateBuilder();
 
@@ -303,7 +303,7 @@ class _$DataPatientResponseAfertCreateSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'nom':
           result.nom = serializers.deserialize(value,
@@ -385,18 +385,17 @@ class _$PatientResponseAfertCreate extends PatientResponseAfertCreate {
   final BuiltList<DataPatientResponseAfertCreate> data;
 
   factory _$PatientResponseAfertCreate(
-          [void Function(PatientResponseAfertCreateBuilder)? updates]) =>
-      (new PatientResponseAfertCreateBuilder()..update(updates!)).build();
+          [void Function(PatientResponseAfertCreateBuilder) updates]) =>
+      (new PatientResponseAfertCreateBuilder()..update(updates)).build();
 
   _$PatientResponseAfertCreate._(
-      {
-      required this.httpstatut,
-      required this.version,
-      required this.request,
-      required this.params,
-      required this.error,
-      required this.message,
-      required this.data})
+      {this.httpstatut,
+      this.version,
+      this.request,
+      this.params,
+      this.error,
+      this.message,
+      this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         httpstatut, 'PatientResponseAfertCreate', 'httpstatut');
@@ -417,7 +416,7 @@ class _$PatientResponseAfertCreate extends PatientResponseAfertCreate {
   @override
   PatientResponseAfertCreate rebuild(
           void Function(PatientResponseAfertCreateBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   PatientResponseAfertCreateBuilder toBuilder() =>
@@ -467,35 +466,35 @@ class _$PatientResponseAfertCreate extends PatientResponseAfertCreate {
 class PatientResponseAfertCreateBuilder
     implements
         Builder<PatientResponseAfertCreate, PatientResponseAfertCreateBuilder> {
-  _$PatientResponseAfertCreate? _$v =_$PatientResponseAfertCreate();
+  _$PatientResponseAfertCreate _$v;
 
-  int _httpstatut = 0;
+  int _httpstatut;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _version = '';
+  String _version;
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request = '';
+  String _request;
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsPatientResponseAfertCreateBuilder _params =ParamsPatientResponseAfertCreateBuilder();
+  ParamsPatientResponseAfertCreateBuilder _params;
   ParamsPatientResponseAfertCreateBuilder get params =>
       _$this._params ??= new ParamsPatientResponseAfertCreateBuilder();
   set params(ParamsPatientResponseAfertCreateBuilder params) =>
       _$this._params = params;
 
-  String _error = '';
+  String _error;
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  String _message = '';
+  String _message;
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  ListBuilder<DataPatientResponseAfertCreate> _data = ListBuilder();
+  ListBuilder<DataPatientResponseAfertCreate> _data;
   ListBuilder<DataPatientResponseAfertCreate> get data =>
       _$this._data ??= new ListBuilder<DataPatientResponseAfertCreate>();
   set data(ListBuilder<DataPatientResponseAfertCreate> data) =>
@@ -525,7 +524,7 @@ class PatientResponseAfertCreateBuilder
   }
 
   @override
-  void update(void Function(PatientResponseAfertCreateBuilder)? updates) {
+  void update(void Function(PatientResponseAfertCreateBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -548,7 +547,7 @@ class PatientResponseAfertCreateBuilder
                   message, 'PatientResponseAfertCreate', 'message'),
               data: data.build());
     } catch (_) {
-      String _$failedField = '';
+      String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -582,23 +581,22 @@ class _$ParamsPatientResponseAfertCreate
   final String phone;
 
   factory _$ParamsPatientResponseAfertCreate(
-          [void Function(ParamsPatientResponseAfertCreateBuilder)? updates]) =>
-      (new ParamsPatientResponseAfertCreateBuilder()..update(updates!)).build();
+          [void Function(ParamsPatientResponseAfertCreateBuilder) updates]) =>
+      (new ParamsPatientResponseAfertCreateBuilder()..update(updates)).build();
 
   _$ParamsPatientResponseAfertCreate._(
-      {
-      required this.tokenuser,
-      required this.tokenappt,
-      required this.nom,
-      required this.prenom,
-      required this.email,
-      required this.phone})
+      {this.tokenuser,
+      this.tokenappt,
+      this.nom,
+      this.prenom,
+      this.email,
+      this.phone})
       : super._();
 
   @override
   ParamsPatientResponseAfertCreate rebuild(
           void Function(ParamsPatientResponseAfertCreateBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   ParamsPatientResponseAfertCreateBuilder toBuilder() =>
@@ -645,29 +643,29 @@ class ParamsPatientResponseAfertCreateBuilder
     implements
         Builder<ParamsPatientResponseAfertCreate,
             ParamsPatientResponseAfertCreateBuilder> {
-  _$ParamsPatientResponseAfertCreate? _$v =_$ParamsPatientResponseAfertCreate();
+  _$ParamsPatientResponseAfertCreate _$v;
 
-  String _tokenuser = '';
+  String _tokenuser;
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappt = '';
+  String _tokenappt;
   String get tokenappt => _$this._tokenappt;
   set tokenappt(String tokenappt) => _$this._tokenappt = tokenappt;
 
-  String _nom = '';
+  String _nom;
   String get nom => _$this._nom;
   set nom(String nom) => _$this._nom = nom;
 
-  String _prenom = '';
+  String _prenom;
   String get prenom => _$this._prenom;
   set prenom(String prenom) => _$this._prenom = prenom;
 
-  String _email = '';
+  String _email;
   String get email => _$this._email;
   set email(String email) => _$this._email = email;
 
-  String _phone = '';
+  String _phone;
   String get phone => _$this._phone;
   set phone(String phone) => _$this._phone = phone;
 
@@ -694,7 +692,7 @@ class ParamsPatientResponseAfertCreateBuilder
   }
 
   @override
-  void update(void Function(ParamsPatientResponseAfertCreateBuilder)? updates) {
+  void update(void Function(ParamsPatientResponseAfertCreateBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -744,25 +742,24 @@ class _$DataPatientResponseAfertCreate extends DataPatientResponseAfertCreate {
   final String photo;
 
   factory _$DataPatientResponseAfertCreate(
-          [void Function(DataPatientResponseAfertCreateBuilder)? updates]) =>
-      (new DataPatientResponseAfertCreateBuilder()..update(updates!)).build();
+          [void Function(DataPatientResponseAfertCreateBuilder) updates]) =>
+      (new DataPatientResponseAfertCreateBuilder()..update(updates)).build();
 
   _$DataPatientResponseAfertCreate._(
-      {
-      required this.nom,
-      required this.prenom,
-      required this.email,
-      required this.spacephone,
-      required this.phone,
-      required this.dob,
-      required this.token,
-      required this.locked,
-      required this.blacklist,
-      required this.nplocked,
-      required this.etaballowinternet,
-      required this.etaballownpinternet,
-      required this.lockmessage,
-      required this.photo})
+      {this.nom,
+      this.prenom,
+      this.email,
+      this.spacephone,
+      this.phone,
+      this.dob,
+      this.token,
+      this.locked,
+      this.blacklist,
+      this.nplocked,
+      this.etaballowinternet,
+      this.etaballownpinternet,
+      this.lockmessage,
+      this.photo})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         prenom, 'DataPatientResponseAfertCreate', 'prenom');
@@ -787,7 +784,7 @@ class _$DataPatientResponseAfertCreate extends DataPatientResponseAfertCreate {
   @override
   DataPatientResponseAfertCreate rebuild(
           void Function(DataPatientResponseAfertCreateBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   DataPatientResponseAfertCreateBuilder toBuilder() =>
@@ -868,63 +865,63 @@ class DataPatientResponseAfertCreateBuilder
     implements
         Builder<DataPatientResponseAfertCreate,
             DataPatientResponseAfertCreateBuilder> {
-  _$DataPatientResponseAfertCreate? _$v =_$DataPatientResponseAfertCreate();
+  _$DataPatientResponseAfertCreate _$v;
 
-  String _nom = '';
+  String _nom;
   String get nom => _$this._nom;
   set nom(String nom) => _$this._nom = nom;
 
-  String _prenom = '';
+  String _prenom;
   String get prenom => _$this._prenom;
   set prenom(String prenom) => _$this._prenom = prenom;
 
-  String _email = '';
+  String _email;
   String get email => _$this._email;
   set email(String email) => _$this._email = email;
 
-  String _spacephone = '';
+  String _spacephone;
   String get spacephone => _$this._spacephone;
   set spacephone(String spacephone) => _$this._spacephone = spacephone;
 
-  String _phone = '';
+  String _phone;
   String get phone => _$this._phone;
   set phone(String phone) => _$this._phone = phone;
 
-  String _dob = '';
+  String _dob;
   String get dob => _$this._dob;
   set dob(String dob) => _$this._dob = dob;
 
-  String _token = '';
+  String _token;
   String get token => _$this._token;
   set token(String token) => _$this._token = token;
 
-  String _locked = '';
+  String _locked;
   String get locked => _$this._locked;
   set locked(String locked) => _$this._locked = locked;
 
-  String _blacklist = '';
+  String _blacklist;
   String get blacklist => _$this._blacklist;
   set blacklist(String blacklist) => _$this._blacklist = blacklist;
 
-  String _nplocked = '';
+  String _nplocked;
   String get nplocked => _$this._nplocked;
   set nplocked(String nplocked) => _$this._nplocked = nplocked;
 
-  String _etaballowinternet = '';
+  String _etaballowinternet;
   String get etaballowinternet => _$this._etaballowinternet;
   set etaballowinternet(String etaballowinternet) =>
       _$this._etaballowinternet = etaballowinternet;
 
-  String _etaballownpinternet = '';
+  String _etaballownpinternet;
   String get etaballownpinternet => _$this._etaballownpinternet;
   set etaballownpinternet(String etaballownpinternet) =>
       _$this._etaballownpinternet = etaballownpinternet;
 
-  String _lockmessage = '';
+  String _lockmessage;
   String get lockmessage => _$this._lockmessage;
   set lockmessage(String lockmessage) => _$this._lockmessage = lockmessage;
 
-  String _photo = '';
+  String _photo;
   String get photo => _$this._photo;
   set photo(String photo) => _$this._photo = photo;
 
@@ -959,7 +956,7 @@ class DataPatientResponseAfertCreateBuilder
   }
 
   @override
-  void update(void Function(DataPatientResponseAfertCreateBuilder)? updates) {
+  void update(void Function(DataPatientResponseAfertCreateBuilder) updates) {
     if (updates != null) updates(this);
   }
 

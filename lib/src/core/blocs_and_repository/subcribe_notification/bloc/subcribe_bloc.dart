@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/subcribe_notification
 class SubscribeBloc extends Bloc<SubscribeEvent, SubscribeState> {
   final SubscribeRepository repository;
 
-  SubscribeBloc({required this.repository}) : super(SubscribeStateLoading());
+  SubscribeBloc({@required this.repository}) : super(SubscribeStateLoading());
 
   @override
   SubscribeState get initialState => SubscribeStateLoading();

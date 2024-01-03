@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/core/models/rdv_type/rdvType.dart';
 
 class CheckStateRepository extends AbstractRepository {
   Future getRdvTypeState(
-      {required CreateAppointmentRequest createAppointmentRequest}) async {
+      {CreateAppointmentRequest createAppointmentRequest}) async {
     RdvType _rdvType;
     final String path = '/${getControllerName()}create/';
     final response = await apiManager.postDynamicWithVerifyToken(
@@ -17,12 +17,12 @@ class CheckStateRepository extends AbstractRepository {
     if (message != "" && type == TypeRdvState.apptcreneaux) {
       _rdvType = RdvType(
         message: message,
-        type: type, session: '', onclickData: '', onclickAction: '', appointment: '', stripeClientSecret: '',
+        type: type,
       );
     } else if (message != "") {
       _rdvType = RdvType(
         message: message,
-        type: type, session: '', onclickData: '', onclickAction: '', appointment: '', stripeClientSecret: '',
+        type: type,
       );
     } else {
       String session = response.data['data']['session'];

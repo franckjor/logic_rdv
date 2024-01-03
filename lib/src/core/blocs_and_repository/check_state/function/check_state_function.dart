@@ -4,13 +4,13 @@ import 'package:logic_rdv_v0/src/core/blocs_and_repository/check_state/bloc/chec
 import 'package:logic_rdv_v0/src/core/models/appointment_model/create_appointment_request.dart';
 
 rdvTypeCheckState({
-  required BuildContext context,
-  required String tokenUser,
-  required String tokenAppointment,
-  required String week,
-  required String data,
-  required String action,
-  required String session,
+  BuildContext context,
+  String tokenUser,
+  String tokenAppointment,
+  String week,
+  String data,
+  String action,
+  String session,
 }) {
   CreateAppointmentRequest _getAppointmentTypeRequest =
       CreateAppointmentRequest((builder) => builder

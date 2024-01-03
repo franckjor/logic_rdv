@@ -13,7 +13,7 @@ class GenerateAndCheckTokenStateLoading extends GenerateAndCheckTokenState {}
 
 class GenerateTokenStateLoadingSuccess extends GenerateAndCheckTokenState {
   final GetTokenResponse getToken;
-  GenerateTokenStateLoadingSuccess({required this.getToken});
+  GenerateTokenStateLoadingSuccess({this.getToken});
 
   @override
   List<Object> get props => [getToken];
@@ -26,7 +26,7 @@ class GenerateTokenStateLoadingSuccess extends GenerateAndCheckTokenState {
 class VerifyTokenStateLoadingSuccess extends GenerateAndCheckTokenState {
   final GetTokenResponse getToken;
 
-  VerifyTokenStateLoadingSuccess({required this.getToken});
+  VerifyTokenStateLoadingSuccess({this.getToken});
 
   @override
   List<Object> get props => [getToken];
@@ -39,7 +39,7 @@ class GenerateAndCheckTokenStateLoadingFailure
     extends GenerateAndCheckTokenState {
   final String error;
 
-  GenerateAndCheckTokenStateLoadingFailure({required this.error});
+  GenerateAndCheckTokenStateLoadingFailure({@required this.error});
 
   @override
   List<Object> get props => [error];

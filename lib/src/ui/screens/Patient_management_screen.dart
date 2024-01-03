@@ -38,16 +38,16 @@ class PatientManagement extends StatefulWidget {
 }
 
 class _PatientManagementState extends State<PatientManagement> {
-  String _tokenuser = '';
-  String _email = '';
-  String _fullName = '';
+  String _tokenUser;
+  String _email;
+  String _fullName;
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   List<ObjectNameOfSearch> activeEtabs = [];
   List<ObjectNameOfSearch> sameCabinetEtabs = [];
   List<ObjectNameOfSearch> _activeEtabsAndSameCabinetEtabs = [];
-  late ObjectNameOfSearch _sameCabinetEtabsObject;
+  ObjectNameOfSearch _sameCabinetEtabsObject;
 
   bool isLoading = false;
 
@@ -74,10 +74,10 @@ class _PatientManagementState extends State<PatientManagement> {
           }),
         ],
         child: MyDrawer(
-          tokenUser: _tokenuser,
+          tokenUser: _tokenUser,
           page: '4',
           email: _email,
-          fullNme: _fullName, notification: false,
+          fullNme: _fullName,
         ),
       ),
       appBar: AdaptativeAppBar(
@@ -86,16 +86,16 @@ class _PatientManagementState extends State<PatientManagement> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ?  Icon(
+                ? const Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                :  Icon(
+                : const Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState?.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
           ),
         ],
       ),
@@ -105,12 +105,12 @@ class _PatientManagementState extends State<PatientManagement> {
               listener: (context, state) {
             if (state is SharedPreferenceReadObjectState) {
               setState(() {
-                _tokenuser = state.sharePreferenceObject!.token;
-                _email = state.sharePreferenceObject!.email;
-                _fullName = state.sharePreferenceObject!.firstName +
+                _tokenUser = state.sharePreferenceObject.token;
+                _email = state.sharePreferenceObject.email;
+                _fullName = state.sharePreferenceObject.firstName +
                     " " +
-                    state.sharePreferenceObject!.lastName;
-                getFixerRdvDoctorList(context: context, tokenUser: _tokenuser);
+                    state.sharePreferenceObject.lastName;
+                getFixerRdvDoctorList(context: context, tokenUser: _tokenUser);
               });
             }
           }),
@@ -133,7 +133,7 @@ class _PatientManagementState extends State<PatientManagement> {
                 _progressDialog.hide();
                 isLoading = false;
                 _activeEtabsAndSameCabinetEtabs.clear();
-                getFixerRdvDoctorList(context: context, tokenUser: _tokenuser);
+                getFixerRdvDoctorList(context: context, tokenUser: _tokenUser);
                 customAlert(
                   alertType: AlertType.success,
                   context: context,
@@ -141,7 +141,7 @@ class _PatientManagementState extends State<PatientManagement> {
                     'Ce Docteur fait parti de votre liste de medecin et '
                     'peux maintenant faire des consultations et avoir des patients',
                     textAlign: TextAlign.center,
-                  ), title: '', buttonLabel: '', action: () {  }, willPop: false,
+                  ),
                 );
               });
             } else if (state is AddDoctorFailure) {
@@ -164,7 +164,7 @@ class _PatientManagementState extends State<PatientManagement> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -184,7 +184,7 @@ class _PatientManagementState extends State<PatientManagement> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else {
                 customAlert(
@@ -196,7 +196,6 @@ class _PatientManagementState extends State<PatientManagement> {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                   title: '', buttonLabel: '', action: () {  }, willPop: false,
                 );
               }
             }
@@ -234,7 +233,7 @@ class _PatientManagementState extends State<PatientManagement> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -254,7 +253,7 @@ class _PatientManagementState extends State<PatientManagement> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else {
                 customAlert(
@@ -266,7 +265,6 @@ class _PatientManagementState extends State<PatientManagement> {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                   title: '', buttonLabel: '', action: () {  }, willPop: false,
                 );
               }
             }
@@ -277,7 +275,7 @@ class _PatientManagementState extends State<PatientManagement> {
               isLoading = false;
               _activeEtabsAndSameCabinetEtabs.clear();
               flushBarSuccess(state.response.message, context);
-              getFixerRdvDoctorList(context: context, tokenUser: _tokenuser);
+              getFixerRdvDoctorList(context: context, tokenUser: _tokenUser);
             } else if (state is RemoveDoctorFailure) {
               if (state.error == messageErrorTokenInvalid ||
                   state.error == messageErrorTokenExpired) {
@@ -298,7 +296,7 @@ class _PatientManagementState extends State<PatientManagement> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else {
                 customAlert(
@@ -310,7 +308,6 @@ class _PatientManagementState extends State<PatientManagement> {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                   title: '', buttonLabel: '', action: () {  }, willPop: false,
                 );
               }
             }
@@ -343,7 +340,7 @@ class _PatientManagementState extends State<PatientManagement> {
                         itemBuilder: (context, i) => _AppointmentItem(
                               objectNameOfSearch:
                                   _activeEtabsAndSameCabinetEtabs[i],
-                              tokenUser: _tokenuser,
+                              tokenUser: _tokenUser,
                               onAddHandler: () {
                                 _progressDialog.setMessage(
                                     'Activation de votre docteur....');
@@ -352,7 +349,7 @@ class _PatientManagementState extends State<PatientManagement> {
                                   context: context,
                                   id: _activeEtabsAndSameCabinetEtabs[i].id,
                                   phone: _activeEtabsAndSameCabinetEtabs[i].tel,
-                                  tokenUser: _tokenuser,
+                                  tokenUser: _tokenUser,
                                 );
                               },
                             ))
@@ -375,9 +372,9 @@ class _AppointmentItem extends StatelessWidget {
   final Function onAddHandler;
 
   _AppointmentItem({
-    required this.objectNameOfSearch,
-    required this.tokenUser,
-    required this.onAddHandler,
+    this.objectNameOfSearch,
+    this.tokenUser,
+    this.onAddHandler,
   });
 
   @override
@@ -391,14 +388,14 @@ class _AppointmentItem extends StatelessWidget {
             content: Text(
               'Ce Docteur ne fait pas partis de vos medecins veuillez l\'ajouter.',
               textAlign: TextAlign.center,
-            ),  title: '', buttonLabel: '', action: () {  }, willPop: false,
+            ),
           );
         } else {
           Navigator.of(context).pushNamed(RouteGenerator.patientListScreen,
               arguments: GetPatientPageArguments(
                   source: 'patient',
                   doctorName: objectNameOfSearch.fullName,
-                  tokenDoctor: objectNameOfSearch.appointment.token, data: '', session: '', action: '', tokenappointment: '', tokenuser: ''));
+                  tokenDoctor: objectNameOfSearch?.appointment?.token));
         }
       },
       child: Card(

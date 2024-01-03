@@ -8,15 +8,15 @@ import 'package:universal_io/io.dart';
 bool get isWeb => foundation.kIsWeb;
 
 class PriseDeRdv extends StatefulWidget {
-  const PriseDeRdv({Key? key}) : super(key: key);
+  const PriseDeRdv({Key key}) : super(key: key);
 
   @override
   _PriseDeRdvState createState() => _PriseDeRdvState();
 }
 
 class _PriseDeRdvState extends State<PriseDeRdv> {
-  String _email = '';
-  String _fullName = '';
+  String _email;
+  String _fullName;
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -27,25 +27,25 @@ class _PriseDeRdvState extends State<PriseDeRdv> {
       endDrawer: MyDrawer(
         page: '1',
         email: _email,
-        fullNme: _fullName, tokenUser: '', notification: false,
+        fullNme: _fullName,
       ),
       appBar: AdaptativeAppBar(
         title: 'Liste des Medecins',
         actions: [
           IconButton(
             icon: Platform.isAndroid || isWeb
-                ?  Icon(
+                ? const Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                :  Icon(
+                : const Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
           ),
-        ], leading: null,
+        ],
       ),
       body: SingleChildScrollView(
         primary: true,
@@ -107,7 +107,7 @@ class _PriseDeRdvState extends State<PriseDeRdv> {
 
 class _RdvItem extends StatelessWidget {
   const _RdvItem({
-    Key? key,
+    Key key,
   }) : super(key: key);
 
   @override
@@ -155,7 +155,7 @@ class _RdvItem extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                     Icon(
+                    const Icon(
                       Icons.alarm,
                       size: 14,
                       color: Colors.white,
@@ -191,7 +191,7 @@ class _RdvItem extends StatelessWidget {
             padding: const EdgeInsets.all(12),
             child: Row(
               children: [
-                 Icon(Icons.person),
+                const Icon(Icons.person),
                 const SizedBox(width: 8),
                 const Text(
                   'Jules Cesar',

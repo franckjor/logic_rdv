@@ -16,7 +16,7 @@ class PatientLoading extends PatientState {}
 class AddPatientLoadingSuccess extends PatientState {
   final PatientResponseAfertCreate response;
 
-  AddPatientLoadingSuccess({required this.response});
+  AddPatientLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -28,7 +28,7 @@ class AddPatientLoadingSuccess extends PatientState {
 class ListOfPatientLoadingSuccess extends PatientState {
   final PatientResponseAfertCreate response;
 
-  ListOfPatientLoadingSuccess({required this.response});
+  ListOfPatientLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -40,7 +40,7 @@ class ListOfPatientLoadingSuccess extends PatientState {
 class UpdatePatientLoadingSuccess extends PatientState {
   final RemovePatientResponse updateSuccess;
 
-  UpdatePatientLoadingSuccess({required this.updateSuccess});
+  UpdatePatientLoadingSuccess({this.updateSuccess});
 
   @override
   List<Object> get props => [updateSuccess];
@@ -53,7 +53,7 @@ class UpdatePatientLoadingSuccess extends PatientState {
 class RemovePatientLoadingSuccess extends PatientState {
   final RemovePatientResponse removeSuccess;
 
-  RemovePatientLoadingSuccess({  required this.removeSuccess});
+  RemovePatientLoadingSuccess({this.removeSuccess});
 
   @override
   List<Object> get props => [removeSuccess];
@@ -66,7 +66,7 @@ class RemovePatientLoadingSuccess extends PatientState {
 class PatientFailure extends PatientState {
   final String error;
 
-  PatientFailure({required this.error});
+  PatientFailure({@required this.error});
 
   @override
   List<Object> get props => [error];

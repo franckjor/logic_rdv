@@ -9,8 +9,8 @@ import 'package:logic_rdv_v0/src/core/models/search_city_model/search_dialog_req
 import 'package:logic_rdv_v0/src/core/models/search_name_model/search_name_request.dart';
 
 onSearchByCity({
-  required BuildContext context,
-  required String terms,
+  BuildContext context,
+  String terms,
 }) {
   Timer(Duration(seconds: 0), () {
     SearchCityRequest searchRequest = SearchCityRequest((builder) => builder
@@ -22,7 +22,7 @@ onSearchByCity({
   });
 }
 
-onSearchByName({required BuildContext context, required String terms,required  String codePostal}) {
+onSearchByName({BuildContext context, String terms, String codePostal}) {
   SearchNameRequest searchNameRequest = SearchNameRequest((builder) => builder
     ..kind = 'name'
     ..proxyIstelecons = '0'
@@ -34,7 +34,7 @@ onSearchByName({required BuildContext context, required String terms,required  S
 }
 
 onSearchAddress(
-    {required BuildContext context,required String address,required String codePostal,required String city}) {
+    {BuildContext context, String address, String codePostal, String city}) {
   SearchDialogRequest searchDialogRequest =
       SearchDialogRequest((builder) => builder
         ..address = address
@@ -46,13 +46,12 @@ onSearchAddress(
 }
 
 getListOfDoctor(
-    {
-    required BuildContext context,
-    required String cityOrOther,
-    required String nameOrService,
-    required String page,
-    required String villeId,
-    required String categoryId}) {
+    {BuildContext context,
+    String cityOrOther,
+    String nameOrService,
+    String page,
+    String villeId,
+    String categoryId}) {
   ListOfDoctorRequest searchRequest = ListOfDoctorRequest((builder) => builder
     ..proxyNom = nameOrService
     ..proxyNomId = categoryId
@@ -66,13 +65,12 @@ getListOfDoctor(
 }
 
 getListOfDoctorAround(
-    {
-    required BuildContext context,
-    required String cityOrOther,
-    required String nameOrService,
-    required String page,
-    required String villeId,
-    required String categoryId}) {
+    {BuildContext context,
+    String cityOrOther,
+    String nameOrService,
+    String page,
+    String villeId,
+    String categoryId}) {
   ListOfDoctorRequest searchRequest = ListOfDoctorRequest((builder) => builder
     ..proxyNom = nameOrService
     ..proxyNomId = categoryId

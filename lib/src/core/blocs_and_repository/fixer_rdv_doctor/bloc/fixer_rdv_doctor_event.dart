@@ -9,7 +9,7 @@ abstract class FixerRdvDoctorEvent extends Equatable {
 class GetFixerRdvDoctor extends FixerRdvDoctorEvent {
   final TokenUser tokenUser;
 
-  GetFixerRdvDoctor({required this.tokenUser});
+  GetFixerRdvDoctor({this.tokenUser});
 
   @override
   List<Object> get props => [tokenUser];

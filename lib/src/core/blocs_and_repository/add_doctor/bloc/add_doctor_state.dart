@@ -13,7 +13,7 @@ class AddDoctorLoading extends AddDoctorState {}
 
 class AddDoctorLoadingSuccess extends AddDoctorState {
   final AddDoctorResponse response;
-  AddDoctorLoadingSuccess({required this.response});
+  AddDoctorLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -25,7 +25,7 @@ class AddDoctorLoadingSuccess extends AddDoctorState {
 class AddDoctorFailure extends AddDoctorState {
   final String error;
 
-  AddDoctorFailure({required this.error});
+  AddDoctorFailure({@required this.error});
 
   @override
   List<Object> get props => [error];

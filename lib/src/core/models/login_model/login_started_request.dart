@@ -29,7 +29,7 @@ abstract class LoginStartedRequest
 
   static LoginStartedRequest fromJson(String jsonString) {
     return serializers.deserializeWith(
-        LoginStartedRequest.serializer, json.decode(jsonString))!;
+        LoginStartedRequest.serializer, json.decode(jsonString));
   }
 
   static Serializer<LoginStartedRequest> get serializer =>

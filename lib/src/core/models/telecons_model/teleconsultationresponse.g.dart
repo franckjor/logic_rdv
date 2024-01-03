@@ -30,24 +30,24 @@ class _$TeleconsResponseSerializer
     final result = <Object>[
       'version',
       serializers.serialize(object.version,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'request',
       serializers.serialize(object.request,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'params',
       serializers.serialize(object.params,
-          specifiedType: const FullType(ParamsTc))!,
+          specifiedType: const FullType(ParamsTc)),
       'message',
       serializers.serialize(object.message,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'httpstatut',
       serializers.serialize(object.httpstatut,
-          specifiedType: const FullType(int))!,
+          specifiedType: const FullType(int)),
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'data',
-      serializers.serialize(object.data, specifiedType: const FullType(DataTc))!,
+      serializers.serialize(object.data, specifiedType: const FullType(DataTc)),
     ];
 
     return result;
@@ -55,7 +55,7 @@ class _$TeleconsResponseSerializer
 
   @override
   TeleconsResponse deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new TeleconsResponseBuilder();
 
@@ -63,7 +63,7 @@ class _$TeleconsResponseSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
@@ -112,14 +112,14 @@ class _$ParamsTcSerializer implements StructuredSerializer<ParamsTc> {
     final result = <Object>[
       'tokentelecons',
       serializers.serialize(object.tokentelecons,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
   }
 
   @override
-  ParamsTc deserialize(Serializers serializers, Iterable<Object?> serialized,
+  ParamsTc deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsTcBuilder();
 
@@ -127,7 +127,7 @@ class _$ParamsTcSerializer implements StructuredSerializer<ParamsTc> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'tokentelecons':
           result.tokentelecons = serializers.deserialize(value,
@@ -152,25 +152,25 @@ class _$DataTcSerializer implements StructuredSerializer<DataTc> {
     final result = <Object>[
       'etablissement',
       serializers.serialize(object.etablissement,
-          specifiedType: const FullType(EtablissementTc))!,
+          specifiedType: const FullType(EtablissementTc)),
       'appt',
-      serializers.serialize(object.appt, specifiedType: const FullType(ApptTc))!,
+      serializers.serialize(object.appt, specifiedType: const FullType(ApptTc)),
       'infos',
       serializers.serialize(object.infos,
-          specifiedType: const FullType(InfosTc))!,
+          specifiedType: const FullType(InfosTc)),
       'payment',
       serializers.serialize(object.payment,
-          specifiedType: const FullType(PaymentTc))!,
+          specifiedType: const FullType(PaymentTc)),
       'tokbox',
       serializers.serialize(object.tokbox,
-          specifiedType: const FullType(TokboxTc))!,
+          specifiedType: const FullType(TokboxTc)),
     ];
 
     return result;
   }
 
   @override
-  DataTc deserialize(Serializers serializers, Iterable<Object?> serialized,
+  DataTc deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataTcBuilder();
 
@@ -178,7 +178,7 @@ class _$DataTcSerializer implements StructuredSerializer<DataTc> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'etablissement':
           result.etablissement.replace(serializers.deserialize(value,
@@ -220,19 +220,19 @@ class _$EtablissementTcSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'nom',
-      serializers.serialize(object.nom, specifiedType: const FullType(String))!,
+      serializers.serialize(object.nom, specifiedType: const FullType(String)),
       'address',
       serializers.serialize(object.address,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'zip',
-      serializers.serialize(object.zip, specifiedType: const FullType(String))!,
+      serializers.serialize(object.zip, specifiedType: const FullType(String)),
       'city',
-      serializers.serialize(object.city, specifiedType: const FullType(String))!,
+      serializers.serialize(object.city, specifiedType: const FullType(String)),
       'telnospace',
       serializers.serialize(object.telnospace,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'tel',
-      serializers.serialize(object.tel, specifiedType: const FullType(String))!,
+      serializers.serialize(object.tel, specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -240,7 +240,7 @@ class _$EtablissementTcSerializer
 
   @override
   EtablissementTc deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new EtablissementTcBuilder();
 
@@ -248,7 +248,7 @@ class _$EtablissementTcSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'nom':
           result.nom = serializers.deserialize(value,
@@ -293,31 +293,31 @@ class _$ApptTcSerializer implements StructuredSerializer<ApptTc> {
     final result = <Object>[
       'token',
       serializers.serialize(object.token,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'date',
-      serializers.serialize(object.date, specifiedType: const FullType(String))!,
+      serializers.serialize(object.date, specifiedType: const FullType(String)),
       'doctor',
       serializers.serialize(object.doctor,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'description',
       serializers.serialize(object.description,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'patient',
       serializers.serialize(object.patient,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'status',
       serializers.serialize(object.status,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'buttoncancel',
       serializers.serialize(object.buttoncancel,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
   }
 
   @override
-  ApptTc deserialize(Serializers serializers, Iterable<Object?> serialized,
+  ApptTc deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ApptTcBuilder();
 
@@ -325,7 +325,7 @@ class _$ApptTcSerializer implements StructuredSerializer<ApptTc> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'token':
           result.token = serializers.deserialize(value,
@@ -378,20 +378,20 @@ class _$InfosTcSerializer implements StructuredSerializer<InfosTc> {
       result
         ..add('buttonstarttelecons')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     value = object.buttonstartteleconsdisabled;
     if (value != null) {
       result
         ..add('buttonstartteleconsdisabled')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     return result;
   }
 
   @override
-  InfosTc deserialize(Serializers serializers, Iterable<Object?> serialized,
+  InfosTc deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new InfosTcBuilder();
 
@@ -399,7 +399,7 @@ class _$InfosTcSerializer implements StructuredSerializer<InfosTc> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'buttonstarttelecons':
           result.buttonstarttelecons = serializers.deserialize(value,
@@ -428,25 +428,25 @@ class _$PaymentTcSerializer implements StructuredSerializer<PaymentTc> {
     final result = <Object>[
       'title',
       serializers.serialize(object.title,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'statuslabel',
       serializers.serialize(object.statuslabel,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'stripeClientSecret',
       serializers.serialize(object.stripeClientSecret,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'text',
-      serializers.serialize(object.text, specifiedType: const FullType(String))!,
+      serializers.serialize(object.text, specifiedType: const FullType(String)),
       'history',
       serializers.serialize(object.history,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
   }
 
   @override
-  PaymentTc deserialize(Serializers serializers, Iterable<Object?> serialized,
+  PaymentTc deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PaymentTcBuilder();
 
@@ -454,7 +454,7 @@ class _$PaymentTcSerializer implements StructuredSerializer<PaymentTc> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'title':
           result.title = serializers.deserialize(value,
@@ -495,26 +495,26 @@ class _$TokboxTcSerializer implements StructuredSerializer<TokboxTc> {
     final result = <Object>[
       'sessionId',
       serializers.serialize(object.sessionId,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'token',
       serializers.serialize(object.token,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'apiKey',
       serializers.serialize(object.apiKey,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'title',
       serializers.serialize(object.title,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'error',
       serializers.serialize(object.error,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
   }
 
   @override
-  TokboxTc deserialize(Serializers serializers, Iterable<Object?> serialized,
+  TokboxTc deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new TokboxTcBuilder();
 
@@ -522,7 +522,7 @@ class _$TokboxTcSerializer implements StructuredSerializer<TokboxTc> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'sessionId':
           result.sessionId = serializers.deserialize(value,
@@ -568,18 +568,17 @@ class _$TeleconsResponse extends TeleconsResponse {
   final DataTc data;
 
   factory _$TeleconsResponse(
-          [void Function(TeleconsResponseBuilder)? updates]) =>
-      (new TeleconsResponseBuilder()..update(updates!)).build();
+          [void Function(TeleconsResponseBuilder) updates]) =>
+      (new TeleconsResponseBuilder()..update(updates)).build();
 
   _$TeleconsResponse._(
-      {
-      required this.version,
-      required this.request,
-      required this.params,
-      required this.message,
-      required this.httpstatut,
-      required this.error,
-      required this.data})
+      {this.version,
+      this.request,
+      this.params,
+      this.message,
+      this.httpstatut,
+      this.error,
+      this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         version, 'TeleconsResponse', 'version');
@@ -596,7 +595,7 @@ class _$TeleconsResponse extends TeleconsResponse {
 
   @override
   TeleconsResponse rebuild(void Function(TeleconsResponseBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   TeleconsResponseBuilder toBuilder() =>
@@ -645,33 +644,33 @@ class _$TeleconsResponse extends TeleconsResponse {
 
 class TeleconsResponseBuilder
     implements Builder<TeleconsResponse, TeleconsResponseBuilder> {
-  _$TeleconsResponse? _$v =_$TeleconsResponse();
+  _$TeleconsResponse _$v;
 
-  String _version = '';
+  String _version;
   String get version => _$this._version;
   set version(String version) => _$this._version = version;
 
-  String _request = '';
+  String _request;
   String get request => _$this._request;
   set request(String request) => _$this._request = request;
 
-  ParamsTcBuilder _params =ParamsTcBuilder();
+  ParamsTcBuilder _params;
   ParamsTcBuilder get params => _$this._params ??= new ParamsTcBuilder();
   set params(ParamsTcBuilder params) => _$this._params = params;
 
-  String _message = '';
+  String _message;
   String get message => _$this._message;
   set message(String message) => _$this._message = message;
 
-  int _httpstatut = 0;
+  int _httpstatut;
   int get httpstatut => _$this._httpstatut;
   set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error = '';
+  String _error;
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
-  DataTcBuilder _data = DataTcBuilder();
+  DataTcBuilder _data;
   DataTcBuilder get data => _$this._data ??= new DataTcBuilder();
   set data(DataTcBuilder data) => _$this._data = data;
 
@@ -699,7 +698,7 @@ class TeleconsResponseBuilder
   }
 
   @override
-  void update(void Function(TeleconsResponseBuilder)? updates) {
+  void update(void Function(TeleconsResponseBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -722,7 +721,7 @@ class TeleconsResponseBuilder
                   error, 'TeleconsResponse', 'error'),
               data: data.build());
     } catch (_) {
-      String _$failedField = '';
+      String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -744,10 +743,10 @@ class _$ParamsTc extends ParamsTc {
   @override
   final String tokentelecons;
 
-  factory _$ParamsTc([void Function(ParamsTcBuilder)? updates]) =>
-      (new ParamsTcBuilder()..update(updates!)).build();
+  factory _$ParamsTc([void Function(ParamsTcBuilder) updates]) =>
+      (new ParamsTcBuilder()..update(updates)).build();
 
-  _$ParamsTc._({required this.tokentelecons}) : super._() {
+  _$ParamsTc._({this.tokentelecons}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokentelecons, 'ParamsTc', 'tokentelecons');
   }
@@ -779,9 +778,9 @@ class _$ParamsTc extends ParamsTc {
 }
 
 class ParamsTcBuilder implements Builder<ParamsTc, ParamsTcBuilder> {
-  _$ParamsTc? _$v =_$ParamsTc();
+  _$ParamsTc _$v;
 
-  String _tokentelecons = '';
+  String _tokentelecons;
   String get tokentelecons => _$this._tokentelecons;
   set tokentelecons(String tokentelecons) =>
       _$this._tokentelecons = tokentelecons;
@@ -804,7 +803,7 @@ class ParamsTcBuilder implements Builder<ParamsTc, ParamsTcBuilder> {
   }
 
   @override
-  void update(void Function(ParamsTcBuilder)? updates) {
+  void update(void Function(ParamsTcBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -831,11 +830,11 @@ class _$DataTc extends DataTc {
   @override
   final TokboxTc tokbox;
 
-  factory _$DataTc([void Function(DataTcBuilder)? updates]) =>
-      (new DataTcBuilder()..update(updates!)).build();
+  factory _$DataTc([void Function(DataTcBuilder) updates]) =>
+      (new DataTcBuilder()..update(updates)).build();
 
   _$DataTc._(
-      { required this.etablissement,required this.appt,required this.infos,required this.payment,required this.tokbox})
+      {this.etablissement, this.appt, this.infos, this.payment, this.tokbox})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         etablissement, 'DataTc', 'etablissement');
@@ -847,7 +846,7 @@ class _$DataTc extends DataTc {
 
   @override
   DataTc rebuild(void Function(DataTcBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   DataTcBuilder toBuilder() => new DataTcBuilder()..replace(this);
@@ -886,27 +885,27 @@ class _$DataTc extends DataTc {
 }
 
 class DataTcBuilder implements Builder<DataTc, DataTcBuilder> {
-  _$DataTc? _$v =_$DataTc();
+  _$DataTc _$v;
 
-  EtablissementTcBuilder _etablissement = EtablissementTcBuilder();
+  EtablissementTcBuilder _etablissement;
   EtablissementTcBuilder get etablissement =>
       _$this._etablissement ??= new EtablissementTcBuilder();
   set etablissement(EtablissementTcBuilder etablissement) =>
       _$this._etablissement = etablissement;
 
-  ApptTcBuilder _appt = ApptTcBuilder();
+  ApptTcBuilder _appt;
   ApptTcBuilder get appt => _$this._appt ??= new ApptTcBuilder();
   set appt(ApptTcBuilder appt) => _$this._appt = appt;
 
-  InfosTcBuilder _infos = InfosTcBuilder();
+  InfosTcBuilder _infos;
   InfosTcBuilder get infos => _$this._infos ??= new InfosTcBuilder();
   set infos(InfosTcBuilder infos) => _$this._infos = infos;
 
-  PaymentTcBuilder _payment = PaymentTcBuilder();
+  PaymentTcBuilder _payment;
   PaymentTcBuilder get payment => _$this._payment ??= new PaymentTcBuilder();
   set payment(PaymentTcBuilder payment) => _$this._payment = payment;
 
-  TokboxTcBuilder _tokbox =TokboxTcBuilder(); 
+  TokboxTcBuilder _tokbox;
   TokboxTcBuilder get tokbox => _$this._tokbox ??= new TokboxTcBuilder();
   set tokbox(TokboxTcBuilder tokbox) => _$this._tokbox = tokbox;
 
@@ -932,7 +931,7 @@ class DataTcBuilder implements Builder<DataTc, DataTcBuilder> {
   }
 
   @override
-  void update(void Function(DataTcBuilder)? updates) {
+  void update(void Function(DataTcBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -948,7 +947,7 @@ class DataTcBuilder implements Builder<DataTc, DataTcBuilder> {
               payment: payment.build(),
               tokbox: tokbox.build());
     } catch (_) {
-      String _$failedField = '';
+      String _$failedField;
       try {
         _$failedField = 'etablissement';
         etablissement.build();
@@ -985,11 +984,11 @@ class _$EtablissementTc extends EtablissementTc {
   @override
   final String tel;
 
-  factory _$EtablissementTc([void Function(EtablissementTcBuilder)? updates]) =>
-      (new EtablissementTcBuilder()..update(updates!)).build();
+  factory _$EtablissementTc([void Function(EtablissementTcBuilder) updates]) =>
+      (new EtablissementTcBuilder()..update(updates)).build();
 
   _$EtablissementTc._(
-      {required this.nom,required this.address,required this.zip,required this.city,required this.telnospace,required this.tel})
+      {this.nom, this.address, this.zip, this.city, this.telnospace, this.tel})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(nom, 'EtablissementTc', 'nom');
     BuiltValueNullFieldError.checkNotNull(
@@ -1003,7 +1002,7 @@ class _$EtablissementTc extends EtablissementTc {
 
   @override
   EtablissementTc rebuild(void Function(EtablissementTcBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   EtablissementTcBuilder toBuilder() =>
@@ -1046,29 +1045,29 @@ class _$EtablissementTc extends EtablissementTc {
 
 class EtablissementTcBuilder
     implements Builder<EtablissementTc, EtablissementTcBuilder> {
-  _$EtablissementTc? _$v =_$EtablissementTc();
+  _$EtablissementTc _$v;
 
-  String _nom = '';
+  String _nom;
   String get nom => _$this._nom;
   set nom(String nom) => _$this._nom = nom;
 
-  String _address = '';
+  String _address;
   String get address => _$this._address;
   set address(String address) => _$this._address = address;
 
-  String _zip = '';
+  String _zip;
   String get zip => _$this._zip;
   set zip(String zip) => _$this._zip = zip;
 
-  String _city = '';
+  String _city;
   String get city => _$this._city;
   set city(String city) => _$this._city = city;
 
-  String _telnospace = '';
+  String _telnospace;
   String get telnospace => _$this._telnospace;
   set telnospace(String telnospace) => _$this._telnospace = telnospace;
 
-  String _tel = '';
+  String _tel;
   String get tel => _$this._tel;
   set tel(String tel) => _$this._tel = tel;
 
@@ -1095,7 +1094,7 @@ class EtablissementTcBuilder
   }
 
   @override
-  void update(void Function(EtablissementTcBuilder)? updates) {
+  void update(void Function(EtablissementTcBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -1136,18 +1135,17 @@ class _$ApptTc extends ApptTc {
   @override
   final String buttoncancel;
 
-  factory _$ApptTc([void Function(ApptTcBuilder)? updates]) =>
-      (new ApptTcBuilder()..update(updates!)).build();
+  factory _$ApptTc([void Function(ApptTcBuilder) updates]) =>
+      (new ApptTcBuilder()..update(updates)).build();
 
   _$ApptTc._(
-      {
-      required this.token,
-      required this.date,
-      required this.doctor,
-      required this.description,
-      required this.patient,
-      required this.status,
-      required this.buttoncancel})
+      {this.token,
+      this.date,
+      this.doctor,
+      this.description,
+      this.patient,
+      this.status,
+      this.buttoncancel})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(token, 'ApptTc', 'token');
     BuiltValueNullFieldError.checkNotNull(date, 'ApptTc', 'date');
@@ -1161,7 +1159,7 @@ class _$ApptTc extends ApptTc {
 
   @override
   ApptTc rebuild(void Function(ApptTcBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   ApptTcBuilder toBuilder() => new ApptTcBuilder()..replace(this);
@@ -1208,33 +1206,33 @@ class _$ApptTc extends ApptTc {
 }
 
 class ApptTcBuilder implements Builder<ApptTc, ApptTcBuilder> {
-  _$ApptTc? _$v = _$ApptTc();
+  _$ApptTc _$v;
 
-  String _token = '';
+  String _token;
   String get token => _$this._token;
   set token(String token) => _$this._token = token;
 
-  String _date = '';
+  String _date;
   String get date => _$this._date;
   set date(String date) => _$this._date = date;
 
-  String _doctor = '';
+  String _doctor;
   String get doctor => _$this._doctor;
   set doctor(String doctor) => _$this._doctor = doctor;
 
-  String _description = '';
+  String _description;
   String get description => _$this._description;
   set description(String description) => _$this._description = description;
 
-  String _patient  ='';
+  String _patient;
   String get patient => _$this._patient;
   set patient(String patient) => _$this._patient = patient;
 
-  String _status = '';
+  String _status;
   String get status => _$this._status;
   set status(String status) => _$this._status = status;
 
-  String _buttoncancel = '';
+  String _buttoncancel;
   String get buttoncancel => _$this._buttoncancel;
   set buttoncancel(String buttoncancel) => _$this._buttoncancel = buttoncancel;
 
@@ -1262,7 +1260,7 @@ class ApptTcBuilder implements Builder<ApptTc, ApptTcBuilder> {
   }
 
   @override
-  void update(void Function(ApptTcBuilder)? updates) {
+  void update(void Function(ApptTcBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -1294,15 +1292,15 @@ class _$InfosTc extends InfosTc {
   @override
   final String buttonstartteleconsdisabled;
 
-  factory _$InfosTc([void Function(InfosTcBuilder)? updates]) =>
-      (new InfosTcBuilder()..update(updates!)).build();
+  factory _$InfosTc([void Function(InfosTcBuilder) updates]) =>
+      (new InfosTcBuilder()..update(updates)).build();
 
-  _$InfosTc._({ required this.buttonstarttelecons,required this.buttonstartteleconsdisabled})
+  _$InfosTc._({this.buttonstarttelecons, this.buttonstartteleconsdisabled})
       : super._();
 
   @override
   InfosTc rebuild(void Function(InfosTcBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   InfosTcBuilder toBuilder() => new InfosTcBuilder()..replace(this);
@@ -1331,14 +1329,14 @@ class _$InfosTc extends InfosTc {
 }
 
 class InfosTcBuilder implements Builder<InfosTc, InfosTcBuilder> {
-  _$InfosTc? _$v = _$InfosTc();
+  _$InfosTc _$v;
 
-  String _buttonstarttelecons = '';
+  String _buttonstarttelecons;
   String get buttonstarttelecons => _$this._buttonstarttelecons;
   set buttonstarttelecons(String buttonstarttelecons) =>
       _$this._buttonstarttelecons = buttonstarttelecons;
 
-  String _buttonstartteleconsdisabled = '';
+  String _buttonstartteleconsdisabled;
   String get buttonstartteleconsdisabled => _$this._buttonstartteleconsdisabled;
   set buttonstartteleconsdisabled(String buttonstartteleconsdisabled) =>
       _$this._buttonstartteleconsdisabled = buttonstartteleconsdisabled;
@@ -1362,7 +1360,7 @@ class InfosTcBuilder implements Builder<InfosTc, InfosTcBuilder> {
   }
 
   @override
-  void update(void Function(InfosTcBuilder)? updates) {
+  void update(void Function(InfosTcBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -1389,16 +1387,15 @@ class _$PaymentTc extends PaymentTc {
   @override
   final String history;
 
-  factory _$PaymentTc([void Function(PaymentTcBuilder)? updates]) =>
-      (new PaymentTcBuilder()..update(updates!)).build();
+  factory _$PaymentTc([void Function(PaymentTcBuilder) updates]) =>
+      (new PaymentTcBuilder()..update(updates)).build();
 
   _$PaymentTc._(
-      {
-      required this.title,
-      required this.statuslabel,
-      required this.stripeClientSecret,
-      required this.text,
-      required this.history})
+      {this.title,
+      this.statuslabel,
+      this.stripeClientSecret,
+      this.text,
+      this.history})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(title, 'PaymentTc', 'title');
     BuiltValueNullFieldError.checkNotNull(
@@ -1411,7 +1408,7 @@ class _$PaymentTc extends PaymentTc {
 
   @override
   PaymentTc rebuild(void Function(PaymentTcBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   PaymentTcBuilder toBuilder() => new PaymentTcBuilder()..replace(this);
@@ -1450,26 +1447,26 @@ class _$PaymentTc extends PaymentTc {
 }
 
 class PaymentTcBuilder implements Builder<PaymentTc, PaymentTcBuilder> {
-  _$PaymentTc? _$v = _$PaymentTc();
+  _$PaymentTc _$v;
 
-  String _title = '';
+  String _title;
   String get title => _$this._title;
   set title(String title) => _$this._title = title;
 
-  String _statuslabel = '';
+  String _statuslabel;
   String get statuslabel => _$this._statuslabel;
   set statuslabel(String statuslabel) => _$this._statuslabel = statuslabel;
 
-  String _stripeClientSecret = '';
+  String _stripeClientSecret;
   String get stripeClientSecret => _$this._stripeClientSecret;
   set stripeClientSecret(String stripeClientSecret) =>
       _$this._stripeClientSecret = stripeClientSecret;
 
-  String _text ='';
+  String _text;
   String get text => _$this._text;
   set text(String text) => _$this._text = text;
 
-  String _history ='';
+  String _history;
   String get history => _$this._history;
   set history(String history) => _$this._history = history;
 
@@ -1495,7 +1492,7 @@ class PaymentTcBuilder implements Builder<PaymentTc, PaymentTcBuilder> {
   }
 
   @override
-  void update(void Function(PaymentTcBuilder)? updates) {
+  void update(void Function(PaymentTcBuilder) updates) {
     if (updates != null) updates(this);
   }
 
@@ -1530,11 +1527,11 @@ class _$TokboxTc extends TokboxTc {
   @override
   final String error;
 
-  factory _$TokboxTc([void Function(TokboxTcBuilder)? updates]) =>
-      (new TokboxTcBuilder()..update(updates!)).build();
+  factory _$TokboxTc([void Function(TokboxTcBuilder) updates]) =>
+      (new TokboxTcBuilder()..update(updates)).build();
 
   _$TokboxTc._(
-      { required this.sessionId,required this.token,required this.apiKey,required this.title,required this.error})
+      {this.sessionId, this.token, this.apiKey, this.title, this.error})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(sessionId, 'TokboxTc', 'sessionId');
     BuiltValueNullFieldError.checkNotNull(token, 'TokboxTc', 'token');
@@ -1545,7 +1542,7 @@ class _$TokboxTc extends TokboxTc {
 
   @override
   TokboxTc rebuild(void Function(TokboxTcBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   TokboxTcBuilder toBuilder() => new TokboxTcBuilder()..replace(this);
@@ -1584,25 +1581,25 @@ class _$TokboxTc extends TokboxTc {
 }
 
 class TokboxTcBuilder implements Builder<TokboxTc, TokboxTcBuilder> {
-  _$TokboxTc? _$v = _$TokboxTc();
+  _$TokboxTc _$v;
 
-  String _sessionId = '';
+  String _sessionId;
   String get sessionId => _$this._sessionId;
   set sessionId(String sessionId) => _$this._sessionId = sessionId;
 
-  String _token = '';
+  String _token;
   String get token => _$this._token;
   set token(String token) => _$this._token = token;
 
-  String _apiKey ='';
+  String _apiKey;
   String get apiKey => _$this._apiKey;
   set apiKey(String apiKey) => _$this._apiKey = apiKey;
 
-  String _title = '';
+  String _title;
   String get title => _$this._title;
   set title(String title) => _$this._title = title;
 
-  String _error = '';
+  String _error;
   String get error => _$this._error;
   set error(String error) => _$this._error = error;
 
@@ -1628,7 +1625,7 @@ class TokboxTcBuilder implements Builder<TokboxTc, TokboxTcBuilder> {
   }
 
   @override
-  void update(void Function(TokboxTcBuilder)? updates) {
+  void update(void Function(TokboxTcBuilder) updates) {
     if (updates != null) updates(this);
   }
 

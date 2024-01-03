@@ -37,7 +37,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  late FocusNode _focusNodeConnectButton;
+  FocusNode _focusNodeConnectButton;
 
   double _textFieldHeight = 0;
   final _key = GlobalKey();
@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
   List<ButtonvalidationloginStartedResponse>
       _buttonvalidationloginStartedResponse = [];
 
-  late SharePreferenceObject _object;
+  SharePreferenceObject _object;
   TextEditingController _loginController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -64,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
     _focusNodeConnectButton = FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        _textFieldHeight = _key.currentContext!.size!.height;
+        _textFieldHeight = _key.currentContext.size.height;
       });
     });
   }
@@ -101,16 +101,16 @@ class _LoginScreenState extends State<LoginScreen> {
           actions: [
             IconButton(
               icon: Platform.isAndroid
-                  ?  Icon(
+                  ? const Icon(
                       MdiIcons.menu,
                       color: Color.fromARGB(255, 255, 255, 255),
                     )
-                  :  Icon(
+                  : const Icon(
                       MdiIcons.menu,
                       color: Color.fromARGB(255, 255, 255, 255),
                     ),
               splashRadius: 20,
-              onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+              onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
             ),
           ],
         ),
@@ -118,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
         body: WillPopScope(
           onWillPop: () async {
             Navigator.pushNamed(context, RouteGenerator.welcomeScreen);
-            return false;
+            return null;
           },
           child: MultiBlocListener(
             listeners: [
@@ -131,8 +131,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   setState(() {
                     _ispasswordvisible = false;
                     type = state.response.data.type;
-                    _headerText = state.response.data.headermessage;
-                    _session = state.response.data.session;
+                    _headerText = state.response?.data?.headermessage;
+                    _session = state.response?.data?.session;
                     _buttonvalidationloginStartedResponse =
                         state.response.data.buttonvalidation.toList();
                   });
@@ -147,13 +147,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         content: Text(
                           state.response.data.headererror,
                           textAlign: TextAlign.center,
-                        ), buttonLabel: '', action: () {  }, willPop: false,
+                        ),
                       );
                     } else {
                       _ispasswordvisible = !_ispasswordvisible;
                       type = state.response.data.type;
-                      _headerText = state.response.data.headermessage;
-                      _session = state.response.data.session;
+                      _headerText = state.response?.data?.headermessage;
+                      _session = state.response?.data?.session;
                       _buttonvalidationloginStartedResponse =
                           state.response.data.buttonvalidation.toList();
                     }
@@ -169,7 +169,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         content: Text(
                           state.response.data.headererror,
                           textAlign: TextAlign.center,
-                        ), buttonLabel: '', action: () {  }, willPop: false,
+                        ),
                       );
                     } else {
                       _object = SharePreferenceObject(
@@ -224,7 +224,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         content: Text(
                           state.error,
                           textAlign: TextAlign.center,
-                        ), buttonLabel: '', willPop: false);
+                        ));
                   }
                 }
               }),
@@ -292,19 +292,18 @@ class _LoginScreenState extends State<LoginScreen> {
                                   hintText:
                                       'Adresse email ou numéro de téléphone',
                                   controller: _loginController,
-                                  validator: (value) => verifyEmpty(value!),
-                                  suffixIcon: null, focusNode: null, textInputAction: null,
+                                  validator: (value) => verifyEmpty(value),
                                 ),
                                 const SizedBox(height: 10),
                                 Visibility(
                                   visible: _ispasswordvisible,
                                   child: TextFormField(
                                     key: _key,
-                                    validator: (value) => verifyEmpty(value!),
+                                    validator: (value) => verifyEmpty(value),
                                     obscureText: _obscureText,
                                     controller: _passwordController,
                                     decoration: InputDecoration(
-                                      prefixIcon:  Icon(
+                                      prefixIcon: const Icon(
                                         Icons.lock,
                                         color: Color(0xFFd3e0ea),
                                       ),
@@ -315,7 +314,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   _obscureText = !_obscureText;
                                                 });
                                               },
-                                              child:  Icon(
+                                              child: const Icon(
                                                 Icons.remove_red_eye_outlined,
                                                 color: AppColors.colorHintText,
                                               ),
@@ -326,7 +325,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   _obscureText = !_obscureText;
                                                 });
                                               },
-                                              child:  Icon(
+                                              child: const Icon(
                                                 MdiIcons.eyeOffOutline,
                                                 color: AppColors.colorHintText,
                                               ),
@@ -546,13 +545,13 @@ class CheckBoxRemenberMe extends StatefulWidget {
   final bool isChecked;
   final Duration transitionDuration;
   final Function(bool isChecked) onCheckedBoxChanged;
-  final Color? inactiveColor;
-  final Color? activeColor;
+  final Color inactiveColor;
+  final Color activeColor;
 
   const CheckBoxRemenberMe({
-    Key? key,
-    required this.isChecked,
-    required this.onCheckedBoxChanged,
+    Key key,
+    this.isChecked,
+    this.onCheckedBoxChanged,
     this.transitionDuration = const Duration(milliseconds: 300),
     this.inactiveColor,
     this.activeColor = const Color(0xFF4e8fda),
@@ -564,7 +563,7 @@ class CheckBoxRemenberMe extends StatefulWidget {
 
 class _CheckBoxRemenberMeState extends State<CheckBoxRemenberMe>
     with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
+  AnimationController _controller;
 
   @override
   void initState() {
@@ -611,7 +610,7 @@ class _CheckBoxRemenberMeState extends State<CheckBoxRemenberMe>
         child: widget.isChecked
             ? ScaleTransition(
                 scale: _controller,
-                child:  Icon(
+                child: const Icon(
                   Icons.check,
                   color: Color(0xFFd3e0ea),
                 ),

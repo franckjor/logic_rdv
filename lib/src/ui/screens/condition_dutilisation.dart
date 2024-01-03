@@ -123,9 +123,9 @@ class _ConditionDutilisationState extends State<ConditionDutilisation> {
 }
 
 class _SectionTitle extends StatelessWidget {
-  final String? title;
+  final String title;
   const _SectionTitle({
-    Key? key,
+    Key key,
     this.title,
   }) : super(key: key);
 
@@ -142,9 +142,9 @@ class _SectionTitle extends StatelessWidget {
 }
 
 class _SectionContent extends StatelessWidget {
-  final String? content;
+  final String content;
   const _SectionContent({
-    Key? key,
+    Key key,
     this.content,
   }) : super(key: key);
 

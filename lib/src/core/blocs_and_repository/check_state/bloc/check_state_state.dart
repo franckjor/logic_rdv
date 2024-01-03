@@ -15,7 +15,7 @@ class CheckStateLoading extends CheckStateSate {}
 
 class CheckStateLoadingSuccess extends CheckStateSate {
   final RdvType response;
-  CheckStateLoadingSuccess({ required this.response});
+  CheckStateLoadingSuccess({this.response});
 
   @override
   List<Object> get props => [response];
@@ -27,7 +27,7 @@ class CheckStateLoadingSuccess extends CheckStateSate {
 class CheckStateFailure extends CheckStateSate {
   final String error;
 
-  CheckStateFailure({required this.error});
+  CheckStateFailure({@required this.error});
 
   @override
   List<Object> get props => [error];

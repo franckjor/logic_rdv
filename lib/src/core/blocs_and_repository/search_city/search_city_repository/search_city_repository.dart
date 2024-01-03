@@ -12,7 +12,7 @@ import 'package:logic_rdv_v0/src/core/models/search_name_model/search_name_reque
 import 'package:logic_rdv_v0/src/core/models/search_name_model/search_name_response.dart';
 
 class SearchCityRepository extends AbstractRepository {
-  Future getCityOrAddress({required SearchCityRequest searchRequestByCity}) async {
+  Future getCityOrAddress({SearchCityRequest searchRequestByCity}) async {
     final String path = '/${getControllerName()}city/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,
@@ -22,7 +22,7 @@ class SearchCityRepository extends AbstractRepository {
     return searchCityResponse;
   }
 
-  Future getNameForSearch({required SearchNameRequest searchNameRequest}) async {
+  Future getNameForSearch({SearchNameRequest searchNameRequest}) async {
     final String path = '/${getControllerName()}city/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,
@@ -32,7 +32,7 @@ class SearchCityRepository extends AbstractRepository {
     return searchNameResponse;
   }
 
-  Future getListOfDoctor({required ListOfDoctorRequest listOfDoctorRequest}) async {
+  Future getListOfDoctor({ListOfDoctorRequest listOfDoctorRequest}) async {
     final String path = '/${getControllerName()}list/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,
@@ -42,7 +42,7 @@ class SearchCityRepository extends AbstractRepository {
     return listOfDoctorResponse;
   }
 
-  Future getMyAddressPosition({required SearchDialogRequest searchDialogRequest}) async {
+  Future getMyAddressPosition({SearchDialogRequest searchDialogRequest}) async {
     final String path = '/${getControllerName()}adrlocalisation/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,
@@ -53,7 +53,7 @@ class SearchCityRepository extends AbstractRepository {
   }
 
   Future getListOfDoctorAround(
-      {required ListOfDoctorRequest listOfDoctorRequest}) async {
+      {ListOfDoctorRequest listOfDoctorRequest}) async {
     final String path = '/${getControllerName()}list/';
     final response = await apiManager.postDynamicWithVerifyToken(
         await getTokenAuthorization(), path,

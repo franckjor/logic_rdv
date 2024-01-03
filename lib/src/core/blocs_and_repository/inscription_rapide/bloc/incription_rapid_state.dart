@@ -17,7 +17,7 @@ class InscriptionRapidStateLoading extends InscriptionRapidState {}
 class CheckDoctorLoadingSuccess extends InscriptionRapidState {
   final InscriptionCheckResponse checkResponse;
 
-  CheckDoctorLoadingSuccess({required this.checkResponse});
+  CheckDoctorLoadingSuccess({this.checkResponse});
 
   @override
   List<Object> get props => [checkResponse];
@@ -30,7 +30,7 @@ class CheckDoctorLoadingSuccess extends InscriptionRapidState {
 class CreatePatientLoadingSuccess extends InscriptionRapidState {
   final CreatePatientResponse createPatientResponse;
 
-  CreatePatientLoadingSuccess({required this.createPatientResponse});
+  CreatePatientLoadingSuccess({this.createPatientResponse});
 
   @override
   List<Object> get props => [createPatientResponse];
@@ -43,7 +43,7 @@ class CreatePatientLoadingSuccess extends InscriptionRapidState {
 class InscriptionRapidStateLoadingFailure extends InscriptionRapidState {
   final String error;
 
-  InscriptionRapidStateLoadingFailure({required this.error});
+  InscriptionRapidStateLoadingFailure({@required this.error});
 
   @override
   List<Object> get props => [error];

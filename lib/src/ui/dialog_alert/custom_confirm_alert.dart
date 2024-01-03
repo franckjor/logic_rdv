@@ -4,15 +4,15 @@ import 'package:logic_rdv_v0/src/ui/themes/sizes.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 customConfirmAlert({
-  required BuildContext context,
-  required  AlertType? alertType,
-  required String title,
-  required String confirmButtonLabel,
-  required String cancelButtonLabel,
-  Function()? onNoAction,
-  Function()? closeFunction,
-  required Function()? onYesAction,
-  required Widget content,
+  @required BuildContext context,
+  AlertType alertType,
+  @required String title,
+  String confirmButtonLabel,
+  String cancelButtonLabel,
+  Function onNoAction,
+  Function closeFunction,
+  @required Function onYesAction,
+  Widget content,
 }) {
   return Alert(
     context: context,

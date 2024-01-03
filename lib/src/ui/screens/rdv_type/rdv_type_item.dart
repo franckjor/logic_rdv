@@ -6,8 +6,8 @@ import 'package:logic_rdv_v0/src/common.dart';
 class RdvTypeItem extends StatefulWidget {
   final String motifRdv;
   final String lieuRdv;
-  final Color? color;
-  final Function()? onTapHandler;
+  final Color color;
+  final Function onTapHandler;
 
   RdvTypeItem({
     this.motifRdv = "asdasdadasdsadsadas sadadasdadasd",

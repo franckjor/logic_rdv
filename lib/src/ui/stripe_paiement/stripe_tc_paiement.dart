@@ -39,8 +39,8 @@ class StripeTransactionResponse {
   bool success;
 
   StripeTransactionResponse({
-    required this.message,
-    required this.success,
+    this.message,
+    this.success,
   });
 }
 
@@ -54,13 +54,13 @@ class StripeServiceTc {
     Stripe.merchantIdentifier = 'test';
   }
   static Future<StripeTransactionResponse> payNowHandler({
-    required String stripeClientSecret,
-    required BuildContext context,
-    required String cardNumber,
-    required int expMonth,
-    required int expYear,
-    required ProgressDialog ackRdvProgressDialog,
-    required String tokentelecon,
+    String stripeClientSecret,
+    BuildContext context,
+    String cardNumber,
+    int expMonth,
+    int expYear,
+    ProgressDialog ackRdvProgressDialog,
+    String tokentelecon,
   }) async {
     try {
       // var paymentMethod = await StripePayment.paymentRequestWithCardForm(
@@ -85,7 +85,7 @@ class StripeServiceTc {
 
           paymentSheetParameters: SetupPaymentSheetParameters(
 
-              //testEnv: true,
+              testEnv: true,
               paymentIntentClientSecret: paymentIntent[
               'client_secret'], //Gotten from payment intent
               style: ThemeMode.light,
@@ -146,7 +146,7 @@ class StripeServiceTc {
             Navigator.pop(context);
             ackRdvProgressDialog.hide();
             getTeleocns(context: context, tokentelecons: tokentelecon);
-          }, title: '', willPop: false);
+          });
       print("error: " + error.toString());
       return StripeTransactionResponse(
           message: 'Transaction failed in the catch block', success: false);

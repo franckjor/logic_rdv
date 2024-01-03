@@ -1,9 +1,9 @@
 import 'package:logic_rdv_v0/src/common.dart';
 
 class RdvTypeModel {
-  final IconData? icon;
-  final String? rdvType;
-  final String? lieuRdv;
+  final IconData icon;
+  final String rdvType;
+  final String lieuRdv;
 
   RdvTypeModel({
     this.icon,

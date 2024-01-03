@@ -35,7 +35,7 @@ abstract class RemovePatientResponse
 
   static RemovePatientResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        RemovePatientResponse.serializer, json.decode(jsonString))!;
+        RemovePatientResponse.serializer, json.decode(jsonString));
   }
 
   static Serializer<RemovePatientResponse> get serializer =>
@@ -65,7 +65,7 @@ abstract class ParamsRemovePatientResponse
 
   static ParamsRemovePatientResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsRemovePatientResponse.serializer, json.decode(jsonString))!;
+        ParamsRemovePatientResponse.serializer, json.decode(jsonString));
   }
 
   static Serializer<ParamsRemovePatientResponse> get serializer =>

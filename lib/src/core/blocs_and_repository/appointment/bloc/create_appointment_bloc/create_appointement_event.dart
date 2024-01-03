@@ -9,7 +9,7 @@ abstract class CreateAppointmentEvent extends Equatable {
 class GetAppointmentType extends CreateAppointmentEvent {
   final CreateAppointmentRequest createAppointmentRequest;
 
-  GetAppointmentType({required this.createAppointmentRequest});
+  GetAppointmentType({this.createAppointmentRequest});
 
   @override
   List<Object> get props => [createAppointmentRequest];
@@ -22,7 +22,7 @@ class GetAppointmentType extends CreateAppointmentEvent {
 class GetAppointmentTypeTimeAndHour extends CreateAppointmentEvent {
   final CreateAppointmentRequest createAppointmentRequest;
 
-  GetAppointmentTypeTimeAndHour({required this.createAppointmentRequest});
+  GetAppointmentTypeTimeAndHour({this.createAppointmentRequest});
 
   @override
   List<Object> get props => [createAppointmentRequest];
@@ -35,7 +35,7 @@ class GetAppointmentTypeTimeAndHour extends CreateAppointmentEvent {
 class GetPatientForAppointment extends CreateAppointmentEvent {
   final CreateAppointmentRequest createAppointmentRequest;
 
-  GetPatientForAppointment({required this.createAppointmentRequest});
+  GetPatientForAppointment({this.createAppointmentRequest});
 
   @override
   List<Object> get props => [createAppointmentRequest];
@@ -48,7 +48,7 @@ class GetPatientForAppointment extends CreateAppointmentEvent {
 class GetNextPatientForAppointment extends CreateAppointmentEvent {
   final CreateAppointmentRequest createAppointmentRequest;
 
-  GetNextPatientForAppointment({required this.createAppointmentRequest});
+  GetNextPatientForAppointment({this.createAppointmentRequest});
 
   @override
   List<Object> get props => [createAppointmentRequest];
@@ -61,7 +61,7 @@ class GetNextPatientForAppointment extends CreateAppointmentEvent {
 class GetPrevPatientForAppointment extends CreateAppointmentEvent {
   final CreateAppointmentRequest createAppointmentRequest;
 
-  GetPrevPatientForAppointment({required this.createAppointmentRequest});
+  GetPrevPatientForAppointment({this.createAppointmentRequest});
 
   @override
   List<Object> get props => [createAppointmentRequest];
@@ -74,7 +74,7 @@ class GetPrevPatientForAppointment extends CreateAppointmentEvent {
 class GetSelectedPatientForAppointment extends CreateAppointmentEvent {
   final CreateAppointmentRequest createAppointmentRequest;
 
-  GetSelectedPatientForAppointment({required this.createAppointmentRequest});
+  GetSelectedPatientForAppointment({this.createAppointmentRequest});
 
   @override
   List<Object> get props => [createAppointmentRequest];
@@ -87,7 +87,7 @@ class GetSelectedPatientForAppointment extends CreateAppointmentEvent {
 class ValidateAppointmentWithTc extends CreateAppointmentEvent {
   final CreateAppointmentRequest createAppointmentRequest;
 
-  ValidateAppointmentWithTc({required this.createAppointmentRequest});
+  ValidateAppointmentWithTc({this.createAppointmentRequest});
 
   @override
   List<Object> get props => [createAppointmentRequest];
@@ -100,7 +100,7 @@ class ValidateAppointmentWithTc extends CreateAppointmentEvent {
 class ValidateAppointment extends CreateAppointmentEvent {
   final CreateAppointmentRequest createAppointmentRequest;
 
-  ValidateAppointment({required this.createAppointmentRequest});
+  ValidateAppointment({this.createAppointmentRequest});
 
   @override
   List<Object> get props => [createAppointmentRequest];
@@ -113,7 +113,7 @@ class ValidateAppointment extends CreateAppointmentEvent {
 class GetRdvTypeState extends CreateAppointmentEvent {
   final CreateAppointmentRequest createAppointmentRequest;
 
-  GetRdvTypeState({required this.createAppointmentRequest});
+  GetRdvTypeState({this.createAppointmentRequest});
 
   @override
   List<Object> get props => [createAppointmentRequest];
@@ -126,7 +126,7 @@ class GetRdvTypeState extends CreateAppointmentEvent {
 class ConfirmAppointmentWithTc extends CreateAppointmentEvent {
   final CreateAppointmentRequest createAppointmentRequest;
 
-  ConfirmAppointmentWithTc({required this.createAppointmentRequest});
+  ConfirmAppointmentWithTc({this.createAppointmentRequest});
 
   @override
   List<Object> get props => [createAppointmentRequest];

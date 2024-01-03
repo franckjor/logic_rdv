@@ -8,13 +8,12 @@ class RdvType {
   String onclickData;
 
   RdvType({
-    required this.type,
-    required this.message,
-    required this.session,
-    required this.onclickData,
-    required this.onclickAction,
-    required this.appointment,
-    required this.stripeClientSecret,
+    this.type,
+    this.message,
+    this.session,
+    this.onclickData,
+    this.onclickAction,
+    this.appointment,
+    this.stripeClientSecret,
   });
-  
 }

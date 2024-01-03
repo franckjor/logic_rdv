@@ -5,21 +5,21 @@ import 'package:logic_rdv_v0/src/core/models/login_model/forgot_password_request
 import 'package:logic_rdv_v0/src/core/models/login_model/login_request.dart';
 import 'package:logic_rdv_v0/src/core/models/login_model/login_started_request.dart';
 
-onPressedLoginButton({required BuildContext context,required String login,required String password}) {
+onPressedLoginButton({BuildContext context, String login, String password}) {
   LoginRequest _login = LoginRequest((builder) => builder
     ..password = password
     ..email = login);
   BlocProvider.of<LoginBloc>(context)..add(Login(loginRequest: _login));
 }
 
-onPressedResetPasswordButton({required BuildContext context,required String email}) {
+onPressedResetPasswordButton({BuildContext context, String email}) {
   ForgotPasswordRequest _resetPassword =
       ForgotPasswordRequest((builder) => builder..email = email);
   BlocProvider.of<LoginBloc>(context)
     ..add(ForgotPassword(email: _resetPassword));
 }
 
-onPressedLoginButtonForStarted({required BuildContext context}) {
+onPressedLoginButtonForStarted({BuildContext context}) {
   LoginStartedRequest _login = LoginStartedRequest((builder) => builder
     ..data = ""
     ..action = ""
@@ -28,7 +28,7 @@ onPressedLoginButtonForStarted({required BuildContext context}) {
     ..add(LoginStarted(loginStartedRequest: _login));
 }
 
-onPressedLoginButtonForSearchEmail({required BuildContext context,required String data,required String action,required String session}) {
+onPressedLoginButtonForSearchEmail({BuildContext context,String data,String action,String session}) {
   LoginStartedRequest _login = LoginStartedRequest((builder) => builder
     ..data = data
     ..action = action
@@ -37,7 +37,7 @@ onPressedLoginButtonForSearchEmail({required BuildContext context,required Strin
     ..add(LoginSearchEmail(loginStartedRequest: _login));
 }
 
-onPressedLoginButtonForSearchPass({required BuildContext context,required String data,required String action,required String session}) {
+onPressedLoginButtonForSearchPass({BuildContext context,String data,String action,String session}) {
   LoginStartedRequest _login = LoginStartedRequest((builder) =>
   builder
     ..data = data
@@ -46,7 +46,7 @@ onPressedLoginButtonForSearchPass({required BuildContext context,required String
   BlocProvider.of<LoginBloc>(context)
     ..add(LoginSearchPass(loginStartedRequest: _login));
 }
-onPressedLoginButtonForForgotPassword({required BuildContext context,required String data,required String action,required String session}) {
+onPressedLoginButtonForForgotPassword({BuildContext context,String data,String action,String session}) {
   LoginStartedRequest _login = LoginStartedRequest((builder) => builder
     ..data = data
     ..action = action
@@ -56,7 +56,7 @@ onPressedLoginButtonForForgotPassword({required BuildContext context,required St
 }
 
 
-onPressedLoginButtonForSendCode({required BuildContext context,required String data,required String action,required String session}) {
+onPressedLoginButtonForSendCode({BuildContext context,String data,String action,String session}) {
   LoginStartedRequest _login = LoginStartedRequest((builder) => builder
     ..data = data
     ..action = action
@@ -65,7 +65,7 @@ onPressedLoginButtonForSendCode({required BuildContext context,required String d
     ..add(LoginForSendCode(loginStartedRequest: _login));
 }
 
-onPressedLoginButtonForNewPassword({required BuildContext context,required String data,required String action,required String session}) {
+onPressedLoginButtonForNewPassword({BuildContext context,String data,String action,String session}) {
   LoginStartedRequest _login = LoginStartedRequest((builder) => builder
     ..data = data
     ..action = action
@@ -74,7 +74,7 @@ onPressedLoginButtonForNewPassword({required BuildContext context,required Strin
     ..add(LoginForNewPassword(loginStartedRequest: _login));
 }
 
-onPressedLoginButtonAskCodeSms({required BuildContext context,required String data,required String action,required String session}) {
+onPressedLoginButtonAskCodeSms({BuildContext context,String data,String action,String session}) {
   LoginStartedRequest _login = LoginStartedRequest((builder) => builder
     ..data = data
     ..action = action

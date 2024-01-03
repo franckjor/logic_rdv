@@ -4,7 +4,7 @@ import 'package:logic_rdv_v0/src/core/models/generate_token_model/get_token_requ
 import 'package:logic_rdv_v0/src/core/models/generate_token_model/get_token_response.dart';
 
 class GenerateAndCheckTokenRepository extends AbstractRepository {
-  Future getTokenAuthorizationRequest({required GetTokenRequest getTokenRequest}) async {
+  Future getTokenAuthorizationRequest({GetTokenRequest getTokenRequest}) async {
     final String path = '/${getControllerName()}get/';
     final response = await apiManager.postDynamic(
         await getAuthToken(), path, getTokenRequest.toJson());

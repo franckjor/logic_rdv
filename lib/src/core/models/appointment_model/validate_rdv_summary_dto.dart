@@ -40,7 +40,7 @@ abstract class ValidateRdvSummaryDto
 
   static ValidateRdvSummaryDto fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ValidateRdvSummaryDto.serializer, json.decode(jsonString))!;
+        ValidateRdvSummaryDto.serializer, json.decode(jsonString));
   }
 
   static Serializer<ValidateRdvSummaryDto> get serializer =>
@@ -75,7 +75,7 @@ abstract class ParamsValidateRdvSummaryDto
 
   static ParamsValidateRdvSummaryDto fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsValidateRdvSummaryDto.serializer, json.decode(jsonString))!;
+        ParamsValidateRdvSummaryDto.serializer, json.decode(jsonString));
   }
 
   static Serializer<ParamsValidateRdvSummaryDto> get serializer =>
@@ -104,7 +104,7 @@ abstract class DataValidateRdvSummaryDto2
 
   static DataValidateRdvSummaryDto2 fromJson(String jsonString) {
     return serializers.deserializeWith(
-        DataValidateRdvSummaryDto2.serializer, json.decode(jsonString))!;
+        DataValidateRdvSummaryDto2.serializer, json.decode(jsonString));
   }
 
   static Serializer<DataValidateRdvSummaryDto2> get serializer =>
@@ -128,7 +128,7 @@ abstract class AppointmentSummary
 
   static AppointmentSummary fromJson(String jsonString) {
     return serializers.deserializeWith(
-        AppointmentSummary.serializer, json.decode(jsonString))!;
+        AppointmentSummary.serializer, json.decode(jsonString));
   }
 
   static Serializer<AppointmentSummary> get serializer =>
@@ -152,7 +152,7 @@ abstract class PaymentIntentSummary
 
   static PaymentIntentSummary fromJson(String jsonString) {
     return serializers.deserializeWith(
-        PaymentIntentSummary.serializer, json.decode(jsonString))!;
+        PaymentIntentSummary.serializer, json.decode(jsonString));
   }
 
   static Serializer<PaymentIntentSummary> get serializer =>
@@ -189,7 +189,7 @@ abstract class DataValidateRdvSummaryDto
 
   static DataValidateRdvSummaryDto fromJson(String jsonString) {
     return serializers.deserializeWith(
-        DataValidateRdvSummaryDto.serializer, json.decode(jsonString))!;
+        DataValidateRdvSummaryDto.serializer, json.decode(jsonString));
   }
 
   static Serializer<DataValidateRdvSummaryDto> get serializer =>

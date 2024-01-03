@@ -6,7 +6,7 @@ import 'package:logic_rdv_v0/src/core/models/appointment_model/cancel_appointmen
 import 'package:logic_rdv_v0/src/core/models/appointment_model/get_appointment_request.dart';
 import 'package:logic_rdv_v0/src/core/models/message_rdv/message_request.dart';
 
-getMessageList({required BuildContext context,required String tokenUser,required String page}) {
+getMessageList({BuildContext context, String tokenUser, String page}) {
   MessageRequest _getMessageList =
   MessageRequest((builder) => builder
     ..tokenuser = tokenUser

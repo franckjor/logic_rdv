@@ -17,7 +17,7 @@ class SearchStateLoading extends SearchState {}
 class SearchCityStateLoadingSuccess extends SearchState {
   final SearchCityResponse city;
 
-  SearchCityStateLoadingSuccess({required this.city});
+  SearchCityStateLoadingSuccess({this.city});
 
   @override
   List<Object> get props => [city];
@@ -29,7 +29,7 @@ class SearchCityStateLoadingSuccess extends SearchState {
 class SearchNameStateLoadingSuccess extends SearchState {
   final SearchNameResponse name;
 
-  SearchNameStateLoadingSuccess({required this.name});
+  SearchNameStateLoadingSuccess({this.name});
 
   @override
   List<Object> get props => [name];
@@ -41,7 +41,7 @@ class SearchNameStateLoadingSuccess extends SearchState {
 class ListOfDoctorStateLoadingSuccess extends SearchState {
   final ListOfDoctorReponse doctors;
 
-  ListOfDoctorStateLoadingSuccess({required this.doctors});
+  ListOfDoctorStateLoadingSuccess({this.doctors});
 
   @override
   List<Object> get props => [doctors];
@@ -53,7 +53,7 @@ class ListOfDoctorStateLoadingSuccess extends SearchState {
 class ListOfDoctorAroundStateLoadingSuccess extends SearchState {
   final ListOfDoctorReponse doctors;
 
-  ListOfDoctorAroundStateLoadingSuccess({required this.doctors});
+  ListOfDoctorAroundStateLoadingSuccess({this.doctors});
 
   @override
   List<Object> get props => [doctors];
@@ -66,7 +66,7 @@ class ListOfDoctorAroundStateLoadingSuccess extends SearchState {
 class ListOfAddressDialogLoadingSuccess extends SearchState {
   final SearchDialogResponse address;
 
-  ListOfAddressDialogLoadingSuccess({required this.address});
+  ListOfAddressDialogLoadingSuccess({this.address});
 
   @override
   List<Object> get props => [address];
@@ -78,7 +78,7 @@ class ListOfAddressDialogLoadingSuccess extends SearchState {
 class SearchStateLoadingFailure extends SearchState {
   final String error;
 
-  SearchStateLoadingFailure({required this.error});
+  SearchStateLoadingFailure({@required this.error});
 
   @override
   List<Object> get props => [error];

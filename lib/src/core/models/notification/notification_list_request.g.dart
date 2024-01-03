@@ -26,9 +26,9 @@ class _$NotificationListRequestSerializer
     final result = <Object>[
       'installationkey',
       serializers.serialize(object.installationkey,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'page',
-      serializers.serialize(object.page, specifiedType: const FullType(String))!,
+      serializers.serialize(object.page, specifiedType: const FullType(String)),
     ];
     Object value;
     value = object.tokeruser;
@@ -36,14 +36,14 @@ class _$NotificationListRequestSerializer
       result
         ..add('tokeruser')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(String))!);
+            specifiedType: const FullType(String)));
     }
     return result;
   }
 
   @override
   NotificationListRequest deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new NotificationListRequestBuilder();
 
@@ -51,7 +51,7 @@ class _$NotificationListRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'installationkey':
           result.installationkey = serializers.deserialize(value,
@@ -81,10 +81,10 @@ class _$NotificationListRequest extends NotificationListRequest {
   final String tokeruser;
 
   factory _$NotificationListRequest(
-          [void Function(NotificationListRequestBuilder)? updates]) =>
-      (new NotificationListRequestBuilder()..update(updates!)).build();
+          [void Function(NotificationListRequestBuilder) updates]) =>
+      (new NotificationListRequestBuilder()..update(updates)).build();
 
-  _$NotificationListRequest._({required this.installationkey,required this.page,required  this.tokeruser})
+  _$NotificationListRequest._({this.installationkey, this.page, this.tokeruser})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         installationkey, 'NotificationListRequest', 'installationkey');
@@ -95,7 +95,7 @@ class _$NotificationListRequest extends NotificationListRequest {
   @override
   NotificationListRequest rebuild(
           void Function(NotificationListRequestBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   NotificationListRequestBuilder toBuilder() =>
@@ -129,18 +129,18 @@ class _$NotificationListRequest extends NotificationListRequest {
 class NotificationListRequestBuilder
     implements
         Builder<NotificationListRequest, NotificationListRequestBuilder> {
-  _$NotificationListRequest? _$v = _$NotificationListRequest();
+  _$NotificationListRequest _$v;
 
-  String _installationkey = '';
+  String _installationkey;
   String get installationkey => _$this._installationkey;
   set installationkey(String installationkey) =>
       _$this._installationkey = installationkey;
 
-  String _page = '';
+  String _page;
   String get page => _$this._page;
   set page(String page) => _$this._page = page;
 
-  String _tokeruser = '';
+  String _tokeruser;
   String get tokeruser => _$this._tokeruser;
   set tokeruser(String tokeruser) => _$this._tokeruser = tokeruser;
 
@@ -164,7 +164,7 @@ class NotificationListRequestBuilder
   }
 
   @override
-  void update(void Function(NotificationListRequestBuilder)? updates) {
+  void update(void Function(NotificationListRequestBuilder) updates) {
     if (updates != null) updates(this);
   }
 

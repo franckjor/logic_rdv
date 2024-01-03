@@ -51,10 +51,10 @@ class GetRdvTypePageArguments implements PagesArgumentType {
   final String doctorName;
 
   GetRdvTypePageArguments({
-    required this.tokenAppointment,
-    required this.idDoctor,
-    required this.tel,
-    required this.doctorName,
+    this.tokenAppointment,
+    this.idDoctor,
+    this.tel,
+    this.doctorName,
   });
 
   @override
@@ -66,19 +66,19 @@ class GetRdvTypePageArguments implements PagesArgumentType {
 class RdvType extends StatefulWidget {
   final GetRdvTypePageArguments arguments;
 
-  RdvType({required  this.arguments});
+  RdvType({this.arguments});
 
   @override
   _RdvTypeState createState() => _RdvTypeState();
 }
 
 class _RdvTypeState extends State<RdvType> {
-  String _tokenuser = '';
+  String _tokenUser;
   List<AppointmentTypeResponse> _appointmentType = [];
-  String _session = '';
-  String _email = '';
-  String _fullName = '';
-  String _typState ='';
+  String _session;
+  String _email;
+  String _fullName;
+  String _typState;
 
   bool _isLoading = false;
 
@@ -95,7 +95,7 @@ class _RdvTypeState extends State<RdvType> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      endDrawer: _tokenuser != null
+      endDrawer: _tokenUser != null
           ? MultiBlocProvider(
               providers: [
                 BlocProvider(create: (context) {
@@ -106,47 +106,47 @@ class _RdvTypeState extends State<RdvType> {
                 }),
               ],
               child: MyDrawer(
-                tokenUser: _tokenuser,
+                tokenUser: _tokenUser,
                 page: '0',
                 email: _email,
-                fullNme: _fullName, notification: false,
+                fullNme: _fullName,
               ),
             )
           : StartedDrawer(),
       appBar: AdaptativeAppBar(
         leading: DefaultBackButton(
-            onPressed: () => _tokenuser != null
+            onPressed: () => _tokenUser != null
                 ? Navigator.pushNamedAndRemoveUntil(
                     context, RouteGenerator.appointmentScreen, (route) => false)
                 : Navigator.pop(context)),
         title: 'Motif du Rendez-vous',
         actions: [
-          _tokenuser != null
+          _tokenUser != null
               ? IconButton(
                   icon: isAndroid || isWeb
-                      ?  Icon(
+                      ? const Icon(
                           MdiIcons.accountCircle,
                           color: Colors.white,
                         )
-                      :  Icon(
+                      : const Icon(
                           CupertinoIcons.person_alt_circle_fill,
                           color: Colors.white,
                         ),
                   splashRadius: 20,
-                  onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+                  onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
                 )
               : IconButton(
                   icon: isAndroid || isWeb
-                      ?  Icon(
+                      ? const Icon(
                           MdiIcons.menu,
                           color: AppColors.whiteColor,
                         )
-                      :  Icon(
+                      : const Icon(
                           MdiIcons.menu,
                           color: AppColors.whiteColor,
                         ),
                   splashRadius: 20,
-                  onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+                  onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
                 ),
         ],
       ),
@@ -156,15 +156,15 @@ class _RdvTypeState extends State<RdvType> {
               listener: (context, state) {
             if (state is SharedPreferenceReadObjectState) {
               setState(() {
-                _tokenuser = state.sharePreferenceObject!.token;
-                _email = state.sharePreferenceObject!.email;
-                _fullName = state.sharePreferenceObject!.firstName +
+                _tokenUser = state.sharePreferenceObject.token;
+                _email = state.sharePreferenceObject.email;
+                _fullName = state.sharePreferenceObject.firstName +
                     " " +
-                    state.sharePreferenceObject!.lastName;
+                    state.sharePreferenceObject.lastName;
                 rdvTypeState(
                   context: context,
                   tokenAppointment: widget.arguments.tokenAppointment,
-                  tokenUser: _tokenuser,
+                  tokenUser: _tokenUser,
                   action: '',
                   data: '',
                   session: '',
@@ -177,7 +177,7 @@ class _RdvTypeState extends State<RdvType> {
               rdvTypeState(
                 context: context,
                 tokenAppointment: widget.arguments.tokenAppointment,
-                tokenUser: _tokenuser,
+                tokenUser: _tokenUser,
                 action: '',
                 data: '',
                 session: '',
@@ -200,12 +200,12 @@ class _RdvTypeState extends State<RdvType> {
                           rdvType: "",
                           data: "",
                           tokenAppointment: widget.arguments.tokenAppointment,
-                          tokenUser: _tokenuser,
+                          tokenUser: _tokenUser,
                           action: ""));
                 } else {
                   getAppointmentType(
                       context: context,
-                      tokenUser: _tokenuser,
+                      tokenUser: _tokenUser,
                       tokenAppointment: widget.arguments.tokenAppointment);
                 }
               });
@@ -241,7 +241,7 @@ class _RdvTypeState extends State<RdvType> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -261,7 +261,7 @@ class _RdvTypeState extends State<RdvType> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else {
                 customAlert(
@@ -272,7 +272,7 @@ class _RdvTypeState extends State<RdvType> {
                         state.error,
                         textAlign: TextAlign.center,
                       ),
-                    ), title: '', buttonLabel: '', action: () {  }, willPop: false);
+                    ));
               }
             }
           }),
@@ -317,7 +317,7 @@ class _RdvTypeState extends State<RdvType> {
                                             _appointmentType[index].onclickData,
                                         tokenAppointment:
                                             widget.arguments.tokenAppointment,
-                                        tokenUser: _tokenuser,
+                                        tokenUser: _tokenUser,
                                         action: _appointmentType[index]
                                             .onclickAction))
                                 .then((value) {
@@ -333,7 +333,7 @@ class _RdvTypeState extends State<RdvType> {
                     : const Center(
                         child: Text("Pas de rendez-vous disponible."),
                       )
-                :  Center(
+                : const Center(
                     child: AdaptativeIndicator(),
                   ),
           );

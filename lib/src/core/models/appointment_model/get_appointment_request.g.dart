@@ -26,9 +26,9 @@ class _$GetAppointmentRequestSerializer
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'page',
-      serializers.serialize(object.page, specifiedType: const FullType(String))!,
+      serializers.serialize(object.page, specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -36,7 +36,7 @@ class _$GetAppointmentRequestSerializer
 
   @override
   GetAppointmentRequest deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new GetAppointmentRequestBuilder();
 
@@ -44,7 +44,7 @@ class _$GetAppointmentRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -68,10 +68,10 @@ class _$GetAppointmentRequest extends GetAppointmentRequest {
   final String page;
 
   factory _$GetAppointmentRequest(
-          [void Function(GetAppointmentRequestBuilder)? updates]) =>
-      (new GetAppointmentRequestBuilder()..update(updates!)).build();
+          [void Function(GetAppointmentRequestBuilder) updates]) =>
+      (new GetAppointmentRequestBuilder()..update(updates)).build();
 
-  _$GetAppointmentRequest._({required this.tokenuser,required this.page}) : super._() {
+  _$GetAppointmentRequest._({this.tokenuser, this.page}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
         tokenuser, 'GetAppointmentRequest', 'tokenuser');
     BuiltValueNullFieldError.checkNotNull(
@@ -81,7 +81,7 @@ class _$GetAppointmentRequest extends GetAppointmentRequest {
   @override
   GetAppointmentRequest rebuild(
           void Function(GetAppointmentRequestBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   GetAppointmentRequestBuilder toBuilder() =>
@@ -111,13 +111,13 @@ class _$GetAppointmentRequest extends GetAppointmentRequest {
 
 class GetAppointmentRequestBuilder
     implements Builder<GetAppointmentRequest, GetAppointmentRequestBuilder> {
-  _$GetAppointmentRequest? _$v;
+  _$GetAppointmentRequest _$v;
 
-  String _tokenuser = '';
+  String _tokenuser;
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _page = '';
+  String _page;
   String get page => _$this._page;
   set page(String page) => _$this._page = page;
 
@@ -140,7 +140,7 @@ class GetAppointmentRequestBuilder
   }
 
   @override
-  void update(void Function(GetAppointmentRequestBuilder)? updates) {
+  void update(void Function(GetAppointmentRequestBuilder) updates) {
     if (updates != null) updates(this);
   }
 

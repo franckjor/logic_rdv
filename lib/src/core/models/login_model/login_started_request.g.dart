@@ -25,13 +25,13 @@ class _$LoginStartedRequestSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'data',
-      serializers.serialize(object.data, specifiedType: const FullType(String))!,
+      serializers.serialize(object.data, specifiedType: const FullType(String)),
       'action',
       serializers.serialize(object.action,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
       'session',
       serializers.serialize(object.session,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
@@ -39,7 +39,7 @@ class _$LoginStartedRequestSerializer
 
   @override
   LoginStartedRequest deserialize(
-      Serializers serializers, Iterable<Object?> serialized,
+      Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new LoginStartedRequestBuilder();
 
@@ -47,7 +47,7 @@ class _$LoginStartedRequestSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'data':
           result.data = serializers.deserialize(value,
@@ -77,10 +77,10 @@ class _$LoginStartedRequest extends LoginStartedRequest {
   final String session;
 
   factory _$LoginStartedRequest(
-          [void Function(LoginStartedRequestBuilder)? updates]) =>
-      (new LoginStartedRequestBuilder()..update(updates!)).build();
+          [void Function(LoginStartedRequestBuilder) updates]) =>
+      (new LoginStartedRequestBuilder()..update(updates)).build();
 
-  _$LoginStartedRequest._({required this.data,required this.action,required this.session}) : super._() {
+  _$LoginStartedRequest._({this.data, this.action, this.session}) : super._() {
     BuiltValueNullFieldError.checkNotNull(data, 'LoginStartedRequest', 'data');
     BuiltValueNullFieldError.checkNotNull(
         action, 'LoginStartedRequest', 'action');
@@ -91,7 +91,7 @@ class _$LoginStartedRequest extends LoginStartedRequest {
   @override
   LoginStartedRequest rebuild(
           void Function(LoginStartedRequestBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   LoginStartedRequestBuilder toBuilder() =>
@@ -124,17 +124,17 @@ class _$LoginStartedRequest extends LoginStartedRequest {
 
 class LoginStartedRequestBuilder
     implements Builder<LoginStartedRequest, LoginStartedRequestBuilder> {
-  _$LoginStartedRequest? _$v;
+  _$LoginStartedRequest _$v;
 
-  String _data ='';
+  String _data;
   String get data => _$this._data;
   set data(String data) => _$this._data = data;
 
-  String _action ='';
+  String _action;
   String get action => _$this._action;
   set action(String action) => _$this._action = action;
 
-  String _session = '';
+  String _session;
   String get session => _$this._session;
   set session(String session) => _$this._session = session;
 
@@ -158,7 +158,7 @@ class LoginStartedRequestBuilder
   }
 
   @override
-  void update(void Function(LoginStartedRequestBuilder)? updates) {
+  void update(void Function(LoginStartedRequestBuilder) updates) {
     if (updates != null) updates(this);
   }
 

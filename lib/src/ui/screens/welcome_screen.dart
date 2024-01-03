@@ -28,6 +28,7 @@ import 'package:logic_rdv_v0/src/ui/alert_widgets/get_address_dialog.dart';
 import 'package:logic_rdv_v0/src/ui/alert_widgets/progress_dialog.dart';
 import 'package:logic_rdv_v0/src/ui/dialog_alert/custom_alert.dart';
 import 'package:logic_rdv_v0/src/ui/shared/adaptative_textform_field.dart';
+import 'package:logic_rdv_v0/src/ui/shared/adaptatvive_scaffold.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wonderpush_flutter/wonderpush_flutter.dart';
@@ -52,9 +53,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   // final _textFieldKey = GlobalKey();
   TextEditingController _searchValueCity = TextEditingController();
   TextEditingController _searchValueName = TextEditingController();
-  String _cityId ='';
-  String _categoryId = '';
-  late Timer _timer;
+  String _cityId;
+  String _categoryId;
+  Timer _timer;
 
   bool _showList = false;
   bool _showListForName = false;
@@ -62,65 +63,64 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   List<ObjectNameOfSearch> objectNameOfSearch = [];
 
-  late Position _currentPosition;
-  late String _currentAddress;
+  Position _currentPosition;
+  String _currentAddress;
 
-  late FocusNode _connectButtonFocus;
-  late FocusNode _cityFocus;
-  late FocusNode _nameFocus;
-  late FocusNode _searchButtonFocus;
+  FocusNode _connectButtonFocus;
+  FocusNode _cityFocus;
+  FocusNode _nameFocus;
+  FocusNode _searchButtonFocus;
 
   bool isCity = false;
   bool isSpecification = false;
   bool isCurrentPositionAsk = false;
   static const String PLAY_STORE_APP_ID = "fr.logicrdv.logicrdv";
 
-  final Geolocator geolocator = Geolocator();
+  final Geolocator geolocator = Geolocator()..forceAndroidLocationManager;
 
   // Geolocator geolocator;
 
-  String _appVersion ='';
+  String _appVersion;
 
   void _getCurrentLocation() {
     if (kIsWeb) {
       customAlert(
           context: context,
           alertType: AlertType.info,
-          content: Text('Fontionnalite disponible uniquement sur mobile'), 
-          title: '', buttonLabel: '', action: () {  }, willPop: false);
+          content: Text('Fontionnalite disponible uniquement sur mobile'));
     } else {
-      Geolocator
+      geolocator
           .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
           .then((Position position) {
         setState(() {
           _currentPosition = position;
         });
-        //_getAddressFromLatLng(); franck
+        _getAddressFromLatLng();
       }).catchError((e) {
         print(e);
       });
     }
   }
 
-  // _getAddressFromLatLng() async { franck
-  //   try {
-  //     if (kIsWeb) {
-  //       print('is web platform');
-  //     } else {
-  //       List<Placemark> p = await geolocator.placemarkFromCoordinates(
-  //           _currentPosition.latitude, _currentPosition.longitude);
-  //       Placemark place = p[0];
-  //       setState(() {
-  //         _searchValueCity.text = "Ma position";
-  //         _cityId =
-  //             'p${_currentPosition.latitude},${_currentPosition.longitude}';
-  //         isCurrentPositionAsk = !isCurrentPositionAsk;
-  //       });
-  //     }
-  //   } catch (e) {
-  //     print(e);
-  //   }
-  // }
+  _getAddressFromLatLng() async {
+    try {
+      if (kIsWeb) {
+        print('is web platform');
+      } else {
+        List<Placemark> p = await geolocator.placemarkFromCoordinates(
+            _currentPosition.latitude, _currentPosition.longitude);
+        Placemark place = p[0];
+        setState(() {
+          _searchValueCity.text = "Ma position";
+          _cityId =
+              'p${_currentPosition.latitude},${_currentPosition.longitude}';
+          isCurrentPositionAsk = !isCurrentPositionAsk;
+        });
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
 
   @override
   void initState() {
@@ -132,7 +132,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        _textFieldHeight = _keyTextField.currentContext!.size!.height;
+        _textFieldHeight = _keyTextField.currentContext?.size?.height;
       });
     });
     asyncMethod();
@@ -142,7 +142,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     final prefs = await SharedPreferences.getInstance();
     var installationId = await WonderPush.getInstallationId();
     print("InstallationId: $installationId");
-    await prefs.setString(PreferenceKey.InstallationIdKey, installationId!);
+    await prefs.setString(PreferenceKey.InstallationIdKey, installationId);
   }
 
   @override
@@ -236,16 +236,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ?  Icon(
+                ? const Icon(
                     MdiIcons.menu,
                     color: AppColors.primaryColor,
                   )
-                :  Icon(
+                : const Icon(
                     MdiIcons.menu,
                     color: AppColors.primaryColor,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
           ),
         ],
       ),
@@ -308,7 +308,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                      ), title: '', buttonLabel: '', willPop: false,
+                      ),
                     );
                   } else {
                     flushBarError(state.error, context);
@@ -342,7 +342,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           "La version ${state.response.data.version.android} est disponible vous pouvez télécharger.",
                       onYesAction: () {
                         LaunchReview.launch(androidAppId: PLAY_STORE_APP_ID);
-                      }, alertType: null, confirmButtonLabel: '', cancelButtonLabel: '',
+                      },
                     );
                   }
                 }
@@ -412,7 +412,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                                       context);
                                                 },
                                                 validator: (value) =>
-                                                    verifyEmpty(value!),
+                                                    verifyEmpty(value),
                                                 suffixIcon: Padding(
                                                   padding:
                                                       const EdgeInsets.only(
@@ -440,7 +440,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                                           color: Colors
                                                               .transparent,
                                                         ),
-                                                ), textInputAction: null, focusNode: null,
+                                                ),
                                               ),
                                             ),
                                             IconButton(
@@ -517,17 +517,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                                     _searchValueName.clear();
                                                   });
                                                 },
-                                                child:  Icon(
+                                                child: const Icon(
                                                   Icons.clear,
                                                   color: Colors.red,
                                                 ),
                                               )
-                                            :  Icon(
+                                            : const Icon(
                                                 Icons.clear,
                                                 color: Colors.transparent,
                                               ),
                                         validator: (value) =>
-                                            verifyEmpty(value!), focusNode: null, textInputAction: null,
+                                            verifyEmpty(value),
                                       ),
                                       const SizedBox(height: 20),
                                       Visibility(
@@ -591,7 +591,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
               );
             }),
-          ), title: '', leading: null, actions: [], scaffoldBackgroundColor: null, appBar: null,
+          ),
         ),
       ),
     );
@@ -604,7 +604,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
 class _SubscriptionButtons extends StatelessWidget {
   const _SubscriptionButtons({
-    Key? key,
+    Key key,
   }) : super(key: key);
 
   @override
@@ -708,7 +708,7 @@ class _SubscriptionButtons extends StatelessWidget {
 
 class _IntroText extends StatelessWidget {
   const _IntroText({
-    Key? key,
+    Key key,
   }) : super(key: key);
 
   @override
@@ -757,9 +757,9 @@ class _IntroText extends StatelessWidget {
 
 class SearchButton extends StatelessWidget {
   const SearchButton({
-    Key? key,
-    required double textFieldHeight,
-    required FocusNode searchButtonFocus,
+    Key key,
+    @required double textFieldHeight,
+    @required FocusNode searchButtonFocus,
     this.width = double.infinity,
     this.onPressed,
   })  : _textFieldHeight = textFieldHeight,
@@ -768,7 +768,7 @@ class SearchButton extends StatelessWidget {
 
   final double _textFieldHeight;
   final FocusNode _searchButtonFocus;
-  final void Function()? onPressed;
+  final Function onPressed;
   final double width;
 
   @override
@@ -801,7 +801,7 @@ class SearchButton extends StatelessWidget {
 
 class DefaultElevatedButtonIcon extends StatelessWidget {
   const DefaultElevatedButtonIcon({
-    Key? key,
+    Key key,
   }) : super(key: key);
 
   @override

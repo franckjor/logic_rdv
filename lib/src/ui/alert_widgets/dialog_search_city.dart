@@ -16,7 +16,7 @@ import '../../common.dart';
 class DialogSearchCityValue extends StatefulWidget {
   final String indexPage;
 
-  DialogSearchCityValue({required this.indexPage});
+  DialogSearchCityValue({this.indexPage});
 
   @override
   _DialogSearchCityState createState() => _DialogSearchCityState();
@@ -25,8 +25,8 @@ class DialogSearchCityValue extends StatefulWidget {
 class _DialogSearchCityState extends State<DialogSearchCityValue> {
   TextEditingController _searchValueCity = TextEditingController();
   List<ClientInfosResponseSearchCity> clientInfoSearchCity = [];
-  String? _cityId ='';
-  //CityValue _cityValue = CityValue();
+  String _cityId;
+  CityValue _cityValue;
   bool _loading = true;
 
   @override
@@ -62,7 +62,6 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
                     ),
                   ),
                 ),
-                 title: '', buttonLabel: '', willPop: false,
               );
             } else {
               customAlert(
@@ -73,7 +72,7 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
                     state.error,
                     textAlign: TextAlign.center,
                   ),
-                ), title: '', buttonLabel: '', willPop: false, action: () {  },
+                ),
               );
             }
           }
@@ -115,7 +114,7 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
                           hintText: 'Code postal, ville',
                           controller: _searchValueCity,
                           autoFocus: true,
-                          validator: (value) => verifyEmpty(value!),
+                          validator: (value) => verifyEmpty(value),
                           suffixIcon: _searchValueCity.text != ''
                               ? InkWell(
                                   onTap: () {
@@ -123,12 +122,12 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
                                       _searchValueCity.clear();
                                     });
                                   },
-                                  child:  Icon(
+                                  child: const Icon(
                                     Icons.clear,
                                     color: Colors.red,
                                   ),
                                 )
-                              :  Icon(Icons.clear,
+                              : const Icon(Icons.clear,
                                   color: Colors.transparent),
                           onTapeChangeHandler: (value) {
                             setState(() {
@@ -142,11 +141,11 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
                                 ),
                               );
                             });
-                          }, focusNode: null, textInputAction: null,
+                          },
                         ),
                       ),
                       IconButton(
-                          icon:  Icon(
+                          icon: const Icon(
                             Icons.clear,
                             color: AppColors.whiteColor,
                           ),
@@ -167,9 +166,9 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
                   width: 300,
                   color: Colors.white,
                   child: Scrollbar(
-                   // hoverThickness: 5.0,
+                    hoverThickness: 5.0,
                     thickness: 5.0,
-                    //isAlwaysShown: true,
+                    isAlwaysShown: true,
                     child: ListView.builder(
                       shrinkWrap: true,
                       itemCount: clientInfoSearchCity.length,
@@ -181,12 +180,11 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
                               _searchValueCity.text =
                                   clientInfoSearchCity[index].clientinfos;
                               _cityId = clientInfoSearchCity[index].id;
-                              // _cityValue = CityValue(
-                              //     //cityId: _cityId,
-                              //     //cityName:
-                              //         clientInfoSearchCity[index].clientinfos
-                              //         );
-                              Navigator.pop(context);
+                              _cityValue = CityValue(
+                                  cityId: _cityId,
+                                  cityName:
+                                      clientInfoSearchCity[index].clientinfos);
+                              Navigator.pop(context, _cityValue);
                             });
                           },
                           child: Padding(
@@ -209,4 +207,9 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
   }
 }
 
+class CityValue {
+  String cityName;
+  String cityId;
 
+  CityValue({this.cityName, this.cityId});
+}

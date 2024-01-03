@@ -27,7 +27,7 @@ abstract class SearchDoctorDetailsRequest
 
   static SearchDoctorDetailsRequest fromJson(String jsonString) {
     return serializers.deserializeWith(
-        SearchDoctorDetailsRequest.serializer, json.decode(jsonString))!;
+        SearchDoctorDetailsRequest.serializer, json.decode(jsonString));
   }
 
   static Serializer<SearchDoctorDetailsRequest> get serializer =>

@@ -48,15 +48,14 @@ class GetPatientPageArguments implements PagesArgumentType {
   final String doctorName;
 
   GetPatientPageArguments(
-      {
-      required this.tokenDoctor,
-      required this.data,
-      required this.session,
-      required this.action,
-      required this.tokenappointment,
-      required this.tokenuser,
-      required this.source,
-      required this.doctorName});
+      {this.tokenDoctor,
+      this.data,
+      this.session,
+      this.action,
+      this.tokenappointment,
+      this.tokenuser,
+      this.source,
+      this.doctorName});
 
   @override
   getArguments() {
@@ -67,29 +66,29 @@ class GetPatientPageArguments implements PagesArgumentType {
 class PatientListScreen extends StatefulWidget {
   final GetPatientPageArguments arguments;
 
-  PatientListScreen({required this.arguments});
+  PatientListScreen({this.arguments});
 
   @override
   _PatientListScreenState createState() => _PatientListScreenState();
 }
 
 class _PatientListScreenState extends State<PatientListScreen> {
-  String _tokenuser = '';
-  String _session = '';
-  String _typState ='';
-  late String _listOfPatientOnClickData;
-  late String _listOfPatientOnClickAction;
+  String _tokenUser;
+  String _session;
+  String _typState;
+  String _listOfPatientOnClickData;
+  String _listOfPatientOnClickAction;
 
-  late GetPaientForRdvResponse _getPaientForRdvResponse;
+  GetPaientForRdvResponse _getPaientForRdvResponse;
   List<PatientDataResponseDrv> _listOfPatient = [];
 
   void _showDialogToAddPatient({
-    required String intention,
-    required PatientRequest? patientRequest,
-    required String tokenAppt,
-    required String tokenUser,
-    required String tokenPatient,
-    required DataPatientResponseAfertCreate? patient,
+    String intention,
+    PatientRequest patientRequest,
+    String tokenAppt,
+    String tokenUser,
+    String tokenPatient,
+    DataPatientResponseAfertCreate patient,
   }) {
     showModal(
       context: context,
@@ -102,7 +101,7 @@ class _PatientListScreenState extends State<PatientListScreen> {
         ],
         child: DialogForCreatePatient(
           intention: intention,
-          patientRequest: patientRequest!,
+          patientRequest: patientRequest,
           tokenAppt: tokenAppt,
           tokenUser: tokenUser,
           tokenPatient: tokenPatient,
@@ -119,7 +118,7 @@ class _PatientListScreenState extends State<PatientListScreen> {
           data: widget.arguments.data,
           session: widget.arguments.session,
           tokenAppointment: widget.arguments.tokenappointment,
-          tokenUser: widget.arguments.tokenuser, week: '',
+          tokenUser: widget.arguments.tokenuser,
         );
       } else {
         getListOfPatient(
@@ -132,12 +131,12 @@ class _PatientListScreenState extends State<PatientListScreen> {
   }
 
   List<DataPatientResponseAfertCreate> _patientList = [];
-  late DataPatientResponseAfertCreate _patient;
+  DataPatientResponseAfertCreate _patient;
   bool _isLoading = false;
-  late SelectedPatientResponseForRdv selectedPatientResponseForRdv;
-  late String _birthdate ='';
-  late String _socialNumber;
-  late int _currentIndex;
+  SelectedPatientResponseForRdv selectedPatientResponseForRdv;
+  String _birthDate;
+  String _socialNumber;
+  int _currentIndex;
 
   @override
   void initState() {
@@ -148,7 +147,7 @@ class _PatientListScreenState extends State<PatientListScreen> {
         data: widget.arguments.data,
         session: widget.arguments.session,
         tokenAppointment: widget.arguments.tokenappointment,
-        tokenUser: widget.arguments.tokenuser, week: '',
+        tokenUser: widget.arguments.tokenuser,
       );
     } else {
       BlocProvider.of<SharedPreferenceBloc>(context)
@@ -172,8 +171,8 @@ class _PatientListScreenState extends State<PatientListScreen> {
               _showDialogToAddPatient(
                 tokenAppt: widget.arguments.tokenDoctor,
                 intention: '',
-                tokenUser: _tokenuser ?? widget.arguments.tokenuser,
-                patient: _patient,  tokenPatient: '', patientRequest: null,
+                tokenUser: _tokenUser ?? widget.arguments.tokenuser,
+                patient: _patient,
               );
             },
           ),
@@ -185,11 +184,11 @@ class _PatientListScreenState extends State<PatientListScreen> {
                 listener: (context, state) {
               if (state is SharedPreferenceReadObjectState) {
                 setState(() {
-                  _tokenuser = state.sharePreferenceObject!.token;
+                  _tokenUser = state.sharePreferenceObject.token;
                   getListOfPatient(
                     context: context,
                     tokenDoctor: widget.arguments.tokenDoctor,
-                    tokenUser: _tokenuser,
+                    tokenUser: _tokenUser,
                   );
                 });
               }
@@ -214,7 +213,7 @@ class _PatientListScreenState extends State<PatientListScreen> {
                           selectedPatientResponseForRdv:
                               selectedPatientResponseForRdv,
                           session: _session,
-                          birthdate: _birthdate,
+                          birthdate: _birthDate,
                           socialNumber: _socialNumber));
                 });
               } else if (state is RdvTypeStateLoadingSuccess) {
@@ -238,8 +237,8 @@ class _PatientListScreenState extends State<PatientListScreen> {
                                   tokenAppointment:
                                       widget.arguments.tokenDoctor,
                                   tokenUser: widget.arguments.tokenuser,
-                                  action: _listOfPatientOnClickAction, idDoctor: '', doctorName: '', rdvType: '', tel: ''));
-                        }, alertType: null, title: '', buttonLabel: '', willPop: false, );
+                                  action: _listOfPatientOnClickAction));
+                        });
                   } else {
                     patientSelectedForRdv(
                         context: context,
@@ -247,7 +246,7 @@ class _PatientListScreenState extends State<PatientListScreen> {
                         data: _listOfPatientOnClickData,
                         action: _listOfPatientOnClickAction,
                         tokenUser: widget.arguments.tokenuser,
-                        session: _session, week: '');
+                        session: _session);
                   }
                 });
               } else if (state is CreateAppointmentFailure) {
@@ -271,7 +270,7 @@ class _PatientListScreenState extends State<PatientListScreen> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                    ), title: '', buttonLabel: '',
+                    ),
                   );
                 } else if (state.error == invalidTokenUser) {
                   _progressDialog.hide();
@@ -292,7 +291,7 @@ class _PatientListScreenState extends State<PatientListScreen> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                    ), title: '', buttonLabel: '',
+                    ),
                   );
                 } else {
                   _progressDialog.hide();
@@ -304,7 +303,7 @@ class _PatientListScreenState extends State<PatientListScreen> {
                           state.error,
                           textAlign: TextAlign.center,
                         ),
-                      ),  title: '', buttonLabel: '', action: () {  }, willPop: false,);
+                      ));
                 }
               }
             }),
@@ -336,7 +335,7 @@ class _PatientListScreenState extends State<PatientListScreen> {
                   getListOfPatient(
                     context: context,
                     tokenDoctor: widget.arguments.tokenDoctor,
-                    tokenUser: _tokenuser,
+                    tokenUser: _tokenUser,
                   );
                 }
               } else if (state is PatientFailure) {
@@ -359,7 +358,7 @@ class _PatientListScreenState extends State<PatientListScreen> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                    ), title: '', buttonLabel: '',
+                    ),
                   );
                 } else if (state.error == invalidTokenUser) {
                   customAlert(
@@ -379,7 +378,7 @@ class _PatientListScreenState extends State<PatientListScreen> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                    ), title: '', buttonLabel: '',
+                    ),
                   );
                 } else {
                   customAlert(
@@ -390,7 +389,7 @@ class _PatientListScreenState extends State<PatientListScreen> {
                           state.error,
                           textAlign: TextAlign.center,
                         ),
-                      ),  title: '', buttonLabel: '', action: () {  }, willPop: false,);
+                      ));
                 }
               }
             }),
@@ -429,8 +428,7 @@ class _PatientListScreenState extends State<PatientListScreen> {
                                     customAlert(
                                         context: context,
                                         content: Text(
-                                            _listOfPatient[i].lockmessage), 
-                                            alertType: null, title: '', buttonLabel: '', action: () {  }, willPop: false);
+                                            _listOfPatient[i].lockmessage));
                                   } else {
                                     rdvTypeState(
                                       context: context,
@@ -439,13 +437,13 @@ class _PatientListScreenState extends State<PatientListScreen> {
                                       session: _session,
                                       tokenAppointment:
                                           widget.arguments.tokenDoctor,
-                                      tokenUser: _tokenuser, week: '',
+                                      tokenUser: _tokenUser,
                                     );
                                     _progressDialog
                                         .setMessage("Chargement en cours ...");
                                     _progressDialog.show();
                                     setState(() {
-                                      _birthdate = _listOfPatient[i].dob;
+                                      _birthDate = _listOfPatient[i].dob;
                                       _socialNumber = _listOfPatient[i].locked;
                                       _listOfPatientOnClickData =
                                           _listOfPatient[i].onclickData;
@@ -462,14 +460,13 @@ class _PatientListScreenState extends State<PatientListScreen> {
                                     customAlert(
                                       context: context,
                                       content: Text('Ce patient n\'existe pas'),
-                                      alertType: null, title: '', buttonLabel: '', action: () {  }, willPop: false,
                                     );
                                   } else {
                                     PatientRequest _patient =
                                         PatientRequest((builder) => builder
                                           ..tokenappt =
                                               widget.arguments.tokenDoctor
-                                          ..tokenuser = _tokenuser ??
+                                          ..tokenuser = _tokenUser ??
                                               widget.arguments.tokenuser
                                           ..tokenpatient =
                                               _listOfPatient[i].token
@@ -480,11 +477,11 @@ class _PatientListScreenState extends State<PatientListScreen> {
                                     _showDialogToAddPatient(
                                         patientRequest: _patient,
                                         intention: updateIntention,
-                                        tokenUser: _tokenuser ??
+                                        tokenUser: _tokenUser ??
                                             widget.arguments.tokenuser,
                                         tokenPatient: _listOfPatient[i].token,
                                         tokenAppt:
-                                            widget.arguments.tokenDoctor, patient: null);
+                                            widget.arguments.tokenDoctor);
                                   }
                                 },
                                 removePatientHandler: () {
@@ -502,13 +499,13 @@ class _PatientListScreenState extends State<PatientListScreen> {
                                           removePatient(
                                               tokenDoctor:
                                                   widget.arguments.tokenDoctor,
-                                              tokenUser: _tokenuser ??
+                                              tokenUser: _tokenUser ??
                                                   widget.arguments.tokenuser,
                                               context: context,
                                               tokenPatient:
                                                   _listOfPatient[i].token);
                                         });
-                                      }, confirmButtonLabel: '', cancelButtonLabel: '');
+                                      });
                                 },
                               ),
                             )
@@ -538,7 +535,7 @@ class _PatientListScreenState extends State<PatientListScreen> {
                                       PatientRequest((builder) => builder
                                         ..tokenappt =
                                             widget.arguments.tokenDoctor
-                                        ..tokenuser = _tokenuser
+                                        ..tokenuser = _tokenUser
                                         ..tokenpatient = _patientList[i].token
                                         ..phone = _patientList[i].phone
                                         ..nom = _patientList[i].nom
@@ -547,9 +544,9 @@ class _PatientListScreenState extends State<PatientListScreen> {
                                   _showDialogToAddPatient(
                                       patientRequest: _patient,
                                       intention: updateIntention,
-                                      tokenUser: _tokenuser,
+                                      tokenUser: _tokenUser,
                                       tokenPatient: _patientList[i].token,
-                                      tokenAppt: widget.arguments.tokenDoctor, patient: null);
+                                      tokenAppt: widget.arguments.tokenDoctor);
                                 },
                                 removePatientHandler: () {
                                   customConfirmAlert(
@@ -564,11 +561,11 @@ class _PatientListScreenState extends State<PatientListScreen> {
                                         removePatient(
                                             tokenDoctor:
                                                 widget.arguments.tokenDoctor,
-                                            tokenUser: _tokenuser,
+                                            tokenUser: _tokenUser,
                                             context: context,
                                             tokenPatient:
                                                 _patientList[i].token);
-                                      }, confirmButtonLabel: '', cancelButtonLabel: '');
+                                      });
                                 },
                               ),
                             )
@@ -594,15 +591,15 @@ void _makeCall(
 
 class _MyTodayAppointmentItem extends StatelessWidget {
   final DataPatientResponseAfertCreate dataPatientResponseAfertCreate;
-  final Function() removePatientHandler;
-  final Function() updatePatientHandler;
+  final Function removePatientHandler;
+  final Function updatePatientHandler;
   final int length;
 
   _MyTodayAppointmentItem({
-    required this.dataPatientResponseAfertCreate,
-    required this.removePatientHandler,
-    required this.updatePatientHandler,
-    required this.length,
+    this.dataPatientResponseAfertCreate,
+    this.removePatientHandler,
+    this.updatePatientHandler,
+    this.length,
   });
 
   @override
@@ -631,7 +628,7 @@ class _MyTodayAppointmentItem extends StatelessWidget {
                     image: DecorationImage(
                       image: dataPatientResponseAfertCreate.photo == ""
                           ? AssetImage('assets/images/medecin.png')
-                          : NetworkImage(dataPatientResponseAfertCreate.photo) as ImageProvider,
+                          : NetworkImage(dataPatientResponseAfertCreate.photo),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -653,7 +650,7 @@ class _MyTodayAppointmentItem extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 10),
                         child: Row(
                           children: [
-                             Icon(
+                            const Icon(
                               Icons.phone,
                               size: 14,
                               color: AppColors.colorPrimary,
@@ -677,7 +674,7 @@ class _MyTodayAppointmentItem extends StatelessWidget {
                               padding: const EdgeInsets.symmetric(vertical: 8),
                               child: Row(
                                 children: [
-                                   Icon(
+                                  const Icon(
                                     Icons.calendar_today,
                                     size: 14,
                                     color: AppColors.colorPrimary,
@@ -698,7 +695,7 @@ class _MyTodayAppointmentItem extends StatelessWidget {
                       Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                           Icon(
+                          const Icon(
                             Icons.email,
                             size: 14,
                             color: AppColors.colorPrimary,
@@ -776,17 +773,17 @@ class _MyTodayAppointmentItem extends StatelessWidget {
 
 class _MyTodayAppointmentItemForGetRdv extends StatelessWidget {
   final PatientDataResponseDrv dataPatientResponseAfertCreate;
-  final Function() removePatientHandler;
-  final Function() updatePatientHandler;
-  final Function() onTapForItem;
+  final Function removePatientHandler;
+  final Function updatePatientHandler;
+  final Function onTapForItem;
   final int length;
 
   _MyTodayAppointmentItemForGetRdv({
-    required this.dataPatientResponseAfertCreate,
-    required this.removePatientHandler,
-    required this.updatePatientHandler,
-    required this.onTapForItem,
-    required this.length,
+    this.dataPatientResponseAfertCreate,
+    this.removePatientHandler,
+    this.updatePatientHandler,
+    this.onTapForItem,
+    this.length,
   });
 
   @override
@@ -815,19 +812,19 @@ class _MyTodayAppointmentItemForGetRdv extends StatelessWidget {
                         width: 35,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          // image: DecorationImage(
-                          //   image: dataPatientResponseAfertCreate.photo == null
-                          //       ? AssetImage('assets/images/medecin.png')  
-                          //       : NetworkImage(
-                          //           dataPatientResponseAfertCreate.photo),
-                          //   fit: BoxFit.cover,
-                          // ),
+                          image: DecorationImage(
+                            image: dataPatientResponseAfertCreate.photo == null
+                                ? AssetImage('assets/images/medecin.png')
+                                : NetworkImage(
+                                    dataPatientResponseAfertCreate?.photo),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                       Visibility(
                         visible:
                             dataPatientResponseAfertCreate.lockmessage != "",
-                        child:  Icon(
+                        child: const Icon(
                           Icons.block,
                           color: Colors.red,
                         ),
@@ -849,7 +846,7 @@ class _MyTodayAppointmentItemForGetRdv extends StatelessWidget {
                       const SizedBox(height: 8),
                       Row(
                         children: [
-                           Icon(
+                          const Icon(
                             Icons.message,
                             size: 14,
                             color: AppColors.colorPrimary,
@@ -872,7 +869,7 @@ class _MyTodayAppointmentItemForGetRdv extends StatelessWidget {
                       const SizedBox(height: 8),
                       Row(
                         children: [
-                           Icon(
+                          const Icon(
                             Icons.phone,
                             size: 14,
                             color: AppColors.colorPrimary,
@@ -891,22 +888,22 @@ class _MyTodayAppointmentItemForGetRdv extends StatelessWidget {
                       const SizedBox(height: 8),
                       Row(
                         children: [
-                           Icon(
+                          const Icon(
                             Icons.calendar_today,
                             size: 14,
                             color: AppColors.colorPrimary,
                           ),
                           const SizedBox(width: 6),
-                          // Text(
-                          //   dataPatientResponseAfertCreate?.dob.toString() 
-                          //       ?? '--/--/--'
-                          //       : dataPatientResponseAfertCreate?.dob,
-                          //   style: TextStyle(
-                          //     fontSize: 12,
-                          //     fontWeight: FontWeight.w500,
-                          //     color: Colors.grey.shade500,
-                          //   ),
-                          // ),
+                          Text(
+                            dataPatientResponseAfertCreate?.dob == ''
+                                ? '--/--/--'
+                                : dataPatientResponseAfertCreate?.dob,
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.grey.shade500,
+                            ),
+                          ),
                         ],
                       )
                     ],
@@ -964,11 +961,11 @@ class _MyTodayAppointmentItemForGetRdv extends StatelessWidget {
 }
 
 class ContactIconButton extends StatelessWidget {
-  final IconData? icon;
-  final void Function()? onTap;
+  final IconData icon;
+  final void Function() onTap;
 
   const ContactIconButton({
-    Key? key,
+    Key key,
     this.icon,
     this.onTap,
   }) : super(key: key);

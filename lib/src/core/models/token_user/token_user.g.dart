@@ -20,14 +20,14 @@ class _$TokenUserSerializer implements StructuredSerializer<TokenUser> {
     final result = <Object>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
-          specifiedType: const FullType(String))!,
+          specifiedType: const FullType(String)),
     ];
 
     return result;
   }
 
   @override
-  TokenUser deserialize(Serializers serializers, Iterable<Object?> serialized,
+  TokenUser deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new TokenUserBuilder();
 
@@ -35,7 +35,7 @@ class _$TokenUserSerializer implements StructuredSerializer<TokenUser> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final Object value = iterator.current!;
+      final Object value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
@@ -52,16 +52,16 @@ class _$TokenUser extends TokenUser {
   @override
   final String tokenuser;
 
-  factory _$TokenUser([void Function(TokenUserBuilder)? updates]) =>
-      (new TokenUserBuilder()..update(updates!)).build();
+  factory _$TokenUser([void Function(TokenUserBuilder) updates]) =>
+      (new TokenUserBuilder()..update(updates)).build();
 
-  _$TokenUser._({required this.tokenuser}) : super._() {
+  _$TokenUser._({this.tokenuser}) : super._() {
     BuiltValueNullFieldError.checkNotNull(tokenuser, 'TokenUser', 'tokenuser');
   }
 
   @override
   TokenUser rebuild(void Function(TokenUserBuilder) updates) =>
-      (toBuilder()..update(updates!)).build();
+      (toBuilder()..update(updates)).build();
 
   @override
   TokenUserBuilder toBuilder() => new TokenUserBuilder()..replace(this);
@@ -86,9 +86,9 @@ class _$TokenUser extends TokenUser {
 }
 
 class TokenUserBuilder implements Builder<TokenUser, TokenUserBuilder> {
-  _$TokenUser? _$v;
+  _$TokenUser _$v;
 
-  String _tokenuser = '';
+  String _tokenuser;
   String get tokenuser => _$this._tokenuser;
   set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
 
@@ -110,7 +110,7 @@ class TokenUserBuilder implements Builder<TokenUser, TokenUserBuilder> {
   }
 
   @override
-  void update(void Function(TokenUserBuilder)? updates) {
+  void update(void Function(TokenUserBuilder) updates) {
     if (updates != null) updates(this);
   }
 

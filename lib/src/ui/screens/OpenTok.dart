@@ -34,7 +34,7 @@ class TeleconsArgument implements PagesArgumentType {
   final String tokentelecon;
 
   TeleconsArgument({
-    required this.tokentelecon,
+    this.tokentelecon,
   });
 
   @override
@@ -46,7 +46,7 @@ class TeleconsArgument implements PagesArgumentType {
 class CallWidget extends StatefulWidget {
   final TeleconsArgument argument;
 
-  CallWidget({required this.argument});
+  CallWidget({@required this.argument});
 
   _CallWidgetState createState() => _CallWidgetState();
 }
@@ -64,7 +64,7 @@ class _CallWidgetState extends State<CallWidget> {
 
   @override
   void initState() {
-    getTeleocns(context: context, tokentelecons: widget.argument.tokentelecon);
+    getTeleocns(context: context, tokentelecons: widget.argument?.tokentelecon);
    
     StripeServiceTc.init();
     super.initState();
@@ -82,16 +82,16 @@ class _CallWidgetState extends State<CallWidget> {
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  String _stripeClient ='';
-  String _apiKey ='';
-  String _sessionId = '';
-  String _token = '';
+  String _stripeClient;
+  String _apiKey;
+  String _sessionId;
+  String _token;
   bool _isLoading = false;
-  late EtablissementTc _etablissementTc;
-  late ApptTc _apptTc;
-  late InfosTc _infostc;
-  late PaymentTc _paymentTc;
-  late TokboxTc _tokboxTc;
+  EtablissementTc _etablissementTc;
+  ApptTc _apptTc;
+  InfosTc _infostc;
+  PaymentTc _paymentTc;
+  TokboxTc _tokboxTc;
 
   Future<void> _makeCall(
     String phone,
@@ -110,7 +110,7 @@ class _CallWidgetState extends State<CallWidget> {
         leading: DefaultBackButton(
           onPressed: ()=>Navigator.pushReplacementNamed(
               context, RouteGenerator.appointmentScreen),
-        ), actions: [],
+        ),
       ),
       body: MultiBlocListener(
         listeners: [
@@ -150,7 +150,7 @@ class _CallWidgetState extends State<CallWidget> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -170,7 +170,7 @@ class _CallWidgetState extends State<CallWidget> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else {
                 customAlert(
@@ -192,7 +192,7 @@ class _CallWidgetState extends State<CallWidget> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               }
             }
@@ -302,7 +302,7 @@ class _CallWidgetState extends State<CallWidget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: IconButton(
-                                                icon:  Icon(
+                                                icon: const Icon(
                                                   Icons.call,
                                                   color: AppColors.whiteColor,
                                                   size: 16,
@@ -565,7 +565,7 @@ class _CallWidgetState extends State<CallWidget> {
                                                                   SESSION_ID:
                                                                       _sessionId,
                                                                   TOKENTELECONS: 
-                                                                  widget.argument.tokentelecon,
+                                                                  widget.argument?.tokentelecon,
                                                                   TOKEN: _token,
                                                                   Date: _apptTc
                                                                       .date,
@@ -604,48 +604,48 @@ class _CallWidgetState extends State<CallWidget> {
                                       child: Column(
                                         children: [
                                           CreditCardForm(
-                                            cardNumber: '',
-                                            expiryDate: '',
-                                            cardHolderName: '',
-                                            cvvCode: '',
-                                            //themeColor: Colors.grey,
+                                            cardNumber: null,
+                                            expiryDate: null,
+                                            cardHolderName: null,
+                                            cvvCode: null,
+                                            themeColor: Colors.grey,
                                             formKey: formKey,
                                             onCreditCardModelChange:
                                                 onCreditCardModelChange,
                                             obscureCvv: false,
                                             obscureNumber: false,
                                             isHolderNameVisible: false,
-                                            // cardNumberDecoration:
-                                            //     const InputDecoration(
-                                            //   border: OutlineInputBorder(),
-                                            //   labelText: 'Numéro de la carte',
-                                            //   hintText: 'XXXX XXXX XXXX XXXX',
-                                            // ),
-                                            // expiryDateDecoration:
-                                            //     const InputDecoration(
-                                            //   border: OutlineInputBorder(),
-                                            //   labelText: 'Date expiration',
-                                            //   hintText: 'XX/XX',
-                                            // ),
-                                            // cvvCodeDecoration:
-                                            //     const InputDecoration(
-                                            //   border: OutlineInputBorder(),
-                                            //   labelText: 'CVV',
-                                            //   hintText: 'XXX',
-                                            // ),
-                                            // cardHolderDecoration:
-                                            //     const InputDecoration(
-                                            //   enabled: false,
-                                            //   border: InputBorder.none,
-                                            //   labelStyle: TextStyle(
-                                            //       color: Colors.transparent),
-                                            //   labelText: 'CVV',
-                                            // ),
+                                            cardNumberDecoration:
+                                                const InputDecoration(
+                                              border: OutlineInputBorder(),
+                                              labelText: 'Numéro de la carte',
+                                              hintText: 'XXXX XXXX XXXX XXXX',
+                                            ),
+                                            expiryDateDecoration:
+                                                const InputDecoration(
+                                              border: OutlineInputBorder(),
+                                              labelText: 'Date expiration',
+                                              hintText: 'XX/XX',
+                                            ),
+                                            cvvCodeDecoration:
+                                                const InputDecoration(
+                                              border: OutlineInputBorder(),
+                                              labelText: 'CVV',
+                                              hintText: 'XXX',
+                                            ),
+                                            cardHolderDecoration:
+                                                const InputDecoration(
+                                              enabled: false,
+                                              border: InputBorder.none,
+                                              labelStyle: TextStyle(
+                                                  color: Colors.transparent),
+                                              labelText: 'CVV',
+                                            ),
                                           ),
                                           const SizedBox(height: 10),
                                           ElevatedButton.icon(
                                             onPressed: () {
-                                              if (formKey.currentState!
+                                              if (formKey.currentState
                                                   .validate()) {
                                                 _progressDialog.setMessage(
                                                     'Chargement en cours ...');
@@ -664,7 +664,7 @@ class _CallWidgetState extends State<CallWidget> {
                                                         _dateExpired[1]),
                                                     tokentelecon: widget
                                                         .argument
-                                                        .tokentelecon);
+                                                        ?.tokentelecon);
 
                                                 setState(() {
                                                   _isLoading = false;

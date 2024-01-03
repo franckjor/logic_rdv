@@ -4,11 +4,11 @@ import 'package:logic_rdv_v0/src/core/models/appointment_model/get_apointment_ti
 
 class CardHourItem extends StatelessWidget {
   final Creneaux creneaux;
-  final Function() onTapForTakeAppointment;
+  final Function onTapForTakeAppointment;
 
   CardHourItem({
-    required this.creneaux,
-    required this.onTapForTakeAppointment,
+    this.creneaux,
+    this.onTapForTakeAppointment,
   });
 
   @override
@@ -32,12 +32,12 @@ class CardHourItem extends StatelessWidget {
 }
 
 class CreneauxItem extends StatelessWidget {
-  final String? doctorName;
-  final String? fromHour;
-  final String? subInfo;
-  final Function()? onTap;
+  final String doctorName;
+  final String fromHour;
+  final String subInfo;
+  final Function onTap;
   const CreneauxItem({
-    Key? key,
+    Key key,
     this.doctorName,
     this.fromHour,
     this.onTap,

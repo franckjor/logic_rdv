@@ -1,6 +1,5 @@
 import 'dart:io';
 
-//import 'package:geocoding/geocoding.dart';
 import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart' as foundation;
@@ -37,8 +36,6 @@ import 'package:logic_rdv_v0/src/ui/shared/appbar_title.dart';
 import 'package:logic_rdv_v0/src/ui/shared/my_drawer.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:geolocator/geolocator.dart';
 
 import '../../../common.dart';
 
@@ -64,9 +61,9 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
   TextEditingController _searchValueCity = TextEditingController();
   TextEditingController _searchValueName = TextEditingController();
   ScrollController _scrollController = new ScrollController();
-  String _cityId ='';
-  String _categoryId = '';
-  int totalOfPage =0;
+  String _cityId;
+  String _categoryId;
+  int totalOfPage;
   bool isRefreshList = false;
 
   bool _isLoading = false;
@@ -75,24 +72,24 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
 
   List<ObjectNameOfSearch> objectNameOfSearch = [];
 
-  late Position _currentPosition;
-  String _currentAddress ='';
+  Position _currentPosition;
+  String _currentAddress;
 
-  FocusNode _connectButtonFocus = FocusNode();
-  FocusNode _cityFocus = FocusNode();
-  FocusNode _nameFocus = FocusNode();
-  FocusNode _searchButtonFocus =FocusNode();
+  FocusNode _connectButtonFocus;
+  FocusNode _cityFocus;
+  FocusNode _nameFocus;
+  FocusNode _searchButtonFocus;
 
-  String _email = '';
-  String _fullName = '';
-  String _tokenuser = '';
+  String _email;
+  String _fullName;
+  String _tokenUser;
   bool isCity = false;
   bool isSpecification = false;
   bool isCurrentPositionAsk = false;
 
   List<ObjectNameOfSearch> doctors = [];
 
-  final Geolocator geolocator = Geolocator();
+  final Geolocator geolocator = Geolocator()..forceAndroidLocationManager;
   // Geolocator geolocator;
 
   void _getCurrentLocation() {
@@ -100,9 +97,10 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
       customAlert(
           context: context,
           alertType: AlertType.info,
-          content: Text('Fontionnalite disponible uniquement sur mobile'), title: '', buttonLabel: '', action: () {  }, willPop: false);
+          content: Text('Fontionnalite disponible uniquement sur mobile'));
     } else {
-       Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
+      geolocator
+          .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
           .then((Position position) {
         setState(() {
           _currentPosition = position;
@@ -119,15 +117,15 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
       if (kIsWeb) {
         print('is web platform');
       } else {
-        // List<Placemark> p = await geolocator.placemarkFromCoordinates(
-        //     _currentPosition.latitude, _currentPosition.longitude);
-        // Placemark place = p[0];
-        // setState(() {
-        //   _searchValueCity.text = "Ma position";
-        //   _cityId =
-        //       'p${_currentPosition.latitude},${_currentPosition.longitude}';
-        //   isCurrentPositionAsk = !isCurrentPositionAsk;
-        // });
+        List<Placemark> p = await geolocator.placemarkFromCoordinates(
+            _currentPosition.latitude, _currentPosition.longitude);
+        Placemark place = p[0];
+        setState(() {
+          _searchValueCity.text = "Ma position";
+          _cityId =
+              'p${_currentPosition.latitude},${_currentPosition.longitude}';
+          isCurrentPositionAsk = !isCurrentPositionAsk;
+        });
       }
     } catch (e) {
       print(e);
@@ -145,7 +143,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
       ..add(GetSharedPreferenceObject(objectKey: PreferenceKey.objectKey));
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        _textFieldHeight = _keyTextField.currentContext!.size!.height;
+        _textFieldHeight = _keyTextField.currentContext.size.height;
       });
     });
   }
@@ -239,10 +237,10 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
           }),
         ],
         child: MyDrawer(
-          tokenUser: _tokenuser,
+          tokenUser: _tokenUser,
           page: '6',
           email: _email,
-          fullNme: _fullName, notification: false,
+          fullNme: _fullName,
         ),
       ),
       appBar: AdaptativeAppBar(
@@ -251,16 +249,16 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ?  Icon(
+                ? const Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                :  Icon(
+                : const Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
           ),
         ],
       ),
@@ -298,7 +296,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -318,7 +316,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else {
                 flushBarError(state.error, context);
@@ -331,11 +329,11 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
               print("is write");
             } else if (state is SharedPreferenceReadObjectState) {
               setState(() {
-                _email = state.sharePreferenceObject!.email;
-                _tokenuser = state.sharePreferenceObject!.token;
-                _fullName = state.sharePreferenceObject!.firstName +
+                _email = state.sharePreferenceObject.email;
+                _tokenUser = state.sharePreferenceObject.token;
+                _fullName = state.sharePreferenceObject.firstName +
                     " " +
-                    state.sharePreferenceObject!.lastName;
+                    state.sharePreferenceObject.lastName;
               });
             }
           }),
@@ -432,7 +430,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                                     onTapeFocusChangeHandler: () {
                                       _showDialogSearchCityValue(context);
                                     },
-                                    validator: (value) => verifyEmpty(value!),
+                                    validator: (value) => verifyEmpty(value),
                                     suffixIcon: Padding(
                                       padding: const EdgeInsets.only(
                                           right: 20, left: 10),
@@ -454,7 +452,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                                               Icons.clear,
                                               color: Colors.transparent,
                                             ),
-                                    ), focusNode: null, textInputAction: null,
+                                    ),
                                   ),
                                 ),
                                 IconButton(
@@ -519,7 +517,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                                     )
                                   : Icon(Icons.clear,
                                       color: Colors.transparent),
-                              validator: (value) => verifyEmpty(value!), focusNode: null, textInputAction: null,
+                              validator: (value) => verifyEmpty(value),
                             ),
                             const SizedBox(height: 20),
                             Visibility(

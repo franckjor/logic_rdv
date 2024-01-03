@@ -49,16 +49,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String _tokenuser = '';
-  String _email = '';
-  String _fullName = '';
+  String _tokenUser;
+  String _email;
+  String _fullName;
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   List<ObjectNameOfSearch> activeEtabs = [];
   List<ObjectNameOfSearch> sameCabinetEtabs = [];
   List<ObjectNameOfSearch> _activeEtabsAndSameCabinetEtabs = [];
-  late ObjectNameOfSearch _sameCabinetEtabsObject;
+  ObjectNameOfSearch _sameCabinetEtabsObject;
 
   bool isLoading = false;
 
@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<String> getInstalationIdKey() async{
     final prefs = await SharedPreferences.getInstance();
-    final String instalationKey = prefs.getString('InstallationIdKey')!;
+    final String instalationKey = prefs.getString('InstallationIdKey');
     print("InstallationIdHome: $instalationKey");
     return instalationKey;
   }
@@ -106,10 +106,10 @@ class _HomeScreenState extends State<HomeScreen> {
           }),
         ],
         child: MyDrawer(
-          tokenUser: _tokenuser,
+          tokenUser: _tokenUser,
           page: '1',
           email: _email,
-          fullNme: _fullName, notification: false,
+          fullNme: _fullName,
         ),
       ),
       appBar: AdaptativeAppBar(
@@ -121,16 +121,16 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ?  Icon(
+                ? const Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                :  Icon(
+                : const Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
           ),
         ],
       ),
@@ -140,12 +140,12 @@ class _HomeScreenState extends State<HomeScreen> {
               listener: (context, state) {
             if (state is SharedPreferenceReadObjectState) {
               setState(() {
-                _tokenuser = state.sharePreferenceObject!.token;
-                _email = state.sharePreferenceObject!.email;
-                _fullName = state.sharePreferenceObject!.firstName +
+                _tokenUser = state.sharePreferenceObject.token;
+                _email = state.sharePreferenceObject.email;
+                _fullName = state.sharePreferenceObject.firstName +
                     " " +
-                    state.sharePreferenceObject!.lastName;
-                getFixerRdvDoctorList(context: context, tokenUser: _tokenuser);
+                    state.sharePreferenceObject.lastName;
+                getFixerRdvDoctorList(context: context, tokenUser: _tokenUser);
               });
             }
           }),
@@ -157,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 _progressDialog.hide();
                 isLoading = false;
                 _activeEtabsAndSameCabinetEtabs.clear();
-                getFixerRdvDoctorList(context: context, tokenUser: _tokenuser);
+                getFixerRdvDoctorList(context: context, tokenUser: _tokenUser);
                 customAlert(
                   alertType: AlertType.success,
                   context: context,
@@ -165,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     'Ce Docteur fait parti de votre liste de medecin et '
                     'peux maintenant faire des consultations et avoir des patients.',
                     textAlign: TextAlign.center,
-                  ), title: '', buttonLabel: '', action: () {  }, willPop: false,
+                  ),
                 );
               });
             } else if (state is AddDoctorFailure) {
@@ -188,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -208,7 +208,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else {
                 customAlert(
@@ -219,7 +219,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       state.error,
                       textAlign: TextAlign.center,
                     ),
-                  ), title: '', buttonLabel: '', action: () {  }, willPop: false,
+                  ),
                 );
               }
             }
@@ -257,7 +257,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -277,7 +277,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else {
                 customAlert(
@@ -288,7 +288,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       state.error,
                       textAlign: TextAlign.center,
                     ),
-                  ), title: '', buttonLabel: '', action: () {  }, willPop: false,
+                  ),
                 );
               }
             }
@@ -299,7 +299,7 @@ class _HomeScreenState extends State<HomeScreen> {
               isLoading = false;
               _activeEtabsAndSameCabinetEtabs.clear();
               flushBarSuccess(state.response.message, context);
-              getFixerRdvDoctorList(context: context, tokenUser: _tokenuser);
+              getFixerRdvDoctorList(context: context, tokenUser: _tokenUser);
             } else if (state is RemoveDoctorFailure) {
               if (state.error == messageErrorTokenInvalid ||
                   state.error == messageErrorTokenExpired) {
@@ -320,7 +320,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -340,7 +340,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else {
                 customAlert(
@@ -351,7 +351,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       state.error,
                       textAlign: TextAlign.center,
                     ),
-                  ), title: '', buttonLabel: '', action: () {  }, willPop: false,
+                  ),
                 );
               }
             }
@@ -388,7 +388,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           length: _activeEtabsAndSameCabinetEtabs.length,
                           objectNameOfSearch:
                               _activeEtabsAndSameCabinetEtabs[i],
-                          tokenUser: _tokenuser,
+                          tokenUser: _tokenUser,
                           onAddHandler: () {
                             _progressDialog
                                 .setMessage('Activation de votre docteur....');
@@ -397,9 +397,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               context: context,
                               id: _activeEtabsAndSameCabinetEtabs[i].id,
                               phone: _activeEtabsAndSameCabinetEtabs[i].tel,
-                              tokenUser: _tokenuser,
+                              tokenUser: _tokenUser,
                             );
-                          }, addPaPressed: null, cabinetId: '',
+                          },
                         ),
                       )
                     : EmptyApointmentWidget()
@@ -419,17 +419,17 @@ class _AppointmentItem extends StatefulWidget {
   final ObjectNameOfSearch objectNameOfSearch;
   final String cabinetId;
   final String tokenUser;
-  final Function()? onAddHandler;
-  final Function()? addPaPressed;
+  final Function onAddHandler;
+  final Function addPaPressed;
   final int length;
 
   _AppointmentItem({
-    required this.objectNameOfSearch,
-    required this.tokenUser,
-    required this.onAddHandler,
-    required this.length,
-    required this.addPaPressed,
-    required this.cabinetId,
+    this.objectNameOfSearch,
+    this.tokenUser,
+    this.onAddHandler,
+    this.length,
+    this.addPaPressed,
+    this.cabinetId,
   });
 
   @override
@@ -603,7 +603,7 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                                     shape: BoxShape.circle,
                                   ),
                                   child: IconButton(
-                                    icon:  Icon(
+                                    icon: const Icon(
                                       Icons.call,
                                       color: AppColors.whiteColor,
                                       size: 16,
@@ -638,7 +638,7 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                           content: Text(
                             'Ce Docteur ne fait pas partis de vos medecins veuillez l\'ajouter.',
                             textAlign: TextAlign.center,
-                          ), title: '', buttonLabel: '', action: () {  }, willPop: false,
+                          ),
                         );
                       } else {
                         Navigator.pushNamed(
@@ -774,7 +774,7 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                               context: context,
                               idDoctor: widget.objectNameOfSearch.id,
                             );
-                          }, alertType: null, confirmButtonLabel: '', cancelButtonLabel: '',
+                          },
                         );
                       },
                     ),

@@ -11,12 +11,12 @@ abstract class AbstractRepository<D extends AbstractDto,
 
   Future<String> getAuthToken() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    return preferences.getString("token")!;
+    return preferences.getString("token");
   }
 
   Future<String> getTokenAuthorization() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    return preferences.getString(PreferenceKey.tokenAuthorizationKey)!;
+    return preferences.getString(PreferenceKey.tokenAuthorizationKey);
   }
 
   Future<S> create(D dto) async {

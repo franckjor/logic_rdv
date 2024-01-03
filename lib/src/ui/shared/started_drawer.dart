@@ -81,7 +81,7 @@ class _StartedDrawerState extends State<StartedDrawer> {
                                       exit(0);
                                     }
                                   },
-                                  title: '', confirmButtonLabel: '', cancelButtonLabel: '');
+                                  title: '');
                             },
                           ),
                         ),
@@ -169,14 +169,14 @@ class _StartedDrawerState extends State<StartedDrawer> {
 
 class _DrawerItem extends StatelessWidget {
   final String text;
-  final Function()? onTap;
+  final Function onTap;
   final IconData icon;
 
   const _DrawerItem({
-    Key? key,
-    required this.text,
-    required this.icon,
-    required this.onTap,
+    Key key,
+    this.text,
+    this.icon,
+    this.onTap,
   }) : super(key: key);
 
   @override

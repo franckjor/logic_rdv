@@ -5,18 +5,17 @@ import 'package:logic_rdv_v0/src/core/models/token_user/token_user.dart';
 import 'package:logic_rdv_v0/src/core/models/user_model/user_request.dart';
 
 updateUserAccount(
-    {
-    required BuildContext context,
-    required String compte_nom,
-    required String tokenUser,
-    required String compte_prenom,
-    required String compte_email,
-    required String compte_mobile,
-    required String compte_codepostal,
-    required String compte_ville,
-    required String compte_password,
-    required String compte_password_conf,
-    required String compte_adresse}) {
+    {BuildContext context,
+    String compte_nom,
+    String tokenUser,
+    String compte_prenom,
+    String compte_email,
+    String compte_mobile,
+    String compte_codepostal,
+    String compte_ville,
+    String compte_password,
+    String compte_password_conf,
+    String compte_adresse}) {
   UserRequest updateAccountRequest = UserRequest((builder) => builder
     ..compteAdresse = compte_adresse
     ..tokenuser = tokenUser
@@ -34,8 +33,8 @@ updateUserAccount(
 }
 
 checkoutUserAccount({
-  required BuildContext context,
-  required String tokenUser,
+  BuildContext context,
+  String tokenUser,
 }) {
   TokenUser tokenUserRemoved =
       TokenUser((builder) => builder..tokenuser = tokenUser);

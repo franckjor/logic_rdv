@@ -37,8 +37,8 @@ class StripeTransactionResponse {
   bool success;
 
   StripeTransactionResponse({
-    required this.message,
-    required this.success,
+    this.message,
+    this.success,
   });
 }
 
@@ -59,18 +59,18 @@ class StripeService {
   }
 
   static Future<StripeTransactionResponse> payNowHandler({
-    required String stripeClientSecret,
-    required BuildContext context,
-    required String onclickAction,
-    required String onclickData,
-    required String tokenappointment,
-    required String tokenuser,
-    required String session,
-    required String cardNumber,
-    required int expMonth,
-    required int expYear,
-    required ProgressDialog ackRdvProgressDialog,
-    required String newTokenappointment,
+    String stripeClientSecret,
+    BuildContext context,
+    String onclickAction,
+    String onclickData,
+    String tokenappointment,
+    String tokenuser,
+    String session,
+    String cardNumber,
+    int expMonth,
+    int expYear,
+    ProgressDialog ackRdvProgressDialog,
+    String newTokenappointment,
   }) async {
     try {
       // var paymentMethod = await StripePayment.paymentRequestWithCardForm(
@@ -100,7 +100,7 @@ class StripeService {
 
           paymentSheetParameters: SetupPaymentSheetParameters(
 
-              ////testEnv: true,
+              testEnv: true,
               paymentIntentClientSecret: paymentIntent[
               'client_secret'], //Gotten from payment intent
               style: ThemeMode.light,
@@ -138,7 +138,7 @@ class StripeService {
           session: session,
 
           tokenAppointment: tokenappointment,
-          tokenUser: tokenuser, week: '',
+          tokenUser: tokenuser,
         );
       }
       if (response.status == 'succeeded') {

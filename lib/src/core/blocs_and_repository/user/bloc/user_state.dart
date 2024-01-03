@@ -15,7 +15,7 @@ class UserStateLoading extends UserState {}
 class UserStateLoadingSuccess extends UserState {
   final UserResponse userResponse;
 
-  UserStateLoadingSuccess({ required this.userResponse});
+  UserStateLoadingSuccess({this.userResponse});
 
   @override
   List<Object> get props => [userResponse];
@@ -27,7 +27,7 @@ class UserStateLoadingSuccess extends UserState {
 class UserCheckoutStateLoadingSuccess extends UserState {
   final RemoveUserResponse userResponse;
 
-  UserCheckoutStateLoadingSuccess({required  this.userResponse});
+  UserCheckoutStateLoadingSuccess({this.userResponse});
 
   @override
   List<Object> get props => [userResponse];
@@ -40,7 +40,7 @@ class UserCheckoutStateLoadingSuccess extends UserState {
 class UserStateLoadingFailure extends UserState {
   final String error;
 
-  UserStateLoadingFailure({required this.error});
+  UserStateLoadingFailure({@required this.error});
 
   @override
   List<Object> get props => [error];

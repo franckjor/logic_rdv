@@ -40,33 +40,33 @@ bool get isWeb => foundation.kIsWeb;
 class AppointementArg {
   int isforDrawer;
 
-  AppointementArg({required this.isforDrawer});
+  AppointementArg({this.isforDrawer});
 }
 
 class AppointmentScreen extends StatefulWidget {
-  final AppointementArg? appointementArg;
+  final AppointementArg appointementArg;
 
-  AppointmentScreen({required this.appointementArg});
+  AppointmentScreen({this.appointementArg});
 
   @override
   _AppointmentScreenState createState() => _AppointmentScreenState();
 }
 
 class _AppointmentScreenState extends State<AppointmentScreen> {
-  String _tokenuser = '';
-  String _email = '';
-  String _fullName = '';
+  String _tokenUser;
+  String _email;
+  String _fullName;
   ScrollController _scrollController = new ScrollController();
   int currentPage = 1;
-  int totalOfPage =0;
+  int totalOfPage;
   bool isRefreshList = false;
   bool _isLoading = false;
-  String _authorizationToke= '';
-  late String _installationIdKey;
+  String _authorizationToke;
+  String _installationIdKey;
 
   bool _notification = true;
 
-  String _rdvDate = '', _doctorRdv ='';
+  String _rdvDate, _doctorRdv;
   static const String PLAY_STORE_APP_ID = "fr.logicrdv.logicrdv";
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -75,7 +75,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
 
   Future<String> getInstalationIdKey() async {
     final prefs = await SharedPreferences.getInstance();
-    _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey)!;
+    _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey);
     print("InstallationIdHome: $_installationIdKey");
 
     return _installationIdKey;
@@ -107,7 +107,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
           isRefreshList = true;
           getAppointmentList(
               context: context,
-              tokenUser: _tokenuser,
+              tokenUser: _tokenUser,
               page: currentPage.toString());
         });
       }
@@ -132,7 +132,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
           }),
         ],
         child: MyDrawer(
-          tokenUser: _tokenuser,
+          tokenUser: _tokenUser,
           notification: _notification,
           page: '0',
           email: _email,
@@ -154,16 +154,16 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ?  Icon(
+                ? const Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                :  Icon(
+                : const Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
           ),
         ],
       ),
@@ -176,19 +176,19 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
               setState(() {
                 getVersionApp(context: context);
                 appointments.clear();
-                _tokenuser = state.sharePreferenceObject!.token;
-                _email = state.sharePreferenceObject!.email;
-                _fullName = state.sharePreferenceObject!.firstName +
+                _tokenUser = state.sharePreferenceObject.token;
+                _email = state.sharePreferenceObject.email;
+                _fullName = state.sharePreferenceObject.firstName +
                     " " +
-                    state.sharePreferenceObject!.lastName;
+                    state.sharePreferenceObject.lastName;
 
                 isSubscribe(
-                    tokenuser: _tokenuser,
+                    tokenuser: _tokenUser,
                     installationkey: _installationIdKey,
                     context: context);
                 getAppointmentList(
                     context: context,
-                    tokenUser: _tokenuser,
+                    tokenUser: _tokenUser,
                     page: currentPage.toString());
               });
             } else if (state is SharedPreferenceTokenAuthorizationWriteState) {
@@ -229,7 +229,6 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                 if (state.verifyNotifSubscribtion.data.issubscribed == "0") {
                   _notification = false;
                   customConfirmAlert(
-                    
                     context: context,
                     alertType: AlertType.info,
                     content: const Text(
@@ -244,9 +243,9 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                       subscribe(
                         context: context,
                         installationkey: _installationIdKey,
-                        tokenuser: _tokenuser,
+                        tokenuser: _tokenUser,
                       );
-                    }, confirmButtonLabel: '', cancelButtonLabel: '',
+                    },
                   );
                 } else {
                   _notification = true;
@@ -273,7 +272,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                       "La version ${state.response.data.version.android} est disponible vous pouvez télécharger.",
                   onYesAction: () {
                     LaunchReview.launch(androidAppId: PLAY_STORE_APP_ID);
-                  }, alertType: null, confirmButtonLabel: '', cancelButtonLabel: '',
+                  },
                 );
               }
             }
@@ -291,7 +290,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
             } else if (state is CancelAppointmentLoadingSuccess) {
               setState(() {
                 getAppointmentList(
-                    context: context, tokenUser: _tokenuser, page: '1');
+                    context: context, tokenUser: _tokenUser, page: '1');
                 _isLoading = true;
                 appointments.clear();
                 flushBarSuccess("Rdv annulé avec succès", context);
@@ -316,7 +315,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -326,7 +325,6 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                   action: () {
                     Navigator.pushNamedAndRemoveUntil(
                         context, RouteGenerator.loginScreen, (route) => false);
-                        
                   },
                   content: Container(
                     child: Text(
@@ -337,8 +335,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), 
-                  title: '', buttonLabel: '',
+                  ),
                 );
               } else {
                 flushBarError(state.error, context);
@@ -448,7 +445,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                                                     _isLoading = false;
                                                     cancelAppointment(
                                                       context: context,
-                                                      tokenUser: _tokenuser,
+                                                      tokenUser: _tokenUser,
                                                       tokenAppointment:
                                                           appointments[i]
                                                               .appointment
@@ -456,7 +453,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                                                     );
                                                   },
                                                 );
-                                              }, alertType: null, confirmButtonLabel: '', cancelButtonLabel: '',
+                                              },
                                             );
                                           },
                                           patientResponse:

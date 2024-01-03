@@ -9,7 +9,7 @@ abstract class SubscribeEvent extends Equatable {
 class Subscribe extends SubscribeEvent {
   final SubscribeRequest subscribeRequest;
 
-  Subscribe({required this.subscribeRequest});
+  Subscribe({this.subscribeRequest});
   @override
   List<Object> get props => [subscribeRequest];
 
@@ -21,7 +21,7 @@ class UnSubscribe extends SubscribeEvent {
 
   final SubscribeRequest subscribeRequest;
 
-  UnSubscribe({required this.subscribeRequest});
+  UnSubscribe({this.subscribeRequest});
   @override
   List<Object> get props => [subscribeRequest];
 
@@ -33,7 +33,7 @@ class IsSubscribe extends SubscribeEvent {
 
   final SubscribeRequest subscribeRequest;
 
-  IsSubscribe({required this.subscribeRequest});
+  IsSubscribe({this.subscribeRequest});
   @override
   List<Object> get props => [subscribeRequest];
 

@@ -82,9 +82,8 @@ abstract class DataDoctorDetails
   String get idCategory;
   @BuiltValueField(wireName: 'icon')
   String get icon;
-  @nullable
   @BuiltValueField(wireName: 'km_diff')
-  String get kmDiff;
+  String? get kmDiff;
   @BuiltValueField(wireName: 'id')
   String get id;
   @BuiltValueField(wireName: 'civility')
@@ -112,8 +111,7 @@ abstract class DataDoctorDetails
   @BuiltValueField(wireName: 'chapters')
   BuiltList<Chapters> get chapters;
   @BuiltValueField(wireName: 'prenom')
-  @nullable
-  String get prenom;
+  String? get prenom;
   @BuiltValueField(wireName: 'id_agenda')
   String get idAgenda;
   String toJson() {

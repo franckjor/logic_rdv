@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of login_request;
+part of 'login_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -16,9 +16,9 @@ class _$LoginRequestSerializer implements StructuredSerializer<LoginRequest> {
   final String wireName = 'LoginRequest';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, LoginRequest object,
+  Iterable<Object?> serialize(Serializers serializers, LoginRequest object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'email',
       serializers.serialize(object.email,
           specifiedType: const FullType(String)),
@@ -31,23 +31,24 @@ class _$LoginRequestSerializer implements StructuredSerializer<LoginRequest> {
   }
 
   @override
-  LoginRequest deserialize(Serializers serializers, Iterable<Object> serialized,
+  LoginRequest deserialize(
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new LoginRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'email':
           result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'password':
           result.password = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -62,12 +63,13 @@ class _$LoginRequest extends LoginRequest {
   @override
   final String password;
 
-  factory _$LoginRequest([void Function(LoginRequestBuilder) updates]) =>
-      (new LoginRequestBuilder()..update(updates)).build();
+  factory _$LoginRequest([void Function(LoginRequestBuilder)? updates]) =>
+      (new LoginRequestBuilder()..update(updates))._build();
 
-  _$LoginRequest._({this.email, this.password}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(email, 'LoginRequest', 'email');
-    BuiltValueNullFieldError.checkNotNull(password, 'LoginRequest', 'password');
+  _$LoginRequest._({required this.email, required this.password}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(email, r'LoginRequest', 'email');
+    BuiltValueNullFieldError.checkNotNull(
+        password, r'LoginRequest', 'password');
   }
 
   @override
@@ -87,12 +89,16 @@ class _$LoginRequest extends LoginRequest {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, email.hashCode), password.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, password.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('LoginRequest')
+    return (newBuiltValueToStringHelper(r'LoginRequest')
           ..add('email', email)
           ..add('password', password))
         .toString();
@@ -101,15 +107,15 @@ class _$LoginRequest extends LoginRequest {
 
 class LoginRequestBuilder
     implements Builder<LoginRequest, LoginRequestBuilder> {
-  _$LoginRequest _$v;
+  _$LoginRequest? _$v;
 
-  String _email;
-  String get email => _$this._email;
-  set email(String email) => _$this._email = email;
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
-  String _password;
-  String get password => _$this._password;
-  set password(String password) => _$this._password = password;
+  String? _password;
+  String? get password => _$this._password;
+  set password(String? password) => _$this._password = password;
 
   LoginRequestBuilder();
 
@@ -130,21 +136,23 @@ class LoginRequestBuilder
   }
 
   @override
-  void update(void Function(LoginRequestBuilder) updates) {
+  void update(void Function(LoginRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$LoginRequest build() {
+  LoginRequest build() => _build();
+
+  _$LoginRequest _build() {
     final _$result = _$v ??
         new _$LoginRequest._(
             email: BuiltValueNullFieldError.checkNotNull(
-                email, 'LoginRequest', 'email'),
+                email, r'LoginRequest', 'email'),
             password: BuiltValueNullFieldError.checkNotNull(
-                password, 'LoginRequest', 'password'));
+                password, r'LoginRequest', 'password'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

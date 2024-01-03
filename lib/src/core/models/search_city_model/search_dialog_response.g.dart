@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of search_dialog_response;
+part of 'search_dialog_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -22,10 +22,10 @@ class _$SearchDialogResponseSerializer
   final String wireName = 'SearchDialogResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, SearchDialogResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'httpstatut',
       serializers.serialize(object.httpstatut,
           specifiedType: const FullType(int)),
@@ -54,44 +54,44 @@ class _$SearchDialogResponseSerializer
 
   @override
   SearchDialogResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SearchDialogResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'params':
           result.params.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(ParamsSearchDialogResponse))
+                  specifiedType: const FullType(ParamsSearchDialogResponse))!
               as ParamsSearchDialogResponse);
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'localisation':
           result.localisation = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -111,10 +111,10 @@ class _$ParamsSearchDialogResponseSerializer
   final String wireName = 'ParamsSearchDialogResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ParamsSearchDialogResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'address',
       serializers.serialize(object.address,
           specifiedType: const FullType(String)),
@@ -129,27 +129,27 @@ class _$ParamsSearchDialogResponseSerializer
 
   @override
   ParamsSearchDialogResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsSearchDialogResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'address':
           result.address = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'zip':
           result.zip = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'city':
           result.city = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -175,32 +175,32 @@ class _$SearchDialogResponse extends SearchDialogResponse {
   final String localisation;
 
   factory _$SearchDialogResponse(
-          [void Function(SearchDialogResponseBuilder) updates]) =>
-      (new SearchDialogResponseBuilder()..update(updates)).build();
+          [void Function(SearchDialogResponseBuilder)? updates]) =>
+      (new SearchDialogResponseBuilder()..update(updates))._build();
 
   _$SearchDialogResponse._(
-      {this.httpstatut,
-      this.version,
-      this.request,
-      this.params,
-      this.error,
-      this.message,
-      this.localisation})
+      {required this.httpstatut,
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.error,
+      required this.message,
+      required this.localisation})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        httpstatut, 'SearchDialogResponse', 'httpstatut');
+        httpstatut, r'SearchDialogResponse', 'httpstatut');
     BuiltValueNullFieldError.checkNotNull(
-        version, 'SearchDialogResponse', 'version');
+        version, r'SearchDialogResponse', 'version');
     BuiltValueNullFieldError.checkNotNull(
-        request, 'SearchDialogResponse', 'request');
+        request, r'SearchDialogResponse', 'request');
     BuiltValueNullFieldError.checkNotNull(
-        params, 'SearchDialogResponse', 'params');
+        params, r'SearchDialogResponse', 'params');
     BuiltValueNullFieldError.checkNotNull(
-        error, 'SearchDialogResponse', 'error');
+        error, r'SearchDialogResponse', 'error');
     BuiltValueNullFieldError.checkNotNull(
-        message, 'SearchDialogResponse', 'message');
+        message, r'SearchDialogResponse', 'message');
     BuiltValueNullFieldError.checkNotNull(
-        localisation, 'SearchDialogResponse', 'localisation');
+        localisation, r'SearchDialogResponse', 'localisation');
   }
 
   @override
@@ -227,21 +227,21 @@ class _$SearchDialogResponse extends SearchDialogResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, httpstatut.hashCode), version.hashCode),
-                        request.hashCode),
-                    params.hashCode),
-                error.hashCode),
-            message.hashCode),
-        localisation.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, localisation.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('SearchDialogResponse')
+    return (newBuiltValueToStringHelper(r'SearchDialogResponse')
           ..add('httpstatut', httpstatut)
           ..add('version', version)
           ..add('request', request)
@@ -255,37 +255,37 @@ class _$SearchDialogResponse extends SearchDialogResponse {
 
 class SearchDialogResponseBuilder
     implements Builder<SearchDialogResponse, SearchDialogResponseBuilder> {
-  _$SearchDialogResponse _$v;
+  _$SearchDialogResponse? _$v;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  ParamsSearchDialogResponseBuilder _params;
+  ParamsSearchDialogResponseBuilder? _params;
   ParamsSearchDialogResponseBuilder get params =>
       _$this._params ??= new ParamsSearchDialogResponseBuilder();
-  set params(ParamsSearchDialogResponseBuilder params) =>
+  set params(ParamsSearchDialogResponseBuilder? params) =>
       _$this._params = params;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  String _localisation;
-  String get localisation => _$this._localisation;
-  set localisation(String localisation) => _$this._localisation = localisation;
+  String? _localisation;
+  String? get localisation => _$this._localisation;
+  set localisation(String? localisation) => _$this._localisation = localisation;
 
   SearchDialogResponseBuilder();
 
@@ -311,37 +311,39 @@ class SearchDialogResponseBuilder
   }
 
   @override
-  void update(void Function(SearchDialogResponseBuilder) updates) {
+  void update(void Function(SearchDialogResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$SearchDialogResponse build() {
+  SearchDialogResponse build() => _build();
+
+  _$SearchDialogResponse _build() {
     _$SearchDialogResponse _$result;
     try {
       _$result = _$v ??
           new _$SearchDialogResponse._(
               httpstatut: BuiltValueNullFieldError.checkNotNull(
-                  httpstatut, 'SearchDialogResponse', 'httpstatut'),
+                  httpstatut, r'SearchDialogResponse', 'httpstatut'),
               version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'SearchDialogResponse', 'version'),
+                  version, r'SearchDialogResponse', 'version'),
               request: BuiltValueNullFieldError.checkNotNull(
-                  request, 'SearchDialogResponse', 'request'),
+                  request, r'SearchDialogResponse', 'request'),
               params: params.build(),
               error: BuiltValueNullFieldError.checkNotNull(
-                  error, 'SearchDialogResponse', 'error'),
+                  error, r'SearchDialogResponse', 'error'),
               message: BuiltValueNullFieldError.checkNotNull(
-                  message, 'SearchDialogResponse', 'message'),
+                  message, r'SearchDialogResponse', 'message'),
               localisation: BuiltValueNullFieldError.checkNotNull(
-                  localisation, 'SearchDialogResponse', 'localisation'));
+                  localisation, r'SearchDialogResponse', 'localisation'));
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'SearchDialogResponse', _$failedField, e.toString());
+            r'SearchDialogResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -359,17 +361,18 @@ class _$ParamsSearchDialogResponse extends ParamsSearchDialogResponse {
   final String city;
 
   factory _$ParamsSearchDialogResponse(
-          [void Function(ParamsSearchDialogResponseBuilder) updates]) =>
-      (new ParamsSearchDialogResponseBuilder()..update(updates)).build();
+          [void Function(ParamsSearchDialogResponseBuilder)? updates]) =>
+      (new ParamsSearchDialogResponseBuilder()..update(updates))._build();
 
-  _$ParamsSearchDialogResponse._({this.address, this.zip, this.city})
+  _$ParamsSearchDialogResponse._(
+      {required this.address, required this.zip, required this.city})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        address, 'ParamsSearchDialogResponse', 'address');
+        address, r'ParamsSearchDialogResponse', 'address');
     BuiltValueNullFieldError.checkNotNull(
-        zip, 'ParamsSearchDialogResponse', 'zip');
+        zip, r'ParamsSearchDialogResponse', 'zip');
     BuiltValueNullFieldError.checkNotNull(
-        city, 'ParamsSearchDialogResponse', 'city');
+        city, r'ParamsSearchDialogResponse', 'city');
   }
 
   @override
@@ -392,12 +395,17 @@ class _$ParamsSearchDialogResponse extends ParamsSearchDialogResponse {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, address.hashCode), zip.hashCode), city.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, zip.hashCode);
+    _$hash = $jc(_$hash, city.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ParamsSearchDialogResponse')
+    return (newBuiltValueToStringHelper(r'ParamsSearchDialogResponse')
           ..add('address', address)
           ..add('zip', zip)
           ..add('city', city))
@@ -408,19 +416,19 @@ class _$ParamsSearchDialogResponse extends ParamsSearchDialogResponse {
 class ParamsSearchDialogResponseBuilder
     implements
         Builder<ParamsSearchDialogResponse, ParamsSearchDialogResponseBuilder> {
-  _$ParamsSearchDialogResponse _$v;
+  _$ParamsSearchDialogResponse? _$v;
 
-  String _address;
-  String get address => _$this._address;
-  set address(String address) => _$this._address = address;
+  String? _address;
+  String? get address => _$this._address;
+  set address(String? address) => _$this._address = address;
 
-  String _zip;
-  String get zip => _$this._zip;
-  set zip(String zip) => _$this._zip = zip;
+  String? _zip;
+  String? get zip => _$this._zip;
+  set zip(String? zip) => _$this._zip = zip;
 
-  String _city;
-  String get city => _$this._city;
-  set city(String city) => _$this._city = city;
+  String? _city;
+  String? get city => _$this._city;
+  set city(String? city) => _$this._city = city;
 
   ParamsSearchDialogResponseBuilder();
 
@@ -442,23 +450,25 @@ class ParamsSearchDialogResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsSearchDialogResponseBuilder) updates) {
+  void update(void Function(ParamsSearchDialogResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ParamsSearchDialogResponse build() {
+  ParamsSearchDialogResponse build() => _build();
+
+  _$ParamsSearchDialogResponse _build() {
     final _$result = _$v ??
         new _$ParamsSearchDialogResponse._(
             address: BuiltValueNullFieldError.checkNotNull(
-                address, 'ParamsSearchDialogResponse', 'address'),
+                address, r'ParamsSearchDialogResponse', 'address'),
             zip: BuiltValueNullFieldError.checkNotNull(
-                zip, 'ParamsSearchDialogResponse', 'zip'),
+                zip, r'ParamsSearchDialogResponse', 'zip'),
             city: BuiltValueNullFieldError.checkNotNull(
-                city, 'ParamsSearchDialogResponse', 'city'));
+                city, r'ParamsSearchDialogResponse', 'city'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

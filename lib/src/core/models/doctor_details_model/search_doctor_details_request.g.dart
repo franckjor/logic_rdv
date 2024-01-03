@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of search_doctor_details_request;
+part of 'search_doctor_details_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -20,10 +20,10 @@ class _$SearchDoctorDetailsRequestSerializer
   final String wireName = 'SearchDoctorDetailsRequest';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, SearchDoctorDetailsRequest object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
@@ -33,19 +33,19 @@ class _$SearchDoctorDetailsRequestSerializer
 
   @override
   SearchDoctorDetailsRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SearchDoctorDetailsRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -59,12 +59,12 @@ class _$SearchDoctorDetailsRequest extends SearchDoctorDetailsRequest {
   final String id;
 
   factory _$SearchDoctorDetailsRequest(
-          [void Function(SearchDoctorDetailsRequestBuilder) updates]) =>
-      (new SearchDoctorDetailsRequestBuilder()..update(updates)).build();
+          [void Function(SearchDoctorDetailsRequestBuilder)? updates]) =>
+      (new SearchDoctorDetailsRequestBuilder()..update(updates))._build();
 
-  _$SearchDoctorDetailsRequest._({this.id}) : super._() {
+  _$SearchDoctorDetailsRequest._({required this.id}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        id, 'SearchDoctorDetailsRequest', 'id');
+        id, r'SearchDoctorDetailsRequest', 'id');
   }
 
   @override
@@ -84,12 +84,15 @@ class _$SearchDoctorDetailsRequest extends SearchDoctorDetailsRequest {
 
   @override
   int get hashCode {
-    return $jf($jc(0, id.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('SearchDoctorDetailsRequest')
+    return (newBuiltValueToStringHelper(r'SearchDoctorDetailsRequest')
           ..add('id', id))
         .toString();
   }
@@ -98,11 +101,11 @@ class _$SearchDoctorDetailsRequest extends SearchDoctorDetailsRequest {
 class SearchDoctorDetailsRequestBuilder
     implements
         Builder<SearchDoctorDetailsRequest, SearchDoctorDetailsRequestBuilder> {
-  _$SearchDoctorDetailsRequest _$v;
+  _$SearchDoctorDetailsRequest? _$v;
 
-  String _id;
-  String get id => _$this._id;
-  set id(String id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   SearchDoctorDetailsRequestBuilder();
 
@@ -122,19 +125,21 @@ class SearchDoctorDetailsRequestBuilder
   }
 
   @override
-  void update(void Function(SearchDoctorDetailsRequestBuilder) updates) {
+  void update(void Function(SearchDoctorDetailsRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$SearchDoctorDetailsRequest build() {
+  SearchDoctorDetailsRequest build() => _build();
+
+  _$SearchDoctorDetailsRequest _build() {
     final _$result = _$v ??
         new _$SearchDoctorDetailsRequest._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, 'SearchDoctorDetailsRequest', 'id'));
+                id, r'SearchDoctorDetailsRequest', 'id'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

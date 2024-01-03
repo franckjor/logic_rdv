@@ -98,11 +98,9 @@ abstract class DataGetPaientForRdvResponse
   @BuiltValueField(wireName: 'type')
   String get type;
   @BuiltValueField(wireName: 'messageinternet')
-  @nullable
-  String get messageInternet;
+  String? get messageInternet;
   @BuiltValueField(wireName: 'data')
-  @nullable
-  BuiltList<PatientDataResponseDrv> get data;
+  BuiltList<PatientDataResponseDrv>? get data;
   String toJson() {
     return json.encode(serializers.serializeWith(
         DataGetPaientForRdvResponse.serializer, this));
@@ -125,65 +123,45 @@ abstract class PatientDataResponseDrv
       _$PatientDataResponseDrv;
 
   @BuiltValueField(wireName: 'nom')
-  @nullable
-  String get nom;
+  String? get nom;
   @BuiltValueField(wireName: 'prenom')
-  @nullable
-  String get prenom;
+  String? get prenom;
   @BuiltValueField(wireName: 'email')
-  @nullable
-  String get email;
+  String? get email;
   @BuiltValueField(wireName: 'spacephone')
-  @nullable
-  String get spacephone;
+  String? get spacephone;
   @BuiltValueField(wireName: 'phone')
-  @nullable
-  String get phone;
+  String? get phone;
   @BuiltValueField(wireName: 'dob')
-  @nullable
-  String get dob;
+  String? get dob;
   @BuiltValueField(wireName: 'token')
-  @nullable
-  String get token;
+  String? get token;
   @BuiltValueField(wireName: 'locked')
-  @nullable
-  String get locked;
+  String? get locked;
   @BuiltValueField(wireName: 'blacklist')
-  @nullable
-  String get blacklist;
+  String? get blacklist;
   @BuiltValueField(wireName: 'nplocked')
-  @nullable
-  String get nplocked;
+  String? get nplocked;
   @BuiltValueField(wireName: 'etaballowinternet')
-  @nullable
-  String get etaballowinternet;
+  String? get etaballowinternet;
   @BuiltValueField(wireName: 'etaballownpinternet')
-  @nullable
-  String get etaballownpinternet;
+  String? get etaballownpinternet;
   @BuiltValueField(wireName: 'lockmessage')
-  @nullable
-  String get lockmessage;
+  String? get lockmessage;
   @BuiltValueField(wireName: 'onclick')
-  @nullable
-  String get onclick;
+  String? get onclick;
   @BuiltValueField(wireName: 'onclick_message')
-  @nullable
-  String get onclickMessage;
+  String? get onclickMessage;
   @BuiltValueField(wireName: 'onclick_data')
-  @nullable
-  String get onclickData;
+  String? get onclickData;
   @BuiltValueField(wireName: 'onclick_action')
-  @nullable
-  String get onclickAction;
+  String? get onclickAction;
   @BuiltValueField(wireName: 'onclick_week')
-  @nullable
-  String get onclickWeek;
+  String? get onclickWeek;
   @BuiltValueField(wireName: 'messageinternet')
-  @nullable
-  String get messageInternet;
+  String? get messageInternet;
   @BuiltValueField(wireName: 'photo')
-  @nullable
-  String get photo;
+  String? get photo;
   String toJson() {
     return json.encode(
         serializers.serializeWith(PatientDataResponseDrv.serializer, this));
@@ -209,11 +187,9 @@ abstract class NavigationGetPaientForRdvResponse
       _$NavigationGetPaientForRdvResponse;
 
   @BuiltValueField(wireName: 'begin')
-  @nullable
-  BeginGetPaientForRdvResponse get begin;
+  BeginGetPaientForRdvResponse? get begin;
   @BuiltValueField(wireName: 'prev')
-  @nullable
-  PrevGetPaientForRdvResponse get prev;
+  PrevGetPaientForRdvResponse? get prev;
   String toJson() {
     return json.encode(serializers.serializeWith(
         NavigationGetPaientForRdvResponse.serializer, this));
@@ -239,17 +215,13 @@ abstract class BeginGetPaientForRdvResponse
       _$BeginGetPaientForRdvResponse;
 
   @BuiltValueField(wireName: 'label')
-  @nullable
-  String get label;
+  String? get label;
   @BuiltValueField(wireName: 'onclick_action')
-  @nullable
-  String get onclickAction;
+  String? get onclickAction;
   @BuiltValueField(wireName: 'onclick_data')
-  @nullable
-  String get onclickData;
+  String? get onclickData;
   @BuiltValueField(wireName: 'onclick_week')
-  @nullable
-  String get onclickWeek;
+  String? get onclickWeek;
   String toJson() {
     return json.encode(serializers.serializeWith(
         BeginGetPaientForRdvResponse.serializer, this));
@@ -274,17 +246,13 @@ abstract class PrevGetPaientForRdvResponse
       _$PrevGetPaientForRdvResponse;
 
   @BuiltValueField(wireName: 'label')
-  @nullable
-  String get label;
+  String? get label;
   @BuiltValueField(wireName: 'onclick_action')
-  @nullable
-  String get onclickAction;
+  String? get onclickAction;
   @BuiltValueField(wireName: 'onclick_data')
-  @nullable
-  String get onclickData;
+  String? get onclickData;
   @BuiltValueField(wireName: 'onclick_week')
-  @nullable
-  String get onclickWeek;
+  String? get onclickWeek;
   String toJson() {
     return json.encode(serializers.serializeWith(
         PrevGetPaientForRdvResponse.serializer, this));

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of create_appointment_request;
+part of 'create_appointment_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -20,11 +20,11 @@ class _$CreateAppointmentRequestSerializer
   final String wireName = 'CreateAppointmentRequest';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, CreateAppointmentRequest object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.tokenuser;
     if (value != null) {
       result
@@ -72,39 +72,39 @@ class _$CreateAppointmentRequestSerializer
 
   @override
   CreateAppointmentRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CreateAppointmentRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'tokenappointment':
           result.tokenappointment = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'week':
           result.week = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'data':
           result.data = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'action':
           result.action = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'session':
           result.session = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -115,21 +115,21 @@ class _$CreateAppointmentRequestSerializer
 
 class _$CreateAppointmentRequest extends CreateAppointmentRequest {
   @override
-  final String tokenuser;
+  final String? tokenuser;
   @override
-  final String tokenappointment;
+  final String? tokenappointment;
   @override
-  final String week;
+  final String? week;
   @override
-  final String data;
+  final String? data;
   @override
-  final String action;
+  final String? action;
   @override
-  final String session;
+  final String? session;
 
   factory _$CreateAppointmentRequest(
-          [void Function(CreateAppointmentRequestBuilder) updates]) =>
-      (new CreateAppointmentRequestBuilder()..update(updates)).build();
+          [void Function(CreateAppointmentRequestBuilder)? updates]) =>
+      (new CreateAppointmentRequestBuilder()..update(updates))._build();
 
   _$CreateAppointmentRequest._(
       {this.tokenuser,
@@ -163,19 +163,20 @@ class _$CreateAppointmentRequest extends CreateAppointmentRequest {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, tokenuser.hashCode), tokenappointment.hashCode),
-                    week.hashCode),
-                data.hashCode),
-            action.hashCode),
-        session.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokenuser.hashCode);
+    _$hash = $jc(_$hash, tokenappointment.hashCode);
+    _$hash = $jc(_$hash, week.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jc(_$hash, action.hashCode);
+    _$hash = $jc(_$hash, session.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('CreateAppointmentRequest')
+    return (newBuiltValueToStringHelper(r'CreateAppointmentRequest')
           ..add('tokenuser', tokenuser)
           ..add('tokenappointment', tokenappointment)
           ..add('week', week)
@@ -189,32 +190,32 @@ class _$CreateAppointmentRequest extends CreateAppointmentRequest {
 class CreateAppointmentRequestBuilder
     implements
         Builder<CreateAppointmentRequest, CreateAppointmentRequestBuilder> {
-  _$CreateAppointmentRequest _$v;
+  _$CreateAppointmentRequest? _$v;
 
-  String _tokenuser;
-  String get tokenuser => _$this._tokenuser;
-  set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
+  String? _tokenuser;
+  String? get tokenuser => _$this._tokenuser;
+  set tokenuser(String? tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappointment;
-  String get tokenappointment => _$this._tokenappointment;
-  set tokenappointment(String tokenappointment) =>
+  String? _tokenappointment;
+  String? get tokenappointment => _$this._tokenappointment;
+  set tokenappointment(String? tokenappointment) =>
       _$this._tokenappointment = tokenappointment;
 
-  String _week;
-  String get week => _$this._week;
-  set week(String week) => _$this._week = week;
+  String? _week;
+  String? get week => _$this._week;
+  set week(String? week) => _$this._week = week;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  String? _data;
+  String? get data => _$this._data;
+  set data(String? data) => _$this._data = data;
 
-  String _action;
-  String get action => _$this._action;
-  set action(String action) => _$this._action = action;
+  String? _action;
+  String? get action => _$this._action;
+  set action(String? action) => _$this._action = action;
 
-  String _session;
-  String get session => _$this._session;
-  set session(String session) => _$this._session = session;
+  String? _session;
+  String? get session => _$this._session;
+  set session(String? session) => _$this._session = session;
 
   CreateAppointmentRequestBuilder();
 
@@ -239,12 +240,14 @@ class CreateAppointmentRequestBuilder
   }
 
   @override
-  void update(void Function(CreateAppointmentRequestBuilder) updates) {
+  void update(void Function(CreateAppointmentRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$CreateAppointmentRequest build() {
+  CreateAppointmentRequest build() => _build();
+
+  _$CreateAppointmentRequest _build() {
     final _$result = _$v ??
         new _$CreateAppointmentRequest._(
             tokenuser: tokenuser,
@@ -258,4 +261,4 @@ class CreateAppointmentRequestBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of get_apointment_time_response;
+part of 'get_apointment_time_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -33,10 +33,10 @@ class _$GetApointmentTimeResponseSerializer
   final String wireName = 'GetApointmentTimeResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, GetApointmentTimeResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'version',
       serializers.serialize(object.version,
           specifiedType: const FullType(String)),
@@ -65,45 +65,45 @@ class _$GetApointmentTimeResponseSerializer
 
   @override
   GetApointmentTimeResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new GetApointmentTimeResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'params':
           result.params.replace(serializers.deserialize(value,
                   specifiedType:
-                      const FullType(ParamsGetApointmentTimeResponse))
+                      const FullType(ParamsGetApointmentTimeResponse))!
               as ParamsGetApointmentTimeResponse);
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(DataGetApointmentTimeResponse))
+                  specifiedType: const FullType(DataGetApointmentTimeResponse))!
               as DataGetApointmentTimeResponse);
           break;
       }
@@ -124,11 +124,11 @@ class _$ParamsGetApointmentTimeResponseSerializer
   final String wireName = 'ParamsGetApointmentTimeResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ParamsGetApointmentTimeResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.tokenuser;
     if (value != null) {
       result
@@ -176,39 +176,39 @@ class _$ParamsGetApointmentTimeResponseSerializer
 
   @override
   ParamsGetApointmentTimeResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsGetApointmentTimeResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'tokenappointment':
           result.tokenappointment = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'week':
           result.week = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'data':
           result.data = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'action':
           result.action = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'session':
           result.session = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -228,14 +228,14 @@ class _$DataGetApointmentTimeResponseSerializer
   final String wireName = 'DataGetApointmentTimeResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, DataGetApointmentTimeResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'type',
       serializers.serialize(object.type, specifiedType: const FullType(String)),
     ];
-    Object value;
+    Object? value;
     value = object.session;
     if (value != null) {
       result
@@ -270,37 +270,37 @@ class _$DataGetApointmentTimeResponseSerializer
 
   @override
   DataGetApointmentTimeResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataGetApointmentTimeResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'session':
           result.session = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'navigation':
           result.navigation.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Navigation)) as Navigation);
+              specifiedType: const FullType(Navigation))! as Navigation);
           break;
         case 'headermessage':
           result.headermessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'type':
           result.type = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(DataTimeRdv)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(DataTimeRdv)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -316,10 +316,10 @@ class _$DataTimeRdvSerializer implements StructuredSerializer<DataTimeRdv> {
   final String wireName = 'DataTimeRdv';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, DataTimeRdv object,
+  Iterable<Object?> serialize(Serializers serializers, DataTimeRdv object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.label;
     if (value != null) {
       result
@@ -360,37 +360,37 @@ class _$DataTimeRdvSerializer implements StructuredSerializer<DataTimeRdv> {
   }
 
   @override
-  DataTimeRdv deserialize(Serializers serializers, Iterable<Object> serialized,
+  DataTimeRdv deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataTimeRdvBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'label':
           result.label = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'label2':
           result.label2 = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'label3':
           result.label3 = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'creneaux':
           result.creneaux.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(Creneaux)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(Creneaux)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -406,10 +406,10 @@ class _$CreneauxSerializer implements StructuredSerializer<Creneaux> {
   final String wireName = 'Creneaux';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Creneaux object,
+  Iterable<Object?> serialize(Serializers serializers, Creneaux object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.fromhour;
     if (value != null) {
       result
@@ -470,47 +470,47 @@ class _$CreneauxSerializer implements StructuredSerializer<Creneaux> {
   }
 
   @override
-  Creneaux deserialize(Serializers serializers, Iterable<Object> serialized,
+  Creneaux deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CreneauxBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'fromhour':
           result.fromhour = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'tohour':
           result.tohour = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'doctor':
           result.doctor = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick':
           result.onclick = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick_message':
           result.onclickMessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick_data':
           result.onclickData = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick_action':
           result.onclickAction = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick_week':
           result.onclickWeek = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -526,10 +526,10 @@ class _$NavigationSerializer implements StructuredSerializer<Navigation> {
   final String wireName = 'Navigation';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Navigation object,
+  Iterable<Object?> serialize(Serializers serializers, Navigation object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.begin;
     if (value != null) {
       result
@@ -562,31 +562,31 @@ class _$NavigationSerializer implements StructuredSerializer<Navigation> {
   }
 
   @override
-  Navigation deserialize(Serializers serializers, Iterable<Object> serialized,
+  Navigation deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new NavigationBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'begin':
           result.begin.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Begin)) as Begin);
+              specifiedType: const FullType(Begin))! as Begin);
           break;
         case 'prev':
           result.prev.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Prev)) as Prev);
+              specifiedType: const FullType(Prev))! as Prev);
           break;
         case 'prevweek':
           result.prevweek.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Prevweek)) as Prevweek);
+              specifiedType: const FullType(Prevweek))! as Prevweek);
           break;
         case 'nextweek':
           result.nextweek.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Nextweek)) as Nextweek);
+              specifiedType: const FullType(Nextweek))! as Nextweek);
           break;
       }
     }
@@ -602,9 +602,9 @@ class _$BeginSerializer implements StructuredSerializer<Begin> {
   final String wireName = 'Begin';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Begin object,
+  Iterable<Object?> serialize(Serializers serializers, Begin object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'label',
       serializers.serialize(object.label,
           specifiedType: const FullType(String)),
@@ -623,31 +623,31 @@ class _$BeginSerializer implements StructuredSerializer<Begin> {
   }
 
   @override
-  Begin deserialize(Serializers serializers, Iterable<Object> serialized,
+  Begin deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new BeginBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'label':
           result.label = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'onclick_action':
           result.onclickAction = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'onclick_data':
           result.onclickData = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'onclick_week':
           result.onclickWeek = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -663,9 +663,9 @@ class _$PrevSerializer implements StructuredSerializer<Prev> {
   final String wireName = 'Prev';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Prev object,
+  Iterable<Object?> serialize(Serializers serializers, Prev object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'label',
       serializers.serialize(object.label,
           specifiedType: const FullType(String)),
@@ -684,31 +684,31 @@ class _$PrevSerializer implements StructuredSerializer<Prev> {
   }
 
   @override
-  Prev deserialize(Serializers serializers, Iterable<Object> serialized,
+  Prev deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PrevBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'label':
           result.label = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'onclick_action':
           result.onclickAction = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'onclick_data':
           result.onclickData = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'onclick_week':
           result.onclickWeek = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -724,10 +724,10 @@ class _$PrevweekSerializer implements StructuredSerializer<Prevweek> {
   final String wireName = 'Prevweek';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Prevweek object,
+  Iterable<Object?> serialize(Serializers serializers, Prevweek object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.label;
     if (value != null) {
       result
@@ -760,31 +760,31 @@ class _$PrevweekSerializer implements StructuredSerializer<Prevweek> {
   }
 
   @override
-  Prevweek deserialize(Serializers serializers, Iterable<Object> serialized,
+  Prevweek deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PrevweekBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'label':
           result.label = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick_action':
           result.onclickAction = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick_data':
           result.onclickData = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick_week':
           result.onclickWeek = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -800,9 +800,9 @@ class _$NextweekSerializer implements StructuredSerializer<Nextweek> {
   final String wireName = 'Nextweek';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Nextweek object,
+  Iterable<Object?> serialize(Serializers serializers, Nextweek object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'label',
       serializers.serialize(object.label,
           specifiedType: const FullType(String)),
@@ -821,31 +821,31 @@ class _$NextweekSerializer implements StructuredSerializer<Nextweek> {
   }
 
   @override
-  Nextweek deserialize(Serializers serializers, Iterable<Object> serialized,
+  Nextweek deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new NextweekBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'label':
           result.label = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'onclick_action':
           result.onclickAction = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'onclick_data':
           result.onclickData = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'onclick_week':
           result.onclickWeek = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -871,32 +871,32 @@ class _$GetApointmentTimeResponse extends GetApointmentTimeResponse {
   final DataGetApointmentTimeResponse data;
 
   factory _$GetApointmentTimeResponse(
-          [void Function(GetApointmentTimeResponseBuilder) updates]) =>
-      (new GetApointmentTimeResponseBuilder()..update(updates)).build();
+          [void Function(GetApointmentTimeResponseBuilder)? updates]) =>
+      (new GetApointmentTimeResponseBuilder()..update(updates))._build();
 
   _$GetApointmentTimeResponse._(
-      {this.version,
-      this.request,
-      this.params,
-      this.message,
-      this.httpstatut,
-      this.error,
-      this.data})
+      {required this.version,
+      required this.request,
+      required this.params,
+      required this.message,
+      required this.httpstatut,
+      required this.error,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        version, 'GetApointmentTimeResponse', 'version');
+        version, r'GetApointmentTimeResponse', 'version');
     BuiltValueNullFieldError.checkNotNull(
-        request, 'GetApointmentTimeResponse', 'request');
+        request, r'GetApointmentTimeResponse', 'request');
     BuiltValueNullFieldError.checkNotNull(
-        params, 'GetApointmentTimeResponse', 'params');
+        params, r'GetApointmentTimeResponse', 'params');
     BuiltValueNullFieldError.checkNotNull(
-        message, 'GetApointmentTimeResponse', 'message');
+        message, r'GetApointmentTimeResponse', 'message');
     BuiltValueNullFieldError.checkNotNull(
-        httpstatut, 'GetApointmentTimeResponse', 'httpstatut');
+        httpstatut, r'GetApointmentTimeResponse', 'httpstatut');
     BuiltValueNullFieldError.checkNotNull(
-        error, 'GetApointmentTimeResponse', 'error');
+        error, r'GetApointmentTimeResponse', 'error');
     BuiltValueNullFieldError.checkNotNull(
-        data, 'GetApointmentTimeResponse', 'data');
+        data, r'GetApointmentTimeResponse', 'data');
   }
 
   @override
@@ -923,21 +923,21 @@ class _$GetApointmentTimeResponse extends GetApointmentTimeResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, version.hashCode), request.hashCode),
-                        params.hashCode),
-                    message.hashCode),
-                httpstatut.hashCode),
-            error.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('GetApointmentTimeResponse')
+    return (newBuiltValueToStringHelper(r'GetApointmentTimeResponse')
           ..add('version', version)
           ..add('request', request)
           ..add('params', params)
@@ -952,38 +952,38 @@ class _$GetApointmentTimeResponse extends GetApointmentTimeResponse {
 class GetApointmentTimeResponseBuilder
     implements
         Builder<GetApointmentTimeResponse, GetApointmentTimeResponseBuilder> {
-  _$GetApointmentTimeResponse _$v;
+  _$GetApointmentTimeResponse? _$v;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  ParamsGetApointmentTimeResponseBuilder _params;
+  ParamsGetApointmentTimeResponseBuilder? _params;
   ParamsGetApointmentTimeResponseBuilder get params =>
       _$this._params ??= new ParamsGetApointmentTimeResponseBuilder();
-  set params(ParamsGetApointmentTimeResponseBuilder params) =>
+  set params(ParamsGetApointmentTimeResponseBuilder? params) =>
       _$this._params = params;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  DataGetApointmentTimeResponseBuilder _data;
+  DataGetApointmentTimeResponseBuilder? _data;
   DataGetApointmentTimeResponseBuilder get data =>
       _$this._data ??= new DataGetApointmentTimeResponseBuilder();
-  set data(DataGetApointmentTimeResponseBuilder data) => _$this._data = data;
+  set data(DataGetApointmentTimeResponseBuilder? data) => _$this._data = data;
 
   GetApointmentTimeResponseBuilder();
 
@@ -1009,30 +1009,32 @@ class GetApointmentTimeResponseBuilder
   }
 
   @override
-  void update(void Function(GetApointmentTimeResponseBuilder) updates) {
+  void update(void Function(GetApointmentTimeResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$GetApointmentTimeResponse build() {
+  GetApointmentTimeResponse build() => _build();
+
+  _$GetApointmentTimeResponse _build() {
     _$GetApointmentTimeResponse _$result;
     try {
       _$result = _$v ??
           new _$GetApointmentTimeResponse._(
               version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'GetApointmentTimeResponse', 'version'),
+                  version, r'GetApointmentTimeResponse', 'version'),
               request: BuiltValueNullFieldError.checkNotNull(
-                  request, 'GetApointmentTimeResponse', 'request'),
+                  request, r'GetApointmentTimeResponse', 'request'),
               params: params.build(),
               message: BuiltValueNullFieldError.checkNotNull(
-                  message, 'GetApointmentTimeResponse', 'message'),
+                  message, r'GetApointmentTimeResponse', 'message'),
               httpstatut: BuiltValueNullFieldError.checkNotNull(
-                  httpstatut, 'GetApointmentTimeResponse', 'httpstatut'),
+                  httpstatut, r'GetApointmentTimeResponse', 'httpstatut'),
               error: BuiltValueNullFieldError.checkNotNull(
-                  error, 'GetApointmentTimeResponse', 'error'),
+                  error, r'GetApointmentTimeResponse', 'error'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -1041,7 +1043,7 @@ class GetApointmentTimeResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'GetApointmentTimeResponse', _$failedField, e.toString());
+            r'GetApointmentTimeResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -1053,21 +1055,21 @@ class GetApointmentTimeResponseBuilder
 class _$ParamsGetApointmentTimeResponse
     extends ParamsGetApointmentTimeResponse {
   @override
-  final String tokenuser;
+  final String? tokenuser;
   @override
-  final String tokenappointment;
+  final String? tokenappointment;
   @override
-  final String week;
+  final String? week;
   @override
-  final String data;
+  final String? data;
   @override
-  final String action;
+  final String? action;
   @override
-  final String session;
+  final String? session;
 
   factory _$ParamsGetApointmentTimeResponse(
-          [void Function(ParamsGetApointmentTimeResponseBuilder) updates]) =>
-      (new ParamsGetApointmentTimeResponseBuilder()..update(updates)).build();
+          [void Function(ParamsGetApointmentTimeResponseBuilder)? updates]) =>
+      (new ParamsGetApointmentTimeResponseBuilder()..update(updates))._build();
 
   _$ParamsGetApointmentTimeResponse._(
       {this.tokenuser,
@@ -1101,19 +1103,20 @@ class _$ParamsGetApointmentTimeResponse
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, tokenuser.hashCode), tokenappointment.hashCode),
-                    week.hashCode),
-                data.hashCode),
-            action.hashCode),
-        session.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokenuser.hashCode);
+    _$hash = $jc(_$hash, tokenappointment.hashCode);
+    _$hash = $jc(_$hash, week.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jc(_$hash, action.hashCode);
+    _$hash = $jc(_$hash, session.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ParamsGetApointmentTimeResponse')
+    return (newBuiltValueToStringHelper(r'ParamsGetApointmentTimeResponse')
           ..add('tokenuser', tokenuser)
           ..add('tokenappointment', tokenappointment)
           ..add('week', week)
@@ -1128,32 +1131,32 @@ class ParamsGetApointmentTimeResponseBuilder
     implements
         Builder<ParamsGetApointmentTimeResponse,
             ParamsGetApointmentTimeResponseBuilder> {
-  _$ParamsGetApointmentTimeResponse _$v;
+  _$ParamsGetApointmentTimeResponse? _$v;
 
-  String _tokenuser;
-  String get tokenuser => _$this._tokenuser;
-  set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
+  String? _tokenuser;
+  String? get tokenuser => _$this._tokenuser;
+  set tokenuser(String? tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappointment;
-  String get tokenappointment => _$this._tokenappointment;
-  set tokenappointment(String tokenappointment) =>
+  String? _tokenappointment;
+  String? get tokenappointment => _$this._tokenappointment;
+  set tokenappointment(String? tokenappointment) =>
       _$this._tokenappointment = tokenappointment;
 
-  String _week;
-  String get week => _$this._week;
-  set week(String week) => _$this._week = week;
+  String? _week;
+  String? get week => _$this._week;
+  set week(String? week) => _$this._week = week;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  String? _data;
+  String? get data => _$this._data;
+  set data(String? data) => _$this._data = data;
 
-  String _action;
-  String get action => _$this._action;
-  set action(String action) => _$this._action = action;
+  String? _action;
+  String? get action => _$this._action;
+  set action(String? action) => _$this._action = action;
 
-  String _session;
-  String get session => _$this._session;
-  set session(String session) => _$this._session = session;
+  String? _session;
+  String? get session => _$this._session;
+  set session(String? session) => _$this._session = session;
 
   ParamsGetApointmentTimeResponseBuilder();
 
@@ -1178,12 +1181,14 @@ class ParamsGetApointmentTimeResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsGetApointmentTimeResponseBuilder) updates) {
+  void update(void Function(ParamsGetApointmentTimeResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ParamsGetApointmentTimeResponse build() {
+  ParamsGetApointmentTimeResponse build() => _build();
+
+  _$ParamsGetApointmentTimeResponse _build() {
     final _$result = _$v ??
         new _$ParamsGetApointmentTimeResponse._(
             tokenuser: tokenuser,
@@ -1199,25 +1204,29 @@ class ParamsGetApointmentTimeResponseBuilder
 
 class _$DataGetApointmentTimeResponse extends DataGetApointmentTimeResponse {
   @override
-  final String session;
+  final String? session;
   @override
-  final Navigation navigation;
+  final Navigation? navigation;
   @override
-  final String headermessage;
+  final String? headermessage;
   @override
   final String type;
   @override
-  final BuiltList<DataTimeRdv> data;
+  final BuiltList<DataTimeRdv>? data;
 
   factory _$DataGetApointmentTimeResponse(
-          [void Function(DataGetApointmentTimeResponseBuilder) updates]) =>
-      (new DataGetApointmentTimeResponseBuilder()..update(updates)).build();
+          [void Function(DataGetApointmentTimeResponseBuilder)? updates]) =>
+      (new DataGetApointmentTimeResponseBuilder()..update(updates))._build();
 
   _$DataGetApointmentTimeResponse._(
-      {this.session, this.navigation, this.headermessage, this.type, this.data})
+      {this.session,
+      this.navigation,
+      this.headermessage,
+      required this.type,
+      this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        type, 'DataGetApointmentTimeResponse', 'type');
+        type, r'DataGetApointmentTimeResponse', 'type');
   }
 
   @override
@@ -1242,17 +1251,19 @@ class _$DataGetApointmentTimeResponse extends DataGetApointmentTimeResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc($jc($jc(0, session.hashCode), navigation.hashCode),
-                headermessage.hashCode),
-            type.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, session.hashCode);
+    _$hash = $jc(_$hash, navigation.hashCode);
+    _$hash = $jc(_$hash, headermessage.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataGetApointmentTimeResponse')
+    return (newBuiltValueToStringHelper(r'DataGetApointmentTimeResponse')
           ..add('session', session)
           ..add('navigation', navigation)
           ..add('headermessage', headermessage)
@@ -1266,31 +1277,31 @@ class DataGetApointmentTimeResponseBuilder
     implements
         Builder<DataGetApointmentTimeResponse,
             DataGetApointmentTimeResponseBuilder> {
-  _$DataGetApointmentTimeResponse _$v;
+  _$DataGetApointmentTimeResponse? _$v;
 
-  String _session;
-  String get session => _$this._session;
-  set session(String session) => _$this._session = session;
+  String? _session;
+  String? get session => _$this._session;
+  set session(String? session) => _$this._session = session;
 
-  NavigationBuilder _navigation;
+  NavigationBuilder? _navigation;
   NavigationBuilder get navigation =>
       _$this._navigation ??= new NavigationBuilder();
-  set navigation(NavigationBuilder navigation) =>
+  set navigation(NavigationBuilder? navigation) =>
       _$this._navigation = navigation;
 
-  String _headermessage;
-  String get headermessage => _$this._headermessage;
-  set headermessage(String headermessage) =>
+  String? _headermessage;
+  String? get headermessage => _$this._headermessage;
+  set headermessage(String? headermessage) =>
       _$this._headermessage = headermessage;
 
-  String _type;
-  String get type => _$this._type;
-  set type(String type) => _$this._type = type;
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
 
-  ListBuilder<DataTimeRdv> _data;
+  ListBuilder<DataTimeRdv>? _data;
   ListBuilder<DataTimeRdv> get data =>
       _$this._data ??= new ListBuilder<DataTimeRdv>();
-  set data(ListBuilder<DataTimeRdv> data) => _$this._data = data;
+  set data(ListBuilder<DataTimeRdv>? data) => _$this._data = data;
 
   DataGetApointmentTimeResponseBuilder();
 
@@ -1314,12 +1325,14 @@ class DataGetApointmentTimeResponseBuilder
   }
 
   @override
-  void update(void Function(DataGetApointmentTimeResponseBuilder) updates) {
+  void update(void Function(DataGetApointmentTimeResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataGetApointmentTimeResponse build() {
+  DataGetApointmentTimeResponse build() => _build();
+
+  _$DataGetApointmentTimeResponse _build() {
     _$DataGetApointmentTimeResponse _$result;
     try {
       _$result = _$v ??
@@ -1328,10 +1341,10 @@ class DataGetApointmentTimeResponseBuilder
               navigation: _navigation?.build(),
               headermessage: headermessage,
               type: BuiltValueNullFieldError.checkNotNull(
-                  type, 'DataGetApointmentTimeResponse', 'type'),
+                  type, r'DataGetApointmentTimeResponse', 'type'),
               data: _data?.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'navigation';
         _navigation?.build();
@@ -1340,7 +1353,7 @@ class DataGetApointmentTimeResponseBuilder
         _data?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'DataGetApointmentTimeResponse', _$failedField, e.toString());
+            r'DataGetApointmentTimeResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -1351,18 +1364,18 @@ class DataGetApointmentTimeResponseBuilder
 
 class _$DataTimeRdv extends DataTimeRdv {
   @override
-  final String label;
+  final String? label;
   @override
-  final String label2;
+  final String? label2;
   @override
-  final String label3;
+  final String? label3;
   @override
-  final String message;
+  final String? message;
   @override
-  final BuiltList<Creneaux> creneaux;
+  final BuiltList<Creneaux>? creneaux;
 
-  factory _$DataTimeRdv([void Function(DataTimeRdvBuilder) updates]) =>
-      (new DataTimeRdvBuilder()..update(updates)).build();
+  factory _$DataTimeRdv([void Function(DataTimeRdvBuilder)? updates]) =>
+      (new DataTimeRdvBuilder()..update(updates))._build();
 
   _$DataTimeRdv._(
       {this.label, this.label2, this.label3, this.message, this.creneaux})
@@ -1388,15 +1401,19 @@ class _$DataTimeRdv extends DataTimeRdv {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc($jc(0, label.hashCode), label2.hashCode), label3.hashCode),
-            message.hashCode),
-        creneaux.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, label.hashCode);
+    _$hash = $jc(_$hash, label2.hashCode);
+    _$hash = $jc(_$hash, label3.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, creneaux.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataTimeRdv')
+    return (newBuiltValueToStringHelper(r'DataTimeRdv')
           ..add('label', label)
           ..add('label2', label2)
           ..add('label3', label3)
@@ -1407,28 +1424,28 @@ class _$DataTimeRdv extends DataTimeRdv {
 }
 
 class DataTimeRdvBuilder implements Builder<DataTimeRdv, DataTimeRdvBuilder> {
-  _$DataTimeRdv _$v;
+  _$DataTimeRdv? _$v;
 
-  String _label;
-  String get label => _$this._label;
-  set label(String label) => _$this._label = label;
+  String? _label;
+  String? get label => _$this._label;
+  set label(String? label) => _$this._label = label;
 
-  String _label2;
-  String get label2 => _$this._label2;
-  set label2(String label2) => _$this._label2 = label2;
+  String? _label2;
+  String? get label2 => _$this._label2;
+  set label2(String? label2) => _$this._label2 = label2;
 
-  String _label3;
-  String get label3 => _$this._label3;
-  set label3(String label3) => _$this._label3 = label3;
+  String? _label3;
+  String? get label3 => _$this._label3;
+  set label3(String? label3) => _$this._label3 = label3;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  ListBuilder<Creneaux> _creneaux;
+  ListBuilder<Creneaux>? _creneaux;
   ListBuilder<Creneaux> get creneaux =>
       _$this._creneaux ??= new ListBuilder<Creneaux>();
-  set creneaux(ListBuilder<Creneaux> creneaux) => _$this._creneaux = creneaux;
+  set creneaux(ListBuilder<Creneaux>? creneaux) => _$this._creneaux = creneaux;
 
   DataTimeRdvBuilder();
 
@@ -1452,12 +1469,14 @@ class DataTimeRdvBuilder implements Builder<DataTimeRdv, DataTimeRdvBuilder> {
   }
 
   @override
-  void update(void Function(DataTimeRdvBuilder) updates) {
+  void update(void Function(DataTimeRdvBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataTimeRdv build() {
+  DataTimeRdv build() => _build();
+
+  _$DataTimeRdv _build() {
     _$DataTimeRdv _$result;
     try {
       _$result = _$v ??
@@ -1468,13 +1487,13 @@ class DataTimeRdvBuilder implements Builder<DataTimeRdv, DataTimeRdvBuilder> {
               message: message,
               creneaux: _creneaux?.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'creneaux';
         _creneaux?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'DataTimeRdv', _$failedField, e.toString());
+            r'DataTimeRdv', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -1485,24 +1504,24 @@ class DataTimeRdvBuilder implements Builder<DataTimeRdv, DataTimeRdvBuilder> {
 
 class _$Creneaux extends Creneaux {
   @override
-  final String fromhour;
+  final String? fromhour;
   @override
-  final String tohour;
+  final String? tohour;
   @override
-  final String doctor;
+  final String? doctor;
   @override
-  final String onclick;
+  final String? onclick;
   @override
-  final String onclickMessage;
+  final String? onclickMessage;
   @override
-  final String onclickData;
+  final String? onclickData;
   @override
-  final String onclickAction;
+  final String? onclickAction;
   @override
-  final String onclickWeek;
+  final String? onclickWeek;
 
-  factory _$Creneaux([void Function(CreneauxBuilder) updates]) =>
-      (new CreneauxBuilder()..update(updates)).build();
+  factory _$Creneaux([void Function(CreneauxBuilder)? updates]) =>
+      (new CreneauxBuilder()..update(updates))._build();
 
   _$Creneaux._(
       {this.fromhour,
@@ -1538,23 +1557,22 @@ class _$Creneaux extends Creneaux {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc(
-                        $jc($jc($jc(0, fromhour.hashCode), tohour.hashCode),
-                            doctor.hashCode),
-                        onclick.hashCode),
-                    onclickMessage.hashCode),
-                onclickData.hashCode),
-            onclickAction.hashCode),
-        onclickWeek.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, fromhour.hashCode);
+    _$hash = $jc(_$hash, tohour.hashCode);
+    _$hash = $jc(_$hash, doctor.hashCode);
+    _$hash = $jc(_$hash, onclick.hashCode);
+    _$hash = $jc(_$hash, onclickMessage.hashCode);
+    _$hash = $jc(_$hash, onclickData.hashCode);
+    _$hash = $jc(_$hash, onclickAction.hashCode);
+    _$hash = $jc(_$hash, onclickWeek.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Creneaux')
+    return (newBuiltValueToStringHelper(r'Creneaux')
           ..add('fromhour', fromhour)
           ..add('tohour', tohour)
           ..add('doctor', doctor)
@@ -1568,41 +1586,41 @@ class _$Creneaux extends Creneaux {
 }
 
 class CreneauxBuilder implements Builder<Creneaux, CreneauxBuilder> {
-  _$Creneaux _$v;
+  _$Creneaux? _$v;
 
-  String _fromhour;
-  String get fromhour => _$this._fromhour;
-  set fromhour(String fromhour) => _$this._fromhour = fromhour;
+  String? _fromhour;
+  String? get fromhour => _$this._fromhour;
+  set fromhour(String? fromhour) => _$this._fromhour = fromhour;
 
-  String _tohour;
-  String get tohour => _$this._tohour;
-  set tohour(String tohour) => _$this._tohour = tohour;
+  String? _tohour;
+  String? get tohour => _$this._tohour;
+  set tohour(String? tohour) => _$this._tohour = tohour;
 
-  String _doctor;
-  String get doctor => _$this._doctor;
-  set doctor(String doctor) => _$this._doctor = doctor;
+  String? _doctor;
+  String? get doctor => _$this._doctor;
+  set doctor(String? doctor) => _$this._doctor = doctor;
 
-  String _onclick;
-  String get onclick => _$this._onclick;
-  set onclick(String onclick) => _$this._onclick = onclick;
+  String? _onclick;
+  String? get onclick => _$this._onclick;
+  set onclick(String? onclick) => _$this._onclick = onclick;
 
-  String _onclickMessage;
-  String get onclickMessage => _$this._onclickMessage;
-  set onclickMessage(String onclickMessage) =>
+  String? _onclickMessage;
+  String? get onclickMessage => _$this._onclickMessage;
+  set onclickMessage(String? onclickMessage) =>
       _$this._onclickMessage = onclickMessage;
 
-  String _onclickData;
-  String get onclickData => _$this._onclickData;
-  set onclickData(String onclickData) => _$this._onclickData = onclickData;
+  String? _onclickData;
+  String? get onclickData => _$this._onclickData;
+  set onclickData(String? onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickAction;
-  String get onclickAction => _$this._onclickAction;
-  set onclickAction(String onclickAction) =>
+  String? _onclickAction;
+  String? get onclickAction => _$this._onclickAction;
+  set onclickAction(String? onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickWeek;
-  String get onclickWeek => _$this._onclickWeek;
-  set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
+  String? _onclickWeek;
+  String? get onclickWeek => _$this._onclickWeek;
+  set onclickWeek(String? onclickWeek) => _$this._onclickWeek = onclickWeek;
 
   CreneauxBuilder();
 
@@ -1629,12 +1647,14 @@ class CreneauxBuilder implements Builder<Creneaux, CreneauxBuilder> {
   }
 
   @override
-  void update(void Function(CreneauxBuilder) updates) {
+  void update(void Function(CreneauxBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Creneaux build() {
+  Creneaux build() => _build();
+
+  _$Creneaux _build() {
     final _$result = _$v ??
         new _$Creneaux._(
             fromhour: fromhour,
@@ -1652,16 +1672,16 @@ class CreneauxBuilder implements Builder<Creneaux, CreneauxBuilder> {
 
 class _$Navigation extends Navigation {
   @override
-  final Begin begin;
+  final Begin? begin;
   @override
-  final Prev prev;
+  final Prev? prev;
   @override
-  final Prevweek prevweek;
+  final Prevweek? prevweek;
   @override
-  final Nextweek nextweek;
+  final Nextweek? nextweek;
 
-  factory _$Navigation([void Function(NavigationBuilder) updates]) =>
-      (new NavigationBuilder()..update(updates)).build();
+  factory _$Navigation([void Function(NavigationBuilder)? updates]) =>
+      (new NavigationBuilder()..update(updates))._build();
 
   _$Navigation._({this.begin, this.prev, this.prevweek, this.nextweek})
       : super._();
@@ -1685,14 +1705,18 @@ class _$Navigation extends Navigation {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, begin.hashCode), prev.hashCode), prevweek.hashCode),
-        nextweek.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, begin.hashCode);
+    _$hash = $jc(_$hash, prev.hashCode);
+    _$hash = $jc(_$hash, prevweek.hashCode);
+    _$hash = $jc(_$hash, nextweek.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Navigation')
+    return (newBuiltValueToStringHelper(r'Navigation')
           ..add('begin', begin)
           ..add('prev', prev)
           ..add('prevweek', prevweek)
@@ -1702,23 +1726,23 @@ class _$Navigation extends Navigation {
 }
 
 class NavigationBuilder implements Builder<Navigation, NavigationBuilder> {
-  _$Navigation _$v;
+  _$Navigation? _$v;
 
-  BeginBuilder _begin;
+  BeginBuilder? _begin;
   BeginBuilder get begin => _$this._begin ??= new BeginBuilder();
-  set begin(BeginBuilder begin) => _$this._begin = begin;
+  set begin(BeginBuilder? begin) => _$this._begin = begin;
 
-  PrevBuilder _prev;
+  PrevBuilder? _prev;
   PrevBuilder get prev => _$this._prev ??= new PrevBuilder();
-  set prev(PrevBuilder prev) => _$this._prev = prev;
+  set prev(PrevBuilder? prev) => _$this._prev = prev;
 
-  PrevweekBuilder _prevweek;
+  PrevweekBuilder? _prevweek;
   PrevweekBuilder get prevweek => _$this._prevweek ??= new PrevweekBuilder();
-  set prevweek(PrevweekBuilder prevweek) => _$this._prevweek = prevweek;
+  set prevweek(PrevweekBuilder? prevweek) => _$this._prevweek = prevweek;
 
-  NextweekBuilder _nextweek;
+  NextweekBuilder? _nextweek;
   NextweekBuilder get nextweek => _$this._nextweek ??= new NextweekBuilder();
-  set nextweek(NextweekBuilder nextweek) => _$this._nextweek = nextweek;
+  set nextweek(NextweekBuilder? nextweek) => _$this._nextweek = nextweek;
 
   NavigationBuilder();
 
@@ -1741,12 +1765,14 @@ class NavigationBuilder implements Builder<Navigation, NavigationBuilder> {
   }
 
   @override
-  void update(void Function(NavigationBuilder) updates) {
+  void update(void Function(NavigationBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Navigation build() {
+  Navigation build() => _build();
+
+  _$Navigation _build() {
     _$Navigation _$result;
     try {
       _$result = _$v ??
@@ -1756,7 +1782,7 @@ class NavigationBuilder implements Builder<Navigation, NavigationBuilder> {
               prevweek: _prevweek?.build(),
               nextweek: _nextweek?.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'begin';
         _begin?.build();
@@ -1768,7 +1794,7 @@ class NavigationBuilder implements Builder<Navigation, NavigationBuilder> {
         _nextweek?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'Navigation', _$failedField, e.toString());
+            r'Navigation', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -1787,17 +1813,20 @@ class _$Begin extends Begin {
   @override
   final String onclickWeek;
 
-  factory _$Begin([void Function(BeginBuilder) updates]) =>
-      (new BeginBuilder()..update(updates)).build();
+  factory _$Begin([void Function(BeginBuilder)? updates]) =>
+      (new BeginBuilder()..update(updates))._build();
 
   _$Begin._(
-      {this.label, this.onclickAction, this.onclickData, this.onclickWeek})
+      {required this.label,
+      required this.onclickAction,
+      required this.onclickData,
+      required this.onclickWeek})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(label, 'Begin', 'label');
+    BuiltValueNullFieldError.checkNotNull(label, r'Begin', 'label');
     BuiltValueNullFieldError.checkNotNull(
-        onclickAction, 'Begin', 'onclickAction');
-    BuiltValueNullFieldError.checkNotNull(onclickData, 'Begin', 'onclickData');
-    BuiltValueNullFieldError.checkNotNull(onclickWeek, 'Begin', 'onclickWeek');
+        onclickAction, r'Begin', 'onclickAction');
+    BuiltValueNullFieldError.checkNotNull(onclickData, r'Begin', 'onclickData');
+    BuiltValueNullFieldError.checkNotNull(onclickWeek, r'Begin', 'onclickWeek');
   }
 
   @override
@@ -1819,15 +1848,18 @@ class _$Begin extends Begin {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, label.hashCode), onclickAction.hashCode),
-            onclickData.hashCode),
-        onclickWeek.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, label.hashCode);
+    _$hash = $jc(_$hash, onclickAction.hashCode);
+    _$hash = $jc(_$hash, onclickData.hashCode);
+    _$hash = $jc(_$hash, onclickWeek.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Begin')
+    return (newBuiltValueToStringHelper(r'Begin')
           ..add('label', label)
           ..add('onclickAction', onclickAction)
           ..add('onclickData', onclickData)
@@ -1837,24 +1869,24 @@ class _$Begin extends Begin {
 }
 
 class BeginBuilder implements Builder<Begin, BeginBuilder> {
-  _$Begin _$v;
+  _$Begin? _$v;
 
-  String _label;
-  String get label => _$this._label;
-  set label(String label) => _$this._label = label;
+  String? _label;
+  String? get label => _$this._label;
+  set label(String? label) => _$this._label = label;
 
-  String _onclickAction;
-  String get onclickAction => _$this._onclickAction;
-  set onclickAction(String onclickAction) =>
+  String? _onclickAction;
+  String? get onclickAction => _$this._onclickAction;
+  set onclickAction(String? onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickData;
-  String get onclickData => _$this._onclickData;
-  set onclickData(String onclickData) => _$this._onclickData = onclickData;
+  String? _onclickData;
+  String? get onclickData => _$this._onclickData;
+  set onclickData(String? onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickWeek;
-  String get onclickWeek => _$this._onclickWeek;
-  set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
+  String? _onclickWeek;
+  String? get onclickWeek => _$this._onclickWeek;
+  set onclickWeek(String? onclickWeek) => _$this._onclickWeek = onclickWeek;
 
   BeginBuilder();
 
@@ -1877,22 +1909,24 @@ class BeginBuilder implements Builder<Begin, BeginBuilder> {
   }
 
   @override
-  void update(void Function(BeginBuilder) updates) {
+  void update(void Function(BeginBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Begin build() {
+  Begin build() => _build();
+
+  _$Begin _build() {
     final _$result = _$v ??
         new _$Begin._(
             label:
-                BuiltValueNullFieldError.checkNotNull(label, 'Begin', 'label'),
+                BuiltValueNullFieldError.checkNotNull(label, r'Begin', 'label'),
             onclickAction: BuiltValueNullFieldError.checkNotNull(
-                onclickAction, 'Begin', 'onclickAction'),
+                onclickAction, r'Begin', 'onclickAction'),
             onclickData: BuiltValueNullFieldError.checkNotNull(
-                onclickData, 'Begin', 'onclickData'),
+                onclickData, r'Begin', 'onclickData'),
             onclickWeek: BuiltValueNullFieldError.checkNotNull(
-                onclickWeek, 'Begin', 'onclickWeek'));
+                onclickWeek, r'Begin', 'onclickWeek'));
     replace(_$result);
     return _$result;
   }
@@ -1908,16 +1942,20 @@ class _$Prev extends Prev {
   @override
   final String onclickWeek;
 
-  factory _$Prev([void Function(PrevBuilder) updates]) =>
-      (new PrevBuilder()..update(updates)).build();
+  factory _$Prev([void Function(PrevBuilder)? updates]) =>
+      (new PrevBuilder()..update(updates))._build();
 
-  _$Prev._({this.label, this.onclickAction, this.onclickData, this.onclickWeek})
+  _$Prev._(
+      {required this.label,
+      required this.onclickAction,
+      required this.onclickData,
+      required this.onclickWeek})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(label, 'Prev', 'label');
+    BuiltValueNullFieldError.checkNotNull(label, r'Prev', 'label');
     BuiltValueNullFieldError.checkNotNull(
-        onclickAction, 'Prev', 'onclickAction');
-    BuiltValueNullFieldError.checkNotNull(onclickData, 'Prev', 'onclickData');
-    BuiltValueNullFieldError.checkNotNull(onclickWeek, 'Prev', 'onclickWeek');
+        onclickAction, r'Prev', 'onclickAction');
+    BuiltValueNullFieldError.checkNotNull(onclickData, r'Prev', 'onclickData');
+    BuiltValueNullFieldError.checkNotNull(onclickWeek, r'Prev', 'onclickWeek');
   }
 
   @override
@@ -1939,15 +1977,18 @@ class _$Prev extends Prev {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, label.hashCode), onclickAction.hashCode),
-            onclickData.hashCode),
-        onclickWeek.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, label.hashCode);
+    _$hash = $jc(_$hash, onclickAction.hashCode);
+    _$hash = $jc(_$hash, onclickData.hashCode);
+    _$hash = $jc(_$hash, onclickWeek.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Prev')
+    return (newBuiltValueToStringHelper(r'Prev')
           ..add('label', label)
           ..add('onclickAction', onclickAction)
           ..add('onclickData', onclickData)
@@ -1957,24 +1998,24 @@ class _$Prev extends Prev {
 }
 
 class PrevBuilder implements Builder<Prev, PrevBuilder> {
-  _$Prev _$v;
+  _$Prev? _$v;
 
-  String _label;
-  String get label => _$this._label;
-  set label(String label) => _$this._label = label;
+  String? _label;
+  String? get label => _$this._label;
+  set label(String? label) => _$this._label = label;
 
-  String _onclickAction;
-  String get onclickAction => _$this._onclickAction;
-  set onclickAction(String onclickAction) =>
+  String? _onclickAction;
+  String? get onclickAction => _$this._onclickAction;
+  set onclickAction(String? onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickData;
-  String get onclickData => _$this._onclickData;
-  set onclickData(String onclickData) => _$this._onclickData = onclickData;
+  String? _onclickData;
+  String? get onclickData => _$this._onclickData;
+  set onclickData(String? onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickWeek;
-  String get onclickWeek => _$this._onclickWeek;
-  set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
+  String? _onclickWeek;
+  String? get onclickWeek => _$this._onclickWeek;
+  set onclickWeek(String? onclickWeek) => _$this._onclickWeek = onclickWeek;
 
   PrevBuilder();
 
@@ -1997,22 +2038,24 @@ class PrevBuilder implements Builder<Prev, PrevBuilder> {
   }
 
   @override
-  void update(void Function(PrevBuilder) updates) {
+  void update(void Function(PrevBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Prev build() {
+  Prev build() => _build();
+
+  _$Prev _build() {
     final _$result = _$v ??
         new _$Prev._(
             label:
-                BuiltValueNullFieldError.checkNotNull(label, 'Prev', 'label'),
+                BuiltValueNullFieldError.checkNotNull(label, r'Prev', 'label'),
             onclickAction: BuiltValueNullFieldError.checkNotNull(
-                onclickAction, 'Prev', 'onclickAction'),
+                onclickAction, r'Prev', 'onclickAction'),
             onclickData: BuiltValueNullFieldError.checkNotNull(
-                onclickData, 'Prev', 'onclickData'),
+                onclickData, r'Prev', 'onclickData'),
             onclickWeek: BuiltValueNullFieldError.checkNotNull(
-                onclickWeek, 'Prev', 'onclickWeek'));
+                onclickWeek, r'Prev', 'onclickWeek'));
     replace(_$result);
     return _$result;
   }
@@ -2020,16 +2063,16 @@ class PrevBuilder implements Builder<Prev, PrevBuilder> {
 
 class _$Prevweek extends Prevweek {
   @override
-  final String label;
+  final String? label;
   @override
-  final String onclickAction;
+  final String? onclickAction;
   @override
-  final String onclickData;
+  final String? onclickData;
   @override
-  final String onclickWeek;
+  final String? onclickWeek;
 
-  factory _$Prevweek([void Function(PrevweekBuilder) updates]) =>
-      (new PrevweekBuilder()..update(updates)).build();
+  factory _$Prevweek([void Function(PrevweekBuilder)? updates]) =>
+      (new PrevweekBuilder()..update(updates))._build();
 
   _$Prevweek._(
       {this.label, this.onclickAction, this.onclickData, this.onclickWeek})
@@ -2054,15 +2097,18 @@ class _$Prevweek extends Prevweek {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, label.hashCode), onclickAction.hashCode),
-            onclickData.hashCode),
-        onclickWeek.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, label.hashCode);
+    _$hash = $jc(_$hash, onclickAction.hashCode);
+    _$hash = $jc(_$hash, onclickData.hashCode);
+    _$hash = $jc(_$hash, onclickWeek.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Prevweek')
+    return (newBuiltValueToStringHelper(r'Prevweek')
           ..add('label', label)
           ..add('onclickAction', onclickAction)
           ..add('onclickData', onclickData)
@@ -2072,24 +2118,24 @@ class _$Prevweek extends Prevweek {
 }
 
 class PrevweekBuilder implements Builder<Prevweek, PrevweekBuilder> {
-  _$Prevweek _$v;
+  _$Prevweek? _$v;
 
-  String _label;
-  String get label => _$this._label;
-  set label(String label) => _$this._label = label;
+  String? _label;
+  String? get label => _$this._label;
+  set label(String? label) => _$this._label = label;
 
-  String _onclickAction;
-  String get onclickAction => _$this._onclickAction;
-  set onclickAction(String onclickAction) =>
+  String? _onclickAction;
+  String? get onclickAction => _$this._onclickAction;
+  set onclickAction(String? onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickData;
-  String get onclickData => _$this._onclickData;
-  set onclickData(String onclickData) => _$this._onclickData = onclickData;
+  String? _onclickData;
+  String? get onclickData => _$this._onclickData;
+  set onclickData(String? onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickWeek;
-  String get onclickWeek => _$this._onclickWeek;
-  set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
+  String? _onclickWeek;
+  String? get onclickWeek => _$this._onclickWeek;
+  set onclickWeek(String? onclickWeek) => _$this._onclickWeek = onclickWeek;
 
   PrevweekBuilder();
 
@@ -2112,12 +2158,14 @@ class PrevweekBuilder implements Builder<Prevweek, PrevweekBuilder> {
   }
 
   @override
-  void update(void Function(PrevweekBuilder) updates) {
+  void update(void Function(PrevweekBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Prevweek build() {
+  Prevweek build() => _build();
+
+  _$Prevweek _build() {
     final _$result = _$v ??
         new _$Prevweek._(
             label: label,
@@ -2139,19 +2187,22 @@ class _$Nextweek extends Nextweek {
   @override
   final String onclickWeek;
 
-  factory _$Nextweek([void Function(NextweekBuilder) updates]) =>
-      (new NextweekBuilder()..update(updates)).build();
+  factory _$Nextweek([void Function(NextweekBuilder)? updates]) =>
+      (new NextweekBuilder()..update(updates))._build();
 
   _$Nextweek._(
-      {this.label, this.onclickAction, this.onclickData, this.onclickWeek})
+      {required this.label,
+      required this.onclickAction,
+      required this.onclickData,
+      required this.onclickWeek})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(label, 'Nextweek', 'label');
+    BuiltValueNullFieldError.checkNotNull(label, r'Nextweek', 'label');
     BuiltValueNullFieldError.checkNotNull(
-        onclickAction, 'Nextweek', 'onclickAction');
+        onclickAction, r'Nextweek', 'onclickAction');
     BuiltValueNullFieldError.checkNotNull(
-        onclickData, 'Nextweek', 'onclickData');
+        onclickData, r'Nextweek', 'onclickData');
     BuiltValueNullFieldError.checkNotNull(
-        onclickWeek, 'Nextweek', 'onclickWeek');
+        onclickWeek, r'Nextweek', 'onclickWeek');
   }
 
   @override
@@ -2173,15 +2224,18 @@ class _$Nextweek extends Nextweek {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, label.hashCode), onclickAction.hashCode),
-            onclickData.hashCode),
-        onclickWeek.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, label.hashCode);
+    _$hash = $jc(_$hash, onclickAction.hashCode);
+    _$hash = $jc(_$hash, onclickData.hashCode);
+    _$hash = $jc(_$hash, onclickWeek.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Nextweek')
+    return (newBuiltValueToStringHelper(r'Nextweek')
           ..add('label', label)
           ..add('onclickAction', onclickAction)
           ..add('onclickData', onclickData)
@@ -2191,24 +2245,24 @@ class _$Nextweek extends Nextweek {
 }
 
 class NextweekBuilder implements Builder<Nextweek, NextweekBuilder> {
-  _$Nextweek _$v;
+  _$Nextweek? _$v;
 
-  String _label;
-  String get label => _$this._label;
-  set label(String label) => _$this._label = label;
+  String? _label;
+  String? get label => _$this._label;
+  set label(String? label) => _$this._label = label;
 
-  String _onclickAction;
-  String get onclickAction => _$this._onclickAction;
-  set onclickAction(String onclickAction) =>
+  String? _onclickAction;
+  String? get onclickAction => _$this._onclickAction;
+  set onclickAction(String? onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickData;
-  String get onclickData => _$this._onclickData;
-  set onclickData(String onclickData) => _$this._onclickData = onclickData;
+  String? _onclickData;
+  String? get onclickData => _$this._onclickData;
+  set onclickData(String? onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickWeek;
-  String get onclickWeek => _$this._onclickWeek;
-  set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
+  String? _onclickWeek;
+  String? get onclickWeek => _$this._onclickWeek;
+  set onclickWeek(String? onclickWeek) => _$this._onclickWeek = onclickWeek;
 
   NextweekBuilder();
 
@@ -2231,25 +2285,27 @@ class NextweekBuilder implements Builder<Nextweek, NextweekBuilder> {
   }
 
   @override
-  void update(void Function(NextweekBuilder) updates) {
+  void update(void Function(NextweekBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Nextweek build() {
+  Nextweek build() => _build();
+
+  _$Nextweek _build() {
     final _$result = _$v ??
         new _$Nextweek._(
             label: BuiltValueNullFieldError.checkNotNull(
-                label, 'Nextweek', 'label'),
+                label, r'Nextweek', 'label'),
             onclickAction: BuiltValueNullFieldError.checkNotNull(
-                onclickAction, 'Nextweek', 'onclickAction'),
+                onclickAction, r'Nextweek', 'onclickAction'),
             onclickData: BuiltValueNullFieldError.checkNotNull(
-                onclickData, 'Nextweek', 'onclickData'),
+                onclickData, r'Nextweek', 'onclickData'),
             onclickWeek: BuiltValueNullFieldError.checkNotNull(
-                onclickWeek, 'Nextweek', 'onclickWeek'));
+                onclickWeek, r'Nextweek', 'onclickWeek'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

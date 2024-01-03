@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of inscription_check_request;
+part of 'inscription_check_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -20,10 +20,10 @@ class _$InscriptionCheckRequestSerializer
   final String wireName = 'InscriptionCheckRequest';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, InscriptionCheckRequest object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'phone',
       serializers.serialize(object.phone,
           specifiedType: const FullType(String)),
@@ -34,19 +34,19 @@ class _$InscriptionCheckRequestSerializer
 
   @override
   InscriptionCheckRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new InscriptionCheckRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'phone':
           result.phone = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -60,12 +60,12 @@ class _$InscriptionCheckRequest extends InscriptionCheckRequest {
   final String phone;
 
   factory _$InscriptionCheckRequest(
-          [void Function(InscriptionCheckRequestBuilder) updates]) =>
-      (new InscriptionCheckRequestBuilder()..update(updates)).build();
+          [void Function(InscriptionCheckRequestBuilder)? updates]) =>
+      (new InscriptionCheckRequestBuilder()..update(updates))._build();
 
-  _$InscriptionCheckRequest._({this.phone}) : super._() {
+  _$InscriptionCheckRequest._({required this.phone}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        phone, 'InscriptionCheckRequest', 'phone');
+        phone, r'InscriptionCheckRequest', 'phone');
   }
 
   @override
@@ -85,12 +85,15 @@ class _$InscriptionCheckRequest extends InscriptionCheckRequest {
 
   @override
   int get hashCode {
-    return $jf($jc(0, phone.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InscriptionCheckRequest')
+    return (newBuiltValueToStringHelper(r'InscriptionCheckRequest')
           ..add('phone', phone))
         .toString();
   }
@@ -99,11 +102,11 @@ class _$InscriptionCheckRequest extends InscriptionCheckRequest {
 class InscriptionCheckRequestBuilder
     implements
         Builder<InscriptionCheckRequest, InscriptionCheckRequestBuilder> {
-  _$InscriptionCheckRequest _$v;
+  _$InscriptionCheckRequest? _$v;
 
-  String _phone;
-  String get phone => _$this._phone;
-  set phone(String phone) => _$this._phone = phone;
+  String? _phone;
+  String? get phone => _$this._phone;
+  set phone(String? phone) => _$this._phone = phone;
 
   InscriptionCheckRequestBuilder();
 
@@ -123,19 +126,21 @@ class InscriptionCheckRequestBuilder
   }
 
   @override
-  void update(void Function(InscriptionCheckRequestBuilder) updates) {
+  void update(void Function(InscriptionCheckRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$InscriptionCheckRequest build() {
+  InscriptionCheckRequest build() => _build();
+
+  _$InscriptionCheckRequest _build() {
     final _$result = _$v ??
         new _$InscriptionCheckRequest._(
             phone: BuiltValueNullFieldError.checkNotNull(
-                phone, 'InscriptionCheckRequest', 'phone'));
+                phone, r'InscriptionCheckRequest', 'phone'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

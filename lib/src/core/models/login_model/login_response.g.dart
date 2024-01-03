@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of login_response;
+part of 'login_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -20,9 +20,9 @@ class _$LoginResponseSerializer implements StructuredSerializer<LoginResponse> {
   final String wireName = 'LoginResponse';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, LoginResponse object,
+  Iterable<Object?> serialize(Serializers serializers, LoginResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'version',
       serializers.serialize(object.version,
           specifiedType: const FullType(String)),
@@ -30,7 +30,7 @@ class _$LoginResponseSerializer implements StructuredSerializer<LoginResponse> {
       serializers.serialize(object.message,
           specifiedType: const FullType(String)),
     ];
-    Object value;
+    Object? value;
     value = object.request;
     if (value != null) {
       result
@@ -70,45 +70,45 @@ class _$LoginResponseSerializer implements StructuredSerializer<LoginResponse> {
 
   @override
   LoginResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new LoginResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'params':
           result.params.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(ParamsLoginResponse))
+                  specifiedType: const FullType(ParamsLoginResponse))!
               as ParamsLoginResponse);
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(DataLoginResponse))
+                  specifiedType: const FullType(DataLoginResponse))!
               as DataLoginResponse);
           break;
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -128,15 +128,15 @@ class _$ParamsLoginResponseSerializer
   final String wireName = 'ParamsLoginResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ParamsLoginResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'email',
       serializers.serialize(object.email,
           specifiedType: const FullType(String)),
     ];
-    Object value;
+    Object? value;
     value = object.password;
     if (value != null) {
       result
@@ -149,23 +149,23 @@ class _$ParamsLoginResponseSerializer
 
   @override
   ParamsLoginResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsLoginResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'email':
           result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'password':
           result.password = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -182,10 +182,10 @@ class _$DataLoginResponseSerializer
   final String wireName = 'DataLoginResponse';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, DataLoginResponse object,
+  Iterable<Object?> serialize(Serializers serializers, DataLoginResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.tokenuser;
     if (value != null) {
       result
@@ -226,35 +226,35 @@ class _$DataLoginResponseSerializer
 
   @override
   DataLoginResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataLoginResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'nom':
           result.nom = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'prenom':
           result.prenom = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'email':
           result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'mobile':
           result.mobile = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -267,32 +267,32 @@ class _$LoginResponse extends LoginResponse {
   @override
   final String version;
   @override
-  final String request;
+  final String? request;
   @override
-  final ParamsLoginResponse params;
+  final ParamsLoginResponse? params;
   @override
   final String message;
   @override
-  final DataLoginResponse data;
+  final DataLoginResponse? data;
   @override
-  final int httpstatut;
+  final int? httpstatut;
   @override
-  final String error;
+  final String? error;
 
-  factory _$LoginResponse([void Function(LoginResponseBuilder) updates]) =>
-      (new LoginResponseBuilder()..update(updates)).build();
+  factory _$LoginResponse([void Function(LoginResponseBuilder)? updates]) =>
+      (new LoginResponseBuilder()..update(updates))._build();
 
   _$LoginResponse._(
-      {this.version,
+      {required this.version,
       this.request,
       this.params,
-      this.message,
+      required this.message,
       this.data,
       this.httpstatut,
       this.error})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(version, 'LoginResponse', 'version');
-    BuiltValueNullFieldError.checkNotNull(message, 'LoginResponse', 'message');
+    BuiltValueNullFieldError.checkNotNull(version, r'LoginResponse', 'version');
+    BuiltValueNullFieldError.checkNotNull(message, r'LoginResponse', 'message');
   }
 
   @override
@@ -317,21 +317,21 @@ class _$LoginResponse extends LoginResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, version.hashCode), request.hashCode),
-                        params.hashCode),
-                    message.hashCode),
-                data.hashCode),
-            httpstatut.hashCode),
-        error.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('LoginResponse')
+    return (newBuiltValueToStringHelper(r'LoginResponse')
           ..add('version', version)
           ..add('request', request)
           ..add('params', params)
@@ -345,37 +345,37 @@ class _$LoginResponse extends LoginResponse {
 
 class LoginResponseBuilder
     implements Builder<LoginResponse, LoginResponseBuilder> {
-  _$LoginResponse _$v;
+  _$LoginResponse? _$v;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  ParamsLoginResponseBuilder _params;
+  ParamsLoginResponseBuilder? _params;
   ParamsLoginResponseBuilder get params =>
       _$this._params ??= new ParamsLoginResponseBuilder();
-  set params(ParamsLoginResponseBuilder params) => _$this._params = params;
+  set params(ParamsLoginResponseBuilder? params) => _$this._params = params;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  DataLoginResponseBuilder _data;
+  DataLoginResponseBuilder? _data;
   DataLoginResponseBuilder get data =>
       _$this._data ??= new DataLoginResponseBuilder();
-  set data(DataLoginResponseBuilder data) => _$this._data = data;
+  set data(DataLoginResponseBuilder? data) => _$this._data = data;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
   LoginResponseBuilder();
 
@@ -401,27 +401,29 @@ class LoginResponseBuilder
   }
 
   @override
-  void update(void Function(LoginResponseBuilder) updates) {
+  void update(void Function(LoginResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$LoginResponse build() {
+  LoginResponse build() => _build();
+
+  _$LoginResponse _build() {
     _$LoginResponse _$result;
     try {
       _$result = _$v ??
           new _$LoginResponse._(
               version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'LoginResponse', 'version'),
+                  version, r'LoginResponse', 'version'),
               request: request,
               params: _params?.build(),
               message: BuiltValueNullFieldError.checkNotNull(
-                  message, 'LoginResponse', 'message'),
+                  message, r'LoginResponse', 'message'),
               data: _data?.build(),
               httpstatut: httpstatut,
               error: error);
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'params';
         _params?.build();
@@ -430,7 +432,7 @@ class LoginResponseBuilder
         _data?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'LoginResponse', _$failedField, e.toString());
+            r'LoginResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -443,15 +445,15 @@ class _$ParamsLoginResponse extends ParamsLoginResponse {
   @override
   final String email;
   @override
-  final String password;
+  final String? password;
 
   factory _$ParamsLoginResponse(
-          [void Function(ParamsLoginResponseBuilder) updates]) =>
-      (new ParamsLoginResponseBuilder()..update(updates)).build();
+          [void Function(ParamsLoginResponseBuilder)? updates]) =>
+      (new ParamsLoginResponseBuilder()..update(updates))._build();
 
-  _$ParamsLoginResponse._({this.email, this.password}) : super._() {
+  _$ParamsLoginResponse._({required this.email, this.password}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        email, 'ParamsLoginResponse', 'email');
+        email, r'ParamsLoginResponse', 'email');
   }
 
   @override
@@ -473,12 +475,16 @@ class _$ParamsLoginResponse extends ParamsLoginResponse {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, email.hashCode), password.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, password.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ParamsLoginResponse')
+    return (newBuiltValueToStringHelper(r'ParamsLoginResponse')
           ..add('email', email)
           ..add('password', password))
         .toString();
@@ -487,15 +493,15 @@ class _$ParamsLoginResponse extends ParamsLoginResponse {
 
 class ParamsLoginResponseBuilder
     implements Builder<ParamsLoginResponse, ParamsLoginResponseBuilder> {
-  _$ParamsLoginResponse _$v;
+  _$ParamsLoginResponse? _$v;
 
-  String _email;
-  String get email => _$this._email;
-  set email(String email) => _$this._email = email;
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
-  String _password;
-  String get password => _$this._password;
-  set password(String password) => _$this._password = password;
+  String? _password;
+  String? get password => _$this._password;
+  set password(String? password) => _$this._password = password;
 
   ParamsLoginResponseBuilder();
 
@@ -516,16 +522,18 @@ class ParamsLoginResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsLoginResponseBuilder) updates) {
+  void update(void Function(ParamsLoginResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ParamsLoginResponse build() {
+  ParamsLoginResponse build() => _build();
+
+  _$ParamsLoginResponse _build() {
     final _$result = _$v ??
         new _$ParamsLoginResponse._(
             email: BuiltValueNullFieldError.checkNotNull(
-                email, 'ParamsLoginResponse', 'email'),
+                email, r'ParamsLoginResponse', 'email'),
             password: password);
     replace(_$result);
     return _$result;
@@ -534,19 +542,19 @@ class ParamsLoginResponseBuilder
 
 class _$DataLoginResponse extends DataLoginResponse {
   @override
-  final String tokenuser;
+  final String? tokenuser;
   @override
-  final String nom;
+  final String? nom;
   @override
-  final String prenom;
+  final String? prenom;
   @override
-  final String email;
+  final String? email;
   @override
-  final String mobile;
+  final String? mobile;
 
   factory _$DataLoginResponse(
-          [void Function(DataLoginResponseBuilder) updates]) =>
-      (new DataLoginResponseBuilder()..update(updates)).build();
+          [void Function(DataLoginResponseBuilder)? updates]) =>
+      (new DataLoginResponseBuilder()..update(updates))._build();
 
   _$DataLoginResponse._(
       {this.tokenuser, this.nom, this.prenom, this.email, this.mobile})
@@ -573,15 +581,19 @@ class _$DataLoginResponse extends DataLoginResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc($jc(0, tokenuser.hashCode), nom.hashCode), prenom.hashCode),
-            email.hashCode),
-        mobile.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokenuser.hashCode);
+    _$hash = $jc(_$hash, nom.hashCode);
+    _$hash = $jc(_$hash, prenom.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, mobile.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataLoginResponse')
+    return (newBuiltValueToStringHelper(r'DataLoginResponse')
           ..add('tokenuser', tokenuser)
           ..add('nom', nom)
           ..add('prenom', prenom)
@@ -593,27 +605,27 @@ class _$DataLoginResponse extends DataLoginResponse {
 
 class DataLoginResponseBuilder
     implements Builder<DataLoginResponse, DataLoginResponseBuilder> {
-  _$DataLoginResponse _$v;
+  _$DataLoginResponse? _$v;
 
-  String _tokenuser;
-  String get tokenuser => _$this._tokenuser;
-  set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
+  String? _tokenuser;
+  String? get tokenuser => _$this._tokenuser;
+  set tokenuser(String? tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _nom;
-  String get nom => _$this._nom;
-  set nom(String nom) => _$this._nom = nom;
+  String? _nom;
+  String? get nom => _$this._nom;
+  set nom(String? nom) => _$this._nom = nom;
 
-  String _prenom;
-  String get prenom => _$this._prenom;
-  set prenom(String prenom) => _$this._prenom = prenom;
+  String? _prenom;
+  String? get prenom => _$this._prenom;
+  set prenom(String? prenom) => _$this._prenom = prenom;
 
-  String _email;
-  String get email => _$this._email;
-  set email(String email) => _$this._email = email;
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
-  String _mobile;
-  String get mobile => _$this._mobile;
-  set mobile(String mobile) => _$this._mobile = mobile;
+  String? _mobile;
+  String? get mobile => _$this._mobile;
+  set mobile(String? mobile) => _$this._mobile = mobile;
 
   DataLoginResponseBuilder();
 
@@ -637,12 +649,14 @@ class DataLoginResponseBuilder
   }
 
   @override
-  void update(void Function(DataLoginResponseBuilder) updates) {
+  void update(void Function(DataLoginResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataLoginResponse build() {
+  DataLoginResponse build() => _build();
+
+  _$DataLoginResponse _build() {
     final _$result = _$v ??
         new _$DataLoginResponse._(
             tokenuser: tokenuser,
@@ -655,4 +669,4 @@ class DataLoginResponseBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

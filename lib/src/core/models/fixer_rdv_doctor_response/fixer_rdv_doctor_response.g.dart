@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of fixer_rdv_doctor_response;
+part of 'fixer_rdv_doctor_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -25,10 +25,10 @@ class _$FixerRdvDoctorResponseSerializer
   final String wireName = 'FixerRdvDoctorResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, FixerRdvDoctorResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'version',
       serializers.serialize(object.version,
           specifiedType: const FullType(String)),
@@ -57,44 +57,44 @@ class _$FixerRdvDoctorResponseSerializer
 
   @override
   FixerRdvDoctorResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new FixerRdvDoctorResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'params':
           result.params.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(ParamsFixerRdvDoctorResponse))
+                  specifiedType: const FullType(ParamsFixerRdvDoctorResponse))!
               as ParamsFixerRdvDoctorResponse);
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(DataFixerRdvDoctorResponse))
+                  specifiedType: const FullType(DataFixerRdvDoctorResponse))!
               as DataFixerRdvDoctorResponse);
           break;
       }
@@ -115,10 +115,10 @@ class _$ParamsFixerRdvDoctorResponseSerializer
   final String wireName = 'ParamsFixerRdvDoctorResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ParamsFixerRdvDoctorResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
           specifiedType: const FullType(String)),
@@ -129,19 +129,19 @@ class _$ParamsFixerRdvDoctorResponseSerializer
 
   @override
   ParamsFixerRdvDoctorResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsFixerRdvDoctorResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -161,10 +161,10 @@ class _$DataFixerRdvDoctorResponseSerializer
   final String wireName = 'DataFixerRdvDoctorResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, DataFixerRdvDoctorResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'activeEtabs',
       serializers.serialize(object.activeEtabs,
           specifiedType: const FullType(
@@ -180,27 +180,27 @@ class _$DataFixerRdvDoctorResponseSerializer
 
   @override
   DataFixerRdvDoctorResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataFixerRdvDoctorResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'activeEtabs':
           result.activeEtabs.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(ObjectNameOfSearch)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(ObjectNameOfSearch)]))!
+              as BuiltList<Object?>);
           break;
         case 'sameCabinetEtabs':
           result.sameCabinetEtabs.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(ObjectNameOfSearch)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(ObjectNameOfSearch)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -226,32 +226,32 @@ class _$FixerRdvDoctorResponse extends FixerRdvDoctorResponse {
   final DataFixerRdvDoctorResponse data;
 
   factory _$FixerRdvDoctorResponse(
-          [void Function(FixerRdvDoctorResponseBuilder) updates]) =>
-      (new FixerRdvDoctorResponseBuilder()..update(updates)).build();
+          [void Function(FixerRdvDoctorResponseBuilder)? updates]) =>
+      (new FixerRdvDoctorResponseBuilder()..update(updates))._build();
 
   _$FixerRdvDoctorResponse._(
-      {this.version,
-      this.request,
-      this.params,
-      this.message,
-      this.httpstatut,
-      this.error,
-      this.data})
+      {required this.version,
+      required this.request,
+      required this.params,
+      required this.message,
+      required this.httpstatut,
+      required this.error,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        version, 'FixerRdvDoctorResponse', 'version');
+        version, r'FixerRdvDoctorResponse', 'version');
     BuiltValueNullFieldError.checkNotNull(
-        request, 'FixerRdvDoctorResponse', 'request');
+        request, r'FixerRdvDoctorResponse', 'request');
     BuiltValueNullFieldError.checkNotNull(
-        params, 'FixerRdvDoctorResponse', 'params');
+        params, r'FixerRdvDoctorResponse', 'params');
     BuiltValueNullFieldError.checkNotNull(
-        message, 'FixerRdvDoctorResponse', 'message');
+        message, r'FixerRdvDoctorResponse', 'message');
     BuiltValueNullFieldError.checkNotNull(
-        httpstatut, 'FixerRdvDoctorResponse', 'httpstatut');
+        httpstatut, r'FixerRdvDoctorResponse', 'httpstatut');
     BuiltValueNullFieldError.checkNotNull(
-        error, 'FixerRdvDoctorResponse', 'error');
+        error, r'FixerRdvDoctorResponse', 'error');
     BuiltValueNullFieldError.checkNotNull(
-        data, 'FixerRdvDoctorResponse', 'data');
+        data, r'FixerRdvDoctorResponse', 'data');
   }
 
   @override
@@ -278,21 +278,21 @@ class _$FixerRdvDoctorResponse extends FixerRdvDoctorResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, version.hashCode), request.hashCode),
-                        params.hashCode),
-                    message.hashCode),
-                httpstatut.hashCode),
-            error.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('FixerRdvDoctorResponse')
+    return (newBuiltValueToStringHelper(r'FixerRdvDoctorResponse')
           ..add('version', version)
           ..add('request', request)
           ..add('params', params)
@@ -306,38 +306,38 @@ class _$FixerRdvDoctorResponse extends FixerRdvDoctorResponse {
 
 class FixerRdvDoctorResponseBuilder
     implements Builder<FixerRdvDoctorResponse, FixerRdvDoctorResponseBuilder> {
-  _$FixerRdvDoctorResponse _$v;
+  _$FixerRdvDoctorResponse? _$v;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  ParamsFixerRdvDoctorResponseBuilder _params;
+  ParamsFixerRdvDoctorResponseBuilder? _params;
   ParamsFixerRdvDoctorResponseBuilder get params =>
       _$this._params ??= new ParamsFixerRdvDoctorResponseBuilder();
-  set params(ParamsFixerRdvDoctorResponseBuilder params) =>
+  set params(ParamsFixerRdvDoctorResponseBuilder? params) =>
       _$this._params = params;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  DataFixerRdvDoctorResponseBuilder _data;
+  DataFixerRdvDoctorResponseBuilder? _data;
   DataFixerRdvDoctorResponseBuilder get data =>
       _$this._data ??= new DataFixerRdvDoctorResponseBuilder();
-  set data(DataFixerRdvDoctorResponseBuilder data) => _$this._data = data;
+  set data(DataFixerRdvDoctorResponseBuilder? data) => _$this._data = data;
 
   FixerRdvDoctorResponseBuilder();
 
@@ -363,30 +363,32 @@ class FixerRdvDoctorResponseBuilder
   }
 
   @override
-  void update(void Function(FixerRdvDoctorResponseBuilder) updates) {
+  void update(void Function(FixerRdvDoctorResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$FixerRdvDoctorResponse build() {
+  FixerRdvDoctorResponse build() => _build();
+
+  _$FixerRdvDoctorResponse _build() {
     _$FixerRdvDoctorResponse _$result;
     try {
       _$result = _$v ??
           new _$FixerRdvDoctorResponse._(
               version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'FixerRdvDoctorResponse', 'version'),
+                  version, r'FixerRdvDoctorResponse', 'version'),
               request: BuiltValueNullFieldError.checkNotNull(
-                  request, 'FixerRdvDoctorResponse', 'request'),
+                  request, r'FixerRdvDoctorResponse', 'request'),
               params: params.build(),
               message: BuiltValueNullFieldError.checkNotNull(
-                  message, 'FixerRdvDoctorResponse', 'message'),
+                  message, r'FixerRdvDoctorResponse', 'message'),
               httpstatut: BuiltValueNullFieldError.checkNotNull(
-                  httpstatut, 'FixerRdvDoctorResponse', 'httpstatut'),
+                  httpstatut, r'FixerRdvDoctorResponse', 'httpstatut'),
               error: BuiltValueNullFieldError.checkNotNull(
-                  error, 'FixerRdvDoctorResponse', 'error'),
+                  error, r'FixerRdvDoctorResponse', 'error'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -395,7 +397,7 @@ class FixerRdvDoctorResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'FixerRdvDoctorResponse', _$failedField, e.toString());
+            r'FixerRdvDoctorResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -409,12 +411,12 @@ class _$ParamsFixerRdvDoctorResponse extends ParamsFixerRdvDoctorResponse {
   final String tokenuser;
 
   factory _$ParamsFixerRdvDoctorResponse(
-          [void Function(ParamsFixerRdvDoctorResponseBuilder) updates]) =>
-      (new ParamsFixerRdvDoctorResponseBuilder()..update(updates)).build();
+          [void Function(ParamsFixerRdvDoctorResponseBuilder)? updates]) =>
+      (new ParamsFixerRdvDoctorResponseBuilder()..update(updates))._build();
 
-  _$ParamsFixerRdvDoctorResponse._({this.tokenuser}) : super._() {
+  _$ParamsFixerRdvDoctorResponse._({required this.tokenuser}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        tokenuser, 'ParamsFixerRdvDoctorResponse', 'tokenuser');
+        tokenuser, r'ParamsFixerRdvDoctorResponse', 'tokenuser');
   }
 
   @override
@@ -435,12 +437,15 @@ class _$ParamsFixerRdvDoctorResponse extends ParamsFixerRdvDoctorResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(0, tokenuser.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokenuser.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ParamsFixerRdvDoctorResponse')
+    return (newBuiltValueToStringHelper(r'ParamsFixerRdvDoctorResponse')
           ..add('tokenuser', tokenuser))
         .toString();
   }
@@ -450,11 +455,11 @@ class ParamsFixerRdvDoctorResponseBuilder
     implements
         Builder<ParamsFixerRdvDoctorResponse,
             ParamsFixerRdvDoctorResponseBuilder> {
-  _$ParamsFixerRdvDoctorResponse _$v;
+  _$ParamsFixerRdvDoctorResponse? _$v;
 
-  String _tokenuser;
-  String get tokenuser => _$this._tokenuser;
-  set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
+  String? _tokenuser;
+  String? get tokenuser => _$this._tokenuser;
+  set tokenuser(String? tokenuser) => _$this._tokenuser = tokenuser;
 
   ParamsFixerRdvDoctorResponseBuilder();
 
@@ -474,16 +479,18 @@ class ParamsFixerRdvDoctorResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsFixerRdvDoctorResponseBuilder) updates) {
+  void update(void Function(ParamsFixerRdvDoctorResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ParamsFixerRdvDoctorResponse build() {
+  ParamsFixerRdvDoctorResponse build() => _build();
+
+  _$ParamsFixerRdvDoctorResponse _build() {
     final _$result = _$v ??
         new _$ParamsFixerRdvDoctorResponse._(
             tokenuser: BuiltValueNullFieldError.checkNotNull(
-                tokenuser, 'ParamsFixerRdvDoctorResponse', 'tokenuser'));
+                tokenuser, r'ParamsFixerRdvDoctorResponse', 'tokenuser'));
     replace(_$result);
     return _$result;
   }
@@ -496,15 +503,16 @@ class _$DataFixerRdvDoctorResponse extends DataFixerRdvDoctorResponse {
   final BuiltList<ObjectNameOfSearch> sameCabinetEtabs;
 
   factory _$DataFixerRdvDoctorResponse(
-          [void Function(DataFixerRdvDoctorResponseBuilder) updates]) =>
-      (new DataFixerRdvDoctorResponseBuilder()..update(updates)).build();
+          [void Function(DataFixerRdvDoctorResponseBuilder)? updates]) =>
+      (new DataFixerRdvDoctorResponseBuilder()..update(updates))._build();
 
-  _$DataFixerRdvDoctorResponse._({this.activeEtabs, this.sameCabinetEtabs})
+  _$DataFixerRdvDoctorResponse._(
+      {required this.activeEtabs, required this.sameCabinetEtabs})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        activeEtabs, 'DataFixerRdvDoctorResponse', 'activeEtabs');
+        activeEtabs, r'DataFixerRdvDoctorResponse', 'activeEtabs');
     BuiltValueNullFieldError.checkNotNull(
-        sameCabinetEtabs, 'DataFixerRdvDoctorResponse', 'sameCabinetEtabs');
+        sameCabinetEtabs, r'DataFixerRdvDoctorResponse', 'sameCabinetEtabs');
   }
 
   @override
@@ -526,12 +534,16 @@ class _$DataFixerRdvDoctorResponse extends DataFixerRdvDoctorResponse {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, activeEtabs.hashCode), sameCabinetEtabs.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, activeEtabs.hashCode);
+    _$hash = $jc(_$hash, sameCabinetEtabs.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataFixerRdvDoctorResponse')
+    return (newBuiltValueToStringHelper(r'DataFixerRdvDoctorResponse')
           ..add('activeEtabs', activeEtabs)
           ..add('sameCabinetEtabs', sameCabinetEtabs))
         .toString();
@@ -541,18 +553,18 @@ class _$DataFixerRdvDoctorResponse extends DataFixerRdvDoctorResponse {
 class DataFixerRdvDoctorResponseBuilder
     implements
         Builder<DataFixerRdvDoctorResponse, DataFixerRdvDoctorResponseBuilder> {
-  _$DataFixerRdvDoctorResponse _$v;
+  _$DataFixerRdvDoctorResponse? _$v;
 
-  ListBuilder<ObjectNameOfSearch> _activeEtabs;
+  ListBuilder<ObjectNameOfSearch>? _activeEtabs;
   ListBuilder<ObjectNameOfSearch> get activeEtabs =>
       _$this._activeEtabs ??= new ListBuilder<ObjectNameOfSearch>();
-  set activeEtabs(ListBuilder<ObjectNameOfSearch> activeEtabs) =>
+  set activeEtabs(ListBuilder<ObjectNameOfSearch>? activeEtabs) =>
       _$this._activeEtabs = activeEtabs;
 
-  ListBuilder<ObjectNameOfSearch> _sameCabinetEtabs;
+  ListBuilder<ObjectNameOfSearch>? _sameCabinetEtabs;
   ListBuilder<ObjectNameOfSearch> get sameCabinetEtabs =>
       _$this._sameCabinetEtabs ??= new ListBuilder<ObjectNameOfSearch>();
-  set sameCabinetEtabs(ListBuilder<ObjectNameOfSearch> sameCabinetEtabs) =>
+  set sameCabinetEtabs(ListBuilder<ObjectNameOfSearch>? sameCabinetEtabs) =>
       _$this._sameCabinetEtabs = sameCabinetEtabs;
 
   DataFixerRdvDoctorResponseBuilder();
@@ -574,12 +586,14 @@ class DataFixerRdvDoctorResponseBuilder
   }
 
   @override
-  void update(void Function(DataFixerRdvDoctorResponseBuilder) updates) {
+  void update(void Function(DataFixerRdvDoctorResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataFixerRdvDoctorResponse build() {
+  DataFixerRdvDoctorResponse build() => _build();
+
+  _$DataFixerRdvDoctorResponse _build() {
     _$DataFixerRdvDoctorResponse _$result;
     try {
       _$result = _$v ??
@@ -587,7 +601,7 @@ class DataFixerRdvDoctorResponseBuilder
               activeEtabs: activeEtabs.build(),
               sameCabinetEtabs: sameCabinetEtabs.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'activeEtabs';
         activeEtabs.build();
@@ -595,7 +609,7 @@ class DataFixerRdvDoctorResponseBuilder
         sameCabinetEtabs.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'DataFixerRdvDoctorResponse', _$failedField, e.toString());
+            r'DataFixerRdvDoctorResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -604,4 +618,4 @@ class DataFixerRdvDoctorResponseBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

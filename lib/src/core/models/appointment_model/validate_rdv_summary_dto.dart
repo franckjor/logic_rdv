@@ -92,11 +92,9 @@ abstract class DataValidateRdvSummaryDto2
       _$DataValidateRdvSummaryDto2;
 
   @BuiltValueField(wireName: 'appointment')
-  @nullable
-  String get appointment;
+  String? get appointment;
   @BuiltValueField(wireName: 'apptbuttonvalidation')
-  @nullable
-  Apptbuttonvalidation get apptbuttonvalidation;
+  Apptbuttonvalidation? get apptbuttonvalidation;
   String toJson() {
     return json.encode(
         serializers.serializeWith(DataValidateRdvSummaryDto2.serializer, this));
@@ -119,8 +117,7 @@ abstract class AppointmentSummary
       _$AppointmentSummary;
 
   @BuiltValueField(wireName: 'appointment')
-  @nullable
-  String get appointment;
+  String? get appointment;
   String toJson() {
     return json
         .encode(serializers.serializeWith(AppointmentSummary.serializer, this));
@@ -143,8 +140,7 @@ abstract class PaymentIntentSummary
       _$PaymentIntentSummary;
 
   @BuiltValueField(wireName: 'stripeClientSecret')
-  @nullable
-  String get stripeClientSecret;
+  String? get stripeClientSecret;
   String toJson() {
     return json.encode(
         serializers.serializeWith(PaymentIntentSummary.serializer, this));
@@ -177,11 +173,9 @@ abstract class DataValidateRdvSummaryDto
   @BuiltValueField(wireName: 'type')
   String get type;
   @BuiltValueField(wireName: 'data')
-  @nullable
-  DataValidateRdvSummaryDto2 get data;
-  @nullable
+  DataValidateRdvSummaryDto2? get data;
   @BuiltValueField(wireName: 'payment_intent')
-  PaymentIntentSummary get paymentIntent;
+  PaymentIntentSummary? get paymentIntent;
   String toJson() {
     return json.encode(
         serializers.serializeWith(DataValidateRdvSummaryDto.serializer, this));

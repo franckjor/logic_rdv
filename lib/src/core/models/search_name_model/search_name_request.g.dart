@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of search_name_request;
+part of 'search_name_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -17,9 +17,9 @@ class _$SearchNameRequestSerializer
   final String wireName = 'SearchNameRequest';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, SearchNameRequest object,
+  Iterable<Object?> serialize(Serializers serializers, SearchNameRequest object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'kind',
       serializers.serialize(object.kind, specifiedType: const FullType(String)),
       'cp',
@@ -36,31 +36,31 @@ class _$SearchNameRequestSerializer
 
   @override
   SearchNameRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SearchNameRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'kind':
           result.kind = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'cp':
           result.cp = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'proxy_istelecons':
           result.proxyIstelecons = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'term':
           result.term = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -80,16 +80,20 @@ class _$SearchNameRequest extends SearchNameRequest {
   final String term;
 
   factory _$SearchNameRequest(
-          [void Function(SearchNameRequestBuilder) updates]) =>
-      (new SearchNameRequestBuilder()..update(updates)).build();
+          [void Function(SearchNameRequestBuilder)? updates]) =>
+      (new SearchNameRequestBuilder()..update(updates))._build();
 
-  _$SearchNameRequest._({this.kind, this.cp, this.proxyIstelecons, this.term})
+  _$SearchNameRequest._(
+      {required this.kind,
+      required this.cp,
+      required this.proxyIstelecons,
+      required this.term})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(kind, 'SearchNameRequest', 'kind');
-    BuiltValueNullFieldError.checkNotNull(cp, 'SearchNameRequest', 'cp');
+    BuiltValueNullFieldError.checkNotNull(kind, r'SearchNameRequest', 'kind');
+    BuiltValueNullFieldError.checkNotNull(cp, r'SearchNameRequest', 'cp');
     BuiltValueNullFieldError.checkNotNull(
-        proxyIstelecons, 'SearchNameRequest', 'proxyIstelecons');
-    BuiltValueNullFieldError.checkNotNull(term, 'SearchNameRequest', 'term');
+        proxyIstelecons, r'SearchNameRequest', 'proxyIstelecons');
+    BuiltValueNullFieldError.checkNotNull(term, r'SearchNameRequest', 'term');
   }
 
   @override
@@ -112,14 +116,18 @@ class _$SearchNameRequest extends SearchNameRequest {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, kind.hashCode), cp.hashCode), proxyIstelecons.hashCode),
-        term.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, kind.hashCode);
+    _$hash = $jc(_$hash, cp.hashCode);
+    _$hash = $jc(_$hash, proxyIstelecons.hashCode);
+    _$hash = $jc(_$hash, term.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('SearchNameRequest')
+    return (newBuiltValueToStringHelper(r'SearchNameRequest')
           ..add('kind', kind)
           ..add('cp', cp)
           ..add('proxyIstelecons', proxyIstelecons)
@@ -130,24 +138,24 @@ class _$SearchNameRequest extends SearchNameRequest {
 
 class SearchNameRequestBuilder
     implements Builder<SearchNameRequest, SearchNameRequestBuilder> {
-  _$SearchNameRequest _$v;
+  _$SearchNameRequest? _$v;
 
-  String _kind;
-  String get kind => _$this._kind;
-  set kind(String kind) => _$this._kind = kind;
+  String? _kind;
+  String? get kind => _$this._kind;
+  set kind(String? kind) => _$this._kind = kind;
 
-  String _cp;
-  String get cp => _$this._cp;
-  set cp(String cp) => _$this._cp = cp;
+  String? _cp;
+  String? get cp => _$this._cp;
+  set cp(String? cp) => _$this._cp = cp;
 
-  String _proxyIstelecons;
-  String get proxyIstelecons => _$this._proxyIstelecons;
-  set proxyIstelecons(String proxyIstelecons) =>
+  String? _proxyIstelecons;
+  String? get proxyIstelecons => _$this._proxyIstelecons;
+  set proxyIstelecons(String? proxyIstelecons) =>
       _$this._proxyIstelecons = proxyIstelecons;
 
-  String _term;
-  String get term => _$this._term;
-  set term(String term) => _$this._term = term;
+  String? _term;
+  String? get term => _$this._term;
+  set term(String? term) => _$this._term = term;
 
   SearchNameRequestBuilder();
 
@@ -170,25 +178,27 @@ class SearchNameRequestBuilder
   }
 
   @override
-  void update(void Function(SearchNameRequestBuilder) updates) {
+  void update(void Function(SearchNameRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$SearchNameRequest build() {
+  SearchNameRequest build() => _build();
+
+  _$SearchNameRequest _build() {
     final _$result = _$v ??
         new _$SearchNameRequest._(
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, 'SearchNameRequest', 'kind'),
+                kind, r'SearchNameRequest', 'kind'),
             cp: BuiltValueNullFieldError.checkNotNull(
-                cp, 'SearchNameRequest', 'cp'),
+                cp, r'SearchNameRequest', 'cp'),
             proxyIstelecons: BuiltValueNullFieldError.checkNotNull(
-                proxyIstelecons, 'SearchNameRequest', 'proxyIstelecons'),
+                proxyIstelecons, r'SearchNameRequest', 'proxyIstelecons'),
             term: BuiltValueNullFieldError.checkNotNull(
-                term, 'SearchNameRequest', 'term'));
+                term, r'SearchNameRequest', 'term'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

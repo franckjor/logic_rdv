@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of search_city_response;
+part of 'search_city_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -24,9 +24,10 @@ class _$SearchCityResponseSerializer
   final String wireName = 'SearchCityResponse';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, SearchCityResponse object,
+  Iterable<Object?> serialize(
+      Serializers serializers, SearchCityResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'httpstatut',
       serializers.serialize(object.httpstatut,
           specifiedType: const FullType(int)),
@@ -55,44 +56,44 @@ class _$SearchCityResponseSerializer
 
   @override
   SearchCityResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SearchCityResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'params':
           result.params.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(ParamsSearchCityResponse))
+                  specifiedType: const FullType(ParamsSearchCityResponse))!
               as ParamsSearchCityResponse);
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(DataSearchCityResponse))
+                  specifiedType: const FullType(DataSearchCityResponse))!
               as DataSearchCityResponse);
           break;
       }
@@ -113,10 +114,10 @@ class _$ParamsSearchCityResponseSerializer
   final String wireName = 'ParamsSearchCityResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ParamsSearchCityResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'kind',
       serializers.serialize(object.kind, specifiedType: const FullType(String)),
       'proxy_istelecons',
@@ -131,27 +132,27 @@ class _$ParamsSearchCityResponseSerializer
 
   @override
   ParamsSearchCityResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsSearchCityResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'kind':
           result.kind = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'proxy_istelecons':
           result.proxyIstelecons = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'term':
           result.term = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -171,10 +172,10 @@ class _$DataSearchCityResponseSerializer
   final String wireName = 'DataSearchCityResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, DataSearchCityResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'kind',
       serializers.serialize(object.kind, specifiedType: const FullType(String)),
       'proxy_istelecons',
@@ -195,37 +196,37 @@ class _$DataSearchCityResponseSerializer
 
   @override
   DataSearchCityResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataSearchCityResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'kind':
           result.kind = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'proxy_istelecons':
           result.proxyIstelecons = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'term':
           result.term = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'api':
           result.api = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'list':
           result.list.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
                 const FullType(ClientInfosResponseSearchCity)
-              ])) as BuiltList<Object>);
+              ]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -245,10 +246,10 @@ class _$ClientInfosResponseSearchCitySerializer
   final String wireName = 'ClientInfosResponseSearchCity';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ClientInfosResponseSearchCity object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
       'clientinfos',
@@ -261,23 +262,23 @@ class _$ClientInfosResponseSearchCitySerializer
 
   @override
   ClientInfosResponseSearchCity deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ClientInfosResponseSearchCityBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'clientinfos':
           result.clientinfos = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -303,30 +304,31 @@ class _$SearchCityResponse extends SearchCityResponse {
   final DataSearchCityResponse data;
 
   factory _$SearchCityResponse(
-          [void Function(SearchCityResponseBuilder) updates]) =>
-      (new SearchCityResponseBuilder()..update(updates)).build();
+          [void Function(SearchCityResponseBuilder)? updates]) =>
+      (new SearchCityResponseBuilder()..update(updates))._build();
 
   _$SearchCityResponse._(
-      {this.httpstatut,
-      this.version,
-      this.request,
-      this.params,
-      this.error,
-      this.message,
-      this.data})
+      {required this.httpstatut,
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.error,
+      required this.message,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        httpstatut, 'SearchCityResponse', 'httpstatut');
+        httpstatut, r'SearchCityResponse', 'httpstatut');
     BuiltValueNullFieldError.checkNotNull(
-        version, 'SearchCityResponse', 'version');
+        version, r'SearchCityResponse', 'version');
     BuiltValueNullFieldError.checkNotNull(
-        request, 'SearchCityResponse', 'request');
+        request, r'SearchCityResponse', 'request');
     BuiltValueNullFieldError.checkNotNull(
-        params, 'SearchCityResponse', 'params');
-    BuiltValueNullFieldError.checkNotNull(error, 'SearchCityResponse', 'error');
+        params, r'SearchCityResponse', 'params');
     BuiltValueNullFieldError.checkNotNull(
-        message, 'SearchCityResponse', 'message');
-    BuiltValueNullFieldError.checkNotNull(data, 'SearchCityResponse', 'data');
+        error, r'SearchCityResponse', 'error');
+    BuiltValueNullFieldError.checkNotNull(
+        message, r'SearchCityResponse', 'message');
+    BuiltValueNullFieldError.checkNotNull(data, r'SearchCityResponse', 'data');
   }
 
   @override
@@ -353,21 +355,21 @@ class _$SearchCityResponse extends SearchCityResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, httpstatut.hashCode), version.hashCode),
-                        request.hashCode),
-                    params.hashCode),
-                error.hashCode),
-            message.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('SearchCityResponse')
+    return (newBuiltValueToStringHelper(r'SearchCityResponse')
           ..add('httpstatut', httpstatut)
           ..add('version', version)
           ..add('request', request)
@@ -381,37 +383,38 @@ class _$SearchCityResponse extends SearchCityResponse {
 
 class SearchCityResponseBuilder
     implements Builder<SearchCityResponse, SearchCityResponseBuilder> {
-  _$SearchCityResponse _$v;
+  _$SearchCityResponse? _$v;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  ParamsSearchCityResponseBuilder _params;
+  ParamsSearchCityResponseBuilder? _params;
   ParamsSearchCityResponseBuilder get params =>
       _$this._params ??= new ParamsSearchCityResponseBuilder();
-  set params(ParamsSearchCityResponseBuilder params) => _$this._params = params;
+  set params(ParamsSearchCityResponseBuilder? params) =>
+      _$this._params = params;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  DataSearchCityResponseBuilder _data;
+  DataSearchCityResponseBuilder? _data;
   DataSearchCityResponseBuilder get data =>
       _$this._data ??= new DataSearchCityResponseBuilder();
-  set data(DataSearchCityResponseBuilder data) => _$this._data = data;
+  set data(DataSearchCityResponseBuilder? data) => _$this._data = data;
 
   SearchCityResponseBuilder();
 
@@ -437,30 +440,32 @@ class SearchCityResponseBuilder
   }
 
   @override
-  void update(void Function(SearchCityResponseBuilder) updates) {
+  void update(void Function(SearchCityResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$SearchCityResponse build() {
+  SearchCityResponse build() => _build();
+
+  _$SearchCityResponse _build() {
     _$SearchCityResponse _$result;
     try {
       _$result = _$v ??
           new _$SearchCityResponse._(
               httpstatut: BuiltValueNullFieldError.checkNotNull(
-                  httpstatut, 'SearchCityResponse', 'httpstatut'),
+                  httpstatut, r'SearchCityResponse', 'httpstatut'),
               version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'SearchCityResponse', 'version'),
+                  version, r'SearchCityResponse', 'version'),
               request: BuiltValueNullFieldError.checkNotNull(
-                  request, 'SearchCityResponse', 'request'),
+                  request, r'SearchCityResponse', 'request'),
               params: params.build(),
               error: BuiltValueNullFieldError.checkNotNull(
-                  error, 'SearchCityResponse', 'error'),
+                  error, r'SearchCityResponse', 'error'),
               message: BuiltValueNullFieldError.checkNotNull(
-                  message, 'SearchCityResponse', 'message'),
+                  message, r'SearchCityResponse', 'message'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -469,7 +474,7 @@ class SearchCityResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'SearchCityResponse', _$failedField, e.toString());
+            r'SearchCityResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -487,17 +492,18 @@ class _$ParamsSearchCityResponse extends ParamsSearchCityResponse {
   final String term;
 
   factory _$ParamsSearchCityResponse(
-          [void Function(ParamsSearchCityResponseBuilder) updates]) =>
-      (new ParamsSearchCityResponseBuilder()..update(updates)).build();
+          [void Function(ParamsSearchCityResponseBuilder)? updates]) =>
+      (new ParamsSearchCityResponseBuilder()..update(updates))._build();
 
-  _$ParamsSearchCityResponse._({this.kind, this.proxyIstelecons, this.term})
+  _$ParamsSearchCityResponse._(
+      {required this.kind, required this.proxyIstelecons, required this.term})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        kind, 'ParamsSearchCityResponse', 'kind');
+        kind, r'ParamsSearchCityResponse', 'kind');
     BuiltValueNullFieldError.checkNotNull(
-        proxyIstelecons, 'ParamsSearchCityResponse', 'proxyIstelecons');
+        proxyIstelecons, r'ParamsSearchCityResponse', 'proxyIstelecons');
     BuiltValueNullFieldError.checkNotNull(
-        term, 'ParamsSearchCityResponse', 'term');
+        term, r'ParamsSearchCityResponse', 'term');
   }
 
   @override
@@ -520,13 +526,17 @@ class _$ParamsSearchCityResponse extends ParamsSearchCityResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc(0, kind.hashCode), proxyIstelecons.hashCode), term.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, kind.hashCode);
+    _$hash = $jc(_$hash, proxyIstelecons.hashCode);
+    _$hash = $jc(_$hash, term.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ParamsSearchCityResponse')
+    return (newBuiltValueToStringHelper(r'ParamsSearchCityResponse')
           ..add('kind', kind)
           ..add('proxyIstelecons', proxyIstelecons)
           ..add('term', term))
@@ -537,20 +547,20 @@ class _$ParamsSearchCityResponse extends ParamsSearchCityResponse {
 class ParamsSearchCityResponseBuilder
     implements
         Builder<ParamsSearchCityResponse, ParamsSearchCityResponseBuilder> {
-  _$ParamsSearchCityResponse _$v;
+  _$ParamsSearchCityResponse? _$v;
 
-  String _kind;
-  String get kind => _$this._kind;
-  set kind(String kind) => _$this._kind = kind;
+  String? _kind;
+  String? get kind => _$this._kind;
+  set kind(String? kind) => _$this._kind = kind;
 
-  String _proxyIstelecons;
-  String get proxyIstelecons => _$this._proxyIstelecons;
-  set proxyIstelecons(String proxyIstelecons) =>
+  String? _proxyIstelecons;
+  String? get proxyIstelecons => _$this._proxyIstelecons;
+  set proxyIstelecons(String? proxyIstelecons) =>
       _$this._proxyIstelecons = proxyIstelecons;
 
-  String _term;
-  String get term => _$this._term;
-  set term(String term) => _$this._term = term;
+  String? _term;
+  String? get term => _$this._term;
+  set term(String? term) => _$this._term = term;
 
   ParamsSearchCityResponseBuilder();
 
@@ -572,20 +582,24 @@ class ParamsSearchCityResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsSearchCityResponseBuilder) updates) {
+  void update(void Function(ParamsSearchCityResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ParamsSearchCityResponse build() {
+  ParamsSearchCityResponse build() => _build();
+
+  _$ParamsSearchCityResponse _build() {
     final _$result = _$v ??
         new _$ParamsSearchCityResponse._(
             kind: BuiltValueNullFieldError.checkNotNull(
-                kind, 'ParamsSearchCityResponse', 'kind'),
+                kind, r'ParamsSearchCityResponse', 'kind'),
             proxyIstelecons: BuiltValueNullFieldError.checkNotNull(
-                proxyIstelecons, 'ParamsSearchCityResponse', 'proxyIstelecons'),
+                proxyIstelecons,
+                r'ParamsSearchCityResponse',
+                'proxyIstelecons'),
             term: BuiltValueNullFieldError.checkNotNull(
-                term, 'ParamsSearchCityResponse', 'term'));
+                term, r'ParamsSearchCityResponse', 'term'));
     replace(_$result);
     return _$result;
   }
@@ -604,21 +618,26 @@ class _$DataSearchCityResponse extends DataSearchCityResponse {
   final BuiltList<ClientInfosResponseSearchCity> list;
 
   factory _$DataSearchCityResponse(
-          [void Function(DataSearchCityResponseBuilder) updates]) =>
-      (new DataSearchCityResponseBuilder()..update(updates)).build();
+          [void Function(DataSearchCityResponseBuilder)? updates]) =>
+      (new DataSearchCityResponseBuilder()..update(updates))._build();
 
   _$DataSearchCityResponse._(
-      {this.kind, this.proxyIstelecons, this.term, this.api, this.list})
+      {required this.kind,
+      required this.proxyIstelecons,
+      required this.term,
+      required this.api,
+      required this.list})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        kind, 'DataSearchCityResponse', 'kind');
+        kind, r'DataSearchCityResponse', 'kind');
     BuiltValueNullFieldError.checkNotNull(
-        proxyIstelecons, 'DataSearchCityResponse', 'proxyIstelecons');
+        proxyIstelecons, r'DataSearchCityResponse', 'proxyIstelecons');
     BuiltValueNullFieldError.checkNotNull(
-        term, 'DataSearchCityResponse', 'term');
-    BuiltValueNullFieldError.checkNotNull(api, 'DataSearchCityResponse', 'api');
+        term, r'DataSearchCityResponse', 'term');
     BuiltValueNullFieldError.checkNotNull(
-        list, 'DataSearchCityResponse', 'list');
+        api, r'DataSearchCityResponse', 'api');
+    BuiltValueNullFieldError.checkNotNull(
+        list, r'DataSearchCityResponse', 'list');
   }
 
   @override
@@ -643,17 +662,19 @@ class _$DataSearchCityResponse extends DataSearchCityResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc($jc($jc(0, kind.hashCode), proxyIstelecons.hashCode),
-                term.hashCode),
-            api.hashCode),
-        list.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, kind.hashCode);
+    _$hash = $jc(_$hash, proxyIstelecons.hashCode);
+    _$hash = $jc(_$hash, term.hashCode);
+    _$hash = $jc(_$hash, api.hashCode);
+    _$hash = $jc(_$hash, list.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataSearchCityResponse')
+    return (newBuiltValueToStringHelper(r'DataSearchCityResponse')
           ..add('kind', kind)
           ..add('proxyIstelecons', proxyIstelecons)
           ..add('term', term)
@@ -665,29 +686,29 @@ class _$DataSearchCityResponse extends DataSearchCityResponse {
 
 class DataSearchCityResponseBuilder
     implements Builder<DataSearchCityResponse, DataSearchCityResponseBuilder> {
-  _$DataSearchCityResponse _$v;
+  _$DataSearchCityResponse? _$v;
 
-  String _kind;
-  String get kind => _$this._kind;
-  set kind(String kind) => _$this._kind = kind;
+  String? _kind;
+  String? get kind => _$this._kind;
+  set kind(String? kind) => _$this._kind = kind;
 
-  String _proxyIstelecons;
-  String get proxyIstelecons => _$this._proxyIstelecons;
-  set proxyIstelecons(String proxyIstelecons) =>
+  String? _proxyIstelecons;
+  String? get proxyIstelecons => _$this._proxyIstelecons;
+  set proxyIstelecons(String? proxyIstelecons) =>
       _$this._proxyIstelecons = proxyIstelecons;
 
-  String _term;
-  String get term => _$this._term;
-  set term(String term) => _$this._term = term;
+  String? _term;
+  String? get term => _$this._term;
+  set term(String? term) => _$this._term = term;
 
-  String _api;
-  String get api => _$this._api;
-  set api(String api) => _$this._api = api;
+  String? _api;
+  String? get api => _$this._api;
+  set api(String? api) => _$this._api = api;
 
-  ListBuilder<ClientInfosResponseSearchCity> _list;
+  ListBuilder<ClientInfosResponseSearchCity>? _list;
   ListBuilder<ClientInfosResponseSearchCity> get list =>
       _$this._list ??= new ListBuilder<ClientInfosResponseSearchCity>();
-  set list(ListBuilder<ClientInfosResponseSearchCity> list) =>
+  set list(ListBuilder<ClientInfosResponseSearchCity>? list) =>
       _$this._list = list;
 
   DataSearchCityResponseBuilder();
@@ -712,33 +733,37 @@ class DataSearchCityResponseBuilder
   }
 
   @override
-  void update(void Function(DataSearchCityResponseBuilder) updates) {
+  void update(void Function(DataSearchCityResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataSearchCityResponse build() {
+  DataSearchCityResponse build() => _build();
+
+  _$DataSearchCityResponse _build() {
     _$DataSearchCityResponse _$result;
     try {
       _$result = _$v ??
           new _$DataSearchCityResponse._(
               kind: BuiltValueNullFieldError.checkNotNull(
-                  kind, 'DataSearchCityResponse', 'kind'),
+                  kind, r'DataSearchCityResponse', 'kind'),
               proxyIstelecons: BuiltValueNullFieldError.checkNotNull(
-                  proxyIstelecons, 'DataSearchCityResponse', 'proxyIstelecons'),
+                  proxyIstelecons,
+                  r'DataSearchCityResponse',
+                  'proxyIstelecons'),
               term: BuiltValueNullFieldError.checkNotNull(
-                  term, 'DataSearchCityResponse', 'term'),
+                  term, r'DataSearchCityResponse', 'term'),
               api: BuiltValueNullFieldError.checkNotNull(
-                  api, 'DataSearchCityResponse', 'api'),
+                  api, r'DataSearchCityResponse', 'api'),
               list: list.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'list';
         list.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'DataSearchCityResponse', _$failedField, e.toString());
+            r'DataSearchCityResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -754,14 +779,16 @@ class _$ClientInfosResponseSearchCity extends ClientInfosResponseSearchCity {
   final String clientinfos;
 
   factory _$ClientInfosResponseSearchCity(
-          [void Function(ClientInfosResponseSearchCityBuilder) updates]) =>
-      (new ClientInfosResponseSearchCityBuilder()..update(updates)).build();
+          [void Function(ClientInfosResponseSearchCityBuilder)? updates]) =>
+      (new ClientInfosResponseSearchCityBuilder()..update(updates))._build();
 
-  _$ClientInfosResponseSearchCity._({this.id, this.clientinfos}) : super._() {
+  _$ClientInfosResponseSearchCity._(
+      {required this.id, required this.clientinfos})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        id, 'ClientInfosResponseSearchCity', 'id');
+        id, r'ClientInfosResponseSearchCity', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        clientinfos, 'ClientInfosResponseSearchCity', 'clientinfos');
+        clientinfos, r'ClientInfosResponseSearchCity', 'clientinfos');
   }
 
   @override
@@ -783,12 +810,16 @@ class _$ClientInfosResponseSearchCity extends ClientInfosResponseSearchCity {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, id.hashCode), clientinfos.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, clientinfos.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ClientInfosResponseSearchCity')
+    return (newBuiltValueToStringHelper(r'ClientInfosResponseSearchCity')
           ..add('id', id)
           ..add('clientinfos', clientinfos))
         .toString();
@@ -799,15 +830,15 @@ class ClientInfosResponseSearchCityBuilder
     implements
         Builder<ClientInfosResponseSearchCity,
             ClientInfosResponseSearchCityBuilder> {
-  _$ClientInfosResponseSearchCity _$v;
+  _$ClientInfosResponseSearchCity? _$v;
 
-  String _id;
-  String get id => _$this._id;
-  set id(String id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
-  String _clientinfos;
-  String get clientinfos => _$this._clientinfos;
-  set clientinfos(String clientinfos) => _$this._clientinfos = clientinfos;
+  String? _clientinfos;
+  String? get clientinfos => _$this._clientinfos;
+  set clientinfos(String? clientinfos) => _$this._clientinfos = clientinfos;
 
   ClientInfosResponseSearchCityBuilder();
 
@@ -828,21 +859,23 @@ class ClientInfosResponseSearchCityBuilder
   }
 
   @override
-  void update(void Function(ClientInfosResponseSearchCityBuilder) updates) {
+  void update(void Function(ClientInfosResponseSearchCityBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ClientInfosResponseSearchCity build() {
+  ClientInfosResponseSearchCity build() => _build();
+
+  _$ClientInfosResponseSearchCity _build() {
     final _$result = _$v ??
         new _$ClientInfosResponseSearchCity._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, 'ClientInfosResponseSearchCity', 'id'),
+                id, r'ClientInfosResponseSearchCity', 'id'),
             clientinfos: BuiltValueNullFieldError.checkNotNull(
-                clientinfos, 'ClientInfosResponseSearchCity', 'clientinfos'));
+                clientinfos, r'ClientInfosResponseSearchCity', 'clientinfos'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

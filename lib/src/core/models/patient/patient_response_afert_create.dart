@@ -57,23 +57,17 @@ abstract class ParamsPatientResponseAfertCreate
       _$ParamsPatientResponseAfertCreate;
 
   @BuiltValueField(wireName: 'tokenuser')
-  @nullable
-  String get tokenuser;
+  String? get tokenuser;
   @BuiltValueField(wireName: 'tokenappt')
-  @nullable
-  String get tokenappt;
+  String? get tokenappt;
   @BuiltValueField(wireName: 'nom')
-  @nullable
-  String get nom;
+  String? get nom;
   @BuiltValueField(wireName: 'prenom')
-  @nullable
-  String get prenom;
+  String? get prenom;
   @BuiltValueField(wireName: 'email')
-  @nullable
-  String get email;
+  String? get email;
   @BuiltValueField(wireName: 'phone')
-  @nullable
-  String get phone;
+  String? get phone;
   String toJson() {
     return json.encode(serializers.serializeWith(
         ParamsPatientResponseAfertCreate.serializer, this));
@@ -99,18 +93,15 @@ abstract class DataPatientResponseAfertCreate
       _$DataPatientResponseAfertCreate;
 
   @BuiltValueField(wireName: 'nom')
-  @nullable
-  String get nom;
+  String? get nom;
   @BuiltValueField(wireName: 'prenom')
   String get prenom;
   @BuiltValueField(wireName: 'email')
   String get email;
   @BuiltValueField(wireName: 'spacephone')
-  @nullable
-  String get spacephone;
+  String? get spacephone;
   @BuiltValueField(wireName: 'phone')
-  @nullable
-  String get phone;
+  String? get phone;
   @BuiltValueField(wireName: 'dob')
   String get dob;
   @BuiltValueField(wireName: 'token')
@@ -126,11 +117,9 @@ abstract class DataPatientResponseAfertCreate
   @BuiltValueField(wireName: 'etaballownpinternet')
   String get etaballownpinternet;
   @BuiltValueField(wireName: 'lockmessage')
-  @nullable
-  String get lockmessage;
+  String? get lockmessage;
   @BuiltValueField(wireName: 'photo')
-  @nullable
-  String get photo;
+  String? get photo;
   String toJson() {
     return json.encode(serializers.serializeWith(
         DataPatientResponseAfertCreate.serializer, this));

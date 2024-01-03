@@ -118,60 +118,42 @@ abstract class ObjectNameOfSearch
   @BuiltValueField(wireName: 'id')
   String get id;
   @BuiltValueField(wireName: 'nom')
-  @nullable
-  String get nom;
+  String? get nom;
   @BuiltValueField(wireName: 'prenom')
-  @nullable
-  String get prenom;
+  String? get prenom;
   @BuiltValueField(wireName: 'id_city')
-  @nullable
-  String get idCity;
+  String? get idCity;
   @BuiltValueField(wireName: 'km_diff')
-  @nullable
-  String get kmDiff;
+  String? get kmDiff;
   @BuiltValueField(wireName: 'address')
-  @nullable
-  String get address;
+  String? get address;
   @BuiltValueField(wireName: 'zip')
-  @nullable
-  String get zip;
+  String? get zip;
   @BuiltValueField(wireName: 'city')
-  @nullable
-  String get city;
+  String? get city;
   @BuiltValueField(wireName: 'category')
-  @nullable
-  String get category;
+  String? get category;
   @BuiltValueField(wireName: 'tel')
-  @nullable
-  String get tel;
+  String? get tel;
   @BuiltValueField(wireName: 'telnospace')
-  @nullable
-  String get telnospace;
+  String? get telnospace;
   @BuiltValueField(wireName: 'lat')
-  @nullable
-  String get lat;
+  String? get lat;
   @BuiltValueField(wireName: 'lng')
-  @nullable
-  String get lng;
+  String? get lng;
   @BuiltValueField(wireName: 'icon')
-  @nullable
-  String get icon;
+  String? get icon;
   @BuiltValueField(wireName: 'id_category')
-  @nullable
-  String get idCategory;
+  String? get idCategory;
   @BuiltValueField(wireName: 'id_agenda')
-  @nullable
-  String get idAgenda;
+  String? get idAgenda;
   @BuiltValueField(wireName: 'civility')
-  @nullable
-  String get civility;
+  String? get civility;
   @BuiltValueField(wireName: 'isother')
-  @nullable
-  String get isOther;
+  String? get isOther;
   @BuiltValueField(wireName: 'appointment')
-  @nullable
   AppointmentSearchNameResponse get appointment;
-  String toJson() {
+  String? toJson() {
     return json
         .encode(serializers.serializeWith(ObjectNameOfSearch.serializer, this));
   }
@@ -198,8 +180,7 @@ abstract class AppointmentSearchNameResponse
       _$AppointmentSearchNameResponse;
 
   @BuiltValueField(wireName: 'token')
-  @nullable
-  String get token;
+  String? get token;
   String toJson() {
     return json.encode(serializers.serializeWith(
         AppointmentSearchNameResponse.serializer, this));

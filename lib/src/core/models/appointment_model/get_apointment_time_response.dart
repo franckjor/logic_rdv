@@ -57,23 +57,17 @@ abstract class ParamsGetApointmentTimeResponse
       _$ParamsGetApointmentTimeResponse;
 
   @BuiltValueField(wireName: 'tokenuser')
-  @nullable
-  String get tokenuser;
+  String? get tokenuser;
   @BuiltValueField(wireName: 'tokenappointment')
-  @nullable
-  String get tokenappointment;
+  String? get tokenappointment;
   @BuiltValueField(wireName: 'week')
-  @nullable
-  String get week;
+  String? get week;
   @BuiltValueField(wireName: 'data')
-  @nullable
-  String get data;
+  String? get data;
   @BuiltValueField(wireName: 'action')
-  @nullable
-  String get action;
+  String? get action;
   @BuiltValueField(wireName: 'session')
-  @nullable
-  String get session;
+  String? get session;
   String toJson() {
     return json.encode(serializers.serializeWith(
         ParamsGetApointmentTimeResponse.serializer, this));
@@ -99,19 +93,15 @@ abstract class DataGetApointmentTimeResponse
       _$DataGetApointmentTimeResponse;
 
   @BuiltValueField(wireName: 'session')
-  @nullable
-  String get session;
+  String? get session;
   @BuiltValueField(wireName: 'navigation')
-  @nullable
-  Navigation get navigation;
+  Navigation? get navigation;
   @BuiltValueField(wireName: 'headermessage')
-  @nullable
-  String get headermessage;
+  String? get headermessage;
   @BuiltValueField(wireName: 'type')
   String get type;
   @BuiltValueField(wireName: 'data')
-  @nullable
-  BuiltList<DataTimeRdv> get data;
+  BuiltList<DataTimeRdv>? get data;
   String toJson() {
     return json.encode(serializers.serializeWith(
         DataGetApointmentTimeResponse.serializer, this));
@@ -132,20 +122,15 @@ abstract class DataTimeRdv implements Built<DataTimeRdv, DataTimeRdvBuilder> {
   factory DataTimeRdv([updates(DataTimeRdvBuilder b)]) = _$DataTimeRdv;
 
   @BuiltValueField(wireName: 'label')
-  @nullable
-  String get label;
+  String? get label;
   @BuiltValueField(wireName: 'label2')
-  @nullable
-  String get label2;
+  String? get label2;
   @BuiltValueField(wireName: 'label3')
-  @nullable
-  String get label3;
+  String? get label3;
   @BuiltValueField(wireName: 'message')
-  @nullable
-  String get message;
+  String? get message;
   @BuiltValueField(wireName: 'creneaux')
-  @nullable
-  BuiltList<Creneaux> get creneaux;
+  BuiltList<Creneaux>? get creneaux;
   String toJson() {
     return json.encode(serializers.serializeWith(DataTimeRdv.serializer, this));
   }
@@ -164,29 +149,21 @@ abstract class Creneaux implements Built<Creneaux, CreneauxBuilder> {
   factory Creneaux([updates(CreneauxBuilder b)]) = _$Creneaux;
 
   @BuiltValueField(wireName: 'fromhour')
-  @nullable
-  String get fromhour;
+  String? get fromhour;
   @BuiltValueField(wireName: 'tohour')
-  @nullable
-  String get tohour;
+  String? get tohour;
   @BuiltValueField(wireName: 'doctor')
-  @nullable
-  String get doctor;
+  String? get doctor;
   @BuiltValueField(wireName: 'onclick')
-  @nullable
-  String get onclick;
+  String? get onclick;
   @BuiltValueField(wireName: 'onclick_message')
-  @nullable
-  String get onclickMessage;
+  String? get onclickMessage;
   @BuiltValueField(wireName: 'onclick_data')
-  @nullable
-  String get onclickData;
+  String? get onclickData;
   @BuiltValueField(wireName: 'onclick_action')
-  @nullable
-  String get onclickAction;
+  String? get onclickAction;
   @BuiltValueField(wireName: 'onclick_week')
-  @nullable
-  String get onclickWeek;
+  String? get onclickWeek;
   String toJson() {
     return json.encode(serializers.serializeWith(Creneaux.serializer, this));
   }
@@ -205,17 +182,13 @@ abstract class Navigation implements Built<Navigation, NavigationBuilder> {
   factory Navigation([updates(NavigationBuilder b)]) = _$Navigation;
 
   @BuiltValueField(wireName: 'begin')
-  @nullable
-  Begin get begin;
+  Begin? get begin;
   @BuiltValueField(wireName: 'prev')
-  @nullable
-  Prev get prev;
+  Prev? get prev;
   @BuiltValueField(wireName: 'prevweek')
-  @nullable
-  Prevweek get prevweek;
+  Prevweek? get prevweek;
   @BuiltValueField(wireName: 'nextweek')
-  @nullable
-  Nextweek get nextweek;
+  Nextweek? get nextweek;
   String toJson() {
     return json.encode(serializers.serializeWith(Navigation.serializer, this));
   }
@@ -284,17 +257,13 @@ abstract class Prevweek implements Built<Prevweek, PrevweekBuilder> {
   factory Prevweek([updates(PrevweekBuilder b)]) = _$Prevweek;
 
   @BuiltValueField(wireName: 'label')
-  @nullable
-  String get label;
+  String? get label;
   @BuiltValueField(wireName: 'onclick_action')
-  @nullable
-  String get onclickAction;
+  String? get onclickAction;
   @BuiltValueField(wireName: 'onclick_data')
-  @nullable
-  String get onclickData;
+  String? get onclickData;
   @BuiltValueField(wireName: 'onclick_week')
-  @nullable
-  String get onclickWeek;
+  String? get onclickWeek;
   String toJson() {
     return json.encode(serializers.serializeWith(Prevweek.serializer, this));
   }

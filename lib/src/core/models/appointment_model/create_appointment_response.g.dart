@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of create_appointment_response;
+part of 'create_appointment_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -30,11 +30,11 @@ class _$CreateAppointmentResponseSerializer
   final String wireName = 'CreateAppointmentResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, CreateAppointmentResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.version;
     if (value != null) {
       result
@@ -88,45 +88,45 @@ class _$CreateAppointmentResponseSerializer
 
   @override
   CreateAppointmentResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CreateAppointmentResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'params':
           result.params.replace(serializers.deserialize(value,
                   specifiedType:
-                      const FullType(ParamsCreateAppointmentResponse))
+                      const FullType(ParamsCreateAppointmentResponse))!
               as ParamsCreateAppointmentResponse);
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(DataCreateAppointmentResponse))
+                  specifiedType: const FullType(DataCreateAppointmentResponse))!
               as DataCreateAppointmentResponse);
           break;
       }
@@ -147,11 +147,11 @@ class _$ParamsCreateAppointmentResponseSerializer
   final String wireName = 'ParamsCreateAppointmentResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ParamsCreateAppointmentResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.tokenuser;
     if (value != null) {
       result
@@ -199,39 +199,39 @@ class _$ParamsCreateAppointmentResponseSerializer
 
   @override
   ParamsCreateAppointmentResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsCreateAppointmentResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'tokenappointment':
           result.tokenappointment = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'week':
           result.week = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'data':
           result.data = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'action':
           result.action = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'session':
           result.session = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -251,11 +251,11 @@ class _$DataCreateAppointmentResponseSerializer
   final String wireName = 'DataCreateAppointmentResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, DataCreateAppointmentResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.session;
     if (value != null) {
       result
@@ -298,39 +298,39 @@ class _$DataCreateAppointmentResponseSerializer
 
   @override
   DataCreateAppointmentResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataCreateAppointmentResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'session':
           result.session = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'navigation':
           result.navigation.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      BuiltList, const [const FullType(AppointmentNavigation)]))
-              as BuiltList<Object>);
+              specifiedType: const FullType(BuiltList, const [
+                const FullType(AppointmentNavigation)
+              ]))! as BuiltList<Object?>);
           break;
         case 'headermessage':
           result.headermessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'type':
           result.type = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
                 const FullType(AppointmentTypeResponse)
-              ])) as BuiltList<Object>);
+              ]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -350,11 +350,11 @@ class _$AppointmentTypeResponseSerializer
   final String wireName = 'AppointmentTypeResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, AppointmentTypeResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.labelplace;
     if (value != null) {
       result
@@ -402,39 +402,39 @@ class _$AppointmentTypeResponseSerializer
 
   @override
   AppointmentTypeResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AppointmentTypeResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'labelplace':
           result.labelplace = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'color':
           result.color = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'description':
           result.description = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick_data':
           result.onclickData = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick_action':
           result.onclickAction = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick_week':
           result.onclickWeek = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -454,11 +454,11 @@ class _$AppointmentNavigationSerializer
   final String wireName = 'AppointmentNavigation';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, AppointmentNavigation object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.labelplace;
     if (value != null) {
       result
@@ -506,39 +506,39 @@ class _$AppointmentNavigationSerializer
 
   @override
   AppointmentNavigation deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AppointmentNavigationBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'labelplace':
           result.labelplace = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'color':
           result.color = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'description':
           result.description = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick_data':
           result.onclickData = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick_action':
           result.onclickAction = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick_week':
           result.onclickWeek = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -549,23 +549,23 @@ class _$AppointmentNavigationSerializer
 
 class _$CreateAppointmentResponse extends CreateAppointmentResponse {
   @override
-  final String version;
+  final String? version;
   @override
-  final String request;
+  final String? request;
   @override
-  final ParamsCreateAppointmentResponse params;
+  final ParamsCreateAppointmentResponse? params;
   @override
-  final String message;
+  final String? message;
   @override
-  final int httpstatut;
+  final int? httpstatut;
   @override
-  final String error;
+  final String? error;
   @override
-  final DataCreateAppointmentResponse data;
+  final DataCreateAppointmentResponse? data;
 
   factory _$CreateAppointmentResponse(
-          [void Function(CreateAppointmentResponseBuilder) updates]) =>
-      (new CreateAppointmentResponseBuilder()..update(updates)).build();
+          [void Function(CreateAppointmentResponseBuilder)? updates]) =>
+      (new CreateAppointmentResponseBuilder()..update(updates))._build();
 
   _$CreateAppointmentResponse._(
       {this.version,
@@ -601,21 +601,21 @@ class _$CreateAppointmentResponse extends CreateAppointmentResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, version.hashCode), request.hashCode),
-                        params.hashCode),
-                    message.hashCode),
-                httpstatut.hashCode),
-            error.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('CreateAppointmentResponse')
+    return (newBuiltValueToStringHelper(r'CreateAppointmentResponse')
           ..add('version', version)
           ..add('request', request)
           ..add('params', params)
@@ -630,38 +630,38 @@ class _$CreateAppointmentResponse extends CreateAppointmentResponse {
 class CreateAppointmentResponseBuilder
     implements
         Builder<CreateAppointmentResponse, CreateAppointmentResponseBuilder> {
-  _$CreateAppointmentResponse _$v;
+  _$CreateAppointmentResponse? _$v;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  ParamsCreateAppointmentResponseBuilder _params;
+  ParamsCreateAppointmentResponseBuilder? _params;
   ParamsCreateAppointmentResponseBuilder get params =>
       _$this._params ??= new ParamsCreateAppointmentResponseBuilder();
-  set params(ParamsCreateAppointmentResponseBuilder params) =>
+  set params(ParamsCreateAppointmentResponseBuilder? params) =>
       _$this._params = params;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  DataCreateAppointmentResponseBuilder _data;
+  DataCreateAppointmentResponseBuilder? _data;
   DataCreateAppointmentResponseBuilder get data =>
       _$this._data ??= new DataCreateAppointmentResponseBuilder();
-  set data(DataCreateAppointmentResponseBuilder data) => _$this._data = data;
+  set data(DataCreateAppointmentResponseBuilder? data) => _$this._data = data;
 
   CreateAppointmentResponseBuilder();
 
@@ -687,12 +687,14 @@ class CreateAppointmentResponseBuilder
   }
 
   @override
-  void update(void Function(CreateAppointmentResponseBuilder) updates) {
+  void update(void Function(CreateAppointmentResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$CreateAppointmentResponse build() {
+  CreateAppointmentResponse build() => _build();
+
+  _$CreateAppointmentResponse _build() {
     _$CreateAppointmentResponse _$result;
     try {
       _$result = _$v ??
@@ -705,7 +707,7 @@ class CreateAppointmentResponseBuilder
               error: error,
               data: _data?.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'params';
         _params?.build();
@@ -714,7 +716,7 @@ class CreateAppointmentResponseBuilder
         _data?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'CreateAppointmentResponse', _$failedField, e.toString());
+            r'CreateAppointmentResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -726,21 +728,21 @@ class CreateAppointmentResponseBuilder
 class _$ParamsCreateAppointmentResponse
     extends ParamsCreateAppointmentResponse {
   @override
-  final String tokenuser;
+  final String? tokenuser;
   @override
-  final String tokenappointment;
+  final String? tokenappointment;
   @override
-  final String week;
+  final String? week;
   @override
-  final String data;
+  final String? data;
   @override
-  final String action;
+  final String? action;
   @override
-  final String session;
+  final String? session;
 
   factory _$ParamsCreateAppointmentResponse(
-          [void Function(ParamsCreateAppointmentResponseBuilder) updates]) =>
-      (new ParamsCreateAppointmentResponseBuilder()..update(updates)).build();
+          [void Function(ParamsCreateAppointmentResponseBuilder)? updates]) =>
+      (new ParamsCreateAppointmentResponseBuilder()..update(updates))._build();
 
   _$ParamsCreateAppointmentResponse._(
       {this.tokenuser,
@@ -774,19 +776,20 @@ class _$ParamsCreateAppointmentResponse
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, tokenuser.hashCode), tokenappointment.hashCode),
-                    week.hashCode),
-                data.hashCode),
-            action.hashCode),
-        session.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokenuser.hashCode);
+    _$hash = $jc(_$hash, tokenappointment.hashCode);
+    _$hash = $jc(_$hash, week.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jc(_$hash, action.hashCode);
+    _$hash = $jc(_$hash, session.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ParamsCreateAppointmentResponse')
+    return (newBuiltValueToStringHelper(r'ParamsCreateAppointmentResponse')
           ..add('tokenuser', tokenuser)
           ..add('tokenappointment', tokenappointment)
           ..add('week', week)
@@ -801,32 +804,32 @@ class ParamsCreateAppointmentResponseBuilder
     implements
         Builder<ParamsCreateAppointmentResponse,
             ParamsCreateAppointmentResponseBuilder> {
-  _$ParamsCreateAppointmentResponse _$v;
+  _$ParamsCreateAppointmentResponse? _$v;
 
-  String _tokenuser;
-  String get tokenuser => _$this._tokenuser;
-  set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
+  String? _tokenuser;
+  String? get tokenuser => _$this._tokenuser;
+  set tokenuser(String? tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappointment;
-  String get tokenappointment => _$this._tokenappointment;
-  set tokenappointment(String tokenappointment) =>
+  String? _tokenappointment;
+  String? get tokenappointment => _$this._tokenappointment;
+  set tokenappointment(String? tokenappointment) =>
       _$this._tokenappointment = tokenappointment;
 
-  String _week;
-  String get week => _$this._week;
-  set week(String week) => _$this._week = week;
+  String? _week;
+  String? get week => _$this._week;
+  set week(String? week) => _$this._week = week;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  String? _data;
+  String? get data => _$this._data;
+  set data(String? data) => _$this._data = data;
 
-  String _action;
-  String get action => _$this._action;
-  set action(String action) => _$this._action = action;
+  String? _action;
+  String? get action => _$this._action;
+  set action(String? action) => _$this._action = action;
 
-  String _session;
-  String get session => _$this._session;
-  set session(String session) => _$this._session = session;
+  String? _session;
+  String? get session => _$this._session;
+  set session(String? session) => _$this._session = session;
 
   ParamsCreateAppointmentResponseBuilder();
 
@@ -851,12 +854,14 @@ class ParamsCreateAppointmentResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsCreateAppointmentResponseBuilder) updates) {
+  void update(void Function(ParamsCreateAppointmentResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ParamsCreateAppointmentResponse build() {
+  ParamsCreateAppointmentResponse build() => _build();
+
+  _$ParamsCreateAppointmentResponse _build() {
     final _$result = _$v ??
         new _$ParamsCreateAppointmentResponse._(
             tokenuser: tokenuser,
@@ -872,19 +877,19 @@ class ParamsCreateAppointmentResponseBuilder
 
 class _$DataCreateAppointmentResponse extends DataCreateAppointmentResponse {
   @override
-  final String session;
+  final String? session;
   @override
-  final BuiltList<AppointmentNavigation> navigation;
+  final BuiltList<AppointmentNavigation>? navigation;
   @override
-  final String headermessage;
+  final String? headermessage;
   @override
-  final String type;
+  final String? type;
   @override
-  final BuiltList<AppointmentTypeResponse> data;
+  final BuiltList<AppointmentTypeResponse>? data;
 
   factory _$DataCreateAppointmentResponse(
-          [void Function(DataCreateAppointmentResponseBuilder) updates]) =>
-      (new DataCreateAppointmentResponseBuilder()..update(updates)).build();
+          [void Function(DataCreateAppointmentResponseBuilder)? updates]) =>
+      (new DataCreateAppointmentResponseBuilder()..update(updates))._build();
 
   _$DataCreateAppointmentResponse._(
       {this.session, this.navigation, this.headermessage, this.type, this.data})
@@ -912,17 +917,19 @@ class _$DataCreateAppointmentResponse extends DataCreateAppointmentResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc($jc($jc(0, session.hashCode), navigation.hashCode),
-                headermessage.hashCode),
-            type.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, session.hashCode);
+    _$hash = $jc(_$hash, navigation.hashCode);
+    _$hash = $jc(_$hash, headermessage.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataCreateAppointmentResponse')
+    return (newBuiltValueToStringHelper(r'DataCreateAppointmentResponse')
           ..add('session', session)
           ..add('navigation', navigation)
           ..add('headermessage', headermessage)
@@ -936,31 +943,31 @@ class DataCreateAppointmentResponseBuilder
     implements
         Builder<DataCreateAppointmentResponse,
             DataCreateAppointmentResponseBuilder> {
-  _$DataCreateAppointmentResponse _$v;
+  _$DataCreateAppointmentResponse? _$v;
 
-  String _session;
-  String get session => _$this._session;
-  set session(String session) => _$this._session = session;
+  String? _session;
+  String? get session => _$this._session;
+  set session(String? session) => _$this._session = session;
 
-  ListBuilder<AppointmentNavigation> _navigation;
+  ListBuilder<AppointmentNavigation>? _navigation;
   ListBuilder<AppointmentNavigation> get navigation =>
       _$this._navigation ??= new ListBuilder<AppointmentNavigation>();
-  set navigation(ListBuilder<AppointmentNavigation> navigation) =>
+  set navigation(ListBuilder<AppointmentNavigation>? navigation) =>
       _$this._navigation = navigation;
 
-  String _headermessage;
-  String get headermessage => _$this._headermessage;
-  set headermessage(String headermessage) =>
+  String? _headermessage;
+  String? get headermessage => _$this._headermessage;
+  set headermessage(String? headermessage) =>
       _$this._headermessage = headermessage;
 
-  String _type;
-  String get type => _$this._type;
-  set type(String type) => _$this._type = type;
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
 
-  ListBuilder<AppointmentTypeResponse> _data;
+  ListBuilder<AppointmentTypeResponse>? _data;
   ListBuilder<AppointmentTypeResponse> get data =>
       _$this._data ??= new ListBuilder<AppointmentTypeResponse>();
-  set data(ListBuilder<AppointmentTypeResponse> data) => _$this._data = data;
+  set data(ListBuilder<AppointmentTypeResponse>? data) => _$this._data = data;
 
   DataCreateAppointmentResponseBuilder();
 
@@ -984,12 +991,14 @@ class DataCreateAppointmentResponseBuilder
   }
 
   @override
-  void update(void Function(DataCreateAppointmentResponseBuilder) updates) {
+  void update(void Function(DataCreateAppointmentResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataCreateAppointmentResponse build() {
+  DataCreateAppointmentResponse build() => _build();
+
+  _$DataCreateAppointmentResponse _build() {
     _$DataCreateAppointmentResponse _$result;
     try {
       _$result = _$v ??
@@ -1000,7 +1009,7 @@ class DataCreateAppointmentResponseBuilder
               type: type,
               data: _data?.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'navigation';
         _navigation?.build();
@@ -1009,7 +1018,7 @@ class DataCreateAppointmentResponseBuilder
         _data?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'DataCreateAppointmentResponse', _$failedField, e.toString());
+            r'DataCreateAppointmentResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -1020,21 +1029,21 @@ class DataCreateAppointmentResponseBuilder
 
 class _$AppointmentTypeResponse extends AppointmentTypeResponse {
   @override
-  final String labelplace;
+  final String? labelplace;
   @override
-  final String color;
+  final String? color;
   @override
-  final String description;
+  final String? description;
   @override
-  final String onclickData;
+  final String? onclickData;
   @override
-  final String onclickAction;
+  final String? onclickAction;
   @override
-  final String onclickWeek;
+  final String? onclickWeek;
 
   factory _$AppointmentTypeResponse(
-          [void Function(AppointmentTypeResponseBuilder) updates]) =>
-      (new AppointmentTypeResponseBuilder()..update(updates)).build();
+          [void Function(AppointmentTypeResponseBuilder)? updates]) =>
+      (new AppointmentTypeResponseBuilder()..update(updates))._build();
 
   _$AppointmentTypeResponse._(
       {this.labelplace,
@@ -1068,19 +1077,20 @@ class _$AppointmentTypeResponse extends AppointmentTypeResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, labelplace.hashCode), color.hashCode),
-                    description.hashCode),
-                onclickData.hashCode),
-            onclickAction.hashCode),
-        onclickWeek.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, labelplace.hashCode);
+    _$hash = $jc(_$hash, color.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, onclickData.hashCode);
+    _$hash = $jc(_$hash, onclickAction.hashCode);
+    _$hash = $jc(_$hash, onclickWeek.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AppointmentTypeResponse')
+    return (newBuiltValueToStringHelper(r'AppointmentTypeResponse')
           ..add('labelplace', labelplace)
           ..add('color', color)
           ..add('description', description)
@@ -1094,32 +1104,32 @@ class _$AppointmentTypeResponse extends AppointmentTypeResponse {
 class AppointmentTypeResponseBuilder
     implements
         Builder<AppointmentTypeResponse, AppointmentTypeResponseBuilder> {
-  _$AppointmentTypeResponse _$v;
+  _$AppointmentTypeResponse? _$v;
 
-  String _labelplace;
-  String get labelplace => _$this._labelplace;
-  set labelplace(String labelplace) => _$this._labelplace = labelplace;
+  String? _labelplace;
+  String? get labelplace => _$this._labelplace;
+  set labelplace(String? labelplace) => _$this._labelplace = labelplace;
 
-  String _color;
-  String get color => _$this._color;
-  set color(String color) => _$this._color = color;
+  String? _color;
+  String? get color => _$this._color;
+  set color(String? color) => _$this._color = color;
 
-  String _description;
-  String get description => _$this._description;
-  set description(String description) => _$this._description = description;
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
-  String _onclickData;
-  String get onclickData => _$this._onclickData;
-  set onclickData(String onclickData) => _$this._onclickData = onclickData;
+  String? _onclickData;
+  String? get onclickData => _$this._onclickData;
+  set onclickData(String? onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickAction;
-  String get onclickAction => _$this._onclickAction;
-  set onclickAction(String onclickAction) =>
+  String? _onclickAction;
+  String? get onclickAction => _$this._onclickAction;
+  set onclickAction(String? onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickWeek;
-  String get onclickWeek => _$this._onclickWeek;
-  set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
+  String? _onclickWeek;
+  String? get onclickWeek => _$this._onclickWeek;
+  set onclickWeek(String? onclickWeek) => _$this._onclickWeek = onclickWeek;
 
   AppointmentTypeResponseBuilder();
 
@@ -1144,12 +1154,14 @@ class AppointmentTypeResponseBuilder
   }
 
   @override
-  void update(void Function(AppointmentTypeResponseBuilder) updates) {
+  void update(void Function(AppointmentTypeResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$AppointmentTypeResponse build() {
+  AppointmentTypeResponse build() => _build();
+
+  _$AppointmentTypeResponse _build() {
     final _$result = _$v ??
         new _$AppointmentTypeResponse._(
             labelplace: labelplace,
@@ -1165,21 +1177,21 @@ class AppointmentTypeResponseBuilder
 
 class _$AppointmentNavigation extends AppointmentNavigation {
   @override
-  final String labelplace;
+  final String? labelplace;
   @override
-  final String color;
+  final String? color;
   @override
-  final String description;
+  final String? description;
   @override
-  final String onclickData;
+  final String? onclickData;
   @override
-  final String onclickAction;
+  final String? onclickAction;
   @override
-  final String onclickWeek;
+  final String? onclickWeek;
 
   factory _$AppointmentNavigation(
-          [void Function(AppointmentNavigationBuilder) updates]) =>
-      (new AppointmentNavigationBuilder()..update(updates)).build();
+          [void Function(AppointmentNavigationBuilder)? updates]) =>
+      (new AppointmentNavigationBuilder()..update(updates))._build();
 
   _$AppointmentNavigation._(
       {this.labelplace,
@@ -1213,19 +1225,20 @@ class _$AppointmentNavigation extends AppointmentNavigation {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, labelplace.hashCode), color.hashCode),
-                    description.hashCode),
-                onclickData.hashCode),
-            onclickAction.hashCode),
-        onclickWeek.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, labelplace.hashCode);
+    _$hash = $jc(_$hash, color.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, onclickData.hashCode);
+    _$hash = $jc(_$hash, onclickAction.hashCode);
+    _$hash = $jc(_$hash, onclickWeek.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AppointmentNavigation')
+    return (newBuiltValueToStringHelper(r'AppointmentNavigation')
           ..add('labelplace', labelplace)
           ..add('color', color)
           ..add('description', description)
@@ -1238,32 +1251,32 @@ class _$AppointmentNavigation extends AppointmentNavigation {
 
 class AppointmentNavigationBuilder
     implements Builder<AppointmentNavigation, AppointmentNavigationBuilder> {
-  _$AppointmentNavigation _$v;
+  _$AppointmentNavigation? _$v;
 
-  String _labelplace;
-  String get labelplace => _$this._labelplace;
-  set labelplace(String labelplace) => _$this._labelplace = labelplace;
+  String? _labelplace;
+  String? get labelplace => _$this._labelplace;
+  set labelplace(String? labelplace) => _$this._labelplace = labelplace;
 
-  String _color;
-  String get color => _$this._color;
-  set color(String color) => _$this._color = color;
+  String? _color;
+  String? get color => _$this._color;
+  set color(String? color) => _$this._color = color;
 
-  String _description;
-  String get description => _$this._description;
-  set description(String description) => _$this._description = description;
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
-  String _onclickData;
-  String get onclickData => _$this._onclickData;
-  set onclickData(String onclickData) => _$this._onclickData = onclickData;
+  String? _onclickData;
+  String? get onclickData => _$this._onclickData;
+  set onclickData(String? onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickAction;
-  String get onclickAction => _$this._onclickAction;
-  set onclickAction(String onclickAction) =>
+  String? _onclickAction;
+  String? get onclickAction => _$this._onclickAction;
+  set onclickAction(String? onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickWeek;
-  String get onclickWeek => _$this._onclickWeek;
-  set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
+  String? _onclickWeek;
+  String? get onclickWeek => _$this._onclickWeek;
+  set onclickWeek(String? onclickWeek) => _$this._onclickWeek = onclickWeek;
 
   AppointmentNavigationBuilder();
 
@@ -1288,12 +1301,14 @@ class AppointmentNavigationBuilder
   }
 
   @override
-  void update(void Function(AppointmentNavigationBuilder) updates) {
+  void update(void Function(AppointmentNavigationBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$AppointmentNavigation build() {
+  AppointmentNavigation build() => _build();
+
+  _$AppointmentNavigation _build() {
     final _$result = _$v ??
         new _$AppointmentNavigation._(
             labelplace: labelplace,
@@ -1307,4 +1322,4 @@ class AppointmentNavigationBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

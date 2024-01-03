@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of notification_list_request;
+part of 'notification_list_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -20,17 +20,17 @@ class _$NotificationListRequestSerializer
   final String wireName = 'NotificationListRequest';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, NotificationListRequest object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'installationkey',
       serializers.serialize(object.installationkey,
           specifiedType: const FullType(String)),
       'page',
       serializers.serialize(object.page, specifiedType: const FullType(String)),
     ];
-    Object value;
+    Object? value;
     value = object.tokeruser;
     if (value != null) {
       result
@@ -43,27 +43,27 @@ class _$NotificationListRequestSerializer
 
   @override
   NotificationListRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new NotificationListRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'installationkey':
           result.installationkey = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'page':
           result.page = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'tokeruser':
           result.tokeruser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -78,18 +78,19 @@ class _$NotificationListRequest extends NotificationListRequest {
   @override
   final String page;
   @override
-  final String tokeruser;
+  final String? tokeruser;
 
   factory _$NotificationListRequest(
-          [void Function(NotificationListRequestBuilder) updates]) =>
-      (new NotificationListRequestBuilder()..update(updates)).build();
+          [void Function(NotificationListRequestBuilder)? updates]) =>
+      (new NotificationListRequestBuilder()..update(updates))._build();
 
-  _$NotificationListRequest._({this.installationkey, this.page, this.tokeruser})
+  _$NotificationListRequest._(
+      {required this.installationkey, required this.page, this.tokeruser})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        installationkey, 'NotificationListRequest', 'installationkey');
+        installationkey, r'NotificationListRequest', 'installationkey');
     BuiltValueNullFieldError.checkNotNull(
-        page, 'NotificationListRequest', 'page');
+        page, r'NotificationListRequest', 'page');
   }
 
   @override
@@ -112,13 +113,17 @@ class _$NotificationListRequest extends NotificationListRequest {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, installationkey.hashCode), page.hashCode),
-        tokeruser.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, installationkey.hashCode);
+    _$hash = $jc(_$hash, page.hashCode);
+    _$hash = $jc(_$hash, tokeruser.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('NotificationListRequest')
+    return (newBuiltValueToStringHelper(r'NotificationListRequest')
           ..add('installationkey', installationkey)
           ..add('page', page)
           ..add('tokeruser', tokeruser))
@@ -129,20 +134,20 @@ class _$NotificationListRequest extends NotificationListRequest {
 class NotificationListRequestBuilder
     implements
         Builder<NotificationListRequest, NotificationListRequestBuilder> {
-  _$NotificationListRequest _$v;
+  _$NotificationListRequest? _$v;
 
-  String _installationkey;
-  String get installationkey => _$this._installationkey;
-  set installationkey(String installationkey) =>
+  String? _installationkey;
+  String? get installationkey => _$this._installationkey;
+  set installationkey(String? installationkey) =>
       _$this._installationkey = installationkey;
 
-  String _page;
-  String get page => _$this._page;
-  set page(String page) => _$this._page = page;
+  String? _page;
+  String? get page => _$this._page;
+  set page(String? page) => _$this._page = page;
 
-  String _tokeruser;
-  String get tokeruser => _$this._tokeruser;
-  set tokeruser(String tokeruser) => _$this._tokeruser = tokeruser;
+  String? _tokeruser;
+  String? get tokeruser => _$this._tokeruser;
+  set tokeruser(String? tokeruser) => _$this._tokeruser = tokeruser;
 
   NotificationListRequestBuilder();
 
@@ -164,22 +169,24 @@ class NotificationListRequestBuilder
   }
 
   @override
-  void update(void Function(NotificationListRequestBuilder) updates) {
+  void update(void Function(NotificationListRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$NotificationListRequest build() {
+  NotificationListRequest build() => _build();
+
+  _$NotificationListRequest _build() {
     final _$result = _$v ??
         new _$NotificationListRequest._(
             installationkey: BuiltValueNullFieldError.checkNotNull(
-                installationkey, 'NotificationListRequest', 'installationkey'),
+                installationkey, r'NotificationListRequest', 'installationkey'),
             page: BuiltValueNullFieldError.checkNotNull(
-                page, 'NotificationListRequest', 'page'),
+                page, r'NotificationListRequest', 'page'),
             tokeruser: tokeruser);
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

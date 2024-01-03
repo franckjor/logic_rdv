@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of patient_request;
+part of 'patient_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -17,10 +17,10 @@ class _$PatientRequestSerializer
   final String wireName = 'PatientRequest';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, PatientRequest object,
+  Iterable<Object?> serialize(Serializers serializers, PatientRequest object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.tokenuser;
     if (value != null) {
       result
@@ -75,43 +75,43 @@ class _$PatientRequestSerializer
 
   @override
   PatientRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PatientRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'tokenappt':
           result.tokenappt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'tokenpatient':
           result.tokenpatient = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'nom':
           result.nom = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'prenom':
           result.prenom = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'email':
           result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'phone':
           result.phone = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -122,22 +122,22 @@ class _$PatientRequestSerializer
 
 class _$PatientRequest extends PatientRequest {
   @override
-  final String tokenuser;
+  final String? tokenuser;
   @override
-  final String tokenappt;
+  final String? tokenappt;
   @override
-  final String tokenpatient;
+  final String? tokenpatient;
   @override
-  final String nom;
+  final String? nom;
   @override
-  final String prenom;
+  final String? prenom;
   @override
-  final String email;
+  final String? email;
   @override
-  final String phone;
+  final String? phone;
 
-  factory _$PatientRequest([void Function(PatientRequestBuilder) updates]) =>
-      (new PatientRequestBuilder()..update(updates)).build();
+  factory _$PatientRequest([void Function(PatientRequestBuilder)? updates]) =>
+      (new PatientRequestBuilder()..update(updates))._build();
 
   _$PatientRequest._(
       {this.tokenuser,
@@ -172,21 +172,21 @@ class _$PatientRequest extends PatientRequest {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, tokenuser.hashCode), tokenappt.hashCode),
-                        tokenpatient.hashCode),
-                    nom.hashCode),
-                prenom.hashCode),
-            email.hashCode),
-        phone.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokenuser.hashCode);
+    _$hash = $jc(_$hash, tokenappt.hashCode);
+    _$hash = $jc(_$hash, tokenpatient.hashCode);
+    _$hash = $jc(_$hash, nom.hashCode);
+    _$hash = $jc(_$hash, prenom.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('PatientRequest')
+    return (newBuiltValueToStringHelper(r'PatientRequest')
           ..add('tokenuser', tokenuser)
           ..add('tokenappt', tokenappt)
           ..add('tokenpatient', tokenpatient)
@@ -200,35 +200,35 @@ class _$PatientRequest extends PatientRequest {
 
 class PatientRequestBuilder
     implements Builder<PatientRequest, PatientRequestBuilder> {
-  _$PatientRequest _$v;
+  _$PatientRequest? _$v;
 
-  String _tokenuser;
-  String get tokenuser => _$this._tokenuser;
-  set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
+  String? _tokenuser;
+  String? get tokenuser => _$this._tokenuser;
+  set tokenuser(String? tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappt;
-  String get tokenappt => _$this._tokenappt;
-  set tokenappt(String tokenappt) => _$this._tokenappt = tokenappt;
+  String? _tokenappt;
+  String? get tokenappt => _$this._tokenappt;
+  set tokenappt(String? tokenappt) => _$this._tokenappt = tokenappt;
 
-  String _tokenpatient;
-  String get tokenpatient => _$this._tokenpatient;
-  set tokenpatient(String tokenpatient) => _$this._tokenpatient = tokenpatient;
+  String? _tokenpatient;
+  String? get tokenpatient => _$this._tokenpatient;
+  set tokenpatient(String? tokenpatient) => _$this._tokenpatient = tokenpatient;
 
-  String _nom;
-  String get nom => _$this._nom;
-  set nom(String nom) => _$this._nom = nom;
+  String? _nom;
+  String? get nom => _$this._nom;
+  set nom(String? nom) => _$this._nom = nom;
 
-  String _prenom;
-  String get prenom => _$this._prenom;
-  set prenom(String prenom) => _$this._prenom = prenom;
+  String? _prenom;
+  String? get prenom => _$this._prenom;
+  set prenom(String? prenom) => _$this._prenom = prenom;
 
-  String _email;
-  String get email => _$this._email;
-  set email(String email) => _$this._email = email;
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
-  String _phone;
-  String get phone => _$this._phone;
-  set phone(String phone) => _$this._phone = phone;
+  String? _phone;
+  String? get phone => _$this._phone;
+  set phone(String? phone) => _$this._phone = phone;
 
   PatientRequestBuilder();
 
@@ -254,12 +254,14 @@ class PatientRequestBuilder
   }
 
   @override
-  void update(void Function(PatientRequestBuilder) updates) {
+  void update(void Function(PatientRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$PatientRequest build() {
+  PatientRequest build() => _build();
+
+  _$PatientRequest _build() {
     final _$result = _$v ??
         new _$PatientRequest._(
             tokenuser: tokenuser,
@@ -274,4 +276,4 @@ class PatientRequestBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

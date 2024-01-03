@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of get_appointment_request;
+part of 'get_appointment_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -20,10 +20,10 @@ class _$GetAppointmentRequestSerializer
   final String wireName = 'GetAppointmentRequest';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, GetAppointmentRequest object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
           specifiedType: const FullType(String)),
@@ -36,23 +36,23 @@ class _$GetAppointmentRequestSerializer
 
   @override
   GetAppointmentRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new GetAppointmentRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'page':
           result.page = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -68,14 +68,15 @@ class _$GetAppointmentRequest extends GetAppointmentRequest {
   final String page;
 
   factory _$GetAppointmentRequest(
-          [void Function(GetAppointmentRequestBuilder) updates]) =>
-      (new GetAppointmentRequestBuilder()..update(updates)).build();
+          [void Function(GetAppointmentRequestBuilder)? updates]) =>
+      (new GetAppointmentRequestBuilder()..update(updates))._build();
 
-  _$GetAppointmentRequest._({this.tokenuser, this.page}) : super._() {
+  _$GetAppointmentRequest._({required this.tokenuser, required this.page})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        tokenuser, 'GetAppointmentRequest', 'tokenuser');
+        tokenuser, r'GetAppointmentRequest', 'tokenuser');
     BuiltValueNullFieldError.checkNotNull(
-        page, 'GetAppointmentRequest', 'page');
+        page, r'GetAppointmentRequest', 'page');
   }
 
   @override
@@ -97,12 +98,16 @@ class _$GetAppointmentRequest extends GetAppointmentRequest {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, tokenuser.hashCode), page.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokenuser.hashCode);
+    _$hash = $jc(_$hash, page.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('GetAppointmentRequest')
+    return (newBuiltValueToStringHelper(r'GetAppointmentRequest')
           ..add('tokenuser', tokenuser)
           ..add('page', page))
         .toString();
@@ -111,15 +116,15 @@ class _$GetAppointmentRequest extends GetAppointmentRequest {
 
 class GetAppointmentRequestBuilder
     implements Builder<GetAppointmentRequest, GetAppointmentRequestBuilder> {
-  _$GetAppointmentRequest _$v;
+  _$GetAppointmentRequest? _$v;
 
-  String _tokenuser;
-  String get tokenuser => _$this._tokenuser;
-  set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
+  String? _tokenuser;
+  String? get tokenuser => _$this._tokenuser;
+  set tokenuser(String? tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _page;
-  String get page => _$this._page;
-  set page(String page) => _$this._page = page;
+  String? _page;
+  String? get page => _$this._page;
+  set page(String? page) => _$this._page = page;
 
   GetAppointmentRequestBuilder();
 
@@ -140,21 +145,23 @@ class GetAppointmentRequestBuilder
   }
 
   @override
-  void update(void Function(GetAppointmentRequestBuilder) updates) {
+  void update(void Function(GetAppointmentRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$GetAppointmentRequest build() {
+  GetAppointmentRequest build() => _build();
+
+  _$GetAppointmentRequest _build() {
     final _$result = _$v ??
         new _$GetAppointmentRequest._(
             tokenuser: BuiltValueNullFieldError.checkNotNull(
-                tokenuser, 'GetAppointmentRequest', 'tokenuser'),
+                tokenuser, r'GetAppointmentRequest', 'tokenuser'),
             page: BuiltValueNullFieldError.checkNotNull(
-                page, 'GetAppointmentRequest', 'page'));
+                page, r'GetAppointmentRequest', 'page'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

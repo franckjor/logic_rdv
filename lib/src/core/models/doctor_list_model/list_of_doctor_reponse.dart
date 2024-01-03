@@ -53,23 +53,17 @@ abstract class ParamsListOfDoctor
       _$ParamsListOfDoctor;
 
   @BuiltValueField(wireName: 'proxy_ville')
-  @nullable
-  String get proxyVille;
+  String? get proxyVille;
   @BuiltValueField(wireName: 'proxy_nom')
-  @nullable
-  String get proxyNom;
+  String? get proxyNom;
   @BuiltValueField(wireName: 'proxy_ville_id')
-  @nullable
-  String get proxyVilleId;
+  String? get proxyVilleId;
   @BuiltValueField(wireName: 'proxy_nom_id')
-  @nullable
-  String get proxyNomId;
+  String? get proxyNomId;
   @BuiltValueField(wireName: 'proxy_search')
-  @nullable
-  String get proxySearch;
+  String? get proxySearch;
   @BuiltValueField(wireName: 'proxy_page')
-  @nullable
-  String get proxyPage;
+  String? get proxyPage;
   String toJson() {
     return json
         .encode(serializers.serializeWith(ParamsListOfDoctor.serializer, this));

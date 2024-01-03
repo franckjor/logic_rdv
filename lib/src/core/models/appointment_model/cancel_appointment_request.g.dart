@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of cancel_appointment_request;
+part of 'cancel_appointment_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -20,10 +20,10 @@ class _$CancelAppointmentRequestSerializer
   final String wireName = 'CancelAppointmentRequest';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, CancelAppointmentRequest object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
           specifiedType: const FullType(String)),
@@ -37,23 +37,23 @@ class _$CancelAppointmentRequestSerializer
 
   @override
   CancelAppointmentRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CancelAppointmentRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'token':
           result.token = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -69,14 +69,15 @@ class _$CancelAppointmentRequest extends CancelAppointmentRequest {
   final String token;
 
   factory _$CancelAppointmentRequest(
-          [void Function(CancelAppointmentRequestBuilder) updates]) =>
-      (new CancelAppointmentRequestBuilder()..update(updates)).build();
+          [void Function(CancelAppointmentRequestBuilder)? updates]) =>
+      (new CancelAppointmentRequestBuilder()..update(updates))._build();
 
-  _$CancelAppointmentRequest._({this.tokenuser, this.token}) : super._() {
+  _$CancelAppointmentRequest._({required this.tokenuser, required this.token})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        tokenuser, 'CancelAppointmentRequest', 'tokenuser');
+        tokenuser, r'CancelAppointmentRequest', 'tokenuser');
     BuiltValueNullFieldError.checkNotNull(
-        token, 'CancelAppointmentRequest', 'token');
+        token, r'CancelAppointmentRequest', 'token');
   }
 
   @override
@@ -98,12 +99,16 @@ class _$CancelAppointmentRequest extends CancelAppointmentRequest {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, tokenuser.hashCode), token.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokenuser.hashCode);
+    _$hash = $jc(_$hash, token.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('CancelAppointmentRequest')
+    return (newBuiltValueToStringHelper(r'CancelAppointmentRequest')
           ..add('tokenuser', tokenuser)
           ..add('token', token))
         .toString();
@@ -113,15 +118,15 @@ class _$CancelAppointmentRequest extends CancelAppointmentRequest {
 class CancelAppointmentRequestBuilder
     implements
         Builder<CancelAppointmentRequest, CancelAppointmentRequestBuilder> {
-  _$CancelAppointmentRequest _$v;
+  _$CancelAppointmentRequest? _$v;
 
-  String _tokenuser;
-  String get tokenuser => _$this._tokenuser;
-  set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
+  String? _tokenuser;
+  String? get tokenuser => _$this._tokenuser;
+  set tokenuser(String? tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _token;
-  String get token => _$this._token;
-  set token(String token) => _$this._token = token;
+  String? _token;
+  String? get token => _$this._token;
+  set token(String? token) => _$this._token = token;
 
   CancelAppointmentRequestBuilder();
 
@@ -142,21 +147,23 @@ class CancelAppointmentRequestBuilder
   }
 
   @override
-  void update(void Function(CancelAppointmentRequestBuilder) updates) {
+  void update(void Function(CancelAppointmentRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$CancelAppointmentRequest build() {
+  CancelAppointmentRequest build() => _build();
+
+  _$CancelAppointmentRequest _build() {
     final _$result = _$v ??
         new _$CancelAppointmentRequest._(
             tokenuser: BuiltValueNullFieldError.checkNotNull(
-                tokenuser, 'CancelAppointmentRequest', 'tokenuser'),
+                tokenuser, r'CancelAppointmentRequest', 'tokenuser'),
             token: BuiltValueNullFieldError.checkNotNull(
-                token, 'CancelAppointmentRequest', 'token'));
+                token, r'CancelAppointmentRequest', 'token'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

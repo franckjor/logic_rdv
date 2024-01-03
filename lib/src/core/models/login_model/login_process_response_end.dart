@@ -76,20 +76,17 @@ abstract class DataLoginProcessResponseEnd implements Built<DataLoginProcessResp
   @BuiltValueField(wireName: 'headererror')
   String get headererror;
   @BuiltValueField(wireName: 'user')
-  @nullable
-  UserLoginProcessResponseEnd get user;
+  UserLoginProcessResponseEnd? get user;
   @BuiltValueField(wireName: 'type')
   String get type;
   @BuiltValueField(wireName: 'headermessage')
   String get headermessage;
   @BuiltValueField(wireName: 'input')
-  @nullable
-  BuiltList<InputloginStartedResponse> get input;
+  BuiltList<InputloginStartedResponse>? get input;
   @BuiltValueField(wireName: 'buttonvalidation')
-  @nullable
   BuiltList<ButtonvalidationloginStartedResponse> get buttonvalidation;
   @BuiltValueField(wireName: 'session')
-  String get session;
+  String? get session;
   String toJson() {
     return json.encode(serializers.serializeWith(DataLoginProcessResponseEnd.serializer, this));
   }

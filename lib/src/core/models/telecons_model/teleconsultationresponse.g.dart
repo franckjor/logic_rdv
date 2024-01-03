@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of teleconsultationresponse;
+part of 'teleconsultationresponse.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -25,9 +25,9 @@ class _$TeleconsResponseSerializer
   final String wireName = 'TeleconsResponse';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, TeleconsResponse object,
+  Iterable<Object?> serialize(Serializers serializers, TeleconsResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'version',
       serializers.serialize(object.version,
           specifiedType: const FullType(String)),
@@ -55,43 +55,43 @@ class _$TeleconsResponseSerializer
 
   @override
   TeleconsResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new TeleconsResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'params':
           result.params.replace(serializers.deserialize(value,
-              specifiedType: const FullType(ParamsTc)) as ParamsTc);
+              specifiedType: const FullType(ParamsTc))! as ParamsTc);
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
-              specifiedType: const FullType(DataTc)) as DataTc);
+              specifiedType: const FullType(DataTc))! as DataTc);
           break;
       }
     }
@@ -107,9 +107,9 @@ class _$ParamsTcSerializer implements StructuredSerializer<ParamsTc> {
   final String wireName = 'ParamsTc';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, ParamsTc object,
+  Iterable<Object?> serialize(Serializers serializers, ParamsTc object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'tokentelecons',
       serializers.serialize(object.tokentelecons,
           specifiedType: const FullType(String)),
@@ -119,19 +119,19 @@ class _$ParamsTcSerializer implements StructuredSerializer<ParamsTc> {
   }
 
   @override
-  ParamsTc deserialize(Serializers serializers, Iterable<Object> serialized,
+  ParamsTc deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsTcBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokentelecons':
           result.tokentelecons = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -147,9 +147,9 @@ class _$DataTcSerializer implements StructuredSerializer<DataTc> {
   final String wireName = 'DataTc';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, DataTc object,
+  Iterable<Object?> serialize(Serializers serializers, DataTc object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'etablissement',
       serializers.serialize(object.etablissement,
           specifiedType: const FullType(EtablissementTc)),
@@ -170,36 +170,36 @@ class _$DataTcSerializer implements StructuredSerializer<DataTc> {
   }
 
   @override
-  DataTc deserialize(Serializers serializers, Iterable<Object> serialized,
+  DataTc deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataTcBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'etablissement':
           result.etablissement.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(EtablissementTc))
+                  specifiedType: const FullType(EtablissementTc))!
               as EtablissementTc);
           break;
         case 'appt':
           result.appt.replace(serializers.deserialize(value,
-              specifiedType: const FullType(ApptTc)) as ApptTc);
+              specifiedType: const FullType(ApptTc))! as ApptTc);
           break;
         case 'infos':
           result.infos.replace(serializers.deserialize(value,
-              specifiedType: const FullType(InfosTc)) as InfosTc);
+              specifiedType: const FullType(InfosTc))! as InfosTc);
           break;
         case 'payment':
           result.payment.replace(serializers.deserialize(value,
-              specifiedType: const FullType(PaymentTc)) as PaymentTc);
+              specifiedType: const FullType(PaymentTc))! as PaymentTc);
           break;
         case 'tokbox':
           result.tokbox.replace(serializers.deserialize(value,
-              specifiedType: const FullType(TokboxTc)) as TokboxTc);
+              specifiedType: const FullType(TokboxTc))! as TokboxTc);
           break;
       }
     }
@@ -216,9 +216,9 @@ class _$EtablissementTcSerializer
   final String wireName = 'EtablissementTc';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, EtablissementTc object,
+  Iterable<Object?> serialize(Serializers serializers, EtablissementTc object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'nom',
       serializers.serialize(object.nom, specifiedType: const FullType(String)),
       'address',
@@ -240,39 +240,39 @@ class _$EtablissementTcSerializer
 
   @override
   EtablissementTc deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new EtablissementTcBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'nom':
           result.nom = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'address':
           result.address = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'zip':
           result.zip = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'city':
           result.city = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'telnospace':
           result.telnospace = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'tel':
           result.tel = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -288,9 +288,9 @@ class _$ApptTcSerializer implements StructuredSerializer<ApptTc> {
   final String wireName = 'ApptTc';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, ApptTc object,
+  Iterable<Object?> serialize(Serializers serializers, ApptTc object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'token',
       serializers.serialize(object.token,
           specifiedType: const FullType(String)),
@@ -317,43 +317,43 @@ class _$ApptTcSerializer implements StructuredSerializer<ApptTc> {
   }
 
   @override
-  ApptTc deserialize(Serializers serializers, Iterable<Object> serialized,
+  ApptTc deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ApptTcBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'token':
           result.token = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'date':
           result.date = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'doctor':
           result.doctor = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'description':
           result.description = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'patient':
           result.patient = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'status':
           result.status = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'buttoncancel':
           result.buttoncancel = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -369,10 +369,10 @@ class _$InfosTcSerializer implements StructuredSerializer<InfosTc> {
   final String wireName = 'InfosTc';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, InfosTc object,
+  Iterable<Object?> serialize(Serializers serializers, InfosTc object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.buttonstarttelecons;
     if (value != null) {
       result
@@ -391,23 +391,23 @@ class _$InfosTcSerializer implements StructuredSerializer<InfosTc> {
   }
 
   @override
-  InfosTc deserialize(Serializers serializers, Iterable<Object> serialized,
+  InfosTc deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new InfosTcBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'buttonstarttelecons':
           result.buttonstarttelecons = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'buttonstartteleconsdisabled':
           result.buttonstartteleconsdisabled = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -423,9 +423,9 @@ class _$PaymentTcSerializer implements StructuredSerializer<PaymentTc> {
   final String wireName = 'PaymentTc';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, PaymentTc object,
+  Iterable<Object?> serialize(Serializers serializers, PaymentTc object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'title',
       serializers.serialize(object.title,
           specifiedType: const FullType(String)),
@@ -446,35 +446,35 @@ class _$PaymentTcSerializer implements StructuredSerializer<PaymentTc> {
   }
 
   @override
-  PaymentTc deserialize(Serializers serializers, Iterable<Object> serialized,
+  PaymentTc deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PaymentTcBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'title':
           result.title = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'statuslabel':
           result.statuslabel = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'stripeClientSecret':
           result.stripeClientSecret = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'text':
           result.text = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'history':
           result.history = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -490,9 +490,9 @@ class _$TokboxTcSerializer implements StructuredSerializer<TokboxTc> {
   final String wireName = 'TokboxTc';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, TokboxTc object,
+  Iterable<Object?> serialize(Serializers serializers, TokboxTc object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'sessionId',
       serializers.serialize(object.sessionId,
           specifiedType: const FullType(String)),
@@ -514,35 +514,35 @@ class _$TokboxTcSerializer implements StructuredSerializer<TokboxTc> {
   }
 
   @override
-  TokboxTc deserialize(Serializers serializers, Iterable<Object> serialized,
+  TokboxTc deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new TokboxTcBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'sessionId':
           result.sessionId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'token':
           result.token = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'apiKey':
           result.apiKey = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'title':
           result.title = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -568,29 +568,30 @@ class _$TeleconsResponse extends TeleconsResponse {
   final DataTc data;
 
   factory _$TeleconsResponse(
-          [void Function(TeleconsResponseBuilder) updates]) =>
-      (new TeleconsResponseBuilder()..update(updates)).build();
+          [void Function(TeleconsResponseBuilder)? updates]) =>
+      (new TeleconsResponseBuilder()..update(updates))._build();
 
   _$TeleconsResponse._(
-      {this.version,
-      this.request,
-      this.params,
-      this.message,
-      this.httpstatut,
-      this.error,
-      this.data})
+      {required this.version,
+      required this.request,
+      required this.params,
+      required this.message,
+      required this.httpstatut,
+      required this.error,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        version, 'TeleconsResponse', 'version');
+        version, r'TeleconsResponse', 'version');
     BuiltValueNullFieldError.checkNotNull(
-        request, 'TeleconsResponse', 'request');
-    BuiltValueNullFieldError.checkNotNull(params, 'TeleconsResponse', 'params');
+        request, r'TeleconsResponse', 'request');
     BuiltValueNullFieldError.checkNotNull(
-        message, 'TeleconsResponse', 'message');
+        params, r'TeleconsResponse', 'params');
     BuiltValueNullFieldError.checkNotNull(
-        httpstatut, 'TeleconsResponse', 'httpstatut');
-    BuiltValueNullFieldError.checkNotNull(error, 'TeleconsResponse', 'error');
-    BuiltValueNullFieldError.checkNotNull(data, 'TeleconsResponse', 'data');
+        message, r'TeleconsResponse', 'message');
+    BuiltValueNullFieldError.checkNotNull(
+        httpstatut, r'TeleconsResponse', 'httpstatut');
+    BuiltValueNullFieldError.checkNotNull(error, r'TeleconsResponse', 'error');
+    BuiltValueNullFieldError.checkNotNull(data, r'TeleconsResponse', 'data');
   }
 
   @override
@@ -616,21 +617,21 @@ class _$TeleconsResponse extends TeleconsResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, version.hashCode), request.hashCode),
-                        params.hashCode),
-                    message.hashCode),
-                httpstatut.hashCode),
-            error.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('TeleconsResponse')
+    return (newBuiltValueToStringHelper(r'TeleconsResponse')
           ..add('version', version)
           ..add('request', request)
           ..add('params', params)
@@ -644,35 +645,35 @@ class _$TeleconsResponse extends TeleconsResponse {
 
 class TeleconsResponseBuilder
     implements Builder<TeleconsResponse, TeleconsResponseBuilder> {
-  _$TeleconsResponse _$v;
+  _$TeleconsResponse? _$v;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  ParamsTcBuilder _params;
+  ParamsTcBuilder? _params;
   ParamsTcBuilder get params => _$this._params ??= new ParamsTcBuilder();
-  set params(ParamsTcBuilder params) => _$this._params = params;
+  set params(ParamsTcBuilder? params) => _$this._params = params;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  DataTcBuilder _data;
+  DataTcBuilder? _data;
   DataTcBuilder get data => _$this._data ??= new DataTcBuilder();
-  set data(DataTcBuilder data) => _$this._data = data;
+  set data(DataTcBuilder? data) => _$this._data = data;
 
   TeleconsResponseBuilder();
 
@@ -698,30 +699,32 @@ class TeleconsResponseBuilder
   }
 
   @override
-  void update(void Function(TeleconsResponseBuilder) updates) {
+  void update(void Function(TeleconsResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$TeleconsResponse build() {
+  TeleconsResponse build() => _build();
+
+  _$TeleconsResponse _build() {
     _$TeleconsResponse _$result;
     try {
       _$result = _$v ??
           new _$TeleconsResponse._(
               version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'TeleconsResponse', 'version'),
+                  version, r'TeleconsResponse', 'version'),
               request: BuiltValueNullFieldError.checkNotNull(
-                  request, 'TeleconsResponse', 'request'),
+                  request, r'TeleconsResponse', 'request'),
               params: params.build(),
               message: BuiltValueNullFieldError.checkNotNull(
-                  message, 'TeleconsResponse', 'message'),
+                  message, r'TeleconsResponse', 'message'),
               httpstatut: BuiltValueNullFieldError.checkNotNull(
-                  httpstatut, 'TeleconsResponse', 'httpstatut'),
+                  httpstatut, r'TeleconsResponse', 'httpstatut'),
               error: BuiltValueNullFieldError.checkNotNull(
-                  error, 'TeleconsResponse', 'error'),
+                  error, r'TeleconsResponse', 'error'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -730,7 +733,7 @@ class TeleconsResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'TeleconsResponse', _$failedField, e.toString());
+            r'TeleconsResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -743,12 +746,12 @@ class _$ParamsTc extends ParamsTc {
   @override
   final String tokentelecons;
 
-  factory _$ParamsTc([void Function(ParamsTcBuilder) updates]) =>
-      (new ParamsTcBuilder()..update(updates)).build();
+  factory _$ParamsTc([void Function(ParamsTcBuilder)? updates]) =>
+      (new ParamsTcBuilder()..update(updates))._build();
 
-  _$ParamsTc._({this.tokentelecons}) : super._() {
+  _$ParamsTc._({required this.tokentelecons}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        tokentelecons, 'ParamsTc', 'tokentelecons');
+        tokentelecons, r'ParamsTc', 'tokentelecons');
   }
 
   @override
@@ -766,23 +769,26 @@ class _$ParamsTc extends ParamsTc {
 
   @override
   int get hashCode {
-    return $jf($jc(0, tokentelecons.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokentelecons.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ParamsTc')
+    return (newBuiltValueToStringHelper(r'ParamsTc')
           ..add('tokentelecons', tokentelecons))
         .toString();
   }
 }
 
 class ParamsTcBuilder implements Builder<ParamsTc, ParamsTcBuilder> {
-  _$ParamsTc _$v;
+  _$ParamsTc? _$v;
 
-  String _tokentelecons;
-  String get tokentelecons => _$this._tokentelecons;
-  set tokentelecons(String tokentelecons) =>
+  String? _tokentelecons;
+  String? get tokentelecons => _$this._tokentelecons;
+  set tokentelecons(String? tokentelecons) =>
       _$this._tokentelecons = tokentelecons;
 
   ParamsTcBuilder();
@@ -803,16 +809,18 @@ class ParamsTcBuilder implements Builder<ParamsTc, ParamsTcBuilder> {
   }
 
   @override
-  void update(void Function(ParamsTcBuilder) updates) {
+  void update(void Function(ParamsTcBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ParamsTc build() {
+  ParamsTc build() => _build();
+
+  _$ParamsTc _build() {
     final _$result = _$v ??
         new _$ParamsTc._(
             tokentelecons: BuiltValueNullFieldError.checkNotNull(
-                tokentelecons, 'ParamsTc', 'tokentelecons'));
+                tokentelecons, r'ParamsTc', 'tokentelecons'));
     replace(_$result);
     return _$result;
   }
@@ -830,18 +838,22 @@ class _$DataTc extends DataTc {
   @override
   final TokboxTc tokbox;
 
-  factory _$DataTc([void Function(DataTcBuilder) updates]) =>
-      (new DataTcBuilder()..update(updates)).build();
+  factory _$DataTc([void Function(DataTcBuilder)? updates]) =>
+      (new DataTcBuilder()..update(updates))._build();
 
   _$DataTc._(
-      {this.etablissement, this.appt, this.infos, this.payment, this.tokbox})
+      {required this.etablissement,
+      required this.appt,
+      required this.infos,
+      required this.payment,
+      required this.tokbox})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        etablissement, 'DataTc', 'etablissement');
-    BuiltValueNullFieldError.checkNotNull(appt, 'DataTc', 'appt');
-    BuiltValueNullFieldError.checkNotNull(infos, 'DataTc', 'infos');
-    BuiltValueNullFieldError.checkNotNull(payment, 'DataTc', 'payment');
-    BuiltValueNullFieldError.checkNotNull(tokbox, 'DataTc', 'tokbox');
+        etablissement, r'DataTc', 'etablissement');
+    BuiltValueNullFieldError.checkNotNull(appt, r'DataTc', 'appt');
+    BuiltValueNullFieldError.checkNotNull(infos, r'DataTc', 'infos');
+    BuiltValueNullFieldError.checkNotNull(payment, r'DataTc', 'payment');
+    BuiltValueNullFieldError.checkNotNull(tokbox, r'DataTc', 'tokbox');
   }
 
   @override
@@ -864,17 +876,19 @@ class _$DataTc extends DataTc {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc($jc($jc(0, etablissement.hashCode), appt.hashCode),
-                infos.hashCode),
-            payment.hashCode),
-        tokbox.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, etablissement.hashCode);
+    _$hash = $jc(_$hash, appt.hashCode);
+    _$hash = $jc(_$hash, infos.hashCode);
+    _$hash = $jc(_$hash, payment.hashCode);
+    _$hash = $jc(_$hash, tokbox.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataTc')
+    return (newBuiltValueToStringHelper(r'DataTc')
           ..add('etablissement', etablissement)
           ..add('appt', appt)
           ..add('infos', infos)
@@ -885,29 +899,29 @@ class _$DataTc extends DataTc {
 }
 
 class DataTcBuilder implements Builder<DataTc, DataTcBuilder> {
-  _$DataTc _$v;
+  _$DataTc? _$v;
 
-  EtablissementTcBuilder _etablissement;
+  EtablissementTcBuilder? _etablissement;
   EtablissementTcBuilder get etablissement =>
       _$this._etablissement ??= new EtablissementTcBuilder();
-  set etablissement(EtablissementTcBuilder etablissement) =>
+  set etablissement(EtablissementTcBuilder? etablissement) =>
       _$this._etablissement = etablissement;
 
-  ApptTcBuilder _appt;
+  ApptTcBuilder? _appt;
   ApptTcBuilder get appt => _$this._appt ??= new ApptTcBuilder();
-  set appt(ApptTcBuilder appt) => _$this._appt = appt;
+  set appt(ApptTcBuilder? appt) => _$this._appt = appt;
 
-  InfosTcBuilder _infos;
+  InfosTcBuilder? _infos;
   InfosTcBuilder get infos => _$this._infos ??= new InfosTcBuilder();
-  set infos(InfosTcBuilder infos) => _$this._infos = infos;
+  set infos(InfosTcBuilder? infos) => _$this._infos = infos;
 
-  PaymentTcBuilder _payment;
+  PaymentTcBuilder? _payment;
   PaymentTcBuilder get payment => _$this._payment ??= new PaymentTcBuilder();
-  set payment(PaymentTcBuilder payment) => _$this._payment = payment;
+  set payment(PaymentTcBuilder? payment) => _$this._payment = payment;
 
-  TokboxTcBuilder _tokbox;
+  TokboxTcBuilder? _tokbox;
   TokboxTcBuilder get tokbox => _$this._tokbox ??= new TokboxTcBuilder();
-  set tokbox(TokboxTcBuilder tokbox) => _$this._tokbox = tokbox;
+  set tokbox(TokboxTcBuilder? tokbox) => _$this._tokbox = tokbox;
 
   DataTcBuilder();
 
@@ -931,12 +945,14 @@ class DataTcBuilder implements Builder<DataTc, DataTcBuilder> {
   }
 
   @override
-  void update(void Function(DataTcBuilder) updates) {
+  void update(void Function(DataTcBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataTc build() {
+  DataTc build() => _build();
+
+  _$DataTc _build() {
     _$DataTc _$result;
     try {
       _$result = _$v ??
@@ -947,7 +963,7 @@ class DataTcBuilder implements Builder<DataTc, DataTcBuilder> {
               payment: payment.build(),
               tokbox: tokbox.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'etablissement';
         etablissement.build();
@@ -961,7 +977,7 @@ class DataTcBuilder implements Builder<DataTc, DataTcBuilder> {
         tokbox.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'DataTc', _$failedField, e.toString());
+            r'DataTc', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -984,20 +1000,25 @@ class _$EtablissementTc extends EtablissementTc {
   @override
   final String tel;
 
-  factory _$EtablissementTc([void Function(EtablissementTcBuilder) updates]) =>
-      (new EtablissementTcBuilder()..update(updates)).build();
+  factory _$EtablissementTc([void Function(EtablissementTcBuilder)? updates]) =>
+      (new EtablissementTcBuilder()..update(updates))._build();
 
   _$EtablissementTc._(
-      {this.nom, this.address, this.zip, this.city, this.telnospace, this.tel})
+      {required this.nom,
+      required this.address,
+      required this.zip,
+      required this.city,
+      required this.telnospace,
+      required this.tel})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(nom, 'EtablissementTc', 'nom');
+    BuiltValueNullFieldError.checkNotNull(nom, r'EtablissementTc', 'nom');
     BuiltValueNullFieldError.checkNotNull(
-        address, 'EtablissementTc', 'address');
-    BuiltValueNullFieldError.checkNotNull(zip, 'EtablissementTc', 'zip');
-    BuiltValueNullFieldError.checkNotNull(city, 'EtablissementTc', 'city');
+        address, r'EtablissementTc', 'address');
+    BuiltValueNullFieldError.checkNotNull(zip, r'EtablissementTc', 'zip');
+    BuiltValueNullFieldError.checkNotNull(city, r'EtablissementTc', 'city');
     BuiltValueNullFieldError.checkNotNull(
-        telnospace, 'EtablissementTc', 'telnospace');
-    BuiltValueNullFieldError.checkNotNull(tel, 'EtablissementTc', 'tel');
+        telnospace, r'EtablissementTc', 'telnospace');
+    BuiltValueNullFieldError.checkNotNull(tel, r'EtablissementTc', 'tel');
   }
 
   @override
@@ -1022,17 +1043,20 @@ class _$EtablissementTc extends EtablissementTc {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc($jc($jc($jc(0, nom.hashCode), address.hashCode), zip.hashCode),
-                city.hashCode),
-            telnospace.hashCode),
-        tel.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, nom.hashCode);
+    _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, zip.hashCode);
+    _$hash = $jc(_$hash, city.hashCode);
+    _$hash = $jc(_$hash, telnospace.hashCode);
+    _$hash = $jc(_$hash, tel.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('EtablissementTc')
+    return (newBuiltValueToStringHelper(r'EtablissementTc')
           ..add('nom', nom)
           ..add('address', address)
           ..add('zip', zip)
@@ -1045,31 +1069,31 @@ class _$EtablissementTc extends EtablissementTc {
 
 class EtablissementTcBuilder
     implements Builder<EtablissementTc, EtablissementTcBuilder> {
-  _$EtablissementTc _$v;
+  _$EtablissementTc? _$v;
 
-  String _nom;
-  String get nom => _$this._nom;
-  set nom(String nom) => _$this._nom = nom;
+  String? _nom;
+  String? get nom => _$this._nom;
+  set nom(String? nom) => _$this._nom = nom;
 
-  String _address;
-  String get address => _$this._address;
-  set address(String address) => _$this._address = address;
+  String? _address;
+  String? get address => _$this._address;
+  set address(String? address) => _$this._address = address;
 
-  String _zip;
-  String get zip => _$this._zip;
-  set zip(String zip) => _$this._zip = zip;
+  String? _zip;
+  String? get zip => _$this._zip;
+  set zip(String? zip) => _$this._zip = zip;
 
-  String _city;
-  String get city => _$this._city;
-  set city(String city) => _$this._city = city;
+  String? _city;
+  String? get city => _$this._city;
+  set city(String? city) => _$this._city = city;
 
-  String _telnospace;
-  String get telnospace => _$this._telnospace;
-  set telnospace(String telnospace) => _$this._telnospace = telnospace;
+  String? _telnospace;
+  String? get telnospace => _$this._telnospace;
+  set telnospace(String? telnospace) => _$this._telnospace = telnospace;
 
-  String _tel;
-  String get tel => _$this._tel;
-  set tel(String tel) => _$this._tel = tel;
+  String? _tel;
+  String? get tel => _$this._tel;
+  set tel(String? tel) => _$this._tel = tel;
 
   EtablissementTcBuilder();
 
@@ -1094,26 +1118,28 @@ class EtablissementTcBuilder
   }
 
   @override
-  void update(void Function(EtablissementTcBuilder) updates) {
+  void update(void Function(EtablissementTcBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$EtablissementTc build() {
+  EtablissementTc build() => _build();
+
+  _$EtablissementTc _build() {
     final _$result = _$v ??
         new _$EtablissementTc._(
             nom: BuiltValueNullFieldError.checkNotNull(
-                nom, 'EtablissementTc', 'nom'),
+                nom, r'EtablissementTc', 'nom'),
             address: BuiltValueNullFieldError.checkNotNull(
-                address, 'EtablissementTc', 'address'),
+                address, r'EtablissementTc', 'address'),
             zip: BuiltValueNullFieldError.checkNotNull(
-                zip, 'EtablissementTc', 'zip'),
+                zip, r'EtablissementTc', 'zip'),
             city: BuiltValueNullFieldError.checkNotNull(
-                city, 'EtablissementTc', 'city'),
+                city, r'EtablissementTc', 'city'),
             telnospace: BuiltValueNullFieldError.checkNotNull(
-                telnospace, 'EtablissementTc', 'telnospace'),
+                telnospace, r'EtablissementTc', 'telnospace'),
             tel: BuiltValueNullFieldError.checkNotNull(
-                tel, 'EtablissementTc', 'tel'));
+                tel, r'EtablissementTc', 'tel'));
     replace(_$result);
     return _$result;
   }
@@ -1135,26 +1161,27 @@ class _$ApptTc extends ApptTc {
   @override
   final String buttoncancel;
 
-  factory _$ApptTc([void Function(ApptTcBuilder) updates]) =>
-      (new ApptTcBuilder()..update(updates)).build();
+  factory _$ApptTc([void Function(ApptTcBuilder)? updates]) =>
+      (new ApptTcBuilder()..update(updates))._build();
 
   _$ApptTc._(
-      {this.token,
-      this.date,
-      this.doctor,
-      this.description,
-      this.patient,
-      this.status,
-      this.buttoncancel})
+      {required this.token,
+      required this.date,
+      required this.doctor,
+      required this.description,
+      required this.patient,
+      required this.status,
+      required this.buttoncancel})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(token, 'ApptTc', 'token');
-    BuiltValueNullFieldError.checkNotNull(date, 'ApptTc', 'date');
-    BuiltValueNullFieldError.checkNotNull(doctor, 'ApptTc', 'doctor');
-    BuiltValueNullFieldError.checkNotNull(description, 'ApptTc', 'description');
-    BuiltValueNullFieldError.checkNotNull(patient, 'ApptTc', 'patient');
-    BuiltValueNullFieldError.checkNotNull(status, 'ApptTc', 'status');
+    BuiltValueNullFieldError.checkNotNull(token, r'ApptTc', 'token');
+    BuiltValueNullFieldError.checkNotNull(date, r'ApptTc', 'date');
+    BuiltValueNullFieldError.checkNotNull(doctor, r'ApptTc', 'doctor');
     BuiltValueNullFieldError.checkNotNull(
-        buttoncancel, 'ApptTc', 'buttoncancel');
+        description, r'ApptTc', 'description');
+    BuiltValueNullFieldError.checkNotNull(patient, r'ApptTc', 'patient');
+    BuiltValueNullFieldError.checkNotNull(status, r'ApptTc', 'status');
+    BuiltValueNullFieldError.checkNotNull(
+        buttoncancel, r'ApptTc', 'buttoncancel');
   }
 
   @override
@@ -1179,21 +1206,21 @@ class _$ApptTc extends ApptTc {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, token.hashCode), date.hashCode),
-                        doctor.hashCode),
-                    description.hashCode),
-                patient.hashCode),
-            status.hashCode),
-        buttoncancel.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, token.hashCode);
+    _$hash = $jc(_$hash, date.hashCode);
+    _$hash = $jc(_$hash, doctor.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, patient.hashCode);
+    _$hash = $jc(_$hash, status.hashCode);
+    _$hash = $jc(_$hash, buttoncancel.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ApptTc')
+    return (newBuiltValueToStringHelper(r'ApptTc')
           ..add('token', token)
           ..add('date', date)
           ..add('doctor', doctor)
@@ -1206,35 +1233,35 @@ class _$ApptTc extends ApptTc {
 }
 
 class ApptTcBuilder implements Builder<ApptTc, ApptTcBuilder> {
-  _$ApptTc _$v;
+  _$ApptTc? _$v;
 
-  String _token;
-  String get token => _$this._token;
-  set token(String token) => _$this._token = token;
+  String? _token;
+  String? get token => _$this._token;
+  set token(String? token) => _$this._token = token;
 
-  String _date;
-  String get date => _$this._date;
-  set date(String date) => _$this._date = date;
+  String? _date;
+  String? get date => _$this._date;
+  set date(String? date) => _$this._date = date;
 
-  String _doctor;
-  String get doctor => _$this._doctor;
-  set doctor(String doctor) => _$this._doctor = doctor;
+  String? _doctor;
+  String? get doctor => _$this._doctor;
+  set doctor(String? doctor) => _$this._doctor = doctor;
 
-  String _description;
-  String get description => _$this._description;
-  set description(String description) => _$this._description = description;
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
-  String _patient;
-  String get patient => _$this._patient;
-  set patient(String patient) => _$this._patient = patient;
+  String? _patient;
+  String? get patient => _$this._patient;
+  set patient(String? patient) => _$this._patient = patient;
 
-  String _status;
-  String get status => _$this._status;
-  set status(String status) => _$this._status = status;
+  String? _status;
+  String? get status => _$this._status;
+  set status(String? status) => _$this._status = status;
 
-  String _buttoncancel;
-  String get buttoncancel => _$this._buttoncancel;
-  set buttoncancel(String buttoncancel) => _$this._buttoncancel = buttoncancel;
+  String? _buttoncancel;
+  String? get buttoncancel => _$this._buttoncancel;
+  set buttoncancel(String? buttoncancel) => _$this._buttoncancel = buttoncancel;
 
   ApptTcBuilder();
 
@@ -1260,27 +1287,30 @@ class ApptTcBuilder implements Builder<ApptTc, ApptTcBuilder> {
   }
 
   @override
-  void update(void Function(ApptTcBuilder) updates) {
+  void update(void Function(ApptTcBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ApptTc build() {
+  ApptTc build() => _build();
+
+  _$ApptTc _build() {
     final _$result = _$v ??
         new _$ApptTc._(
-            token:
-                BuiltValueNullFieldError.checkNotNull(token, 'ApptTc', 'token'),
-            date: BuiltValueNullFieldError.checkNotNull(date, 'ApptTc', 'date'),
+            token: BuiltValueNullFieldError.checkNotNull(
+                token, r'ApptTc', 'token'),
+            date:
+                BuiltValueNullFieldError.checkNotNull(date, r'ApptTc', 'date'),
             doctor: BuiltValueNullFieldError.checkNotNull(
-                doctor, 'ApptTc', 'doctor'),
+                doctor, r'ApptTc', 'doctor'),
             description: BuiltValueNullFieldError.checkNotNull(
-                description, 'ApptTc', 'description'),
+                description, r'ApptTc', 'description'),
             patient: BuiltValueNullFieldError.checkNotNull(
-                patient, 'ApptTc', 'patient'),
+                patient, r'ApptTc', 'patient'),
             status: BuiltValueNullFieldError.checkNotNull(
-                status, 'ApptTc', 'status'),
+                status, r'ApptTc', 'status'),
             buttoncancel: BuiltValueNullFieldError.checkNotNull(
-                buttoncancel, 'ApptTc', 'buttoncancel'));
+                buttoncancel, r'ApptTc', 'buttoncancel'));
     replace(_$result);
     return _$result;
   }
@@ -1288,12 +1318,12 @@ class ApptTcBuilder implements Builder<ApptTc, ApptTcBuilder> {
 
 class _$InfosTc extends InfosTc {
   @override
-  final String buttonstarttelecons;
+  final String? buttonstarttelecons;
   @override
-  final String buttonstartteleconsdisabled;
+  final String? buttonstartteleconsdisabled;
 
-  factory _$InfosTc([void Function(InfosTcBuilder) updates]) =>
-      (new InfosTcBuilder()..update(updates)).build();
+  factory _$InfosTc([void Function(InfosTcBuilder)? updates]) =>
+      (new InfosTcBuilder()..update(updates))._build();
 
   _$InfosTc._({this.buttonstarttelecons, this.buttonstartteleconsdisabled})
       : super._();
@@ -1315,13 +1345,16 @@ class _$InfosTc extends InfosTc {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, buttonstarttelecons.hashCode),
-        buttonstartteleconsdisabled.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, buttonstarttelecons.hashCode);
+    _$hash = $jc(_$hash, buttonstartteleconsdisabled.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InfosTc')
+    return (newBuiltValueToStringHelper(r'InfosTc')
           ..add('buttonstarttelecons', buttonstarttelecons)
           ..add('buttonstartteleconsdisabled', buttonstartteleconsdisabled))
         .toString();
@@ -1329,16 +1362,17 @@ class _$InfosTc extends InfosTc {
 }
 
 class InfosTcBuilder implements Builder<InfosTc, InfosTcBuilder> {
-  _$InfosTc _$v;
+  _$InfosTc? _$v;
 
-  String _buttonstarttelecons;
-  String get buttonstarttelecons => _$this._buttonstarttelecons;
-  set buttonstarttelecons(String buttonstarttelecons) =>
+  String? _buttonstarttelecons;
+  String? get buttonstarttelecons => _$this._buttonstarttelecons;
+  set buttonstarttelecons(String? buttonstarttelecons) =>
       _$this._buttonstarttelecons = buttonstarttelecons;
 
-  String _buttonstartteleconsdisabled;
-  String get buttonstartteleconsdisabled => _$this._buttonstartteleconsdisabled;
-  set buttonstartteleconsdisabled(String buttonstartteleconsdisabled) =>
+  String? _buttonstartteleconsdisabled;
+  String? get buttonstartteleconsdisabled =>
+      _$this._buttonstartteleconsdisabled;
+  set buttonstartteleconsdisabled(String? buttonstartteleconsdisabled) =>
       _$this._buttonstartteleconsdisabled = buttonstartteleconsdisabled;
 
   InfosTcBuilder();
@@ -1360,12 +1394,14 @@ class InfosTcBuilder implements Builder<InfosTc, InfosTcBuilder> {
   }
 
   @override
-  void update(void Function(InfosTcBuilder) updates) {
+  void update(void Function(InfosTcBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$InfosTc build() {
+  InfosTc build() => _build();
+
+  _$InfosTc _build() {
     final _$result = _$v ??
         new _$InfosTc._(
             buttonstarttelecons: buttonstarttelecons,
@@ -1387,23 +1423,23 @@ class _$PaymentTc extends PaymentTc {
   @override
   final String history;
 
-  factory _$PaymentTc([void Function(PaymentTcBuilder) updates]) =>
-      (new PaymentTcBuilder()..update(updates)).build();
+  factory _$PaymentTc([void Function(PaymentTcBuilder)? updates]) =>
+      (new PaymentTcBuilder()..update(updates))._build();
 
   _$PaymentTc._(
-      {this.title,
-      this.statuslabel,
-      this.stripeClientSecret,
-      this.text,
-      this.history})
+      {required this.title,
+      required this.statuslabel,
+      required this.stripeClientSecret,
+      required this.text,
+      required this.history})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(title, 'PaymentTc', 'title');
+    BuiltValueNullFieldError.checkNotNull(title, r'PaymentTc', 'title');
     BuiltValueNullFieldError.checkNotNull(
-        statuslabel, 'PaymentTc', 'statuslabel');
+        statuslabel, r'PaymentTc', 'statuslabel');
     BuiltValueNullFieldError.checkNotNull(
-        stripeClientSecret, 'PaymentTc', 'stripeClientSecret');
-    BuiltValueNullFieldError.checkNotNull(text, 'PaymentTc', 'text');
-    BuiltValueNullFieldError.checkNotNull(history, 'PaymentTc', 'history');
+        stripeClientSecret, r'PaymentTc', 'stripeClientSecret');
+    BuiltValueNullFieldError.checkNotNull(text, r'PaymentTc', 'text');
+    BuiltValueNullFieldError.checkNotNull(history, r'PaymentTc', 'history');
   }
 
   @override
@@ -1426,17 +1462,19 @@ class _$PaymentTc extends PaymentTc {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc($jc($jc(0, title.hashCode), statuslabel.hashCode),
-                stripeClientSecret.hashCode),
-            text.hashCode),
-        history.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, statuslabel.hashCode);
+    _$hash = $jc(_$hash, stripeClientSecret.hashCode);
+    _$hash = $jc(_$hash, text.hashCode);
+    _$hash = $jc(_$hash, history.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('PaymentTc')
+    return (newBuiltValueToStringHelper(r'PaymentTc')
           ..add('title', title)
           ..add('statuslabel', statuslabel)
           ..add('stripeClientSecret', stripeClientSecret)
@@ -1447,28 +1485,28 @@ class _$PaymentTc extends PaymentTc {
 }
 
 class PaymentTcBuilder implements Builder<PaymentTc, PaymentTcBuilder> {
-  _$PaymentTc _$v;
+  _$PaymentTc? _$v;
 
-  String _title;
-  String get title => _$this._title;
-  set title(String title) => _$this._title = title;
+  String? _title;
+  String? get title => _$this._title;
+  set title(String? title) => _$this._title = title;
 
-  String _statuslabel;
-  String get statuslabel => _$this._statuslabel;
-  set statuslabel(String statuslabel) => _$this._statuslabel = statuslabel;
+  String? _statuslabel;
+  String? get statuslabel => _$this._statuslabel;
+  set statuslabel(String? statuslabel) => _$this._statuslabel = statuslabel;
 
-  String _stripeClientSecret;
-  String get stripeClientSecret => _$this._stripeClientSecret;
-  set stripeClientSecret(String stripeClientSecret) =>
+  String? _stripeClientSecret;
+  String? get stripeClientSecret => _$this._stripeClientSecret;
+  set stripeClientSecret(String? stripeClientSecret) =>
       _$this._stripeClientSecret = stripeClientSecret;
 
-  String _text;
-  String get text => _$this._text;
-  set text(String text) => _$this._text = text;
+  String? _text;
+  String? get text => _$this._text;
+  set text(String? text) => _$this._text = text;
 
-  String _history;
-  String get history => _$this._history;
-  set history(String history) => _$this._history = history;
+  String? _history;
+  String? get history => _$this._history;
+  set history(String? history) => _$this._history = history;
 
   PaymentTcBuilder();
 
@@ -1492,24 +1530,26 @@ class PaymentTcBuilder implements Builder<PaymentTc, PaymentTcBuilder> {
   }
 
   @override
-  void update(void Function(PaymentTcBuilder) updates) {
+  void update(void Function(PaymentTcBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$PaymentTc build() {
+  PaymentTc build() => _build();
+
+  _$PaymentTc _build() {
     final _$result = _$v ??
         new _$PaymentTc._(
             title: BuiltValueNullFieldError.checkNotNull(
-                title, 'PaymentTc', 'title'),
+                title, r'PaymentTc', 'title'),
             statuslabel: BuiltValueNullFieldError.checkNotNull(
-                statuslabel, 'PaymentTc', 'statuslabel'),
+                statuslabel, r'PaymentTc', 'statuslabel'),
             stripeClientSecret: BuiltValueNullFieldError.checkNotNull(
-                stripeClientSecret, 'PaymentTc', 'stripeClientSecret'),
+                stripeClientSecret, r'PaymentTc', 'stripeClientSecret'),
             text: BuiltValueNullFieldError.checkNotNull(
-                text, 'PaymentTc', 'text'),
+                text, r'PaymentTc', 'text'),
             history: BuiltValueNullFieldError.checkNotNull(
-                history, 'PaymentTc', 'history'));
+                history, r'PaymentTc', 'history'));
     replace(_$result);
     return _$result;
   }
@@ -1527,17 +1567,21 @@ class _$TokboxTc extends TokboxTc {
   @override
   final String error;
 
-  factory _$TokboxTc([void Function(TokboxTcBuilder) updates]) =>
-      (new TokboxTcBuilder()..update(updates)).build();
+  factory _$TokboxTc([void Function(TokboxTcBuilder)? updates]) =>
+      (new TokboxTcBuilder()..update(updates))._build();
 
   _$TokboxTc._(
-      {this.sessionId, this.token, this.apiKey, this.title, this.error})
+      {required this.sessionId,
+      required this.token,
+      required this.apiKey,
+      required this.title,
+      required this.error})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(sessionId, 'TokboxTc', 'sessionId');
-    BuiltValueNullFieldError.checkNotNull(token, 'TokboxTc', 'token');
-    BuiltValueNullFieldError.checkNotNull(apiKey, 'TokboxTc', 'apiKey');
-    BuiltValueNullFieldError.checkNotNull(title, 'TokboxTc', 'title');
-    BuiltValueNullFieldError.checkNotNull(error, 'TokboxTc', 'error');
+    BuiltValueNullFieldError.checkNotNull(sessionId, r'TokboxTc', 'sessionId');
+    BuiltValueNullFieldError.checkNotNull(token, r'TokboxTc', 'token');
+    BuiltValueNullFieldError.checkNotNull(apiKey, r'TokboxTc', 'apiKey');
+    BuiltValueNullFieldError.checkNotNull(title, r'TokboxTc', 'title');
+    BuiltValueNullFieldError.checkNotNull(error, r'TokboxTc', 'error');
   }
 
   @override
@@ -1560,17 +1604,19 @@ class _$TokboxTc extends TokboxTc {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc($jc($jc(0, sessionId.hashCode), token.hashCode),
-                apiKey.hashCode),
-            title.hashCode),
-        error.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, sessionId.hashCode);
+    _$hash = $jc(_$hash, token.hashCode);
+    _$hash = $jc(_$hash, apiKey.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('TokboxTc')
+    return (newBuiltValueToStringHelper(r'TokboxTc')
           ..add('sessionId', sessionId)
           ..add('token', token)
           ..add('apiKey', apiKey)
@@ -1581,27 +1627,27 @@ class _$TokboxTc extends TokboxTc {
 }
 
 class TokboxTcBuilder implements Builder<TokboxTc, TokboxTcBuilder> {
-  _$TokboxTc _$v;
+  _$TokboxTc? _$v;
 
-  String _sessionId;
-  String get sessionId => _$this._sessionId;
-  set sessionId(String sessionId) => _$this._sessionId = sessionId;
+  String? _sessionId;
+  String? get sessionId => _$this._sessionId;
+  set sessionId(String? sessionId) => _$this._sessionId = sessionId;
 
-  String _token;
-  String get token => _$this._token;
-  set token(String token) => _$this._token = token;
+  String? _token;
+  String? get token => _$this._token;
+  set token(String? token) => _$this._token = token;
 
-  String _apiKey;
-  String get apiKey => _$this._apiKey;
-  set apiKey(String apiKey) => _$this._apiKey = apiKey;
+  String? _apiKey;
+  String? get apiKey => _$this._apiKey;
+  set apiKey(String? apiKey) => _$this._apiKey = apiKey;
 
-  String _title;
-  String get title => _$this._title;
-  set title(String title) => _$this._title = title;
+  String? _title;
+  String? get title => _$this._title;
+  set title(String? title) => _$this._title = title;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
   TokboxTcBuilder();
 
@@ -1625,27 +1671,29 @@ class TokboxTcBuilder implements Builder<TokboxTc, TokboxTcBuilder> {
   }
 
   @override
-  void update(void Function(TokboxTcBuilder) updates) {
+  void update(void Function(TokboxTcBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$TokboxTc build() {
+  TokboxTc build() => _build();
+
+  _$TokboxTc _build() {
     final _$result = _$v ??
         new _$TokboxTc._(
             sessionId: BuiltValueNullFieldError.checkNotNull(
-                sessionId, 'TokboxTc', 'sessionId'),
+                sessionId, r'TokboxTc', 'sessionId'),
             token: BuiltValueNullFieldError.checkNotNull(
-                token, 'TokboxTc', 'token'),
+                token, r'TokboxTc', 'token'),
             apiKey: BuiltValueNullFieldError.checkNotNull(
-                apiKey, 'TokboxTc', 'apiKey'),
+                apiKey, r'TokboxTc', 'apiKey'),
             title: BuiltValueNullFieldError.checkNotNull(
-                title, 'TokboxTc', 'title'),
+                title, r'TokboxTc', 'title'),
             error: BuiltValueNullFieldError.checkNotNull(
-                error, 'TokboxTc', 'error'));
+                error, r'TokboxTc', 'error'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

@@ -17,22 +17,17 @@ abstract class LoginResponse
   @BuiltValueField(wireName: 'version')
   String get version;
   @BuiltValueField(wireName: 'request')
-  @nullable
-  String get request;
+  String? get request;
   @BuiltValueField(wireName: 'params')
-  @nullable
-  ParamsLoginResponse get params;
+  ParamsLoginResponse? get params;
   @BuiltValueField(wireName: 'message')
   String get message;
   @BuiltValueField(wireName: 'data')
-  @nullable
-  DataLoginResponse get data;
+  DataLoginResponse? get data;
   @BuiltValueField(wireName: 'httpstatut')
-  @nullable
-  int get httpstatut;
+  int? get httpstatut;
   @BuiltValueField(wireName: 'error')
-  @nullable
-  String get error;
+  String? get error;
   String toJson() {
     return json
         .encode(serializers.serializeWith(LoginResponse.serializer, this));
@@ -56,8 +51,7 @@ abstract class ParamsLoginResponse
   @BuiltValueField(wireName: 'email')
   String get email;
   @BuiltValueField(wireName: 'password')
-  @nullable
-  String get password;
+  String? get password;
   String toJson() {
     return json.encode(
         serializers.serializeWith(ParamsLoginResponse.serializer, this));
@@ -80,20 +74,15 @@ abstract class DataLoginResponse
       _$DataLoginResponse;
 
   @BuiltValueField(wireName: 'tokenuser')
-  @nullable
-  String get tokenuser;
+  String? get tokenuser;
   @BuiltValueField(wireName: 'nom')
-  @nullable
-  String get nom;
+  String? get nom;
   @BuiltValueField(wireName: 'prenom')
-  @nullable
-  String get prenom;
+  String? get prenom;
   @BuiltValueField(wireName: 'email')
-  @nullable
-  String get email;
+  String? get email;
   @BuiltValueField(wireName: 'mobile')
-  @nullable
-  String get mobile;
+  String? get mobile;
   String toJson() {
     return json
         .encode(serializers.serializeWith(DataLoginResponse.serializer, this));

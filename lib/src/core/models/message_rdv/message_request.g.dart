@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of message_request;
+part of 'message_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -17,9 +17,9 @@ class _$MessageRequestSerializer
   final String wireName = 'MessageRequest';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, MessageRequest object,
+  Iterable<Object?> serialize(Serializers serializers, MessageRequest object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
           specifiedType: const FullType(String)),
@@ -32,23 +32,23 @@ class _$MessageRequestSerializer
 
   @override
   MessageRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new MessageRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'page':
           result.page = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -63,13 +63,14 @@ class _$MessageRequest extends MessageRequest {
   @override
   final String page;
 
-  factory _$MessageRequest([void Function(MessageRequestBuilder) updates]) =>
-      (new MessageRequestBuilder()..update(updates)).build();
+  factory _$MessageRequest([void Function(MessageRequestBuilder)? updates]) =>
+      (new MessageRequestBuilder()..update(updates))._build();
 
-  _$MessageRequest._({this.tokenuser, this.page}) : super._() {
+  _$MessageRequest._({required this.tokenuser, required this.page})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        tokenuser, 'MessageRequest', 'tokenuser');
-    BuiltValueNullFieldError.checkNotNull(page, 'MessageRequest', 'page');
+        tokenuser, r'MessageRequest', 'tokenuser');
+    BuiltValueNullFieldError.checkNotNull(page, r'MessageRequest', 'page');
   }
 
   @override
@@ -90,12 +91,16 @@ class _$MessageRequest extends MessageRequest {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, tokenuser.hashCode), page.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokenuser.hashCode);
+    _$hash = $jc(_$hash, page.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('MessageRequest')
+    return (newBuiltValueToStringHelper(r'MessageRequest')
           ..add('tokenuser', tokenuser)
           ..add('page', page))
         .toString();
@@ -104,15 +109,15 @@ class _$MessageRequest extends MessageRequest {
 
 class MessageRequestBuilder
     implements Builder<MessageRequest, MessageRequestBuilder> {
-  _$MessageRequest _$v;
+  _$MessageRequest? _$v;
 
-  String _tokenuser;
-  String get tokenuser => _$this._tokenuser;
-  set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
+  String? _tokenuser;
+  String? get tokenuser => _$this._tokenuser;
+  set tokenuser(String? tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _page;
-  String get page => _$this._page;
-  set page(String page) => _$this._page = page;
+  String? _page;
+  String? get page => _$this._page;
+  set page(String? page) => _$this._page = page;
 
   MessageRequestBuilder();
 
@@ -133,21 +138,23 @@ class MessageRequestBuilder
   }
 
   @override
-  void update(void Function(MessageRequestBuilder) updates) {
+  void update(void Function(MessageRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$MessageRequest build() {
+  MessageRequest build() => _build();
+
+  _$MessageRequest _build() {
     final _$result = _$v ??
         new _$MessageRequest._(
             tokenuser: BuiltValueNullFieldError.checkNotNull(
-                tokenuser, 'MessageRequest', 'tokenuser'),
+                tokenuser, r'MessageRequest', 'tokenuser'),
             page: BuiltValueNullFieldError.checkNotNull(
-                page, 'MessageRequest', 'page'));
+                page, r'MessageRequest', 'page'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

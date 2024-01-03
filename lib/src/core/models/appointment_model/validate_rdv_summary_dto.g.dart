@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of validate_rdv_summary_dto;
+part of 'validate_rdv_summary_dto.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -31,10 +31,10 @@ class _$ValidateRdvSummaryDtoSerializer
   final String wireName = 'ValidateRdvSummaryDto';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ValidateRdvSummaryDto object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'version',
       serializers.serialize(object.version,
           specifiedType: const FullType(String)),
@@ -63,44 +63,44 @@ class _$ValidateRdvSummaryDtoSerializer
 
   @override
   ValidateRdvSummaryDto deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ValidateRdvSummaryDtoBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'params':
           result.params.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(ParamsValidateRdvSummaryDto))
+                  specifiedType: const FullType(ParamsValidateRdvSummaryDto))!
               as ParamsValidateRdvSummaryDto);
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(DataValidateRdvSummaryDto))
+                  specifiedType: const FullType(DataValidateRdvSummaryDto))!
               as DataValidateRdvSummaryDto);
           break;
       }
@@ -121,10 +121,10 @@ class _$ParamsValidateRdvSummaryDtoSerializer
   final String wireName = 'ParamsValidateRdvSummaryDto';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ParamsValidateRdvSummaryDto object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
           specifiedType: const FullType(String)),
@@ -148,39 +148,39 @@ class _$ParamsValidateRdvSummaryDtoSerializer
 
   @override
   ParamsValidateRdvSummaryDto deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsValidateRdvSummaryDtoBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'tokenappointment':
           result.tokenappointment = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'week':
           result.week = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'action':
           result.action = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'session':
           result.session = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -200,11 +200,11 @@ class _$DataValidateRdvSummaryDto2Serializer
   final String wireName = 'DataValidateRdvSummaryDto2';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, DataValidateRdvSummaryDto2 object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.appointment;
     if (value != null) {
       result
@@ -224,23 +224,23 @@ class _$DataValidateRdvSummaryDto2Serializer
 
   @override
   DataValidateRdvSummaryDto2 deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataValidateRdvSummaryDto2Builder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'appointment':
           result.appointment = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'apptbuttonvalidation':
           result.apptbuttonvalidation.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(Apptbuttonvalidation))
+                  specifiedType: const FullType(Apptbuttonvalidation))!
               as Apptbuttonvalidation);
           break;
       }
@@ -258,10 +258,11 @@ class _$AppointmentSummarySerializer
   final String wireName = 'AppointmentSummary';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, AppointmentSummary object,
+  Iterable<Object?> serialize(
+      Serializers serializers, AppointmentSummary object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.appointment;
     if (value != null) {
       result
@@ -274,19 +275,19 @@ class _$AppointmentSummarySerializer
 
   @override
   AppointmentSummary deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AppointmentSummaryBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'appointment':
           result.appointment = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -306,11 +307,11 @@ class _$PaymentIntentSummarySerializer
   final String wireName = 'PaymentIntentSummary';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, PaymentIntentSummary object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.stripeClientSecret;
     if (value != null) {
       result
@@ -323,19 +324,19 @@ class _$PaymentIntentSummarySerializer
 
   @override
   PaymentIntentSummary deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PaymentIntentSummaryBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'stripeClientSecret':
           result.stripeClientSecret = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -355,10 +356,10 @@ class _$DataValidateRdvSummaryDtoSerializer
   final String wireName = 'DataValidateRdvSummaryDto';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, DataValidateRdvSummaryDto object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'session',
       serializers.serialize(object.session,
           specifiedType: const FullType(String)),
@@ -368,7 +369,7 @@ class _$DataValidateRdvSummaryDtoSerializer
       'type',
       serializers.serialize(object.type, specifiedType: const FullType(String)),
     ];
-    Object value;
+    Object? value;
     value = object.data;
     if (value != null) {
       result
@@ -388,36 +389,36 @@ class _$DataValidateRdvSummaryDtoSerializer
 
   @override
   DataValidateRdvSummaryDto deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataValidateRdvSummaryDtoBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'session':
           result.session = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'headermessage':
           result.headermessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'type':
           result.type = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(DataValidateRdvSummaryDto2))
+                  specifiedType: const FullType(DataValidateRdvSummaryDto2))!
               as DataValidateRdvSummaryDto2);
           break;
         case 'payment_intent':
           result.paymentIntent.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(PaymentIntentSummary))
+                  specifiedType: const FullType(PaymentIntentSummary))!
               as PaymentIntentSummary);
           break;
       }
@@ -444,32 +445,32 @@ class _$ValidateRdvSummaryDto extends ValidateRdvSummaryDto {
   final DataValidateRdvSummaryDto data;
 
   factory _$ValidateRdvSummaryDto(
-          [void Function(ValidateRdvSummaryDtoBuilder) updates]) =>
-      (new ValidateRdvSummaryDtoBuilder()..update(updates)).build();
+          [void Function(ValidateRdvSummaryDtoBuilder)? updates]) =>
+      (new ValidateRdvSummaryDtoBuilder()..update(updates))._build();
 
   _$ValidateRdvSummaryDto._(
-      {this.version,
-      this.request,
-      this.params,
-      this.message,
-      this.httpstatut,
-      this.error,
-      this.data})
+      {required this.version,
+      required this.request,
+      required this.params,
+      required this.message,
+      required this.httpstatut,
+      required this.error,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        version, 'ValidateRdvSummaryDto', 'version');
+        version, r'ValidateRdvSummaryDto', 'version');
     BuiltValueNullFieldError.checkNotNull(
-        request, 'ValidateRdvSummaryDto', 'request');
+        request, r'ValidateRdvSummaryDto', 'request');
     BuiltValueNullFieldError.checkNotNull(
-        params, 'ValidateRdvSummaryDto', 'params');
+        params, r'ValidateRdvSummaryDto', 'params');
     BuiltValueNullFieldError.checkNotNull(
-        message, 'ValidateRdvSummaryDto', 'message');
+        message, r'ValidateRdvSummaryDto', 'message');
     BuiltValueNullFieldError.checkNotNull(
-        httpstatut, 'ValidateRdvSummaryDto', 'httpstatut');
+        httpstatut, r'ValidateRdvSummaryDto', 'httpstatut');
     BuiltValueNullFieldError.checkNotNull(
-        error, 'ValidateRdvSummaryDto', 'error');
+        error, r'ValidateRdvSummaryDto', 'error');
     BuiltValueNullFieldError.checkNotNull(
-        data, 'ValidateRdvSummaryDto', 'data');
+        data, r'ValidateRdvSummaryDto', 'data');
   }
 
   @override
@@ -496,21 +497,21 @@ class _$ValidateRdvSummaryDto extends ValidateRdvSummaryDto {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, version.hashCode), request.hashCode),
-                        params.hashCode),
-                    message.hashCode),
-                httpstatut.hashCode),
-            error.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ValidateRdvSummaryDto')
+    return (newBuiltValueToStringHelper(r'ValidateRdvSummaryDto')
           ..add('version', version)
           ..add('request', request)
           ..add('params', params)
@@ -524,38 +525,38 @@ class _$ValidateRdvSummaryDto extends ValidateRdvSummaryDto {
 
 class ValidateRdvSummaryDtoBuilder
     implements Builder<ValidateRdvSummaryDto, ValidateRdvSummaryDtoBuilder> {
-  _$ValidateRdvSummaryDto _$v;
+  _$ValidateRdvSummaryDto? _$v;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  ParamsValidateRdvSummaryDtoBuilder _params;
+  ParamsValidateRdvSummaryDtoBuilder? _params;
   ParamsValidateRdvSummaryDtoBuilder get params =>
       _$this._params ??= new ParamsValidateRdvSummaryDtoBuilder();
-  set params(ParamsValidateRdvSummaryDtoBuilder params) =>
+  set params(ParamsValidateRdvSummaryDtoBuilder? params) =>
       _$this._params = params;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  DataValidateRdvSummaryDtoBuilder _data;
+  DataValidateRdvSummaryDtoBuilder? _data;
   DataValidateRdvSummaryDtoBuilder get data =>
       _$this._data ??= new DataValidateRdvSummaryDtoBuilder();
-  set data(DataValidateRdvSummaryDtoBuilder data) => _$this._data = data;
+  set data(DataValidateRdvSummaryDtoBuilder? data) => _$this._data = data;
 
   ValidateRdvSummaryDtoBuilder();
 
@@ -581,30 +582,32 @@ class ValidateRdvSummaryDtoBuilder
   }
 
   @override
-  void update(void Function(ValidateRdvSummaryDtoBuilder) updates) {
+  void update(void Function(ValidateRdvSummaryDtoBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ValidateRdvSummaryDto build() {
+  ValidateRdvSummaryDto build() => _build();
+
+  _$ValidateRdvSummaryDto _build() {
     _$ValidateRdvSummaryDto _$result;
     try {
       _$result = _$v ??
           new _$ValidateRdvSummaryDto._(
               version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'ValidateRdvSummaryDto', 'version'),
+                  version, r'ValidateRdvSummaryDto', 'version'),
               request: BuiltValueNullFieldError.checkNotNull(
-                  request, 'ValidateRdvSummaryDto', 'request'),
+                  request, r'ValidateRdvSummaryDto', 'request'),
               params: params.build(),
               message: BuiltValueNullFieldError.checkNotNull(
-                  message, 'ValidateRdvSummaryDto', 'message'),
+                  message, r'ValidateRdvSummaryDto', 'message'),
               httpstatut: BuiltValueNullFieldError.checkNotNull(
-                  httpstatut, 'ValidateRdvSummaryDto', 'httpstatut'),
+                  httpstatut, r'ValidateRdvSummaryDto', 'httpstatut'),
               error: BuiltValueNullFieldError.checkNotNull(
-                  error, 'ValidateRdvSummaryDto', 'error'),
+                  error, r'ValidateRdvSummaryDto', 'error'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -613,7 +616,7 @@ class ValidateRdvSummaryDtoBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'ValidateRdvSummaryDto', _$failedField, e.toString());
+            r'ValidateRdvSummaryDto', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -637,29 +640,29 @@ class _$ParamsValidateRdvSummaryDto extends ParamsValidateRdvSummaryDto {
   final String session;
 
   factory _$ParamsValidateRdvSummaryDto(
-          [void Function(ParamsValidateRdvSummaryDtoBuilder) updates]) =>
-      (new ParamsValidateRdvSummaryDtoBuilder()..update(updates)).build();
+          [void Function(ParamsValidateRdvSummaryDtoBuilder)? updates]) =>
+      (new ParamsValidateRdvSummaryDtoBuilder()..update(updates))._build();
 
   _$ParamsValidateRdvSummaryDto._(
-      {this.tokenuser,
-      this.tokenappointment,
-      this.week,
-      this.data,
-      this.action,
-      this.session})
+      {required this.tokenuser,
+      required this.tokenappointment,
+      required this.week,
+      required this.data,
+      required this.action,
+      required this.session})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        tokenuser, 'ParamsValidateRdvSummaryDto', 'tokenuser');
+        tokenuser, r'ParamsValidateRdvSummaryDto', 'tokenuser');
     BuiltValueNullFieldError.checkNotNull(
-        tokenappointment, 'ParamsValidateRdvSummaryDto', 'tokenappointment');
+        tokenappointment, r'ParamsValidateRdvSummaryDto', 'tokenappointment');
     BuiltValueNullFieldError.checkNotNull(
-        week, 'ParamsValidateRdvSummaryDto', 'week');
+        week, r'ParamsValidateRdvSummaryDto', 'week');
     BuiltValueNullFieldError.checkNotNull(
-        data, 'ParamsValidateRdvSummaryDto', 'data');
+        data, r'ParamsValidateRdvSummaryDto', 'data');
     BuiltValueNullFieldError.checkNotNull(
-        action, 'ParamsValidateRdvSummaryDto', 'action');
+        action, r'ParamsValidateRdvSummaryDto', 'action');
     BuiltValueNullFieldError.checkNotNull(
-        session, 'ParamsValidateRdvSummaryDto', 'session');
+        session, r'ParamsValidateRdvSummaryDto', 'session');
   }
 
   @override
@@ -685,19 +688,20 @@ class _$ParamsValidateRdvSummaryDto extends ParamsValidateRdvSummaryDto {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, tokenuser.hashCode), tokenappointment.hashCode),
-                    week.hashCode),
-                data.hashCode),
-            action.hashCode),
-        session.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokenuser.hashCode);
+    _$hash = $jc(_$hash, tokenappointment.hashCode);
+    _$hash = $jc(_$hash, week.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jc(_$hash, action.hashCode);
+    _$hash = $jc(_$hash, session.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ParamsValidateRdvSummaryDto')
+    return (newBuiltValueToStringHelper(r'ParamsValidateRdvSummaryDto')
           ..add('tokenuser', tokenuser)
           ..add('tokenappointment', tokenappointment)
           ..add('week', week)
@@ -712,32 +716,32 @@ class ParamsValidateRdvSummaryDtoBuilder
     implements
         Builder<ParamsValidateRdvSummaryDto,
             ParamsValidateRdvSummaryDtoBuilder> {
-  _$ParamsValidateRdvSummaryDto _$v;
+  _$ParamsValidateRdvSummaryDto? _$v;
 
-  String _tokenuser;
-  String get tokenuser => _$this._tokenuser;
-  set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
+  String? _tokenuser;
+  String? get tokenuser => _$this._tokenuser;
+  set tokenuser(String? tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappointment;
-  String get tokenappointment => _$this._tokenappointment;
-  set tokenappointment(String tokenappointment) =>
+  String? _tokenappointment;
+  String? get tokenappointment => _$this._tokenappointment;
+  set tokenappointment(String? tokenappointment) =>
       _$this._tokenappointment = tokenappointment;
 
-  String _week;
-  String get week => _$this._week;
-  set week(String week) => _$this._week = week;
+  String? _week;
+  String? get week => _$this._week;
+  set week(String? week) => _$this._week = week;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  String? _data;
+  String? get data => _$this._data;
+  set data(String? data) => _$this._data = data;
 
-  String _action;
-  String get action => _$this._action;
-  set action(String action) => _$this._action = action;
+  String? _action;
+  String? get action => _$this._action;
+  set action(String? action) => _$this._action = action;
 
-  String _session;
-  String get session => _$this._session;
-  set session(String session) => _$this._session = session;
+  String? _session;
+  String? get session => _$this._session;
+  set session(String? session) => _$this._session = session;
 
   ParamsValidateRdvSummaryDtoBuilder();
 
@@ -762,28 +766,30 @@ class ParamsValidateRdvSummaryDtoBuilder
   }
 
   @override
-  void update(void Function(ParamsValidateRdvSummaryDtoBuilder) updates) {
+  void update(void Function(ParamsValidateRdvSummaryDtoBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ParamsValidateRdvSummaryDto build() {
+  ParamsValidateRdvSummaryDto build() => _build();
+
+  _$ParamsValidateRdvSummaryDto _build() {
     final _$result = _$v ??
         new _$ParamsValidateRdvSummaryDto._(
             tokenuser: BuiltValueNullFieldError.checkNotNull(
-                tokenuser, 'ParamsValidateRdvSummaryDto', 'tokenuser'),
+                tokenuser, r'ParamsValidateRdvSummaryDto', 'tokenuser'),
             tokenappointment: BuiltValueNullFieldError.checkNotNull(
                 tokenappointment,
-                'ParamsValidateRdvSummaryDto',
+                r'ParamsValidateRdvSummaryDto',
                 'tokenappointment'),
             week: BuiltValueNullFieldError.checkNotNull(
-                week, 'ParamsValidateRdvSummaryDto', 'week'),
+                week, r'ParamsValidateRdvSummaryDto', 'week'),
             data: BuiltValueNullFieldError.checkNotNull(
-                data, 'ParamsValidateRdvSummaryDto', 'data'),
+                data, r'ParamsValidateRdvSummaryDto', 'data'),
             action: BuiltValueNullFieldError.checkNotNull(
-                action, 'ParamsValidateRdvSummaryDto', 'action'),
+                action, r'ParamsValidateRdvSummaryDto', 'action'),
             session: BuiltValueNullFieldError.checkNotNull(
-                session, 'ParamsValidateRdvSummaryDto', 'session'));
+                session, r'ParamsValidateRdvSummaryDto', 'session'));
     replace(_$result);
     return _$result;
   }
@@ -791,13 +797,13 @@ class ParamsValidateRdvSummaryDtoBuilder
 
 class _$DataValidateRdvSummaryDto2 extends DataValidateRdvSummaryDto2 {
   @override
-  final String appointment;
+  final String? appointment;
   @override
-  final Apptbuttonvalidation apptbuttonvalidation;
+  final Apptbuttonvalidation? apptbuttonvalidation;
 
   factory _$DataValidateRdvSummaryDto2(
-          [void Function(DataValidateRdvSummaryDto2Builder) updates]) =>
-      (new DataValidateRdvSummaryDto2Builder()..update(updates)).build();
+          [void Function(DataValidateRdvSummaryDto2Builder)? updates]) =>
+      (new DataValidateRdvSummaryDto2Builder()..update(updates))._build();
 
   _$DataValidateRdvSummaryDto2._({this.appointment, this.apptbuttonvalidation})
       : super._();
@@ -821,13 +827,16 @@ class _$DataValidateRdvSummaryDto2 extends DataValidateRdvSummaryDto2 {
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc(0, appointment.hashCode), apptbuttonvalidation.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, appointment.hashCode);
+    _$hash = $jc(_$hash, apptbuttonvalidation.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataValidateRdvSummaryDto2')
+    return (newBuiltValueToStringHelper(r'DataValidateRdvSummaryDto2')
           ..add('appointment', appointment)
           ..add('apptbuttonvalidation', apptbuttonvalidation))
         .toString();
@@ -837,16 +846,16 @@ class _$DataValidateRdvSummaryDto2 extends DataValidateRdvSummaryDto2 {
 class DataValidateRdvSummaryDto2Builder
     implements
         Builder<DataValidateRdvSummaryDto2, DataValidateRdvSummaryDto2Builder> {
-  _$DataValidateRdvSummaryDto2 _$v;
+  _$DataValidateRdvSummaryDto2? _$v;
 
-  String _appointment;
-  String get appointment => _$this._appointment;
-  set appointment(String appointment) => _$this._appointment = appointment;
+  String? _appointment;
+  String? get appointment => _$this._appointment;
+  set appointment(String? appointment) => _$this._appointment = appointment;
 
-  ApptbuttonvalidationBuilder _apptbuttonvalidation;
+  ApptbuttonvalidationBuilder? _apptbuttonvalidation;
   ApptbuttonvalidationBuilder get apptbuttonvalidation =>
       _$this._apptbuttonvalidation ??= new ApptbuttonvalidationBuilder();
-  set apptbuttonvalidation(ApptbuttonvalidationBuilder apptbuttonvalidation) =>
+  set apptbuttonvalidation(ApptbuttonvalidationBuilder? apptbuttonvalidation) =>
       _$this._apptbuttonvalidation = apptbuttonvalidation;
 
   DataValidateRdvSummaryDto2Builder();
@@ -868,12 +877,14 @@ class DataValidateRdvSummaryDto2Builder
   }
 
   @override
-  void update(void Function(DataValidateRdvSummaryDto2Builder) updates) {
+  void update(void Function(DataValidateRdvSummaryDto2Builder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataValidateRdvSummaryDto2 build() {
+  DataValidateRdvSummaryDto2 build() => _build();
+
+  _$DataValidateRdvSummaryDto2 _build() {
     _$DataValidateRdvSummaryDto2 _$result;
     try {
       _$result = _$v ??
@@ -881,13 +892,13 @@ class DataValidateRdvSummaryDto2Builder
               appointment: appointment,
               apptbuttonvalidation: _apptbuttonvalidation?.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'apptbuttonvalidation';
         _apptbuttonvalidation?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'DataValidateRdvSummaryDto2', _$failedField, e.toString());
+            r'DataValidateRdvSummaryDto2', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -898,11 +909,11 @@ class DataValidateRdvSummaryDto2Builder
 
 class _$AppointmentSummary extends AppointmentSummary {
   @override
-  final String appointment;
+  final String? appointment;
 
   factory _$AppointmentSummary(
-          [void Function(AppointmentSummaryBuilder) updates]) =>
-      (new AppointmentSummaryBuilder()..update(updates)).build();
+          [void Function(AppointmentSummaryBuilder)? updates]) =>
+      (new AppointmentSummaryBuilder()..update(updates))._build();
 
   _$AppointmentSummary._({this.appointment}) : super._();
 
@@ -923,12 +934,15 @@ class _$AppointmentSummary extends AppointmentSummary {
 
   @override
   int get hashCode {
-    return $jf($jc(0, appointment.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, appointment.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AppointmentSummary')
+    return (newBuiltValueToStringHelper(r'AppointmentSummary')
           ..add('appointment', appointment))
         .toString();
   }
@@ -936,11 +950,11 @@ class _$AppointmentSummary extends AppointmentSummary {
 
 class AppointmentSummaryBuilder
     implements Builder<AppointmentSummary, AppointmentSummaryBuilder> {
-  _$AppointmentSummary _$v;
+  _$AppointmentSummary? _$v;
 
-  String _appointment;
-  String get appointment => _$this._appointment;
-  set appointment(String appointment) => _$this._appointment = appointment;
+  String? _appointment;
+  String? get appointment => _$this._appointment;
+  set appointment(String? appointment) => _$this._appointment = appointment;
 
   AppointmentSummaryBuilder();
 
@@ -960,12 +974,14 @@ class AppointmentSummaryBuilder
   }
 
   @override
-  void update(void Function(AppointmentSummaryBuilder) updates) {
+  void update(void Function(AppointmentSummaryBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$AppointmentSummary build() {
+  AppointmentSummary build() => _build();
+
+  _$AppointmentSummary _build() {
     final _$result =
         _$v ?? new _$AppointmentSummary._(appointment: appointment);
     replace(_$result);
@@ -975,11 +991,11 @@ class AppointmentSummaryBuilder
 
 class _$PaymentIntentSummary extends PaymentIntentSummary {
   @override
-  final String stripeClientSecret;
+  final String? stripeClientSecret;
 
   factory _$PaymentIntentSummary(
-          [void Function(PaymentIntentSummaryBuilder) updates]) =>
-      (new PaymentIntentSummaryBuilder()..update(updates)).build();
+          [void Function(PaymentIntentSummaryBuilder)? updates]) =>
+      (new PaymentIntentSummaryBuilder()..update(updates))._build();
 
   _$PaymentIntentSummary._({this.stripeClientSecret}) : super._();
 
@@ -1001,12 +1017,15 @@ class _$PaymentIntentSummary extends PaymentIntentSummary {
 
   @override
   int get hashCode {
-    return $jf($jc(0, stripeClientSecret.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, stripeClientSecret.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('PaymentIntentSummary')
+    return (newBuiltValueToStringHelper(r'PaymentIntentSummary')
           ..add('stripeClientSecret', stripeClientSecret))
         .toString();
   }
@@ -1014,11 +1033,11 @@ class _$PaymentIntentSummary extends PaymentIntentSummary {
 
 class PaymentIntentSummaryBuilder
     implements Builder<PaymentIntentSummary, PaymentIntentSummaryBuilder> {
-  _$PaymentIntentSummary _$v;
+  _$PaymentIntentSummary? _$v;
 
-  String _stripeClientSecret;
-  String get stripeClientSecret => _$this._stripeClientSecret;
-  set stripeClientSecret(String stripeClientSecret) =>
+  String? _stripeClientSecret;
+  String? get stripeClientSecret => _$this._stripeClientSecret;
+  set stripeClientSecret(String? stripeClientSecret) =>
       _$this._stripeClientSecret = stripeClientSecret;
 
   PaymentIntentSummaryBuilder();
@@ -1039,12 +1058,14 @@ class PaymentIntentSummaryBuilder
   }
 
   @override
-  void update(void Function(PaymentIntentSummaryBuilder) updates) {
+  void update(void Function(PaymentIntentSummaryBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$PaymentIntentSummary build() {
+  PaymentIntentSummary build() => _build();
+
+  _$PaymentIntentSummary _build() {
     final _$result = _$v ??
         new _$PaymentIntentSummary._(stripeClientSecret: stripeClientSecret);
     replace(_$result);
@@ -1060,27 +1081,27 @@ class _$DataValidateRdvSummaryDto extends DataValidateRdvSummaryDto {
   @override
   final String type;
   @override
-  final DataValidateRdvSummaryDto2 data;
+  final DataValidateRdvSummaryDto2? data;
   @override
-  final PaymentIntentSummary paymentIntent;
+  final PaymentIntentSummary? paymentIntent;
 
   factory _$DataValidateRdvSummaryDto(
-          [void Function(DataValidateRdvSummaryDtoBuilder) updates]) =>
-      (new DataValidateRdvSummaryDtoBuilder()..update(updates)).build();
+          [void Function(DataValidateRdvSummaryDtoBuilder)? updates]) =>
+      (new DataValidateRdvSummaryDtoBuilder()..update(updates))._build();
 
   _$DataValidateRdvSummaryDto._(
-      {this.session,
-      this.headermessage,
-      this.type,
+      {required this.session,
+      required this.headermessage,
+      required this.type,
       this.data,
       this.paymentIntent})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        session, 'DataValidateRdvSummaryDto', 'session');
+        session, r'DataValidateRdvSummaryDto', 'session');
     BuiltValueNullFieldError.checkNotNull(
-        headermessage, 'DataValidateRdvSummaryDto', 'headermessage');
+        headermessage, r'DataValidateRdvSummaryDto', 'headermessage');
     BuiltValueNullFieldError.checkNotNull(
-        type, 'DataValidateRdvSummaryDto', 'type');
+        type, r'DataValidateRdvSummaryDto', 'type');
   }
 
   @override
@@ -1105,17 +1126,19 @@ class _$DataValidateRdvSummaryDto extends DataValidateRdvSummaryDto {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc($jc($jc(0, session.hashCode), headermessage.hashCode),
-                type.hashCode),
-            data.hashCode),
-        paymentIntent.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, session.hashCode);
+    _$hash = $jc(_$hash, headermessage.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jc(_$hash, paymentIntent.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataValidateRdvSummaryDto')
+    return (newBuiltValueToStringHelper(r'DataValidateRdvSummaryDto')
           ..add('session', session)
           ..add('headermessage', headermessage)
           ..add('type', type)
@@ -1128,30 +1151,30 @@ class _$DataValidateRdvSummaryDto extends DataValidateRdvSummaryDto {
 class DataValidateRdvSummaryDtoBuilder
     implements
         Builder<DataValidateRdvSummaryDto, DataValidateRdvSummaryDtoBuilder> {
-  _$DataValidateRdvSummaryDto _$v;
+  _$DataValidateRdvSummaryDto? _$v;
 
-  String _session;
-  String get session => _$this._session;
-  set session(String session) => _$this._session = session;
+  String? _session;
+  String? get session => _$this._session;
+  set session(String? session) => _$this._session = session;
 
-  String _headermessage;
-  String get headermessage => _$this._headermessage;
-  set headermessage(String headermessage) =>
+  String? _headermessage;
+  String? get headermessage => _$this._headermessage;
+  set headermessage(String? headermessage) =>
       _$this._headermessage = headermessage;
 
-  String _type;
-  String get type => _$this._type;
-  set type(String type) => _$this._type = type;
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
 
-  DataValidateRdvSummaryDto2Builder _data;
+  DataValidateRdvSummaryDto2Builder? _data;
   DataValidateRdvSummaryDto2Builder get data =>
       _$this._data ??= new DataValidateRdvSummaryDto2Builder();
-  set data(DataValidateRdvSummaryDto2Builder data) => _$this._data = data;
+  set data(DataValidateRdvSummaryDto2Builder? data) => _$this._data = data;
 
-  PaymentIntentSummaryBuilder _paymentIntent;
+  PaymentIntentSummaryBuilder? _paymentIntent;
   PaymentIntentSummaryBuilder get paymentIntent =>
       _$this._paymentIntent ??= new PaymentIntentSummaryBuilder();
-  set paymentIntent(PaymentIntentSummaryBuilder paymentIntent) =>
+  set paymentIntent(PaymentIntentSummaryBuilder? paymentIntent) =>
       _$this._paymentIntent = paymentIntent;
 
   DataValidateRdvSummaryDtoBuilder();
@@ -1176,26 +1199,28 @@ class DataValidateRdvSummaryDtoBuilder
   }
 
   @override
-  void update(void Function(DataValidateRdvSummaryDtoBuilder) updates) {
+  void update(void Function(DataValidateRdvSummaryDtoBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataValidateRdvSummaryDto build() {
+  DataValidateRdvSummaryDto build() => _build();
+
+  _$DataValidateRdvSummaryDto _build() {
     _$DataValidateRdvSummaryDto _$result;
     try {
       _$result = _$v ??
           new _$DataValidateRdvSummaryDto._(
               session: BuiltValueNullFieldError.checkNotNull(
-                  session, 'DataValidateRdvSummaryDto', 'session'),
+                  session, r'DataValidateRdvSummaryDto', 'session'),
               headermessage: BuiltValueNullFieldError.checkNotNull(
-                  headermessage, 'DataValidateRdvSummaryDto', 'headermessage'),
+                  headermessage, r'DataValidateRdvSummaryDto', 'headermessage'),
               type: BuiltValueNullFieldError.checkNotNull(
-                  type, 'DataValidateRdvSummaryDto', 'type'),
+                  type, r'DataValidateRdvSummaryDto', 'type'),
               data: _data?.build(),
               paymentIntent: _paymentIntent?.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'data';
         _data?.build();
@@ -1203,7 +1228,7 @@ class DataValidateRdvSummaryDtoBuilder
         _paymentIntent?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'DataValidateRdvSummaryDto', _$failedField, e.toString());
+            r'DataValidateRdvSummaryDto', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -1212,4 +1237,4 @@ class DataValidateRdvSummaryDtoBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

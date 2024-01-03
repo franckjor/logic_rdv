@@ -22,26 +22,19 @@ abstract class SelectedPatientResponseForRdv
       _$SelectedPatientResponseForRdv;
 
   @BuiltValueField(wireName: 'version')
-  @nullable
-  String get version;
+  String? get version;
   @BuiltValueField(wireName: 'request')
-  @nullable
-  String get request;
+  String? get request;
   @BuiltValueField(wireName: 'params')
-  @nullable
-  ParamsSelectedPatientResponseForRdv get params;
+  ParamsSelectedPatientResponseForRdv? get params;
   @BuiltValueField(wireName: 'message')
-  @nullable
-  String get message;
+  String? get message;
   @BuiltValueField(wireName: 'httpstatut')
-  @nullable
-  int get httpstatut;
+  int? get httpstatut;
   @BuiltValueField(wireName: 'error')
-  @nullable
-  String get error;
+  String? get error;
   @BuiltValueField(wireName: 'data')
-  @nullable
-  DataSelectedPatientResponseForRdv get data;
+  DataSelectedPatientResponseForRdv? get data;
   String toJson() {
     return json.encode(serializers.serializeWith(
         SelectedPatientResponseForRdv.serializer, this));
@@ -67,23 +60,17 @@ abstract class ParamsSelectedPatientResponseForRdv
       _$ParamsSelectedPatientResponseForRdv;
 
   @BuiltValueField(wireName: 'tokenuser')
-  @nullable
-  String get tokenuser;
+  String? get tokenuser;
   @BuiltValueField(wireName: 'tokenappointment')
-  @nullable
-  String get tokenappointment;
+  String? get tokenappointment;
   @BuiltValueField(wireName: 'week')
-  @nullable
-  String get week;
+  String? get week;
   @BuiltValueField(wireName: 'data')
-  @nullable
-  String get data;
+  String? get data;
   @BuiltValueField(wireName: 'action')
-  @nullable
-  String get action;
+  String? get action;
   @BuiltValueField(wireName: 'session')
-  @nullable
-  String get session;
+  String? get session;
   String toJson() {
     return json.encode(serializers.serializeWith(
         ParamsSelectedPatientResponseForRdv.serializer, this));
@@ -110,20 +97,15 @@ abstract class DataSelectedPatientResponseForRdv
       _$DataSelectedPatientResponseForRdv;
 
   @BuiltValueField(wireName: 'session')
-  @nullable
-  String get session;
+  String? get session;
   @BuiltValueField(wireName: 'navigation')
-  @nullable
-  Navigation get navigation;
+  Navigation? get navigation;
   @BuiltValueField(wireName: 'headermessage')
-  @nullable
-  String get headermessage;
+  String? get headermessage;
   @BuiltValueField(wireName: 'type')
-  @nullable
-  String get type;
+  String? get type;
   @BuiltValueField(wireName: 'data')
-  @nullable
-  DataSelectedPatientResponseForRdvBody get data;
+  DataSelectedPatientResponseForRdvBody? get data;
   String toJson() {
     return json.encode(serializers.serializeWith(
         DataSelectedPatientResponseForRdv.serializer, this));
@@ -149,29 +131,21 @@ abstract class DataSelectedPatientResponseForRdvBody
       _$DataSelectedPatientResponseForRdvBody;
 
   @BuiltValueField(wireName: 'messageinternet')
-  @nullable
-  String get messageinternet;
+  String? get messageinternet;
   @BuiltValueField(wireName: 'messagenbperson')
-  @nullable
-  String get messagenbperson;
+  String? get messagenbperson;
   @BuiltValueField(wireName: 'apptsinprogress')
-  @nullable
-  Apptsinprogress get apptsinprogress;
+  Apptsinprogress? get apptsinprogress;
   @BuiltValueField(wireName: 'appttovalid')
-  @nullable
-  Appttovalid get appttovalid;
+  Appttovalid? get appttovalid;
   @BuiltValueField(wireName: 'apptinput')
-  @nullable
-  BuiltList<Apptinput> get apptinput;
+  BuiltList<Apptinput>? get apptinput;
   @BuiltValueField(wireName: 'apptbuttonvalidation')
-  @nullable
-  Apptbuttonvalidation get apptbuttonvalidation;
+  Apptbuttonvalidation? get apptbuttonvalidation;
   @BuiltValueField(wireName: 'messageglobalinternet')
-  @nullable
-  String get messageglobalinternet;
+  String? get messageglobalinternet;
   @BuiltValueField(wireName: 'payment')
-  @nullable
-  Payment get payment;
+  Payment? get payment;
   String toJson() {
     return json.encode(serializers.serializeWith(
         DataSelectedPatientResponseForRdvBody.serializer, this));
@@ -195,11 +169,9 @@ abstract class Apptsinprogress
       _$Apptsinprogress;
 
   @BuiltValueField(wireName: 'message')
-  @nullable
-  String get message;
+  String? get message;
   @BuiltValueField(wireName: 'appts')
-  @nullable
-  BuiltList<Appts> get appts;
+  BuiltList<Appts>? get appts;
   String toJson() {
     return json
         .encode(serializers.serializeWith(Apptsinprogress.serializer, this));
@@ -220,17 +192,13 @@ abstract class Appts implements Built<Appts, ApptsBuilder> {
   factory Appts([updates(ApptsBuilder b)]) = _$Appts;
 
   @BuiltValueField(wireName: 'date')
-  @nullable
-  String get date;
+  String? get date;
   @BuiltValueField(wireName: 'label')
-  @nullable
-  String get label;
+  String? get label;
   @BuiltValueField(wireName: 'doctor')
-  @nullable
-  String get doctor;
+  String? get doctor;
   @BuiltValueField(wireName: 'token')
-  @nullable
-  String get token;
+  String? get token;
   String toJson() {
     return json.encode(serializers.serializeWith(Appts.serializer, this));
   }
@@ -249,17 +217,13 @@ abstract class Appttovalid implements Built<Appttovalid, AppttovalidBuilder> {
   factory Appttovalid([updates(AppttovalidBuilder b)]) = _$Appttovalid;
 
   @BuiltValueField(wireName: 'date')
-  @nullable
-  String get date;
+  String? get date;
   @BuiltValueField(wireName: 'doctor')
-  @nullable
-  String get doctor;
+  String? get doctor;
   @BuiltValueField(wireName: 'description')
-  @nullable
-  String get description;
+  String? get description;
   @BuiltValueField(wireName: 'patient')
-  @nullable
-  String get patient;
+  String? get patient;
   String toJson() {
     return json.encode(serializers.serializeWith(Appttovalid.serializer, this));
   }
@@ -278,17 +242,13 @@ abstract class Apptinput implements Built<Apptinput, ApptinputBuilder> {
   factory Apptinput([updates(ApptinputBuilder b)]) = _$Apptinput;
 
   @BuiltValueField(wireName: 'name')
-  @nullable
-  String get name;
+  String? get name;
   @BuiltValueField(wireName: 'mandatory')
-  @nullable
-  String get mandatory;
+  String? get mandatory;
   @BuiltValueField(wireName: 'label')
-  @nullable
-  String get label;
+  String? get label;
   @BuiltValueField(wireName: 'value')
-  @nullable
-  String get value;
+  String? get value;
   String toJson() {
     return json.encode(serializers.serializeWith(Apptinput.serializer, this));
   }
@@ -309,20 +269,15 @@ abstract class Apptbuttonvalidation
       _$Apptbuttonvalidation;
 
   @BuiltValueField(wireName: 'onclick')
-  @nullable
-  String get onclick;
+  String? get onclick;
   @BuiltValueField(wireName: 'label')
-  @nullable
-  String get label;
+  String? get label;
   @BuiltValueField(wireName: 'onclick_data')
-  @nullable
-  String get onclickData;
+  String? get onclickData;
   @BuiltValueField(wireName: 'onclick_action')
-  @nullable
-  String get onclickAction;
+  String? get onclickAction;
   @BuiltValueField(wireName: 'onclick_week')
-  @nullable
-  String get onclickWeek;
+  String? get onclickWeek;
   String toJson() {
     return json.encode(
         serializers.serializeWith(Apptbuttonvalidation.serializer, this));
@@ -343,17 +298,13 @@ abstract class Payment implements Built<Payment, PaymentBuilder> {
   factory Payment([updates(PaymentBuilder b)]) = _$Payment;
 
   @BuiltValueField(wireName: 'amountlabel')
-  @nullable
-  String get amountlabel;
+  String? get amountlabel;
   @BuiltValueField(wireName: 'amount')
-  @nullable
-  String get amount;
+  String? get amount;
   @BuiltValueField(wireName: 'infos')
-  @nullable
-  String get infos;
+  String? get infos;
   @BuiltValueField(wireName: 'pkaccount')
-  @nullable
-  String get pkAccount;
+  String? get pkAccount;
   String toJson() {
     return json.encode(serializers.serializeWith(Payment.serializer, this));
   }

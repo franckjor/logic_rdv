@@ -19,9 +19,8 @@ abstract class NotificationListRequest
   String get installationkey;
   @BuiltValueField(wireName: 'page')
   String get page;
-  @nullable
   @BuiltValueField(wireName: 'tokeruser')
-  String get tokeruser;
+  String? get tokeruser;
   String toJson() {
     return json.encode(
         serializers.serializeWith(NotificationListRequest.serializer, this));

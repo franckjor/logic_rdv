@@ -19,23 +19,17 @@ abstract class CreateAppointmentRequest
       _$CreateAppointmentRequest;
 
   @BuiltValueField(wireName: 'tokenuser')
-  @nullable
-  String get tokenuser;
+  String? get tokenuser;
   @BuiltValueField(wireName: 'tokenappointment')
-  @nullable
-  String get tokenappointment;
+  String? get tokenappointment;
   @BuiltValueField(wireName: 'week')
-  @nullable
-  String get week;
+  String? get week;
   @BuiltValueField(wireName: 'data')
-  @nullable
-  String get data;
+  String? get data;
   @BuiltValueField(wireName: 'action')
-  @nullable
-  String get action;
+  String? get action;
   @BuiltValueField(wireName: 'session')
-  @nullable
-  String get session;
+  String? get session;
   String toJson() {
     return json.encode(
         serializers.serializeWith(CreateAppointmentRequest.serializer, this));

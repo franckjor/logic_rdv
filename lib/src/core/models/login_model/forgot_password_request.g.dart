@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of forgot_password_request;
+part of 'forgot_password_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -20,10 +20,10 @@ class _$ForgotPasswordRequestSerializer
   final String wireName = 'ForgotPasswordRequest';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ForgotPasswordRequest object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'email',
       serializers.serialize(object.email,
           specifiedType: const FullType(String)),
@@ -34,19 +34,19 @@ class _$ForgotPasswordRequestSerializer
 
   @override
   ForgotPasswordRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ForgotPasswordRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'email':
           result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -60,12 +60,12 @@ class _$ForgotPasswordRequest extends ForgotPasswordRequest {
   final String email;
 
   factory _$ForgotPasswordRequest(
-          [void Function(ForgotPasswordRequestBuilder) updates]) =>
-      (new ForgotPasswordRequestBuilder()..update(updates)).build();
+          [void Function(ForgotPasswordRequestBuilder)? updates]) =>
+      (new ForgotPasswordRequestBuilder()..update(updates))._build();
 
-  _$ForgotPasswordRequest._({this.email}) : super._() {
+  _$ForgotPasswordRequest._({required this.email}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        email, 'ForgotPasswordRequest', 'email');
+        email, r'ForgotPasswordRequest', 'email');
   }
 
   @override
@@ -85,12 +85,15 @@ class _$ForgotPasswordRequest extends ForgotPasswordRequest {
 
   @override
   int get hashCode {
-    return $jf($jc(0, email.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ForgotPasswordRequest')
+    return (newBuiltValueToStringHelper(r'ForgotPasswordRequest')
           ..add('email', email))
         .toString();
   }
@@ -98,11 +101,11 @@ class _$ForgotPasswordRequest extends ForgotPasswordRequest {
 
 class ForgotPasswordRequestBuilder
     implements Builder<ForgotPasswordRequest, ForgotPasswordRequestBuilder> {
-  _$ForgotPasswordRequest _$v;
+  _$ForgotPasswordRequest? _$v;
 
-  String _email;
-  String get email => _$this._email;
-  set email(String email) => _$this._email = email;
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
   ForgotPasswordRequestBuilder();
 
@@ -122,19 +125,21 @@ class ForgotPasswordRequestBuilder
   }
 
   @override
-  void update(void Function(ForgotPasswordRequestBuilder) updates) {
+  void update(void Function(ForgotPasswordRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ForgotPasswordRequest build() {
+  ForgotPasswordRequest build() => _build();
+
+  _$ForgotPasswordRequest _build() {
     final _$result = _$v ??
         new _$ForgotPasswordRequest._(
             email: BuiltValueNullFieldError.checkNotNull(
-                email, 'ForgotPasswordRequest', 'email'));
+                email, r'ForgotPasswordRequest', 'email'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

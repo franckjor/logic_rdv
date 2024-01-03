@@ -15,26 +15,19 @@ abstract class PatientRequest
   factory PatientRequest([updates(PatientRequestBuilder b)]) = _$PatientRequest;
 
   @BuiltValueField(wireName: 'tokenuser')
-  @nullable
-  String get tokenuser;
+  String? get tokenuser;
   @BuiltValueField(wireName: 'tokenappt')
-  @nullable
-  String get tokenappt;
+  String? get tokenappt;
   @BuiltValueField(wireName: 'tokenpatient')
-  @nullable
-  String get tokenpatient;
+  String? get tokenpatient;
   @BuiltValueField(wireName: 'nom')
-  @nullable
-  String get nom;
+  String? get nom;
   @BuiltValueField(wireName: 'prenom')
-  @nullable
-  String get prenom;
+  String? get prenom;
   @BuiltValueField(wireName: 'email')
-  @nullable
-  String get email;
+  String? get email;
   @BuiltValueField(wireName: 'phone')
-  @nullable
-  String get phone;
+  String? get phone;
   String toJson() {
     return json
         .encode(serializers.serializeWith(PatientRequest.serializer, this));

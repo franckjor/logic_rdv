@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of get_token_response;
+part of 'get_token_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -19,9 +19,9 @@ class _$GetTokenResponseSerializer
   final String wireName = 'GetTokenResponse';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, GetTokenResponse object,
+  Iterable<Object?> serialize(Serializers serializers, GetTokenResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'httpstatut',
       serializers.serialize(object.httpstatut,
           specifiedType: const FullType(int)),
@@ -47,39 +47,39 @@ class _$GetTokenResponseSerializer
 
   @override
   GetTokenResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new GetTokenResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(DataTokenResponse))
+                  specifiedType: const FullType(DataTokenResponse))!
               as DataTokenResponse);
           break;
       }
@@ -97,10 +97,10 @@ class _$DataTokenResponseSerializer
   final String wireName = 'DataTokenResponse';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, DataTokenResponse object,
+  Iterable<Object?> serialize(Serializers serializers, DataTokenResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.authorization;
     if (value != null) {
       result
@@ -113,19 +113,19 @@ class _$DataTokenResponseSerializer
 
   @override
   DataTokenResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataTokenResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'authorization':
           result.authorization = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -149,27 +149,27 @@ class _$GetTokenResponse extends GetTokenResponse {
   final DataTokenResponse data;
 
   factory _$GetTokenResponse(
-          [void Function(GetTokenResponseBuilder) updates]) =>
-      (new GetTokenResponseBuilder()..update(updates)).build();
+          [void Function(GetTokenResponseBuilder)? updates]) =>
+      (new GetTokenResponseBuilder()..update(updates))._build();
 
   _$GetTokenResponse._(
-      {this.httpstatut,
-      this.version,
-      this.request,
-      this.message,
-      this.error,
-      this.data})
+      {required this.httpstatut,
+      required this.version,
+      required this.request,
+      required this.message,
+      required this.error,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        httpstatut, 'GetTokenResponse', 'httpstatut');
+        httpstatut, r'GetTokenResponse', 'httpstatut');
     BuiltValueNullFieldError.checkNotNull(
-        version, 'GetTokenResponse', 'version');
+        version, r'GetTokenResponse', 'version');
     BuiltValueNullFieldError.checkNotNull(
-        request, 'GetTokenResponse', 'request');
+        request, r'GetTokenResponse', 'request');
     BuiltValueNullFieldError.checkNotNull(
-        message, 'GetTokenResponse', 'message');
-    BuiltValueNullFieldError.checkNotNull(error, 'GetTokenResponse', 'error');
-    BuiltValueNullFieldError.checkNotNull(data, 'GetTokenResponse', 'data');
+        message, r'GetTokenResponse', 'message');
+    BuiltValueNullFieldError.checkNotNull(error, r'GetTokenResponse', 'error');
+    BuiltValueNullFieldError.checkNotNull(data, r'GetTokenResponse', 'data');
   }
 
   @override
@@ -194,19 +194,20 @@ class _$GetTokenResponse extends GetTokenResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, httpstatut.hashCode), version.hashCode),
-                    request.hashCode),
-                message.hashCode),
-            error.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('GetTokenResponse')
+    return (newBuiltValueToStringHelper(r'GetTokenResponse')
           ..add('httpstatut', httpstatut)
           ..add('version', version)
           ..add('request', request)
@@ -219,32 +220,32 @@ class _$GetTokenResponse extends GetTokenResponse {
 
 class GetTokenResponseBuilder
     implements Builder<GetTokenResponse, GetTokenResponseBuilder> {
-  _$GetTokenResponse _$v;
+  _$GetTokenResponse? _$v;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  DataTokenResponseBuilder _data;
+  DataTokenResponseBuilder? _data;
   DataTokenResponseBuilder get data =>
       _$this._data ??= new DataTokenResponseBuilder();
-  set data(DataTokenResponseBuilder data) => _$this._data = data;
+  set data(DataTokenResponseBuilder? data) => _$this._data = data;
 
   GetTokenResponseBuilder();
 
@@ -269,35 +270,37 @@ class GetTokenResponseBuilder
   }
 
   @override
-  void update(void Function(GetTokenResponseBuilder) updates) {
+  void update(void Function(GetTokenResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$GetTokenResponse build() {
+  GetTokenResponse build() => _build();
+
+  _$GetTokenResponse _build() {
     _$GetTokenResponse _$result;
     try {
       _$result = _$v ??
           new _$GetTokenResponse._(
               httpstatut: BuiltValueNullFieldError.checkNotNull(
-                  httpstatut, 'GetTokenResponse', 'httpstatut'),
+                  httpstatut, r'GetTokenResponse', 'httpstatut'),
               version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'GetTokenResponse', 'version'),
+                  version, r'GetTokenResponse', 'version'),
               request: BuiltValueNullFieldError.checkNotNull(
-                  request, 'GetTokenResponse', 'request'),
+                  request, r'GetTokenResponse', 'request'),
               message: BuiltValueNullFieldError.checkNotNull(
-                  message, 'GetTokenResponse', 'message'),
+                  message, r'GetTokenResponse', 'message'),
               error: BuiltValueNullFieldError.checkNotNull(
-                  error, 'GetTokenResponse', 'error'),
+                  error, r'GetTokenResponse', 'error'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'data';
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'GetTokenResponse', _$failedField, e.toString());
+            r'GetTokenResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -308,11 +311,11 @@ class GetTokenResponseBuilder
 
 class _$DataTokenResponse extends DataTokenResponse {
   @override
-  final String authorization;
+  final String? authorization;
 
   factory _$DataTokenResponse(
-          [void Function(DataTokenResponseBuilder) updates]) =>
-      (new DataTokenResponseBuilder()..update(updates)).build();
+          [void Function(DataTokenResponseBuilder)? updates]) =>
+      (new DataTokenResponseBuilder()..update(updates))._build();
 
   _$DataTokenResponse._({this.authorization}) : super._();
 
@@ -332,12 +335,15 @@ class _$DataTokenResponse extends DataTokenResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(0, authorization.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, authorization.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataTokenResponse')
+    return (newBuiltValueToStringHelper(r'DataTokenResponse')
           ..add('authorization', authorization))
         .toString();
   }
@@ -345,11 +351,11 @@ class _$DataTokenResponse extends DataTokenResponse {
 
 class DataTokenResponseBuilder
     implements Builder<DataTokenResponse, DataTokenResponseBuilder> {
-  _$DataTokenResponse _$v;
+  _$DataTokenResponse? _$v;
 
-  String _authorization;
-  String get authorization => _$this._authorization;
-  set authorization(String authorization) =>
+  String? _authorization;
+  String? get authorization => _$this._authorization;
+  set authorization(String? authorization) =>
       _$this._authorization = authorization;
 
   DataTokenResponseBuilder();
@@ -370,12 +376,14 @@ class DataTokenResponseBuilder
   }
 
   @override
-  void update(void Function(DataTokenResponseBuilder) updates) {
+  void update(void Function(DataTokenResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataTokenResponse build() {
+  DataTokenResponse build() => _build();
+
+  _$DataTokenResponse _build() {
     final _$result =
         _$v ?? new _$DataTokenResponse._(authorization: authorization);
     replace(_$result);
@@ -383,4 +391,4 @@ class DataTokenResponseBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

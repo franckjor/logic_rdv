@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of selected_patient_response_for_rdv;
+part of 'selected_patient_response_for_rdv.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -38,11 +38,11 @@ class _$SelectedPatientResponseForRdvSerializer
   final String wireName = 'SelectedPatientResponseForRdv';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, SelectedPatientResponseForRdv object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.version;
     if (value != null) {
       result
@@ -97,46 +97,46 @@ class _$SelectedPatientResponseForRdvSerializer
 
   @override
   SelectedPatientResponseForRdv deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SelectedPatientResponseForRdvBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'params':
           result.params.replace(serializers.deserialize(value,
                   specifiedType:
-                      const FullType(ParamsSelectedPatientResponseForRdv))
+                      const FullType(ParamsSelectedPatientResponseForRdv))!
               as ParamsSelectedPatientResponseForRdv);
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
                   specifiedType:
-                      const FullType(DataSelectedPatientResponseForRdv))
+                      const FullType(DataSelectedPatientResponseForRdv))!
               as DataSelectedPatientResponseForRdv);
           break;
       }
@@ -157,11 +157,11 @@ class _$ParamsSelectedPatientResponseForRdvSerializer
   final String wireName = 'ParamsSelectedPatientResponseForRdv';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ParamsSelectedPatientResponseForRdv object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.tokenuser;
     if (value != null) {
       result
@@ -209,39 +209,39 @@ class _$ParamsSelectedPatientResponseForRdvSerializer
 
   @override
   ParamsSelectedPatientResponseForRdv deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsSelectedPatientResponseForRdvBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'tokenappointment':
           result.tokenappointment = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'week':
           result.week = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'data':
           result.data = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'action':
           result.action = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'session':
           result.session = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -261,11 +261,11 @@ class _$DataSelectedPatientResponseForRdvSerializer
   final String wireName = 'DataSelectedPatientResponseForRdv';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, DataSelectedPatientResponseForRdv object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.session;
     if (value != null) {
       result
@@ -307,36 +307,36 @@ class _$DataSelectedPatientResponseForRdvSerializer
 
   @override
   DataSelectedPatientResponseForRdv deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataSelectedPatientResponseForRdvBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'session':
           result.session = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'navigation':
           result.navigation.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Navigation)) as Navigation);
+              specifiedType: const FullType(Navigation))! as Navigation);
           break;
         case 'headermessage':
           result.headermessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'type':
           result.type = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
                   specifiedType:
-                      const FullType(DataSelectedPatientResponseForRdvBody))
+                      const FullType(DataSelectedPatientResponseForRdvBody))!
               as DataSelectedPatientResponseForRdvBody);
           break;
       }
@@ -357,11 +357,11 @@ class _$DataSelectedPatientResponseForRdvBodySerializer
   final String wireName = 'DataSelectedPatientResponseForRdvBody';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, DataSelectedPatientResponseForRdvBody object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.messageinternet;
     if (value != null) {
       result
@@ -424,51 +424,51 @@ class _$DataSelectedPatientResponseForRdvBodySerializer
 
   @override
   DataSelectedPatientResponseForRdvBody deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataSelectedPatientResponseForRdvBodyBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'messageinternet':
           result.messageinternet = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'messagenbperson':
           result.messagenbperson = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'apptsinprogress':
           result.apptsinprogress.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(Apptsinprogress))
+                  specifiedType: const FullType(Apptsinprogress))!
               as Apptsinprogress);
           break;
         case 'appttovalid':
           result.appttovalid.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Appttovalid)) as Appttovalid);
+              specifiedType: const FullType(Appttovalid))! as Appttovalid);
           break;
         case 'apptinput':
           result.apptinput.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(Apptinput)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(Apptinput)]))!
+              as BuiltList<Object?>);
           break;
         case 'apptbuttonvalidation':
           result.apptbuttonvalidation.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(Apptbuttonvalidation))
+                  specifiedType: const FullType(Apptbuttonvalidation))!
               as Apptbuttonvalidation);
           break;
         case 'messageglobalinternet':
           result.messageglobalinternet = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'payment':
           result.payment.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Payment)) as Payment);
+              specifiedType: const FullType(Payment))! as Payment);
           break;
       }
     }
@@ -485,10 +485,10 @@ class _$ApptsinprogressSerializer
   final String wireName = 'Apptsinprogress';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Apptsinprogress object,
+  Iterable<Object?> serialize(Serializers serializers, Apptsinprogress object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.message;
     if (value != null) {
       result
@@ -509,25 +509,25 @@ class _$ApptsinprogressSerializer
 
   @override
   Apptsinprogress deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ApptsinprogressBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'appts':
           result.appts.replace(serializers.deserialize(value,
                   specifiedType:
-                      const FullType(BuiltList, const [const FullType(Appts)]))
-              as BuiltList<Object>);
+                      const FullType(BuiltList, const [const FullType(Appts)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -543,10 +543,10 @@ class _$ApptsSerializer implements StructuredSerializer<Appts> {
   final String wireName = 'Appts';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Appts object,
+  Iterable<Object?> serialize(Serializers serializers, Appts object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.date;
     if (value != null) {
       result
@@ -579,31 +579,31 @@ class _$ApptsSerializer implements StructuredSerializer<Appts> {
   }
 
   @override
-  Appts deserialize(Serializers serializers, Iterable<Object> serialized,
+  Appts deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ApptsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'date':
           result.date = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'label':
           result.label = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'doctor':
           result.doctor = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'token':
           result.token = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -619,10 +619,10 @@ class _$AppttovalidSerializer implements StructuredSerializer<Appttovalid> {
   final String wireName = 'Appttovalid';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Appttovalid object,
+  Iterable<Object?> serialize(Serializers serializers, Appttovalid object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.date;
     if (value != null) {
       result
@@ -655,31 +655,31 @@ class _$AppttovalidSerializer implements StructuredSerializer<Appttovalid> {
   }
 
   @override
-  Appttovalid deserialize(Serializers serializers, Iterable<Object> serialized,
+  Appttovalid deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AppttovalidBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'date':
           result.date = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'doctor':
           result.doctor = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'description':
           result.description = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'patient':
           result.patient = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -695,10 +695,10 @@ class _$ApptinputSerializer implements StructuredSerializer<Apptinput> {
   final String wireName = 'Apptinput';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Apptinput object,
+  Iterable<Object?> serialize(Serializers serializers, Apptinput object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.name;
     if (value != null) {
       result
@@ -731,31 +731,31 @@ class _$ApptinputSerializer implements StructuredSerializer<Apptinput> {
   }
 
   @override
-  Apptinput deserialize(Serializers serializers, Iterable<Object> serialized,
+  Apptinput deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ApptinputBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'name':
           result.name = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'mandatory':
           result.mandatory = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'label':
           result.label = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'value':
           result.value = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -775,11 +775,11 @@ class _$ApptbuttonvalidationSerializer
   final String wireName = 'Apptbuttonvalidation';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, Apptbuttonvalidation object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.onclick;
     if (value != null) {
       result
@@ -820,35 +820,35 @@ class _$ApptbuttonvalidationSerializer
 
   @override
   Apptbuttonvalidation deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ApptbuttonvalidationBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'onclick':
           result.onclick = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'label':
           result.label = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick_data':
           result.onclickData = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick_action':
           result.onclickAction = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'onclick_week':
           result.onclickWeek = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -864,10 +864,10 @@ class _$PaymentSerializer implements StructuredSerializer<Payment> {
   final String wireName = 'Payment';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Payment object,
+  Iterable<Object?> serialize(Serializers serializers, Payment object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.amountlabel;
     if (value != null) {
       result
@@ -900,31 +900,31 @@ class _$PaymentSerializer implements StructuredSerializer<Payment> {
   }
 
   @override
-  Payment deserialize(Serializers serializers, Iterable<Object> serialized,
+  Payment deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PaymentBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'amountlabel':
           result.amountlabel = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'amount':
           result.amount = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'infos':
           result.infos = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'pkaccount':
           result.pkAccount = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -935,23 +935,23 @@ class _$PaymentSerializer implements StructuredSerializer<Payment> {
 
 class _$SelectedPatientResponseForRdv extends SelectedPatientResponseForRdv {
   @override
-  final String version;
+  final String? version;
   @override
-  final String request;
+  final String? request;
   @override
-  final ParamsSelectedPatientResponseForRdv params;
+  final ParamsSelectedPatientResponseForRdv? params;
   @override
-  final String message;
+  final String? message;
   @override
-  final int httpstatut;
+  final int? httpstatut;
   @override
-  final String error;
+  final String? error;
   @override
-  final DataSelectedPatientResponseForRdv data;
+  final DataSelectedPatientResponseForRdv? data;
 
   factory _$SelectedPatientResponseForRdv(
-          [void Function(SelectedPatientResponseForRdvBuilder) updates]) =>
-      (new SelectedPatientResponseForRdvBuilder()..update(updates)).build();
+          [void Function(SelectedPatientResponseForRdvBuilder)? updates]) =>
+      (new SelectedPatientResponseForRdvBuilder()..update(updates))._build();
 
   _$SelectedPatientResponseForRdv._(
       {this.version,
@@ -987,21 +987,21 @@ class _$SelectedPatientResponseForRdv extends SelectedPatientResponseForRdv {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, version.hashCode), request.hashCode),
-                        params.hashCode),
-                    message.hashCode),
-                httpstatut.hashCode),
-            error.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('SelectedPatientResponseForRdv')
+    return (newBuiltValueToStringHelper(r'SelectedPatientResponseForRdv')
           ..add('version', version)
           ..add('request', request)
           ..add('params', params)
@@ -1017,38 +1017,38 @@ class SelectedPatientResponseForRdvBuilder
     implements
         Builder<SelectedPatientResponseForRdv,
             SelectedPatientResponseForRdvBuilder> {
-  _$SelectedPatientResponseForRdv _$v;
+  _$SelectedPatientResponseForRdv? _$v;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  ParamsSelectedPatientResponseForRdvBuilder _params;
+  ParamsSelectedPatientResponseForRdvBuilder? _params;
   ParamsSelectedPatientResponseForRdvBuilder get params =>
       _$this._params ??= new ParamsSelectedPatientResponseForRdvBuilder();
-  set params(ParamsSelectedPatientResponseForRdvBuilder params) =>
+  set params(ParamsSelectedPatientResponseForRdvBuilder? params) =>
       _$this._params = params;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  DataSelectedPatientResponseForRdvBuilder _data;
+  DataSelectedPatientResponseForRdvBuilder? _data;
   DataSelectedPatientResponseForRdvBuilder get data =>
       _$this._data ??= new DataSelectedPatientResponseForRdvBuilder();
-  set data(DataSelectedPatientResponseForRdvBuilder data) =>
+  set data(DataSelectedPatientResponseForRdvBuilder? data) =>
       _$this._data = data;
 
   SelectedPatientResponseForRdvBuilder();
@@ -1075,12 +1075,14 @@ class SelectedPatientResponseForRdvBuilder
   }
 
   @override
-  void update(void Function(SelectedPatientResponseForRdvBuilder) updates) {
+  void update(void Function(SelectedPatientResponseForRdvBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$SelectedPatientResponseForRdv build() {
+  SelectedPatientResponseForRdv build() => _build();
+
+  _$SelectedPatientResponseForRdv _build() {
     _$SelectedPatientResponseForRdv _$result;
     try {
       _$result = _$v ??
@@ -1093,7 +1095,7 @@ class SelectedPatientResponseForRdvBuilder
               error: error,
               data: _data?.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'params';
         _params?.build();
@@ -1102,7 +1104,7 @@ class SelectedPatientResponseForRdvBuilder
         _data?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'SelectedPatientResponseForRdv', _$failedField, e.toString());
+            r'SelectedPatientResponseForRdv', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -1114,23 +1116,23 @@ class SelectedPatientResponseForRdvBuilder
 class _$ParamsSelectedPatientResponseForRdv
     extends ParamsSelectedPatientResponseForRdv {
   @override
-  final String tokenuser;
+  final String? tokenuser;
   @override
-  final String tokenappointment;
+  final String? tokenappointment;
   @override
-  final String week;
+  final String? week;
   @override
-  final String data;
+  final String? data;
   @override
-  final String action;
+  final String? action;
   @override
-  final String session;
+  final String? session;
 
   factory _$ParamsSelectedPatientResponseForRdv(
-          [void Function(ParamsSelectedPatientResponseForRdvBuilder)
+          [void Function(ParamsSelectedPatientResponseForRdvBuilder)?
               updates]) =>
       (new ParamsSelectedPatientResponseForRdvBuilder()..update(updates))
-          .build();
+          ._build();
 
   _$ParamsSelectedPatientResponseForRdv._(
       {this.tokenuser,
@@ -1164,19 +1166,20 @@ class _$ParamsSelectedPatientResponseForRdv
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, tokenuser.hashCode), tokenappointment.hashCode),
-                    week.hashCode),
-                data.hashCode),
-            action.hashCode),
-        session.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokenuser.hashCode);
+    _$hash = $jc(_$hash, tokenappointment.hashCode);
+    _$hash = $jc(_$hash, week.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jc(_$hash, action.hashCode);
+    _$hash = $jc(_$hash, session.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ParamsSelectedPatientResponseForRdv')
+    return (newBuiltValueToStringHelper(r'ParamsSelectedPatientResponseForRdv')
           ..add('tokenuser', tokenuser)
           ..add('tokenappointment', tokenappointment)
           ..add('week', week)
@@ -1191,32 +1194,32 @@ class ParamsSelectedPatientResponseForRdvBuilder
     implements
         Builder<ParamsSelectedPatientResponseForRdv,
             ParamsSelectedPatientResponseForRdvBuilder> {
-  _$ParamsSelectedPatientResponseForRdv _$v;
+  _$ParamsSelectedPatientResponseForRdv? _$v;
 
-  String _tokenuser;
-  String get tokenuser => _$this._tokenuser;
-  set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
+  String? _tokenuser;
+  String? get tokenuser => _$this._tokenuser;
+  set tokenuser(String? tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappointment;
-  String get tokenappointment => _$this._tokenappointment;
-  set tokenappointment(String tokenappointment) =>
+  String? _tokenappointment;
+  String? get tokenappointment => _$this._tokenappointment;
+  set tokenappointment(String? tokenappointment) =>
       _$this._tokenappointment = tokenappointment;
 
-  String _week;
-  String get week => _$this._week;
-  set week(String week) => _$this._week = week;
+  String? _week;
+  String? get week => _$this._week;
+  set week(String? week) => _$this._week = week;
 
-  String _data;
-  String get data => _$this._data;
-  set data(String data) => _$this._data = data;
+  String? _data;
+  String? get data => _$this._data;
+  set data(String? data) => _$this._data = data;
 
-  String _action;
-  String get action => _$this._action;
-  set action(String action) => _$this._action = action;
+  String? _action;
+  String? get action => _$this._action;
+  set action(String? action) => _$this._action = action;
 
-  String _session;
-  String get session => _$this._session;
-  set session(String session) => _$this._session = session;
+  String? _session;
+  String? get session => _$this._session;
+  set session(String? session) => _$this._session = session;
 
   ParamsSelectedPatientResponseForRdvBuilder();
 
@@ -1242,12 +1245,14 @@ class ParamsSelectedPatientResponseForRdvBuilder
 
   @override
   void update(
-      void Function(ParamsSelectedPatientResponseForRdvBuilder) updates) {
+      void Function(ParamsSelectedPatientResponseForRdvBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ParamsSelectedPatientResponseForRdv build() {
+  ParamsSelectedPatientResponseForRdv build() => _build();
+
+  _$ParamsSelectedPatientResponseForRdv _build() {
     final _$result = _$v ??
         new _$ParamsSelectedPatientResponseForRdv._(
             tokenuser: tokenuser,
@@ -1264,19 +1269,20 @@ class ParamsSelectedPatientResponseForRdvBuilder
 class _$DataSelectedPatientResponseForRdv
     extends DataSelectedPatientResponseForRdv {
   @override
-  final String session;
+  final String? session;
   @override
-  final Navigation navigation;
+  final Navigation? navigation;
   @override
-  final String headermessage;
+  final String? headermessage;
   @override
-  final String type;
+  final String? type;
   @override
-  final DataSelectedPatientResponseForRdvBody data;
+  final DataSelectedPatientResponseForRdvBody? data;
 
   factory _$DataSelectedPatientResponseForRdv(
-          [void Function(DataSelectedPatientResponseForRdvBuilder) updates]) =>
-      (new DataSelectedPatientResponseForRdvBuilder()..update(updates)).build();
+          [void Function(DataSelectedPatientResponseForRdvBuilder)? updates]) =>
+      (new DataSelectedPatientResponseForRdvBuilder()..update(updates))
+          ._build();
 
   _$DataSelectedPatientResponseForRdv._(
       {this.session, this.navigation, this.headermessage, this.type, this.data})
@@ -1304,17 +1310,19 @@ class _$DataSelectedPatientResponseForRdv
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc($jc($jc(0, session.hashCode), navigation.hashCode),
-                headermessage.hashCode),
-            type.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, session.hashCode);
+    _$hash = $jc(_$hash, navigation.hashCode);
+    _$hash = $jc(_$hash, headermessage.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataSelectedPatientResponseForRdv')
+    return (newBuiltValueToStringHelper(r'DataSelectedPatientResponseForRdv')
           ..add('session', session)
           ..add('navigation', navigation)
           ..add('headermessage', headermessage)
@@ -1328,31 +1336,31 @@ class DataSelectedPatientResponseForRdvBuilder
     implements
         Builder<DataSelectedPatientResponseForRdv,
             DataSelectedPatientResponseForRdvBuilder> {
-  _$DataSelectedPatientResponseForRdv _$v;
+  _$DataSelectedPatientResponseForRdv? _$v;
 
-  String _session;
-  String get session => _$this._session;
-  set session(String session) => _$this._session = session;
+  String? _session;
+  String? get session => _$this._session;
+  set session(String? session) => _$this._session = session;
 
-  NavigationBuilder _navigation;
+  NavigationBuilder? _navigation;
   NavigationBuilder get navigation =>
       _$this._navigation ??= new NavigationBuilder();
-  set navigation(NavigationBuilder navigation) =>
+  set navigation(NavigationBuilder? navigation) =>
       _$this._navigation = navigation;
 
-  String _headermessage;
-  String get headermessage => _$this._headermessage;
-  set headermessage(String headermessage) =>
+  String? _headermessage;
+  String? get headermessage => _$this._headermessage;
+  set headermessage(String? headermessage) =>
       _$this._headermessage = headermessage;
 
-  String _type;
-  String get type => _$this._type;
-  set type(String type) => _$this._type = type;
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
 
-  DataSelectedPatientResponseForRdvBodyBuilder _data;
+  DataSelectedPatientResponseForRdvBodyBuilder? _data;
   DataSelectedPatientResponseForRdvBodyBuilder get data =>
       _$this._data ??= new DataSelectedPatientResponseForRdvBodyBuilder();
-  set data(DataSelectedPatientResponseForRdvBodyBuilder data) =>
+  set data(DataSelectedPatientResponseForRdvBodyBuilder? data) =>
       _$this._data = data;
 
   DataSelectedPatientResponseForRdvBuilder();
@@ -1377,12 +1385,15 @@ class DataSelectedPatientResponseForRdvBuilder
   }
 
   @override
-  void update(void Function(DataSelectedPatientResponseForRdvBuilder) updates) {
+  void update(
+      void Function(DataSelectedPatientResponseForRdvBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataSelectedPatientResponseForRdv build() {
+  DataSelectedPatientResponseForRdv build() => _build();
+
+  _$DataSelectedPatientResponseForRdv _build() {
     _$DataSelectedPatientResponseForRdv _$result;
     try {
       _$result = _$v ??
@@ -1393,7 +1404,7 @@ class DataSelectedPatientResponseForRdvBuilder
               type: type,
               data: _data?.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'navigation';
         _navigation?.build();
@@ -1402,7 +1413,7 @@ class DataSelectedPatientResponseForRdvBuilder
         _data?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'DataSelectedPatientResponseForRdv', _$failedField, e.toString());
+            r'DataSelectedPatientResponseForRdv', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -1414,27 +1425,27 @@ class DataSelectedPatientResponseForRdvBuilder
 class _$DataSelectedPatientResponseForRdvBody
     extends DataSelectedPatientResponseForRdvBody {
   @override
-  final String messageinternet;
+  final String? messageinternet;
   @override
-  final String messagenbperson;
+  final String? messagenbperson;
   @override
-  final Apptsinprogress apptsinprogress;
+  final Apptsinprogress? apptsinprogress;
   @override
-  final Appttovalid appttovalid;
+  final Appttovalid? appttovalid;
   @override
-  final BuiltList<Apptinput> apptinput;
+  final BuiltList<Apptinput>? apptinput;
   @override
-  final Apptbuttonvalidation apptbuttonvalidation;
+  final Apptbuttonvalidation? apptbuttonvalidation;
   @override
-  final String messageglobalinternet;
+  final String? messageglobalinternet;
   @override
-  final Payment payment;
+  final Payment? payment;
 
   factory _$DataSelectedPatientResponseForRdvBody(
-          [void Function(DataSelectedPatientResponseForRdvBodyBuilder)
+          [void Function(DataSelectedPatientResponseForRdvBodyBuilder)?
               updates]) =>
       (new DataSelectedPatientResponseForRdvBodyBuilder()..update(updates))
-          .build();
+          ._build();
 
   _$DataSelectedPatientResponseForRdvBody._(
       {this.messageinternet,
@@ -1473,25 +1484,23 @@ class _$DataSelectedPatientResponseForRdvBody
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc(
-                        $jc(
-                            $jc($jc(0, messageinternet.hashCode),
-                                messagenbperson.hashCode),
-                            apptsinprogress.hashCode),
-                        appttovalid.hashCode),
-                    apptinput.hashCode),
-                apptbuttonvalidation.hashCode),
-            messageglobalinternet.hashCode),
-        payment.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, messageinternet.hashCode);
+    _$hash = $jc(_$hash, messagenbperson.hashCode);
+    _$hash = $jc(_$hash, apptsinprogress.hashCode);
+    _$hash = $jc(_$hash, appttovalid.hashCode);
+    _$hash = $jc(_$hash, apptinput.hashCode);
+    _$hash = $jc(_$hash, apptbuttonvalidation.hashCode);
+    _$hash = $jc(_$hash, messageglobalinternet.hashCode);
+    _$hash = $jc(_$hash, payment.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataSelectedPatientResponseForRdvBody')
+    return (newBuiltValueToStringHelper(
+            r'DataSelectedPatientResponseForRdvBody')
           ..add('messageinternet', messageinternet)
           ..add('messagenbperson', messagenbperson)
           ..add('apptsinprogress', apptsinprogress)
@@ -1508,50 +1517,50 @@ class DataSelectedPatientResponseForRdvBodyBuilder
     implements
         Builder<DataSelectedPatientResponseForRdvBody,
             DataSelectedPatientResponseForRdvBodyBuilder> {
-  _$DataSelectedPatientResponseForRdvBody _$v;
+  _$DataSelectedPatientResponseForRdvBody? _$v;
 
-  String _messageinternet;
-  String get messageinternet => _$this._messageinternet;
-  set messageinternet(String messageinternet) =>
+  String? _messageinternet;
+  String? get messageinternet => _$this._messageinternet;
+  set messageinternet(String? messageinternet) =>
       _$this._messageinternet = messageinternet;
 
-  String _messagenbperson;
-  String get messagenbperson => _$this._messagenbperson;
-  set messagenbperson(String messagenbperson) =>
+  String? _messagenbperson;
+  String? get messagenbperson => _$this._messagenbperson;
+  set messagenbperson(String? messagenbperson) =>
       _$this._messagenbperson = messagenbperson;
 
-  ApptsinprogressBuilder _apptsinprogress;
+  ApptsinprogressBuilder? _apptsinprogress;
   ApptsinprogressBuilder get apptsinprogress =>
       _$this._apptsinprogress ??= new ApptsinprogressBuilder();
-  set apptsinprogress(ApptsinprogressBuilder apptsinprogress) =>
+  set apptsinprogress(ApptsinprogressBuilder? apptsinprogress) =>
       _$this._apptsinprogress = apptsinprogress;
 
-  AppttovalidBuilder _appttovalid;
+  AppttovalidBuilder? _appttovalid;
   AppttovalidBuilder get appttovalid =>
       _$this._appttovalid ??= new AppttovalidBuilder();
-  set appttovalid(AppttovalidBuilder appttovalid) =>
+  set appttovalid(AppttovalidBuilder? appttovalid) =>
       _$this._appttovalid = appttovalid;
 
-  ListBuilder<Apptinput> _apptinput;
+  ListBuilder<Apptinput>? _apptinput;
   ListBuilder<Apptinput> get apptinput =>
       _$this._apptinput ??= new ListBuilder<Apptinput>();
-  set apptinput(ListBuilder<Apptinput> apptinput) =>
+  set apptinput(ListBuilder<Apptinput>? apptinput) =>
       _$this._apptinput = apptinput;
 
-  ApptbuttonvalidationBuilder _apptbuttonvalidation;
+  ApptbuttonvalidationBuilder? _apptbuttonvalidation;
   ApptbuttonvalidationBuilder get apptbuttonvalidation =>
       _$this._apptbuttonvalidation ??= new ApptbuttonvalidationBuilder();
-  set apptbuttonvalidation(ApptbuttonvalidationBuilder apptbuttonvalidation) =>
+  set apptbuttonvalidation(ApptbuttonvalidationBuilder? apptbuttonvalidation) =>
       _$this._apptbuttonvalidation = apptbuttonvalidation;
 
-  String _messageglobalinternet;
-  String get messageglobalinternet => _$this._messageglobalinternet;
-  set messageglobalinternet(String messageglobalinternet) =>
+  String? _messageglobalinternet;
+  String? get messageglobalinternet => _$this._messageglobalinternet;
+  set messageglobalinternet(String? messageglobalinternet) =>
       _$this._messageglobalinternet = messageglobalinternet;
 
-  PaymentBuilder _payment;
+  PaymentBuilder? _payment;
   PaymentBuilder get payment => _$this._payment ??= new PaymentBuilder();
-  set payment(PaymentBuilder payment) => _$this._payment = payment;
+  set payment(PaymentBuilder? payment) => _$this._payment = payment;
 
   DataSelectedPatientResponseForRdvBodyBuilder();
 
@@ -1579,12 +1588,14 @@ class DataSelectedPatientResponseForRdvBodyBuilder
 
   @override
   void update(
-      void Function(DataSelectedPatientResponseForRdvBodyBuilder) updates) {
+      void Function(DataSelectedPatientResponseForRdvBodyBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataSelectedPatientResponseForRdvBody build() {
+  DataSelectedPatientResponseForRdvBody build() => _build();
+
+  _$DataSelectedPatientResponseForRdvBody _build() {
     _$DataSelectedPatientResponseForRdvBody _$result;
     try {
       _$result = _$v ??
@@ -1598,7 +1609,7 @@ class DataSelectedPatientResponseForRdvBodyBuilder
               messageglobalinternet: messageglobalinternet,
               payment: _payment?.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'apptsinprogress';
         _apptsinprogress?.build();
@@ -1613,7 +1624,7 @@ class DataSelectedPatientResponseForRdvBodyBuilder
         _payment?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'DataSelectedPatientResponseForRdvBody',
+            r'DataSelectedPatientResponseForRdvBody',
             _$failedField,
             e.toString());
       }
@@ -1626,12 +1637,12 @@ class DataSelectedPatientResponseForRdvBodyBuilder
 
 class _$Apptsinprogress extends Apptsinprogress {
   @override
-  final String message;
+  final String? message;
   @override
-  final BuiltList<Appts> appts;
+  final BuiltList<Appts>? appts;
 
-  factory _$Apptsinprogress([void Function(ApptsinprogressBuilder) updates]) =>
-      (new ApptsinprogressBuilder()..update(updates)).build();
+  factory _$Apptsinprogress([void Function(ApptsinprogressBuilder)? updates]) =>
+      (new ApptsinprogressBuilder()..update(updates))._build();
 
   _$Apptsinprogress._({this.message, this.appts}) : super._();
 
@@ -1653,12 +1664,16 @@ class _$Apptsinprogress extends Apptsinprogress {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, message.hashCode), appts.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, appts.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Apptsinprogress')
+    return (newBuiltValueToStringHelper(r'Apptsinprogress')
           ..add('message', message)
           ..add('appts', appts))
         .toString();
@@ -1667,15 +1682,15 @@ class _$Apptsinprogress extends Apptsinprogress {
 
 class ApptsinprogressBuilder
     implements Builder<Apptsinprogress, ApptsinprogressBuilder> {
-  _$Apptsinprogress _$v;
+  _$Apptsinprogress? _$v;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  ListBuilder<Appts> _appts;
+  ListBuilder<Appts>? _appts;
   ListBuilder<Appts> get appts => _$this._appts ??= new ListBuilder<Appts>();
-  set appts(ListBuilder<Appts> appts) => _$this._appts = appts;
+  set appts(ListBuilder<Appts>? appts) => _$this._appts = appts;
 
   ApptsinprogressBuilder();
 
@@ -1696,24 +1711,26 @@ class ApptsinprogressBuilder
   }
 
   @override
-  void update(void Function(ApptsinprogressBuilder) updates) {
+  void update(void Function(ApptsinprogressBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Apptsinprogress build() {
+  Apptsinprogress build() => _build();
+
+  _$Apptsinprogress _build() {
     _$Apptsinprogress _$result;
     try {
       _$result = _$v ??
           new _$Apptsinprogress._(message: message, appts: _appts?.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'appts';
         _appts?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'Apptsinprogress', _$failedField, e.toString());
+            r'Apptsinprogress', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -1724,16 +1741,16 @@ class ApptsinprogressBuilder
 
 class _$Appts extends Appts {
   @override
-  final String date;
+  final String? date;
   @override
-  final String label;
+  final String? label;
   @override
-  final String doctor;
+  final String? doctor;
   @override
-  final String token;
+  final String? token;
 
-  factory _$Appts([void Function(ApptsBuilder) updates]) =>
-      (new ApptsBuilder()..update(updates)).build();
+  factory _$Appts([void Function(ApptsBuilder)? updates]) =>
+      (new ApptsBuilder()..update(updates))._build();
 
   _$Appts._({this.date, this.label, this.doctor, this.token}) : super._();
 
@@ -1756,14 +1773,18 @@ class _$Appts extends Appts {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, date.hashCode), label.hashCode), doctor.hashCode),
-        token.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, date.hashCode);
+    _$hash = $jc(_$hash, label.hashCode);
+    _$hash = $jc(_$hash, doctor.hashCode);
+    _$hash = $jc(_$hash, token.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Appts')
+    return (newBuiltValueToStringHelper(r'Appts')
           ..add('date', date)
           ..add('label', label)
           ..add('doctor', doctor)
@@ -1773,23 +1794,23 @@ class _$Appts extends Appts {
 }
 
 class ApptsBuilder implements Builder<Appts, ApptsBuilder> {
-  _$Appts _$v;
+  _$Appts? _$v;
 
-  String _date;
-  String get date => _$this._date;
-  set date(String date) => _$this._date = date;
+  String? _date;
+  String? get date => _$this._date;
+  set date(String? date) => _$this._date = date;
 
-  String _label;
-  String get label => _$this._label;
-  set label(String label) => _$this._label = label;
+  String? _label;
+  String? get label => _$this._label;
+  set label(String? label) => _$this._label = label;
 
-  String _doctor;
-  String get doctor => _$this._doctor;
-  set doctor(String doctor) => _$this._doctor = doctor;
+  String? _doctor;
+  String? get doctor => _$this._doctor;
+  set doctor(String? doctor) => _$this._doctor = doctor;
 
-  String _token;
-  String get token => _$this._token;
-  set token(String token) => _$this._token = token;
+  String? _token;
+  String? get token => _$this._token;
+  set token(String? token) => _$this._token = token;
 
   ApptsBuilder();
 
@@ -1812,12 +1833,14 @@ class ApptsBuilder implements Builder<Appts, ApptsBuilder> {
   }
 
   @override
-  void update(void Function(ApptsBuilder) updates) {
+  void update(void Function(ApptsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Appts build() {
+  Appts build() => _build();
+
+  _$Appts _build() {
     final _$result = _$v ??
         new _$Appts._(date: date, label: label, doctor: doctor, token: token);
     replace(_$result);
@@ -1827,16 +1850,16 @@ class ApptsBuilder implements Builder<Appts, ApptsBuilder> {
 
 class _$Appttovalid extends Appttovalid {
   @override
-  final String date;
+  final String? date;
   @override
-  final String doctor;
+  final String? doctor;
   @override
-  final String description;
+  final String? description;
   @override
-  final String patient;
+  final String? patient;
 
-  factory _$Appttovalid([void Function(AppttovalidBuilder) updates]) =>
-      (new AppttovalidBuilder()..update(updates)).build();
+  factory _$Appttovalid([void Function(AppttovalidBuilder)? updates]) =>
+      (new AppttovalidBuilder()..update(updates))._build();
 
   _$Appttovalid._({this.date, this.doctor, this.description, this.patient})
       : super._();
@@ -1860,14 +1883,18 @@ class _$Appttovalid extends Appttovalid {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, date.hashCode), doctor.hashCode), description.hashCode),
-        patient.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, date.hashCode);
+    _$hash = $jc(_$hash, doctor.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, patient.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Appttovalid')
+    return (newBuiltValueToStringHelper(r'Appttovalid')
           ..add('date', date)
           ..add('doctor', doctor)
           ..add('description', description)
@@ -1877,23 +1904,23 @@ class _$Appttovalid extends Appttovalid {
 }
 
 class AppttovalidBuilder implements Builder<Appttovalid, AppttovalidBuilder> {
-  _$Appttovalid _$v;
+  _$Appttovalid? _$v;
 
-  String _date;
-  String get date => _$this._date;
-  set date(String date) => _$this._date = date;
+  String? _date;
+  String? get date => _$this._date;
+  set date(String? date) => _$this._date = date;
 
-  String _doctor;
-  String get doctor => _$this._doctor;
-  set doctor(String doctor) => _$this._doctor = doctor;
+  String? _doctor;
+  String? get doctor => _$this._doctor;
+  set doctor(String? doctor) => _$this._doctor = doctor;
 
-  String _description;
-  String get description => _$this._description;
-  set description(String description) => _$this._description = description;
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
-  String _patient;
-  String get patient => _$this._patient;
-  set patient(String patient) => _$this._patient = patient;
+  String? _patient;
+  String? get patient => _$this._patient;
+  set patient(String? patient) => _$this._patient = patient;
 
   AppttovalidBuilder();
 
@@ -1916,12 +1943,14 @@ class AppttovalidBuilder implements Builder<Appttovalid, AppttovalidBuilder> {
   }
 
   @override
-  void update(void Function(AppttovalidBuilder) updates) {
+  void update(void Function(AppttovalidBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Appttovalid build() {
+  Appttovalid build() => _build();
+
+  _$Appttovalid _build() {
     final _$result = _$v ??
         new _$Appttovalid._(
             date: date,
@@ -1935,16 +1964,16 @@ class AppttovalidBuilder implements Builder<Appttovalid, AppttovalidBuilder> {
 
 class _$Apptinput extends Apptinput {
   @override
-  final String name;
+  final String? name;
   @override
-  final String mandatory;
+  final String? mandatory;
   @override
-  final String label;
+  final String? label;
   @override
-  final String value;
+  final String? value;
 
-  factory _$Apptinput([void Function(ApptinputBuilder) updates]) =>
-      (new ApptinputBuilder()..update(updates)).build();
+  factory _$Apptinput([void Function(ApptinputBuilder)? updates]) =>
+      (new ApptinputBuilder()..update(updates))._build();
 
   _$Apptinput._({this.name, this.mandatory, this.label, this.value})
       : super._();
@@ -1968,14 +1997,18 @@ class _$Apptinput extends Apptinput {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, name.hashCode), mandatory.hashCode), label.hashCode),
-        value.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, mandatory.hashCode);
+    _$hash = $jc(_$hash, label.hashCode);
+    _$hash = $jc(_$hash, value.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Apptinput')
+    return (newBuiltValueToStringHelper(r'Apptinput')
           ..add('name', name)
           ..add('mandatory', mandatory)
           ..add('label', label)
@@ -1985,23 +2018,23 @@ class _$Apptinput extends Apptinput {
 }
 
 class ApptinputBuilder implements Builder<Apptinput, ApptinputBuilder> {
-  _$Apptinput _$v;
+  _$Apptinput? _$v;
 
-  String _name;
-  String get name => _$this._name;
-  set name(String name) => _$this._name = name;
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
-  String _mandatory;
-  String get mandatory => _$this._mandatory;
-  set mandatory(String mandatory) => _$this._mandatory = mandatory;
+  String? _mandatory;
+  String? get mandatory => _$this._mandatory;
+  set mandatory(String? mandatory) => _$this._mandatory = mandatory;
 
-  String _label;
-  String get label => _$this._label;
-  set label(String label) => _$this._label = label;
+  String? _label;
+  String? get label => _$this._label;
+  set label(String? label) => _$this._label = label;
 
-  String _value;
-  String get value => _$this._value;
-  set value(String value) => _$this._value = value;
+  String? _value;
+  String? get value => _$this._value;
+  set value(String? value) => _$this._value = value;
 
   ApptinputBuilder();
 
@@ -2024,12 +2057,14 @@ class ApptinputBuilder implements Builder<Apptinput, ApptinputBuilder> {
   }
 
   @override
-  void update(void Function(ApptinputBuilder) updates) {
+  void update(void Function(ApptinputBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Apptinput build() {
+  Apptinput build() => _build();
+
+  _$Apptinput _build() {
     final _$result = _$v ??
         new _$Apptinput._(
             name: name, mandatory: mandatory, label: label, value: value);
@@ -2040,19 +2075,19 @@ class ApptinputBuilder implements Builder<Apptinput, ApptinputBuilder> {
 
 class _$Apptbuttonvalidation extends Apptbuttonvalidation {
   @override
-  final String onclick;
+  final String? onclick;
   @override
-  final String label;
+  final String? label;
   @override
-  final String onclickData;
+  final String? onclickData;
   @override
-  final String onclickAction;
+  final String? onclickAction;
   @override
-  final String onclickWeek;
+  final String? onclickWeek;
 
   factory _$Apptbuttonvalidation(
-          [void Function(ApptbuttonvalidationBuilder) updates]) =>
-      (new ApptbuttonvalidationBuilder()..update(updates)).build();
+          [void Function(ApptbuttonvalidationBuilder)? updates]) =>
+      (new ApptbuttonvalidationBuilder()..update(updates))._build();
 
   _$Apptbuttonvalidation._(
       {this.onclick,
@@ -2084,17 +2119,19 @@ class _$Apptbuttonvalidation extends Apptbuttonvalidation {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc($jc($jc(0, onclick.hashCode), label.hashCode),
-                onclickData.hashCode),
-            onclickAction.hashCode),
-        onclickWeek.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, onclick.hashCode);
+    _$hash = $jc(_$hash, label.hashCode);
+    _$hash = $jc(_$hash, onclickData.hashCode);
+    _$hash = $jc(_$hash, onclickAction.hashCode);
+    _$hash = $jc(_$hash, onclickWeek.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Apptbuttonvalidation')
+    return (newBuiltValueToStringHelper(r'Apptbuttonvalidation')
           ..add('onclick', onclick)
           ..add('label', label)
           ..add('onclickData', onclickData)
@@ -2106,28 +2143,28 @@ class _$Apptbuttonvalidation extends Apptbuttonvalidation {
 
 class ApptbuttonvalidationBuilder
     implements Builder<Apptbuttonvalidation, ApptbuttonvalidationBuilder> {
-  _$Apptbuttonvalidation _$v;
+  _$Apptbuttonvalidation? _$v;
 
-  String _onclick;
-  String get onclick => _$this._onclick;
-  set onclick(String onclick) => _$this._onclick = onclick;
+  String? _onclick;
+  String? get onclick => _$this._onclick;
+  set onclick(String? onclick) => _$this._onclick = onclick;
 
-  String _label;
-  String get label => _$this._label;
-  set label(String label) => _$this._label = label;
+  String? _label;
+  String? get label => _$this._label;
+  set label(String? label) => _$this._label = label;
 
-  String _onclickData;
-  String get onclickData => _$this._onclickData;
-  set onclickData(String onclickData) => _$this._onclickData = onclickData;
+  String? _onclickData;
+  String? get onclickData => _$this._onclickData;
+  set onclickData(String? onclickData) => _$this._onclickData = onclickData;
 
-  String _onclickAction;
-  String get onclickAction => _$this._onclickAction;
-  set onclickAction(String onclickAction) =>
+  String? _onclickAction;
+  String? get onclickAction => _$this._onclickAction;
+  set onclickAction(String? onclickAction) =>
       _$this._onclickAction = onclickAction;
 
-  String _onclickWeek;
-  String get onclickWeek => _$this._onclickWeek;
-  set onclickWeek(String onclickWeek) => _$this._onclickWeek = onclickWeek;
+  String? _onclickWeek;
+  String? get onclickWeek => _$this._onclickWeek;
+  set onclickWeek(String? onclickWeek) => _$this._onclickWeek = onclickWeek;
 
   ApptbuttonvalidationBuilder();
 
@@ -2151,12 +2188,14 @@ class ApptbuttonvalidationBuilder
   }
 
   @override
-  void update(void Function(ApptbuttonvalidationBuilder) updates) {
+  void update(void Function(ApptbuttonvalidationBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Apptbuttonvalidation build() {
+  Apptbuttonvalidation build() => _build();
+
+  _$Apptbuttonvalidation _build() {
     final _$result = _$v ??
         new _$Apptbuttonvalidation._(
             onclick: onclick,
@@ -2171,16 +2210,16 @@ class ApptbuttonvalidationBuilder
 
 class _$Payment extends Payment {
   @override
-  final String amountlabel;
+  final String? amountlabel;
   @override
-  final String amount;
+  final String? amount;
   @override
-  final String infos;
+  final String? infos;
   @override
-  final String pkAccount;
+  final String? pkAccount;
 
-  factory _$Payment([void Function(PaymentBuilder) updates]) =>
-      (new PaymentBuilder()..update(updates)).build();
+  factory _$Payment([void Function(PaymentBuilder)? updates]) =>
+      (new PaymentBuilder()..update(updates))._build();
 
   _$Payment._({this.amountlabel, this.amount, this.infos, this.pkAccount})
       : super._();
@@ -2204,14 +2243,18 @@ class _$Payment extends Payment {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, amountlabel.hashCode), amount.hashCode), infos.hashCode),
-        pkAccount.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, amountlabel.hashCode);
+    _$hash = $jc(_$hash, amount.hashCode);
+    _$hash = $jc(_$hash, infos.hashCode);
+    _$hash = $jc(_$hash, pkAccount.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Payment')
+    return (newBuiltValueToStringHelper(r'Payment')
           ..add('amountlabel', amountlabel)
           ..add('amount', amount)
           ..add('infos', infos)
@@ -2221,23 +2264,23 @@ class _$Payment extends Payment {
 }
 
 class PaymentBuilder implements Builder<Payment, PaymentBuilder> {
-  _$Payment _$v;
+  _$Payment? _$v;
 
-  String _amountlabel;
-  String get amountlabel => _$this._amountlabel;
-  set amountlabel(String amountlabel) => _$this._amountlabel = amountlabel;
+  String? _amountlabel;
+  String? get amountlabel => _$this._amountlabel;
+  set amountlabel(String? amountlabel) => _$this._amountlabel = amountlabel;
 
-  String _amount;
-  String get amount => _$this._amount;
-  set amount(String amount) => _$this._amount = amount;
+  String? _amount;
+  String? get amount => _$this._amount;
+  set amount(String? amount) => _$this._amount = amount;
 
-  String _infos;
-  String get infos => _$this._infos;
-  set infos(String infos) => _$this._infos = infos;
+  String? _infos;
+  String? get infos => _$this._infos;
+  set infos(String? infos) => _$this._infos = infos;
 
-  String _pkAccount;
-  String get pkAccount => _$this._pkAccount;
-  set pkAccount(String pkAccount) => _$this._pkAccount = pkAccount;
+  String? _pkAccount;
+  String? get pkAccount => _$this._pkAccount;
+  set pkAccount(String? pkAccount) => _$this._pkAccount = pkAccount;
 
   PaymentBuilder();
 
@@ -2260,12 +2303,14 @@ class PaymentBuilder implements Builder<Payment, PaymentBuilder> {
   }
 
   @override
-  void update(void Function(PaymentBuilder) updates) {
+  void update(void Function(PaymentBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Payment build() {
+  Payment build() => _build();
+
+  _$Payment _build() {
     final _$result = _$v ??
         new _$Payment._(
             amountlabel: amountlabel,
@@ -2277,4 +2322,4 @@ class PaymentBuilder implements Builder<Payment, PaymentBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

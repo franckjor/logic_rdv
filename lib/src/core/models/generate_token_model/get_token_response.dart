@@ -49,8 +49,7 @@ abstract class DataTokenResponse
       _$DataTokenResponse;
 
   @BuiltValueField(wireName: 'authorization')
-  @nullable
-  String get authorization;
+  String? get authorization;
   String toJson() {
     return json
         .encode(serializers.serializeWith(DataTokenResponse.serializer, this));

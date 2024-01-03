@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of search_doctor_details_response;
+part of 'search_doctor_details_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -28,10 +28,10 @@ class _$SearchDoctorDetailsResponseSerializer
   final String wireName = 'SearchDoctorDetailsResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, SearchDoctorDetailsResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'httpstatut',
       serializers.serialize(object.httpstatut,
           specifiedType: const FullType(int)),
@@ -60,44 +60,44 @@ class _$SearchDoctorDetailsResponseSerializer
 
   @override
   SearchDoctorDetailsResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SearchDoctorDetailsResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'params':
           result.params.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(ParamsDoctorDetails))
+                  specifiedType: const FullType(ParamsDoctorDetails))!
               as ParamsDoctorDetails);
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(DataDoctorDetails))
+                  specifiedType: const FullType(DataDoctorDetails))!
               as DataDoctorDetails);
           break;
       }
@@ -118,10 +118,10 @@ class _$ParamsDoctorDetailsSerializer
   final String wireName = 'ParamsDoctorDetails';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ParamsDoctorDetails object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
@@ -131,19 +131,19 @@ class _$ParamsDoctorDetailsSerializer
 
   @override
   ParamsDoctorDetails deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsDoctorDetailsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -160,9 +160,9 @@ class _$DataDoctorDetailsSerializer
   final String wireName = 'DataDoctorDetails';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, DataDoctorDetails object,
+  Iterable<Object?> serialize(Serializers serializers, DataDoctorDetails object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'category',
       serializers.serialize(object.category,
           specifiedType: const FullType(String)),
@@ -208,7 +208,7 @@ class _$DataDoctorDetailsSerializer
       serializers.serialize(object.idAgenda,
           specifiedType: const FullType(String)),
     ];
-    Object value;
+    Object? value;
     value = object.kmDiff;
     if (value != null) {
       result
@@ -228,94 +228,94 @@ class _$DataDoctorDetailsSerializer
 
   @override
   DataDoctorDetails deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataDoctorDetailsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'category':
           result.category = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'id_category':
           result.idCategory = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'icon':
           result.icon = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'km_diff':
           result.kmDiff = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'id':
           result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'civility':
           result.civility = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'nom':
           result.nom = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'address':
           result.address = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'zip':
           result.zip = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'city':
           result.city = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'id_city':
           result.idCity = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'lat':
           result.lat = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'lng':
           result.lng = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'tel':
           result.tel = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'telnospace':
           result.telnospace = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'appointment':
           result.appointment.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(AppointmentDoctorDetails))
+                  specifiedType: const FullType(AppointmentDoctorDetails))!
               as AppointmentDoctorDetails);
           break;
         case 'chapters':
           result.chapters.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(Chapters)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(Chapters)]))!
+              as BuiltList<Object?>);
           break;
         case 'prenom':
           result.prenom = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'id_agenda':
           result.idAgenda = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -335,10 +335,10 @@ class _$AppointmentDoctorDetailsSerializer
   final String wireName = 'AppointmentDoctorDetails';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, AppointmentDoctorDetails object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'token',
       serializers.serialize(object.token,
           specifiedType: const FullType(String)),
@@ -349,19 +349,19 @@ class _$AppointmentDoctorDetailsSerializer
 
   @override
   AppointmentDoctorDetails deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AppointmentDoctorDetailsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'token':
           result.token = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -377,9 +377,9 @@ class _$ChaptersSerializer implements StructuredSerializer<Chapters> {
   final String wireName = 'Chapters';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Chapters object,
+  Iterable<Object?> serialize(Serializers serializers, Chapters object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'title',
       serializers.serialize(object.title,
           specifiedType: const FullType(String)),
@@ -392,23 +392,23 @@ class _$ChaptersSerializer implements StructuredSerializer<Chapters> {
   }
 
   @override
-  Chapters deserialize(Serializers serializers, Iterable<Object> serialized,
+  Chapters deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ChaptersBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'title':
           result.title = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'description':
           result.description = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -434,32 +434,32 @@ class _$SearchDoctorDetailsResponse extends SearchDoctorDetailsResponse {
   final DataDoctorDetails data;
 
   factory _$SearchDoctorDetailsResponse(
-          [void Function(SearchDoctorDetailsResponseBuilder) updates]) =>
-      (new SearchDoctorDetailsResponseBuilder()..update(updates)).build();
+          [void Function(SearchDoctorDetailsResponseBuilder)? updates]) =>
+      (new SearchDoctorDetailsResponseBuilder()..update(updates))._build();
 
   _$SearchDoctorDetailsResponse._(
-      {this.httpstatut,
-      this.version,
-      this.request,
-      this.params,
-      this.error,
-      this.message,
-      this.data})
+      {required this.httpstatut,
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.error,
+      required this.message,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        httpstatut, 'SearchDoctorDetailsResponse', 'httpstatut');
+        httpstatut, r'SearchDoctorDetailsResponse', 'httpstatut');
     BuiltValueNullFieldError.checkNotNull(
-        version, 'SearchDoctorDetailsResponse', 'version');
+        version, r'SearchDoctorDetailsResponse', 'version');
     BuiltValueNullFieldError.checkNotNull(
-        request, 'SearchDoctorDetailsResponse', 'request');
+        request, r'SearchDoctorDetailsResponse', 'request');
     BuiltValueNullFieldError.checkNotNull(
-        params, 'SearchDoctorDetailsResponse', 'params');
+        params, r'SearchDoctorDetailsResponse', 'params');
     BuiltValueNullFieldError.checkNotNull(
-        error, 'SearchDoctorDetailsResponse', 'error');
+        error, r'SearchDoctorDetailsResponse', 'error');
     BuiltValueNullFieldError.checkNotNull(
-        message, 'SearchDoctorDetailsResponse', 'message');
+        message, r'SearchDoctorDetailsResponse', 'message');
     BuiltValueNullFieldError.checkNotNull(
-        data, 'SearchDoctorDetailsResponse', 'data');
+        data, r'SearchDoctorDetailsResponse', 'data');
   }
 
   @override
@@ -486,21 +486,21 @@ class _$SearchDoctorDetailsResponse extends SearchDoctorDetailsResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, httpstatut.hashCode), version.hashCode),
-                        request.hashCode),
-                    params.hashCode),
-                error.hashCode),
-            message.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('SearchDoctorDetailsResponse')
+    return (newBuiltValueToStringHelper(r'SearchDoctorDetailsResponse')
           ..add('httpstatut', httpstatut)
           ..add('version', version)
           ..add('request', request)
@@ -516,37 +516,37 @@ class SearchDoctorDetailsResponseBuilder
     implements
         Builder<SearchDoctorDetailsResponse,
             SearchDoctorDetailsResponseBuilder> {
-  _$SearchDoctorDetailsResponse _$v;
+  _$SearchDoctorDetailsResponse? _$v;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  ParamsDoctorDetailsBuilder _params;
+  ParamsDoctorDetailsBuilder? _params;
   ParamsDoctorDetailsBuilder get params =>
       _$this._params ??= new ParamsDoctorDetailsBuilder();
-  set params(ParamsDoctorDetailsBuilder params) => _$this._params = params;
+  set params(ParamsDoctorDetailsBuilder? params) => _$this._params = params;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  DataDoctorDetailsBuilder _data;
+  DataDoctorDetailsBuilder? _data;
   DataDoctorDetailsBuilder get data =>
       _$this._data ??= new DataDoctorDetailsBuilder();
-  set data(DataDoctorDetailsBuilder data) => _$this._data = data;
+  set data(DataDoctorDetailsBuilder? data) => _$this._data = data;
 
   SearchDoctorDetailsResponseBuilder();
 
@@ -572,30 +572,32 @@ class SearchDoctorDetailsResponseBuilder
   }
 
   @override
-  void update(void Function(SearchDoctorDetailsResponseBuilder) updates) {
+  void update(void Function(SearchDoctorDetailsResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$SearchDoctorDetailsResponse build() {
+  SearchDoctorDetailsResponse build() => _build();
+
+  _$SearchDoctorDetailsResponse _build() {
     _$SearchDoctorDetailsResponse _$result;
     try {
       _$result = _$v ??
           new _$SearchDoctorDetailsResponse._(
               httpstatut: BuiltValueNullFieldError.checkNotNull(
-                  httpstatut, 'SearchDoctorDetailsResponse', 'httpstatut'),
+                  httpstatut, r'SearchDoctorDetailsResponse', 'httpstatut'),
               version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'SearchDoctorDetailsResponse', 'version'),
+                  version, r'SearchDoctorDetailsResponse', 'version'),
               request: BuiltValueNullFieldError.checkNotNull(
-                  request, 'SearchDoctorDetailsResponse', 'request'),
+                  request, r'SearchDoctorDetailsResponse', 'request'),
               params: params.build(),
               error: BuiltValueNullFieldError.checkNotNull(
-                  error, 'SearchDoctorDetailsResponse', 'error'),
+                  error, r'SearchDoctorDetailsResponse', 'error'),
               message: BuiltValueNullFieldError.checkNotNull(
-                  message, 'SearchDoctorDetailsResponse', 'message'),
+                  message, r'SearchDoctorDetailsResponse', 'message'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -604,7 +606,7 @@ class SearchDoctorDetailsResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'SearchDoctorDetailsResponse', _$failedField, e.toString());
+            r'SearchDoctorDetailsResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -618,11 +620,11 @@ class _$ParamsDoctorDetails extends ParamsDoctorDetails {
   final String id;
 
   factory _$ParamsDoctorDetails(
-          [void Function(ParamsDoctorDetailsBuilder) updates]) =>
-      (new ParamsDoctorDetailsBuilder()..update(updates)).build();
+          [void Function(ParamsDoctorDetailsBuilder)? updates]) =>
+      (new ParamsDoctorDetailsBuilder()..update(updates))._build();
 
-  _$ParamsDoctorDetails._({this.id}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'ParamsDoctorDetails', 'id');
+  _$ParamsDoctorDetails._({required this.id}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(id, r'ParamsDoctorDetails', 'id');
   }
 
   @override
@@ -642,23 +644,26 @@ class _$ParamsDoctorDetails extends ParamsDoctorDetails {
 
   @override
   int get hashCode {
-    return $jf($jc(0, id.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ParamsDoctorDetails')..add('id', id))
+    return (newBuiltValueToStringHelper(r'ParamsDoctorDetails')..add('id', id))
         .toString();
   }
 }
 
 class ParamsDoctorDetailsBuilder
     implements Builder<ParamsDoctorDetails, ParamsDoctorDetailsBuilder> {
-  _$ParamsDoctorDetails _$v;
+  _$ParamsDoctorDetails? _$v;
 
-  String _id;
-  String get id => _$this._id;
-  set id(String id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   ParamsDoctorDetailsBuilder();
 
@@ -678,16 +683,18 @@ class ParamsDoctorDetailsBuilder
   }
 
   @override
-  void update(void Function(ParamsDoctorDetailsBuilder) updates) {
+  void update(void Function(ParamsDoctorDetailsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ParamsDoctorDetails build() {
+  ParamsDoctorDetails build() => _build();
+
+  _$ParamsDoctorDetails _build() {
     final _$result = _$v ??
         new _$ParamsDoctorDetails._(
             id: BuiltValueNullFieldError.checkNotNull(
-                id, 'ParamsDoctorDetails', 'id'));
+                id, r'ParamsDoctorDetails', 'id'));
     replace(_$result);
     return _$result;
   }
@@ -701,7 +708,7 @@ class _$DataDoctorDetails extends DataDoctorDetails {
   @override
   final String icon;
   @override
-  final String kmDiff;
+  final String? kmDiff;
   @override
   final String id;
   @override
@@ -729,61 +736,61 @@ class _$DataDoctorDetails extends DataDoctorDetails {
   @override
   final BuiltList<Chapters> chapters;
   @override
-  final String prenom;
+  final String? prenom;
   @override
   final String idAgenda;
 
   factory _$DataDoctorDetails(
-          [void Function(DataDoctorDetailsBuilder) updates]) =>
-      (new DataDoctorDetailsBuilder()..update(updates)).build();
+          [void Function(DataDoctorDetailsBuilder)? updates]) =>
+      (new DataDoctorDetailsBuilder()..update(updates))._build();
 
   _$DataDoctorDetails._(
-      {this.category,
-      this.idCategory,
-      this.icon,
+      {required this.category,
+      required this.idCategory,
+      required this.icon,
       this.kmDiff,
-      this.id,
-      this.civility,
-      this.nom,
-      this.address,
-      this.zip,
-      this.city,
-      this.idCity,
-      this.lat,
-      this.lng,
-      this.tel,
-      this.telnospace,
-      this.appointment,
-      this.chapters,
+      required this.id,
+      required this.civility,
+      required this.nom,
+      required this.address,
+      required this.zip,
+      required this.city,
+      required this.idCity,
+      required this.lat,
+      required this.lng,
+      required this.tel,
+      required this.telnospace,
+      required this.appointment,
+      required this.chapters,
       this.prenom,
-      this.idAgenda})
+      required this.idAgenda})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        category, 'DataDoctorDetails', 'category');
+        category, r'DataDoctorDetails', 'category');
     BuiltValueNullFieldError.checkNotNull(
-        idCategory, 'DataDoctorDetails', 'idCategory');
-    BuiltValueNullFieldError.checkNotNull(icon, 'DataDoctorDetails', 'icon');
-    BuiltValueNullFieldError.checkNotNull(id, 'DataDoctorDetails', 'id');
+        idCategory, r'DataDoctorDetails', 'idCategory');
+    BuiltValueNullFieldError.checkNotNull(icon, r'DataDoctorDetails', 'icon');
+    BuiltValueNullFieldError.checkNotNull(id, r'DataDoctorDetails', 'id');
     BuiltValueNullFieldError.checkNotNull(
-        civility, 'DataDoctorDetails', 'civility');
-    BuiltValueNullFieldError.checkNotNull(nom, 'DataDoctorDetails', 'nom');
+        civility, r'DataDoctorDetails', 'civility');
+    BuiltValueNullFieldError.checkNotNull(nom, r'DataDoctorDetails', 'nom');
     BuiltValueNullFieldError.checkNotNull(
-        address, 'DataDoctorDetails', 'address');
-    BuiltValueNullFieldError.checkNotNull(zip, 'DataDoctorDetails', 'zip');
-    BuiltValueNullFieldError.checkNotNull(city, 'DataDoctorDetails', 'city');
+        address, r'DataDoctorDetails', 'address');
+    BuiltValueNullFieldError.checkNotNull(zip, r'DataDoctorDetails', 'zip');
+    BuiltValueNullFieldError.checkNotNull(city, r'DataDoctorDetails', 'city');
     BuiltValueNullFieldError.checkNotNull(
-        idCity, 'DataDoctorDetails', 'idCity');
-    BuiltValueNullFieldError.checkNotNull(lat, 'DataDoctorDetails', 'lat');
-    BuiltValueNullFieldError.checkNotNull(lng, 'DataDoctorDetails', 'lng');
-    BuiltValueNullFieldError.checkNotNull(tel, 'DataDoctorDetails', 'tel');
+        idCity, r'DataDoctorDetails', 'idCity');
+    BuiltValueNullFieldError.checkNotNull(lat, r'DataDoctorDetails', 'lat');
+    BuiltValueNullFieldError.checkNotNull(lng, r'DataDoctorDetails', 'lng');
+    BuiltValueNullFieldError.checkNotNull(tel, r'DataDoctorDetails', 'tel');
     BuiltValueNullFieldError.checkNotNull(
-        telnospace, 'DataDoctorDetails', 'telnospace');
+        telnospace, r'DataDoctorDetails', 'telnospace');
     BuiltValueNullFieldError.checkNotNull(
-        appointment, 'DataDoctorDetails', 'appointment');
+        appointment, r'DataDoctorDetails', 'appointment');
     BuiltValueNullFieldError.checkNotNull(
-        chapters, 'DataDoctorDetails', 'chapters');
+        chapters, r'DataDoctorDetails', 'chapters');
     BuiltValueNullFieldError.checkNotNull(
-        idAgenda, 'DataDoctorDetails', 'idAgenda');
+        idAgenda, r'DataDoctorDetails', 'idAgenda');
   }
 
   @override
@@ -821,49 +828,33 @@ class _$DataDoctorDetails extends DataDoctorDetails {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc(
-                        $jc(
-                            $jc(
-                                $jc(
-                                    $jc(
-                                        $jc(
-                                            $jc(
-                                                $jc(
-                                                    $jc(
-                                                        $jc(
-                                                            $jc(
-                                                                $jc(
-                                                                    $jc(
-                                                                        $jc(
-                                                                            $jc(0,
-                                                                                category.hashCode),
-                                                                            idCategory.hashCode),
-                                                                        icon.hashCode),
-                                                                    kmDiff.hashCode),
-                                                                id.hashCode),
-                                                            civility.hashCode),
-                                                        nom.hashCode),
-                                                    address.hashCode),
-                                                zip.hashCode),
-                                            city.hashCode),
-                                        idCity.hashCode),
-                                    lat.hashCode),
-                                lng.hashCode),
-                            tel.hashCode),
-                        telnospace.hashCode),
-                    appointment.hashCode),
-                chapters.hashCode),
-            prenom.hashCode),
-        idAgenda.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, category.hashCode);
+    _$hash = $jc(_$hash, idCategory.hashCode);
+    _$hash = $jc(_$hash, icon.hashCode);
+    _$hash = $jc(_$hash, kmDiff.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, civility.hashCode);
+    _$hash = $jc(_$hash, nom.hashCode);
+    _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, zip.hashCode);
+    _$hash = $jc(_$hash, city.hashCode);
+    _$hash = $jc(_$hash, idCity.hashCode);
+    _$hash = $jc(_$hash, lat.hashCode);
+    _$hash = $jc(_$hash, lng.hashCode);
+    _$hash = $jc(_$hash, tel.hashCode);
+    _$hash = $jc(_$hash, telnospace.hashCode);
+    _$hash = $jc(_$hash, appointment.hashCode);
+    _$hash = $jc(_$hash, chapters.hashCode);
+    _$hash = $jc(_$hash, prenom.hashCode);
+    _$hash = $jc(_$hash, idAgenda.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataDoctorDetails')
+    return (newBuiltValueToStringHelper(r'DataDoctorDetails')
           ..add('category', category)
           ..add('idCategory', idCategory)
           ..add('icon', icon)
@@ -889,86 +880,86 @@ class _$DataDoctorDetails extends DataDoctorDetails {
 
 class DataDoctorDetailsBuilder
     implements Builder<DataDoctorDetails, DataDoctorDetailsBuilder> {
-  _$DataDoctorDetails _$v;
+  _$DataDoctorDetails? _$v;
 
-  String _category;
-  String get category => _$this._category;
-  set category(String category) => _$this._category = category;
+  String? _category;
+  String? get category => _$this._category;
+  set category(String? category) => _$this._category = category;
 
-  String _idCategory;
-  String get idCategory => _$this._idCategory;
-  set idCategory(String idCategory) => _$this._idCategory = idCategory;
+  String? _idCategory;
+  String? get idCategory => _$this._idCategory;
+  set idCategory(String? idCategory) => _$this._idCategory = idCategory;
 
-  String _icon;
-  String get icon => _$this._icon;
-  set icon(String icon) => _$this._icon = icon;
+  String? _icon;
+  String? get icon => _$this._icon;
+  set icon(String? icon) => _$this._icon = icon;
 
-  String _kmDiff;
-  String get kmDiff => _$this._kmDiff;
-  set kmDiff(String kmDiff) => _$this._kmDiff = kmDiff;
+  String? _kmDiff;
+  String? get kmDiff => _$this._kmDiff;
+  set kmDiff(String? kmDiff) => _$this._kmDiff = kmDiff;
 
-  String _id;
-  String get id => _$this._id;
-  set id(String id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
-  String _civility;
-  String get civility => _$this._civility;
-  set civility(String civility) => _$this._civility = civility;
+  String? _civility;
+  String? get civility => _$this._civility;
+  set civility(String? civility) => _$this._civility = civility;
 
-  String _nom;
-  String get nom => _$this._nom;
-  set nom(String nom) => _$this._nom = nom;
+  String? _nom;
+  String? get nom => _$this._nom;
+  set nom(String? nom) => _$this._nom = nom;
 
-  String _address;
-  String get address => _$this._address;
-  set address(String address) => _$this._address = address;
+  String? _address;
+  String? get address => _$this._address;
+  set address(String? address) => _$this._address = address;
 
-  String _zip;
-  String get zip => _$this._zip;
-  set zip(String zip) => _$this._zip = zip;
+  String? _zip;
+  String? get zip => _$this._zip;
+  set zip(String? zip) => _$this._zip = zip;
 
-  String _city;
-  String get city => _$this._city;
-  set city(String city) => _$this._city = city;
+  String? _city;
+  String? get city => _$this._city;
+  set city(String? city) => _$this._city = city;
 
-  String _idCity;
-  String get idCity => _$this._idCity;
-  set idCity(String idCity) => _$this._idCity = idCity;
+  String? _idCity;
+  String? get idCity => _$this._idCity;
+  set idCity(String? idCity) => _$this._idCity = idCity;
 
-  String _lat;
-  String get lat => _$this._lat;
-  set lat(String lat) => _$this._lat = lat;
+  String? _lat;
+  String? get lat => _$this._lat;
+  set lat(String? lat) => _$this._lat = lat;
 
-  String _lng;
-  String get lng => _$this._lng;
-  set lng(String lng) => _$this._lng = lng;
+  String? _lng;
+  String? get lng => _$this._lng;
+  set lng(String? lng) => _$this._lng = lng;
 
-  String _tel;
-  String get tel => _$this._tel;
-  set tel(String tel) => _$this._tel = tel;
+  String? _tel;
+  String? get tel => _$this._tel;
+  set tel(String? tel) => _$this._tel = tel;
 
-  String _telnospace;
-  String get telnospace => _$this._telnospace;
-  set telnospace(String telnospace) => _$this._telnospace = telnospace;
+  String? _telnospace;
+  String? get telnospace => _$this._telnospace;
+  set telnospace(String? telnospace) => _$this._telnospace = telnospace;
 
-  AppointmentDoctorDetailsBuilder _appointment;
+  AppointmentDoctorDetailsBuilder? _appointment;
   AppointmentDoctorDetailsBuilder get appointment =>
       _$this._appointment ??= new AppointmentDoctorDetailsBuilder();
-  set appointment(AppointmentDoctorDetailsBuilder appointment) =>
+  set appointment(AppointmentDoctorDetailsBuilder? appointment) =>
       _$this._appointment = appointment;
 
-  ListBuilder<Chapters> _chapters;
+  ListBuilder<Chapters>? _chapters;
   ListBuilder<Chapters> get chapters =>
       _$this._chapters ??= new ListBuilder<Chapters>();
-  set chapters(ListBuilder<Chapters> chapters) => _$this._chapters = chapters;
+  set chapters(ListBuilder<Chapters>? chapters) => _$this._chapters = chapters;
 
-  String _prenom;
-  String get prenom => _$this._prenom;
-  set prenom(String prenom) => _$this._prenom = prenom;
+  String? _prenom;
+  String? get prenom => _$this._prenom;
+  set prenom(String? prenom) => _$this._prenom = prenom;
 
-  String _idAgenda;
-  String get idAgenda => _$this._idAgenda;
-  set idAgenda(String idAgenda) => _$this._idAgenda = idAgenda;
+  String? _idAgenda;
+  String? get idAgenda => _$this._idAgenda;
+  set idAgenda(String? idAgenda) => _$this._idAgenda = idAgenda;
 
   DataDoctorDetailsBuilder();
 
@@ -1006,46 +997,48 @@ class DataDoctorDetailsBuilder
   }
 
   @override
-  void update(void Function(DataDoctorDetailsBuilder) updates) {
+  void update(void Function(DataDoctorDetailsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataDoctorDetails build() {
+  DataDoctorDetails build() => _build();
+
+  _$DataDoctorDetails _build() {
     _$DataDoctorDetails _$result;
     try {
       _$result = _$v ??
           new _$DataDoctorDetails._(
               category: BuiltValueNullFieldError.checkNotNull(
-                  category, 'DataDoctorDetails', 'category'),
+                  category, r'DataDoctorDetails', 'category'),
               idCategory: BuiltValueNullFieldError.checkNotNull(
-                  idCategory, 'DataDoctorDetails', 'idCategory'),
+                  idCategory, r'DataDoctorDetails', 'idCategory'),
               icon: BuiltValueNullFieldError.checkNotNull(
-                  icon, 'DataDoctorDetails', 'icon'),
+                  icon, r'DataDoctorDetails', 'icon'),
               kmDiff: kmDiff,
               id: BuiltValueNullFieldError.checkNotNull(
-                  id, 'DataDoctorDetails', 'id'),
+                  id, r'DataDoctorDetails', 'id'),
               civility: BuiltValueNullFieldError.checkNotNull(
-                  civility, 'DataDoctorDetails', 'civility'),
+                  civility, r'DataDoctorDetails', 'civility'),
               nom: BuiltValueNullFieldError.checkNotNull(
-                  nom, 'DataDoctorDetails', 'nom'),
+                  nom, r'DataDoctorDetails', 'nom'),
               address: BuiltValueNullFieldError.checkNotNull(
-                  address, 'DataDoctorDetails', 'address'),
+                  address, r'DataDoctorDetails', 'address'),
               zip: BuiltValueNullFieldError.checkNotNull(
-                  zip, 'DataDoctorDetails', 'zip'),
-              city: BuiltValueNullFieldError.checkNotNull(
-                  city, 'DataDoctorDetails', 'city'),
-              idCity: BuiltValueNullFieldError.checkNotNull(idCity, 'DataDoctorDetails', 'idCity'),
-              lat: BuiltValueNullFieldError.checkNotNull(lat, 'DataDoctorDetails', 'lat'),
-              lng: BuiltValueNullFieldError.checkNotNull(lng, 'DataDoctorDetails', 'lng'),
-              tel: BuiltValueNullFieldError.checkNotNull(tel, 'DataDoctorDetails', 'tel'),
-              telnospace: BuiltValueNullFieldError.checkNotNull(telnospace, 'DataDoctorDetails', 'telnospace'),
+                  zip, r'DataDoctorDetails', 'zip'),
+              city:
+                  BuiltValueNullFieldError.checkNotNull(city, r'DataDoctorDetails', 'city'),
+              idCity: BuiltValueNullFieldError.checkNotNull(idCity, r'DataDoctorDetails', 'idCity'),
+              lat: BuiltValueNullFieldError.checkNotNull(lat, r'DataDoctorDetails', 'lat'),
+              lng: BuiltValueNullFieldError.checkNotNull(lng, r'DataDoctorDetails', 'lng'),
+              tel: BuiltValueNullFieldError.checkNotNull(tel, r'DataDoctorDetails', 'tel'),
+              telnospace: BuiltValueNullFieldError.checkNotNull(telnospace, r'DataDoctorDetails', 'telnospace'),
               appointment: appointment.build(),
               chapters: chapters.build(),
               prenom: prenom,
-              idAgenda: BuiltValueNullFieldError.checkNotNull(idAgenda, 'DataDoctorDetails', 'idAgenda'));
+              idAgenda: BuiltValueNullFieldError.checkNotNull(idAgenda, r'DataDoctorDetails', 'idAgenda'));
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'appointment';
         appointment.build();
@@ -1053,7 +1046,7 @@ class DataDoctorDetailsBuilder
         chapters.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'DataDoctorDetails', _$failedField, e.toString());
+            r'DataDoctorDetails', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -1067,12 +1060,12 @@ class _$AppointmentDoctorDetails extends AppointmentDoctorDetails {
   final String token;
 
   factory _$AppointmentDoctorDetails(
-          [void Function(AppointmentDoctorDetailsBuilder) updates]) =>
-      (new AppointmentDoctorDetailsBuilder()..update(updates)).build();
+          [void Function(AppointmentDoctorDetailsBuilder)? updates]) =>
+      (new AppointmentDoctorDetailsBuilder()..update(updates))._build();
 
-  _$AppointmentDoctorDetails._({this.token}) : super._() {
+  _$AppointmentDoctorDetails._({required this.token}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        token, 'AppointmentDoctorDetails', 'token');
+        token, r'AppointmentDoctorDetails', 'token');
   }
 
   @override
@@ -1092,12 +1085,15 @@ class _$AppointmentDoctorDetails extends AppointmentDoctorDetails {
 
   @override
   int get hashCode {
-    return $jf($jc(0, token.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, token.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AppointmentDoctorDetails')
+    return (newBuiltValueToStringHelper(r'AppointmentDoctorDetails')
           ..add('token', token))
         .toString();
   }
@@ -1106,11 +1102,11 @@ class _$AppointmentDoctorDetails extends AppointmentDoctorDetails {
 class AppointmentDoctorDetailsBuilder
     implements
         Builder<AppointmentDoctorDetails, AppointmentDoctorDetailsBuilder> {
-  _$AppointmentDoctorDetails _$v;
+  _$AppointmentDoctorDetails? _$v;
 
-  String _token;
-  String get token => _$this._token;
-  set token(String token) => _$this._token = token;
+  String? _token;
+  String? get token => _$this._token;
+  set token(String? token) => _$this._token = token;
 
   AppointmentDoctorDetailsBuilder();
 
@@ -1130,16 +1126,18 @@ class AppointmentDoctorDetailsBuilder
   }
 
   @override
-  void update(void Function(AppointmentDoctorDetailsBuilder) updates) {
+  void update(void Function(AppointmentDoctorDetailsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$AppointmentDoctorDetails build() {
+  AppointmentDoctorDetails build() => _build();
+
+  _$AppointmentDoctorDetails _build() {
     final _$result = _$v ??
         new _$AppointmentDoctorDetails._(
             token: BuiltValueNullFieldError.checkNotNull(
-                token, 'AppointmentDoctorDetails', 'token'));
+                token, r'AppointmentDoctorDetails', 'token'));
     replace(_$result);
     return _$result;
   }
@@ -1151,13 +1149,13 @@ class _$Chapters extends Chapters {
   @override
   final String description;
 
-  factory _$Chapters([void Function(ChaptersBuilder) updates]) =>
-      (new ChaptersBuilder()..update(updates)).build();
+  factory _$Chapters([void Function(ChaptersBuilder)? updates]) =>
+      (new ChaptersBuilder()..update(updates))._build();
 
-  _$Chapters._({this.title, this.description}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(title, 'Chapters', 'title');
+  _$Chapters._({required this.title, required this.description}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(title, r'Chapters', 'title');
     BuiltValueNullFieldError.checkNotNull(
-        description, 'Chapters', 'description');
+        description, r'Chapters', 'description');
   }
 
   @override
@@ -1177,12 +1175,16 @@ class _$Chapters extends Chapters {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, title.hashCode), description.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Chapters')
+    return (newBuiltValueToStringHelper(r'Chapters')
           ..add('title', title)
           ..add('description', description))
         .toString();
@@ -1190,15 +1192,15 @@ class _$Chapters extends Chapters {
 }
 
 class ChaptersBuilder implements Builder<Chapters, ChaptersBuilder> {
-  _$Chapters _$v;
+  _$Chapters? _$v;
 
-  String _title;
-  String get title => _$this._title;
-  set title(String title) => _$this._title = title;
+  String? _title;
+  String? get title => _$this._title;
+  set title(String? title) => _$this._title = title;
 
-  String _description;
-  String get description => _$this._description;
-  set description(String description) => _$this._description = description;
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   ChaptersBuilder();
 
@@ -1219,21 +1221,23 @@ class ChaptersBuilder implements Builder<Chapters, ChaptersBuilder> {
   }
 
   @override
-  void update(void Function(ChaptersBuilder) updates) {
+  void update(void Function(ChaptersBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Chapters build() {
+  Chapters build() => _build();
+
+  _$Chapters _build() {
     final _$result = _$v ??
         new _$Chapters._(
             title: BuiltValueNullFieldError.checkNotNull(
-                title, 'Chapters', 'title'),
+                title, r'Chapters', 'title'),
             description: BuiltValueNullFieldError.checkNotNull(
-                description, 'Chapters', 'description'));
+                description, r'Chapters', 'description'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

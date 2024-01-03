@@ -54,8 +54,7 @@ abstract class SubscribeResponse
   @BuiltValueField(wireName: 'message')
   String get message;
   @BuiltValueField(wireName: 'data')
-  @nullable
-  DataSubscribeResponse get data;
+  DataSubscribeResponse? get data;
   String toJson() {
     return json
         .encode(serializers.serializeWith(SubscribeResponse.serializer, this));

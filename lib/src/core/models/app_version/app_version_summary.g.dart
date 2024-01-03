@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of app_version_summary;
+part of 'app_version_summary.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -22,9 +22,9 @@ class _$AppVersionSummarySerializer
   final String wireName = 'AppVersionSummary';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, AppVersionSummary object,
+  Iterable<Object?> serialize(Serializers serializers, AppVersionSummary object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'httpstatut',
       serializers.serialize(object.httpstatut,
           specifiedType: const FullType(int)),
@@ -54,45 +54,45 @@ class _$AppVersionSummarySerializer
 
   @override
   AppVersionSummary deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AppVersionSummaryBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'params':
           result.params.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
                 const FullType(ParamsAppVersionSummary)
-              ])) as BuiltList<Object>);
+              ]))! as BuiltList<Object?>);
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(DataAppVersionSummary))
+                  specifiedType: const FullType(DataAppVersionSummary))!
               as DataAppVersionSummary);
           break;
       }
@@ -113,10 +113,10 @@ class _$ParamsAppVersionSummarySerializer
   final String wireName = 'ParamsAppVersionSummary';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ParamsAppVersionSummary object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'android',
       serializers.serialize(object.android,
           specifiedType: const FullType(String)),
@@ -130,23 +130,23 @@ class _$ParamsAppVersionSummarySerializer
 
   @override
   ParamsAppVersionSummary deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsAppVersionSummaryBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'android':
           result.android = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'iphone':
           result.iphone = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -166,10 +166,10 @@ class _$DataAppVersionSummarySerializer
   final String wireName = 'DataAppVersionSummary';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, DataAppVersionSummary object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'version',
       serializers.serialize(object.version,
           specifiedType: const FullType(Version)),
@@ -180,19 +180,19 @@ class _$DataAppVersionSummarySerializer
 
   @override
   DataAppVersionSummary deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataAppVersionSummaryBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'version':
           result.version.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Version)) as Version);
+              specifiedType: const FullType(Version))! as Version);
           break;
       }
     }
@@ -208,9 +208,9 @@ class _$VersionSerializer implements StructuredSerializer<Version> {
   final String wireName = 'Version';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Version object,
+  Iterable<Object?> serialize(Serializers serializers, Version object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'android',
       serializers.serialize(object.android,
           specifiedType: const FullType(String)),
@@ -223,23 +223,23 @@ class _$VersionSerializer implements StructuredSerializer<Version> {
   }
 
   @override
-  Version deserialize(Serializers serializers, Iterable<Object> serialized,
+  Version deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new VersionBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'android':
           result.android = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'iphone':
           result.iphone = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -265,30 +265,30 @@ class _$AppVersionSummary extends AppVersionSummary {
   final DataAppVersionSummary data;
 
   factory _$AppVersionSummary(
-          [void Function(AppVersionSummaryBuilder) updates]) =>
-      (new AppVersionSummaryBuilder()..update(updates)).build();
+          [void Function(AppVersionSummaryBuilder)? updates]) =>
+      (new AppVersionSummaryBuilder()..update(updates))._build();
 
   _$AppVersionSummary._(
-      {this.httpstatut,
-      this.version,
-      this.request,
-      this.params,
-      this.error,
-      this.message,
-      this.data})
+      {required this.httpstatut,
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.error,
+      required this.message,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        httpstatut, 'AppVersionSummary', 'httpstatut');
+        httpstatut, r'AppVersionSummary', 'httpstatut');
     BuiltValueNullFieldError.checkNotNull(
-        version, 'AppVersionSummary', 'version');
+        version, r'AppVersionSummary', 'version');
     BuiltValueNullFieldError.checkNotNull(
-        request, 'AppVersionSummary', 'request');
+        request, r'AppVersionSummary', 'request');
     BuiltValueNullFieldError.checkNotNull(
-        params, 'AppVersionSummary', 'params');
-    BuiltValueNullFieldError.checkNotNull(error, 'AppVersionSummary', 'error');
+        params, r'AppVersionSummary', 'params');
+    BuiltValueNullFieldError.checkNotNull(error, r'AppVersionSummary', 'error');
     BuiltValueNullFieldError.checkNotNull(
-        message, 'AppVersionSummary', 'message');
-    BuiltValueNullFieldError.checkNotNull(data, 'AppVersionSummary', 'data');
+        message, r'AppVersionSummary', 'message');
+    BuiltValueNullFieldError.checkNotNull(data, r'AppVersionSummary', 'data');
   }
 
   @override
@@ -314,21 +314,21 @@ class _$AppVersionSummary extends AppVersionSummary {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, httpstatut.hashCode), version.hashCode),
-                        request.hashCode),
-                    params.hashCode),
-                error.hashCode),
-            message.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AppVersionSummary')
+    return (newBuiltValueToStringHelper(r'AppVersionSummary')
           ..add('httpstatut', httpstatut)
           ..add('version', version)
           ..add('request', request)
@@ -342,38 +342,38 @@ class _$AppVersionSummary extends AppVersionSummary {
 
 class AppVersionSummaryBuilder
     implements Builder<AppVersionSummary, AppVersionSummaryBuilder> {
-  _$AppVersionSummary _$v;
+  _$AppVersionSummary? _$v;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  ListBuilder<ParamsAppVersionSummary> _params;
+  ListBuilder<ParamsAppVersionSummary>? _params;
   ListBuilder<ParamsAppVersionSummary> get params =>
       _$this._params ??= new ListBuilder<ParamsAppVersionSummary>();
-  set params(ListBuilder<ParamsAppVersionSummary> params) =>
+  set params(ListBuilder<ParamsAppVersionSummary>? params) =>
       _$this._params = params;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  DataAppVersionSummaryBuilder _data;
+  DataAppVersionSummaryBuilder? _data;
   DataAppVersionSummaryBuilder get data =>
       _$this._data ??= new DataAppVersionSummaryBuilder();
-  set data(DataAppVersionSummaryBuilder data) => _$this._data = data;
+  set data(DataAppVersionSummaryBuilder? data) => _$this._data = data;
 
   AppVersionSummaryBuilder();
 
@@ -399,30 +399,32 @@ class AppVersionSummaryBuilder
   }
 
   @override
-  void update(void Function(AppVersionSummaryBuilder) updates) {
+  void update(void Function(AppVersionSummaryBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$AppVersionSummary build() {
+  AppVersionSummary build() => _build();
+
+  _$AppVersionSummary _build() {
     _$AppVersionSummary _$result;
     try {
       _$result = _$v ??
           new _$AppVersionSummary._(
               httpstatut: BuiltValueNullFieldError.checkNotNull(
-                  httpstatut, 'AppVersionSummary', 'httpstatut'),
+                  httpstatut, r'AppVersionSummary', 'httpstatut'),
               version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'AppVersionSummary', 'version'),
+                  version, r'AppVersionSummary', 'version'),
               request: BuiltValueNullFieldError.checkNotNull(
-                  request, 'AppVersionSummary', 'request'),
+                  request, r'AppVersionSummary', 'request'),
               params: params.build(),
               error: BuiltValueNullFieldError.checkNotNull(
-                  error, 'AppVersionSummary', 'error'),
+                  error, r'AppVersionSummary', 'error'),
               message: BuiltValueNullFieldError.checkNotNull(
-                  message, 'AppVersionSummary', 'message'),
+                  message, r'AppVersionSummary', 'message'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -431,7 +433,7 @@ class AppVersionSummaryBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'AppVersionSummary', _$failedField, e.toString());
+            r'AppVersionSummary', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -447,14 +449,15 @@ class _$ParamsAppVersionSummary extends ParamsAppVersionSummary {
   final String iphone;
 
   factory _$ParamsAppVersionSummary(
-          [void Function(ParamsAppVersionSummaryBuilder) updates]) =>
-      (new ParamsAppVersionSummaryBuilder()..update(updates)).build();
+          [void Function(ParamsAppVersionSummaryBuilder)? updates]) =>
+      (new ParamsAppVersionSummaryBuilder()..update(updates))._build();
 
-  _$ParamsAppVersionSummary._({this.android, this.iphone}) : super._() {
+  _$ParamsAppVersionSummary._({required this.android, required this.iphone})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        android, 'ParamsAppVersionSummary', 'android');
+        android, r'ParamsAppVersionSummary', 'android');
     BuiltValueNullFieldError.checkNotNull(
-        iphone, 'ParamsAppVersionSummary', 'iphone');
+        iphone, r'ParamsAppVersionSummary', 'iphone');
   }
 
   @override
@@ -476,12 +479,16 @@ class _$ParamsAppVersionSummary extends ParamsAppVersionSummary {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, android.hashCode), iphone.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, android.hashCode);
+    _$hash = $jc(_$hash, iphone.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ParamsAppVersionSummary')
+    return (newBuiltValueToStringHelper(r'ParamsAppVersionSummary')
           ..add('android', android)
           ..add('iphone', iphone))
         .toString();
@@ -491,15 +498,15 @@ class _$ParamsAppVersionSummary extends ParamsAppVersionSummary {
 class ParamsAppVersionSummaryBuilder
     implements
         Builder<ParamsAppVersionSummary, ParamsAppVersionSummaryBuilder> {
-  _$ParamsAppVersionSummary _$v;
+  _$ParamsAppVersionSummary? _$v;
 
-  String _android;
-  String get android => _$this._android;
-  set android(String android) => _$this._android = android;
+  String? _android;
+  String? get android => _$this._android;
+  set android(String? android) => _$this._android = android;
 
-  String _iphone;
-  String get iphone => _$this._iphone;
-  set iphone(String iphone) => _$this._iphone = iphone;
+  String? _iphone;
+  String? get iphone => _$this._iphone;
+  set iphone(String? iphone) => _$this._iphone = iphone;
 
   ParamsAppVersionSummaryBuilder();
 
@@ -520,18 +527,20 @@ class ParamsAppVersionSummaryBuilder
   }
 
   @override
-  void update(void Function(ParamsAppVersionSummaryBuilder) updates) {
+  void update(void Function(ParamsAppVersionSummaryBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ParamsAppVersionSummary build() {
+  ParamsAppVersionSummary build() => _build();
+
+  _$ParamsAppVersionSummary _build() {
     final _$result = _$v ??
         new _$ParamsAppVersionSummary._(
             android: BuiltValueNullFieldError.checkNotNull(
-                android, 'ParamsAppVersionSummary', 'android'),
+                android, r'ParamsAppVersionSummary', 'android'),
             iphone: BuiltValueNullFieldError.checkNotNull(
-                iphone, 'ParamsAppVersionSummary', 'iphone'));
+                iphone, r'ParamsAppVersionSummary', 'iphone'));
     replace(_$result);
     return _$result;
   }
@@ -542,12 +551,12 @@ class _$DataAppVersionSummary extends DataAppVersionSummary {
   final Version version;
 
   factory _$DataAppVersionSummary(
-          [void Function(DataAppVersionSummaryBuilder) updates]) =>
-      (new DataAppVersionSummaryBuilder()..update(updates)).build();
+          [void Function(DataAppVersionSummaryBuilder)? updates]) =>
+      (new DataAppVersionSummaryBuilder()..update(updates))._build();
 
-  _$DataAppVersionSummary._({this.version}) : super._() {
+  _$DataAppVersionSummary._({required this.version}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        version, 'DataAppVersionSummary', 'version');
+        version, r'DataAppVersionSummary', 'version');
   }
 
   @override
@@ -567,12 +576,15 @@ class _$DataAppVersionSummary extends DataAppVersionSummary {
 
   @override
   int get hashCode {
-    return $jf($jc(0, version.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataAppVersionSummary')
+    return (newBuiltValueToStringHelper(r'DataAppVersionSummary')
           ..add('version', version))
         .toString();
   }
@@ -580,11 +592,11 @@ class _$DataAppVersionSummary extends DataAppVersionSummary {
 
 class DataAppVersionSummaryBuilder
     implements Builder<DataAppVersionSummary, DataAppVersionSummaryBuilder> {
-  _$DataAppVersionSummary _$v;
+  _$DataAppVersionSummary? _$v;
 
-  VersionBuilder _version;
+  VersionBuilder? _version;
   VersionBuilder get version => _$this._version ??= new VersionBuilder();
-  set version(VersionBuilder version) => _$this._version = version;
+  set version(VersionBuilder? version) => _$this._version = version;
 
   DataAppVersionSummaryBuilder();
 
@@ -604,23 +616,25 @@ class DataAppVersionSummaryBuilder
   }
 
   @override
-  void update(void Function(DataAppVersionSummaryBuilder) updates) {
+  void update(void Function(DataAppVersionSummaryBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataAppVersionSummary build() {
+  DataAppVersionSummary build() => _build();
+
+  _$DataAppVersionSummary _build() {
     _$DataAppVersionSummary _$result;
     try {
       _$result = _$v ?? new _$DataAppVersionSummary._(version: version.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'version';
         version.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'DataAppVersionSummary', _$failedField, e.toString());
+            r'DataAppVersionSummary', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -635,12 +649,12 @@ class _$Version extends Version {
   @override
   final String iphone;
 
-  factory _$Version([void Function(VersionBuilder) updates]) =>
-      (new VersionBuilder()..update(updates)).build();
+  factory _$Version([void Function(VersionBuilder)? updates]) =>
+      (new VersionBuilder()..update(updates))._build();
 
-  _$Version._({this.android, this.iphone}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(android, 'Version', 'android');
-    BuiltValueNullFieldError.checkNotNull(iphone, 'Version', 'iphone');
+  _$Version._({required this.android, required this.iphone}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(android, r'Version', 'android');
+    BuiltValueNullFieldError.checkNotNull(iphone, r'Version', 'iphone');
   }
 
   @override
@@ -660,12 +674,16 @@ class _$Version extends Version {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, android.hashCode), iphone.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, android.hashCode);
+    _$hash = $jc(_$hash, iphone.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Version')
+    return (newBuiltValueToStringHelper(r'Version')
           ..add('android', android)
           ..add('iphone', iphone))
         .toString();
@@ -673,15 +691,15 @@ class _$Version extends Version {
 }
 
 class VersionBuilder implements Builder<Version, VersionBuilder> {
-  _$Version _$v;
+  _$Version? _$v;
 
-  String _android;
-  String get android => _$this._android;
-  set android(String android) => _$this._android = android;
+  String? _android;
+  String? get android => _$this._android;
+  set android(String? android) => _$this._android = android;
 
-  String _iphone;
-  String get iphone => _$this._iphone;
-  set iphone(String iphone) => _$this._iphone = iphone;
+  String? _iphone;
+  String? get iphone => _$this._iphone;
+  set iphone(String? iphone) => _$this._iphone = iphone;
 
   VersionBuilder();
 
@@ -702,21 +720,23 @@ class VersionBuilder implements Builder<Version, VersionBuilder> {
   }
 
   @override
-  void update(void Function(VersionBuilder) updates) {
+  void update(void Function(VersionBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Version build() {
+  Version build() => _build();
+
+  _$Version _build() {
     final _$result = _$v ??
         new _$Version._(
             android: BuiltValueNullFieldError.checkNotNull(
-                android, 'Version', 'android'),
+                android, r'Version', 'android'),
             iphone: BuiltValueNullFieldError.checkNotNull(
-                iphone, 'Version', 'iphone'));
+                iphone, r'Version', 'iphone'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

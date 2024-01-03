@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of add_doctor_request;
+part of 'add_doctor_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -17,9 +17,9 @@ class _$AddDoctorRequestSerializer
   final String wireName = 'AddDoctorRequest';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, AddDoctorRequest object,
+  Iterable<Object?> serialize(Serializers serializers, AddDoctorRequest object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
           specifiedType: const FullType(String)),
@@ -35,27 +35,27 @@ class _$AddDoctorRequestSerializer
 
   @override
   AddDoctorRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new AddDoctorRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'id':
           result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'phone':
           result.phone = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -73,14 +73,16 @@ class _$AddDoctorRequest extends AddDoctorRequest {
   final String phone;
 
   factory _$AddDoctorRequest(
-          [void Function(AddDoctorRequestBuilder) updates]) =>
-      (new AddDoctorRequestBuilder()..update(updates)).build();
+          [void Function(AddDoctorRequestBuilder)? updates]) =>
+      (new AddDoctorRequestBuilder()..update(updates))._build();
 
-  _$AddDoctorRequest._({this.tokenuser, this.id, this.phone}) : super._() {
+  _$AddDoctorRequest._(
+      {required this.tokenuser, required this.id, required this.phone})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        tokenuser, 'AddDoctorRequest', 'tokenuser');
-    BuiltValueNullFieldError.checkNotNull(id, 'AddDoctorRequest', 'id');
-    BuiltValueNullFieldError.checkNotNull(phone, 'AddDoctorRequest', 'phone');
+        tokenuser, r'AddDoctorRequest', 'tokenuser');
+    BuiltValueNullFieldError.checkNotNull(id, r'AddDoctorRequest', 'id');
+    BuiltValueNullFieldError.checkNotNull(phone, r'AddDoctorRequest', 'phone');
   }
 
   @override
@@ -102,13 +104,17 @@ class _$AddDoctorRequest extends AddDoctorRequest {
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc($jc(0, tokenuser.hashCode), id.hashCode), phone.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokenuser.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AddDoctorRequest')
+    return (newBuiltValueToStringHelper(r'AddDoctorRequest')
           ..add('tokenuser', tokenuser)
           ..add('id', id)
           ..add('phone', phone))
@@ -118,19 +124,19 @@ class _$AddDoctorRequest extends AddDoctorRequest {
 
 class AddDoctorRequestBuilder
     implements Builder<AddDoctorRequest, AddDoctorRequestBuilder> {
-  _$AddDoctorRequest _$v;
+  _$AddDoctorRequest? _$v;
 
-  String _tokenuser;
-  String get tokenuser => _$this._tokenuser;
-  set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
+  String? _tokenuser;
+  String? get tokenuser => _$this._tokenuser;
+  set tokenuser(String? tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _id;
-  String get id => _$this._id;
-  set id(String id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
-  String _phone;
-  String get phone => _$this._phone;
-  set phone(String phone) => _$this._phone = phone;
+  String? _phone;
+  String? get phone => _$this._phone;
+  set phone(String? phone) => _$this._phone = phone;
 
   AddDoctorRequestBuilder();
 
@@ -152,23 +158,25 @@ class AddDoctorRequestBuilder
   }
 
   @override
-  void update(void Function(AddDoctorRequestBuilder) updates) {
+  void update(void Function(AddDoctorRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$AddDoctorRequest build() {
+  AddDoctorRequest build() => _build();
+
+  _$AddDoctorRequest _build() {
     final _$result = _$v ??
         new _$AddDoctorRequest._(
             tokenuser: BuiltValueNullFieldError.checkNotNull(
-                tokenuser, 'AddDoctorRequest', 'tokenuser'),
+                tokenuser, r'AddDoctorRequest', 'tokenuser'),
             id: BuiltValueNullFieldError.checkNotNull(
-                id, 'AddDoctorRequest', 'id'),
+                id, r'AddDoctorRequest', 'id'),
             phone: BuiltValueNullFieldError.checkNotNull(
-                phone, 'AddDoctorRequest', 'phone'));
+                phone, r'AddDoctorRequest', 'phone'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

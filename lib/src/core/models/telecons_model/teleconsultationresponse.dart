@@ -160,11 +160,9 @@ abstract class InfosTc implements Built<InfosTc, InfosTcBuilder> {
   factory InfosTc([updates(InfosTcBuilder b)]) = _$InfosTc;
 
   @BuiltValueField(wireName: 'buttonstarttelecons')
-  @nullable
-  String get buttonstarttelecons;
+  String? get buttonstarttelecons;
   @BuiltValueField(wireName: 'buttonstartteleconsdisabled')
-  @nullable
-  String get buttonstartteleconsdisabled;
+  String? get buttonstartteleconsdisabled;
   String toJson() {
     return json.encode(serializers.serializeWith(InfosTc.serializer, this));
   }

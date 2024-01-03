@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of patient_response_afert_create;
+part of 'patient_response_afert_create.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -26,10 +26,10 @@ class _$PatientResponseAfertCreateSerializer
   final String wireName = 'PatientResponseAfertCreate';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, PatientResponseAfertCreate object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'httpstatut',
       serializers.serialize(object.httpstatut,
           specifiedType: const FullType(int)),
@@ -59,47 +59,47 @@ class _$PatientResponseAfertCreateSerializer
 
   @override
   PatientResponseAfertCreate deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PatientResponseAfertCreateBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'params':
           result.params.replace(serializers.deserialize(value,
                   specifiedType:
-                      const FullType(ParamsPatientResponseAfertCreate))
+                      const FullType(ParamsPatientResponseAfertCreate))!
               as ParamsPatientResponseAfertCreate);
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
               specifiedType: const FullType(BuiltList, const [
                 const FullType(DataPatientResponseAfertCreate)
-              ])) as BuiltList<Object>);
+              ]))! as BuiltList<Object?>);
           break;
       }
     }
@@ -119,11 +119,11 @@ class _$ParamsPatientResponseAfertCreateSerializer
   final String wireName = 'ParamsPatientResponseAfertCreate';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ParamsPatientResponseAfertCreate object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.tokenuser;
     if (value != null) {
       result
@@ -171,39 +171,39 @@ class _$ParamsPatientResponseAfertCreateSerializer
 
   @override
   ParamsPatientResponseAfertCreate deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsPatientResponseAfertCreateBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'tokenappt':
           result.tokenappt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'nom':
           result.nom = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'prenom':
           result.prenom = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'email':
           result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'phone':
           result.phone = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -223,10 +223,10 @@ class _$DataPatientResponseAfertCreateSerializer
   final String wireName = 'DataPatientResponseAfertCreate';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, DataPatientResponseAfertCreate object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'prenom',
       serializers.serialize(object.prenom,
           specifiedType: const FullType(String)),
@@ -254,7 +254,7 @@ class _$DataPatientResponseAfertCreateSerializer
       serializers.serialize(object.etaballownpinternet,
           specifiedType: const FullType(String)),
     ];
-    Object value;
+    Object? value;
     value = object.nom;
     if (value != null) {
       result
@@ -295,71 +295,71 @@ class _$DataPatientResponseAfertCreateSerializer
 
   @override
   DataPatientResponseAfertCreate deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataPatientResponseAfertCreateBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'nom':
           result.nom = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'prenom':
           result.prenom = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'email':
           result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'spacephone':
           result.spacephone = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'phone':
           result.phone = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'dob':
           result.dob = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'token':
           result.token = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'locked':
           result.locked = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'blacklist':
           result.blacklist = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'nplocked':
           result.nplocked = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'etaballowinternet':
           result.etaballowinternet = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'etaballownpinternet':
           result.etaballownpinternet = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'lockmessage':
           result.lockmessage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'photo':
           result.photo = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -385,32 +385,32 @@ class _$PatientResponseAfertCreate extends PatientResponseAfertCreate {
   final BuiltList<DataPatientResponseAfertCreate> data;
 
   factory _$PatientResponseAfertCreate(
-          [void Function(PatientResponseAfertCreateBuilder) updates]) =>
-      (new PatientResponseAfertCreateBuilder()..update(updates)).build();
+          [void Function(PatientResponseAfertCreateBuilder)? updates]) =>
+      (new PatientResponseAfertCreateBuilder()..update(updates))._build();
 
   _$PatientResponseAfertCreate._(
-      {this.httpstatut,
-      this.version,
-      this.request,
-      this.params,
-      this.error,
-      this.message,
-      this.data})
+      {required this.httpstatut,
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.error,
+      required this.message,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        httpstatut, 'PatientResponseAfertCreate', 'httpstatut');
+        httpstatut, r'PatientResponseAfertCreate', 'httpstatut');
     BuiltValueNullFieldError.checkNotNull(
-        version, 'PatientResponseAfertCreate', 'version');
+        version, r'PatientResponseAfertCreate', 'version');
     BuiltValueNullFieldError.checkNotNull(
-        request, 'PatientResponseAfertCreate', 'request');
+        request, r'PatientResponseAfertCreate', 'request');
     BuiltValueNullFieldError.checkNotNull(
-        params, 'PatientResponseAfertCreate', 'params');
+        params, r'PatientResponseAfertCreate', 'params');
     BuiltValueNullFieldError.checkNotNull(
-        error, 'PatientResponseAfertCreate', 'error');
+        error, r'PatientResponseAfertCreate', 'error');
     BuiltValueNullFieldError.checkNotNull(
-        message, 'PatientResponseAfertCreate', 'message');
+        message, r'PatientResponseAfertCreate', 'message');
     BuiltValueNullFieldError.checkNotNull(
-        data, 'PatientResponseAfertCreate', 'data');
+        data, r'PatientResponseAfertCreate', 'data');
   }
 
   @override
@@ -437,21 +437,21 @@ class _$PatientResponseAfertCreate extends PatientResponseAfertCreate {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, httpstatut.hashCode), version.hashCode),
-                        request.hashCode),
-                    params.hashCode),
-                error.hashCode),
-            message.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('PatientResponseAfertCreate')
+    return (newBuiltValueToStringHelper(r'PatientResponseAfertCreate')
           ..add('httpstatut', httpstatut)
           ..add('version', version)
           ..add('request', request)
@@ -466,38 +466,38 @@ class _$PatientResponseAfertCreate extends PatientResponseAfertCreate {
 class PatientResponseAfertCreateBuilder
     implements
         Builder<PatientResponseAfertCreate, PatientResponseAfertCreateBuilder> {
-  _$PatientResponseAfertCreate _$v;
+  _$PatientResponseAfertCreate? _$v;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  ParamsPatientResponseAfertCreateBuilder _params;
+  ParamsPatientResponseAfertCreateBuilder? _params;
   ParamsPatientResponseAfertCreateBuilder get params =>
       _$this._params ??= new ParamsPatientResponseAfertCreateBuilder();
-  set params(ParamsPatientResponseAfertCreateBuilder params) =>
+  set params(ParamsPatientResponseAfertCreateBuilder? params) =>
       _$this._params = params;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  ListBuilder<DataPatientResponseAfertCreate> _data;
+  ListBuilder<DataPatientResponseAfertCreate>? _data;
   ListBuilder<DataPatientResponseAfertCreate> get data =>
       _$this._data ??= new ListBuilder<DataPatientResponseAfertCreate>();
-  set data(ListBuilder<DataPatientResponseAfertCreate> data) =>
+  set data(ListBuilder<DataPatientResponseAfertCreate>? data) =>
       _$this._data = data;
 
   PatientResponseAfertCreateBuilder();
@@ -524,30 +524,32 @@ class PatientResponseAfertCreateBuilder
   }
 
   @override
-  void update(void Function(PatientResponseAfertCreateBuilder) updates) {
+  void update(void Function(PatientResponseAfertCreateBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$PatientResponseAfertCreate build() {
+  PatientResponseAfertCreate build() => _build();
+
+  _$PatientResponseAfertCreate _build() {
     _$PatientResponseAfertCreate _$result;
     try {
       _$result = _$v ??
           new _$PatientResponseAfertCreate._(
               httpstatut: BuiltValueNullFieldError.checkNotNull(
-                  httpstatut, 'PatientResponseAfertCreate', 'httpstatut'),
+                  httpstatut, r'PatientResponseAfertCreate', 'httpstatut'),
               version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'PatientResponseAfertCreate', 'version'),
+                  version, r'PatientResponseAfertCreate', 'version'),
               request: BuiltValueNullFieldError.checkNotNull(
-                  request, 'PatientResponseAfertCreate', 'request'),
+                  request, r'PatientResponseAfertCreate', 'request'),
               params: params.build(),
               error: BuiltValueNullFieldError.checkNotNull(
-                  error, 'PatientResponseAfertCreate', 'error'),
+                  error, r'PatientResponseAfertCreate', 'error'),
               message: BuiltValueNullFieldError.checkNotNull(
-                  message, 'PatientResponseAfertCreate', 'message'),
+                  message, r'PatientResponseAfertCreate', 'message'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -556,7 +558,7 @@ class PatientResponseAfertCreateBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'PatientResponseAfertCreate', _$failedField, e.toString());
+            r'PatientResponseAfertCreate', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -568,21 +570,21 @@ class PatientResponseAfertCreateBuilder
 class _$ParamsPatientResponseAfertCreate
     extends ParamsPatientResponseAfertCreate {
   @override
-  final String tokenuser;
+  final String? tokenuser;
   @override
-  final String tokenappt;
+  final String? tokenappt;
   @override
-  final String nom;
+  final String? nom;
   @override
-  final String prenom;
+  final String? prenom;
   @override
-  final String email;
+  final String? email;
   @override
-  final String phone;
+  final String? phone;
 
   factory _$ParamsPatientResponseAfertCreate(
-          [void Function(ParamsPatientResponseAfertCreateBuilder) updates]) =>
-      (new ParamsPatientResponseAfertCreateBuilder()..update(updates)).build();
+          [void Function(ParamsPatientResponseAfertCreateBuilder)? updates]) =>
+      (new ParamsPatientResponseAfertCreateBuilder()..update(updates))._build();
 
   _$ParamsPatientResponseAfertCreate._(
       {this.tokenuser,
@@ -616,19 +618,20 @@ class _$ParamsPatientResponseAfertCreate
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, tokenuser.hashCode), tokenappt.hashCode),
-                    nom.hashCode),
-                prenom.hashCode),
-            email.hashCode),
-        phone.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokenuser.hashCode);
+    _$hash = $jc(_$hash, tokenappt.hashCode);
+    _$hash = $jc(_$hash, nom.hashCode);
+    _$hash = $jc(_$hash, prenom.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ParamsPatientResponseAfertCreate')
+    return (newBuiltValueToStringHelper(r'ParamsPatientResponseAfertCreate')
           ..add('tokenuser', tokenuser)
           ..add('tokenappt', tokenappt)
           ..add('nom', nom)
@@ -643,31 +646,31 @@ class ParamsPatientResponseAfertCreateBuilder
     implements
         Builder<ParamsPatientResponseAfertCreate,
             ParamsPatientResponseAfertCreateBuilder> {
-  _$ParamsPatientResponseAfertCreate _$v;
+  _$ParamsPatientResponseAfertCreate? _$v;
 
-  String _tokenuser;
-  String get tokenuser => _$this._tokenuser;
-  set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
+  String? _tokenuser;
+  String? get tokenuser => _$this._tokenuser;
+  set tokenuser(String? tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappt;
-  String get tokenappt => _$this._tokenappt;
-  set tokenappt(String tokenappt) => _$this._tokenappt = tokenappt;
+  String? _tokenappt;
+  String? get tokenappt => _$this._tokenappt;
+  set tokenappt(String? tokenappt) => _$this._tokenappt = tokenappt;
 
-  String _nom;
-  String get nom => _$this._nom;
-  set nom(String nom) => _$this._nom = nom;
+  String? _nom;
+  String? get nom => _$this._nom;
+  set nom(String? nom) => _$this._nom = nom;
 
-  String _prenom;
-  String get prenom => _$this._prenom;
-  set prenom(String prenom) => _$this._prenom = prenom;
+  String? _prenom;
+  String? get prenom => _$this._prenom;
+  set prenom(String? prenom) => _$this._prenom = prenom;
 
-  String _email;
-  String get email => _$this._email;
-  set email(String email) => _$this._email = email;
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
-  String _phone;
-  String get phone => _$this._phone;
-  set phone(String phone) => _$this._phone = phone;
+  String? _phone;
+  String? get phone => _$this._phone;
+  set phone(String? phone) => _$this._phone = phone;
 
   ParamsPatientResponseAfertCreateBuilder();
 
@@ -692,12 +695,14 @@ class ParamsPatientResponseAfertCreateBuilder
   }
 
   @override
-  void update(void Function(ParamsPatientResponseAfertCreateBuilder) updates) {
+  void update(void Function(ParamsPatientResponseAfertCreateBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ParamsPatientResponseAfertCreate build() {
+  ParamsPatientResponseAfertCreate build() => _build();
+
+  _$ParamsPatientResponseAfertCreate _build() {
     final _$result = _$v ??
         new _$ParamsPatientResponseAfertCreate._(
             tokenuser: tokenuser,
@@ -713,15 +718,15 @@ class ParamsPatientResponseAfertCreateBuilder
 
 class _$DataPatientResponseAfertCreate extends DataPatientResponseAfertCreate {
   @override
-  final String nom;
+  final String? nom;
   @override
   final String prenom;
   @override
   final String email;
   @override
-  final String spacephone;
+  final String? spacephone;
   @override
-  final String phone;
+  final String? phone;
   @override
   final String dob;
   @override
@@ -737,48 +742,48 @@ class _$DataPatientResponseAfertCreate extends DataPatientResponseAfertCreate {
   @override
   final String etaballownpinternet;
   @override
-  final String lockmessage;
+  final String? lockmessage;
   @override
-  final String photo;
+  final String? photo;
 
   factory _$DataPatientResponseAfertCreate(
-          [void Function(DataPatientResponseAfertCreateBuilder) updates]) =>
-      (new DataPatientResponseAfertCreateBuilder()..update(updates)).build();
+          [void Function(DataPatientResponseAfertCreateBuilder)? updates]) =>
+      (new DataPatientResponseAfertCreateBuilder()..update(updates))._build();
 
   _$DataPatientResponseAfertCreate._(
       {this.nom,
-      this.prenom,
-      this.email,
+      required this.prenom,
+      required this.email,
       this.spacephone,
       this.phone,
-      this.dob,
-      this.token,
-      this.locked,
-      this.blacklist,
-      this.nplocked,
-      this.etaballowinternet,
-      this.etaballownpinternet,
+      required this.dob,
+      required this.token,
+      required this.locked,
+      required this.blacklist,
+      required this.nplocked,
+      required this.etaballowinternet,
+      required this.etaballownpinternet,
       this.lockmessage,
       this.photo})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        prenom, 'DataPatientResponseAfertCreate', 'prenom');
+        prenom, r'DataPatientResponseAfertCreate', 'prenom');
     BuiltValueNullFieldError.checkNotNull(
-        email, 'DataPatientResponseAfertCreate', 'email');
+        email, r'DataPatientResponseAfertCreate', 'email');
     BuiltValueNullFieldError.checkNotNull(
-        dob, 'DataPatientResponseAfertCreate', 'dob');
+        dob, r'DataPatientResponseAfertCreate', 'dob');
     BuiltValueNullFieldError.checkNotNull(
-        token, 'DataPatientResponseAfertCreate', 'token');
+        token, r'DataPatientResponseAfertCreate', 'token');
     BuiltValueNullFieldError.checkNotNull(
-        locked, 'DataPatientResponseAfertCreate', 'locked');
+        locked, r'DataPatientResponseAfertCreate', 'locked');
     BuiltValueNullFieldError.checkNotNull(
-        blacklist, 'DataPatientResponseAfertCreate', 'blacklist');
+        blacklist, r'DataPatientResponseAfertCreate', 'blacklist');
     BuiltValueNullFieldError.checkNotNull(
-        nplocked, 'DataPatientResponseAfertCreate', 'nplocked');
+        nplocked, r'DataPatientResponseAfertCreate', 'nplocked');
     BuiltValueNullFieldError.checkNotNull(etaballowinternet,
-        'DataPatientResponseAfertCreate', 'etaballowinternet');
+        r'DataPatientResponseAfertCreate', 'etaballowinternet');
     BuiltValueNullFieldError.checkNotNull(etaballownpinternet,
-        'DataPatientResponseAfertCreate', 'etaballownpinternet');
+        r'DataPatientResponseAfertCreate', 'etaballownpinternet');
   }
 
   @override
@@ -812,37 +817,28 @@ class _$DataPatientResponseAfertCreate extends DataPatientResponseAfertCreate {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc(
-                        $jc(
-                            $jc(
-                                $jc(
-                                    $jc(
-                                        $jc(
-                                            $jc(
-                                                $jc(
-                                                    $jc($jc(0, nom.hashCode),
-                                                        prenom.hashCode),
-                                                    email.hashCode),
-                                                spacephone.hashCode),
-                                            phone.hashCode),
-                                        dob.hashCode),
-                                    token.hashCode),
-                                locked.hashCode),
-                            blacklist.hashCode),
-                        nplocked.hashCode),
-                    etaballowinternet.hashCode),
-                etaballownpinternet.hashCode),
-            lockmessage.hashCode),
-        photo.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, nom.hashCode);
+    _$hash = $jc(_$hash, prenom.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, spacephone.hashCode);
+    _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, dob.hashCode);
+    _$hash = $jc(_$hash, token.hashCode);
+    _$hash = $jc(_$hash, locked.hashCode);
+    _$hash = $jc(_$hash, blacklist.hashCode);
+    _$hash = $jc(_$hash, nplocked.hashCode);
+    _$hash = $jc(_$hash, etaballowinternet.hashCode);
+    _$hash = $jc(_$hash, etaballownpinternet.hashCode);
+    _$hash = $jc(_$hash, lockmessage.hashCode);
+    _$hash = $jc(_$hash, photo.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataPatientResponseAfertCreate')
+    return (newBuiltValueToStringHelper(r'DataPatientResponseAfertCreate')
           ..add('nom', nom)
           ..add('prenom', prenom)
           ..add('email', email)
@@ -865,65 +861,65 @@ class DataPatientResponseAfertCreateBuilder
     implements
         Builder<DataPatientResponseAfertCreate,
             DataPatientResponseAfertCreateBuilder> {
-  _$DataPatientResponseAfertCreate _$v;
+  _$DataPatientResponseAfertCreate? _$v;
 
-  String _nom;
-  String get nom => _$this._nom;
-  set nom(String nom) => _$this._nom = nom;
+  String? _nom;
+  String? get nom => _$this._nom;
+  set nom(String? nom) => _$this._nom = nom;
 
-  String _prenom;
-  String get prenom => _$this._prenom;
-  set prenom(String prenom) => _$this._prenom = prenom;
+  String? _prenom;
+  String? get prenom => _$this._prenom;
+  set prenom(String? prenom) => _$this._prenom = prenom;
 
-  String _email;
-  String get email => _$this._email;
-  set email(String email) => _$this._email = email;
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
-  String _spacephone;
-  String get spacephone => _$this._spacephone;
-  set spacephone(String spacephone) => _$this._spacephone = spacephone;
+  String? _spacephone;
+  String? get spacephone => _$this._spacephone;
+  set spacephone(String? spacephone) => _$this._spacephone = spacephone;
 
-  String _phone;
-  String get phone => _$this._phone;
-  set phone(String phone) => _$this._phone = phone;
+  String? _phone;
+  String? get phone => _$this._phone;
+  set phone(String? phone) => _$this._phone = phone;
 
-  String _dob;
-  String get dob => _$this._dob;
-  set dob(String dob) => _$this._dob = dob;
+  String? _dob;
+  String? get dob => _$this._dob;
+  set dob(String? dob) => _$this._dob = dob;
 
-  String _token;
-  String get token => _$this._token;
-  set token(String token) => _$this._token = token;
+  String? _token;
+  String? get token => _$this._token;
+  set token(String? token) => _$this._token = token;
 
-  String _locked;
-  String get locked => _$this._locked;
-  set locked(String locked) => _$this._locked = locked;
+  String? _locked;
+  String? get locked => _$this._locked;
+  set locked(String? locked) => _$this._locked = locked;
 
-  String _blacklist;
-  String get blacklist => _$this._blacklist;
-  set blacklist(String blacklist) => _$this._blacklist = blacklist;
+  String? _blacklist;
+  String? get blacklist => _$this._blacklist;
+  set blacklist(String? blacklist) => _$this._blacklist = blacklist;
 
-  String _nplocked;
-  String get nplocked => _$this._nplocked;
-  set nplocked(String nplocked) => _$this._nplocked = nplocked;
+  String? _nplocked;
+  String? get nplocked => _$this._nplocked;
+  set nplocked(String? nplocked) => _$this._nplocked = nplocked;
 
-  String _etaballowinternet;
-  String get etaballowinternet => _$this._etaballowinternet;
-  set etaballowinternet(String etaballowinternet) =>
+  String? _etaballowinternet;
+  String? get etaballowinternet => _$this._etaballowinternet;
+  set etaballowinternet(String? etaballowinternet) =>
       _$this._etaballowinternet = etaballowinternet;
 
-  String _etaballownpinternet;
-  String get etaballownpinternet => _$this._etaballownpinternet;
-  set etaballownpinternet(String etaballownpinternet) =>
+  String? _etaballownpinternet;
+  String? get etaballownpinternet => _$this._etaballownpinternet;
+  set etaballownpinternet(String? etaballownpinternet) =>
       _$this._etaballownpinternet = etaballownpinternet;
 
-  String _lockmessage;
-  String get lockmessage => _$this._lockmessage;
-  set lockmessage(String lockmessage) => _$this._lockmessage = lockmessage;
+  String? _lockmessage;
+  String? get lockmessage => _$this._lockmessage;
+  set lockmessage(String? lockmessage) => _$this._lockmessage = lockmessage;
 
-  String _photo;
-  String get photo => _$this._photo;
-  set photo(String photo) => _$this._photo = photo;
+  String? _photo;
+  String? get photo => _$this._photo;
+  set photo(String? photo) => _$this._photo = photo;
 
   DataPatientResponseAfertCreateBuilder();
 
@@ -956,35 +952,37 @@ class DataPatientResponseAfertCreateBuilder
   }
 
   @override
-  void update(void Function(DataPatientResponseAfertCreateBuilder) updates) {
+  void update(void Function(DataPatientResponseAfertCreateBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataPatientResponseAfertCreate build() {
+  DataPatientResponseAfertCreate build() => _build();
+
+  _$DataPatientResponseAfertCreate _build() {
     final _$result = _$v ??
         new _$DataPatientResponseAfertCreate._(
             nom: nom,
             prenom: BuiltValueNullFieldError.checkNotNull(
-                prenom, 'DataPatientResponseAfertCreate', 'prenom'),
+                prenom, r'DataPatientResponseAfertCreate', 'prenom'),
             email: BuiltValueNullFieldError.checkNotNull(
-                email, 'DataPatientResponseAfertCreate', 'email'),
+                email, r'DataPatientResponseAfertCreate', 'email'),
             spacephone: spacephone,
             phone: phone,
             dob: BuiltValueNullFieldError.checkNotNull(
-                dob, 'DataPatientResponseAfertCreate', 'dob'),
+                dob, r'DataPatientResponseAfertCreate', 'dob'),
             token: BuiltValueNullFieldError.checkNotNull(
-                token, 'DataPatientResponseAfertCreate', 'token'),
+                token, r'DataPatientResponseAfertCreate', 'token'),
             locked: BuiltValueNullFieldError.checkNotNull(
-                locked, 'DataPatientResponseAfertCreate', 'locked'),
+                locked, r'DataPatientResponseAfertCreate', 'locked'),
             blacklist: BuiltValueNullFieldError.checkNotNull(
-                blacklist, 'DataPatientResponseAfertCreate', 'blacklist'),
+                blacklist, r'DataPatientResponseAfertCreate', 'blacklist'),
             nplocked: BuiltValueNullFieldError.checkNotNull(
-                nplocked, 'DataPatientResponseAfertCreate', 'nplocked'),
+                nplocked, r'DataPatientResponseAfertCreate', 'nplocked'),
             etaballowinternet: BuiltValueNullFieldError.checkNotNull(
-                etaballowinternet, 'DataPatientResponseAfertCreate', 'etaballowinternet'),
+                etaballowinternet, r'DataPatientResponseAfertCreate', 'etaballowinternet'),
             etaballownpinternet:
-                BuiltValueNullFieldError.checkNotNull(etaballownpinternet, 'DataPatientResponseAfertCreate', 'etaballownpinternet'),
+                BuiltValueNullFieldError.checkNotNull(etaballownpinternet, r'DataPatientResponseAfertCreate', 'etaballownpinternet'),
             lockmessage: lockmessage,
             photo: photo);
     replace(_$result);
@@ -992,4 +990,4 @@ class DataPatientResponseAfertCreateBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

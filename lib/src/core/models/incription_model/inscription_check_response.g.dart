@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of inscription_check_response;
+part of 'inscription_check_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -28,10 +28,10 @@ class _$InscriptionCheckResponseSerializer
   final String wireName = 'InscriptionCheckResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, InscriptionCheckResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'version',
       serializers.serialize(object.version,
           specifiedType: const FullType(String)),
@@ -60,44 +60,45 @@ class _$InscriptionCheckResponseSerializer
 
   @override
   InscriptionCheckResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new InscriptionCheckResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'params':
           result.params.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(ParamsInscriptionCheckResponse))
+                  specifiedType:
+                      const FullType(ParamsInscriptionCheckResponse))!
               as ParamsInscriptionCheckResponse);
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(DataInscriptionCheckResponse))
+                  specifiedType: const FullType(DataInscriptionCheckResponse))!
               as DataInscriptionCheckResponse);
           break;
       }
@@ -118,10 +119,10 @@ class _$ParamsInscriptionCheckResponseSerializer
   final String wireName = 'ParamsInscriptionCheckResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ParamsInscriptionCheckResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'phone',
       serializers.serialize(object.phone,
           specifiedType: const FullType(String)),
@@ -132,19 +133,19 @@ class _$ParamsInscriptionCheckResponseSerializer
 
   @override
   ParamsInscriptionCheckResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsInscriptionCheckResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'phone':
           result.phone = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -164,10 +165,10 @@ class _$DataInscriptionCheckResponseSerializer
   final String wireName = 'DataInscriptionCheckResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, DataInscriptionCheckResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'etabs',
       serializers.serialize(object.etabs,
           specifiedType:
@@ -185,31 +186,31 @@ class _$DataInscriptionCheckResponseSerializer
 
   @override
   DataInscriptionCheckResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataInscriptionCheckResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'etabs':
           result.etabs.replace(serializers.deserialize(value,
                   specifiedType:
-                      const FullType(BuiltList, const [const FullType(Etabs)]))
-              as BuiltList<Object>);
+                      const FullType(BuiltList, const [const FullType(Etabs)]))!
+              as BuiltList<Object?>);
           break;
         case 'code':
           result.code = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'cgu':
           result.cgu.replace(serializers.deserialize(value,
                   specifiedType:
-                      const FullType(BuiltList, const [const FullType(Cgu)]))
-              as BuiltList<Object>);
+                      const FullType(BuiltList, const [const FullType(Cgu)]))!
+              as BuiltList<Object?>);
           break;
       }
     }
@@ -225,9 +226,9 @@ class _$EtabsSerializer implements StructuredSerializer<Etabs> {
   final String wireName = 'Etabs';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Etabs object,
+  Iterable<Object?> serialize(Serializers serializers, Etabs object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'id',
       serializers.serialize(object.id, specifiedType: const FullType(String)),
       'name',
@@ -238,23 +239,23 @@ class _$EtabsSerializer implements StructuredSerializer<Etabs> {
   }
 
   @override
-  Etabs deserialize(Serializers serializers, Iterable<Object> serialized,
+  Etabs deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new EtabsBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'name':
           result.name = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -270,9 +271,9 @@ class _$CguSerializer implements StructuredSerializer<Cgu> {
   final String wireName = 'Cgu';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Cgu object,
+  Iterable<Object?> serialize(Serializers serializers, Cgu object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'title',
       serializers.serialize(object.title,
           specifiedType: const FullType(String)),
@@ -285,23 +286,23 @@ class _$CguSerializer implements StructuredSerializer<Cgu> {
   }
 
   @override
-  Cgu deserialize(Serializers serializers, Iterable<Object> serialized,
+  Cgu deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new CguBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'title':
           result.title = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'description':
           result.description = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -327,32 +328,32 @@ class _$InscriptionCheckResponse extends InscriptionCheckResponse {
   final DataInscriptionCheckResponse data;
 
   factory _$InscriptionCheckResponse(
-          [void Function(InscriptionCheckResponseBuilder) updates]) =>
-      (new InscriptionCheckResponseBuilder()..update(updates)).build();
+          [void Function(InscriptionCheckResponseBuilder)? updates]) =>
+      (new InscriptionCheckResponseBuilder()..update(updates))._build();
 
   _$InscriptionCheckResponse._(
-      {this.version,
-      this.request,
-      this.params,
-      this.message,
-      this.httpstatut,
-      this.error,
-      this.data})
+      {required this.version,
+      required this.request,
+      required this.params,
+      required this.message,
+      required this.httpstatut,
+      required this.error,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        version, 'InscriptionCheckResponse', 'version');
+        version, r'InscriptionCheckResponse', 'version');
     BuiltValueNullFieldError.checkNotNull(
-        request, 'InscriptionCheckResponse', 'request');
+        request, r'InscriptionCheckResponse', 'request');
     BuiltValueNullFieldError.checkNotNull(
-        params, 'InscriptionCheckResponse', 'params');
+        params, r'InscriptionCheckResponse', 'params');
     BuiltValueNullFieldError.checkNotNull(
-        message, 'InscriptionCheckResponse', 'message');
+        message, r'InscriptionCheckResponse', 'message');
     BuiltValueNullFieldError.checkNotNull(
-        httpstatut, 'InscriptionCheckResponse', 'httpstatut');
+        httpstatut, r'InscriptionCheckResponse', 'httpstatut');
     BuiltValueNullFieldError.checkNotNull(
-        error, 'InscriptionCheckResponse', 'error');
+        error, r'InscriptionCheckResponse', 'error');
     BuiltValueNullFieldError.checkNotNull(
-        data, 'InscriptionCheckResponse', 'data');
+        data, r'InscriptionCheckResponse', 'data');
   }
 
   @override
@@ -379,21 +380,21 @@ class _$InscriptionCheckResponse extends InscriptionCheckResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, version.hashCode), request.hashCode),
-                        params.hashCode),
-                    message.hashCode),
-                httpstatut.hashCode),
-            error.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('InscriptionCheckResponse')
+    return (newBuiltValueToStringHelper(r'InscriptionCheckResponse')
           ..add('version', version)
           ..add('request', request)
           ..add('params', params)
@@ -408,38 +409,38 @@ class _$InscriptionCheckResponse extends InscriptionCheckResponse {
 class InscriptionCheckResponseBuilder
     implements
         Builder<InscriptionCheckResponse, InscriptionCheckResponseBuilder> {
-  _$InscriptionCheckResponse _$v;
+  _$InscriptionCheckResponse? _$v;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  ParamsInscriptionCheckResponseBuilder _params;
+  ParamsInscriptionCheckResponseBuilder? _params;
   ParamsInscriptionCheckResponseBuilder get params =>
       _$this._params ??= new ParamsInscriptionCheckResponseBuilder();
-  set params(ParamsInscriptionCheckResponseBuilder params) =>
+  set params(ParamsInscriptionCheckResponseBuilder? params) =>
       _$this._params = params;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  DataInscriptionCheckResponseBuilder _data;
+  DataInscriptionCheckResponseBuilder? _data;
   DataInscriptionCheckResponseBuilder get data =>
       _$this._data ??= new DataInscriptionCheckResponseBuilder();
-  set data(DataInscriptionCheckResponseBuilder data) => _$this._data = data;
+  set data(DataInscriptionCheckResponseBuilder? data) => _$this._data = data;
 
   InscriptionCheckResponseBuilder();
 
@@ -465,30 +466,32 @@ class InscriptionCheckResponseBuilder
   }
 
   @override
-  void update(void Function(InscriptionCheckResponseBuilder) updates) {
+  void update(void Function(InscriptionCheckResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$InscriptionCheckResponse build() {
+  InscriptionCheckResponse build() => _build();
+
+  _$InscriptionCheckResponse _build() {
     _$InscriptionCheckResponse _$result;
     try {
       _$result = _$v ??
           new _$InscriptionCheckResponse._(
               version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'InscriptionCheckResponse', 'version'),
+                  version, r'InscriptionCheckResponse', 'version'),
               request: BuiltValueNullFieldError.checkNotNull(
-                  request, 'InscriptionCheckResponse', 'request'),
+                  request, r'InscriptionCheckResponse', 'request'),
               params: params.build(),
               message: BuiltValueNullFieldError.checkNotNull(
-                  message, 'InscriptionCheckResponse', 'message'),
+                  message, r'InscriptionCheckResponse', 'message'),
               httpstatut: BuiltValueNullFieldError.checkNotNull(
-                  httpstatut, 'InscriptionCheckResponse', 'httpstatut'),
+                  httpstatut, r'InscriptionCheckResponse', 'httpstatut'),
               error: BuiltValueNullFieldError.checkNotNull(
-                  error, 'InscriptionCheckResponse', 'error'),
+                  error, r'InscriptionCheckResponse', 'error'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -497,7 +500,7 @@ class InscriptionCheckResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'InscriptionCheckResponse', _$failedField, e.toString());
+            r'InscriptionCheckResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -511,12 +514,12 @@ class _$ParamsInscriptionCheckResponse extends ParamsInscriptionCheckResponse {
   final String phone;
 
   factory _$ParamsInscriptionCheckResponse(
-          [void Function(ParamsInscriptionCheckResponseBuilder) updates]) =>
-      (new ParamsInscriptionCheckResponseBuilder()..update(updates)).build();
+          [void Function(ParamsInscriptionCheckResponseBuilder)? updates]) =>
+      (new ParamsInscriptionCheckResponseBuilder()..update(updates))._build();
 
-  _$ParamsInscriptionCheckResponse._({this.phone}) : super._() {
+  _$ParamsInscriptionCheckResponse._({required this.phone}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        phone, 'ParamsInscriptionCheckResponse', 'phone');
+        phone, r'ParamsInscriptionCheckResponse', 'phone');
   }
 
   @override
@@ -536,12 +539,15 @@ class _$ParamsInscriptionCheckResponse extends ParamsInscriptionCheckResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(0, phone.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ParamsInscriptionCheckResponse')
+    return (newBuiltValueToStringHelper(r'ParamsInscriptionCheckResponse')
           ..add('phone', phone))
         .toString();
   }
@@ -551,11 +557,11 @@ class ParamsInscriptionCheckResponseBuilder
     implements
         Builder<ParamsInscriptionCheckResponse,
             ParamsInscriptionCheckResponseBuilder> {
-  _$ParamsInscriptionCheckResponse _$v;
+  _$ParamsInscriptionCheckResponse? _$v;
 
-  String _phone;
-  String get phone => _$this._phone;
-  set phone(String phone) => _$this._phone = phone;
+  String? _phone;
+  String? get phone => _$this._phone;
+  set phone(String? phone) => _$this._phone = phone;
 
   ParamsInscriptionCheckResponseBuilder();
 
@@ -575,16 +581,18 @@ class ParamsInscriptionCheckResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsInscriptionCheckResponseBuilder) updates) {
+  void update(void Function(ParamsInscriptionCheckResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ParamsInscriptionCheckResponse build() {
+  ParamsInscriptionCheckResponse build() => _build();
+
+  _$ParamsInscriptionCheckResponse _build() {
     final _$result = _$v ??
         new _$ParamsInscriptionCheckResponse._(
             phone: BuiltValueNullFieldError.checkNotNull(
-                phone, 'ParamsInscriptionCheckResponse', 'phone'));
+                phone, r'ParamsInscriptionCheckResponse', 'phone'));
     replace(_$result);
     return _$result;
   }
@@ -599,17 +607,18 @@ class _$DataInscriptionCheckResponse extends DataInscriptionCheckResponse {
   final BuiltList<Cgu> cgu;
 
   factory _$DataInscriptionCheckResponse(
-          [void Function(DataInscriptionCheckResponseBuilder) updates]) =>
-      (new DataInscriptionCheckResponseBuilder()..update(updates)).build();
+          [void Function(DataInscriptionCheckResponseBuilder)? updates]) =>
+      (new DataInscriptionCheckResponseBuilder()..update(updates))._build();
 
-  _$DataInscriptionCheckResponse._({this.etabs, this.code, this.cgu})
+  _$DataInscriptionCheckResponse._(
+      {required this.etabs, required this.code, required this.cgu})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        etabs, 'DataInscriptionCheckResponse', 'etabs');
+        etabs, r'DataInscriptionCheckResponse', 'etabs');
     BuiltValueNullFieldError.checkNotNull(
-        code, 'DataInscriptionCheckResponse', 'code');
+        code, r'DataInscriptionCheckResponse', 'code');
     BuiltValueNullFieldError.checkNotNull(
-        cgu, 'DataInscriptionCheckResponse', 'cgu');
+        cgu, r'DataInscriptionCheckResponse', 'cgu');
   }
 
   @override
@@ -632,12 +641,17 @@ class _$DataInscriptionCheckResponse extends DataInscriptionCheckResponse {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, etabs.hashCode), code.hashCode), cgu.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, etabs.hashCode);
+    _$hash = $jc(_$hash, code.hashCode);
+    _$hash = $jc(_$hash, cgu.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataInscriptionCheckResponse')
+    return (newBuiltValueToStringHelper(r'DataInscriptionCheckResponse')
           ..add('etabs', etabs)
           ..add('code', code)
           ..add('cgu', cgu))
@@ -649,19 +663,19 @@ class DataInscriptionCheckResponseBuilder
     implements
         Builder<DataInscriptionCheckResponse,
             DataInscriptionCheckResponseBuilder> {
-  _$DataInscriptionCheckResponse _$v;
+  _$DataInscriptionCheckResponse? _$v;
 
-  ListBuilder<Etabs> _etabs;
+  ListBuilder<Etabs>? _etabs;
   ListBuilder<Etabs> get etabs => _$this._etabs ??= new ListBuilder<Etabs>();
-  set etabs(ListBuilder<Etabs> etabs) => _$this._etabs = etabs;
+  set etabs(ListBuilder<Etabs>? etabs) => _$this._etabs = etabs;
 
-  String _code;
-  String get code => _$this._code;
-  set code(String code) => _$this._code = code;
+  String? _code;
+  String? get code => _$this._code;
+  set code(String? code) => _$this._code = code;
 
-  ListBuilder<Cgu> _cgu;
+  ListBuilder<Cgu>? _cgu;
   ListBuilder<Cgu> get cgu => _$this._cgu ??= new ListBuilder<Cgu>();
-  set cgu(ListBuilder<Cgu> cgu) => _$this._cgu = cgu;
+  set cgu(ListBuilder<Cgu>? cgu) => _$this._cgu = cgu;
 
   DataInscriptionCheckResponseBuilder();
 
@@ -683,22 +697,24 @@ class DataInscriptionCheckResponseBuilder
   }
 
   @override
-  void update(void Function(DataInscriptionCheckResponseBuilder) updates) {
+  void update(void Function(DataInscriptionCheckResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataInscriptionCheckResponse build() {
+  DataInscriptionCheckResponse build() => _build();
+
+  _$DataInscriptionCheckResponse _build() {
     _$DataInscriptionCheckResponse _$result;
     try {
       _$result = _$v ??
           new _$DataInscriptionCheckResponse._(
               etabs: etabs.build(),
               code: BuiltValueNullFieldError.checkNotNull(
-                  code, 'DataInscriptionCheckResponse', 'code'),
+                  code, r'DataInscriptionCheckResponse', 'code'),
               cgu: cgu.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'etabs';
         etabs.build();
@@ -707,7 +723,7 @@ class DataInscriptionCheckResponseBuilder
         cgu.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'DataInscriptionCheckResponse', _$failedField, e.toString());
+            r'DataInscriptionCheckResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -722,12 +738,12 @@ class _$Etabs extends Etabs {
   @override
   final String name;
 
-  factory _$Etabs([void Function(EtabsBuilder) updates]) =>
-      (new EtabsBuilder()..update(updates)).build();
+  factory _$Etabs([void Function(EtabsBuilder)? updates]) =>
+      (new EtabsBuilder()..update(updates))._build();
 
-  _$Etabs._({this.id, this.name}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'Etabs', 'id');
-    BuiltValueNullFieldError.checkNotNull(name, 'Etabs', 'name');
+  _$Etabs._({required this.id, required this.name}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(id, r'Etabs', 'id');
+    BuiltValueNullFieldError.checkNotNull(name, r'Etabs', 'name');
   }
 
   @override
@@ -745,12 +761,16 @@ class _$Etabs extends Etabs {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, id.hashCode), name.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Etabs')
+    return (newBuiltValueToStringHelper(r'Etabs')
           ..add('id', id)
           ..add('name', name))
         .toString();
@@ -758,15 +778,15 @@ class _$Etabs extends Etabs {
 }
 
 class EtabsBuilder implements Builder<Etabs, EtabsBuilder> {
-  _$Etabs _$v;
+  _$Etabs? _$v;
 
-  String _id;
-  String get id => _$this._id;
-  set id(String id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
-  String _name;
-  String get name => _$this._name;
-  set name(String name) => _$this._name = name;
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
   EtabsBuilder();
 
@@ -787,16 +807,19 @@ class EtabsBuilder implements Builder<Etabs, EtabsBuilder> {
   }
 
   @override
-  void update(void Function(EtabsBuilder) updates) {
+  void update(void Function(EtabsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Etabs build() {
+  Etabs build() => _build();
+
+  _$Etabs _build() {
     final _$result = _$v ??
         new _$Etabs._(
-            id: BuiltValueNullFieldError.checkNotNull(id, 'Etabs', 'id'),
-            name: BuiltValueNullFieldError.checkNotNull(name, 'Etabs', 'name'));
+            id: BuiltValueNullFieldError.checkNotNull(id, r'Etabs', 'id'),
+            name:
+                BuiltValueNullFieldError.checkNotNull(name, r'Etabs', 'name'));
     replace(_$result);
     return _$result;
   }
@@ -808,12 +831,12 @@ class _$Cgu extends Cgu {
   @override
   final String description;
 
-  factory _$Cgu([void Function(CguBuilder) updates]) =>
-      (new CguBuilder()..update(updates)).build();
+  factory _$Cgu([void Function(CguBuilder)? updates]) =>
+      (new CguBuilder()..update(updates))._build();
 
-  _$Cgu._({this.title, this.description}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(title, 'Cgu', 'title');
-    BuiltValueNullFieldError.checkNotNull(description, 'Cgu', 'description');
+  _$Cgu._({required this.title, required this.description}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(title, r'Cgu', 'title');
+    BuiltValueNullFieldError.checkNotNull(description, r'Cgu', 'description');
   }
 
   @override
@@ -833,12 +856,16 @@ class _$Cgu extends Cgu {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, title.hashCode), description.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, title.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Cgu')
+    return (newBuiltValueToStringHelper(r'Cgu')
           ..add('title', title)
           ..add('description', description))
         .toString();
@@ -846,15 +873,15 @@ class _$Cgu extends Cgu {
 }
 
 class CguBuilder implements Builder<Cgu, CguBuilder> {
-  _$Cgu _$v;
+  _$Cgu? _$v;
 
-  String _title;
-  String get title => _$this._title;
-  set title(String title) => _$this._title = title;
+  String? _title;
+  String? get title => _$this._title;
+  set title(String? title) => _$this._title = title;
 
-  String _description;
-  String get description => _$this._description;
-  set description(String description) => _$this._description = description;
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
 
   CguBuilder();
 
@@ -875,20 +902,23 @@ class CguBuilder implements Builder<Cgu, CguBuilder> {
   }
 
   @override
-  void update(void Function(CguBuilder) updates) {
+  void update(void Function(CguBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$Cgu build() {
+  Cgu build() => _build();
+
+  _$Cgu _build() {
     final _$result = _$v ??
         new _$Cgu._(
-            title: BuiltValueNullFieldError.checkNotNull(title, 'Cgu', 'title'),
+            title:
+                BuiltValueNullFieldError.checkNotNull(title, r'Cgu', 'title'),
             description: BuiltValueNullFieldError.checkNotNull(
-                description, 'Cgu', 'description'));
+                description, r'Cgu', 'description'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of list_of_doctor_reponse;
+part of 'list_of_doctor_reponse.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -28,10 +28,10 @@ class _$ListOfDoctorReponseSerializer
   final String wireName = 'ListOfDoctorReponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ListOfDoctorReponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'httpstatut',
       serializers.serialize(object.httpstatut,
           specifiedType: const FullType(int)),
@@ -60,44 +60,44 @@ class _$ListOfDoctorReponseSerializer
 
   @override
   ListOfDoctorReponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ListOfDoctorReponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'params':
           result.params.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(ParamsListOfDoctor))
+                  specifiedType: const FullType(ParamsListOfDoctor))!
               as ParamsListOfDoctor);
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(DataListOfDoctor))
+                  specifiedType: const FullType(DataListOfDoctor))!
               as DataListOfDoctor);
           break;
       }
@@ -115,10 +115,11 @@ class _$ParamsListOfDoctorSerializer
   final String wireName = 'ParamsListOfDoctor';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, ParamsListOfDoctor object,
+  Iterable<Object?> serialize(
+      Serializers serializers, ParamsListOfDoctor object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.proxyVille;
     if (value != null) {
       result
@@ -166,39 +167,39 @@ class _$ParamsListOfDoctorSerializer
 
   @override
   ParamsListOfDoctor deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsListOfDoctorBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'proxy_ville':
           result.proxyVille = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'proxy_nom':
           result.proxyNom = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'proxy_ville_id':
           result.proxyVilleId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'proxy_nom_id':
           result.proxyNomId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'proxy_search':
           result.proxySearch = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'proxy_page':
           result.proxyPage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -215,9 +216,9 @@ class _$DataListOfDoctorSerializer
   final String wireName = 'DataListOfDoctor';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, DataListOfDoctor object,
+  Iterable<Object?> serialize(Serializers serializers, DataListOfDoctor object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'list',
       serializers.serialize(object.list,
           specifiedType: const FullType(
@@ -235,30 +236,30 @@ class _$DataListOfDoctorSerializer
 
   @override
   DataListOfDoctor deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataListOfDoctorBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'list':
           result.list.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(ObjectNameOfSearch)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(ObjectNameOfSearch)]))!
+              as BuiltList<Object?>);
           break;
         case 'search':
           result.search.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(SearchListOfDoctor))
+                  specifiedType: const FullType(SearchListOfDoctor))!
               as SearchListOfDoctor);
           break;
         case 'pagination':
           result.pagination.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(PaginationListOfDoctor))
+                  specifiedType: const FullType(PaginationListOfDoctor))!
               as PaginationListOfDoctor);
           break;
       }
@@ -276,9 +277,10 @@ class _$SearchListOfDoctorSerializer
   final String wireName = 'SearchListOfDoctor';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, SearchListOfDoctor object,
+  Iterable<Object?> serialize(
+      Serializers serializers, SearchListOfDoctor object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'ville',
       serializers.serialize(object.ville,
           specifiedType: const FullType(String)),
@@ -303,39 +305,39 @@ class _$SearchListOfDoctorSerializer
 
   @override
   SearchListOfDoctor deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new SearchListOfDoctorBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'ville':
           result.ville = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'ville_id':
           result.villeId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'nom':
           result.nom = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'nom_id':
           result.nomId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'gps_lat':
           result.gpsLat = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'gps_lng':
           result.gpsLng = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -355,10 +357,10 @@ class _$PaginationListOfDoctorSerializer
   final String wireName = 'PaginationListOfDoctor';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, PaginationListOfDoctor object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'result',
       serializers.serialize(object.result,
           specifiedType: const FullType(String)),
@@ -378,31 +380,31 @@ class _$PaginationListOfDoctorSerializer
 
   @override
   PaginationListOfDoctor deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PaginationListOfDoctorBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'result':
           result.result = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'current':
           result.current = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'maxpage':
           result.maxpage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'perpage':
           result.perpage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -428,31 +430,31 @@ class _$ListOfDoctorReponse extends ListOfDoctorReponse {
   final DataListOfDoctor data;
 
   factory _$ListOfDoctorReponse(
-          [void Function(ListOfDoctorReponseBuilder) updates]) =>
-      (new ListOfDoctorReponseBuilder()..update(updates)).build();
+          [void Function(ListOfDoctorReponseBuilder)? updates]) =>
+      (new ListOfDoctorReponseBuilder()..update(updates))._build();
 
   _$ListOfDoctorReponse._(
-      {this.httpstatut,
-      this.version,
-      this.request,
-      this.params,
-      this.error,
-      this.message,
-      this.data})
+      {required this.httpstatut,
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.error,
+      required this.message,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        httpstatut, 'ListOfDoctorReponse', 'httpstatut');
+        httpstatut, r'ListOfDoctorReponse', 'httpstatut');
     BuiltValueNullFieldError.checkNotNull(
-        version, 'ListOfDoctorReponse', 'version');
+        version, r'ListOfDoctorReponse', 'version');
     BuiltValueNullFieldError.checkNotNull(
-        request, 'ListOfDoctorReponse', 'request');
+        request, r'ListOfDoctorReponse', 'request');
     BuiltValueNullFieldError.checkNotNull(
-        params, 'ListOfDoctorReponse', 'params');
+        params, r'ListOfDoctorReponse', 'params');
     BuiltValueNullFieldError.checkNotNull(
-        error, 'ListOfDoctorReponse', 'error');
+        error, r'ListOfDoctorReponse', 'error');
     BuiltValueNullFieldError.checkNotNull(
-        message, 'ListOfDoctorReponse', 'message');
-    BuiltValueNullFieldError.checkNotNull(data, 'ListOfDoctorReponse', 'data');
+        message, r'ListOfDoctorReponse', 'message');
+    BuiltValueNullFieldError.checkNotNull(data, r'ListOfDoctorReponse', 'data');
   }
 
   @override
@@ -479,21 +481,21 @@ class _$ListOfDoctorReponse extends ListOfDoctorReponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, httpstatut.hashCode), version.hashCode),
-                        request.hashCode),
-                    params.hashCode),
-                error.hashCode),
-            message.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ListOfDoctorReponse')
+    return (newBuiltValueToStringHelper(r'ListOfDoctorReponse')
           ..add('httpstatut', httpstatut)
           ..add('version', version)
           ..add('request', request)
@@ -507,37 +509,37 @@ class _$ListOfDoctorReponse extends ListOfDoctorReponse {
 
 class ListOfDoctorReponseBuilder
     implements Builder<ListOfDoctorReponse, ListOfDoctorReponseBuilder> {
-  _$ListOfDoctorReponse _$v;
+  _$ListOfDoctorReponse? _$v;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  ParamsListOfDoctorBuilder _params;
+  ParamsListOfDoctorBuilder? _params;
   ParamsListOfDoctorBuilder get params =>
       _$this._params ??= new ParamsListOfDoctorBuilder();
-  set params(ParamsListOfDoctorBuilder params) => _$this._params = params;
+  set params(ParamsListOfDoctorBuilder? params) => _$this._params = params;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  DataListOfDoctorBuilder _data;
+  DataListOfDoctorBuilder? _data;
   DataListOfDoctorBuilder get data =>
       _$this._data ??= new DataListOfDoctorBuilder();
-  set data(DataListOfDoctorBuilder data) => _$this._data = data;
+  set data(DataListOfDoctorBuilder? data) => _$this._data = data;
 
   ListOfDoctorReponseBuilder();
 
@@ -563,30 +565,32 @@ class ListOfDoctorReponseBuilder
   }
 
   @override
-  void update(void Function(ListOfDoctorReponseBuilder) updates) {
+  void update(void Function(ListOfDoctorReponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ListOfDoctorReponse build() {
+  ListOfDoctorReponse build() => _build();
+
+  _$ListOfDoctorReponse _build() {
     _$ListOfDoctorReponse _$result;
     try {
       _$result = _$v ??
           new _$ListOfDoctorReponse._(
               httpstatut: BuiltValueNullFieldError.checkNotNull(
-                  httpstatut, 'ListOfDoctorReponse', 'httpstatut'),
+                  httpstatut, r'ListOfDoctorReponse', 'httpstatut'),
               version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'ListOfDoctorReponse', 'version'),
+                  version, r'ListOfDoctorReponse', 'version'),
               request: BuiltValueNullFieldError.checkNotNull(
-                  request, 'ListOfDoctorReponse', 'request'),
+                  request, r'ListOfDoctorReponse', 'request'),
               params: params.build(),
               error: BuiltValueNullFieldError.checkNotNull(
-                  error, 'ListOfDoctorReponse', 'error'),
+                  error, r'ListOfDoctorReponse', 'error'),
               message: BuiltValueNullFieldError.checkNotNull(
-                  message, 'ListOfDoctorReponse', 'message'),
+                  message, r'ListOfDoctorReponse', 'message'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -595,7 +599,7 @@ class ListOfDoctorReponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'ListOfDoctorReponse', _$failedField, e.toString());
+            r'ListOfDoctorReponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -606,21 +610,21 @@ class ListOfDoctorReponseBuilder
 
 class _$ParamsListOfDoctor extends ParamsListOfDoctor {
   @override
-  final String proxyVille;
+  final String? proxyVille;
   @override
-  final String proxyNom;
+  final String? proxyNom;
   @override
-  final String proxyVilleId;
+  final String? proxyVilleId;
   @override
-  final String proxyNomId;
+  final String? proxyNomId;
   @override
-  final String proxySearch;
+  final String? proxySearch;
   @override
-  final String proxyPage;
+  final String? proxyPage;
 
   factory _$ParamsListOfDoctor(
-          [void Function(ParamsListOfDoctorBuilder) updates]) =>
-      (new ParamsListOfDoctorBuilder()..update(updates)).build();
+          [void Function(ParamsListOfDoctorBuilder)? updates]) =>
+      (new ParamsListOfDoctorBuilder()..update(updates))._build();
 
   _$ParamsListOfDoctor._(
       {this.proxyVille,
@@ -654,19 +658,20 @@ class _$ParamsListOfDoctor extends ParamsListOfDoctor {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, proxyVille.hashCode), proxyNom.hashCode),
-                    proxyVilleId.hashCode),
-                proxyNomId.hashCode),
-            proxySearch.hashCode),
-        proxyPage.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, proxyVille.hashCode);
+    _$hash = $jc(_$hash, proxyNom.hashCode);
+    _$hash = $jc(_$hash, proxyVilleId.hashCode);
+    _$hash = $jc(_$hash, proxyNomId.hashCode);
+    _$hash = $jc(_$hash, proxySearch.hashCode);
+    _$hash = $jc(_$hash, proxyPage.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ParamsListOfDoctor')
+    return (newBuiltValueToStringHelper(r'ParamsListOfDoctor')
           ..add('proxyVille', proxyVille)
           ..add('proxyNom', proxyNom)
           ..add('proxyVilleId', proxyVilleId)
@@ -679,31 +684,31 @@ class _$ParamsListOfDoctor extends ParamsListOfDoctor {
 
 class ParamsListOfDoctorBuilder
     implements Builder<ParamsListOfDoctor, ParamsListOfDoctorBuilder> {
-  _$ParamsListOfDoctor _$v;
+  _$ParamsListOfDoctor? _$v;
 
-  String _proxyVille;
-  String get proxyVille => _$this._proxyVille;
-  set proxyVille(String proxyVille) => _$this._proxyVille = proxyVille;
+  String? _proxyVille;
+  String? get proxyVille => _$this._proxyVille;
+  set proxyVille(String? proxyVille) => _$this._proxyVille = proxyVille;
 
-  String _proxyNom;
-  String get proxyNom => _$this._proxyNom;
-  set proxyNom(String proxyNom) => _$this._proxyNom = proxyNom;
+  String? _proxyNom;
+  String? get proxyNom => _$this._proxyNom;
+  set proxyNom(String? proxyNom) => _$this._proxyNom = proxyNom;
 
-  String _proxyVilleId;
-  String get proxyVilleId => _$this._proxyVilleId;
-  set proxyVilleId(String proxyVilleId) => _$this._proxyVilleId = proxyVilleId;
+  String? _proxyVilleId;
+  String? get proxyVilleId => _$this._proxyVilleId;
+  set proxyVilleId(String? proxyVilleId) => _$this._proxyVilleId = proxyVilleId;
 
-  String _proxyNomId;
-  String get proxyNomId => _$this._proxyNomId;
-  set proxyNomId(String proxyNomId) => _$this._proxyNomId = proxyNomId;
+  String? _proxyNomId;
+  String? get proxyNomId => _$this._proxyNomId;
+  set proxyNomId(String? proxyNomId) => _$this._proxyNomId = proxyNomId;
 
-  String _proxySearch;
-  String get proxySearch => _$this._proxySearch;
-  set proxySearch(String proxySearch) => _$this._proxySearch = proxySearch;
+  String? _proxySearch;
+  String? get proxySearch => _$this._proxySearch;
+  set proxySearch(String? proxySearch) => _$this._proxySearch = proxySearch;
 
-  String _proxyPage;
-  String get proxyPage => _$this._proxyPage;
-  set proxyPage(String proxyPage) => _$this._proxyPage = proxyPage;
+  String? _proxyPage;
+  String? get proxyPage => _$this._proxyPage;
+  set proxyPage(String? proxyPage) => _$this._proxyPage = proxyPage;
 
   ParamsListOfDoctorBuilder();
 
@@ -728,12 +733,14 @@ class ParamsListOfDoctorBuilder
   }
 
   @override
-  void update(void Function(ParamsListOfDoctorBuilder) updates) {
+  void update(void Function(ParamsListOfDoctorBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ParamsListOfDoctor build() {
+  ParamsListOfDoctor build() => _build();
+
+  _$ParamsListOfDoctor _build() {
     final _$result = _$v ??
         new _$ParamsListOfDoctor._(
             proxyVille: proxyVille,
@@ -756,14 +763,17 @@ class _$DataListOfDoctor extends DataListOfDoctor {
   final PaginationListOfDoctor pagination;
 
   factory _$DataListOfDoctor(
-          [void Function(DataListOfDoctorBuilder) updates]) =>
-      (new DataListOfDoctorBuilder()..update(updates)).build();
+          [void Function(DataListOfDoctorBuilder)? updates]) =>
+      (new DataListOfDoctorBuilder()..update(updates))._build();
 
-  _$DataListOfDoctor._({this.list, this.search, this.pagination}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(list, 'DataListOfDoctor', 'list');
-    BuiltValueNullFieldError.checkNotNull(search, 'DataListOfDoctor', 'search');
+  _$DataListOfDoctor._(
+      {required this.list, required this.search, required this.pagination})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(list, r'DataListOfDoctor', 'list');
     BuiltValueNullFieldError.checkNotNull(
-        pagination, 'DataListOfDoctor', 'pagination');
+        search, r'DataListOfDoctor', 'search');
+    BuiltValueNullFieldError.checkNotNull(
+        pagination, r'DataListOfDoctor', 'pagination');
   }
 
   @override
@@ -785,13 +795,17 @@ class _$DataListOfDoctor extends DataListOfDoctor {
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc($jc(0, list.hashCode), search.hashCode), pagination.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, list.hashCode);
+    _$hash = $jc(_$hash, search.hashCode);
+    _$hash = $jc(_$hash, pagination.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataListOfDoctor')
+    return (newBuiltValueToStringHelper(r'DataListOfDoctor')
           ..add('list', list)
           ..add('search', search)
           ..add('pagination', pagination))
@@ -801,22 +815,22 @@ class _$DataListOfDoctor extends DataListOfDoctor {
 
 class DataListOfDoctorBuilder
     implements Builder<DataListOfDoctor, DataListOfDoctorBuilder> {
-  _$DataListOfDoctor _$v;
+  _$DataListOfDoctor? _$v;
 
-  ListBuilder<ObjectNameOfSearch> _list;
+  ListBuilder<ObjectNameOfSearch>? _list;
   ListBuilder<ObjectNameOfSearch> get list =>
       _$this._list ??= new ListBuilder<ObjectNameOfSearch>();
-  set list(ListBuilder<ObjectNameOfSearch> list) => _$this._list = list;
+  set list(ListBuilder<ObjectNameOfSearch>? list) => _$this._list = list;
 
-  SearchListOfDoctorBuilder _search;
+  SearchListOfDoctorBuilder? _search;
   SearchListOfDoctorBuilder get search =>
       _$this._search ??= new SearchListOfDoctorBuilder();
-  set search(SearchListOfDoctorBuilder search) => _$this._search = search;
+  set search(SearchListOfDoctorBuilder? search) => _$this._search = search;
 
-  PaginationListOfDoctorBuilder _pagination;
+  PaginationListOfDoctorBuilder? _pagination;
   PaginationListOfDoctorBuilder get pagination =>
       _$this._pagination ??= new PaginationListOfDoctorBuilder();
-  set pagination(PaginationListOfDoctorBuilder pagination) =>
+  set pagination(PaginationListOfDoctorBuilder? pagination) =>
       _$this._pagination = pagination;
 
   DataListOfDoctorBuilder();
@@ -839,12 +853,14 @@ class DataListOfDoctorBuilder
   }
 
   @override
-  void update(void Function(DataListOfDoctorBuilder) updates) {
+  void update(void Function(DataListOfDoctorBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataListOfDoctor build() {
+  DataListOfDoctor build() => _build();
+
+  _$DataListOfDoctor _build() {
     _$DataListOfDoctor _$result;
     try {
       _$result = _$v ??
@@ -853,7 +869,7 @@ class DataListOfDoctorBuilder
               search: search.build(),
               pagination: pagination.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'list';
         list.build();
@@ -863,7 +879,7 @@ class DataListOfDoctorBuilder
         pagination.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'DataListOfDoctor', _$failedField, e.toString());
+            r'DataListOfDoctor', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -887,26 +903,28 @@ class _$SearchListOfDoctor extends SearchListOfDoctor {
   final String gpsLng;
 
   factory _$SearchListOfDoctor(
-          [void Function(SearchListOfDoctorBuilder) updates]) =>
-      (new SearchListOfDoctorBuilder()..update(updates)).build();
+          [void Function(SearchListOfDoctorBuilder)? updates]) =>
+      (new SearchListOfDoctorBuilder()..update(updates))._build();
 
   _$SearchListOfDoctor._(
-      {this.ville,
-      this.villeId,
-      this.nom,
-      this.nomId,
-      this.gpsLat,
-      this.gpsLng})
+      {required this.ville,
+      required this.villeId,
+      required this.nom,
+      required this.nomId,
+      required this.gpsLat,
+      required this.gpsLng})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(ville, 'SearchListOfDoctor', 'ville');
     BuiltValueNullFieldError.checkNotNull(
-        villeId, 'SearchListOfDoctor', 'villeId');
-    BuiltValueNullFieldError.checkNotNull(nom, 'SearchListOfDoctor', 'nom');
-    BuiltValueNullFieldError.checkNotNull(nomId, 'SearchListOfDoctor', 'nomId');
+        ville, r'SearchListOfDoctor', 'ville');
     BuiltValueNullFieldError.checkNotNull(
-        gpsLat, 'SearchListOfDoctor', 'gpsLat');
+        villeId, r'SearchListOfDoctor', 'villeId');
+    BuiltValueNullFieldError.checkNotNull(nom, r'SearchListOfDoctor', 'nom');
     BuiltValueNullFieldError.checkNotNull(
-        gpsLng, 'SearchListOfDoctor', 'gpsLng');
+        nomId, r'SearchListOfDoctor', 'nomId');
+    BuiltValueNullFieldError.checkNotNull(
+        gpsLat, r'SearchListOfDoctor', 'gpsLat');
+    BuiltValueNullFieldError.checkNotNull(
+        gpsLng, r'SearchListOfDoctor', 'gpsLng');
   }
 
   @override
@@ -932,19 +950,20 @@ class _$SearchListOfDoctor extends SearchListOfDoctor {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, ville.hashCode), villeId.hashCode),
-                    nom.hashCode),
-                nomId.hashCode),
-            gpsLat.hashCode),
-        gpsLng.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, ville.hashCode);
+    _$hash = $jc(_$hash, villeId.hashCode);
+    _$hash = $jc(_$hash, nom.hashCode);
+    _$hash = $jc(_$hash, nomId.hashCode);
+    _$hash = $jc(_$hash, gpsLat.hashCode);
+    _$hash = $jc(_$hash, gpsLng.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('SearchListOfDoctor')
+    return (newBuiltValueToStringHelper(r'SearchListOfDoctor')
           ..add('ville', ville)
           ..add('villeId', villeId)
           ..add('nom', nom)
@@ -957,31 +976,31 @@ class _$SearchListOfDoctor extends SearchListOfDoctor {
 
 class SearchListOfDoctorBuilder
     implements Builder<SearchListOfDoctor, SearchListOfDoctorBuilder> {
-  _$SearchListOfDoctor _$v;
+  _$SearchListOfDoctor? _$v;
 
-  String _ville;
-  String get ville => _$this._ville;
-  set ville(String ville) => _$this._ville = ville;
+  String? _ville;
+  String? get ville => _$this._ville;
+  set ville(String? ville) => _$this._ville = ville;
 
-  String _villeId;
-  String get villeId => _$this._villeId;
-  set villeId(String villeId) => _$this._villeId = villeId;
+  String? _villeId;
+  String? get villeId => _$this._villeId;
+  set villeId(String? villeId) => _$this._villeId = villeId;
 
-  String _nom;
-  String get nom => _$this._nom;
-  set nom(String nom) => _$this._nom = nom;
+  String? _nom;
+  String? get nom => _$this._nom;
+  set nom(String? nom) => _$this._nom = nom;
 
-  String _nomId;
-  String get nomId => _$this._nomId;
-  set nomId(String nomId) => _$this._nomId = nomId;
+  String? _nomId;
+  String? get nomId => _$this._nomId;
+  set nomId(String? nomId) => _$this._nomId = nomId;
 
-  String _gpsLat;
-  String get gpsLat => _$this._gpsLat;
-  set gpsLat(String gpsLat) => _$this._gpsLat = gpsLat;
+  String? _gpsLat;
+  String? get gpsLat => _$this._gpsLat;
+  set gpsLat(String? gpsLat) => _$this._gpsLat = gpsLat;
 
-  String _gpsLng;
-  String get gpsLng => _$this._gpsLng;
-  set gpsLng(String gpsLng) => _$this._gpsLng = gpsLng;
+  String? _gpsLng;
+  String? get gpsLng => _$this._gpsLng;
+  set gpsLng(String? gpsLng) => _$this._gpsLng = gpsLng;
 
   SearchListOfDoctorBuilder();
 
@@ -1006,26 +1025,28 @@ class SearchListOfDoctorBuilder
   }
 
   @override
-  void update(void Function(SearchListOfDoctorBuilder) updates) {
+  void update(void Function(SearchListOfDoctorBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$SearchListOfDoctor build() {
+  SearchListOfDoctor build() => _build();
+
+  _$SearchListOfDoctor _build() {
     final _$result = _$v ??
         new _$SearchListOfDoctor._(
             ville: BuiltValueNullFieldError.checkNotNull(
-                ville, 'SearchListOfDoctor', 'ville'),
+                ville, r'SearchListOfDoctor', 'ville'),
             villeId: BuiltValueNullFieldError.checkNotNull(
-                villeId, 'SearchListOfDoctor', 'villeId'),
+                villeId, r'SearchListOfDoctor', 'villeId'),
             nom: BuiltValueNullFieldError.checkNotNull(
-                nom, 'SearchListOfDoctor', 'nom'),
+                nom, r'SearchListOfDoctor', 'nom'),
             nomId: BuiltValueNullFieldError.checkNotNull(
-                nomId, 'SearchListOfDoctor', 'nomId'),
+                nomId, r'SearchListOfDoctor', 'nomId'),
             gpsLat: BuiltValueNullFieldError.checkNotNull(
-                gpsLat, 'SearchListOfDoctor', 'gpsLat'),
+                gpsLat, r'SearchListOfDoctor', 'gpsLat'),
             gpsLng: BuiltValueNullFieldError.checkNotNull(
-                gpsLng, 'SearchListOfDoctor', 'gpsLng'));
+                gpsLng, r'SearchListOfDoctor', 'gpsLng'));
     replace(_$result);
     return _$result;
   }
@@ -1042,20 +1063,23 @@ class _$PaginationListOfDoctor extends PaginationListOfDoctor {
   final String perpage;
 
   factory _$PaginationListOfDoctor(
-          [void Function(PaginationListOfDoctorBuilder) updates]) =>
-      (new PaginationListOfDoctorBuilder()..update(updates)).build();
+          [void Function(PaginationListOfDoctorBuilder)? updates]) =>
+      (new PaginationListOfDoctorBuilder()..update(updates))._build();
 
   _$PaginationListOfDoctor._(
-      {this.result, this.current, this.maxpage, this.perpage})
+      {required this.result,
+      required this.current,
+      required this.maxpage,
+      required this.perpage})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        result, 'PaginationListOfDoctor', 'result');
+        result, r'PaginationListOfDoctor', 'result');
     BuiltValueNullFieldError.checkNotNull(
-        current, 'PaginationListOfDoctor', 'current');
+        current, r'PaginationListOfDoctor', 'current');
     BuiltValueNullFieldError.checkNotNull(
-        maxpage, 'PaginationListOfDoctor', 'maxpage');
+        maxpage, r'PaginationListOfDoctor', 'maxpage');
     BuiltValueNullFieldError.checkNotNull(
-        perpage, 'PaginationListOfDoctor', 'perpage');
+        perpage, r'PaginationListOfDoctor', 'perpage');
   }
 
   @override
@@ -1079,14 +1103,18 @@ class _$PaginationListOfDoctor extends PaginationListOfDoctor {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc(0, result.hashCode), current.hashCode), maxpage.hashCode),
-        perpage.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, result.hashCode);
+    _$hash = $jc(_$hash, current.hashCode);
+    _$hash = $jc(_$hash, maxpage.hashCode);
+    _$hash = $jc(_$hash, perpage.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('PaginationListOfDoctor')
+    return (newBuiltValueToStringHelper(r'PaginationListOfDoctor')
           ..add('result', result)
           ..add('current', current)
           ..add('maxpage', maxpage)
@@ -1097,23 +1125,23 @@ class _$PaginationListOfDoctor extends PaginationListOfDoctor {
 
 class PaginationListOfDoctorBuilder
     implements Builder<PaginationListOfDoctor, PaginationListOfDoctorBuilder> {
-  _$PaginationListOfDoctor _$v;
+  _$PaginationListOfDoctor? _$v;
 
-  String _result;
-  String get result => _$this._result;
-  set result(String result) => _$this._result = result;
+  String? _result;
+  String? get result => _$this._result;
+  set result(String? result) => _$this._result = result;
 
-  String _current;
-  String get current => _$this._current;
-  set current(String current) => _$this._current = current;
+  String? _current;
+  String? get current => _$this._current;
+  set current(String? current) => _$this._current = current;
 
-  String _maxpage;
-  String get maxpage => _$this._maxpage;
-  set maxpage(String maxpage) => _$this._maxpage = maxpage;
+  String? _maxpage;
+  String? get maxpage => _$this._maxpage;
+  set maxpage(String? maxpage) => _$this._maxpage = maxpage;
 
-  String _perpage;
-  String get perpage => _$this._perpage;
-  set perpage(String perpage) => _$this._perpage = perpage;
+  String? _perpage;
+  String? get perpage => _$this._perpage;
+  set perpage(String? perpage) => _$this._perpage = perpage;
 
   PaginationListOfDoctorBuilder();
 
@@ -1136,25 +1164,27 @@ class PaginationListOfDoctorBuilder
   }
 
   @override
-  void update(void Function(PaginationListOfDoctorBuilder) updates) {
+  void update(void Function(PaginationListOfDoctorBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$PaginationListOfDoctor build() {
+  PaginationListOfDoctor build() => _build();
+
+  _$PaginationListOfDoctor _build() {
     final _$result = _$v ??
         new _$PaginationListOfDoctor._(
             result: BuiltValueNullFieldError.checkNotNull(
-                result, 'PaginationListOfDoctor', 'result'),
+                result, r'PaginationListOfDoctor', 'result'),
             current: BuiltValueNullFieldError.checkNotNull(
-                current, 'PaginationListOfDoctor', 'current'),
+                current, r'PaginationListOfDoctor', 'current'),
             maxpage: BuiltValueNullFieldError.checkNotNull(
-                maxpage, 'PaginationListOfDoctor', 'maxpage'),
+                maxpage, r'PaginationListOfDoctor', 'maxpage'),
             perpage: BuiltValueNullFieldError.checkNotNull(
-                perpage, 'PaginationListOfDoctor', 'perpage'));
+                perpage, r'PaginationListOfDoctor', 'perpage'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

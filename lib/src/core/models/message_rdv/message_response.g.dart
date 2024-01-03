@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of message_response;
+part of 'message_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -23,9 +23,9 @@ class _$MessageResponseSerializer
   final String wireName = 'MessageResponse';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, MessageResponse object,
+  Iterable<Object?> serialize(Serializers serializers, MessageResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'version',
       serializers.serialize(object.version,
           specifiedType: const FullType(String)),
@@ -54,44 +54,44 @@ class _$MessageResponseSerializer
 
   @override
   MessageResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new MessageResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'params':
           result.params.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(ParamsMessageResponse))
+                  specifiedType: const FullType(ParamsMessageResponse))!
               as ParamsMessageResponse);
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(DataMessageResponse))
+                  specifiedType: const FullType(DataMessageResponse))!
               as DataMessageResponse);
           break;
       }
@@ -112,10 +112,10 @@ class _$ParamsMessageResponseSerializer
   final String wireName = 'ParamsMessageResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ParamsMessageResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
           specifiedType: const FullType(String)),
@@ -128,23 +128,23 @@ class _$ParamsMessageResponseSerializer
 
   @override
   ParamsMessageResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsMessageResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'page':
           result.page = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -164,10 +164,10 @@ class _$DataMessageResponseSerializer
   final String wireName = 'DataMessageResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, DataMessageResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'list',
       serializers.serialize(object.list,
           specifiedType: const FullType(
@@ -182,25 +182,25 @@ class _$DataMessageResponseSerializer
 
   @override
   DataMessageResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataMessageResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'list':
           result.list.replace(serializers.deserialize(value,
                   specifiedType: const FullType(
-                      BuiltList, const [const FullType(MessageDataResponse)]))
-              as BuiltList<Object>);
+                      BuiltList, const [const FullType(MessageDataResponse)]))!
+              as BuiltList<Object?>);
           break;
         case 'pagination':
           result.pagination.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(PaginationListOfDoctor))
+                  specifiedType: const FullType(PaginationListOfDoctor))!
               as PaginationListOfDoctor);
           break;
       }
@@ -221,10 +221,10 @@ class _$MessageDataResponseSerializer
   final String wireName = 'MessageDataResponse';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, MessageDataResponse object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'datetime',
       serializers.serialize(object.datetime,
           specifiedType: const FullType(String)),
@@ -259,55 +259,55 @@ class _$MessageDataResponseSerializer
 
   @override
   MessageDataResponse deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new MessageDataResponseBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'datetime':
           result.datetime = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'reception':
           result.reception = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
         case 'from':
           result.from = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'to':
           result.to = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'subject':
           result.subject = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'file':
           result.file = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'file2':
           result.file2 = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'file3':
           result.file3 = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'token':
           result.token = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -332,29 +332,29 @@ class _$MessageResponse extends MessageResponse {
   @override
   final DataMessageResponse data;
 
-  factory _$MessageResponse([void Function(MessageResponseBuilder) updates]) =>
-      (new MessageResponseBuilder()..update(updates)).build();
+  factory _$MessageResponse([void Function(MessageResponseBuilder)? updates]) =>
+      (new MessageResponseBuilder()..update(updates))._build();
 
   _$MessageResponse._(
-      {this.version,
-      this.request,
-      this.params,
-      this.message,
-      this.httpstatut,
-      this.error,
-      this.data})
+      {required this.version,
+      required this.request,
+      required this.params,
+      required this.message,
+      required this.httpstatut,
+      required this.error,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        version, 'MessageResponse', 'version');
+        version, r'MessageResponse', 'version');
     BuiltValueNullFieldError.checkNotNull(
-        request, 'MessageResponse', 'request');
-    BuiltValueNullFieldError.checkNotNull(params, 'MessageResponse', 'params');
+        request, r'MessageResponse', 'request');
+    BuiltValueNullFieldError.checkNotNull(params, r'MessageResponse', 'params');
     BuiltValueNullFieldError.checkNotNull(
-        message, 'MessageResponse', 'message');
+        message, r'MessageResponse', 'message');
     BuiltValueNullFieldError.checkNotNull(
-        httpstatut, 'MessageResponse', 'httpstatut');
-    BuiltValueNullFieldError.checkNotNull(error, 'MessageResponse', 'error');
-    BuiltValueNullFieldError.checkNotNull(data, 'MessageResponse', 'data');
+        httpstatut, r'MessageResponse', 'httpstatut');
+    BuiltValueNullFieldError.checkNotNull(error, r'MessageResponse', 'error');
+    BuiltValueNullFieldError.checkNotNull(data, r'MessageResponse', 'data');
   }
 
   @override
@@ -380,21 +380,21 @@ class _$MessageResponse extends MessageResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, version.hashCode), request.hashCode),
-                        params.hashCode),
-                    message.hashCode),
-                httpstatut.hashCode),
-            error.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('MessageResponse')
+    return (newBuiltValueToStringHelper(r'MessageResponse')
           ..add('version', version)
           ..add('request', request)
           ..add('params', params)
@@ -408,37 +408,37 @@ class _$MessageResponse extends MessageResponse {
 
 class MessageResponseBuilder
     implements Builder<MessageResponse, MessageResponseBuilder> {
-  _$MessageResponse _$v;
+  _$MessageResponse? _$v;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  ParamsMessageResponseBuilder _params;
+  ParamsMessageResponseBuilder? _params;
   ParamsMessageResponseBuilder get params =>
       _$this._params ??= new ParamsMessageResponseBuilder();
-  set params(ParamsMessageResponseBuilder params) => _$this._params = params;
+  set params(ParamsMessageResponseBuilder? params) => _$this._params = params;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  DataMessageResponseBuilder _data;
+  DataMessageResponseBuilder? _data;
   DataMessageResponseBuilder get data =>
       _$this._data ??= new DataMessageResponseBuilder();
-  set data(DataMessageResponseBuilder data) => _$this._data = data;
+  set data(DataMessageResponseBuilder? data) => _$this._data = data;
 
   MessageResponseBuilder();
 
@@ -464,30 +464,32 @@ class MessageResponseBuilder
   }
 
   @override
-  void update(void Function(MessageResponseBuilder) updates) {
+  void update(void Function(MessageResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$MessageResponse build() {
+  MessageResponse build() => _build();
+
+  _$MessageResponse _build() {
     _$MessageResponse _$result;
     try {
       _$result = _$v ??
           new _$MessageResponse._(
               version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'MessageResponse', 'version'),
+                  version, r'MessageResponse', 'version'),
               request: BuiltValueNullFieldError.checkNotNull(
-                  request, 'MessageResponse', 'request'),
+                  request, r'MessageResponse', 'request'),
               params: params.build(),
               message: BuiltValueNullFieldError.checkNotNull(
-                  message, 'MessageResponse', 'message'),
+                  message, r'MessageResponse', 'message'),
               httpstatut: BuiltValueNullFieldError.checkNotNull(
-                  httpstatut, 'MessageResponse', 'httpstatut'),
+                  httpstatut, r'MessageResponse', 'httpstatut'),
               error: BuiltValueNullFieldError.checkNotNull(
-                  error, 'MessageResponse', 'error'),
+                  error, r'MessageResponse', 'error'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -496,7 +498,7 @@ class MessageResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'MessageResponse', _$failedField, e.toString());
+            r'MessageResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -512,14 +514,15 @@ class _$ParamsMessageResponse extends ParamsMessageResponse {
   final String page;
 
   factory _$ParamsMessageResponse(
-          [void Function(ParamsMessageResponseBuilder) updates]) =>
-      (new ParamsMessageResponseBuilder()..update(updates)).build();
+          [void Function(ParamsMessageResponseBuilder)? updates]) =>
+      (new ParamsMessageResponseBuilder()..update(updates))._build();
 
-  _$ParamsMessageResponse._({this.tokenuser, this.page}) : super._() {
+  _$ParamsMessageResponse._({required this.tokenuser, required this.page})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        tokenuser, 'ParamsMessageResponse', 'tokenuser');
+        tokenuser, r'ParamsMessageResponse', 'tokenuser');
     BuiltValueNullFieldError.checkNotNull(
-        page, 'ParamsMessageResponse', 'page');
+        page, r'ParamsMessageResponse', 'page');
   }
 
   @override
@@ -541,12 +544,16 @@ class _$ParamsMessageResponse extends ParamsMessageResponse {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, tokenuser.hashCode), page.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokenuser.hashCode);
+    _$hash = $jc(_$hash, page.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ParamsMessageResponse')
+    return (newBuiltValueToStringHelper(r'ParamsMessageResponse')
           ..add('tokenuser', tokenuser)
           ..add('page', page))
         .toString();
@@ -555,15 +562,15 @@ class _$ParamsMessageResponse extends ParamsMessageResponse {
 
 class ParamsMessageResponseBuilder
     implements Builder<ParamsMessageResponse, ParamsMessageResponseBuilder> {
-  _$ParamsMessageResponse _$v;
+  _$ParamsMessageResponse? _$v;
 
-  String _tokenuser;
-  String get tokenuser => _$this._tokenuser;
-  set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
+  String? _tokenuser;
+  String? get tokenuser => _$this._tokenuser;
+  set tokenuser(String? tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _page;
-  String get page => _$this._page;
-  set page(String page) => _$this._page = page;
+  String? _page;
+  String? get page => _$this._page;
+  set page(String? page) => _$this._page = page;
 
   ParamsMessageResponseBuilder();
 
@@ -584,18 +591,20 @@ class ParamsMessageResponseBuilder
   }
 
   @override
-  void update(void Function(ParamsMessageResponseBuilder) updates) {
+  void update(void Function(ParamsMessageResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ParamsMessageResponse build() {
+  ParamsMessageResponse build() => _build();
+
+  _$ParamsMessageResponse _build() {
     final _$result = _$v ??
         new _$ParamsMessageResponse._(
             tokenuser: BuiltValueNullFieldError.checkNotNull(
-                tokenuser, 'ParamsMessageResponse', 'tokenuser'),
+                tokenuser, r'ParamsMessageResponse', 'tokenuser'),
             page: BuiltValueNullFieldError.checkNotNull(
-                page, 'ParamsMessageResponse', 'page'));
+                page, r'ParamsMessageResponse', 'page'));
     replace(_$result);
     return _$result;
   }
@@ -608,13 +617,14 @@ class _$DataMessageResponse extends DataMessageResponse {
   final PaginationListOfDoctor pagination;
 
   factory _$DataMessageResponse(
-          [void Function(DataMessageResponseBuilder) updates]) =>
-      (new DataMessageResponseBuilder()..update(updates)).build();
+          [void Function(DataMessageResponseBuilder)? updates]) =>
+      (new DataMessageResponseBuilder()..update(updates))._build();
 
-  _$DataMessageResponse._({this.list, this.pagination}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(list, 'DataMessageResponse', 'list');
+  _$DataMessageResponse._({required this.list, required this.pagination})
+      : super._() {
+    BuiltValueNullFieldError.checkNotNull(list, r'DataMessageResponse', 'list');
     BuiltValueNullFieldError.checkNotNull(
-        pagination, 'DataMessageResponse', 'pagination');
+        pagination, r'DataMessageResponse', 'pagination');
   }
 
   @override
@@ -636,12 +646,16 @@ class _$DataMessageResponse extends DataMessageResponse {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, list.hashCode), pagination.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, list.hashCode);
+    _$hash = $jc(_$hash, pagination.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataMessageResponse')
+    return (newBuiltValueToStringHelper(r'DataMessageResponse')
           ..add('list', list)
           ..add('pagination', pagination))
         .toString();
@@ -650,17 +664,17 @@ class _$DataMessageResponse extends DataMessageResponse {
 
 class DataMessageResponseBuilder
     implements Builder<DataMessageResponse, DataMessageResponseBuilder> {
-  _$DataMessageResponse _$v;
+  _$DataMessageResponse? _$v;
 
-  ListBuilder<MessageDataResponse> _list;
+  ListBuilder<MessageDataResponse>? _list;
   ListBuilder<MessageDataResponse> get list =>
       _$this._list ??= new ListBuilder<MessageDataResponse>();
-  set list(ListBuilder<MessageDataResponse> list) => _$this._list = list;
+  set list(ListBuilder<MessageDataResponse>? list) => _$this._list = list;
 
-  PaginationListOfDoctorBuilder _pagination;
+  PaginationListOfDoctorBuilder? _pagination;
   PaginationListOfDoctorBuilder get pagination =>
       _$this._pagination ??= new PaginationListOfDoctorBuilder();
-  set pagination(PaginationListOfDoctorBuilder pagination) =>
+  set pagination(PaginationListOfDoctorBuilder? pagination) =>
       _$this._pagination = pagination;
 
   DataMessageResponseBuilder();
@@ -682,19 +696,21 @@ class DataMessageResponseBuilder
   }
 
   @override
-  void update(void Function(DataMessageResponseBuilder) updates) {
+  void update(void Function(DataMessageResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataMessageResponse build() {
+  DataMessageResponse build() => _build();
+
+  _$DataMessageResponse _build() {
     _$DataMessageResponse _$result;
     try {
       _$result = _$v ??
           new _$DataMessageResponse._(
               list: list.build(), pagination: pagination.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'list';
         list.build();
@@ -702,7 +718,7 @@ class DataMessageResponseBuilder
         pagination.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'DataMessageResponse', _$failedField, e.toString());
+            r'DataMessageResponse', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -734,38 +750,38 @@ class _$MessageDataResponse extends MessageDataResponse {
   final String token;
 
   factory _$MessageDataResponse(
-          [void Function(MessageDataResponseBuilder) updates]) =>
-      (new MessageDataResponseBuilder()..update(updates)).build();
+          [void Function(MessageDataResponseBuilder)? updates]) =>
+      (new MessageDataResponseBuilder()..update(updates))._build();
 
   _$MessageDataResponse._(
-      {this.datetime,
-      this.reception,
-      this.from,
-      this.to,
-      this.subject,
-      this.message,
-      this.file,
-      this.file2,
-      this.file3,
-      this.token})
+      {required this.datetime,
+      required this.reception,
+      required this.from,
+      required this.to,
+      required this.subject,
+      required this.message,
+      required this.file,
+      required this.file2,
+      required this.file3,
+      required this.token})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        datetime, 'MessageDataResponse', 'datetime');
+        datetime, r'MessageDataResponse', 'datetime');
     BuiltValueNullFieldError.checkNotNull(
-        reception, 'MessageDataResponse', 'reception');
-    BuiltValueNullFieldError.checkNotNull(from, 'MessageDataResponse', 'from');
-    BuiltValueNullFieldError.checkNotNull(to, 'MessageDataResponse', 'to');
+        reception, r'MessageDataResponse', 'reception');
+    BuiltValueNullFieldError.checkNotNull(from, r'MessageDataResponse', 'from');
+    BuiltValueNullFieldError.checkNotNull(to, r'MessageDataResponse', 'to');
     BuiltValueNullFieldError.checkNotNull(
-        subject, 'MessageDataResponse', 'subject');
+        subject, r'MessageDataResponse', 'subject');
     BuiltValueNullFieldError.checkNotNull(
-        message, 'MessageDataResponse', 'message');
-    BuiltValueNullFieldError.checkNotNull(file, 'MessageDataResponse', 'file');
+        message, r'MessageDataResponse', 'message');
+    BuiltValueNullFieldError.checkNotNull(file, r'MessageDataResponse', 'file');
     BuiltValueNullFieldError.checkNotNull(
-        file2, 'MessageDataResponse', 'file2');
+        file2, r'MessageDataResponse', 'file2');
     BuiltValueNullFieldError.checkNotNull(
-        file3, 'MessageDataResponse', 'file3');
+        file3, r'MessageDataResponse', 'file3');
     BuiltValueNullFieldError.checkNotNull(
-        token, 'MessageDataResponse', 'token');
+        token, r'MessageDataResponse', 'token');
   }
 
   @override
@@ -795,29 +811,24 @@ class _$MessageDataResponse extends MessageDataResponse {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc(
-                        $jc(
-                            $jc(
-                                $jc(
-                                    $jc($jc(0, datetime.hashCode),
-                                        reception.hashCode),
-                                    from.hashCode),
-                                to.hashCode),
-                            subject.hashCode),
-                        message.hashCode),
-                    file.hashCode),
-                file2.hashCode),
-            file3.hashCode),
-        token.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, datetime.hashCode);
+    _$hash = $jc(_$hash, reception.hashCode);
+    _$hash = $jc(_$hash, from.hashCode);
+    _$hash = $jc(_$hash, to.hashCode);
+    _$hash = $jc(_$hash, subject.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, file.hashCode);
+    _$hash = $jc(_$hash, file2.hashCode);
+    _$hash = $jc(_$hash, file3.hashCode);
+    _$hash = $jc(_$hash, token.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('MessageDataResponse')
+    return (newBuiltValueToStringHelper(r'MessageDataResponse')
           ..add('datetime', datetime)
           ..add('reception', reception)
           ..add('from', from)
@@ -834,47 +845,47 @@ class _$MessageDataResponse extends MessageDataResponse {
 
 class MessageDataResponseBuilder
     implements Builder<MessageDataResponse, MessageDataResponseBuilder> {
-  _$MessageDataResponse _$v;
+  _$MessageDataResponse? _$v;
 
-  String _datetime;
-  String get datetime => _$this._datetime;
-  set datetime(String datetime) => _$this._datetime = datetime;
+  String? _datetime;
+  String? get datetime => _$this._datetime;
+  set datetime(String? datetime) => _$this._datetime = datetime;
 
-  int _reception;
-  int get reception => _$this._reception;
-  set reception(int reception) => _$this._reception = reception;
+  int? _reception;
+  int? get reception => _$this._reception;
+  set reception(int? reception) => _$this._reception = reception;
 
-  String _from;
-  String get from => _$this._from;
-  set from(String from) => _$this._from = from;
+  String? _from;
+  String? get from => _$this._from;
+  set from(String? from) => _$this._from = from;
 
-  String _to;
-  String get to => _$this._to;
-  set to(String to) => _$this._to = to;
+  String? _to;
+  String? get to => _$this._to;
+  set to(String? to) => _$this._to = to;
 
-  String _subject;
-  String get subject => _$this._subject;
-  set subject(String subject) => _$this._subject = subject;
+  String? _subject;
+  String? get subject => _$this._subject;
+  set subject(String? subject) => _$this._subject = subject;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  String _file;
-  String get file => _$this._file;
-  set file(String file) => _$this._file = file;
+  String? _file;
+  String? get file => _$this._file;
+  set file(String? file) => _$this._file = file;
 
-  String _file2;
-  String get file2 => _$this._file2;
-  set file2(String file2) => _$this._file2 = file2;
+  String? _file2;
+  String? get file2 => _$this._file2;
+  set file2(String? file2) => _$this._file2 = file2;
 
-  String _file3;
-  String get file3 => _$this._file3;
-  set file3(String file3) => _$this._file3 = file3;
+  String? _file3;
+  String? get file3 => _$this._file3;
+  set file3(String? file3) => _$this._file3 = file3;
 
-  String _token;
-  String get token => _$this._token;
-  set token(String token) => _$this._token = token;
+  String? _token;
+  String? get token => _$this._token;
+  set token(String? token) => _$this._token = token;
 
   MessageDataResponseBuilder();
 
@@ -903,36 +914,38 @@ class MessageDataResponseBuilder
   }
 
   @override
-  void update(void Function(MessageDataResponseBuilder) updates) {
+  void update(void Function(MessageDataResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$MessageDataResponse build() {
+  MessageDataResponse build() => _build();
+
+  _$MessageDataResponse _build() {
     final _$result = _$v ??
         new _$MessageDataResponse._(
             datetime: BuiltValueNullFieldError.checkNotNull(
-                datetime, 'MessageDataResponse', 'datetime'),
+                datetime, r'MessageDataResponse', 'datetime'),
             reception: BuiltValueNullFieldError.checkNotNull(
-                reception, 'MessageDataResponse', 'reception'),
+                reception, r'MessageDataResponse', 'reception'),
             from: BuiltValueNullFieldError.checkNotNull(
-                from, 'MessageDataResponse', 'from'),
+                from, r'MessageDataResponse', 'from'),
             to: BuiltValueNullFieldError.checkNotNull(
-                to, 'MessageDataResponse', 'to'),
+                to, r'MessageDataResponse', 'to'),
             subject: BuiltValueNullFieldError.checkNotNull(
-                subject, 'MessageDataResponse', 'subject'),
+                subject, r'MessageDataResponse', 'subject'),
             message: BuiltValueNullFieldError.checkNotNull(
-                message, 'MessageDataResponse', 'message'),
+                message, r'MessageDataResponse', 'message'),
             file: BuiltValueNullFieldError.checkNotNull(
-                file, 'MessageDataResponse', 'file'),
+                file, r'MessageDataResponse', 'file'),
             file2: BuiltValueNullFieldError.checkNotNull(
-                file2, 'MessageDataResponse', 'file2'),
+                file2, r'MessageDataResponse', 'file2'),
             file3: BuiltValueNullFieldError.checkNotNull(
-                file3, 'MessageDataResponse', 'file3'),
-            token: BuiltValueNullFieldError.checkNotNull(token, 'MessageDataResponse', 'token'));
+                file3, r'MessageDataResponse', 'file3'),
+            token: BuiltValueNullFieldError.checkNotNull(token, r'MessageDataResponse', 'token'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of verify_notif_subscribtion;
+part of 'verify_notif_subscribtion.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -26,10 +26,10 @@ class _$VerifyNotifSubscribtionSerializer
   final String wireName = 'VerifyNotifSubscribtion';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, VerifyNotifSubscribtion object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'httpstatut',
       serializers.serialize(object.httpstatut,
           specifiedType: const FullType(int)),
@@ -58,44 +58,44 @@ class _$VerifyNotifSubscribtionSerializer
 
   @override
   VerifyNotifSubscribtion deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new VerifyNotifSubscribtionBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'httpstatut':
           result.httpstatut = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
         case 'version':
           result.version = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'request':
           result.request = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'params':
           result.params.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(ParamsVerifyNotifSubscribtion))
+                  specifiedType: const FullType(ParamsVerifyNotifSubscribtion))!
               as ParamsVerifyNotifSubscribtion);
           break;
         case 'error':
           result.error = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'message':
           result.message = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'data':
           result.data.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(DataVerifyNotifSubscribtion))
+                  specifiedType: const FullType(DataVerifyNotifSubscribtion))!
               as DataVerifyNotifSubscribtion);
           break;
       }
@@ -116,10 +116,10 @@ class _$ParamsVerifyNotifSubscribtionSerializer
   final String wireName = 'ParamsVerifyNotifSubscribtion';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ParamsVerifyNotifSubscribtion object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
           specifiedType: const FullType(String)),
@@ -133,23 +133,23 @@ class _$ParamsVerifyNotifSubscribtionSerializer
 
   @override
   ParamsVerifyNotifSubscribtion deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ParamsVerifyNotifSubscribtionBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'installationkey':
           result.installationkey = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -169,10 +169,10 @@ class _$DataVerifyNotifSubscribtionSerializer
   final String wireName = 'DataVerifyNotifSubscribtion';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, DataVerifyNotifSubscribtion object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'issubscribed',
       serializers.serialize(object.issubscribed,
           specifiedType: const FullType(String)),
@@ -186,23 +186,23 @@ class _$DataVerifyNotifSubscribtionSerializer
 
   @override
   DataVerifyNotifSubscribtion deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new DataVerifyNotifSubscribtionBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'issubscribed':
           result.issubscribed = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'total':
           result.total = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -228,32 +228,32 @@ class _$VerifyNotifSubscribtion extends VerifyNotifSubscribtion {
   final DataVerifyNotifSubscribtion data;
 
   factory _$VerifyNotifSubscribtion(
-          [void Function(VerifyNotifSubscribtionBuilder) updates]) =>
-      (new VerifyNotifSubscribtionBuilder()..update(updates)).build();
+          [void Function(VerifyNotifSubscribtionBuilder)? updates]) =>
+      (new VerifyNotifSubscribtionBuilder()..update(updates))._build();
 
   _$VerifyNotifSubscribtion._(
-      {this.httpstatut,
-      this.version,
-      this.request,
-      this.params,
-      this.error,
-      this.message,
-      this.data})
+      {required this.httpstatut,
+      required this.version,
+      required this.request,
+      required this.params,
+      required this.error,
+      required this.message,
+      required this.data})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        httpstatut, 'VerifyNotifSubscribtion', 'httpstatut');
+        httpstatut, r'VerifyNotifSubscribtion', 'httpstatut');
     BuiltValueNullFieldError.checkNotNull(
-        version, 'VerifyNotifSubscribtion', 'version');
+        version, r'VerifyNotifSubscribtion', 'version');
     BuiltValueNullFieldError.checkNotNull(
-        request, 'VerifyNotifSubscribtion', 'request');
+        request, r'VerifyNotifSubscribtion', 'request');
     BuiltValueNullFieldError.checkNotNull(
-        params, 'VerifyNotifSubscribtion', 'params');
+        params, r'VerifyNotifSubscribtion', 'params');
     BuiltValueNullFieldError.checkNotNull(
-        error, 'VerifyNotifSubscribtion', 'error');
+        error, r'VerifyNotifSubscribtion', 'error');
     BuiltValueNullFieldError.checkNotNull(
-        message, 'VerifyNotifSubscribtion', 'message');
+        message, r'VerifyNotifSubscribtion', 'message');
     BuiltValueNullFieldError.checkNotNull(
-        data, 'VerifyNotifSubscribtion', 'data');
+        data, r'VerifyNotifSubscribtion', 'data');
   }
 
   @override
@@ -280,21 +280,21 @@ class _$VerifyNotifSubscribtion extends VerifyNotifSubscribtion {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc(
-                    $jc($jc($jc(0, httpstatut.hashCode), version.hashCode),
-                        request.hashCode),
-                    params.hashCode),
-                error.hashCode),
-            message.hashCode),
-        data.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, httpstatut.hashCode);
+    _$hash = $jc(_$hash, version.hashCode);
+    _$hash = $jc(_$hash, request.hashCode);
+    _$hash = $jc(_$hash, params.hashCode);
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('VerifyNotifSubscribtion')
+    return (newBuiltValueToStringHelper(r'VerifyNotifSubscribtion')
           ..add('httpstatut', httpstatut)
           ..add('version', version)
           ..add('request', request)
@@ -309,38 +309,38 @@ class _$VerifyNotifSubscribtion extends VerifyNotifSubscribtion {
 class VerifyNotifSubscribtionBuilder
     implements
         Builder<VerifyNotifSubscribtion, VerifyNotifSubscribtionBuilder> {
-  _$VerifyNotifSubscribtion _$v;
+  _$VerifyNotifSubscribtion? _$v;
 
-  int _httpstatut;
-  int get httpstatut => _$this._httpstatut;
-  set httpstatut(int httpstatut) => _$this._httpstatut = httpstatut;
+  int? _httpstatut;
+  int? get httpstatut => _$this._httpstatut;
+  set httpstatut(int? httpstatut) => _$this._httpstatut = httpstatut;
 
-  String _version;
-  String get version => _$this._version;
-  set version(String version) => _$this._version = version;
+  String? _version;
+  String? get version => _$this._version;
+  set version(String? version) => _$this._version = version;
 
-  String _request;
-  String get request => _$this._request;
-  set request(String request) => _$this._request = request;
+  String? _request;
+  String? get request => _$this._request;
+  set request(String? request) => _$this._request = request;
 
-  ParamsVerifyNotifSubscribtionBuilder _params;
+  ParamsVerifyNotifSubscribtionBuilder? _params;
   ParamsVerifyNotifSubscribtionBuilder get params =>
       _$this._params ??= new ParamsVerifyNotifSubscribtionBuilder();
-  set params(ParamsVerifyNotifSubscribtionBuilder params) =>
+  set params(ParamsVerifyNotifSubscribtionBuilder? params) =>
       _$this._params = params;
 
-  String _error;
-  String get error => _$this._error;
-  set error(String error) => _$this._error = error;
+  String? _error;
+  String? get error => _$this._error;
+  set error(String? error) => _$this._error = error;
 
-  String _message;
-  String get message => _$this._message;
-  set message(String message) => _$this._message = message;
+  String? _message;
+  String? get message => _$this._message;
+  set message(String? message) => _$this._message = message;
 
-  DataVerifyNotifSubscribtionBuilder _data;
+  DataVerifyNotifSubscribtionBuilder? _data;
   DataVerifyNotifSubscribtionBuilder get data =>
       _$this._data ??= new DataVerifyNotifSubscribtionBuilder();
-  set data(DataVerifyNotifSubscribtionBuilder data) => _$this._data = data;
+  set data(DataVerifyNotifSubscribtionBuilder? data) => _$this._data = data;
 
   VerifyNotifSubscribtionBuilder();
 
@@ -366,30 +366,32 @@ class VerifyNotifSubscribtionBuilder
   }
 
   @override
-  void update(void Function(VerifyNotifSubscribtionBuilder) updates) {
+  void update(void Function(VerifyNotifSubscribtionBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$VerifyNotifSubscribtion build() {
+  VerifyNotifSubscribtion build() => _build();
+
+  _$VerifyNotifSubscribtion _build() {
     _$VerifyNotifSubscribtion _$result;
     try {
       _$result = _$v ??
           new _$VerifyNotifSubscribtion._(
               httpstatut: BuiltValueNullFieldError.checkNotNull(
-                  httpstatut, 'VerifyNotifSubscribtion', 'httpstatut'),
+                  httpstatut, r'VerifyNotifSubscribtion', 'httpstatut'),
               version: BuiltValueNullFieldError.checkNotNull(
-                  version, 'VerifyNotifSubscribtion', 'version'),
+                  version, r'VerifyNotifSubscribtion', 'version'),
               request: BuiltValueNullFieldError.checkNotNull(
-                  request, 'VerifyNotifSubscribtion', 'request'),
+                  request, r'VerifyNotifSubscribtion', 'request'),
               params: params.build(),
               error: BuiltValueNullFieldError.checkNotNull(
-                  error, 'VerifyNotifSubscribtion', 'error'),
+                  error, r'VerifyNotifSubscribtion', 'error'),
               message: BuiltValueNullFieldError.checkNotNull(
-                  message, 'VerifyNotifSubscribtion', 'message'),
+                  message, r'VerifyNotifSubscribtion', 'message'),
               data: data.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'params';
         params.build();
@@ -398,7 +400,7 @@ class VerifyNotifSubscribtionBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'VerifyNotifSubscribtion', _$failedField, e.toString());
+            r'VerifyNotifSubscribtion', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -414,15 +416,16 @@ class _$ParamsVerifyNotifSubscribtion extends ParamsVerifyNotifSubscribtion {
   final String installationkey;
 
   factory _$ParamsVerifyNotifSubscribtion(
-          [void Function(ParamsVerifyNotifSubscribtionBuilder) updates]) =>
-      (new ParamsVerifyNotifSubscribtionBuilder()..update(updates)).build();
+          [void Function(ParamsVerifyNotifSubscribtionBuilder)? updates]) =>
+      (new ParamsVerifyNotifSubscribtionBuilder()..update(updates))._build();
 
-  _$ParamsVerifyNotifSubscribtion._({this.tokenuser, this.installationkey})
+  _$ParamsVerifyNotifSubscribtion._(
+      {required this.tokenuser, required this.installationkey})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        tokenuser, 'ParamsVerifyNotifSubscribtion', 'tokenuser');
+        tokenuser, r'ParamsVerifyNotifSubscribtion', 'tokenuser');
     BuiltValueNullFieldError.checkNotNull(
-        installationkey, 'ParamsVerifyNotifSubscribtion', 'installationkey');
+        installationkey, r'ParamsVerifyNotifSubscribtion', 'installationkey');
   }
 
   @override
@@ -444,12 +447,16 @@ class _$ParamsVerifyNotifSubscribtion extends ParamsVerifyNotifSubscribtion {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, tokenuser.hashCode), installationkey.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokenuser.hashCode);
+    _$hash = $jc(_$hash, installationkey.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ParamsVerifyNotifSubscribtion')
+    return (newBuiltValueToStringHelper(r'ParamsVerifyNotifSubscribtion')
           ..add('tokenuser', tokenuser)
           ..add('installationkey', installationkey))
         .toString();
@@ -460,15 +467,15 @@ class ParamsVerifyNotifSubscribtionBuilder
     implements
         Builder<ParamsVerifyNotifSubscribtion,
             ParamsVerifyNotifSubscribtionBuilder> {
-  _$ParamsVerifyNotifSubscribtion _$v;
+  _$ParamsVerifyNotifSubscribtion? _$v;
 
-  String _tokenuser;
-  String get tokenuser => _$this._tokenuser;
-  set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
+  String? _tokenuser;
+  String? get tokenuser => _$this._tokenuser;
+  set tokenuser(String? tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _installationkey;
-  String get installationkey => _$this._installationkey;
-  set installationkey(String installationkey) =>
+  String? _installationkey;
+  String? get installationkey => _$this._installationkey;
+  set installationkey(String? installationkey) =>
       _$this._installationkey = installationkey;
 
   ParamsVerifyNotifSubscribtionBuilder();
@@ -490,19 +497,21 @@ class ParamsVerifyNotifSubscribtionBuilder
   }
 
   @override
-  void update(void Function(ParamsVerifyNotifSubscribtionBuilder) updates) {
+  void update(void Function(ParamsVerifyNotifSubscribtionBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ParamsVerifyNotifSubscribtion build() {
+  ParamsVerifyNotifSubscribtion build() => _build();
+
+  _$ParamsVerifyNotifSubscribtion _build() {
     final _$result = _$v ??
         new _$ParamsVerifyNotifSubscribtion._(
             tokenuser: BuiltValueNullFieldError.checkNotNull(
-                tokenuser, 'ParamsVerifyNotifSubscribtion', 'tokenuser'),
+                tokenuser, r'ParamsVerifyNotifSubscribtion', 'tokenuser'),
             installationkey: BuiltValueNullFieldError.checkNotNull(
                 installationkey,
-                'ParamsVerifyNotifSubscribtion',
+                r'ParamsVerifyNotifSubscribtion',
                 'installationkey'));
     replace(_$result);
     return _$result;
@@ -516,14 +525,16 @@ class _$DataVerifyNotifSubscribtion extends DataVerifyNotifSubscribtion {
   final String total;
 
   factory _$DataVerifyNotifSubscribtion(
-          [void Function(DataVerifyNotifSubscribtionBuilder) updates]) =>
-      (new DataVerifyNotifSubscribtionBuilder()..update(updates)).build();
+          [void Function(DataVerifyNotifSubscribtionBuilder)? updates]) =>
+      (new DataVerifyNotifSubscribtionBuilder()..update(updates))._build();
 
-  _$DataVerifyNotifSubscribtion._({this.issubscribed, this.total}) : super._() {
+  _$DataVerifyNotifSubscribtion._(
+      {required this.issubscribed, required this.total})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        issubscribed, 'DataVerifyNotifSubscribtion', 'issubscribed');
+        issubscribed, r'DataVerifyNotifSubscribtion', 'issubscribed');
     BuiltValueNullFieldError.checkNotNull(
-        total, 'DataVerifyNotifSubscribtion', 'total');
+        total, r'DataVerifyNotifSubscribtion', 'total');
   }
 
   @override
@@ -545,12 +556,16 @@ class _$DataVerifyNotifSubscribtion extends DataVerifyNotifSubscribtion {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, issubscribed.hashCode), total.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, issubscribed.hashCode);
+    _$hash = $jc(_$hash, total.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('DataVerifyNotifSubscribtion')
+    return (newBuiltValueToStringHelper(r'DataVerifyNotifSubscribtion')
           ..add('issubscribed', issubscribed)
           ..add('total', total))
         .toString();
@@ -561,15 +576,15 @@ class DataVerifyNotifSubscribtionBuilder
     implements
         Builder<DataVerifyNotifSubscribtion,
             DataVerifyNotifSubscribtionBuilder> {
-  _$DataVerifyNotifSubscribtion _$v;
+  _$DataVerifyNotifSubscribtion? _$v;
 
-  String _issubscribed;
-  String get issubscribed => _$this._issubscribed;
-  set issubscribed(String issubscribed) => _$this._issubscribed = issubscribed;
+  String? _issubscribed;
+  String? get issubscribed => _$this._issubscribed;
+  set issubscribed(String? issubscribed) => _$this._issubscribed = issubscribed;
 
-  String _total;
-  String get total => _$this._total;
-  set total(String total) => _$this._total = total;
+  String? _total;
+  String? get total => _$this._total;
+  set total(String? total) => _$this._total = total;
 
   DataVerifyNotifSubscribtionBuilder();
 
@@ -590,21 +605,23 @@ class DataVerifyNotifSubscribtionBuilder
   }
 
   @override
-  void update(void Function(DataVerifyNotifSubscribtionBuilder) updates) {
+  void update(void Function(DataVerifyNotifSubscribtionBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$DataVerifyNotifSubscribtion build() {
+  DataVerifyNotifSubscribtion build() => _build();
+
+  _$DataVerifyNotifSubscribtion _build() {
     final _$result = _$v ??
         new _$DataVerifyNotifSubscribtion._(
             issubscribed: BuiltValueNullFieldError.checkNotNull(
-                issubscribed, 'DataVerifyNotifSubscribtion', 'issubscribed'),
+                issubscribed, r'DataVerifyNotifSubscribtion', 'issubscribed'),
             total: BuiltValueNullFieldError.checkNotNull(
-                total, 'DataVerifyNotifSubscribtion', 'total'));
+                total, r'DataVerifyNotifSubscribtion', 'total'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

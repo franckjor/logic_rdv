@@ -191,15 +191,13 @@ abstract class AppointmentDataResponse
   @BuiltValueField(wireName: 'tokentelecons')
   String get tokentelecons;
   @BuiltValueField(wireName: 'buttonlabeltelecons')
-  @nullable
-  String get buttonlabeltelecons;
+  String? get buttonlabeltelecons;
   @BuiltValueField(wireName: 'with')
   String get avec;
   @BuiltValueField(wireName: 'informations')
   String get informations;
   @BuiltValueField(wireName: 'past')
-  @nullable
-  String get past;
+  String? get past;
   String toJson() {
     return json.encode(
         serializers.serializeWith(AppointmentDataResponse.serializer, this));

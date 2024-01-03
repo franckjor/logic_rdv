@@ -56,8 +56,7 @@ abstract class ParamsRemovePatientResponse
   @BuiltValueField(wireName: 'tokenappt')
   String get tokenappt;
   @BuiltValueField(wireName: 'tokenpatient')
-  @nullable
-  String get tokenpatient;
+  String? get tokenpatient;
   String toJson() {
     return json.encode(serializers.serializeWith(
         ParamsRemovePatientResponse.serializer, this));

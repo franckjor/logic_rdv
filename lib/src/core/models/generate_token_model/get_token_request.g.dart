@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of get_token_request;
+part of 'get_token_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -17,9 +17,9 @@ class _$GetTokenRequestSerializer
   final String wireName = 'GetTokenRequest';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, GetTokenRequest object,
+  Iterable<Object?> serialize(Serializers serializers, GetTokenRequest object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'client_project',
       serializers.serialize(object.clientProject,
           specifiedType: const FullType(String)),
@@ -33,23 +33,23 @@ class _$GetTokenRequestSerializer
 
   @override
   GetTokenRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new GetTokenRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'client_project':
           result.clientProject = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'client_secret':
           result.clientSecret = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -64,14 +64,15 @@ class _$GetTokenRequest extends GetTokenRequest {
   @override
   final String clientSecret;
 
-  factory _$GetTokenRequest([void Function(GetTokenRequestBuilder) updates]) =>
-      (new GetTokenRequestBuilder()..update(updates)).build();
+  factory _$GetTokenRequest([void Function(GetTokenRequestBuilder)? updates]) =>
+      (new GetTokenRequestBuilder()..update(updates))._build();
 
-  _$GetTokenRequest._({this.clientProject, this.clientSecret}) : super._() {
+  _$GetTokenRequest._({required this.clientProject, required this.clientSecret})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        clientProject, 'GetTokenRequest', 'clientProject');
+        clientProject, r'GetTokenRequest', 'clientProject');
     BuiltValueNullFieldError.checkNotNull(
-        clientSecret, 'GetTokenRequest', 'clientSecret');
+        clientSecret, r'GetTokenRequest', 'clientSecret');
   }
 
   @override
@@ -92,12 +93,16 @@ class _$GetTokenRequest extends GetTokenRequest {
 
   @override
   int get hashCode {
-    return $jf($jc($jc(0, clientProject.hashCode), clientSecret.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, clientProject.hashCode);
+    _$hash = $jc(_$hash, clientSecret.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('GetTokenRequest')
+    return (newBuiltValueToStringHelper(r'GetTokenRequest')
           ..add('clientProject', clientProject)
           ..add('clientSecret', clientSecret))
         .toString();
@@ -106,16 +111,16 @@ class _$GetTokenRequest extends GetTokenRequest {
 
 class GetTokenRequestBuilder
     implements Builder<GetTokenRequest, GetTokenRequestBuilder> {
-  _$GetTokenRequest _$v;
+  _$GetTokenRequest? _$v;
 
-  String _clientProject;
-  String get clientProject => _$this._clientProject;
-  set clientProject(String clientProject) =>
+  String? _clientProject;
+  String? get clientProject => _$this._clientProject;
+  set clientProject(String? clientProject) =>
       _$this._clientProject = clientProject;
 
-  String _clientSecret;
-  String get clientSecret => _$this._clientSecret;
-  set clientSecret(String clientSecret) => _$this._clientSecret = clientSecret;
+  String? _clientSecret;
+  String? get clientSecret => _$this._clientSecret;
+  set clientSecret(String? clientSecret) => _$this._clientSecret = clientSecret;
 
   GetTokenRequestBuilder();
 
@@ -136,21 +141,23 @@ class GetTokenRequestBuilder
   }
 
   @override
-  void update(void Function(GetTokenRequestBuilder) updates) {
+  void update(void Function(GetTokenRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$GetTokenRequest build() {
+  GetTokenRequest build() => _build();
+
+  _$GetTokenRequest _build() {
     final _$result = _$v ??
         new _$GetTokenRequest._(
             clientProject: BuiltValueNullFieldError.checkNotNull(
-                clientProject, 'GetTokenRequest', 'clientProject'),
+                clientProject, r'GetTokenRequest', 'clientProject'),
             clientSecret: BuiltValueNullFieldError.checkNotNull(
-                clientSecret, 'GetTokenRequest', 'clientSecret'));
+                clientSecret, r'GetTokenRequest', 'clientSecret'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of remove_patient_request;
+part of 'remove_patient_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -20,10 +20,10 @@ class _$RemovePatientRequestSerializer
   final String wireName = 'RemovePatientRequest';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, RemovePatientRequest object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'tokenuser',
       serializers.serialize(object.tokenuser,
           specifiedType: const FullType(String)),
@@ -40,27 +40,27 @@ class _$RemovePatientRequestSerializer
 
   @override
   RemovePatientRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new RemovePatientRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'tokenuser':
           result.tokenuser = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'tokenappt':
           result.tokenappt = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'tokenpatient':
           result.tokenpatient = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
       }
     }
@@ -78,17 +78,20 @@ class _$RemovePatientRequest extends RemovePatientRequest {
   final String tokenpatient;
 
   factory _$RemovePatientRequest(
-          [void Function(RemovePatientRequestBuilder) updates]) =>
-      (new RemovePatientRequestBuilder()..update(updates)).build();
+          [void Function(RemovePatientRequestBuilder)? updates]) =>
+      (new RemovePatientRequestBuilder()..update(updates))._build();
 
-  _$RemovePatientRequest._({this.tokenuser, this.tokenappt, this.tokenpatient})
+  _$RemovePatientRequest._(
+      {required this.tokenuser,
+      required this.tokenappt,
+      required this.tokenpatient})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        tokenuser, 'RemovePatientRequest', 'tokenuser');
+        tokenuser, r'RemovePatientRequest', 'tokenuser');
     BuiltValueNullFieldError.checkNotNull(
-        tokenappt, 'RemovePatientRequest', 'tokenappt');
+        tokenappt, r'RemovePatientRequest', 'tokenappt');
     BuiltValueNullFieldError.checkNotNull(
-        tokenpatient, 'RemovePatientRequest', 'tokenpatient');
+        tokenpatient, r'RemovePatientRequest', 'tokenpatient');
   }
 
   @override
@@ -111,13 +114,17 @@ class _$RemovePatientRequest extends RemovePatientRequest {
 
   @override
   int get hashCode {
-    return $jf($jc($jc($jc(0, tokenuser.hashCode), tokenappt.hashCode),
-        tokenpatient.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, tokenuser.hashCode);
+    _$hash = $jc(_$hash, tokenappt.hashCode);
+    _$hash = $jc(_$hash, tokenpatient.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('RemovePatientRequest')
+    return (newBuiltValueToStringHelper(r'RemovePatientRequest')
           ..add('tokenuser', tokenuser)
           ..add('tokenappt', tokenappt)
           ..add('tokenpatient', tokenpatient))
@@ -127,19 +134,19 @@ class _$RemovePatientRequest extends RemovePatientRequest {
 
 class RemovePatientRequestBuilder
     implements Builder<RemovePatientRequest, RemovePatientRequestBuilder> {
-  _$RemovePatientRequest _$v;
+  _$RemovePatientRequest? _$v;
 
-  String _tokenuser;
-  String get tokenuser => _$this._tokenuser;
-  set tokenuser(String tokenuser) => _$this._tokenuser = tokenuser;
+  String? _tokenuser;
+  String? get tokenuser => _$this._tokenuser;
+  set tokenuser(String? tokenuser) => _$this._tokenuser = tokenuser;
 
-  String _tokenappt;
-  String get tokenappt => _$this._tokenappt;
-  set tokenappt(String tokenappt) => _$this._tokenappt = tokenappt;
+  String? _tokenappt;
+  String? get tokenappt => _$this._tokenappt;
+  set tokenappt(String? tokenappt) => _$this._tokenappt = tokenappt;
 
-  String _tokenpatient;
-  String get tokenpatient => _$this._tokenpatient;
-  set tokenpatient(String tokenpatient) => _$this._tokenpatient = tokenpatient;
+  String? _tokenpatient;
+  String? get tokenpatient => _$this._tokenpatient;
+  set tokenpatient(String? tokenpatient) => _$this._tokenpatient = tokenpatient;
 
   RemovePatientRequestBuilder();
 
@@ -161,23 +168,25 @@ class RemovePatientRequestBuilder
   }
 
   @override
-  void update(void Function(RemovePatientRequestBuilder) updates) {
+  void update(void Function(RemovePatientRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$RemovePatientRequest build() {
+  RemovePatientRequest build() => _build();
+
+  _$RemovePatientRequest _build() {
     final _$result = _$v ??
         new _$RemovePatientRequest._(
             tokenuser: BuiltValueNullFieldError.checkNotNull(
-                tokenuser, 'RemovePatientRequest', 'tokenuser'),
+                tokenuser, r'RemovePatientRequest', 'tokenuser'),
             tokenappt: BuiltValueNullFieldError.checkNotNull(
-                tokenappt, 'RemovePatientRequest', 'tokenappt'),
+                tokenappt, r'RemovePatientRequest', 'tokenappt'),
             tokenpatient: BuiltValueNullFieldError.checkNotNull(
-                tokenpatient, 'RemovePatientRequest', 'tokenpatient'));
+                tokenpatient, r'RemovePatientRequest', 'tokenpatient'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

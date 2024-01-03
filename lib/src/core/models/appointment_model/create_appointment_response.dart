@@ -19,26 +19,19 @@ abstract class CreateAppointmentResponse
       _$CreateAppointmentResponse;
 
   @BuiltValueField(wireName: 'version')
-  @nullable
-  String get version;
+  String? get version;
   @BuiltValueField(wireName: 'request')
-  @nullable
-  String get request;
+  String? get request;
   @BuiltValueField(wireName: 'params')
-  @nullable
-  ParamsCreateAppointmentResponse get params;
+  ParamsCreateAppointmentResponse? get params;
   @BuiltValueField(wireName: 'message')
-  @nullable
-  String get message;
+  String? get message;
   @BuiltValueField(wireName: 'httpstatut')
-  @nullable
-  int get httpstatut;
+  int? get httpstatut;
   @BuiltValueField(wireName: 'error')
-  @nullable
-  String get error;
+  String? get error;
   @BuiltValueField(wireName: 'data')
-  @nullable
-  DataCreateAppointmentResponse get data;
+  DataCreateAppointmentResponse? get data;
   String toJson() {
     return json.encode(
         serializers.serializeWith(CreateAppointmentResponse.serializer, this));
@@ -64,23 +57,17 @@ abstract class ParamsCreateAppointmentResponse
       _$ParamsCreateAppointmentResponse;
 
   @BuiltValueField(wireName: 'tokenuser')
-  @nullable
-  String get tokenuser;
+  String? get tokenuser;
   @BuiltValueField(wireName: 'tokenappointment')
-  @nullable
-  String get tokenappointment;
+  String? get tokenappointment;
   @BuiltValueField(wireName: 'week')
-  @nullable
-  String get week;
+  String? get week;
   @BuiltValueField(wireName: 'data')
-  @nullable
-  String get data;
+  String? get data;
   @BuiltValueField(wireName: 'action')
-  @nullable
-  String get action;
+  String? get action;
   @BuiltValueField(wireName: 'session')
-  @nullable
-  String get session;
+  String? get session;
   String toJson() {
     return json.encode(serializers.serializeWith(
         ParamsCreateAppointmentResponse.serializer, this));
@@ -106,20 +93,15 @@ abstract class DataCreateAppointmentResponse
       _$DataCreateAppointmentResponse;
 
   @BuiltValueField(wireName: 'session')
-  @nullable
-  String get session;
+  String? get session;
   @BuiltValueField(wireName: 'navigation')
-  @nullable
-  BuiltList<AppointmentNavigation> get navigation;
+  BuiltList<AppointmentNavigation>? get navigation;
   @BuiltValueField(wireName: 'headermessage')
-  @nullable
-  String get headermessage;
+  String? get headermessage;
   @BuiltValueField(wireName: 'type')
-  @nullable
-  String get type;
+  String? get type;
   @BuiltValueField(wireName: 'data')
-  @nullable
-  BuiltList<AppointmentTypeResponse> get data;
+  BuiltList<AppointmentTypeResponse>? get data;
   String toJson() {
     return json.encode(serializers.serializeWith(
         DataCreateAppointmentResponse.serializer, this));
@@ -142,23 +124,17 @@ abstract class AppointmentTypeResponse
       _$AppointmentTypeResponse;
 
   @BuiltValueField(wireName: 'labelplace')
-  @nullable
-  String get labelplace;
+  String? get labelplace;
   @BuiltValueField(wireName: 'color')
-  @nullable
-  String get color;
+  String? get color;
   @BuiltValueField(wireName: 'description')
-  @nullable
-  String get description;
+  String? get description;
   @BuiltValueField(wireName: 'onclick_data')
-  @nullable
-  String get onclickData;
+  String? get onclickData;
   @BuiltValueField(wireName: 'onclick_action')
-  @nullable
-  String get onclickAction;
+  String? get onclickAction;
   @BuiltValueField(wireName: 'onclick_week')
-  @nullable
-  String get onclickWeek;
+  String? get onclickWeek;
   String toJson() {
     return json.encode(
         serializers.serializeWith(AppointmentTypeResponse.serializer, this));
@@ -181,23 +157,17 @@ abstract class AppointmentNavigation
       _$AppointmentNavigation;
 
   @BuiltValueField(wireName: 'labelplace')
-  @nullable
-  String get labelplace;
+  String? get labelplace;
   @BuiltValueField(wireName: 'color')
-  @nullable
-  String get color;
+  String? get color;
   @BuiltValueField(wireName: 'description')
-  @nullable
-  String get description;
+  String? get description;
   @BuiltValueField(wireName: 'onclick_data')
-  @nullable
-  String get onclickData;
+  String? get onclickData;
   @BuiltValueField(wireName: 'onclick_action')
-  @nullable
-  String get onclickAction;
+  String? get onclickAction;
   @BuiltValueField(wireName: 'onclick_week')
-  @nullable
-  String get onclickWeek;
+  String? get onclickWeek;
   String toJson() {
     return json.encode(
         serializers.serializeWith(AppointmentNavigation.serializer, this));

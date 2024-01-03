@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of list_of_doctor_request;
+part of 'list_of_doctor_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
@@ -20,11 +20,11 @@ class _$ListOfDoctorRequestSerializer
   final String wireName = 'ListOfDoctorRequest';
 
   @override
-  Iterable<Object> serialize(
+  Iterable<Object?> serialize(
       Serializers serializers, ListOfDoctorRequest object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[];
-    Object value;
+    final result = <Object?>[];
+    Object? value;
     value = object.proxyVille;
     if (value != null) {
       result
@@ -72,39 +72,39 @@ class _$ListOfDoctorRequestSerializer
 
   @override
   ListOfDoctorRequest deserialize(
-      Serializers serializers, Iterable<Object> serialized,
+      Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new ListOfDoctorRequestBuilder();
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
-      final Object value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'proxy_ville':
           result.proxyVille = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'proxy_nom':
           result.proxyNom = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'proxy_ville_id':
           result.proxyVilleId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'proxy_nom_id':
           result.proxyNomId = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'proxy_search':
           result.proxySearch = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'proxy_page':
           result.proxyPage = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String)) as String?;
           break;
       }
     }
@@ -115,21 +115,21 @@ class _$ListOfDoctorRequestSerializer
 
 class _$ListOfDoctorRequest extends ListOfDoctorRequest {
   @override
-  final String proxyVille;
+  final String? proxyVille;
   @override
-  final String proxyNom;
+  final String? proxyNom;
   @override
-  final String proxyVilleId;
+  final String? proxyVilleId;
   @override
-  final String proxyNomId;
+  final String? proxyNomId;
   @override
-  final String proxySearch;
+  final String? proxySearch;
   @override
-  final String proxyPage;
+  final String? proxyPage;
 
   factory _$ListOfDoctorRequest(
-          [void Function(ListOfDoctorRequestBuilder) updates]) =>
-      (new ListOfDoctorRequestBuilder()..update(updates)).build();
+          [void Function(ListOfDoctorRequestBuilder)? updates]) =>
+      (new ListOfDoctorRequestBuilder()..update(updates))._build();
 
   _$ListOfDoctorRequest._(
       {this.proxyVille,
@@ -163,19 +163,20 @@ class _$ListOfDoctorRequest extends ListOfDoctorRequest {
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, proxyVille.hashCode), proxyNom.hashCode),
-                    proxyVilleId.hashCode),
-                proxyNomId.hashCode),
-            proxySearch.hashCode),
-        proxyPage.hashCode));
+    var _$hash = 0;
+    _$hash = $jc(_$hash, proxyVille.hashCode);
+    _$hash = $jc(_$hash, proxyNom.hashCode);
+    _$hash = $jc(_$hash, proxyVilleId.hashCode);
+    _$hash = $jc(_$hash, proxyNomId.hashCode);
+    _$hash = $jc(_$hash, proxySearch.hashCode);
+    _$hash = $jc(_$hash, proxyPage.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ListOfDoctorRequest')
+    return (newBuiltValueToStringHelper(r'ListOfDoctorRequest')
           ..add('proxyVille', proxyVille)
           ..add('proxyNom', proxyNom)
           ..add('proxyVilleId', proxyVilleId)
@@ -188,31 +189,31 @@ class _$ListOfDoctorRequest extends ListOfDoctorRequest {
 
 class ListOfDoctorRequestBuilder
     implements Builder<ListOfDoctorRequest, ListOfDoctorRequestBuilder> {
-  _$ListOfDoctorRequest _$v;
+  _$ListOfDoctorRequest? _$v;
 
-  String _proxyVille;
-  String get proxyVille => _$this._proxyVille;
-  set proxyVille(String proxyVille) => _$this._proxyVille = proxyVille;
+  String? _proxyVille;
+  String? get proxyVille => _$this._proxyVille;
+  set proxyVille(String? proxyVille) => _$this._proxyVille = proxyVille;
 
-  String _proxyNom;
-  String get proxyNom => _$this._proxyNom;
-  set proxyNom(String proxyNom) => _$this._proxyNom = proxyNom;
+  String? _proxyNom;
+  String? get proxyNom => _$this._proxyNom;
+  set proxyNom(String? proxyNom) => _$this._proxyNom = proxyNom;
 
-  String _proxyVilleId;
-  String get proxyVilleId => _$this._proxyVilleId;
-  set proxyVilleId(String proxyVilleId) => _$this._proxyVilleId = proxyVilleId;
+  String? _proxyVilleId;
+  String? get proxyVilleId => _$this._proxyVilleId;
+  set proxyVilleId(String? proxyVilleId) => _$this._proxyVilleId = proxyVilleId;
 
-  String _proxyNomId;
-  String get proxyNomId => _$this._proxyNomId;
-  set proxyNomId(String proxyNomId) => _$this._proxyNomId = proxyNomId;
+  String? _proxyNomId;
+  String? get proxyNomId => _$this._proxyNomId;
+  set proxyNomId(String? proxyNomId) => _$this._proxyNomId = proxyNomId;
 
-  String _proxySearch;
-  String get proxySearch => _$this._proxySearch;
-  set proxySearch(String proxySearch) => _$this._proxySearch = proxySearch;
+  String? _proxySearch;
+  String? get proxySearch => _$this._proxySearch;
+  set proxySearch(String? proxySearch) => _$this._proxySearch = proxySearch;
 
-  String _proxyPage;
-  String get proxyPage => _$this._proxyPage;
-  set proxyPage(String proxyPage) => _$this._proxyPage = proxyPage;
+  String? _proxyPage;
+  String? get proxyPage => _$this._proxyPage;
+  set proxyPage(String? proxyPage) => _$this._proxyPage = proxyPage;
 
   ListOfDoctorRequestBuilder();
 
@@ -237,12 +238,14 @@ class ListOfDoctorRequestBuilder
   }
 
   @override
-  void update(void Function(ListOfDoctorRequestBuilder) updates) {
+  void update(void Function(ListOfDoctorRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ListOfDoctorRequest build() {
+  ListOfDoctorRequest build() => _build();
+
+  _$ListOfDoctorRequest _build() {
     final _$result = _$v ??
         new _$ListOfDoctorRequest._(
             proxyVille: proxyVille,
@@ -256,4 +259,4 @@ class ListOfDoctorRequestBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

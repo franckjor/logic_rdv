@@ -33,7 +33,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
           searchRequestByCity: event.searchRequest);
       yield SearchCityStateLoadingSuccess(city: cityList);
     } catch (error) {
-      yield SearchStateLoadingFailure(error: error.toString());
+      yield SearchStateLoadingFailure(error: error.toString())!;
     }
   }
 
@@ -43,7 +43,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
           searchNameRequest: event.searchRequest);
       yield SearchNameStateLoadingSuccess(name: nameList);
     } catch (error) {
-      yield SearchStateLoadingFailure(error: error.toString());
+      yield SearchStateLoadingFailure(error: error.toString())!;
     }
   }
 
@@ -53,7 +53,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
           listOfDoctorRequest: event.searchRequest);
       yield ListOfDoctorStateLoadingSuccess(doctors: doctorList);
     } catch (error) {
-      yield SearchStateLoadingFailure(error: error.toString());
+      yield SearchStateLoadingFailure(error: error.toString())!;
     }
   }
 
@@ -64,7 +64,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
           listOfDoctorRequest: event.searchRequest);
       yield ListOfDoctorAroundStateLoadingSuccess(doctors: doctorList);
     } catch (error) {
-      yield SearchStateLoadingFailure(error: error.toString());
+      yield SearchStateLoadingFailure(error: error.toString())!;
     }
   }
 
@@ -75,7 +75,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
           searchDialogRequest: event.searchDialogRequest);
       yield ListOfAddressDialogLoadingSuccess(address: address);
     } catch (error) {
-      yield SearchStateLoadingFailure(error: error.toString());
+      yield SearchStateLoadingFailure(error: error.toString())!;
     }
   }
 }

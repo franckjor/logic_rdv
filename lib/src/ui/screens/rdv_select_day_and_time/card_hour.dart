@@ -3,8 +3,8 @@ import 'package:logic_rdv_v0/src/common.dart';
 import 'package:logic_rdv_v0/src/core/models/appointment_model/get_apointment_time_response.dart';
 
 class CardHourItem extends StatelessWidget {
-  final Creneaux creneaux;
-  final Function onTapForTakeAppointment;
+  final Creneaux? creneaux;
+  final Function()? onTapForTakeAppointment;
 
   CardHourItem({
     this.creneaux,
@@ -22,9 +22,9 @@ class CardHourItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
         child: CreneauxItem(
           onTap: onTapForTakeAppointment,
-          doctorName: creneaux.doctor,
-          fromHour: creneaux.fromhour,
-          subInfo: creneaux.onclickData,
+          doctorName: creneaux!.doctor,
+          fromHour: creneaux!.fromhour,
+          subInfo: creneaux!.onclickData,
         ),
       ),
     );
@@ -32,10 +32,10 @@ class CardHourItem extends StatelessWidget {
 }
 
 class CreneauxItem extends StatelessWidget {
-  final String doctorName;
-  final String fromHour;
-  final String subInfo;
-  final Function onTap;
+  final String? doctorName;
+  final String? fromHour;
+  final String? subInfo;
+  final Function()? onTap;
   const CreneauxItem({
     super.key,
     this.doctorName,

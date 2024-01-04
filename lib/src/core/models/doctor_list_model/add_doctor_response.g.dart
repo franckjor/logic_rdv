@@ -592,7 +592,7 @@ class AddDoctorResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'AddDoctorResponse', _$failedField, e.toString());
+            r'AddDoctorResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -803,7 +803,7 @@ class DataAddDoctorBuilder
         etablissement.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataAddDoctor', _$failedField, e.toString());
+            r'DataAddDoctor', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -1167,7 +1167,7 @@ class EtablissementAddDoctorBuilder
         appointment.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'EtablissementAddDoctor', _$failedField, e.toString());
+            r'EtablissementAddDoctor', _$failedField, e.toString())!;
       }
       rethrow;
     }

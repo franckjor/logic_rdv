@@ -10,7 +10,7 @@ class GenerateAndCheckTokenRepository extends AbstractRepository {
     final String token = (await getAuthToken()) ?? '';
     final response =
         await apiManager.postDynamic(token, path, getTokenRequest.toJson());
-    GetTokenResponse getToken = GetTokenResponse.fromJson(response.toString());
+    GetTokenResponse getToken = GetTokenResponse.fromJson(response.toString())!;
     return getToken;
   }
 
@@ -18,7 +18,7 @@ class GenerateAndCheckTokenRepository extends AbstractRepository {
     final String path = '/${getControllerName()}check/';
     final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(token, path);
-    GetTokenResponse getToken = GetTokenResponse.fromJson(response.toString());
+    GetTokenResponse getToken = GetTokenResponse.fromJson(response.toString())!;
     return getToken;
   }
 

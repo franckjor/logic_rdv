@@ -1043,7 +1043,7 @@ class GetApointmentTimeResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GetApointmentTimeResponse', _$failedField, e.toString());
+            r'GetApointmentTimeResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -1353,7 +1353,7 @@ class DataGetApointmentTimeResponseBuilder
         _data?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataGetApointmentTimeResponse', _$failedField, e.toString());
+            r'DataGetApointmentTimeResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -1493,7 +1493,7 @@ class DataTimeRdvBuilder implements Builder<DataTimeRdv, DataTimeRdvBuilder> {
         _creneaux?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataTimeRdv', _$failedField, e.toString());
+            r'DataTimeRdv', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -1794,7 +1794,7 @@ class NavigationBuilder implements Builder<Navigation, NavigationBuilder> {
         _nextweek?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'Navigation', _$failedField, e.toString());
+            r'Navigation', _$failedField, e.toString())!;
       }
       rethrow;
     }

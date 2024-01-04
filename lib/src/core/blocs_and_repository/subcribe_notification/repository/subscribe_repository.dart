@@ -12,7 +12,7 @@ class SubscribeRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: subscribeRequest.toJson());
     SubscribeResponse subscribeResponse =
-        SubscribeResponse.fromJson(response.toString());
+        SubscribeResponse.fromJson(response.toString())!;
     return subscribeResponse;
   }
 
@@ -23,7 +23,7 @@ class SubscribeRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: subscribeRequest.toJson());
     SubscribeResponse unsubscribeResponse =
-        SubscribeResponse.fromJson(response.toString());
+        SubscribeResponse.fromJson(response.toString())!;
     return unsubscribeResponse;
   }
 
@@ -34,7 +34,7 @@ class SubscribeRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: subscribeRequest.toJson());
     VerifyNotifSubscribtion issubscribeResponse =
-        VerifyNotifSubscribtion.fromJson(response.toString());
+        VerifyNotifSubscribtion.fromJson(response.toString())!;
     return issubscribeResponse;
   }
 

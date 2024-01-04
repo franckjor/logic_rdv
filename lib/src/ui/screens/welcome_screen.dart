@@ -53,23 +53,19 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   // final _textFieldKey = GlobalKey();
   TextEditingController _searchValueCity = TextEditingController();
   TextEditingController _searchValueName = TextEditingController();
-  String _cityId;
-  String _categoryId;
-  Timer _timer;
+  late String _cityId;
+  late String _categoryId;
 
-  bool _showList = false;
-  bool _showListForName = false;
   List<ClientInfosResponseSearchCity> clientInfoSearchCity = [];
 
   List<ObjectNameOfSearch> objectNameOfSearch = [];
 
-  Position _currentPosition;
-  String _currentAddress;
+  late Position _currentPosition;
 
-  FocusNode _connectButtonFocus;
-  FocusNode _cityFocus;
-  FocusNode _nameFocus;
-  FocusNode _searchButtonFocus;
+  late FocusNode _connectButtonFocus;
+  late FocusNode _cityFocus;
+  late FocusNode _nameFocus;
+  late FocusNode _searchButtonFocus;
 
   bool isCity = false;
   bool isSpecification = false;
@@ -80,7 +76,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   // Geolocator geolocator;
 
-  String _appVersion;
 
   void _getCurrentLocation() {
     if (kIsWeb) {
@@ -89,7 +84,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           alertType: AlertType.info,
           content: Text('Fontionnalite disponible uniquement sur mobile'));
     } else {
-      geolocator
+      Geolocator
           .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
           .then((Position position) {
         setState(() {
@@ -132,7 +127,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        _textFieldHeight = _keyTextField.currentContext?.size?.height;
+        _textFieldHeight = _keyTextField.currentContext!.size!.height;
       });
     });
     asyncMethod();
@@ -142,7 +137,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     final prefs = await SharedPreferences.getInstance();
     var installationId = await WonderPush.getInstallationId();
     print("InstallationId: $installationId");
-    await prefs.setString(PreferenceKey.InstallationIdKey, installationId);
+    await prefs.setString(PreferenceKey.InstallationIdKey, installationId!);
   }
 
   @override
@@ -236,16 +231,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.menu,
                     color: AppColors.primaryColor,
                   )
-                : const Icon(
+                :  Icon(
                     MdiIcons.menu,
                     color: AppColors.primaryColor,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -264,7 +259,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     ..add(SetSharedPreferenceTokenAuthorization(
                         tokenAuthorizationKey:
                             PreferenceKey.tokenAuthorizationKey,
-                        tokenAuthorization: state.getToken.data.authorization
+                        tokenAuthorization: state.getToken.data.authorization!
                             .replaceAll("X-LOGICRDV-AUTH:", "")));
                 } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
                   flushBarError(state.error, context);
@@ -412,7 +407,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                                       context);
                                                 },
                                                 validator: (value) =>
-                                                    verifyEmpty(value),
+                                                    verifyEmpty(value!, errorMessage: ''),
                                                 suffixIcon: Padding(
                                                   padding:
                                                       const EdgeInsets.only(
@@ -517,17 +512,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                                     _searchValueName.clear();
                                                   });
                                                 },
-                                                child: const Icon(
+                                                child:  Icon(
                                                   Icons.clear,
                                                   color: Colors.red,
                                                 ),
                                               )
-                                            : const Icon(
+                                            :  Icon(
                                                 Icons.clear,
                                                 color: Colors.transparent,
                                               ),
                                         validator: (value) =>
-                                            verifyEmpty(value),
+                                            verifyEmpty(value!, errorMessage: ''),
                                       ),
                                       const SizedBox(height: 20),
                                       Visibility(
@@ -764,7 +759,7 @@ class SearchButton extends StatelessWidget {
 
   final double _textFieldHeight;
   final FocusNode _searchButtonFocus;
-  final Function onPressed;
+  final Function()? onPressed;
   final double width;
 
   @override

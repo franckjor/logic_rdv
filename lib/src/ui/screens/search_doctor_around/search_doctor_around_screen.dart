@@ -21,11 +21,11 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../common.dart';
 
 class SearchDoctorAroundResultPageArguments implements PagesArgumentType {
-  final String city;
-  final String cityOrOther;
-  final String cityId;
-  final String categoryId;
-  final String nameOrSpeciality;
+  final String? city;
+  final String? cityOrOther;
+  final String? cityId;
+  final String? categoryId;
+  final String? nameOrSpeciality;
 
   SearchDoctorAroundResultPageArguments({
     this.city,
@@ -53,7 +53,7 @@ class SearchDoctorAround extends StatefulWidget {
 class _SearchDoctorAroundState extends State<SearchDoctorAround> {
   ScrollController _scrollController = new ScrollController();
   int currentPage = 1;
-  int totalOfPage;
+  int? totalOfPage;
   bool isRefreshList = false;
   bool _isLoading = false;
 
@@ -110,7 +110,7 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
   bool _handleNotificationScroll(ScrollNotification notification) {
     if (notification is ScrollEndNotification &&
         _scrollController.position.extentAfter == 0) {
-      if (totalOfPage < currentPage) {
+      if (totalOfPage! < currentPage) {
         setState(() {
           isRefreshList = false;
         });
@@ -120,10 +120,10 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
           getListOfDoctorAround(
               context: context,
               page: currentPage.toString(),
-              cityOrOther: widget.arguments.city,
+              cityOrOther: widget.arguments.city!,
               villeId: widget.arguments.cityId,
-              categoryId: widget.arguments.categoryId,
-              nameOrService: widget.arguments.nameOrSpeciality);
+              categoryId: widget.arguments.categoryId!,
+              nameOrService: widget.arguments.nameOrSpeciality!);
         });
       }
     }
@@ -135,10 +135,10 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
     getListOfDoctorAround(
         context: context,
         page: currentPage.toString(),
-        cityOrOther: widget.arguments.city,
+        cityOrOther: widget.arguments.city!,
         villeId: widget.arguments.cityId,
-        categoryId: widget.arguments.categoryId,
-        nameOrService: widget.arguments.nameOrSpeciality);
+        categoryId: widget.arguments.categoryId!,
+        nameOrService: widget.arguments.nameOrSpeciality!);
     super.initState();
   }
 
@@ -169,7 +169,7 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
                   ..add(SetSharedPreferenceTokenAuthorization(
                       tokenAuthorizationKey:
                           PreferenceKey.tokenAuthorizationKey,
-                      tokenAuthorization: state.getToken.data.authorization
+                      tokenAuthorization: state.getToken.data.authorization!
                           .replaceAll("X-LOGICRDV-AUTH:", "")));
               } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
                 flushBarError(state.error, context);
@@ -405,7 +405,7 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
                                                                   height: 2),
                                                               Text(
                                                                 doctors[i]
-                                                                    .category,
+                                                                    .category!,
                                                                 overflow:
                                                                     TextOverflow
                                                                         .ellipsis,
@@ -423,7 +423,7 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
                                                                   height: 2),
                                                               Text(
                                                                 doctors[i]
-                                                                    .address
+                                                                    .address!
                                                                     .toUpperCase(),
                                                                 softWrap: false,
                                                                 overflow:
@@ -442,10 +442,10 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
                                                               const SizedBox(
                                                                   height: 4),
                                                               Text(
-                                                                doctors[i].zip +
+                                                                doctors[i].zip! +
                                                                     " " +
                                                                     doctors[i]
-                                                                        .city,
+                                                                        .city!,
                                                                 overflow:
                                                                     TextOverflow
                                                                         .ellipsis,
@@ -471,7 +471,7 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
                                                                   : Text(
                                                                       'à ' +
                                                                           doctors[i]
-                                                                              .kmDiff +
+                                                                              .kmDiff! +
                                                                           ' Km',
                                                                       overflow:
                                                                           TextOverflow
@@ -493,7 +493,7 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
                                                                 children: [
                                                                   Text(
                                                                     doctors[i]
-                                                                        .tel,
+                                                                        .tel!,
                                                                     style:
                                                                         TextStyle(
                                                                       color: AppColors
@@ -522,7 +522,7 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
                                                                     child:
                                                                         IconButton(
                                                                       icon:
-                                                                          const Icon(
+                                                                           Icon(
                                                                         Icons
                                                                             .call,
                                                                         color: AppColors
@@ -537,7 +537,7 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
                                                                               .zero,
                                                                       onPressed:
                                                                           () =>
-                                                                              _makeCall(doctors[i].telnospace),
+                                                                              _makeCall(doctors[i].telnospace!),
                                                                     ),
                                                                   ),
                                                                   // IconButton(
@@ -589,10 +589,10 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
                                                           _openGoogleMapApp(
                                                               double.parse(
                                                                   doctors[i]
-                                                                      ?.lat),
+                                                                      .lat!),
                                                               double.parse(
                                                                   doctors[i]
-                                                                      ?.lng)),
+                                                                      .lng!)),
                                                     ),
                                                     Padding(
                                                       padding:
@@ -659,7 +659,7 @@ class _SearchDoctorAroundState extends State<SearchDoctorAround> {
 
 class SocialIcon extends StatelessWidget {
   final String imageUrl;
-  final Function onPressed;
+  final Function()? onPressed;
 
   const SocialIcon({
     super.key,

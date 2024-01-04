@@ -3,8 +3,8 @@ import 'package:logic_rdv_v0/src/common.dart';
 import 'package:logic_rdv_v0/src/core/models/appointment_model/selected_patient_response_for_rdv.dart';
 
 class CustomApptsItem extends StatelessWidget {
-  final Function onCancelAppointmentHandler;
-  final Appts appts;
+  final Function()? onCancelAppointmentHandler;
+  final Appts? appts;
 
   CustomApptsItem({
     this.onCancelAppointmentHandler,
@@ -59,7 +59,7 @@ class CustomApptsItem extends StatelessWidget {
                             ),
                             const SizedBox(width: 6),
                             Text(
-                              appts.date ?? '--',
+                              appts!.date ?? '--',
                               style: TextStyle(
                                 fontSize: 13.5,
                                 color: Colors.white,
@@ -87,14 +87,14 @@ class CustomApptsItem extends StatelessWidget {
                       ),
                     ),
                     title: Text(
-                      appts.doctor ?? '--',
+                      appts!.doctor ?? '--',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     subtitle: Text(
-                      appts.label ?? '--',
+                      appts!.label ?? '--',
                       style: TextStyle(
                         fontSize: 14,
                       ),

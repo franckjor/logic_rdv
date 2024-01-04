@@ -498,7 +498,7 @@ class MessageResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'MessageResponse', _$failedField, e.toString());
+            r'MessageResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -718,7 +718,7 @@ class DataMessageResponseBuilder
         pagination.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataMessageResponse', _$failedField, e.toString());
+            r'DataMessageResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

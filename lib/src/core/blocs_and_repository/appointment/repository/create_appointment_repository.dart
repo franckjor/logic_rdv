@@ -17,7 +17,7 @@ class CreateAppointmentRepository extends AbstractRepository {
         token, path,
         data: createAppointmentRequest);
     CreateAppointmentResponse appointmentResponse =
-        CreateAppointmentResponse.fromJson(response.toString());
+        CreateAppointmentResponse.fromJson(response.toString())!;
     return appointmentResponse;
   }
 
@@ -29,7 +29,7 @@ class CreateAppointmentRepository extends AbstractRepository {
         token, path,
         data: createAppointmentRequest);
     GetApointmentTimeResponse getApointmentTimeResponse =
-        GetApointmentTimeResponse.fromJson(response.toString());
+        GetApointmentTimeResponse.fromJson(response.toString())!;
     return getApointmentTimeResponse;
   }
 
@@ -54,7 +54,7 @@ class CreateAppointmentRepository extends AbstractRepository {
         token, path,
         data: createAppointmentRequest);
     GetPaientForRdvResponse getPaientForRdvResponse =
-        GetPaientForRdvResponse.fromJson(response.toString());
+        GetPaientForRdvResponse.fromJson(response.toString())!;
     return getPaientForRdvResponse;
   }
 
@@ -66,7 +66,7 @@ class CreateAppointmentRepository extends AbstractRepository {
         token, path,
         data: createAppointmentRequest);
     SelectedPatientResponseForRdv selectedPatientResponseForRdv =
-        SelectedPatientResponseForRdv.fromJson(response.toString());
+        SelectedPatientResponseForRdv.fromJson(response.toString())!;
     return selectedPatientResponseForRdv;
   }
 
@@ -78,7 +78,7 @@ class CreateAppointmentRepository extends AbstractRepository {
         token, path,
         data: createAppointmentRequest);
     ValidateRdvSummaryDto validateRdvSummaryDto =
-        ValidateRdvSummaryDto.fromJson(response.toString());
+        ValidateRdvSummaryDto.fromJson(response.toString())!;
     return validateRdvSummaryDto;
   }
 
@@ -90,7 +90,7 @@ class CreateAppointmentRepository extends AbstractRepository {
         token, path,
         data: createAppointmentRequest);
     GetApointmentTimeResponse validateRdvSummaryDto =
-        GetApointmentTimeResponse.fromJson(response.toString());
+        GetApointmentTimeResponse.fromJson(response.toString())!;
     return validateRdvSummaryDto;
   }
 
@@ -102,7 +102,7 @@ class CreateAppointmentRepository extends AbstractRepository {
         token, path,
         data: createAppointmentRequest);
     GetApointmentTimeResponse validateRdvSummaryDto =
-        GetApointmentTimeResponse.fromJson(response.toString());
+        GetApointmentTimeResponse.fromJson(response.toString())!;
     return validateRdvSummaryDto;
   }
 

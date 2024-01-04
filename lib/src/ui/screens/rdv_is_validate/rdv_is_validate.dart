@@ -5,7 +5,7 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 import '../../../common.dart';
 
 class RdvIsValidatePageArguments implements PagesArgumentType {
-  final String messageSuccess;
+  final String? messageSuccess;
 
   RdvIsValidatePageArguments({
     this.messageSuccess,
@@ -55,7 +55,7 @@ class _RdvIsValidateState extends State<RdvIsValidate> {
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     child: Text(
-                      widget.arguments.messageSuccess,
+                      widget.arguments.messageSuccess!,
                       style: TextStyle(
                         fontSize: 16,
                         color: Color(0xFF7C8B88),

@@ -168,9 +168,9 @@ class _StartedDrawerState extends State<StartedDrawer> {
 }
 
 class _DrawerItem extends StatelessWidget {
-  final String text;
-  final Function onTap;
-  final IconData icon;
+  final String? text;
+  final Function()? onTap;
+  final IconData? icon;
 
   const _DrawerItem({
     super.key,
@@ -194,7 +194,7 @@ class _DrawerItem extends StatelessWidget {
             ),
             const SizedBox(width: 12),
             Text(
-              text,
+              text!,
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,

@@ -12,7 +12,7 @@ class UserRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(
         token, path,
         data: userRequest.toJson());
-    UserResponse userResponse = UserResponse.fromJson(response.toString());
+    UserResponse userResponse = UserResponse.fromJson(response.toString())!;
     return userResponse;
   }
 
@@ -23,7 +23,7 @@ class UserRepository extends AbstractRepository {
         token, path,
         data: tokenUser.toJson());
     RemoveUserResponse checkoutReponse =
-        RemoveUserResponse.fromJson(response.toString());
+        RemoveUserResponse.fromJson(response.toString())!;
     return checkoutReponse;
   }
 

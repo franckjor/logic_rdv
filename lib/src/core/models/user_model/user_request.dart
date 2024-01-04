@@ -37,7 +37,7 @@ abstract class UserRequest implements Built<UserRequest, UserRequestBuilder> {
     return json.encode(serializers.serializeWith(UserRequest.serializer, this));
   }
 
-  static UserRequest fromJson(String jsonString) {
+  static UserRequest? fromJson(String jsonString) {
     return serializers.deserializeWith(
         UserRequest.serializer, json.decode(jsonString));
   }

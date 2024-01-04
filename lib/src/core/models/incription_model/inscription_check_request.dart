@@ -23,7 +23,7 @@ abstract class InscriptionCheckRequest
         serializers.serializeWith(InscriptionCheckRequest.serializer, this));
   }
 
-  static InscriptionCheckRequest fromJson(String jsonString) {
+  static InscriptionCheckRequest? fromJson(String jsonString) {
     return serializers.deserializeWith(
         InscriptionCheckRequest.serializer, json.decode(jsonString));
   }

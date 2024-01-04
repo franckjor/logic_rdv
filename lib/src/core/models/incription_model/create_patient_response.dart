@@ -33,7 +33,7 @@ abstract class CreatePatientResponse
         serializers.serializeWith(CreatePatientResponse.serializer, this));
   }
 
-  static CreatePatientResponse fromJson(String jsonString) {
+  static CreatePatientResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         CreatePatientResponse.serializer, json.decode(jsonString));
   }
@@ -76,7 +76,7 @@ abstract class ParamsCreatePatientResponse
         ParamsCreatePatientResponse.serializer, this));
   }
 
-  static ParamsCreatePatientResponse fromJson(String jsonString) {
+  static ParamsCreatePatientResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsCreatePatientResponse.serializer, json.decode(jsonString));
   }

@@ -557,7 +557,7 @@ class _$AllAppoinmentResponseSerializer
               as CabinetResponse);
           break;
         case 'patient':
-          result.patient.replace(serializers.deserialize(value,
+          result.patient!.replace(serializers.deserialize(value,
                   specifiedType: const FullType(PatientResponse))!
               as PatientResponse);
           break;
@@ -760,7 +760,7 @@ class AppointmentResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'AppointmentResponse', _$failedField, e.toString());
+            r'AppointmentResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -983,7 +983,7 @@ class DataAppointmentResponseBuilder
         pagination.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataAppointmentResponse', _$failedField, e.toString());
+            r'DataAppointmentResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -1676,7 +1676,7 @@ class AllAppoinmentResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _cabinet = $v.cabinet.toBuilder();
-      _patient = $v.patient.toBuilder();
+      _patient = $v.patient!.toBuilder();
       _appointment = $v.appointment.toBuilder();
       _$v = null;
     }
@@ -1716,7 +1716,7 @@ class AllAppoinmentResponseBuilder
         appointment.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'AllAppoinmentResponse', _$failedField, e.toString());
+            r'AllAppoinmentResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

@@ -43,17 +43,14 @@ class ListOfRdv extends StatefulWidget {
 }
 
 class ListOfRdvState extends State<ListOfRdv> {
-  String _tokenUser;
-  String _email;
-  String _fullName;
+  late String _tokenUser;
+  late String _email;
+  late String _fullName;
   ScrollController _scrollController = new ScrollController();
   int currentPage = 1;
-  int totalOfPage;
+  late int totalOfPage;
   bool isRefreshList = false;
   bool _isLoading = false;
-  String _authorizationToke;
-
-  String _rdvDate, _doctorRdv;
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -82,7 +79,7 @@ class ListOfRdvState extends State<ListOfRdv> {
           getAppointmentList(
               context: context,
               tokenUser: _tokenUser,
-              page: currentPage.toString());
+              page: currentPage.toString())!;
         });
       }
     }
@@ -118,16 +115,16 @@ class ListOfRdvState extends State<ListOfRdv> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                : const Icon(
+                :  Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -146,7 +143,7 @@ class ListOfRdvState extends State<ListOfRdv> {
                 getAppointmentList(
                     context: context,
                     tokenUser: _tokenUser,
-                    page: currentPage.toString());
+                    page: currentPage.toString())!;
               });
             } else if (state is SharedPreferenceTokenAuthorizationWriteState) {
               showDialog(
@@ -235,7 +232,7 @@ class ListOfRdvState extends State<ListOfRdv> {
               BlocProvider.of<SharedPreferenceBloc>(context)
                 ..add(SetSharedPreferenceTokenAuthorization(
                     tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
-                    tokenAuthorization: state.getToken.data.authorization
+                    tokenAuthorization: state.getToken.data.authorization!
                         .replaceAll("X-LOGICRDV-AUTH:", "")));
             } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
               flushBarError(state.error, context);

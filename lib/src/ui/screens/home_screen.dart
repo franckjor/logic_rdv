@@ -49,16 +49,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String _tokenUser;
-  String _email;
-  String _fullName;
+  late String _tokenUser;
+  late String _email;
+  late String _fullName;
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   List<ObjectNameOfSearch> activeEtabs = [];
   List<ObjectNameOfSearch> sameCabinetEtabs = [];
   List<ObjectNameOfSearch> _activeEtabsAndSameCabinetEtabs = [];
-  ObjectNameOfSearch _sameCabinetEtabsObject;
 
   bool isLoading = false;
 
@@ -77,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<String> getInstalationIdKey() async{
     final prefs = await SharedPreferences.getInstance();
-    final String instalationKey = prefs.getString('InstallationIdKey');
+    final String instalationKey = prefs.getString('InstallationIdKey')!;
     print("InstallationIdHome: $instalationKey");
     return instalationKey;
   }
@@ -121,16 +120,16 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                : const Icon(
+                :  Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -363,7 +362,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ..add(
                   SetSharedPreferenceTokenAuthorization(
                     tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
-                    tokenAuthorization: state.getToken.data.authorization
+                    tokenAuthorization: state.getToken.data.authorization!
                         .replaceAll("X-LOGICRDV-AUTH:", ""),
                   ),
                 );
@@ -396,7 +395,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             addDoctor(
                               context: context,
                               id: _activeEtabsAndSameCabinetEtabs[i].id,
-                              phone: _activeEtabsAndSameCabinetEtabs[i].tel,
+                              phone: _activeEtabsAndSameCabinetEtabs[i].tel!,
                               tokenUser: _tokenUser,
                             );
                           },
@@ -416,12 +415,12 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class _AppointmentItem extends StatefulWidget {
-  final ObjectNameOfSearch objectNameOfSearch;
-  final String cabinetId;
-  final String tokenUser;
-  final Function onAddHandler;
-  final Function addPaPressed;
-  final int length;
+  final ObjectNameOfSearch? objectNameOfSearch;
+  final String? cabinetId;
+  final String? tokenUser;
+  final Function()? onAddHandler;
+  final Function()? addPaPressed;
+  final int? length;
 
   _AppointmentItem({
     this.objectNameOfSearch,
@@ -533,7 +532,7 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                           children: [
                             RichText(
                               text: TextSpan(
-                                text: widget.objectNameOfSearch.civility,
+                                text: widget.objectNameOfSearch!.civility,
                                 style: TextStyle(
                                   color: AppColors.secondaryColor,
                                   fontWeight: FontWeight.w600,
@@ -541,7 +540,7 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                                 ),
                                 children: <TextSpan>[
                                   TextSpan(
-                                    text: widget.objectNameOfSearch.fullName,
+                                    text: widget.objectNameOfSearch!.fullName,
                                     style: TextStyle(
                                       color: AppColors.secondaryColor,
                                       fontWeight: FontWeight.w600,
@@ -553,7 +552,7 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                             ),
                             const SizedBox(height: 2),
                             Text(
-                              widget.objectNameOfSearch.category,
+                              widget.objectNameOfSearch!.category!,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
                                 color: AppColors.primaryColor,
@@ -563,7 +562,7 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                             ),
                             const SizedBox(height: 2),
                             Text(
-                              widget.objectNameOfSearch.address,
+                              widget.objectNameOfSearch!.address!,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
                                 color: AppColors.primaryColor,
@@ -573,9 +572,9 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                             ),
                             const SizedBox(height: 1),
                             Text(
-                              '${widget.objectNameOfSearch.zip}' +
+                              '${widget.objectNameOfSearch!.zip}' +
                                   " " +
-                                  '${widget.objectNameOfSearch.city}',
+                                  '${widget.objectNameOfSearch!.city}',
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
                                 color: AppColors.primaryColor,
@@ -587,7 +586,7 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Text(
-                                  widget.objectNameOfSearch.tel,
+                                  widget.objectNameOfSearch!.tel!,
                                   style: const TextStyle(
                                     color: AppColors.primaryColor,
                                     fontWeight: FontWeight.bold,
@@ -603,7 +602,7 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                                     shape: BoxShape.circle,
                                   ),
                                   child: IconButton(
-                                    icon: const Icon(
+                                    icon:  Icon(
                                       Icons.call,
                                       color: AppColors.whiteColor,
                                       size: 16,
@@ -612,10 +611,10 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                                     padding: EdgeInsets.zero,
                                     onPressed: () async {
                                       await FlutterPhoneDirectCaller.callNumber(
-                                          widget.objectNameOfSearch.telnospace);
+                                          widget.objectNameOfSearch!.telnospace!);
                                       // try {
                                       //   _makeCall(
-                                      //       widget.objectNameOfSearch.telnospace);
+                                      //       widget.objectNameOfSearch!.telnospace);
                                       // } catch (e) {}
                                     },
                                   ),
@@ -630,7 +629,7 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                   DefaultElevatedButton(
                     text: 'Prendre RDV',
                     onPressed: () {
-                      if (widget.objectNameOfSearch?.appointment?.token ==
+                      if (widget.objectNameOfSearch?.appointment.token ==
                           null) {
                         customAlert(
                           context: context,
@@ -645,11 +644,11 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                           context,
                           RouteGenerator.rdvType,
                           arguments: GetRdvTypePageArguments(
-                            tel: widget.objectNameOfSearch.tel,
-                            idDoctor: widget.objectNameOfSearch.id,
-                            doctorName: widget.objectNameOfSearch.fullName,
+                            tel: widget.objectNameOfSearch!.tel!,
+                            idDoctor: widget.objectNameOfSearch!.id,
+                            doctorName: widget.objectNameOfSearch!.fullName,
                             tokenAppointment:
-                                widget.objectNameOfSearch.appointment.token,
+                                widget.objectNameOfSearch!.appointment.token!,
                           ),
                         );
                       }
@@ -673,12 +672,12 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                     padding: EdgeInsets.zero,
                     constraints: BoxConstraints(),
                     onPressed: () async {
-                      // _openWhatsApp(widget.objectNameOfSearch.tel, '');
+                      // _openWhatsApp(widget.objectNameOfSearch!.tel, '');
                       try {
                         var whatsappUrlAndroid =
-                            "whatsapp://send?text=${widget.objectNameOfSearch.fullName} : ${widget.objectNameOfSearch.address}, ${widget.objectNameOfSearch.zip} ${widget.objectNameOfSearch.city}. Position : https://maps.google.com/?q=${widget.objectNameOfSearch.lat},${widget.objectNameOfSearch.lng}";
+                            "whatsapp://send?text=${widget.objectNameOfSearch!.fullName} : ${widget.objectNameOfSearch!.address}, ${widget.objectNameOfSearch!.zip} ${widget.objectNameOfSearch!.city}. Position : https://maps.google.com/?q=${widget.objectNameOfSearch!.lat},${widget.objectNameOfSearch!.lng}";
                         var whatsappUrlIos =
-                            "whatsapp://send?text=${widget.objectNameOfSearch.fullName} : ${widget.objectNameOfSearch.address}, ${widget.objectNameOfSearch.zip} ${widget.objectNameOfSearch.city}. Position : https://maps.google.com/?q=${widget.objectNameOfSearch.lat},${widget.objectNameOfSearch.lng}";
+                            "whatsapp://send?text=${widget.objectNameOfSearch!.fullName} : ${widget.objectNameOfSearch!.address}, ${widget.objectNameOfSearch!.zip} ${widget.objectNameOfSearch!.city}. Position : https://maps.google.com/?q=${widget.objectNameOfSearch!.lat},${widget.objectNameOfSearch!.lng}";
                         if (Platform.isIOS) {
                           if (await canLaunch(whatsappUrlIos)) {
                             await launch(
@@ -717,8 +716,8 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                     padding: EdgeInsets.zero,
                     constraints: BoxConstraints(),
                     onPressed: () {
-                      _sendWazeCoordonate(widget.objectNameOfSearch.lat,
-                          widget.objectNameOfSearch.lng);
+                      _sendWazeCoordonate(widget.objectNameOfSearch!.lat!,
+                          widget.objectNameOfSearch!.lng!);
                     },
                   ),
                   IconButton(
@@ -732,13 +731,13 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                     constraints: BoxConstraints(),
                     onPressed: () {
                       _openGoogleMapApp(
-                          double.parse(widget.objectNameOfSearch.lat),
-                          double.parse(widget.objectNameOfSearch.lng));
+                          double.parse(widget.objectNameOfSearch!.lat!),
+                          double.parse(widget.objectNameOfSearch!.lng!));
                     },
                   ),
                   Visibility(
                     visible:
-                        widget.objectNameOfSearch?.appointment?.token == null,
+                        widget.objectNameOfSearch?.appointment.token == null,
                     child: IconButton(
                       onPressed: widget.onAddHandler,
                       splashRadius: 16,
@@ -748,8 +747,8 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                   ),
                   Visibility(
                     visible:
-                        widget.objectNameOfSearch?.appointment?.token != null &&
-                            widget.length > 1,
+                        widget.objectNameOfSearch?.appointment.token != null &&
+                            widget.length! > 1,
                     child: IconButton(
                       icon: Icon(
                         MdiIcons.delete,
@@ -770,9 +769,9 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                           title: "",
                           onYesAction: () {
                             removeDoctorToList(
-                              tokenUser: widget.tokenUser,
+                              tokenUser: widget.tokenUser!,
                               context: context,
-                              idDoctor: widget.objectNameOfSearch.id,
+                              idDoctor: widget.objectNameOfSearch!.id,
                             );
                           },
                         );

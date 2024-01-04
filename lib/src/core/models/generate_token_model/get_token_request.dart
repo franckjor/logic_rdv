@@ -24,7 +24,7 @@ abstract class GetTokenRequest
         .encode(serializers.serializeWith(GetTokenRequest.serializer, this));
   }
 
-  static GetTokenRequest fromJson(String jsonString) {
+  static GetTokenRequest? fromJson(String jsonString) {
     return serializers.deserializeWith(
         GetTokenRequest.serializer, json.decode(jsonString));
   }

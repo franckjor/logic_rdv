@@ -9,14 +9,14 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CardDateItem extends StatelessWidget {
-  final DataTimeRdv dataTimeRdv;
-  final BuildContext contextTimer;
-  final String currentSession;
-  final String tokenAppointment;
-  final String tokenUser;
-  final String onClickMessage;
-  final Function(String) dataFunction;
-  final Function(String) actionFunction;
+  final DataTimeRdv? dataTimeRdv;
+  final BuildContext? contextTimer;
+  final String? currentSession;
+  final String? tokenAppointment;
+  final String? tokenUser;
+  final String? onClickMessage;
+  final Function(String)? dataFunction;
+  final Function(String)? actionFunction;
 
   CardDateItem(
       {this.dataTimeRdv,
@@ -40,7 +40,7 @@ class CardDateItem extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                dataTimeRdv.label,
+                dataTimeRdv!.label!,
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 14,
@@ -55,7 +55,7 @@ class CardDateItem extends StatelessWidget {
                   Container(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      dataTimeRdv.label2,
+                      dataTimeRdv!.label2!,
                       style: TextStyle(
                         color: Colors.blueAccent,
                         fontSize: 14,
@@ -68,27 +68,27 @@ class CardDateItem extends StatelessWidget {
             ],
           ),
           const SizedBox(width: 12),
-          if (dataTimeRdv.creneaux.isNotEmpty)
+          if (dataTimeRdv!.creneaux!.isNotEmpty)
             Expanded(
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: InkWell(
                   onTap: () {},
                   child: Row(
-                    children: dataTimeRdv.creneaux
+                    children: dataTimeRdv!.creneaux!
                         .map(
                           (c) => _Hour(
-                            actionFunction: actionFunction,
-                            dataFunction: dataFunction,
-                            hour: c.fromhour,
-                            doctorName: c.doctor,
-                            context: contextTimer,
-                            action: c.onclickAction,
-                            currentSession: currentSession,
-                            data: c.onclickData,
-                            tokenAppointment: tokenAppointment,
-                            tokenUser: tokenUser,
-                            onClickMessage: c.onclickMessage,
+                            actionFunction: actionFunction!,
+                            dataFunction: dataFunction!,
+                            hour: c.fromhour!,
+                            doctorName: c.doctor!,
+                            context: contextTimer!,
+                            action: c.onclickAction!,
+                            currentSession: currentSession!,
+                            data: c.onclickData!,
+                            tokenAppointment: tokenAppointment!,
+                            tokenUser: tokenUser!,
+                            onClickMessage: c.onclickMessage!,
                           ),
                         )
                         .toList(),
@@ -96,14 +96,14 @@ class CardDateItem extends StatelessWidget {
                 ),
               ),
             ),
-          if (dataTimeRdv.message.isNotEmpty)
+          if (dataTimeRdv!.message!.isNotEmpty)
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(8),
                 color: const Color(0xFFebebeb),
                 child: Center(
                   child: Text(
-                    '${dataTimeRdv.message}',
+                    '${dataTimeRdv!.message}',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Color(0xFF7c8B88),
@@ -127,7 +127,7 @@ class _Hour extends StatefulWidget {
   final String tokenAppointment;
   final String tokenUser;
   final String onClickMessage;
-  final Function onTap;
+  final Function()? onTap;
   final BuildContext context;
   final Function(String) dataFunction;
   final Function(String) actionFunction;

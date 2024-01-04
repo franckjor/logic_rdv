@@ -369,7 +369,7 @@ class CreatePatientResponseBuilder
         params.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'CreatePatientResponse', _$failedField, e.toString());
+            r'CreatePatientResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

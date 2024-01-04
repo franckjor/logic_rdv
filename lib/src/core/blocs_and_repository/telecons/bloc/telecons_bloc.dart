@@ -24,7 +24,7 @@ class TeleconsBloc extends Bloc<TeleconsEvent, TeleconsState> {
           await repository.getTelecons(teleconsRequest: event.teleconsRequest);
       yield TeleconsLoadingSuccess(response: result);
     } catch (error) {
-      yield TeleconsFailure(error: error.toString());
+      yield TeleconsFailure(error: error.toString())!;
     }
   }
 }

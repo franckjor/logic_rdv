@@ -11,7 +11,7 @@ class FixerRdvDoctorRepository extends AbstractRepository {
         token, path,
         data: tokenUser.toJson());
     FixerRdvDoctorResponse responseAuth =
-        FixerRdvDoctorResponse.fromJson(response.toString());
+        FixerRdvDoctorResponse.fromJson(response.toString())!;
     return responseAuth;
   }
 

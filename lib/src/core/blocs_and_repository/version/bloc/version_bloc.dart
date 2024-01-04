@@ -20,7 +20,7 @@ class VersionBloc extends Bloc<VersionEvent, VersionState> {
       final version = await repository.getVersion();
       yield VersionLoadingSuccess(response: version);
     } catch (error) {
-      yield VersionFailure(error: error.toString());
+      yield VersionFailure(error: error.toString())!;
     }
   }
 }

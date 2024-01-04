@@ -36,7 +36,7 @@ abstract class FixerRdvDoctorResponse
         serializers.serializeWith(FixerRdvDoctorResponse.serializer, this));
   }
 
-  static FixerRdvDoctorResponse fromJson(String jsonString) {
+  static FixerRdvDoctorResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         FixerRdvDoctorResponse.serializer, json.decode(jsonString));
   }
@@ -62,7 +62,7 @@ abstract class ParamsFixerRdvDoctorResponse
         ParamsFixerRdvDoctorResponse.serializer, this));
   }
 
-  static ParamsFixerRdvDoctorResponse fromJson(String jsonString) {
+  static ParamsFixerRdvDoctorResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsFixerRdvDoctorResponse.serializer, json.decode(jsonString));
   }
@@ -89,7 +89,7 @@ abstract class DataFixerRdvDoctorResponse
         serializers.serializeWith(DataFixerRdvDoctorResponse.serializer, this));
   }
 
-  static DataFixerRdvDoctorResponse fromJson(String jsonString) {
+  static DataFixerRdvDoctorResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataFixerRdvDoctorResponse.serializer, json.decode(jsonString));
   }

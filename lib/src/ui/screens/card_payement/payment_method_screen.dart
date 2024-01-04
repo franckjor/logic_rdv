@@ -53,8 +53,8 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
       body: Container(
         child: ListView.separated(
             itemBuilder: (context, i) {
-              Icon icon;
-              Text text;
+              Icon? icon;
+              Text? text;
 
               switch (i) {
                 case 0:

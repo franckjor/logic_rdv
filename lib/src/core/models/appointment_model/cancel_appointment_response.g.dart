@@ -319,7 +319,7 @@ class CancelAppointmentResponseBuilder
         params.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'CancelAppointmentResponse', _$failedField, e.toString());
+            r'CancelAppointmentResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

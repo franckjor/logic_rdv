@@ -32,7 +32,7 @@ abstract class UserResponse
         .encode(serializers.serializeWith(UserResponse.serializer, this));
   }
 
-  static UserResponse fromJson(String jsonString) {
+  static UserResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         UserResponse.serializer, json.decode(jsonString));
   }
@@ -72,7 +72,7 @@ abstract class ParamsUserResponse
         .encode(serializers.serializeWith(ParamsUserResponse.serializer, this));
   }
 
-  static ParamsUserResponse fromJson(String jsonString) {
+  static ParamsUserResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsUserResponse.serializer, json.decode(jsonString));
   }

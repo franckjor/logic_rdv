@@ -4,13 +4,13 @@ import '../../common.dart';
 
 
 class AdaptativeScaffold extends StatelessWidget {
-  final String title;
-  final Widget leading;
+  final String? title;
+  final Widget? leading;
   final Color backgroundColor;
-  final Color scaffoldBackgroundColor;
-  final List<Widget> actions;
-  final Widget appBar;
-  final Widget body;
+  final Color? scaffoldBackgroundColor;
+  final List<Widget>? actions;
+  final Widget? appBar;
+  final Widget? body;
   const AdaptativeScaffold({
     this.title,
     this.leading,
@@ -24,8 +24,8 @@ class AdaptativeScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
       return Scaffold(
         backgroundColor: scaffoldBackgroundColor,
-        appBar: appBar,
-        body: SafeArea(child: body),
+        appBar: appBar as PreferredSizeWidget?,
+        body: SafeArea(child: body!),
       );
 
   }

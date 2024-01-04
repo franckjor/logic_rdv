@@ -31,7 +31,7 @@ bool get isAndroid =>
 bool get isWeb => foundation.kIsWeb;
 
 class TeleconsArgument implements PagesArgumentType {
-  final String tokentelecon;
+  final String? tokentelecon;
 
   TeleconsArgument({
     this.tokentelecon,
@@ -64,7 +64,7 @@ class _CallWidgetState extends State<CallWidget> {
 
   @override
   void initState() {
-    getTeleocns(context: context, tokentelecons: widget.argument?.tokentelecon);
+    getTeleocns(context: context, tokentelecons: widget.argument!.tokentelecon!);
 
     StripeServiceTc.init();
     super.initState();
@@ -72,9 +72,9 @@ class _CallWidgetState extends State<CallWidget> {
 
   void onCreditCardModelChange(CreditCardModel creditCardModel) {
     setState(() {
-      cardNumber = creditCardModel.cardNumber ?? "";
-      expiryDate = creditCardModel.expiryDate ?? "";
-      cvvCode = creditCardModel.cvvCode ?? "";
+      cardNumber = creditCardModel.cardNumber;
+      expiryDate = creditCardModel.expiryDate;
+      cvvCode = creditCardModel.cvvCode ;
       isCvvFocused = creditCardModel.isCvvFocused;
       _dateExpired = expiryDate.split("/");
     });
@@ -82,16 +82,16 @@ class _CallWidgetState extends State<CallWidget> {
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  String _stripeClient;
-  String _apiKey;
-  String _sessionId;
-  String _token;
+  late String _stripeClient;
+  late String _apiKey;
+  late String _sessionId;
+  late String _token;
   bool _isLoading = false;
-  EtablissementTc _etablissementTc;
-  ApptTc _apptTc;
-  InfosTc _infostc;
-  PaymentTc _paymentTc;
-  TokboxTc _tokboxTc;
+  late EtablissementTc _etablissementTc;
+  late ApptTc _apptTc;
+  late InfosTc _infostc;
+  late PaymentTc _paymentTc;
+  late TokboxTc _tokboxTc;
 
   Future<void> _makeCall(
     String phone,
@@ -301,7 +301,7 @@ class _CallWidgetState extends State<CallWidget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: IconButton(
-                                                icon: const Icon(
+                                                icon:  Icon(
                                                   Icons.call,
                                                   color: AppColors.whiteColor,
                                                   size: 16,
@@ -651,7 +651,7 @@ class _CallWidgetState extends State<CallWidget> {
                                           const SizedBox(height: 10),
                                           ElevatedButton.icon(
                                             onPressed: () {
-                                              if (formKey.currentState
+                                              if (formKey.currentState!
                                                   .validate()) {
                                                 _progressDialog.setMessage(
                                                     'Chargement en cours ...');
@@ -669,8 +669,8 @@ class _CallWidgetState extends State<CallWidget> {
                                                     expYear: int.parse(
                                                         _dateExpired[1]),
                                                     tokentelecon: widget
-                                                        .argument
-                                                        ?.tokentelecon);
+                                                        .argument!
+                                                        .tokentelecon!);
 
                                                 setState(() {
                                                   _isLoading = false;

@@ -733,7 +733,7 @@ class TeleconsResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'TeleconsResponse', _$failedField, e.toString());
+            r'TeleconsResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -977,7 +977,7 @@ class DataTcBuilder implements Builder<DataTc, DataTcBuilder> {
         tokbox.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataTc', _$failedField, e.toString());
+            r'DataTc', _$failedField, e.toString())!;
       }
       rethrow;
     }

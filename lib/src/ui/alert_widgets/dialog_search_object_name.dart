@@ -11,8 +11,8 @@ import 'package:logic_rdv_v0/src/ui/shared/adaptative_textform_field.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 class DialogSearchObjectFName extends StatefulWidget {
-  final String cityId;
-  final String indexPage;
+  final String? cityId;
+  final String? indexPage;
 
   DialogSearchObjectFName({
     this.cityId,
@@ -27,8 +27,8 @@ class DialogSearchObjectFName extends StatefulWidget {
 class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
   TextEditingController _searchValueName = TextEditingController();
   List<ObjectNameOfSearch> objectNameOfSearch = [];
-  String _categoryId;
-  ObjectName _objectName;
+  late String _categoryId;
+  late ObjectName _objectName;
   bool _loading = true;
 
   @override
@@ -116,7 +116,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                           hintText: 'Nom, Spécialité, Téléphone',
                           autoFocus: true,
                           controller: _searchValueName,
-                          validator: (value) => verifyEmpty(value),
+                          validator: (value) => verifyEmpty(value!, errorMessage: ''),
                           suffixIcon: _searchValueName.text != ''
                               ? InkWell(
                                   onTap: () {
@@ -137,7 +137,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                                         context: context,
                                         terms: _searchValueName.text,
                                         codePostal: (widget.cityId != null)
-                                            ? widget.cityId
+                                            ? widget.cityId!
                                             : '0',
                                       ));
                             });
@@ -206,7 +206,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              objectNameOfSearch[index]?.address != null
+                              objectNameOfSearch[index].address != null
                                   ? Padding(
                                       padding: const EdgeInsets.fromLTRB(
                                           14, 8, 14, 0),
@@ -216,7 +216,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Text(
-                                            '${objectNameOfSearch[index]?.civility ?? ''} ${objectNameOfSearch[index].fullName}',
+                                            '${objectNameOfSearch[index].civility ?? ''} ${objectNameOfSearch[index].fullName}',
                                             style: TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w600,
@@ -224,7 +224,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                                           ),
                                           const SizedBox(height: 4),
                                           Text(
-                                            '${objectNameOfSearch[index]?.address ?? ''}',
+                                            '${objectNameOfSearch[index].address ?? ''}',
                                             style: TextStyle(
                                               fontSize: 14,
                                               color: Colors.grey.shade400,
@@ -232,35 +232,35 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                                           ),
                                           const SizedBox(height: 4),
                                           Text(
-                                            '${objectNameOfSearch[index]?.zip ?? ''} ${objectNameOfSearch[index]?.city}',
+                                            '${objectNameOfSearch[index].zip ?? ''} ${objectNameOfSearch[index].city}',
                                             style: TextStyle(
                                               fontSize: 16,
                                               color: Colors.grey.shade800,
                                             ),
                                           ),
                                           const SizedBox(height: 4),
-                                          (objectNameOfSearch[index]?.tel !=
+                                          (objectNameOfSearch[index].tel !=
                                                       '' ||
                                                   objectNameOfSearch[index]
-                                                          ?.tel !=
+                                                          .tel !=
                                                       null)
                                               ? SizedBox.shrink()
                                               : Text(
-                                                  '${objectNameOfSearch[index]?.tel ?? ''}',
+                                                  '${objectNameOfSearch[index].tel ?? ''}',
                                                   style: TextStyle(
                                                     fontSize: 14,
                                                     color: Colors.grey.shade800,
                                                   ),
                                                 ),
                                           const SizedBox(height: 4),
-                                          (objectNameOfSearch[index]?.kmDiff !=
+                                          (objectNameOfSearch[index].kmDiff !=
                                                       '' ||
                                                   objectNameOfSearch[index]
-                                                          ?.kmDiff !=
+                                                          .kmDiff !=
                                                       null)
                                               ? SizedBox.shrink()
                                               : Text(
-                                                  'à ${objectNameOfSearch[index]?.kmDiff ?? ''}km',
+                                                  'à ${objectNameOfSearch[index].kmDiff ?? ''}km',
                                                   style: TextStyle(
                                                     fontSize: 14,
                                                     color: Colors.grey.shade800,
@@ -301,8 +301,8 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
 }
 
 class ObjectName {
-  String fullName;
-  String catId;
+  String? fullName;
+  String? catId;
 
   ObjectName({required this.fullName, this.catId});
 }

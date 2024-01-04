@@ -550,7 +550,7 @@ class NotificationListResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'NotificationListResponse', _$failedField, e.toString());
+            r'NotificationListResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -788,7 +788,7 @@ class NotificationResponseDataBuilder
         pagination.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'NotificationResponseData', _$failedField, e.toString());
+            r'NotificationResponseData', _$failedField, e.toString())!;
       }
       rethrow;
     }

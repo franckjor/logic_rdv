@@ -5,14 +5,14 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 
 customConfirmAlert({
   required BuildContext context,
-  AlertType alertType,
-  required String title,
-  String confirmButtonLabel,
-  String cancelButtonLabel,
-  Function onNoAction,
-  Function closeFunction,
-  required Function onYesAction,
-  Widget content,
+  AlertType? alertType,
+  String?  title,
+  String?  confirmButtonLabel,
+  String?  cancelButtonLabel,
+  Function()? onNoAction,
+  Function()? closeFunction,
+  Function()? onYesAction,
+  Widget? content,
 }) {
   return Alert(
     context: context,

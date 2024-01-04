@@ -6,11 +6,11 @@ import 'package:logic_rdv_v0/src/ui/screens/rdv_select_day_and_time/card_hour.da
 import '../../../common.dart';
 
 class RdvDialogHour extends StatefulWidget {
-  final List<Creneaux> crenaux;
-  final String currentSession;
-  final String tokenAppointment;
-  final String tokenUser;
-  final String doctorName;
+  final List<Creneaux>? crenaux;
+  final String? currentSession;
+  final String? tokenAppointment;
+  final String? tokenUser;
+  final String? doctorName;
 
   RdvDialogHour({
     this.crenaux,
@@ -25,8 +25,8 @@ class RdvDialogHour extends StatefulWidget {
 }
 
 class _RdvDialogHourState extends State<RdvDialogHour> {
-  String onclickData;
-  String onclickAction;
+  late String onclickData;
+  late String onclickAction;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class _RdvDialogHourState extends State<RdvDialogHour> {
           children: [
             TextSpan(
               text:
-                  '${widget.crenaux.first.onclickData.split(' ')[0]} ${widget.crenaux.first.onclickData.split(' ')[1]} avec ',
+                  '${widget.crenaux!.first.onclickData!.split(' ')[0]} ${widget.crenaux!.first.onclickData!.split(' ')[1]} avec ',
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 color: AppColors.colorPrimary,
@@ -54,7 +54,7 @@ class _RdvDialogHourState extends State<RdvDialogHour> {
               ),
             ),
             TextSpan(
-              text: "${widget.crenaux.first.doctor}",
+              text: "${widget.crenaux!.first.doctor}",
               style: const TextStyle(
                 fontWeight: FontWeight.w700,
                 color: Color(0xFF22577A),
@@ -66,19 +66,19 @@ class _RdvDialogHourState extends State<RdvDialogHour> {
       ),
       content: Container(
         width: double.maxFinite,
-        child: widget.crenaux.length != 0
+        child: widget.crenaux!.length != 0
             ? ListView.builder(
                 shrinkWrap: true,
-                itemCount: widget.crenaux.length,
+                itemCount: widget.crenaux!.length,
                 padding: EdgeInsets.zero,
                 itemBuilder: (context, ind) {
                   return CardHourItem(
-                    creneaux: widget.crenaux[ind],
+                    creneaux: widget.crenaux![ind],
                     onTapForTakeAppointment: () {
                       setState(
                         () {
-                          onclickData = widget.crenaux[ind].onclickData;
-                          onclickAction = widget.crenaux[ind].onclickAction;
+                          onclickData = widget.crenaux![ind].onclickData!;
+                          onclickAction = widget.crenaux![ind].onclickAction!;
                           Navigator.pop(
                             context,
                             GetPatientPageArguments(

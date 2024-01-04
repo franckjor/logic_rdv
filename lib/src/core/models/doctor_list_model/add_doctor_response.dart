@@ -62,7 +62,7 @@ abstract class ParamsAddDoctor
         .encode(serializers.serializeWith(ParamsAddDoctor.serializer, this));
   }
 
-  static ParamsAddDoctor fromJson(String jsonString) {
+  static ParamsAddDoctor? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsAddDoctor.serializer, json.decode(jsonString));
   }
@@ -84,7 +84,7 @@ abstract class DataAddDoctor
         .encode(serializers.serializeWith(DataAddDoctor.serializer, this));
   }
 
-  static DataAddDoctor fromJson(String jsonString) {
+  static DataAddDoctor? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataAddDoctor.serializer, json.decode(jsonString));
   }
@@ -142,7 +142,7 @@ abstract class EtablissementAddDoctor
         serializers.serializeWith(EtablissementAddDoctor.serializer, this));
   }
 
-  static EtablissementAddDoctor fromJson(String jsonString) {
+  static EtablissementAddDoctor? fromJson(String jsonString) {
     return serializers.deserializeWith(
         EtablissementAddDoctor.serializer, json.decode(jsonString));
   }
@@ -165,7 +165,7 @@ abstract class AppointmentAddDoctor
         serializers.serializeWith(AppointmentAddDoctor.serializer, this));
   }
 
-  static AppointmentAddDoctor fromJson(String jsonString) {
+  static AppointmentAddDoctor? fromJson(String jsonString) {
     return serializers.deserializeWith(
         AppointmentAddDoctor.serializer, json.decode(jsonString));
   }

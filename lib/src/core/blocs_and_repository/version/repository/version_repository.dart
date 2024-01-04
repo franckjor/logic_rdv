@@ -8,7 +8,7 @@ class VersionRepository extends AbstractRepository {
     final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.getDynamic(token, path);
     AppVersionSummary? _versionResponse =
-        AppVersionSummary.fromJson(response.toString());
+        AppVersionSummary.fromJson(response.toString())!;
     return _versionResponse;
   }
 

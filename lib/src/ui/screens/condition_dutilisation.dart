@@ -142,7 +142,7 @@ class _SectionTitle extends StatelessWidget {
 }
 
 class _SectionContent extends StatelessWidget {
-  final String content;
+  final String? content;
   const _SectionContent({
     super.key,
     this.content,

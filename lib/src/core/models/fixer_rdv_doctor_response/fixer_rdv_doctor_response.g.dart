@@ -397,7 +397,7 @@ class FixerRdvDoctorResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'FixerRdvDoctorResponse', _$failedField, e.toString());
+            r'FixerRdvDoctorResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -609,7 +609,7 @@ class DataFixerRdvDoctorResponseBuilder
         sameCabinetEtabs.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataFixerRdvDoctorResponse', _$failedField, e.toString());
+            r'DataFixerRdvDoctorResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

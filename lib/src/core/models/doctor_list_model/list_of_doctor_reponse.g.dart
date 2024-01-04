@@ -599,7 +599,7 @@ class ListOfDoctorReponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'ListOfDoctorReponse', _$failedField, e.toString());
+            r'ListOfDoctorReponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -879,7 +879,7 @@ class DataListOfDoctorBuilder
         pagination.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataListOfDoctor', _$failedField, e.toString());
+            r'DataListOfDoctor', _$failedField, e.toString())!;
       }
       rethrow;
     }

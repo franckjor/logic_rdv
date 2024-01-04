@@ -716,7 +716,7 @@ class CreateAppointmentResponseBuilder
         _data?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'CreateAppointmentResponse', _$failedField, e.toString());
+            r'CreateAppointmentResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -1018,7 +1018,7 @@ class DataCreateAppointmentResponseBuilder
         _data?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataCreateAppointmentResponse', _$failedField, e.toString());
+            r'DataCreateAppointmentResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

@@ -474,7 +474,7 @@ class SearchCityResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'SearchCityResponse', _$failedField, e.toString());
+            r'SearchCityResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -763,7 +763,7 @@ class DataSearchCityResponseBuilder
         list.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataSearchCityResponse', _$failedField, e.toString());
+            r'DataSearchCityResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

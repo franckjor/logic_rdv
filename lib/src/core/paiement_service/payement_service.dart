@@ -27,7 +27,7 @@ createPaymentIntent(
     );
     return json.decode(response.body);
   } catch (err) {
-    throw Exception(err.toString());
+    throw Exception(err.toString())!;
   }
 }
 

@@ -11,7 +11,7 @@ class TeleconsRepository extends AbstractRepository {
         token, path,
         data: teleconsRequest.toJson());
     TeleconsResponse teleconsResponse =
-        TeleconsResponse.fromJson(response.toString());
+        TeleconsResponse.fromJson(response.toString())!;
     return teleconsResponse;
   }
 

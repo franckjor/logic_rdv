@@ -20,7 +20,7 @@ abstract class TokenUser implements Built<TokenUser, TokenUserBuilder> {
     return json.encode(serializers.serializeWith(TokenUser.serializer, this));
   }
 
-  static TokenUser fromJson(String jsonString) {
+  static TokenUser? fromJson(String jsonString) {
     return serializers.deserializeWith(
         TokenUser.serializer, json.decode(jsonString));
   }

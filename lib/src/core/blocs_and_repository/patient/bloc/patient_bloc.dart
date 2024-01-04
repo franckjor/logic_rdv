@@ -31,7 +31,7 @@ class PatientBloc extends Bloc<PatientEvent, PatientState> {
           await repository.addPatient(patientRequest: event.patientRequest);
       yield AddPatientLoadingSuccess(response: patientResult);
     } catch (error) {
-      yield PatientFailure(error: error.toString());
+      yield PatientFailure(error: error.toString())!;
     }
   }
 
@@ -41,7 +41,7 @@ class PatientBloc extends Bloc<PatientEvent, PatientState> {
           getListOfPatientRequest: event.listOfPatientRequest);
       yield ListOfPatientLoadingSuccess(response: patientResult);
     } catch (error) {
-      yield PatientFailure(error: error.toString());
+      yield PatientFailure(error: error.toString())!;
     }
   }
 
@@ -51,7 +51,7 @@ class PatientBloc extends Bloc<PatientEvent, PatientState> {
           await repository.modifyPatient(patientRequest: event.patientRequest);
       yield UpdatePatientLoadingSuccess(updateSuccess: patientResult);
     } catch (error) {
-      yield PatientFailure(error: error.toString());
+      yield PatientFailure(error: error.toString())!;
     }
   }
 
@@ -61,7 +61,7 @@ class PatientBloc extends Bloc<PatientEvent, PatientState> {
           removePatientRequest: event.patientRequest);
       yield RemovePatientLoadingSuccess(removeSuccess: patientResult);
     } catch (error) {
-      yield PatientFailure(error: error.toString());
+      yield PatientFailure(error: error.toString())!;
     }
   }
 }

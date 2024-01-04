@@ -35,7 +35,7 @@ abstract class SearchNameResponse
         .encode(serializers.serializeWith(SearchNameResponse.serializer, this));
   }
 
-  static SearchNameResponse fromJson(String jsonString) {
+  static SearchNameResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         SearchNameResponse.serializer, json.decode(jsonString));
   }
@@ -66,7 +66,7 @@ abstract class ParamsSearchNameResponse
         serializers.serializeWith(ParamsSearchNameResponse.serializer, this));
   }
 
-  static ParamsSearchNameResponse fromJson(String jsonString) {
+  static ParamsSearchNameResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsSearchNameResponse.serializer, json.decode(jsonString));
   }
@@ -99,7 +99,7 @@ abstract class DataSearchNameResponse
         serializers.serializeWith(DataSearchNameResponse.serializer, this));
   }
 
-  static DataSearchNameResponse fromJson(String jsonString) {
+  static DataSearchNameResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataSearchNameResponse.serializer, json.decode(jsonString));
   }
@@ -158,7 +158,7 @@ abstract class ObjectNameOfSearch
         .encode(serializers.serializeWith(ObjectNameOfSearch.serializer, this));
   }
 
-  static ObjectNameOfSearch fromJson(String jsonString) {
+  static ObjectNameOfSearch? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ObjectNameOfSearch.serializer, json.decode(jsonString));
   }
@@ -166,7 +166,7 @@ abstract class ObjectNameOfSearch
   static Serializer<ObjectNameOfSearch> get serializer =>
       _$objectNameOfSearchSerializer;
 
-  String get fullName => nom ?? " " + " " + prenom ?? " ";
+  String get fullName => nom ?? " " + " " + prenom! ?? " ";
 }
 
 abstract class AppointmentSearchNameResponse
@@ -186,7 +186,7 @@ abstract class AppointmentSearchNameResponse
         AppointmentSearchNameResponse.serializer, this));
   }
 
-  static AppointmentSearchNameResponse fromJson(String jsonString) {
+  static AppointmentSearchNameResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         AppointmentSearchNameResponse.serializer, json.decode(jsonString));
   }

@@ -15,12 +15,12 @@ import 'package:logic_rdv_v0/src/ui/themes/colors.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 class DialogForCreatePatient extends StatefulWidget {
-  final String intention;
-  final PatientRequest patientRequest;
-  final String tokenUser;
-  final String tokenAppt;
-  final String tokenPatient;
-  final DataPatientResponseAfertCreate patient;
+  final String? intention;
+  final PatientRequest? patientRequest;
+  final String? tokenUser;
+  final String? tokenAppt;
+  final String? tokenPatient;
+  final DataPatientResponseAfertCreate? patient;
 
   DialogForCreatePatient(
       {this.intention,
@@ -46,18 +46,18 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
   void initState() {
     if (widget.intention == updateIntention) {
       _nomPatientController.text =
-          widget.patientRequest.nom ?? widget.patient.nom;
+          (widget.patientRequest!.nom ?? widget.patient!.nom)!;
       _preNomPatientController.text =
-          widget.patientRequest.prenom ?? widget.patient.prenom;
+          widget.patientRequest!.prenom ?? widget.patient!.prenom;
       _emailPatientController.text =
-          widget.patientRequest.email ?? widget.patient.email;
+          widget.patientRequest!.email ?? widget.patient!.email;
       _telephonePatientController.text =
-          widget.patientRequest.phone ?? widget.patient.phone;
+         ( widget.patientRequest!.phone ?? widget.patient!.phone)!;
     } else {
-      _nomPatientController.text = widget?.patient?.nom;
+      _nomPatientController.text = (widget.patient!.nom)!;
       _preNomPatientController.text = "";
-      _emailPatientController.text = widget?.patient?.email;
-      _telephonePatientController.text = widget?.patient?.phone;
+      _emailPatientController.text = (widget.patient!.email)!;
+      _telephonePatientController.text = (widget.patient!.phone)!;
     }
     super.initState();
   }
@@ -156,7 +156,7 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                               AdaptativeTextFormField(
                                 hintText: 'Entrez le nom du patient',
                                 controller: _nomPatientController,
-                                validator: (value) => verifyEmpty(value),
+                                validator: (value) => verifyEmpty(value!, errorMessage: ''),
                               ),
                             ],
                           ),
@@ -177,7 +177,7 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                               AdaptativeTextFormField(
                                 hintText: 'Entrez le prénom du patient',
                                 controller: _preNomPatientController,
-                                validator: (value) => verifyEmpty(value),
+                                validator: (value) => verifyEmpty(value!, errorMessage: ''),
                               ),
                             ],
                           ),
@@ -198,7 +198,7 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                               AdaptativeTextFormField(
                                 hintText: 'Entrez l\'adresse email du patient',
                                 controller: _emailPatientController,
-                                validator: (value) => verifyEmpty(value),
+                                validator: (value) => verifyEmpty(value!, errorMessage: ''),
                               ),
                             ],
                           ),
@@ -219,7 +219,7 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                               AdaptativeTextFormField(
                                 hintText: 'Entrez le Téléphone du patient',
                                 controller: _telephonePatientController,
-                                validator: (value) => verifyEmpty(value),
+                                validator: (value) => verifyEmpty(value!, errorMessage: ''),
                               ),
                             ],
                           ),
@@ -248,7 +248,7 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                                 child: ElevatedButton(
                                   onPressed: () {
                                     final _form = _formKey.currentState;
-                                    if (_form.validate()) {
+                                    if (_form!.validate()) {
                                       if (widget.intention == updateIntention) {
                                         PatientRequest _updatePatient =
                                             PatientRequest((builder) => builder
@@ -346,7 +346,7 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                               AdaptativeTextFormField(
                                 hintText: 'Entrez le nom du patient',
                                 controller: _nomPatientController,
-                                validator: (value) => verifyEmpty(value),
+                                validator: (value) => verifyEmpty(value!, errorMessage: ''),
                               ),
                             ],
                           ),
@@ -367,7 +367,7 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                               AdaptativeTextFormField(
                                 hintText: 'Entrez le prénom du patient',
                                 controller: _preNomPatientController,
-                                validator: (value) => verifyEmpty(value),
+                                validator: (value) => verifyEmpty(value!, errorMessage: ''),
                               ),
                             ],
                           ),
@@ -388,7 +388,7 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                               AdaptativeTextFormField(
                                 hintText: 'Entrez l\'adresse email du patient',
                                 controller: _emailPatientController,
-                                validator: (value) => verifyEmpty(value),
+                                validator: (value) => verifyEmpty(value!, errorMessage: ''),
                               ),
                             ],
                           ),
@@ -409,7 +409,7 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                               AdaptativeTextFormField(
                                 hintText: 'Entrez le Téléphone du patient',
                                 controller: _telephonePatientController,
-                                validator: (value) => verifyEmpty(value),
+                                validator: (value) => verifyEmpty(value!, errorMessage: ''),
                               ),
                             ],
                           ),
@@ -438,7 +438,7 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                                 child: ElevatedButton(
                                   onPressed: () {
                                     final _form = _formKey.currentState;
-                                    if (_form.validate()) {
+                                    if (_form!.validate()) {
                                       if (widget.intention == updateIntention) {
                                         PatientRequest _updatePatient =
                                             PatientRequest((builder) => builder

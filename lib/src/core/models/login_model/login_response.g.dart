@@ -432,7 +432,7 @@ class LoginResponseBuilder
         _data?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'LoginResponse', _$failedField, e.toString());
+            r'LoginResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

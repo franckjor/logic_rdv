@@ -31,12 +31,12 @@ bool get isAndroid =>
 bool get isWeb => foundation.kIsWeb;
 
 class GetDoctorIdPageArguments implements PagesArgumentType {
-  final String id;
-  final String tokenAppointment;
-  final String tokenDoctor;
+  final String? id;
+  final String? tokenAppointment;
+  final String? tokenDoctor;
 
   GetDoctorIdPageArguments(
-      {required this.id, this.tokenAppointment, this.tokenDoctor});
+      { this.id, this.tokenAppointment, this.tokenDoctor});
 
   @override
   getArguments() {
@@ -54,22 +54,22 @@ class DoctorProfileScreen extends StatefulWidget {
 }
 
 class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
-  SearchDoctorDetailsResponse _searchDoctorDetailsResponse;
+  late SearchDoctorDetailsResponse _searchDoctorDetailsResponse;
   List<Chapters> _chapter = [];
   bool _isLoadingData = false;
-  String _tokenUser;
+  late String _tokenUser;
 
   @override
   void initState() {
-    getDoctorDetails(context: context, id: widget.arguments.id);
+    getDoctorDetails(context: context, id: widget.arguments.id!);
     BlocProvider.of<SharedPreferenceBloc>(context)
       ..add(GetSharedPreferenceObject(objectKey: PreferenceKey.objectKey));
     super.initState();
   }
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  String _email;
-  String _fullName;
+  late String _email;
+  late String _fullName;
 
   void _openWhatsApp(
     String phone,
@@ -148,31 +148,31 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
           _tokenUser == null
               ? IconButton(
                   icon: isAndroid || isWeb
-                      ? const Icon(
+                      ?  Icon(
                           MdiIcons.menu,
                           color: Color.fromARGB(255, 255, 255, 255),
                         )
-                      : const Icon(
+                      :  Icon(
                           MdiIcons.menu,
                           color: Color.fromARGB(255, 255, 255, 255),
                         ),
                   splashRadius: 20,
-                  onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                  onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
                 )
               : Visibility(
                   visible: _tokenUser != null,
                   child: IconButton(
                     icon: isAndroid || isWeb
-                        ? const Icon(
+                        ?  Icon(
                             MdiIcons.accountCircle,
                             color: Colors.white,
                           )
-                        : const Icon(
+                        :  Icon(
                             CupertinoIcons.person_alt_circle_fill,
                             color: Colors.white,
                           ),
                     splashRadius: 20,
-                    onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                    onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
                   ),
                 ),
         ],
@@ -442,7 +442,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                                                               'à ' +
                                                                   _searchDoctorDetailsResponse
                                                                       .data
-                                                                      .kmDiff +
+                                                                      .kmDiff! +
                                                                   ' Km',
                                                               overflow:
                                                                   TextOverflow
@@ -488,7 +488,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                                                                   .circle,
                                                             ),
                                                             child: IconButton(
-                                                              icon: const Icon(
+                                                              icon:  Icon(
                                                                 Icons.call,
                                                                 color: AppColors
                                                                     .whiteColor,
@@ -701,11 +701,11 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
             idDoctor: _searchDoctorDetailsResponse.data.id,
             doctorName: _searchDoctorDetailsResponse.data.nom +
                 " " +
-                _searchDoctorDetailsResponse.data.prenom,
+                _searchDoctorDetailsResponse.data.prenom!,
             tokenAppointment:
                 _searchDoctorDetailsResponse.data.appointment.token != ""
                     ? _searchDoctorDetailsResponse.data.appointment.token
-                    : widget.arguments.tokenAppointment));
+                    : widget.arguments.tokenAppointment!));
   }
 }
 
@@ -743,10 +743,10 @@ class _DoctorInfo extends StatelessWidget {
 }
 
 class _ChaptersInfos extends StatelessWidget {
-  final String title;
-  final String description;
+  final String? title;
+  final String? description;
 
-  const _ChaptersInfos({required this.title, this.description});
+  const _ChaptersInfos({ this.title, this.description});
 
   Widget build(BuildContext context) {
     return Column(
@@ -765,7 +765,7 @@ class _ChaptersInfos extends StatelessWidget {
             ),
           ),
           child: Text(
-            title.toUpperCase(),
+            title!.toUpperCase(),
             style: const TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w600,

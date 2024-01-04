@@ -26,7 +26,7 @@ abstract class NotificationListRequest
         serializers.serializeWith(NotificationListRequest.serializer, this));
   }
 
-  static NotificationListRequest fromJson(String jsonString) {
+  static NotificationListRequest? fromJson(String jsonString) {
     return serializers.deserializeWith(
         NotificationListRequest.serializer, json.decode(jsonString));
   }

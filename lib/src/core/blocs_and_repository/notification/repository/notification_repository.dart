@@ -12,7 +12,7 @@ class NotificationRepository extends AbstractRepository {
         token, path,
         data: notificationListRequest.toJson());
     NotificationListResponse notificationListResponse =
-        NotificationListResponse.fromJson(response.toString());
+        NotificationListResponse.fromJson(response.toString())!;
     return notificationListResponse;
   }
 

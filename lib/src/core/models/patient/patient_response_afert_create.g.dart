@@ -558,7 +558,7 @@ class PatientResponseAfertCreateBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'PatientResponseAfertCreate', _$failedField, e.toString());
+            r'PatientResponseAfertCreate', _$failedField, e.toString())!;
       }
       rethrow;
     }

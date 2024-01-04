@@ -9,10 +9,10 @@ bool get isAndroid =>
 bool get isWeb => foundation.kIsWeb;
 
 class AdaptativeAppBar extends StatelessWidget implements PreferredSize {
-  final String title;
+  final String? title;
   final Color backgroundColor;
-  final Widget leading;
-  final List<Widget> actions;
+  final Widget? leading;
+  final List<Widget>? actions;
   const AdaptativeAppBar({
     super.key,
     this.title,
@@ -45,7 +45,7 @@ class AdaptativeAppBar extends StatelessWidget implements PreferredSize {
         backgroundColor: backgroundColor,
         leading: leading,
         middle: Text(
-          title,
+          title!,
           style: const TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w700,
@@ -59,7 +59,7 @@ class AdaptativeAppBar extends StatelessWidget implements PreferredSize {
                 color: Colors.transparent,
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
-                  children: actions,
+                  children: actions!,
                 ),
               ),
       );

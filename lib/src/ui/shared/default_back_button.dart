@@ -11,7 +11,7 @@ class DefaultBackButton extends StatelessWidget {
       color: Colors.transparent,
       child: IconButton(
         splashRadius: 20,
-        icon: const Icon(
+        icon:  Icon(
           Icons.arrow_back_ios,
           size: 20,
           color: Colors.white,

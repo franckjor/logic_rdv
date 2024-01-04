@@ -1104,7 +1104,7 @@ class SelectedPatientResponseForRdvBuilder
         _data?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'SelectedPatientResponseForRdv', _$failedField, e.toString());
+            r'SelectedPatientResponseForRdv', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -1413,7 +1413,7 @@ class DataSelectedPatientResponseForRdvBuilder
         _data?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataSelectedPatientResponseForRdv', _$failedField, e.toString());
+            r'DataSelectedPatientResponseForRdv', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -1626,7 +1626,7 @@ class DataSelectedPatientResponseForRdvBodyBuilder
         throw new BuiltValueNestedFieldError(
             r'DataSelectedPatientResponseForRdvBody',
             _$failedField,
-            e.toString());
+            e.toString())!;
       }
       rethrow;
     }
@@ -1730,7 +1730,7 @@ class ApptsinprogressBuilder
         _appts?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'Apptsinprogress', _$failedField, e.toString());
+            r'Apptsinprogress', _$failedField, e.toString())!;
       }
       rethrow;
     }

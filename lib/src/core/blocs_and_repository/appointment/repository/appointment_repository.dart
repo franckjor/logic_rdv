@@ -13,7 +13,7 @@ class AppointmentRepository extends AbstractRepository {
         token, path,
         data: appointmentRequest.toJson());
     AppointmentResponse? appointmentResponse =
-        AppointmentResponse.fromJson(response.toString());
+        AppointmentResponse.fromJson(response.toString())!;
     return appointmentResponse;
   }
 
@@ -25,7 +25,7 @@ class AppointmentRepository extends AbstractRepository {
         token, path,
         data: cancelAppointmentRequest.toJson());
     CancelAppointmentResponse? cancelAppointmentResponse =
-        CancelAppointmentResponse.fromJson(response.toString());
+        CancelAppointmentResponse.fromJson(response.toString())!;
     return cancelAppointmentResponse;
   }
 

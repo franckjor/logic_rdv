@@ -616,7 +616,7 @@ class ValidateRdvSummaryDtoBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'ValidateRdvSummaryDto', _$failedField, e.toString());
+            r'ValidateRdvSummaryDto', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -899,7 +899,7 @@ class DataValidateRdvSummaryDto2Builder
         _apptbuttonvalidation?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataValidateRdvSummaryDto2', _$failedField, e.toString());
+            r'DataValidateRdvSummaryDto2', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -1229,7 +1229,7 @@ class DataValidateRdvSummaryDtoBuilder
         _paymentIntent?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataValidateRdvSummaryDto', _$failedField, e.toString());
+            r'DataValidateRdvSummaryDto', _$failedField, e.toString())!;
       }
       rethrow;
     }

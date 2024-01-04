@@ -27,7 +27,7 @@ class AppointmentBloc extends Bloc<AppointmentEvent, AppointmentState> {
           appointmentRequest: event.getAppointmentRequest);
       yield AppointmentLoadingSuccess(response: appointmentList);
     } catch (error) {
-      yield AppointmentFailure(error: error.toString());
+      yield AppointmentFailure(error: error.toString())!;
     }
   }
 
@@ -38,7 +38,7 @@ class AppointmentBloc extends Bloc<AppointmentEvent, AppointmentState> {
           cancelAppointmentRequest: event.cancelAppointmentRequest);
       yield CancelAppointmentLoadingSuccess(response: appointmentList);
     } catch (error) {
-      yield AppointmentFailure(error: error.toString());
+      yield AppointmentFailure(error: error.toString())!;
     }
   }
 }

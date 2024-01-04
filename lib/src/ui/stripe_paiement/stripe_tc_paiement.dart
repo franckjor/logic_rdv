@@ -30,17 +30,17 @@ createPaymentIntent(String amount, String currency, String stripeClientSecret ) 
     );
     return json.decode(response.body);
   } catch (err) {
-    throw Exception(err.toString());
+    throw Exception(err.toString())!;
   }
 }
 
 class StripeTransactionResponse {
-  String message;
+  String? message;
   bool success;
 
   StripeTransactionResponse({
     this.message,
-    this.success,
+    this.success = false,
   });
 }
 
@@ -54,13 +54,13 @@ class StripeServiceTc {
     Stripe.merchantIdentifier = 'test';
   }
   static Future<StripeTransactionResponse> payNowHandler({
-    String stripeClientSecret,
-    BuildContext context,
-    String cardNumber,
-    int expMonth,
-    int expYear,
-    ProgressDialog ackRdvProgressDialog,
-    String tokentelecon,
+    required String stripeClientSecret,
+    required BuildContext context,
+    required String cardNumber,
+    required int expMonth,
+    required int expYear,
+    required ProgressDialog ackRdvProgressDialog,
+    required String tokentelecon,
   }) async {
     try {
       // var paymentMethod = await StripePayment.paymentRequestWithCardForm(

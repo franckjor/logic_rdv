@@ -37,7 +37,7 @@ abstract class InscriptionCheckResponse
         serializers.serializeWith(InscriptionCheckResponse.serializer, this));
   }
 
-  static InscriptionCheckResponse fromJson(String jsonString) {
+  static InscriptionCheckResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         InscriptionCheckResponse.serializer, json.decode(jsonString));
   }
@@ -63,7 +63,7 @@ abstract class ParamsInscriptionCheckResponse
         ParamsInscriptionCheckResponse.serializer, this));
   }
 
-  static ParamsInscriptionCheckResponse fromJson(String jsonString) {
+  static ParamsInscriptionCheckResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsInscriptionCheckResponse.serializer, json.decode(jsonString));
   }
@@ -93,7 +93,7 @@ abstract class DataInscriptionCheckResponse
         DataInscriptionCheckResponse.serializer, this));
   }
 
-  static DataInscriptionCheckResponse fromJson(String jsonString) {
+  static DataInscriptionCheckResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataInscriptionCheckResponse.serializer, json.decode(jsonString));
   }
@@ -115,7 +115,7 @@ abstract class Etabs implements Built<Etabs, EtabsBuilder> {
     return json.encode(serializers.serializeWith(Etabs.serializer, this));
   }
 
-  static Etabs fromJson(String jsonString) {
+  static Etabs? fromJson(String jsonString) {
     return serializers.deserializeWith(
         Etabs.serializer, json.decode(jsonString));
   }
@@ -136,7 +136,7 @@ abstract class Cgu implements Built<Cgu, CguBuilder> {
     return json.encode(serializers.serializeWith(Cgu.serializer, this));
   }
 
-  static Cgu fromJson(String jsonString) {
+  static Cgu? fromJson(String jsonString) {
     return serializers.deserializeWith(Cgu.serializer, json.decode(jsonString));
   }
 

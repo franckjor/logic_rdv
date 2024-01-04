@@ -25,7 +25,7 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
           notificationListRequest: event.notificationListRequest);
       yield NotificationListLoadingSuccess(response: notificationList);
     } catch (error) {
-      yield NotificationFailure(error: error.toString());
+      yield NotificationFailure(error: error.toString())!;
     }
   }
 }

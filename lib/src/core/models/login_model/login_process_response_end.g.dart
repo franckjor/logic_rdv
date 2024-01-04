@@ -542,7 +542,7 @@ class LoginProcessResponseEndBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'LoginProcessResponseEnd', _$failedField, e.toString());
+            r'LoginProcessResponseEnd', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -863,7 +863,7 @@ class DataLoginProcessResponseEndBuilder
         buttonvalidation.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataLoginProcessResponseEnd', _$failedField, e.toString());
+            r'DataLoginProcessResponseEnd', _$failedField, e.toString())!;
       }
       rethrow;
     }

@@ -33,7 +33,7 @@ abstract class LoginResponse
         .encode(serializers.serializeWith(LoginResponse.serializer, this));
   }
 
-  static LoginResponse fromJson(String jsonString) {
+  static LoginResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         LoginResponse.serializer, json.decode(jsonString));
   }
@@ -57,7 +57,7 @@ abstract class ParamsLoginResponse
         serializers.serializeWith(ParamsLoginResponse.serializer, this));
   }
 
-  static ParamsLoginResponse fromJson(String jsonString) {
+  static ParamsLoginResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsLoginResponse.serializer, json.decode(jsonString));
   }
@@ -88,7 +88,7 @@ abstract class DataLoginResponse
         .encode(serializers.serializeWith(DataLoginResponse.serializer, this));
   }
 
-  static DataLoginResponse fromJson(String jsonString) {
+  static DataLoginResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataLoginResponse.serializer, json.decode(jsonString));
   }

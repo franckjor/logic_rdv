@@ -37,7 +37,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           await repository.loginStarted(login: event.loginStartedRequest);
       yield LoginStartedLoadingSuccess(response: userResponse);
     } catch (error) {
-      yield LoginFailure(error: error.toString());
+      yield LoginFailure(error: error.toString())!;
     }
   }
 
@@ -48,7 +48,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           await repository.loginSearchEmail(login: event.loginStartedRequest);
       yield LoginSearchEmailLoadingSuccess(response: userResponse);
     } catch (error) {
-      yield LoginFailure(error: error.toString());
+      yield LoginFailure(error: error.toString())!;
     }
   }
 
@@ -59,7 +59,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           await repository.loginSearchPass(login: event.loginStartedRequest);
       yield LoginSearchPassLoadingSuccess(response: userResponse);
     } catch (error) {
-      yield LoginFailure(error: error.toString());
+      yield LoginFailure(error: error.toString())!;
     }
   }
 
@@ -70,7 +70,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           await repository.loginForgotPass(login: event.loginStartedRequest);
       yield LoginForgotPassLoadingSuccess(response: userResponse);
     } catch (error) {
-      yield LoginFailure(error: error.toString());
+      yield LoginFailure(error: error.toString())!;
     }
   }
 
@@ -81,7 +81,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           await repository.loginForgotForSend(login: event.loginStartedRequest);
       yield LoginForSendCodeLoadingSuccess(response: userResponse);
     } catch (error) {
-      yield LoginFailure(error: error.toString());
+      yield LoginFailure(error: error.toString())!;
     }
   }
 
@@ -92,7 +92,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           login: event.loginStartedRequest);
       yield LoginForNewPassLoadingSuccess(response: userResponse);
     } catch (error) {
-      yield LoginFailure(error: error.toString());
+      yield LoginFailure(error: error.toString())!;
     }
   }
 
@@ -103,7 +103,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           await repository.loginForNewCode(login: event.loginStartedRequest);
       yield LoginForAskNewCodeLoadingSuccess(response: userResponse);
     } catch (error) {
-      yield LoginFailure(error: error.toString());
+      yield LoginFailure(error: error.toString())!;
     }
   }
 
@@ -113,7 +113,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           await repository.userLogin(login: event.loginRequest);
       yield LoginLoadingSuccess(response: userResponse);
     } catch (error) {
-      yield LoginFailure(error: error.toString());
+      yield LoginFailure(error: error.toString())!;
     }
   }
 
@@ -123,7 +123,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           await repository.forgotPassword(forgotPasswordRequest: event.email);
       yield PasswordChangeSuccessFully(response: userResponse);
     } catch (error) {
-      yield LoginFailure(error: error.toString());
+      yield LoginFailure(error: error.toString())!;
     }
   }
 }

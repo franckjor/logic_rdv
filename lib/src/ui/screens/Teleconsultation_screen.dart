@@ -11,18 +11,18 @@ import 'package:logic_rdv_v0/src/core/bloc/navigation/navigation_bloc.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:universal_io/io.dart';
 //import 'package:screen/screen.dart';
-import 'OpenTok.dart';
+
 import 'dart:async';
 import 'package:wakelock/wakelock.dart';
 
 class GetCredentialsTokboxPageArguments implements PagesArgumentType {
-  final String API_KEY;
-  final String SESSION_ID;
-  final String TOKEN;
-  final String TOKENTELECONS;
-  final String Date;
-  final String Doctor;
-  final String Patient;
+  final String? API_KEY;
+  final String? SESSION_ID;
+  final String? TOKEN;
+  final String? TOKENTELECONS;
+  final String? Date;
+  final String? Doctor;
+  final String? Patient;
 
   GetCredentialsTokboxPageArguments(
       {this.API_KEY,
@@ -118,7 +118,7 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
       return "En attente de votre interlocuteur...";
     } else {
       startwatch();
-      return "Teleconsultation en cours " + widget.arguments.Doctor;
+      return "Teleconsultation en cours " + widget.arguments.Doctor!;
     }
   }
 //end function timer
@@ -342,7 +342,7 @@ class _TeleconsultationScreenState extends State<TeleconsultationScreen> {
               surfaceFactory:
                   (BuildContext context, PlatformViewController controller) {
                 return AndroidViewSurface(
-                  controller: controller,
+                  controller: controller as AndroidViewController,
                   gestureRecognizers: const <Factory<
                       OneSequenceGestureRecognizer>>{},
                   hitTestBehavior: PlatformViewHitTestBehavior.opaque,

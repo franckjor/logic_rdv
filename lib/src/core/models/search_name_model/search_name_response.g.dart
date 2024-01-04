@@ -722,7 +722,7 @@ class SearchNameResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'SearchNameResponse', _$failedField, e.toString());
+            r'SearchNameResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -1041,7 +1041,7 @@ class DataSearchNameResponseBuilder
         list.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataSearchNameResponse', _$failedField, e.toString());
+            r'DataSearchNameResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -1363,7 +1363,7 @@ class ObjectNameOfSearchBuilder
         appointment.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'ObjectNameOfSearch', _$failedField, e.toString());
+            r'ObjectNameOfSearch', _$failedField, e.toString())!;
       }
       rethrow;
     }

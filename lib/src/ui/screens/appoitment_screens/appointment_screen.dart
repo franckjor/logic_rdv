@@ -44,29 +44,27 @@ class AppointementArg {
 }
 
 class AppointmentScreen extends StatefulWidget {
-  final AppointementArg appointementArg;
+  final AppointementArg? appointementArg;
 
-  AppointmentScreen({required this.appointementArg});
+  AppointmentScreen({ this.appointementArg});
 
   @override
   _AppointmentScreenState createState() => _AppointmentScreenState();
 }
 
 class _AppointmentScreenState extends State<AppointmentScreen> {
-  String _tokenUser;
-  String _email;
-  String _fullName;
+  late String _tokenUser;
+  late String _email;
+  late String _fullName;
   ScrollController _scrollController = new ScrollController();
   int currentPage = 1;
-  int totalOfPage;
+  late int totalOfPage;
   bool isRefreshList = false;
   bool _isLoading = false;
-  String _authorizationToke;
-  String _installationIdKey;
+  late String _installationIdKey;
 
   bool _notification = true;
 
-  String _rdvDate, _doctorRdv;
   static const String PLAY_STORE_APP_ID = "fr.logicrdv.logicrdv";
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -75,7 +73,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
 
   Future<String> getInstalationIdKey() async {
     final prefs = await SharedPreferences.getInstance();
-    _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey);
+    _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey)!;
     print("InstallationIdHome: $_installationIdKey");
 
     return _installationIdKey;
@@ -108,7 +106,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
           getAppointmentList(
               context: context,
               tokenUser: _tokenUser,
-              page: currentPage.toString());
+              page: currentPage.toString())!;
         });
       }
     }
@@ -154,16 +152,16 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                : const Icon(
+                :  Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -189,7 +187,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
                 getAppointmentList(
                     context: context,
                     tokenUser: _tokenUser,
-                    page: currentPage.toString());
+                    page: currentPage.toString())!;
               });
             } else if (state is SharedPreferenceTokenAuthorizationWriteState) {
               showDialog(
@@ -349,7 +347,7 @@ class _AppointmentScreenState extends State<AppointmentScreen> {
               BlocProvider.of<SharedPreferenceBloc>(context)
                 ..add(SetSharedPreferenceTokenAuthorization(
                     tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
-                    tokenAuthorization: state.getToken.data.authorization
+                    tokenAuthorization: state.getToken.data.authorization!
                         .replaceAll("X-LOGICRDV-AUTH:", "")));
             } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
               flushBarError(state.error, context);

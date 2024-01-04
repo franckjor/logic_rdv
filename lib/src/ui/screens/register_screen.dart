@@ -34,7 +34,7 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-  FocusNode _focusNodeConnectButton;
+  late FocusNode _focusNodeConnectButton;
 
   double _textFieldHeight = 0;
   final _key = GlobalKey();
@@ -58,9 +58,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _isdoctorChecked = false;
   String _dropDownSelected = "";
 
-  Etabs _etabs;
-  String code;
-  String _idDoctor;
+  late Etabs _etabs;
+  late String code;
+  late String _idDoctor;
   String _checkedCondition = '0';
 
   @override
@@ -69,7 +69,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _focusNodeConnectButton = FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        _textFieldHeight = _key.currentContext.size.height;
+        _textFieldHeight = _key.currentContext!.size!.height;
       });
     });
   }
@@ -101,16 +101,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
             actions: [
           IconButton(
             icon: Platform.isAndroid 
-                ? const Icon(
+                ?  Icon(
               MdiIcons.menu,
               color: Color.fromARGB(255, 255, 255, 255),
             )
-                : const Icon(
+                :  Icon(
               MdiIcons.menu,
               color: Color.fromARGB(255, 255, 255, 255),
             ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
         ),
@@ -124,7 +124,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ..add(SetSharedPreferenceTokenAuthorization(
                       tokenAuthorizationKey:
                           PreferenceKey.tokenAuthorizationKey,
-                      tokenAuthorization: state.getToken.data.authorization
+                      tokenAuthorization: state.getToken.data.authorization!
                           .replaceAll("X-LOGICRDV-AUTH:", "")));
               } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
                 flushBarError(state.error, context);
@@ -303,10 +303,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                             'Téléphone du cabinet médical',
                                         controller: _cabinetPhoneController,
                                         validator: (value) =>
-                                            verifyEmpty(value),
+                                            verifyEmpty(value!, errorMessage: ''),
                                         onEditingComplete: () {
                                           final _form = _formKey1.currentState;
-                                          if (_form.validate()) {
+                                          if (_form!.validate()) {
                                             onPressedCheckDoctorButton(
                                                 context: context,
                                                 phoneNumberCabinet:
@@ -332,7 +332,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                           onPressed: () {
                                             final _form =
                                                 _formKey1.currentState;
-                                            if (_form.validate()) {
+                                            if (_form!.validate()) {
                                               onPressedCheckDoctorButton(
                                                   context: context,
                                                   phoneNumberCabinet:
@@ -374,7 +374,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     hint: Text('selectionner une valeur'),
                                     onChanged: (value) {
                                       setState(() {
-                                        _etabs = value;
+                                        _etabs = value!;
                                         _etabsList.forEach((element) {
                                           if (element.name == value.name) {
                                             _idDoctor = element.id;
@@ -406,7 +406,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       AdaptativeTextFormField(
                                         hintText: 'Nom',
                                         validator: (value) =>
-                                            verifyEmpty(value),
+                                            verifyEmpty(value!, errorMessage: ''),
                                         controller: _nameController,
                                       ),
                                       Visibility(
@@ -427,7 +427,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       AdaptativeTextFormField(
                                         hintText: 'Prénom',
                                         validator: (value) =>
-                                            verifyEmpty(value),
+                                            verifyEmpty(value!, errorMessage: ''),
                                         controller: _prenomController,
                                       ),
                                       const SizedBox(height: 8),
@@ -435,7 +435,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         hintText: 'Numèro de téléphone',
                                         textInputType: TextInputType.phone,
                                         validator: (value) =>
-                                            verifyEmpty(value),
+                                            verifyEmpty(value!, errorMessage: ''),
                                         controller: _phoneController,
                                       ),
                                       const SizedBox(height: 8),
@@ -443,7 +443,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         hintText: 'Email',
                                         textInputType:
                                             TextInputType.emailAddress,
-                                        validator: (val) => verifyEmpty(val),
+                                        validator: (val) => verifyEmpty(val!, errorMessage: ''),
                                         controller: _emailController,
                                       ),
                                       const SizedBox(height: 8),
@@ -451,9 +451,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         controller: _passwordController,
                                         obscureText: _password1,
                                         validator: (value) =>
-                                            verifyEmpty(value),
+                                            verifyEmpty(value!, errorMessage: ''),
                                         decoration: InputDecoration(
-                                          prefixIcon: const Icon(
+                                          prefixIcon:  Icon(
                                             Icons.lock,
                                             color: Color(0xFFd3e0ea),
                                           ),
@@ -527,9 +527,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         controller: _confirmPasswordController,
                                         obscureText: _password2,
                                         validator: (value) =>
-                                            verifyEmpty(value),
+                                            verifyEmpty(value!, errorMessage: ''),
                                         decoration: InputDecoration(
-                                          prefixIcon: const Icon(
+                                          prefixIcon:  Icon(
                                             Icons.lock,
                                             color: Color(0xFFd3e0ea),
                                           ),
@@ -666,7 +666,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 onPressed: () {
                                   if (!_isdoctorChecked) {
                                     final _form = _formKey1.currentState;
-                                    if (_form.validate()) {
+                                    if (_form!.validate()) {
                                       onPressedCheckDoctorButton(
                                           context: context,
                                           phoneNumberCabinet:
@@ -674,7 +674,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     }
                                   } else {
                                     final _form = _formKey.currentState;
-                                    if (_form.validate()) {
+                                    if (_form!.validate()) {
                                       if (_passwordController.text ==
                                           _confirmPasswordController.text) {
                                         if (_checkedCondition == '1') {

@@ -10,9 +10,9 @@ import '../../../common.dart';
 import '../OpenTok.dart';
 
 class AppointmentDetailsPageArguments implements PagesArgumentType {
-  final CabinetResponse cabinetResponse;
-  final PatientResponse patientResponse;
-  final AppointmentDataResponse appointmentDataResponse;
+  final CabinetResponse? cabinetResponse;
+  final PatientResponse? patientResponse;
+  final AppointmentDataResponse? appointmentDataResponse;
 
   AppointmentDetailsPageArguments({
     this.cabinetResponse,
@@ -40,18 +40,18 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
 
   DateFormat format = DateFormat("dd/MM/yy");
   var formatterDate = new DateFormat('dd/MM/yy', 'fr').format(DateTime.now());
-  String _rdvDate;
-  String _dateOfAppointement;
-  DateTime _realyDateOfAppointement;
-  List<String> value;
+  late String _rdvDate;
+  late String _dateOfAppointement;
+  late DateTime _realyDateOfAppointement;
+  late List<String> value;
   double _currentTime = toDoubleHour(TimeOfDay.now());
-  TimeOfDay _startTime;
-  double _rdvTime;
+  late TimeOfDay _startTime;
+  late double _rdvTime;
 
-  DateTime _currentDate;
+  late DateTime _currentDate;
 
   _getRdvDate() {
-    _rdvDate = widget.arguments.appointmentDataResponse.date;
+    _rdvDate = widget.arguments.appointmentDataResponse!.date;
     value = _rdvDate.split(" ");
     _dateOfAppointement = value[1].trim();
     _realyDateOfAppointement =
@@ -59,36 +59,36 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
     print('date: $_realyDateOfAppointement');
     _startTime = TimeOfDay(
         hour: int.parse(
-            widget.arguments.appointmentDataResponse.time.split(":")[0]),
+            widget.arguments.appointmentDataResponse!.time.split(":")[0]),
         minute: int.parse(
-            widget.arguments.appointmentDataResponse.time.split(":")[1]));
+            widget.arguments.appointmentDataResponse!.time.split(":")[1]));
     _rdvTime = toDoubleHour(_startTime);
 
     print('rdv time: $_rdvTime');
   }
 
   _getStatusOfRdv() {
-    if (widget.arguments.appointmentDataResponse.status == 'cancel') {
+    if (widget.arguments.appointmentDataResponse!.status == 'cancel') {
       return "Annulé";
-    } else if (widget.arguments.appointmentDataResponse.status == 'done') {
+    } else if (widget.arguments.appointmentDataResponse!.status == 'done') {
       return "Honoré";
-    } else if (widget.arguments.appointmentDataResponse.status == 'miss') {
+    } else if (widget.arguments.appointmentDataResponse!.status == 'miss') {
       return "Manqué";
-    } else if (widget.arguments.appointmentDataResponse.status == 'standby') {
+    } else if (widget.arguments.appointmentDataResponse!.status == 'standby') {
       return "";
-    } else if (widget.arguments.appointmentDataResponse.status == '') {
+    } else if (widget.arguments.appointmentDataResponse!.status == '') {
       return "";
     }
   }
 
   _getStatusOfRdvShowBtnCancel() {
-    if (widget.arguments.appointmentDataResponse.status == 'cancel') {
+    if (widget.arguments.appointmentDataResponse!.status == 'cancel') {
       return false;
-    } else if (widget.arguments.appointmentDataResponse.status == 'done') {
+    } else if (widget.arguments.appointmentDataResponse!.status == 'done') {
       return false;
-    } else if (widget.arguments.appointmentDataResponse.status == 'miss') {
+    } else if (widget.arguments.appointmentDataResponse!.status == 'miss') {
       return false;
-    } else if (widget.arguments.appointmentDataResponse.status == '') {
+    } else if (widget.arguments.appointmentDataResponse!.status == '') {
       return true;
     }
   }
@@ -102,7 +102,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
   //   }
   // }
   _compareCurrentTime() {
-    if (widget.arguments.appointmentDataResponse.past == '0') {
+    if (widget.arguments.appointmentDataResponse!.past == '0') {
       return true;
     } else {
       return false;
@@ -115,10 +115,9 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
     print('current date formatted: $_currentDate');
     print('current time: $_currentTime');
     _getRdvDate();
-    if (widget.arguments.appointmentDataResponse.tokentelecons != '' ||
-        widget.arguments.appointmentDataResponse.tokentelecons != null &&
-            widget.arguments.appointmentDataResponse.status == '' ||
-        widget.arguments.appointmentDataResponse.status == null) {
+    if (widget.arguments.appointmentDataResponse!.tokentelecons != '' ||
+        widget.arguments.appointmentDataResponse!.tokentelecons != '' &&
+            widget.arguments.appointmentDataResponse!.status == '') {
       _isTcBtnVisible = true;
     }
     super.initState();
@@ -140,7 +139,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
               Container(
                 padding: EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: widget.arguments.appointmentDataResponse.status !=
+                  color: widget.arguments.appointmentDataResponse!.status !=
                               "cancel" &&
                           _compareCurrentTime()
                       ? Color(0xFF0A1931)
@@ -165,7 +164,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                     Row(
                       children: [
                         Transform.rotate(
-                          child: const Icon(
+                          child:  Icon(
                             Icons.calendar_today,
                             color: Colors.white,
                             size: 14,
@@ -174,7 +173,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                         ),
                         const SizedBox(width: 6),
                         Text(
-                          widget.arguments.appointmentDataResponse.date ?? '--',
+                          widget.arguments.appointmentDataResponse!.date ,
                           style: TextStyle(
                             fontSize: 13.5,
                             color: Colors.white,
@@ -185,16 +184,15 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                     ),
                     Row(
                       children: [
-                        const Icon(
+                         Icon(
                           Icons.schedule,
                           size: 14,
                           color: Colors.white,
                         ),
                         const SizedBox(width: 6),
                         Text(
-                          widget.arguments.appointmentDataResponse.time
-                                  .toString() ??
-                              '--',
+                          widget.arguments.appointmentDataResponse!.time
+                                  .toString(),
                           style: TextStyle(
                             fontSize: 13.5,
                             color: Colors.white,
@@ -245,7 +243,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                         shape: BoxShape.circle,
                         color: AppColors.colorPrimary.withOpacity(.5),
                       ),
-                      child: const Icon(
+                      child:  Icon(
                         Icons.gite,
                         color: AppColors.colorWhite,
                         size: 50,
@@ -253,7 +251,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      widget.arguments.cabinetResponse.nom ?? '',
+                      widget.arguments.cabinetResponse!.nom ,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -262,7 +260,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      widget.arguments.cabinetResponse.phone ?? '',
+                      widget.arguments.cabinetResponse!.phone,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.grey.shade400,
@@ -271,7 +269,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      widget.arguments.cabinetResponse.city ?? '',
+                      widget.arguments.cabinetResponse!.city ,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.grey.shade400,
@@ -280,7 +278,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      widget.arguments.cabinetResponse.address ?? '',
+                      widget.arguments.cabinetResponse!.address ,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.grey.shade400,
@@ -329,7 +327,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                         shape: BoxShape.circle,
                         color: AppColors.colorPrimary.withOpacity(.5),
                       ),
-                      child: const Icon(
+                      child:  Icon(
                         Icons.person,
                         color: AppColors.colorWhite,
                         size: 50,
@@ -337,7 +335,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      widget.arguments.patientResponse.nom ?? '',
+                      widget.arguments.patientResponse!.nom ,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -346,7 +344,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      widget.arguments.patientResponse.phone ?? '',
+                      widget.arguments.patientResponse!.phone ,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.grey.shade400,
@@ -355,7 +353,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      widget.arguments.patientResponse.birthdate ?? '',
+                      widget.arguments.patientResponse!.birthdate ,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.grey.shade400,
@@ -364,7 +362,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      widget.arguments.patientResponse.email ?? '',
+                      widget.arguments.patientResponse!.email ,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.grey.shade400,
@@ -430,8 +428,8 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                                 arguments: TeleconsArgument(
                                     tokentelecon: widget
                                         .arguments
-                                        ?.appointmentDataResponse
-                                        ?.tokentelecons));
+                                        .appointmentDataResponse!
+                                        .tokentelecons));
                           },
                         ),
                       ),
@@ -458,7 +456,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
     topRight: Radius.circular(12),
     ),
     color:
-    widget.arguments.appointmentDataResponse.status !=
+    widget.arguments.appointmentDataResponse!.status !=
     "cancel" &&
     _compareCurrentTime()
     ? Color(0xFF0A1931)
@@ -491,14 +489,14 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
     ),
     Row(
     children: [
-    const Icon(
+     Icon(
     Icons.schedule,
     size: 14,
     color: Colors.white,
     ),
     const SizedBox(width: 6),
     Text(
-    widget.arguments.appointmentDataResponse.time
+    widget.arguments.appointmentDataResponse!.time
     .toString() ??
     '--',
     style: TextStyle(
@@ -557,7 +555,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
     alignment: Alignment.centerLeft,
     child: ListTile(
     title: Text(
-    widget.arguments.cabinetResponse.nom,
+    widget.arguments.cabinetResponse!.nom,
     textAlign: TextAlign.end,
     ),
     leading: Text(
@@ -572,7 +570,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
     alignment: Alignment.centerLeft,
     child: ListTile(
     title: Text(
-    widget.arguments.cabinetResponse.phone,
+    widget.arguments.cabinetResponse!.phone,
     textAlign: TextAlign.end,
     ),
     leading: Text(
@@ -587,7 +585,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
     alignment: Alignment.centerLeft,
     child: ListTile(
     title: Text(
-    widget.arguments.cabinetResponse.city,
+    widget.arguments.cabinetResponse!.city,
     textAlign: TextAlign.end,
     ),
     leading: Text(
@@ -602,7 +600,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
     alignment: Alignment.centerLeft,
     child: ListTile(
     title: Text(
-    widget.arguments.cabinetResponse.address,
+    widget.arguments.cabinetResponse!.address,
     textAlign: TextAlign.end,
     ),
     leading: Text(
@@ -636,7 +634,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
     alignment: Alignment.centerLeft,
     child: ListTile(
     title: Text(
-    widget.arguments.patientResponse.nom,
+    widget.arguments.patientResponse!.nom,
     textAlign: TextAlign.end,
     ),
     leading: Text(
@@ -651,7 +649,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
     alignment: Alignment.centerLeft,
     child: ListTile(
     title: Text(
-    widget.arguments.patientResponse.phone,
+    widget.arguments.patientResponse!.phone,
     textAlign: TextAlign.end,
     ),
     leading: Text(
@@ -666,7 +664,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
     alignment: Alignment.centerLeft,
     child: ListTile(
     title: Text(
-    widget.arguments.patientResponse.birthdate,
+    widget.arguments.patientResponse!.birthdate,
     textAlign: TextAlign.end,
     ),
     leading: Text(
@@ -681,7 +679,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
     alignment: Alignment.centerLeft,
     child: ListTile(
     title: Text(
-    widget.arguments.patientResponse.email,
+    widget.arguments.patientResponse!.email,
     textAlign: TextAlign.end,
     ),
     leading: Text(

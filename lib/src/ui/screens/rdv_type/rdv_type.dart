@@ -73,12 +73,11 @@ class RdvType extends StatefulWidget {
 }
 
 class _RdvTypeState extends State<RdvType> {
-  String _tokenUser;
+  late String _tokenUser;
   List<AppointmentTypeResponse> _appointmentType = [];
-  String _session;
-  String _email;
-  String _fullName;
-  String _typState;
+  late String _session;
+  late String _email;
+  late String _fullName;
 
   bool _isLoading = false;
 
@@ -124,29 +123,29 @@ class _RdvTypeState extends State<RdvType> {
           _tokenUser != null
               ? IconButton(
                   icon: isAndroid || isWeb
-                      ? const Icon(
+                      ?  Icon(
                           MdiIcons.accountCircle,
                           color: Colors.white,
                         )
-                      : const Icon(
+                      :  Icon(
                           CupertinoIcons.person_alt_circle_fill,
                           color: Colors.white,
                         ),
                   splashRadius: 20,
-                  onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                  onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
                 )
               : IconButton(
                   icon: isAndroid || isWeb
-                      ? const Icon(
+                      ?  Icon(
                           MdiIcons.menu,
                           color: AppColors.whiteColor,
                         )
-                      : const Icon(
+                      :  Icon(
                           MdiIcons.menu,
                           color: AppColors.whiteColor,
                         ),
                   splashRadius: 20,
-                  onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                  onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
                 ),
         ],
       ),

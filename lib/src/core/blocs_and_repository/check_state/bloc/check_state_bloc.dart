@@ -21,7 +21,7 @@ class CheckStateBloc extends Bloc<CheckStateEvent, CheckStateSate> {
           createAppointmentRequest: event.createAppointmentRequest);
       yield CheckStateLoadingSuccess(response: appointmentList);
     } catch (error) {
-      yield CheckStateFailure(error: error.toString());
+      yield CheckStateFailure(error: error.toString())!;
     }
   }
 }

@@ -11,7 +11,7 @@ class RemoveDoctorRepository extends AbstractRepository {
         token, path,
         data: request.toJson());
     RemoveDoctorResponse removeDoctorResponse =
-        RemoveDoctorResponse.fromJson(response.toString());
+        RemoveDoctorResponse.fromJson(response.toString())!;
     return removeDoctorResponse;
   }
 

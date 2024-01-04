@@ -13,7 +13,7 @@ class InscriptionRapidRepository extends AbstractRepository {
         token, path,
         data: inscriptionCheckRequest.toJson());
     InscriptionCheckResponse verifyDoctor =
-        InscriptionCheckResponse.fromJson(response.toString());
+        InscriptionCheckResponse.fromJson(response.toString())!;
     return verifyDoctor;
   }
 
@@ -25,7 +25,7 @@ class InscriptionRapidRepository extends AbstractRepository {
         token, path,
         data: createPatientRequest.toJson());
     CreatePatientResponse createPatientResponse =
-        CreatePatientResponse.fromJson(response.toString());
+        CreatePatientResponse.fromJson(response.toString())!;
     return createPatientResponse;
   }
 

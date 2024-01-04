@@ -23,7 +23,7 @@ class AddDoctorBloc extends Bloc<AddDoctorEvent, AddDoctorState> {
           await repository.addDoctor(addDoctorRequest: event.addDoctorRequest);
       yield AddDoctorLoadingSuccess(response: doctorAdded);
     } catch (error) {
-      yield AddDoctorFailure(error: error.toString());
+      yield AddDoctorFailure(error: error.toString())!;
     }
   }
 }

@@ -315,7 +315,7 @@ class RemoveDoctorResponseBuilder
         params.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'RemoveDoctorResponse', _$failedField, e.toString());
+            r'RemoveDoctorResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

@@ -27,7 +27,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
           await repository.updateAccount(userRequest: event.userRequest);
       yield UserStateLoadingSuccess(userResponse: userUpdate);
     } catch (error) {
-      yield UserStateLoadingFailure(error: error.toString());
+      yield UserStateLoadingFailure(error: error.toString())!;
     }
   }
 
@@ -36,7 +36,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       final userUpdate = await repository.checkout(tokenUser: event.tokenUser);
       yield UserCheckoutStateLoadingSuccess(userResponse: userUpdate);
     } catch (error) {
-      yield UserStateLoadingFailure(error: error.toString());
+      yield UserStateLoadingFailure(error: error.toString())!;
     }
   }
 }

@@ -28,7 +28,7 @@ class FixerRdvDoctorBloc
           tokenUser: event.tokenUser);
       yield FixerRdvDoctorLoadingSuccess(response: userResponse);
     } catch (error) {
-      yield FixerRdvDoctorFailure(error: error.toString());
+      yield FixerRdvDoctorFailure(error: error.toString())!;
     }
   }
 }

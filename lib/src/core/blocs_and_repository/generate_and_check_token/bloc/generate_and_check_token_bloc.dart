@@ -32,7 +32,7 @@ class GenerateAndCheckTokenBloc
           getTokenRequest: event.getTokenRequest);
       yield GenerateTokenStateLoadingSuccess(getToken: result);
     } catch (error) {
-      yield GenerateAndCheckTokenStateLoadingFailure(error: error.toString());
+      yield GenerateAndCheckTokenStateLoadingFailure(error: error.toString())!;
     }
   }
 
@@ -42,7 +42,7 @@ class GenerateAndCheckTokenBloc
       final result = await repository.verifyTokenAuthorizationRequest();
       yield VerifyTokenStateLoadingSuccess(getToken: result);
     } catch (error) {
-      yield GenerateAndCheckTokenStateLoadingFailure(error: error.toString());
+      yield GenerateAndCheckTokenStateLoadingFailure(error: error.toString())!;
     }
   }
 }

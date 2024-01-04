@@ -10,7 +10,7 @@ class MessageRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: messageRequest.toJson());
     MessageResponse messageResponse =
-        MessageResponse.fromJson(response.toString());
+        MessageResponse.fromJson(response.toString())!;
     return messageResponse;
   }
 

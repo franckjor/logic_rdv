@@ -606,7 +606,7 @@ class SearchDoctorDetailsResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'SearchDoctorDetailsResponse', _$failedField, e.toString());
+            r'SearchDoctorDetailsResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -1046,7 +1046,7 @@ class DataDoctorDetailsBuilder
         chapters.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataDoctorDetails', _$failedField, e.toString());
+            r'DataDoctorDetails', _$failedField, e.toString())!;
       }
       rethrow;
     }

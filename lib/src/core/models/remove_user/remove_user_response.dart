@@ -33,7 +33,7 @@ abstract class RemoveUserResponse
         .encode(serializers.serializeWith(RemoveUserResponse.serializer, this));
   }
 
-  static RemoveUserResponse fromJson(String jsonString) {
+  static RemoveUserResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         RemoveUserResponse.serializer, json.decode(jsonString));
   }
@@ -58,7 +58,7 @@ abstract class ParamsRemoveUserResponse
         serializers.serializeWith(ParamsRemoveUserResponse.serializer, this));
   }
 
-  static ParamsRemoveUserResponse fromJson(String jsonString) {
+  static ParamsRemoveUserResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsRemoveUserResponse.serializer, json.decode(jsonString));
   }

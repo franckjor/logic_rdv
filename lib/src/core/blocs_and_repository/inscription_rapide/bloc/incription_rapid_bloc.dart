@@ -31,7 +31,7 @@ class InscriptionRapidBloc
           inscriptionCheckRequest: event.checkRequest);
       yield CheckDoctorLoadingSuccess(checkResponse: result);
     } catch (error) {
-      yield InscriptionRapidStateLoadingFailure(error: error.toString());
+      yield InscriptionRapidStateLoadingFailure(error: error.toString())!;
     }
   }
 
@@ -42,7 +42,7 @@ class InscriptionRapidBloc
           createPatientRequest: event.createPatientRequest);
       yield CreatePatientLoadingSuccess(createPatientResponse: result);
     } catch (error) {
-      yield InscriptionRapidStateLoadingFailure(error: error.toString());
+      yield InscriptionRapidStateLoadingFailure(error: error.toString())!;
     }
   }
 }

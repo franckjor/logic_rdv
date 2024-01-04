@@ -433,7 +433,7 @@ class AppVersionSummaryBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'AppVersionSummary', _$failedField, e.toString());
+            r'AppVersionSummary', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -634,7 +634,7 @@ class DataAppVersionSummaryBuilder
         version.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataAppVersionSummary', _$failedField, e.toString());
+            r'DataAppVersionSummary', _$failedField, e.toString())!;
       }
       rethrow;
     }

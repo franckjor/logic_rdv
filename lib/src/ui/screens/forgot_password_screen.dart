@@ -18,7 +18,7 @@ import 'package:logic_rdv_v0/src/ui/shared/buttons/default_elevated_button.dart'
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 class ForgotPasswordRdvPageArguments implements PagesArgumentType {
-  final LoginStartedResponse loginStartedResponse;
+  final LoginStartedResponse? loginStartedResponse;
 
   ForgotPasswordRdvPageArguments({
     this.loginStartedResponse,
@@ -46,8 +46,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   TextEditingController _newPasswordController = new TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
-  LoginStartedResponse _loginStartedResponse;
-  SharePreferenceObject _object;
+  late LoginStartedResponse _loginStartedResponse;
+  late SharePreferenceObject _object;
   bool _codeController = true;
 
   _setEmail() {
@@ -59,11 +59,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   @override
   void initState() {
     super.initState();
-    _loginStartedResponse = widget.arguments.loginStartedResponse;
+    _loginStartedResponse = widget.arguments.loginStartedResponse!;
     _setEmail();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        _textFieldHeight = _key.currentContext.size.height;
+        _textFieldHeight = _key.currentContext!.size!.height;
       });
     });
   }
@@ -128,11 +128,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   );
                 } else {
                   _object = SharePreferenceObject(
-                      token: state.response.data.user.tokenuser,
-                      email: state.response.data.user.email,
-                      firstName: state.response.data.user.nom,
-                      lastName: state.response.data.user.prenom,
-                      phoneNumber: state.response.data.user.mobile);
+                      token: state.response.data.user!.tokenuser,
+                      email: state.response.data.user!.email,
+                      firstName: state.response.data.user!.nom,
+                      lastName: state.response.data.user!.prenom,
+                      phoneNumber: state.response.data.user!.mobile);
                   BlocProvider.of<SharedPreferenceBloc>(context)
                     ..add(SetSharedPreferenceObject(
                       objectKey: PreferenceKey.objectKey,
@@ -242,7 +242,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     Padding(
                       padding: const EdgeInsets.only(right: 16),
                       child: Text(
-                        _loginStartedResponse.data?.headermessage,
+                        _loginStartedResponse.data.headermessage,
                         style: TextStyle(
                           color: AppColors.primaryColor.withOpacity(.5),
                           fontSize: 16,
@@ -257,7 +257,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           key: _key,
                           hintText: 'Entrez le code a 6 Chiffres',
                           controller: _emailController,
-                          validator: (value) => verifyEmpty(value),
+                          validator: (value) => verifyEmpty(value!, errorMessage: ''),
                         ),
                       ),
                     ),
@@ -268,7 +268,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           key: _key,
                           hintText: 'Nouveau mot de passe',
                           controller: _newPasswordController,
-                          validator: (value) => verifyEmpty(value),
+                          validator: (value) => verifyEmpty(value!, errorMessage: ''),
                         ),
                       ),
                     ),

@@ -41,7 +41,7 @@ class SharedPreferenceBloc
           SharePreferenceObject.fromJson(jsonDecode(result!));
       yield SharedPreferenceReadObjectState(sharePreferenceObject: object);
     } catch (e) {
-      yield SharedPreferenceLoadingFailure(error: e.toString());
+      yield SharedPreferenceLoadingFailure(error: e.toString())!;
     }
   }
 
@@ -50,10 +50,10 @@ class SharedPreferenceBloc
     SharedPreferences prefs = await SharedPreferences.getInstance();
     try {
       final result =
-          await prefs.setString(event.objectKey, event.object.toString());
+          await prefs.setString(event.objectKey, event.object.toString())!;
       yield SharedPreferenceWriteObjectState(isWriteSuccessfully: result);
     } catch (e) {
-      yield SharedPreferenceLoadingFailure(error: e.toString());
+      yield SharedPreferenceLoadingFailure(error: e.toString())!;
     }
   }
 
@@ -65,7 +65,7 @@ class SharedPreferenceBloc
       yield SharedTokenAuthorizationLoadingSuccess(
           tokenAuthorizationValue: result ?? '');
     } catch (e) {
-      yield SharedPreferenceLoadingFailure(error: e.toString());
+      yield SharedPreferenceLoadingFailure(error: e.toString())!;
     }
   }
 
@@ -78,7 +78,7 @@ class SharedPreferenceBloc
       yield SharedPreferenceTokenAuthorizationWriteState(
           isWriteSuccessfully: result);
     } catch (e) {
-      yield SharedPreferenceLoadingFailure(error: e.toString());
+      yield SharedPreferenceLoadingFailure(error: e.toString())!;
     }
   }
 
@@ -89,7 +89,7 @@ class SharedPreferenceBloc
       final result = prefs.getString(event.sessionKey);
       yield SharedSessionLoadingSuccess(sessionValue: result ?? '');
     } catch (e) {
-      yield SharedPreferenceLoadingFailure(error: e.toString());
+      yield SharedPreferenceLoadingFailure(error: e.toString())!;
     }
   }
 
@@ -100,7 +100,7 @@ class SharedPreferenceBloc
       final result = await prefs.setString(event.sessionKey, event.session);
       yield SharedSessionWriteLoadingSuccess(sessionWrite: result);
     } catch (e) {
-      yield SharedPreferenceLoadingFailure(error: e.toString());
+      yield SharedPreferenceLoadingFailure(error: e.toString())!;
     }
   }
 }

@@ -60,29 +60,27 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
   // final _textFieldKey = GlobalKey();
   TextEditingController _searchValueCity = TextEditingController();
   TextEditingController _searchValueName = TextEditingController();
-  ScrollController _scrollController = new ScrollController();
-  String _cityId;
-  String _categoryId;
-  int totalOfPage;
+ 
+  late String _cityId;
+  late String _categoryId;
+  late int totalOfPage;
   bool isRefreshList = false;
 
-  bool _isLoading = false;
   bool _isSearchListOfPractitien = false;
   List<ClientInfosResponseSearchCity> clientInfoSearchCity = [];
 
   List<ObjectNameOfSearch> objectNameOfSearch = [];
 
-  Position _currentPosition;
-  String _currentAddress;
+  late Position _currentPosition;
 
-  FocusNode _connectButtonFocus;
-  FocusNode _cityFocus;
-  FocusNode _nameFocus;
-  FocusNode _searchButtonFocus;
+  late FocusNode _connectButtonFocus;
+  late FocusNode _cityFocus;
+  late FocusNode _nameFocus;
+  late FocusNode _searchButtonFocus;
 
-  String _email;
-  String _fullName;
-  String _tokenUser;
+  late String _email;
+  late String _fullName;
+  late String _tokenUser;
   bool isCity = false;
   bool isSpecification = false;
   bool isCurrentPositionAsk = false;
@@ -99,7 +97,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
           alertType: AlertType.info,
           content: Text('Fontionnalite disponible uniquement sur mobile'));
     } else {
-      geolocator
+      Geolocator
           .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
           .then((Position position) {
         setState(() {
@@ -143,7 +141,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
       ..add(GetSharedPreferenceObject(objectKey: PreferenceKey.objectKey));
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        _textFieldHeight = _keyTextField.currentContext.size.height;
+        _textFieldHeight = _keyTextField.currentContext!.size!.height;
       });
     });
   }
@@ -249,7 +247,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
@@ -258,7 +256,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -352,7 +350,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
               BlocProvider.of<SharedPreferenceBloc>(context)
                 ..add(SetSharedPreferenceTokenAuthorization(
                     tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
-                    tokenAuthorization: state.getToken.data.authorization
+                    tokenAuthorization: state.getToken.data.authorization!
                         .replaceAll("X-LOGICRDV-AUTH:", "")));
             } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
               flushBarError(state.error, context);
@@ -430,7 +428,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                                     onTapeFocusChangeHandler: () {
                                       _showDialogSearchCityValue(context);
                                     },
-                                    validator: (value) => verifyEmpty(value),
+                                    validator: (value) => verifyEmpty(value!, errorMessage: ''),
                                     suffixIcon: Padding(
                                       padding: const EdgeInsets.only(
                                           right: 20, left: 10),
@@ -517,7 +515,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                                     )
                                   : Icon(Icons.clear,
                                       color: Colors.transparent),
-                              validator: (value) => verifyEmpty(value),
+                              validator: (value) => verifyEmpty(value!, errorMessage: ''),
                             ),
                             const SizedBox(height: 20),
                             Visibility(

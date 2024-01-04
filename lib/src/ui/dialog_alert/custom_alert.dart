@@ -4,22 +4,22 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 
 customAlert({
   required BuildContext context,
-  AlertType alertType,
-  String title,
-  String buttonLabel,
-  Function action,
-  bool willPop,
-  required Widget content,
+  AlertType? alertType,
+  String? title,
+  String? buttonLabel,
+  Function()? action,
+  bool willPop = false,
+   Widget? content,
   bool showCloseIcon = true,
 }) {
   return Alert(
     onWillPopActive: willPop ?? false,
     context: context,
-    content: content,
+    content: content!,
     type: alertType,
     closeFunction: () => showCloseIcon ? null : Navigator.pop(context),
     closeIcon:
-        showCloseIcon ? const SizedBox.shrink() : const Icon(Icons.close),
+        showCloseIcon ? const SizedBox.shrink() :  Icon(Icons.close),
     style: AlertStyle(
         titleStyle: TextStyle(
       color: Theme.of(context).primaryColor,

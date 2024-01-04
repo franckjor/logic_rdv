@@ -32,7 +32,7 @@ abstract class GetTokenResponse
         .encode(serializers.serializeWith(GetTokenResponse.serializer, this));
   }
 
-  static GetTokenResponse fromJson(String jsonString) {
+  static GetTokenResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         GetTokenResponse.serializer, json.decode(jsonString));
   }
@@ -55,7 +55,7 @@ abstract class DataTokenResponse
         .encode(serializers.serializeWith(DataTokenResponse.serializer, this));
   }
 
-  static DataTokenResponse fromJson(String jsonString) {
+  static DataTokenResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataTokenResponse.serializer, json.decode(jsonString));
   }

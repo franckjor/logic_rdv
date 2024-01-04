@@ -41,7 +41,7 @@ abstract class CreatePatientRequest
         serializers.serializeWith(CreatePatientRequest.serializer, this));
   }
 
-  static CreatePatientRequest fromJson(String jsonString) {
+  static CreatePatientRequest? fromJson(String jsonString) {
     return serializers.deserializeWith(
         CreatePatientRequest.serializer, json.decode(jsonString));
   }

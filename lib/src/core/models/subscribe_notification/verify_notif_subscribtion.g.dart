@@ -400,7 +400,7 @@ class VerifyNotifSubscribtionBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'VerifyNotifSubscribtion', _$failedField, e.toString());
+            r'VerifyNotifSubscribtion', _$failedField, e.toString())!;
       }
       rethrow;
     }

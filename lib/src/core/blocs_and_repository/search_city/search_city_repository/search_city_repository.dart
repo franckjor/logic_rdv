@@ -19,7 +19,7 @@ class SearchCityRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: searchRequestByCity.toJson());
     SearchCityResponse searchCityResponse =
-        SearchCityResponse.fromJson(response.toString());
+        SearchCityResponse.fromJson(response.toString())!;
     return searchCityResponse;
   }
 
@@ -30,7 +30,7 @@ class SearchCityRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: searchNameRequest.toJson());
     SearchNameResponse searchNameResponse =
-        SearchNameResponse.fromJson(response.toString());
+        SearchNameResponse.fromJson(response.toString())!;
     return searchNameResponse;
   }
 
@@ -41,7 +41,7 @@ class SearchCityRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: listOfDoctorRequest.toJson());
     ListOfDoctorReponse listOfDoctorResponse =
-        ListOfDoctorReponse.fromJson(response.toString());
+        ListOfDoctorReponse.fromJson(response.toString())!;
     return listOfDoctorResponse;
   }
 
@@ -52,7 +52,7 @@ class SearchCityRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: searchDialogRequest.toJson());
     SearchDialogResponse searchDialogResponse =
-        SearchDialogResponse.fromJson(response.toString());
+        SearchDialogResponse.fromJson(response.toString())!;
     return searchDialogResponse;
   }
 
@@ -63,7 +63,7 @@ class SearchCityRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: listOfDoctorRequest.toJson());
     ListOfDoctorReponse listOfDoctorResponse =
-        ListOfDoctorReponse.fromJson(response.toString());
+        ListOfDoctorReponse.fromJson(response.toString())!;
     return listOfDoctorResponse;
   }
 

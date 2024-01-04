@@ -306,7 +306,7 @@ class RemoveUserResponseBuilder
         params.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'RemoveUserResponse', _$failedField, e.toString());
+            r'RemoveUserResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

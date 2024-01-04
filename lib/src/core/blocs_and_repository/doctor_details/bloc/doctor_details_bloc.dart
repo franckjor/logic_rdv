@@ -22,7 +22,7 @@ class DoctorDetailsBloc extends Bloc<DoctorDetailsEvent, DoctorDetailsState> {
           searchDoctorDetail: event.doctorDetailsResponse);
       yield DoctorDetailsLoadingSuccess(response: doctorDetails);
     } catch (error) {
-      yield DoctorDetailsFailure(error: error.toString());
+      yield DoctorDetailsFailure(error: error.toString())!;
     }
   }
 }

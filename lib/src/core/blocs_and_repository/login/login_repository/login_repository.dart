@@ -15,7 +15,7 @@ class LoginRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: login.toJson());
     LoginStartedResponse responseAuth =
-        LoginStartedResponse.fromJson(response.toString());
+        LoginStartedResponse.fromJson(response.toString())!;
     return responseAuth;
   }
 
@@ -26,7 +26,7 @@ class LoginRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: login.toJson());
     LoginStartedResponse responseAuth =
-        LoginStartedResponse.fromJson(response.toString());
+        LoginStartedResponse.fromJson(response.toString())!;
     return responseAuth;
   }
 
@@ -37,7 +37,7 @@ class LoginRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: login.toJson());
     LoginProcessResponseEnd responseAuth =
-        LoginProcessResponseEnd.fromJson(response.toString());
+        LoginProcessResponseEnd.fromJson(response.toString())!;
     return responseAuth;
   }
 
@@ -48,7 +48,7 @@ class LoginRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: login.toJson());
     LoginStartedResponse responseAuth =
-        LoginStartedResponse.fromJson(response.toString());
+        LoginStartedResponse.fromJson(response.toString())!;
     return responseAuth;
   }
 
@@ -59,7 +59,7 @@ class LoginRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: login.toJson());
     LoginStartedResponse responseAuth =
-        LoginStartedResponse.fromJson(response.toString());
+        LoginStartedResponse.fromJson(response.toString())!;
     return responseAuth;
   }
 
@@ -70,7 +70,7 @@ class LoginRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: login.toJson());
     LoginProcessResponseEnd responseAuth =
-        LoginProcessResponseEnd.fromJson(response.toString());
+        LoginProcessResponseEnd.fromJson(response.toString())!;
     return responseAuth;
   }
 
@@ -81,7 +81,7 @@ class LoginRepository extends AbstractRepository {
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: login.toJson());
     LoginStartedResponse responseAuth =
-        LoginStartedResponse.fromJson(response.toString());
+        LoginStartedResponse.fromJson(response.toString())!;
     return responseAuth;
   }
 
@@ -90,7 +90,7 @@ class LoginRepository extends AbstractRepository {
     final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: login.toJson());
-    LoginResponse responseAuth = LoginResponse.fromJson(response.toString());
+    LoginResponse responseAuth = LoginResponse.fromJson(response.toString())!;
     return responseAuth;
   }
 
@@ -100,7 +100,7 @@ class LoginRepository extends AbstractRepository {
     final String token = (await getTokenAuthorization()) ?? '';
     final response = await apiManager.postDynamicWithVerifyToken(token, path,
         data: forgotPasswordRequest.toJson());
-    LoginResponse responseAuth = LoginResponse.fromJson(response.toString());
+    LoginResponse responseAuth = LoginResponse.fromJson(response.toString())!;
     return responseAuth;
   }
 

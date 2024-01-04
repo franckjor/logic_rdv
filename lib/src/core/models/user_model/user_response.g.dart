@@ -355,7 +355,7 @@ class UserResponseBuilder
         params.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'UserResponse', _$failedField, e.toString());
+            r'UserResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

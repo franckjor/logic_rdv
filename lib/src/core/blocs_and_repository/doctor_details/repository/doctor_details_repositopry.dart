@@ -12,7 +12,7 @@ class DoctorDetailsRepository extends AbstractRepository {
         token, path,
         data: searchDoctorDetail.toJson());
     SearchDoctorDetailsResponse _searchDoctorDetailsResponse =
-        SearchDoctorDetailsResponse.fromJson(response.toString());
+        SearchDoctorDetailsResponse.fromJson(response.toString())!;
     return _searchDoctorDetailsResponse;
   }
 

@@ -24,7 +24,7 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
           await repository.getMessage(messageRequest: event.messageRequest);
       yield MessageLoadingSuccess(response: messageList);
     } catch (error) {
-      yield MessageFailure(error: error.toString());
+      yield MessageFailure(error: error.toString())!;
     }
   }
 }

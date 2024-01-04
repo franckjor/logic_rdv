@@ -1,11 +1,11 @@
 class RdvType {
-  String type;
-  String message;
-  String appointment;
-  String stripeClientSecret;
-  String session;
-  String onclickAction;
-  String onclickData;
+  String? type;
+  String? message;
+  String? appointment;
+  String? stripeClientSecret;
+  String? session;
+  String? onclickAction;
+  String? onclickData;
 
   RdvType({
     this.type,

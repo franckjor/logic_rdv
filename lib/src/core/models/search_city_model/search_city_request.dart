@@ -26,7 +26,7 @@ abstract class SearchCityRequest
         .encode(serializers.serializeWith(SearchCityRequest.serializer, this));
   }
 
-  static SearchCityRequest fromJson(String jsonString) {
+  static SearchCityRequest? fromJson(String jsonString) {
     return serializers.deserializeWith(
         SearchCityRequest.serializer, json.decode(jsonString));
   }

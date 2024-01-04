@@ -39,15 +39,15 @@ bool get isAndroid =>
 bool get isWeb => foundation.kIsWeb;
 
 class GetRdvTimeAndDayPageArguments implements PagesArgumentType {
-  final String tokenAppointment;
-  final String tokenUser;
-  final String data;
-  final String action;
-  final String session;
-  final String idDoctor;
-  final String tel;
-  final String doctorName;
-  final String rdvType;
+  final String? tokenAppointment;
+  final String? tokenUser;
+  final String? data;
+  final String? action;
+  final String? session;
+  final String? idDoctor;
+  final String? tel;
+  final String? doctorName;
+  final String? rdvType;
 
   GetRdvTimeAndDayPageArguments(
       {this.tokenAppointment,
@@ -78,31 +78,27 @@ class RdvSelectDayAndTimeScreen extends StatefulWidget {
 
 class _RdvSelectDayAndTimeScreenState extends State<RdvSelectDayAndTimeScreen> {
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
-  GetApointmentTimeResponse _getApointmentTimeResponse;
-  List<Creneaux> _creneauxList = [];
-  String _typState;
-  String _currentSession;
-  String _week;
-  String _prevWeek;
-  Prevweek _weekPrev = new Prevweek();
-  String _prev;
-  String _data;
-  String _tokenUser;
-  String _fullName;
-  String _email;
+  late GetApointmentTimeResponse _getApointmentTimeResponse;
+  late List<Creneaux> _creneauxList = [];
+  late String _typState;
+  late String _currentSession;
+  late String _week;
+  late String? _prevWeek;
+  late String _tokenUser;
+  late String _fullName;
+  late String _email;
 
   bool _isLoading = false;
-  bool _isNextAsk = false;
 
   List<DataTimeRdv> _rdvTimeData = [];
   List<Creneaux> _creneaux = [];
-  Creneaux _creneauxItem;
+  late Creneaux _creneauxItem;
 
-  String _onClickDate;
-  String _onClickAction;
-  String _onClickMessage;
+  late String _onClickDate;
+  late String _onClickAction;
+  late String _onClickMessage;
 
-  SelectedPatientResponseForRdv selectedPatientResponseForRdv;
+  late SelectedPatientResponseForRdv selectedPatientResponseForRdv;
 
   _setDataFunction(String data) {
     _onClickDate = data;
@@ -120,8 +116,8 @@ class _RdvSelectDayAndTimeScreenState extends State<RdvSelectDayAndTimeScreen> {
       ..add(GetSharedPreferenceObject(objectKey: PreferenceKey.objectKey));
     getAppointmentTimeAndDay(
         action: widget.arguments.action,
-        tokenUser: widget.arguments.tokenUser,
-        tokenAppointment: widget.arguments.tokenAppointment,
+        tokenUser: widget.arguments.tokenUser!,
+        tokenAppointment: widget.arguments.tokenAppointment!,
         data: widget.arguments.data,
         session: widget.arguments.session,
         context: context);
@@ -160,29 +156,29 @@ class _RdvSelectDayAndTimeScreenState extends State<RdvSelectDayAndTimeScreen> {
           _tokenUser != null
               ? IconButton(
                   icon: isAndroid || isWeb
-                      ? const Icon(
+                      ?  Icon(
                           MdiIcons.accountCircle,
                           color: Colors.white,
                         )
-                      : const Icon(
+                      :  Icon(
                           CupertinoIcons.person_alt_circle_fill,
                           color: Colors.white,
                         ),
                   splashRadius: 20,
-                  onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                  onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
                 )
               : IconButton(
                   icon: isAndroid || isWeb
-                      ? const Icon(
+                      ?  Icon(
                           MdiIcons.menu,
                           color: AppColors.whiteColor,
                         )
-                      : const Icon(
+                      :  Icon(
                           MdiIcons.menu,
                           color: AppColors.whiteColor,
                         ),
                   splashRadius: 20,
-                  onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                  onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
                 ),
         ],
         // ${widget.arguments.rdvType}
@@ -204,8 +200,8 @@ class _RdvSelectDayAndTimeScreenState extends State<RdvSelectDayAndTimeScreen> {
                   onPressed: () {
                     getPrevAppointmentTimeAndDay(
                         action: "",
-                        tokenUser: widget.arguments.tokenUser,
-                        tokenAppointment: widget.arguments.tokenAppointment,
+                        tokenUser: widget.arguments.tokenUser!,
+                        tokenAppointment: widget.arguments.tokenAppointment!,
                         data: "",
                         week: _prevWeek,
                         session: _currentSession,
@@ -224,8 +220,8 @@ class _RdvSelectDayAndTimeScreenState extends State<RdvSelectDayAndTimeScreen> {
                   onPressed: () {
                     getNextAppointmentTimeAndDay(
                         action: "",
-                        tokenUser: widget.arguments.tokenUser,
-                        tokenAppointment: widget.arguments.tokenAppointment,
+                        tokenUser: widget.arguments.tokenUser!,
+                        tokenAppointment: widget.arguments.tokenAppointment!,
                         data: "",
                         week: _week,
                         session: _currentSession,
@@ -247,36 +243,36 @@ class _RdvSelectDayAndTimeScreenState extends State<RdvSelectDayAndTimeScreen> {
                 setState(() {
                   _isLoading = true;
                   _getApointmentTimeResponse = state.response;
-                  _getApointmentTimeResponse.data.data.forEach((p0) {
-                    _creneauxList = p0.creneaux.toList();
+                  _getApointmentTimeResponse.data.data!.forEach((p0) {
+                    _creneauxList = p0.creneaux!.toList();
                   });
-                  _creneauxList.map((e) => _onClickMessage = e.onclickMessage);
-                  _currentSession = _getApointmentTimeResponse.data.session;
+                  _creneauxList.map((e) => _onClickMessage = e.onclickMessage!);
+                  _currentSession = _getApointmentTimeResponse.data.session!;
                   _week = _getApointmentTimeResponse
-                      .data.navigation.nextweek.onclickWeek;
-                  _rdvTimeData.addAll(_getApointmentTimeResponse.data.data);
+                      .data.navigation!.nextweek!.onclickWeek;
+                  _rdvTimeData.addAll(_getApointmentTimeResponse.data.data!);
                 });
               } else if (state is NextDayAndTimeOfAppointmentLoadingSuccess) {
                 _ackRdvProgressDialog.hide();
                 setState(() {
                   _isLoading = true;
                   _creneaux.clear();
-                  _currentSession = _getApointmentTimeResponse.data.session;
+                  _currentSession = _getApointmentTimeResponse.data.session!;
                   _getApointmentTimeResponse = state.response;
                   _week = _getApointmentTimeResponse
-                          ?.data?.navigation?.nextweek?.onclickWeek ??
+                          .data.navigation?.nextweek?.onclickWeek ??
                       '';
                   _prevWeek = _getApointmentTimeResponse
-                          ?.data?.navigation?.prevweek?.onclickWeek ??
+                          .data.navigation?.prevweek?.onclickWeek ??
                       '';
                   _weekPrev =
-                      _getApointmentTimeResponse?.data?.navigation?.prevweek;
+                      _getApointmentTimeResponse.data.navigation?.prevweek;
 
                   _prev = _getApointmentTimeResponse
-                          ?.data?.navigation?.prev?.onclickWeek ??
+                          .data.navigation?.prev?.onclickWeek ??
                       '';
                   _rdvTimeData.clear();
-                  _rdvTimeData.addAll(_getApointmentTimeResponse.data.data);
+                  _rdvTimeData.addAll(_getApointmentTimeResponse.data.data!);
                 });
               } else if (state is PrevDayAndTimeOfAppointmentLoadingSuccess) {
                 _ackRdvProgressDialog.hide();
@@ -284,17 +280,17 @@ class _RdvSelectDayAndTimeScreenState extends State<RdvSelectDayAndTimeScreen> {
                   _isLoading = true;
                   _creneaux.clear();
                   _getApointmentTimeResponse = state.response;
-                  _currentSession = _getApointmentTimeResponse.data.session;
+                  _currentSession = _getApointmentTimeResponse.data.session!;
                   _week = _getApointmentTimeResponse
-                          ?.data?.navigation?.nextweek?.onclickWeek ??
+                          .data.navigation?.nextweek?.onclickWeek ??
                       '';
                   _prevWeek = _getApointmentTimeResponse
-                      ?.data?.navigation?.prevweek?.onclickWeek;
+                      .data.navigation?.prevweek?.onclickWeek;
                   _prev = _getApointmentTimeResponse
-                          ?.data?.navigation?.prev?.onclickWeek ??
+                          .data.navigation?.prev?.onclickWeek ??
                       '';
                   _rdvTimeData.clear();
-                  _rdvTimeData.addAll(_getApointmentTimeResponse.data.data);
+                  _rdvTimeData.addAll(_getApointmentTimeResponse.data.data!);
                 });
               } else if (state is RdvTypeStateLoadingSuccess) {
                 _ackRdvProgressDialog.hide();
@@ -302,12 +298,12 @@ class _RdvSelectDayAndTimeScreenState extends State<RdvSelectDayAndTimeScreen> {
                   () {
                     _ackRdvProgressDialog.hide();
                     _isLoading = true;
-                    _typState = state.response.type;
+                    _typState = state.response.type!;
                     if (_typState == TypeRdvState.apptconfirm) {
                       _ackRdvProgressDialog.hide();
                       patientSelectedForRdv(
                           context: context,
-                          tokenAppointment: widget.arguments.tokenAppointment,
+                          tokenAppointment: widget.arguments.tokenAppointment!,
                           data: _onClickDate,
                           action: _onClickAction,
                           tokenUser: widget.arguments.tokenUser ?? _tokenUser,
@@ -331,18 +327,18 @@ class _RdvSelectDayAndTimeScreenState extends State<RdvSelectDayAndTimeScreen> {
                       _ackRdvProgressDialog.hide();
                       addDoctor(
                         context: context,
-                        id: widget.arguments.idDoctor,
-                        phone: widget.arguments.tel,
-                        tokenUser: _tokenUser ?? widget.arguments.tokenUser,
+                        id: widget.arguments.idDoctor!,
+                        phone: widget.arguments.tel!,
+                        tokenUser: _tokenUser ,
                       );
                     } else if (_typState == TypeRdvState.apptconnect &&
                         _tokenUser != null) {
                       _ackRdvProgressDialog.hide();
                       addDoctor(
                         context: context,
-                        id: widget.arguments.idDoctor,
-                        phone: widget.arguments.tel,
-                        tokenUser: _tokenUser ?? widget.arguments.tokenUser,
+                        id: widget.arguments.idDoctor!,
+                        phone: widget.arguments.tel!,
+                        tokenUser: _tokenUser ,
                       );
                     } else if (_typState == TypeRdvState.apptconnect &&
                         _tokenUser == null) {
@@ -377,7 +373,7 @@ class _RdvSelectDayAndTimeScreenState extends State<RdvSelectDayAndTimeScreen> {
                                   data: _onClickDate,
                                   session: _currentSession,
                                   tokenAppointment:
-                                      widget.arguments.tokenAppointment,
+                                      widget.arguments.tokenAppointment!,
                                   tokenUser: _tokenUser,
                                 );
                               }
@@ -406,7 +402,7 @@ class _RdvSelectDayAndTimeScreenState extends State<RdvSelectDayAndTimeScreen> {
                             Navigator.pop(context);
                           },
                           content: Text(
-                            state.response.message,
+                            state.response.message!,
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.normal),
@@ -479,12 +475,12 @@ class _RdvSelectDayAndTimeScreenState extends State<RdvSelectDayAndTimeScreen> {
                   customAlert(
                     alertType: AlertType.error,
                     context: context,
-                    content: Text(
+                     Icon(tent: Text(
                       state.error,
                       style: TextStyle(
                           fontSize: 14, fontWeight: FontWeight.normal),
                     ),
-                  );
+                  ), content: null);
                 }
                 _isLoading = true;
               }
@@ -509,7 +505,7 @@ class _RdvSelectDayAndTimeScreenState extends State<RdvSelectDayAndTimeScreen> {
                   ..add(SetSharedPreferenceTokenAuthorization(
                       tokenAuthorizationKey:
                           PreferenceKey.tokenAuthorizationKey,
-                      tokenAuthorization: state.getToken.data.authorization
+                      tokenAuthorization: state.getToken.data.authorization!
                           .replaceAll("X-LOGICRDV-AUTH:", "")));
               } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
                 _ackRdvProgressDialog.hide();
@@ -647,7 +643,7 @@ class _RdvSelectDayAndTimeScreenState extends State<RdvSelectDayAndTimeScreen> {
                                   color: Colors.grey.shade400,
                                 ),
                                 itemBuilder: (context, ind) {
-                                  _creneaux.addAll(_rdvTimeData[ind].creneaux);
+                                  _creneaux.addAll(_rdvTimeData[ind].creneaux!);
                                   return CardDateItem(
                                     onClickMessage: _onClickMessage,
                                     dataFunction: _setDataFunction,

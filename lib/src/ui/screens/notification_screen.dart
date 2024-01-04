@@ -35,13 +35,13 @@ class NotificationScreen extends StatefulWidget {
 }
 
 class _NotificationScreenState extends State<NotificationScreen> {
-  String _installationIdKey;
-  String _email;
-  String _fullName;
-  String _tokenUser;
+  late String _installationIdKey;
+  late String _email;
+  late String _fullName;
+  late String _tokenUser;
   ScrollController _scrollController = new ScrollController();
   int currentPage = 1;
-  int totalOfPage;
+  late int totalOfPage;
   bool isRefreshList = false;
   bool _isLoading = false;
   List<NotificationResponseList> notification = [];
@@ -51,7 +51,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
 
   Future<String> _getInstalationIdKey() async {
     final prefs = await SharedPreferences.getInstance();
-    _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey);
+    _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey)!;
     print("InstallationIdHome: $_installationIdKey");
     getAllNotificationList(
       context: context,
@@ -123,16 +123,16 @@ class _NotificationScreenState extends State<NotificationScreen> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                : const Icon(
+                :  Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -144,7 +144,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
               BlocProvider.of<SharedPreferenceBloc>(context)
                 ..add(SetSharedPreferenceTokenAuthorization(
                     tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
-                    tokenAuthorization: state.getToken.data.authorization
+                    tokenAuthorization: state.getToken.data.authorization!
                         .replaceAll("X-LOGICRDV-AUTH:", "")));
             } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
               flushBarError(state.error, context);
@@ -256,10 +256,10 @@ class _NotificationScreenState extends State<NotificationScreen> {
 }
 
 class _NotificationItem extends StatelessWidget {
-  final IconData icon;
-  final String title;
-  final String description;
-  final String date;
+  final IconData? icon;
+  final String? title;
+  final String? description;
+  final String? date;
 
   const _NotificationItem({
     super.key,
@@ -292,7 +292,7 @@ class _NotificationItem extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    title,
+                    title!,
                     maxLines: 2,
                     softWrap: true,
                     overflow: TextOverflow.ellipsis,
@@ -317,7 +317,7 @@ class _NotificationItem extends StatelessWidget {
                             width: 05,
                           ),
                           Text(
-                            date,
+                            date!,
                             style: TextStyle(
                               color: Colors.black54,
                               fontSize: 10,
@@ -333,7 +333,7 @@ class _NotificationItem extends StatelessWidget {
               subtitle: Container(
                 padding: EdgeInsets.only(top: 05),
                 child: Text(
-                  description,
+                  description!,
                   textAlign: TextAlign.start,
                   maxLines: 100,
                   style: TextStyle(

@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:logic_rdv_v0/src/common.dart';
 
 class AdaptativeTextFormField extends StatelessWidget {
-  final String hintText;
-  final Widget suffixIcon;
+  final String? hintText;
+  final Widget? suffixIcon;
   final TextInputType textInputType;
   final bool obscureText;
-  final FocusNode focusNode;
-  final TextInputAction textInputAction;
-  final TextEditingController controller;
-  final Function validator;
-  final Function onEditingComplete;
-  final Function onTapeChangeHandler;
-  final Function onTapeFocusChangeHandler;
+  final FocusNode? focusNode;
+  final TextInputAction? textInputAction;
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
+  final Function()? onEditingComplete;
+  final Function(String)? onTapeChangeHandler;
+  final Function()? onTapeFocusChangeHandler;
   final bool autoFocus;
   final bool readOnly;
   const AdaptativeTextFormField({

@@ -35,7 +35,7 @@ abstract class SearchCityResponse
         .encode(serializers.serializeWith(SearchCityResponse.serializer, this));
   }
 
-  static SearchCityResponse fromJson(String jsonString) {
+  static SearchCityResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         SearchCityResponse.serializer, json.decode(jsonString));
   }
@@ -64,7 +64,7 @@ abstract class ParamsSearchCityResponse
         serializers.serializeWith(ParamsSearchCityResponse.serializer, this));
   }
 
-  static ParamsSearchCityResponse fromJson(String jsonString) {
+  static ParamsSearchCityResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsSearchCityResponse.serializer, json.decode(jsonString));
   }
@@ -95,7 +95,7 @@ abstract class DataSearchCityResponse
         serializers.serializeWith(DataSearchCityResponse.serializer, this));
   }
 
-  static DataSearchCityResponse fromJson(String jsonString) {
+  static DataSearchCityResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataSearchCityResponse.serializer, json.decode(jsonString));
   }
@@ -123,7 +123,7 @@ abstract class ClientInfosResponseSearchCity
         ClientInfosResponseSearchCity.serializer, this));
   }
 
-  static ClientInfosResponseSearchCity fromJson(String jsonString) {
+  static ClientInfosResponseSearchCity ?fromJson(String jsonString) {
     return serializers.deserializeWith(
         ClientInfosResponseSearchCity.serializer, json.decode(jsonString));
   }

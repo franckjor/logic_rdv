@@ -35,26 +35,22 @@ class UserProfileScreen extends StatefulWidget {
 }
 
 class _UserProfileScreenState extends State<UserProfileScreen> {
-  String _email;
-  String _fullName;
-  String _tokenUser;
-  final _key = GlobalKey();
-  bool _obscureText = true;
+  late String _email;
+  late String _fullName;
+  late String _tokenUser;
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final _formKey = GlobalKey<FormState>();
-  double _textFieldHeight = 50;
-  FocusNode _focusNodeConnectButton;
+  late FocusNode _focusNodeConnectButton;
 
-  TextEditingController _nameController;
-  TextEditingController _surNameController;
-  TextEditingController _mobileController;
-  TextEditingController _emailController;
-  TextEditingController _adressController;
-  TextEditingController _villeController;
-  TextEditingController _postalCodeController;
-  TextEditingController _passwordController;
-  TextEditingController _passwordConfirmController;
+  late TextEditingController _nameController;
+  late TextEditingController _surNameController;
+  late TextEditingController _mobileController;
+  late TextEditingController _emailController;
+  late TextEditingController _adressController;
+  late TextEditingController _villeController;
+  late TextEditingController _postalCodeController;
+  late TextEditingController _passwordController;
+  late TextEditingController _passwordConfirmController;
 
   @override
   void initState() {
@@ -83,15 +79,15 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     prefs.remove(PreferenceKey.objectKey);
   }
 
-  String _installationIdKey;
-  String _isSubscribe;
-  bool _notification;
+  String? _installationIdKey;
+  String? _isSubscribe;
+  bool _notification = false;
 
   Future<String> getInstalationIdKey() async {
     final prefs = await SharedPreferences.getInstance();
     _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey);
     print("InstallationIdHome: $_installationIdKey");
-    return _installationIdKey;
+    return _installationIdKey!;
   }
 
   void writeIsSubscribeInMemory(String value) async {
@@ -110,7 +106,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
         _notification = true;
       }
     });
-    return _isSubscribe;
+    return _isSubscribe!;
   }
 
   @override
@@ -146,16 +142,16 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                : const Icon(
+                :  Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -246,7 +242,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                 writeIsSubscribeInMemory("0");
                 flushBarSuccess(state.subscribeResponse.message, context);
                 getVerifyIfIsSubscribe();
-                if (state.subscribeResponse.data.total == "0") {
+                if (state.subscribeResponse.data!.total == "0") {
                   WonderPush.unsubscribeFromNotifications();
                 }
               });
@@ -260,7 +256,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
               BlocProvider.of<SharedPreferenceBloc>(context)
                 ..add(SetSharedPreferenceTokenAuthorization(
                     tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
-                    tokenAuthorization: state.getToken.data.authorization
+                    tokenAuthorization: state.getToken.data.authorization!
                         .replaceAll("X-LOGICRDV-AUTH:", "")));
             } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
               flushBarError(state.error, context);
@@ -371,11 +367,11 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                           _notification
                               ? unSubscribe(
                                   context: context,
-                                  installationkey: _installationIdKey,
+                                  installationkey: _installationIdKey!,
                                   tokenuser: _tokenUser)
                               : subscribe(
                                   context: context,
-                                  installationkey: _installationIdKey,
+                                  installationkey: _installationIdKey!,
                                   tokenuser: _tokenUser);
                         },
                         activeTrackColor: AppColors.primaryColor,
@@ -402,10 +398,10 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
 }
 
 class _ProfilMenuOption extends StatelessWidget {
-  final Function onTap;
+  final Function()? onTap;
   final IconData icon;
   final String title;
-  final Widget trailing;
+  final Widget? trailing;
   const _ProfilMenuOption({
     super.key,
     this.onTap,

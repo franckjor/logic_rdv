@@ -29,7 +29,7 @@ class SubscribeBloc extends Bloc<SubscribeEvent, SubscribeState> {
           subscribeRequest: event.subscribeRequest);
       yield SubscribeStateLoadingSuccess(subscribeResponse: subscribe);
     } catch (error) {
-      yield SubscribeStateLoadingFailure(error: error.toString());
+      yield SubscribeStateLoadingFailure(error: error.toString())!;
     }
   }
 
@@ -39,7 +39,7 @@ class SubscribeBloc extends Bloc<SubscribeEvent, SubscribeState> {
           subscribeRequest: event.subscribeRequest);
       yield UnSubscribeStateLoadingSuccess(subscribeResponse: unsbscribe);
     } catch (error) {
-      yield SubscribeStateLoadingFailure(error: error.toString());
+      yield SubscribeStateLoadingFailure(error: error.toString())!;
     }
   }
 
@@ -49,7 +49,7 @@ class SubscribeBloc extends Bloc<SubscribeEvent, SubscribeState> {
           subscribeRequest: event.subscribeRequest);
       yield IsSubscribeStateLoadingSuccess(verifyNotifSubscribtion: issbscribe);
     } catch (error) {
-      yield SubscribeStateLoadingFailure(error: error.toString());
+      yield SubscribeStateLoadingFailure(error: error.toString())!;
     }
   }
 }

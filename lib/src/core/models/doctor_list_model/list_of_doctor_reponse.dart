@@ -36,7 +36,7 @@ abstract class ListOfDoctorReponse
         serializers.serializeWith(ListOfDoctorReponse.serializer, this));
   }
 
-  static ListOfDoctorReponse fromJson(String jsonString) {
+  static ListOfDoctorReponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ListOfDoctorReponse.serializer, json.decode(jsonString));
   }
@@ -69,7 +69,7 @@ abstract class ParamsListOfDoctor
         .encode(serializers.serializeWith(ParamsListOfDoctor.serializer, this));
   }
 
-  static ParamsListOfDoctor fromJson(String jsonString) {
+  static ParamsListOfDoctor? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsListOfDoctor.serializer, json.decode(jsonString));
   }
@@ -96,7 +96,7 @@ abstract class DataListOfDoctor
         .encode(serializers.serializeWith(DataListOfDoctor.serializer, this));
   }
 
-  static DataListOfDoctor fromJson(String jsonString) {
+  static DataListOfDoctor? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataListOfDoctor.serializer, json.decode(jsonString));
   }
@@ -129,7 +129,7 @@ abstract class SearchListOfDoctor
         .encode(serializers.serializeWith(SearchListOfDoctor.serializer, this));
   }
 
-  static SearchListOfDoctor fromJson(String jsonString) {
+  static SearchListOfDoctor? fromJson(String jsonString) {
     return serializers.deserializeWith(
         SearchListOfDoctor.serializer, json.decode(jsonString));
   }
@@ -158,7 +158,7 @@ abstract class PaginationListOfDoctor
         serializers.serializeWith(PaginationListOfDoctor.serializer, this));
   }
 
-  static PaginationListOfDoctor fromJson(String jsonString) {
+  static PaginationListOfDoctor? fromJson(String jsonString) {
     return serializers.deserializeWith(
         PaginationListOfDoctor.serializer, json.decode(jsonString));
   }

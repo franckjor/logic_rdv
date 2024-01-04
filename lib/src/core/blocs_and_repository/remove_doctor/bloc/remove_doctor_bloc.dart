@@ -26,7 +26,7 @@ class RemoveDoctorBloc extends Bloc<RemoveDoctorEvent, RemoveDoctorState> {
           await repository.removeDoctor(request: event.removeDoctorRequest);
       yield RemoveDoctorLoadingSuccess(response: userResponse);
     } catch (error) {
-      yield RemoveDoctorFailure(error: error.toString());
+      yield RemoveDoctorFailure(error: error.toString())!;
     }
   }
 }

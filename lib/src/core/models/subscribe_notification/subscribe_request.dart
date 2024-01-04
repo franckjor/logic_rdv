@@ -25,7 +25,7 @@ abstract class SubscribeRequest
         .encode(serializers.serializeWith(SubscribeRequest.serializer, this));
   }
 
-  static SubscribeRequest fromJson(String jsonString) {
+  static SubscribeRequest? fromJson(String jsonString) {
     return serializers.deserializeWith(
         SubscribeRequest.serializer, json.decode(jsonString));
   }
@@ -60,7 +60,7 @@ abstract class SubscribeResponse
         .encode(serializers.serializeWith(SubscribeResponse.serializer, this));
   }
 
-  static SubscribeResponse fromJson(String jsonString) {
+  static SubscribeResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         SubscribeResponse.serializer, json.decode(jsonString));
   }
@@ -82,7 +82,7 @@ abstract class ParamsSubscribeResponse implements Built<ParamsSubscribeResponse,
     return json.encode(serializers.serializeWith(ParamsSubscribeResponse.serializer, this));
   }
 
-  static ParamsSubscribeResponse fromJson(String jsonString) {
+  static ParamsSubscribeResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsSubscribeResponse.serializer, json.decode(jsonString));
   }
@@ -102,7 +102,7 @@ abstract class DataSubscribeResponse implements Built<DataSubscribeResponse, Dat
     return json.encode(serializers.serializeWith(DataSubscribeResponse.serializer, this));
   }
 
-  static DataSubscribeResponse fromJson(String jsonString) {
+  static DataSubscribeResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataSubscribeResponse.serializer, json.decode(jsonString));
   }

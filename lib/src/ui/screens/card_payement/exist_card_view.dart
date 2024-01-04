@@ -73,7 +73,7 @@ class _ExistingCardState extends State<ExistingCard> {
                   expiryDate: cards[i]['expiryDate'],
                   cardHolderName: cards[i]['cardHolderName'],
                   cvvCode: cards[i]['cvvCode'],
-                  showBackView: cards[i]['showBackView'],
+                  showBackView: cards[i]['showBackView'], onCreditCardWidgetChange: (CreditCardBrand ) {  },
                 ),
               );
             }),

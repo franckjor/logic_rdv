@@ -43,7 +43,7 @@ class CreateAppointmentBloc
           createAppointmentRequest: event.createAppointmentRequest);
       yield TypeOfAppointmentLoadingSuccess(response: appointmentList);
     } catch (error) {
-      yield CreateAppointmentFailure(error: error.toString());
+      yield CreateAppointmentFailure(error: error.toString())!;
     }
   }
 
@@ -54,7 +54,7 @@ class CreateAppointmentBloc
           createAppointmentRequest: event.createAppointmentRequest);
       yield DayAndTimeOfAppointmentLoadingSuccess(response: appointmentList);
     } catch (error) {
-      yield CreateAppointmentFailure(error: error.toString());
+      yield CreateAppointmentFailure(error: error.toString())!;
     }
   }
 
@@ -66,7 +66,7 @@ class CreateAppointmentBloc
       yield NextDayAndTimeOfAppointmentLoadingSuccess(
           response: appointmentList);
     } catch (error) {
-      yield CreateAppointmentFailure(error: error.toString());
+      yield CreateAppointmentFailure(error: error.toString())!;
     }
   }
 
@@ -78,7 +78,7 @@ class CreateAppointmentBloc
       yield PrevDayAndTimeOfAppointmentLoadingSuccess(
           response: appointmentList);
     } catch (error) {
-      yield CreateAppointmentFailure(error: error.toString());
+      yield CreateAppointmentFailure(error: error.toString())!;
     }
   }
 
@@ -89,7 +89,7 @@ class CreateAppointmentBloc
           createAppointmentRequest: event.createAppointmentRequest);
       yield PatientForAppointmentLoadingSuccess(response: appointmentList);
     } catch (error) {
-      yield CreateAppointmentFailure(error: error.toString());
+      yield CreateAppointmentFailure(error: error.toString())!;
     }
   }
 
@@ -101,7 +101,7 @@ class CreateAppointmentBloc
       yield PatientSelectedForAppointmentLoadingSuccess(
           response: appointmentList);
     } catch (error) {
-      yield CreateAppointmentFailure(error: error.toString());
+      yield CreateAppointmentFailure(error: error.toString())!;
     }
   }
 
@@ -112,7 +112,7 @@ class CreateAppointmentBloc
           createAppointmentRequest: event.createAppointmentRequest);
       yield ValidateAppointmentWithTCLoadingSuccess(response: appointmentList);
     } catch (error) {
-      yield CreateAppointmentFailure(error: error.toString());
+      yield CreateAppointmentFailure(error: error.toString())!;
     }
   }
 
@@ -123,7 +123,7 @@ class CreateAppointmentBloc
           createAppointmentRequest: event.createAppointmentRequest);
       yield ValidateAppointmentLoadingSuccess(response: appointmentList);
     } catch (error) {
-      yield CreateAppointmentFailure(error: error.toString());
+      yield CreateAppointmentFailure(error: error.toString())!;
     }
   }
 
@@ -134,7 +134,7 @@ class CreateAppointmentBloc
           createAppointmentRequest: event.createAppointmentRequest);
       yield RdvTypeStateLoadingSuccess(response: appointmentList);
     } catch (error) {
-      yield CreateAppointmentFailure(error: error.toString());
+      yield CreateAppointmentFailure(error: error.toString())!;
     }
   }
 
@@ -145,7 +145,7 @@ class CreateAppointmentBloc
           createAppointmentRequest: event.createAppointmentRequest);
       yield ConfirmAppointmentLoadingSuccess(response: result);
     } catch (error) {
-      yield CreateAppointmentFailure(error: error.toString());
+      yield CreateAppointmentFailure(error: error.toString())!;
     }
   }
 }

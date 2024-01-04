@@ -961,7 +961,7 @@ class GetPaientForRdvResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GetPaientForRdvResponse', _$failedField, e.toString());
+            r'GetPaientForRdvResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -1314,7 +1314,7 @@ class DataGetPaientForRdvResponseBuilder
         _data?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataGetPaientForRdvResponse', _$failedField, e.toString());
+            r'DataGetPaientForRdvResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -1751,7 +1751,7 @@ class NavigationGetPaientForRdvResponseBuilder
         _prev?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'NavigationGetPaientForRdvResponse', _$failedField, e.toString());
+            r'NavigationGetPaientForRdvResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

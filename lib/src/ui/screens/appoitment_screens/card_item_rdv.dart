@@ -10,10 +10,10 @@ import 'package:logic_rdv_v0/src/ui/themes/colors.dart';
 import '../OpenTok.dart';
 
 class CardItemRdv extends StatefulWidget {
-  final CabinetResponse cabinetResponse;
-  final PatientResponse patientResponse;
-  final AppointmentDataResponse appointmentDataResponse;
-  final Function onCancelAppointmentHandler;
+  final CabinetResponse? cabinetResponse;
+  final PatientResponse? patientResponse;
+  final AppointmentDataResponse? appointmentDataResponse;
+  final Function()? onCancelAppointmentHandler;
 
   CardItemRdv({
     this.cabinetResponse,
@@ -29,27 +29,27 @@ class CardItemRdv extends StatefulWidget {
 class _CardItemRdvState extends State<CardItemRdv> {
   DateFormat format = DateFormat("dd/MM/yy");
   var formatterDate = new DateFormat('dd/MM/yy', 'fr').format(DateTime.now());
-  String _rdvDate;
-  String _dateOfAppointement;
-  DateTime _realyDateOfAppointement;
-  List<String> value;
+  late String _rdvDate;
+  late String _dateOfAppointement;
+  late DateTime _realyDateOfAppointement;
+  late List<String> value;
   bool _enableRdv = false;
   bool _isTcBtnVisible = false;
-  DateTime _currentDate;
-  double _currentTime = toDoubleHour(TimeOfDay.now());
-  TimeOfDay _startTime;
-  double _rdvTime;
+  late DateTime _currentDate;
+  late double _currentTime = toDoubleHour(TimeOfDay.now());
+  late TimeOfDay _startTime;
+  late double _rdvTime;
 
   _getRdvDate() {
-    _rdvDate = widget.appointmentDataResponse.date;
+    _rdvDate = widget.appointmentDataResponse!.date;
     value = _rdvDate.split(" ");
     _dateOfAppointement = value[1].trim();
     _realyDateOfAppointement =
         DateFormat("dd/MM/yy").parse(_dateOfAppointement);
     print('date: $_realyDateOfAppointement');
     _startTime = TimeOfDay(
-        hour: int.parse(widget.appointmentDataResponse.time.split(":")[0]),
-        minute: int.parse(widget.appointmentDataResponse.time.split(":")[1]));
+        hour: int.parse(widget.appointmentDataResponse!.time.split(":")[0]),
+        minute: int.parse(widget.appointmentDataResponse!.time.split(":")[1]));
     _rdvTime = toDoubleHour(_startTime);
 
     print('rdv time: $_rdvTime');
@@ -66,7 +66,7 @@ class _CardItemRdvState extends State<CardItemRdv> {
   // }
 
   bool _compareCurrentTime() {
-    if (widget.appointmentDataResponse.past == '0') {
+    if (widget.appointmentDataResponse!.past == '0') {
       return true;
     } else {
       return false;
@@ -74,27 +74,27 @@ class _CardItemRdvState extends State<CardItemRdv> {
   }
 
   _getStatusOfRdv() {
-    if (widget.appointmentDataResponse.status == 'cancel') {
+    if (widget.appointmentDataResponse!.status == 'cancel') {
       return "Annulé";
-    } else if (widget.appointmentDataResponse.status == 'done') {
+    } else if (widget.appointmentDataResponse!.status == 'done') {
       return "Honoré";
-    } else if (widget.appointmentDataResponse.status == 'miss') {
+    } else if (widget.appointmentDataResponse!.status == 'miss') {
       return "Manqué";
-    } else if (widget.appointmentDataResponse.status == 'standby') {
+    } else if (widget.appointmentDataResponse!.status == 'standby') {
       return "";
-    } else if (widget.appointmentDataResponse.status == '') {
+    } else if (widget.appointmentDataResponse!.status == '') {
       return "";
     }
   }
 
   _getStatusOfRdvShowBtnCancel() {
-    if (widget.appointmentDataResponse.status == 'cancel') {
+    if (widget.appointmentDataResponse!.status == 'cancel') {
       return false;
-    } else if (widget.appointmentDataResponse.status == 'done') {
+    } else if (widget.appointmentDataResponse!.status == 'done') {
       return false;
-    } else if (widget.appointmentDataResponse.status == 'miss') {
+    } else if (widget.appointmentDataResponse!.status == 'miss') {
       return false;
-    } else if (widget.appointmentDataResponse.status == '') {
+    } else if (widget.appointmentDataResponse!.status == '') {
       return true;
     }
   }
@@ -111,8 +111,8 @@ class _CardItemRdvState extends State<CardItemRdv> {
     print('current date formatted: $_currentDate');
     _getRdvDate();
     super.initState();
-    if (widget.appointmentDataResponse.tokentelecons != '' &&
-        widget.appointmentDataResponse.past != '1') {
+    if (widget.appointmentDataResponse!.tokentelecons != '' &&
+        widget.appointmentDataResponse!.past != '1') {
       _isTcBtnVisible = true;
     }
   }
@@ -155,7 +155,7 @@ class _CardItemRdvState extends State<CardItemRdv> {
                         topRight: Radius.circular(12),
                       ),
                       color:
-                          widget.appointmentDataResponse.status != "cancel" &&
+                          widget.appointmentDataResponse!.status != "cancel" &&
                                   _compareCurrentTime()
                               ? Colors.blue
                               : Colors.grey.shade400,
@@ -175,7 +175,7 @@ class _CardItemRdvState extends State<CardItemRdv> {
                             ),
                             const SizedBox(width: 6),
                             Text(
-                              widget.appointmentDataResponse.date ?? '',
+                              widget.appointmentDataResponse!.date ?? '',
                               style: TextStyle(
                                 fontSize: 13.5,
                                 color: Colors.white,
@@ -185,14 +185,14 @@ class _CardItemRdvState extends State<CardItemRdv> {
                         ),
                         Row(
                           children: [
-                            const Icon(
+                             Icon(
                               Icons.schedule,
                               size: 14,
                               color: Colors.white,
                             ),
                             const SizedBox(width: 6),
                             Text(
-                              widget.appointmentDataResponse.time.toString() ??
+                              widget.appointmentDataResponse!.time.toString() ??
                                   '',
                               style: TextStyle(
                                 fontSize: 13.5,
@@ -223,20 +223,20 @@ class _CardItemRdvState extends State<CardItemRdv> {
                       //   ),
                       // ),
                       title: Text(
-                        widget.appointmentDataResponse.avec ?? '',
+                        widget.appointmentDataResponse!.avec ?? '',
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       subtitle: Text(
-                        widget.appointmentDataResponse.label ?? '',
+                        widget.appointmentDataResponse!.label ?? '',
                         style: TextStyle(
                           fontSize: 13.5,
                         ),
                       ),
                       trailing: _compareCurrentTime() ||
-                              widget.appointmentDataResponse.status == 'standby'
+                              widget.appointmentDataResponse!.status == 'standby'
                           ? Container(
                               height: 28,
                               child: OutlinedButton(
@@ -306,15 +306,15 @@ class _CardItemRdvState extends State<CardItemRdv> {
                             ),
                             child: CircleAvatar(
                               radius: 20,
-                              backgroundImage: widget.patientResponse.photo ==
+                              backgroundImage: widget.patientResponse!.photo ==
                                       ""
                                   ? AssetImage('assets/images/medecin.png')
-                                  : NetworkImage(widget.patientResponse.photo),
+                                  : NetworkImage(widget.patientResponse!.photo),
                               backgroundColor: Colors.white,
                             ),
                           ),
                           title: Text(
-                            widget.patientResponse.nom ?? '',
+                            widget.patientResponse!.nom ?? '',
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
@@ -332,7 +332,7 @@ class _CardItemRdvState extends State<CardItemRdv> {
                             const SizedBox(width: 8),
                             Flexible(
                               child: Text(
-                                widget.patientResponse.phone ?? '--',
+                                widget.patientResponse!.phone ,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
@@ -352,7 +352,7 @@ class _CardItemRdvState extends State<CardItemRdv> {
                             const SizedBox(width: 8),
                             Flexible(
                               child: Text(
-                                widget.patientResponse.email ?? '--',
+                                widget.patientResponse!.email ,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
@@ -393,7 +393,7 @@ class _CardItemRdvState extends State<CardItemRdv> {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 8, vertical: 2),
                           child: Text(
-                            widget.cabinetResponse.nom ?? '--',
+                            widget.cabinetResponse!.nom ,
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 16,
@@ -404,7 +404,7 @@ class _CardItemRdvState extends State<CardItemRdv> {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 8, vertical: 2),
                           child: Text(
-                            widget.cabinetResponse.city ?? '--',
+                            widget.cabinetResponse!.city ,
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontStyle: FontStyle.italic,
@@ -416,7 +416,7 @@ class _CardItemRdvState extends State<CardItemRdv> {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 8, vertical: 2),
                           child: Text(
-                            widget.cabinetResponse.address ?? '--',
+                            widget.cabinetResponse!.address,
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
@@ -430,7 +430,7 @@ class _CardItemRdvState extends State<CardItemRdv> {
                           child: Row(
                             children: [
                               Text(
-                                widget.cabinetResponse.phone ?? '--',
+                                widget.cabinetResponse!.phone ,
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 14,
@@ -446,7 +446,7 @@ class _CardItemRdvState extends State<CardItemRdv> {
                                   shape: BoxShape.circle,
                                 ),
                                 child: IconButton(
-                                  icon: const Icon(
+                                  icon:  Icon(
                                     Icons.call,
                                     color: AppColors.whiteColor,
                                     size: 16,
@@ -454,7 +454,7 @@ class _CardItemRdvState extends State<CardItemRdv> {
                                   splashRadius: 16,
                                   padding: EdgeInsets.zero,
                                   onPressed: () async => await _makeCall(
-                                      widget.cabinetResponse.phone),
+                                      widget.cabinetResponse!.phone),
                                 ),
                               ),
                             ],
@@ -480,19 +480,19 @@ class _CardItemRdvState extends State<CardItemRdv> {
                             onPressed: () => Navigator.pushNamed(
                                 context, RouteGenerator.openTok,
                                 arguments: TeleconsArgument(
-                                    tokentelecon: widget.appointmentDataResponse
+                                    tokentelecon: widget.appointmentDataResponse!
                                         .tokentelecons)),
-                            icon: const Icon(
+                            icon:  Icon(
                               Icons.videocam,
                               size: 20,
                               color: Colors.transparent,
                             ),
                             label: Text(
-                              widget.appointmentDataResponse
+                              widget.appointmentDataResponse!
                                           .buttonlabeltelecons !=
                                       null
-                                  ? widget.appointmentDataResponse
-                                      .buttonlabeltelecons
+                                  ? widget.appointmentDataResponse!
+                                      .buttonlabeltelecons!
                                   : 'Téléconsultation',
                               style: TextStyle(
                                 fontSize: 14,
@@ -522,13 +522,13 @@ class _CardItemRdvState extends State<CardItemRdv> {
                             context,
                             RouteGenerator.rdvType,
                             arguments: GetRdvTypePageArguments(
-                              tel: widget.cabinetResponse.phone,
+                              tel: widget.cabinetResponse!.phone,
                               idDoctor: '',
-                              doctorName: widget.cabinetResponse.nom,
-                              tokenAppointment: widget.cabinetResponse.token,
+                              doctorName: widget.cabinetResponse!.nom,
+                              tokenAppointment: widget.cabinetResponse!.token,
                             ),
                           );
-                          debugPrint(widget.cabinetResponse.token);
+                          debugPrint(widget.cabinetResponse!.token);
                         },
                         child: Text(
                           'Reprendre un Rdv'.toUpperCase(),

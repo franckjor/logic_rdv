@@ -16,17 +16,17 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wonderpush_flutter/wonderpush_flutter.dart';
 
 class MyDrawer extends StatefulWidget {
-  final String fullNme;
-  final String email;
-  final String page;
-  final String tokenUser;
+  final String? fullNme;
+  final String? email;
+  final String? page;
+  final String? tokenUser;
   final bool notification;
 
   MyDrawer({
     this.fullNme,
     this.email,
     this.tokenUser,
-    this.notification,
+    this.notification = false,
     this.page = '0',
   });
 
@@ -35,14 +35,14 @@ class MyDrawer extends StatefulWidget {
 }
 
 class _MyDrawerState extends State<MyDrawer> {
-  String _installationIdKey;
-  String _isSubscribe;
-  String _tokenUser;
-  bool _notification;
+  late String _installationIdKey;
+  late String _isSubscribe;
+  late String _tokenUser;
+  late bool _notification;
 
   Future<String> getInstalationIdKey() async {
     final prefs = await SharedPreferences.getInstance();
-    _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey);
+    _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey)!;
     print("InstallationIdHome: $_installationIdKey");
     return _installationIdKey;
   }
@@ -54,7 +54,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
   Future<String> getVerifyIfIsSubscribe() async {
     final prefs = await SharedPreferences.getInstance();
-    _isSubscribe = prefs.getString(PreferenceKey.isSubscribe);
+    _isSubscribe = prefs.getString(PreferenceKey.isSubscribe)!;
     print("_isSubscribe: $_isSubscribe");
     setState(() {
       if (_isSubscribe == "0") {
@@ -117,7 +117,7 @@ class _MyDrawerState extends State<MyDrawer> {
               writeIsSubscribeInMemory("0");
               flushBarSuccess(state.subscribeResponse.message, context);
               getVerifyIfIsSubscribe();
-              if (state.subscribeResponse.data.total == "0") {
+              if (state.subscribeResponse.data!.total == "0") {
                 WonderPush.unsubscribeFromNotifications();
               }
             });
@@ -404,9 +404,9 @@ class _MyDrawerState extends State<MyDrawer> {
 }
 
 class _DrawerItem extends StatelessWidget {
-  final String text;
-  final Function onTap;
-  final IconData icon;
+  final String? text;
+  final Function()? onTap;
+  final IconData? icon;
 
   const _DrawerItem({
     super.key,
@@ -430,7 +430,7 @@ class _DrawerItem extends StatelessWidget {
             ),
             const SizedBox(width: 12),
             Text(
-              text,
+              text!,
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,

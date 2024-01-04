@@ -539,7 +539,7 @@ class SubscribeResponseBuilder
         _data?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'SubscribeResponse', _$failedField, e.toString());
+            r'SubscribeResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

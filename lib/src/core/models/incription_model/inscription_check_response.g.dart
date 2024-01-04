@@ -500,7 +500,7 @@ class InscriptionCheckResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'InscriptionCheckResponse', _$failedField, e.toString());
+            r'InscriptionCheckResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -723,7 +723,7 @@ class DataInscriptionCheckResponseBuilder
         cgu.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataInscriptionCheckResponse', _$failedField, e.toString());
+            r'DataInscriptionCheckResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

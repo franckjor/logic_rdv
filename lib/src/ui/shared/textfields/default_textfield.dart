@@ -1,13 +1,13 @@
 import 'package:logic_rdv_v0/src/common.dart';
 
 class DefaultTextField extends StatelessWidget {
-  final String hintText;
-  final Widget suffixIcon;
+  final String? hintText;
+  final Widget? suffixIcon;
   final bool obscureText;
-  final FocusNode focusNode;
-  final TextInputAction textInputAction;
-  final TextEditingController controller;
-  final Function validator;
+  final FocusNode? focusNode;
+  final TextInputAction? textInputAction;
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
   const DefaultTextField({
     super.key,
     this.hintText,

@@ -14,7 +14,7 @@ class PatientRepository extends AbstractRepository {
         token, path,
         data: patientRequest.toJson());
     PatientResponseAfertCreate patientResponseAfertCreate =
-        PatientResponseAfertCreate.fromJson(response.toString());
+        PatientResponseAfertCreate.fromJson(response.toString())!;
     return patientResponseAfertCreate;
   }
 
@@ -25,7 +25,7 @@ class PatientRepository extends AbstractRepository {
         token, path,
         data: patientRequest.toJson());
     RemovePatientResponse newPatient =
-        RemovePatientResponse.fromJson(response.toString());
+        RemovePatientResponse.fromJson(response.toString())!;
     return newPatient;
   }
 
@@ -36,7 +36,7 @@ class PatientRepository extends AbstractRepository {
         token, path,
         data: removePatientRequest.toJson());
     RemovePatientResponse removePatientResponse =
-        RemovePatientResponse.fromJson(response.toString());
+        RemovePatientResponse.fromJson(response.toString())!;
     return removePatientResponse;
   }
 
@@ -48,7 +48,7 @@ class PatientRepository extends AbstractRepository {
         token, path,
         data: getListOfPatientRequest.toJson());
     PatientResponseAfertCreate listOfPatients =
-        PatientResponseAfertCreate.fromJson(response.toString());
+        PatientResponseAfertCreate.fromJson(response.toString())!;
     return listOfPatients;
   }
 

@@ -24,7 +24,7 @@ abstract class MessageRequest
         .encode(serializers.serializeWith(MessageRequest.serializer, this));
   }
 
-  static MessageRequest fromJson(String jsonString) {
+  static MessageRequest? fromJson(String jsonString) {
     return serializers.deserializeWith(
         MessageRequest.serializer, json.decode(jsonString));
   }

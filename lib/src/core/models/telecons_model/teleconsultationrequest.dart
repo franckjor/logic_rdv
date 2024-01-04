@@ -23,7 +23,7 @@ abstract class TeleconsRequest
         .encode(serializers.serializeWith(TeleconsRequest.serializer, this));
   }
 
-  static TeleconsRequest fromJson(String jsonString) {
+  static TeleconsRequest? fromJson(String jsonString) {
     return serializers.deserializeWith(
         TeleconsRequest.serializer, json.decode(jsonString));
   }

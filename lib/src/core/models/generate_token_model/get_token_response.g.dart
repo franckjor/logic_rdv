@@ -300,7 +300,7 @@ class GetTokenResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'GetTokenResponse', _$failedField, e.toString());
+            r'GetTokenResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

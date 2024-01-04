@@ -581,7 +581,7 @@ class LoginStartedResponseBuilder
         data.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'LoginStartedResponse', _$failedField, e.toString());
+            r'LoginStartedResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }
@@ -887,7 +887,7 @@ class DataLoginStartedResponseBuilder
         buttonvalidation.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'DataLoginStartedResponse', _$failedField, e.toString());
+            r'DataLoginStartedResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

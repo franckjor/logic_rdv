@@ -37,11 +37,11 @@ class MessagesScreen extends StatefulWidget {
 
 class _MessagesScreenState extends State<MessagesScreen> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  String _tokenUser;
-  String _email;
-  String _fullName;
+  late String _tokenUser;
+  late String _email;
+  late String _fullName;
   int currentPage = 1;
-  int totalOfPage;
+  late int totalOfPage;
   bool isRefreshList = false;
   bool _isLoading = false;
   List<MessageDataResponse> message = [];
@@ -68,7 +68,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
           getMessageList(
               context: context,
               tokenUser: _tokenUser,
-              page: currentPage.toString());
+              page: currentPage.toString())!;
         });
       }
     }
@@ -101,16 +101,16 @@ class _MessagesScreenState extends State<MessagesScreen> {
           actions: [
             IconButton(
               icon: isAndroid || isWeb
-                  ? const Icon(
+                  ?  Icon(
                       MdiIcons.accountCircle,
                       color: Colors.white,
                     )
-                  : const Icon(
+                  :  Icon(
                       CupertinoIcons.person_alt_circle_fill,
                       color: Colors.white,
                     ),
               splashRadius: 20,
-              onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+              onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
             ),
           ],
         ),
@@ -128,7 +128,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                   getMessageList(
                       context: context,
                       tokenUser: _tokenUser,
-                      page: currentPage.toString());
+                      page: currentPage.toString())!;
                 });
               } else if (state
                   is SharedPreferenceTokenAuthorizationWriteState) {
@@ -208,7 +208,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                   ..add(SetSharedPreferenceTokenAuthorization(
                       tokenAuthorizationKey:
                           PreferenceKey.tokenAuthorizationKey,
-                      tokenAuthorization: state.getToken.data.authorization
+                      tokenAuthorization: state.getToken.data.authorization!
                           .replaceAll("X-LOGICRDV-AUTH:", "")));
               } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
                 flushBarError(state.error, context);
@@ -254,8 +254,8 @@ class _MessagesScreenState extends State<MessagesScreen> {
 }
 
 class _MessageItem extends StatelessWidget {
-  final MessageDataResponse messageDataResponse;
-  final Function onPressPdfReader;
+  final MessageDataResponse? messageDataResponse;
+  final Function()? onPressPdfReader;
 
   _MessageItem({
     this.messageDataResponse,
@@ -265,7 +265,7 @@ class _MessageItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String fileName =
-        messageDataResponse.file.replaceAll('https://www.logicrdv.fr/', '');
+        messageDataResponse!.file.replaceAll('https://www.logicrdv.fr/', '');
     return Card(
       elevation: 0,
       margin: EdgeInsets.only(bottom: 12),
@@ -284,7 +284,7 @@ class _MessageItem extends StatelessWidget {
                   topRight: Radius.circular(4),
                 )),
             child: Text(
-              messageDataResponse.datetime,
+              messageDataResponse!.datetime,
               style: TextStyle(
                 color: AppColors.whiteColor,
                 fontWeight: FontWeight.w600,
@@ -308,12 +308,12 @@ class _MessageItem extends StatelessWidget {
                       const SizedBox(width: 20),
                       InkWell(
                         onTap: () {
-                          launch(messageDataResponse.file);
+                          launch(messageDataResponse!.file);
                         },
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            const Icon(
+                             Icon(
                               MdiIcons.pdfBox,
                               color: Colors.blue,
                             ),
@@ -333,7 +333,7 @@ class _MessageItem extends StatelessWidget {
                       ),
                     ],
                   ),
-                  visible: messageDataResponse.file.isNotEmpty,
+                  visible: messageDataResponse!.file.isNotEmpty,
                 ),
                 const SizedBox(height: 10),
                 Row(
@@ -347,7 +347,7 @@ class _MessageItem extends StatelessWidget {
                     const SizedBox(width: 20),
                     Expanded(
                       child: Text(
-                        messageDataResponse.from,
+                        messageDataResponse!.from,
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.end,
                         style: TextStyle(
@@ -370,7 +370,7 @@ class _MessageItem extends StatelessWidget {
                     const SizedBox(width: 20),
                     Expanded(
                       child: Text(
-                        messageDataResponse.to,
+                        messageDataResponse!.to,
                         textAlign: TextAlign.end,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
@@ -393,7 +393,7 @@ class _MessageItem extends StatelessWidget {
                     const SizedBox(width: 20),
                     Expanded(
                       child: Text(
-                        messageDataResponse.subject,
+                        messageDataResponse!.subject,
                         textAlign: TextAlign.end,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(

@@ -33,7 +33,7 @@ abstract class RemoveDoctorResponse
         serializers.serializeWith(RemoveDoctorResponse.serializer, this));
   }
 
-  static RemoveDoctorResponse fromJson(String jsonString) {
+  static RemoveDoctorResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         RemoveDoctorResponse.serializer, json.decode(jsonString));
   }
@@ -60,7 +60,7 @@ abstract class ParamsRemoveDoctorResponse
         serializers.serializeWith(ParamsRemoveDoctorResponse.serializer, this));
   }
 
-  static ParamsRemoveDoctorResponse fromJson(String jsonString) {
+  static ParamsRemoveDoctorResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsRemoveDoctorResponse.serializer, json.decode(jsonString));
   }

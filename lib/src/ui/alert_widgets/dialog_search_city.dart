@@ -25,8 +25,8 @@ class DialogSearchCityValue extends StatefulWidget {
 class _DialogSearchCityState extends State<DialogSearchCityValue> {
   TextEditingController _searchValueCity = TextEditingController();
   List<ClientInfosResponseSearchCity> clientInfoSearchCity = [];
-  String _cityId;
-  CityValue _cityValue;
+  late String _cityId;
+  late CityValue _cityValue;
   bool _loading = true;
 
   @override
@@ -114,7 +114,7 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
                           hintText: 'Code postal, ville',
                           controller: _searchValueCity,
                           autoFocus: true,
-                          validator: (value) => verifyEmpty(value),
+                          validator: (value) => verifyEmpty(value!, errorMessage: ''),
                           suffixIcon: _searchValueCity.text != ''
                               ? InkWell(
                                   onTap: () {
@@ -122,12 +122,12 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
                                       _searchValueCity.clear();
                                     });
                                   },
-                                  child: const Icon(
+                                  child:  Icon(
                                     Icons.clear,
                                     color: Colors.red,
                                   ),
                                 )
-                              : const Icon(Icons.clear,
+                              :  Icon(Icons.clear,
                                   color: Colors.transparent),
                           onTapeChangeHandler: (value) {
                             setState(() {
@@ -145,7 +145,7 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
                         ),
                       ),
                       IconButton(
-                          icon: const Icon(
+                          icon:  Icon(
                             Icons.clear,
                             color: AppColors.whiteColor,
                           ),
@@ -208,8 +208,8 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
 }
 
 class CityValue {
-  String cityName;
-  String cityId;
+  String? cityName;
+  String? cityId;
 
-  CityValue({required this.cityName, this.cityId});
+  CityValue({ this.cityName, this.cityId});
 }

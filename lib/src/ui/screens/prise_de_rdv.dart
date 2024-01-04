@@ -15,8 +15,8 @@ class PriseDeRdv extends StatefulWidget {
 }
 
 class _PriseDeRdvState extends State<PriseDeRdv> {
-  String _email;
-  String _fullName;
+  String? _email;
+  String? _fullName;
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -34,16 +34,16 @@ class _PriseDeRdvState extends State<PriseDeRdv> {
         actions: [
           IconButton(
             icon: Platform.isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                : const Icon(
+                :  Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -153,7 +153,7 @@ class _RdvItem extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    const Icon(
+                     Icon(
                       Icons.alarm,
                       size: 14,
                       color: Colors.white,
@@ -189,7 +189,7 @@ class _RdvItem extends StatelessWidget {
             padding: const EdgeInsets.all(12),
             child: Row(
               children: [
-                const Icon(Icons.person),
+                 Icon(Icons.person),
                 const SizedBox(width: 8),
                 const Text(
                   'Jules Cesar',

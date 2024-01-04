@@ -343,7 +343,7 @@ class SearchDialogResponseBuilder
         params.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'SearchDialogResponse', _$failedField, e.toString());
+            r'SearchDialogResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

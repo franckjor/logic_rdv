@@ -39,26 +39,26 @@ class UserEditedProfile extends StatefulWidget {
 }
 
 class _UserEditedProfileState extends State<UserEditedProfile> {
-  String _email;
-  String _fullName;
-  String _tokenUser;
+  late String _email;
+  late String _fullName;
+  late String _tokenUser;
   final _key = GlobalKey();
   bool _obscureText = true;
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final _formKey = GlobalKey<FormState>();
   double _textFieldHeight = 50;
-  FocusNode _focusNodeConnectButton;
+  late FocusNode _focusNodeConnectButton;
 
-  TextEditingController _nameController;
-  TextEditingController _surNameController;
-  TextEditingController _mobileController;
-  TextEditingController _emailController;
-  TextEditingController _adressController;
-  TextEditingController _villeController;
-  TextEditingController _postalCodeController;
-  TextEditingController _passwordController;
-  TextEditingController _passwordConfirmController;
+  late TextEditingController _nameController;
+  late TextEditingController _surNameController;
+  late TextEditingController _mobileController;
+  late TextEditingController _emailController;
+  late TextEditingController _adressController;
+  late TextEditingController _villeController;
+  late TextEditingController _postalCodeController;
+  late TextEditingController _passwordController;
+  late TextEditingController _passwordConfirmController;
 
   @override
   void initState() {
@@ -82,8 +82,8 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
     prefs.remove(PreferenceKey.objectKey);
   }
 
-  SharePreferenceObject _object;
-  File _image;
+  late SharePreferenceObject _object;
+  late File _image;
   final picker = ImagePicker();
 
   Future<void> _takePicture() async {
@@ -197,16 +197,16 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
-                : const Icon(
+                :  Icon(
                     CupertinoIcons.person_alt_circle_fill,
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -293,7 +293,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
               BlocProvider.of<SharedPreferenceBloc>(context)
                 ..add(SetSharedPreferenceTokenAuthorization(
                     tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
-                    tokenAuthorization: state.getToken.data.authorization
+                    tokenAuthorization: state.getToken.data.authorization!
                         .replaceAll("X-LOGICRDV-AUTH:", "")));
             } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
               flushBarError(state.error, context);
@@ -428,7 +428,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                             hintText: 'Nom',
                             controller: _nameController,
                             validator: (value) {
-                              return verifyEmpty(value);
+                              return verifyEmpty(value!, errorMessage: '');
                             },
                           ),
                           const SizedBox(height: 10),
@@ -449,7 +449,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                             hintText: 'Numero de telephone',
                             controller: _mobileController,
                             validator: (value) {
-                              return verifyEmpty(value);
+                              return verifyEmpty(value!, errorMessage: '');
                             },
                           ),
                           const SizedBox(height: 10),
@@ -461,7 +461,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                             hintText: 'Email',
                             controller: _emailController,
                             validator: (value) {
-                              return verifyEmpty(value);
+                              return verifyEmpty(value!, errorMessage: '');
                             },
                           ),
                           SizedBox(height: 10),
@@ -555,7 +555,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                                 final _form = _formKey.currentState;
                                 if (_passwordController.text ==
                                     _passwordConfirmController.text) {
-                                  if (_form.validate()) {
+                                  if (_form!.validate()) {
                                     progressDialog.setMessage('Chargment...');
                                     progressDialog.show();
                                     updateUserAccount(
@@ -655,7 +655,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
 }
 
 class _LabelWidget extends StatelessWidget {
-  final String label;
+  final String? label;
   const _LabelWidget({
     super.key,
     this.label,
@@ -666,7 +666,7 @@ class _LabelWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 8),
       child: Text(
-        label,
+        label!,
         style: TextStyle(
           fontWeight: FontWeight.w500,
           color: Colors.blueGrey,

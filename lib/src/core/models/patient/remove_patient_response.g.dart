@@ -328,7 +328,7 @@ class RemovePatientResponseBuilder
         params.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'RemovePatientResponse', _$failedField, e.toString());
+            r'RemovePatientResponse', _$failedField, e.toString())!;
       }
       rethrow;
     }

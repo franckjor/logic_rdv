@@ -36,7 +36,7 @@ abstract class MessageResponse
         .encode(serializers.serializeWith(MessageResponse.serializer, this));
   }
 
-  static MessageResponse fromJson(String jsonString) {
+  static MessageResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         MessageResponse.serializer, json.decode(jsonString));
   }
@@ -61,7 +61,7 @@ abstract class ParamsMessageResponse
         serializers.serializeWith(ParamsMessageResponse.serializer, this));
   }
 
-  static ParamsMessageResponse fromJson(String jsonString) {
+  static ParamsMessageResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsMessageResponse.serializer, json.decode(jsonString));
   }
@@ -86,7 +86,7 @@ abstract class DataMessageResponse
         serializers.serializeWith(DataMessageResponse.serializer, this));
   }
 
-  static DataMessageResponse fromJson(String jsonString) {
+  static DataMessageResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataMessageResponse.serializer, json.decode(jsonString));
   }
@@ -127,7 +127,7 @@ abstract class MessageDataResponse
         serializers.serializeWith(MessageDataResponse.serializer, this));
   }
 
-  static MessageDataResponse fromJson(String jsonString) {
+  static MessageDataResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         MessageDataResponse.serializer, json.decode(jsonString));
   }

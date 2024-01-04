@@ -35,7 +35,7 @@ abstract class LoginStartedResponse
         serializers.serializeWith(LoginStartedResponse.serializer, this));
   }
 
-  static LoginStartedResponse fromJson(String jsonString) {
+  static LoginStartedResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         LoginStartedResponse.serializer, json.decode(jsonString));
   }
@@ -59,7 +59,7 @@ abstract class ParamsLoginStartedResponse implements Built<ParamsLoginStartedRes
     return json.encode(serializers.serializeWith(ParamsLoginStartedResponse.serializer, this));
   }
 
-  static ParamsLoginStartedResponse fromJson(String jsonString) {
+  static ParamsLoginStartedResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ParamsLoginStartedResponse.serializer, json.decode(jsonString));
   }
@@ -88,7 +88,7 @@ abstract class DataLoginStartedResponse implements Built<DataLoginStartedRespons
     return json.encode(serializers.serializeWith(DataLoginStartedResponse.serializer, this));
   }
 
-  static DataLoginStartedResponse fromJson(String jsonString) {
+  static DataLoginStartedResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         DataLoginStartedResponse.serializer, json.decode(jsonString));
   }
@@ -120,7 +120,7 @@ abstract class InputloginStartedResponse
         serializers.serializeWith(InputloginStartedResponse.serializer, this));
   }
 
-  static InputloginStartedResponse fromJson(String jsonString) {
+  static InputloginStartedResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         InputloginStartedResponse.serializer, json.decode(jsonString));
   }
@@ -153,7 +153,7 @@ abstract class ButtonvalidationloginStartedResponse
         ButtonvalidationloginStartedResponse.serializer, this));
   }
 
-  static ButtonvalidationloginStartedResponse fromJson(String jsonString) {
+  static ButtonvalidationloginStartedResponse? fromJson(String jsonString) {
     return serializers.deserializeWith(
         ButtonvalidationloginStartedResponse.serializer,
         json.decode(jsonString));

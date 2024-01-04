@@ -33,7 +33,7 @@ abstract class PatientRequest
         .encode(serializers.serializeWith(PatientRequest.serializer, this));
   }
 
-  static PatientRequest fromJson(String jsonString) {
+  static PatientRequest? fromJson(String jsonString) {
     return serializers.deserializeWith(
         PatientRequest.serializer, json.decode(jsonString));
   }

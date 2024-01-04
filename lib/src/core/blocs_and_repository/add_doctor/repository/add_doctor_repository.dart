@@ -11,7 +11,7 @@ class AddDoctorRepository extends AbstractRepository {
         token, path,
         data: addDoctorRequest.toJson());
     AddDoctorResponse _addDoctorResponse =
-        AddDoctorResponse.fromJson(response.toString());
+        AddDoctorResponse.fromJson(response.toString())!;
     return _addDoctorResponse;
   }
 

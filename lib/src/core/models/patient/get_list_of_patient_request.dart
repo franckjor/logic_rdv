@@ -27,7 +27,7 @@ abstract class GetListOfPatientRequest
 
   static GetListOfPatientRequest fromJson(String jsonString) {
     return serializers.deserializeWith(
-        GetListOfPatientRequest.serializer, json.decode(jsonString));
+        GetListOfPatientRequest.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<GetListOfPatientRequest> get serializer =>

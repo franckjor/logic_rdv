@@ -38,7 +38,7 @@ abstract class SearchDialogResponse
 
   static SearchDialogResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        SearchDialogResponse.serializer, json.decode(jsonString));
+        SearchDialogResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<SearchDialogResponse> get serializer =>
@@ -62,7 +62,7 @@ abstract class ParamsSearchDialogResponse implements Built<ParamsSearchDialogRes
 
   static ParamsSearchDialogResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsSearchDialogResponse.serializer, json.decode(jsonString));
+        ParamsSearchDialogResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<ParamsSearchDialogResponse> get serializer => _$paramsSearchDialogResponseSerializer;

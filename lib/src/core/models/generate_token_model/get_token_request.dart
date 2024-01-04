@@ -26,7 +26,7 @@ abstract class GetTokenRequest
 
   static GetTokenRequest fromJson(String jsonString) {
     return serializers.deserializeWith(
-        GetTokenRequest.serializer, json.decode(jsonString));
+        GetTokenRequest.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<GetTokenRequest> get serializer =>

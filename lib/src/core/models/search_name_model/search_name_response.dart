@@ -37,7 +37,7 @@ abstract class SearchNameResponse
 
   static SearchNameResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        SearchNameResponse.serializer, json.decode(jsonString));
+        SearchNameResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<SearchNameResponse> get serializer =>
@@ -68,7 +68,7 @@ abstract class ParamsSearchNameResponse
 
   static ParamsSearchNameResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsSearchNameResponse.serializer, json.decode(jsonString));
+        ParamsSearchNameResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<ParamsSearchNameResponse> get serializer =>
@@ -101,7 +101,7 @@ abstract class DataSearchNameResponse
 
   static DataSearchNameResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        DataSearchNameResponse.serializer, json.decode(jsonString));
+        DataSearchNameResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<DataSearchNameResponse> get serializer =>
@@ -160,13 +160,13 @@ abstract class ObjectNameOfSearch
 
   static ObjectNameOfSearch fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ObjectNameOfSearch.serializer, json.decode(jsonString));
+        ObjectNameOfSearch.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<ObjectNameOfSearch> get serializer =>
       _$objectNameOfSearchSerializer;
 
-  String get fullName => nom ?? " " + " " + prenom ?? " ";
+  String get fullName => nom ?? " " + " " + prenom! ?? " ";
 }
 
 abstract class AppointmentSearchNameResponse
@@ -188,7 +188,7 @@ abstract class AppointmentSearchNameResponse
 
   static AppointmentSearchNameResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        AppointmentSearchNameResponse.serializer, json.decode(jsonString));
+        AppointmentSearchNameResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<AppointmentSearchNameResponse> get serializer =>

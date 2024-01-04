@@ -35,7 +35,7 @@ abstract class LoginResponse
 
   static LoginResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        LoginResponse.serializer, json.decode(jsonString));
+        LoginResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<LoginResponse> get serializer => _$loginResponseSerializer;
@@ -59,7 +59,7 @@ abstract class ParamsLoginResponse
 
   static ParamsLoginResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        ParamsLoginResponse.serializer, json.decode(jsonString));
+        ParamsLoginResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<ParamsLoginResponse> get serializer =>
@@ -90,7 +90,7 @@ abstract class DataLoginResponse
 
   static DataLoginResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        DataLoginResponse.serializer, json.decode(jsonString));
+        DataLoginResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<DataLoginResponse> get serializer =>

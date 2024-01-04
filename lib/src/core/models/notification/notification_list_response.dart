@@ -39,7 +39,7 @@ abstract class NotificationListResponse
 
   static NotificationListResponse fromJson(String jsonString) {
     return serializers.deserializeWith(
-        NotificationListResponse.serializer, json.decode(jsonString));
+        NotificationListResponse.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<NotificationListResponse> get serializer =>
@@ -68,7 +68,7 @@ abstract class NotificationResponseParams
 
   static NotificationResponseParams fromJson(String jsonString) {
     return serializers.deserializeWith(
-        NotificationResponseParams.serializer, json.decode(jsonString));
+        NotificationResponseParams.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<NotificationResponseParams> get serializer =>
@@ -95,7 +95,7 @@ abstract class NotificationResponseData
 
   static NotificationResponseData fromJson(String jsonString) {
     return serializers.deserializeWith(
-        NotificationResponseData.serializer, json.decode(jsonString));
+        NotificationResponseData.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<NotificationResponseData> get serializer =>
@@ -126,7 +126,7 @@ abstract class NotificationResponseList
 
   static NotificationResponseList fromJson(String jsonString) {
     return serializers.deserializeWith(
-        NotificationResponseList.serializer, json.decode(jsonString));
+        NotificationResponseList.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<NotificationResponseList> get serializer =>
@@ -158,7 +158,7 @@ abstract class NotificationResponsePagination
 
   static NotificationResponsePagination fromJson(String jsonString) {
     return serializers.deserializeWith(
-        NotificationResponsePagination.serializer, json.decode(jsonString));
+        NotificationResponsePagination.serializer, json.decode(jsonString))!;
   }
 
   static Serializer<NotificationResponsePagination> get serializer =>

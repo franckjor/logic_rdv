@@ -13,9 +13,9 @@ double _progress = 0.0;
 bool _isShowing = false;
 
 class ProgressDialog {
-  _MyDialog _dialog;
+   _MyDialog? _dialog;
 
-  BuildContext _buildContext, _context;
+  BuildContext? _buildContext, _context;
 
   ProgressDialog(this._buildContext, ProgressDialogType progressDialogtype) {
     _progressDialogType = progressDialogtype;
@@ -26,7 +26,7 @@ class ProgressDialog {
     debugPrint("ProgressDialog message changed: $mess");
   }
 
-  void update({double progress, String message}) {
+  void update({required double progress,required  String message}) {
     debugPrint("ProgressDialog message changed: ");
     if (_progressDialogType == ProgressDialogType.Download) {
       debugPrint("Old Progress: $_progress, New Progress: $progress");
@@ -34,7 +34,7 @@ class ProgressDialog {
     }
     debugPrint("Old message: $_dialogMessage, New Message: $message");
     _dialogMessage = message;
-    _dialog.update();
+    _dialog!.update();
   }
 
   bool isShowing() {
@@ -44,7 +44,7 @@ class ProgressDialog {
   void hide() {
     if (_isShowing) {
       _isShowing = false;
-      Navigator.pop(_buildContext);
+      Navigator.pop(_buildContext!);
       debugPrint('ProgressDialog dismissed');
     }
   }
@@ -55,7 +55,7 @@ class ProgressDialog {
       _isShowing = true;
       debugPrint('ProgressDialog shown');
       showDialog<dynamic>(
-        context: _buildContext,
+        context: _buildContext!,
         barrierDismissible: false,
         builder: (BuildContext context) {
           _context = context;
@@ -140,7 +140,7 @@ class _MyDialogState extends State<_MyDialog> {
 }
 
 class MessageBox {
-  required BuildContext buildContext;
+   BuildContext buildContext;
   String message = " ", title = " ";
 
   MessageBox(this.buildContext, this.message, this.title);

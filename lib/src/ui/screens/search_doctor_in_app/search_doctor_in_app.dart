@@ -430,7 +430,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                                     onTapeFocusChangeHandler: () {
                                       _showDialogSearchCityValue(context);
                                     },
-                                    validator: (value) => verifyEmpty(value),
+                                    validator: (value) => verifyEmpty(value, errorMessage: ''),
                                     suffixIcon: Padding(
                                       padding: const EdgeInsets.only(
                                           right: 20, left: 10),
@@ -517,7 +517,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                                     )
                                   : Icon(Icons.clear,
                                       color: Colors.transparent),
-                              validator: (value) => verifyEmpty(value),
+                              validator: (value) => verifyEmpty(value, errorMessage: ''),
                             ),
                             const SizedBox(height: 20),
                             Visibility(

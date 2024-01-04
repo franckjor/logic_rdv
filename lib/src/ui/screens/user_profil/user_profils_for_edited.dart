@@ -555,7 +555,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                                 final _form = _formKey.currentState;
                                 if (_passwordController.text ==
                                     _passwordConfirmController.text) {
-                                  if (_form.validate()) {
+                                  if (_form!.validate()) {
                                     progressDialog.setMessage('Chargment...');
                                     progressDialog.show();
                                     updateUserAccount(

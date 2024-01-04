@@ -32,14 +32,14 @@ class _LoginfDialogState extends State<LoginfDialog> {
   final _formKey = GlobalKey<FormState>();
 
   bool _obscureText = true;
-  SharePreferenceObject _object;
+  late SharePreferenceObject _object;
   TextEditingController _loginController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   bool _isLoginViewVisible = true;
   bool _isSignInViewVisible = false;
-  String _tokenUser;
+  late String _tokenUser;
 
-  FocusNode _focusNodeConnectButton;
+  late FocusNode _focusNodeConnectButton;
 
   double _textFieldHeight = 0;
   final _key = GlobalKey();
@@ -67,12 +67,12 @@ class _LoginfDialogState extends State<LoginfDialog> {
   List<ButtonvalidationloginStartedResponse>
       _buttonvalidationloginStartedResponse = [];
 
-  Etabs _etabs;
-  String code;
-  String _idDoctor;
+  late Etabs _etabs;
+  late String code;
+  late String _idDoctor;
   String _checkedCondition = '0';
 
-  Widget loginView(BuildContext context, {Function onTapToSignUp}) {
+  Widget loginView(BuildContext context, {Function()? onTapToSignUp}) {
     return Container(
       child: Column(
         children: [
@@ -110,13 +110,13 @@ class _LoginfDialogState extends State<LoginfDialog> {
                 AdaptativeTextFormField(
                   hintText: 'Adresse email ou numéro de téléphone',
                   controller: _loginController,
-                  validator: (value) => verifyEmpty(value),
+                  validator: (value) => verifyEmpty(value, errorMessage: ''),
                 ),
                 const SizedBox(height: 8),
                 Visibility(
                   visible: _ispasswordvisible,
                   child: TextFormField(
-                    validator: (value) => verifyEmpty(value),
+                    validator: (value) => verifyEmpty(value!, errorMessage: ''),
                     obscureText: _obscureText,
                     controller: _passwordController,
                     decoration: InputDecoration(
@@ -142,7 +142,7 @@ class _LoginfDialogState extends State<LoginfDialog> {
                                   _obscureText = !_obscureText;
                                 });
                               },
-                              child: const Icon(
+                              child:  Icon(
                                 MdiIcons.eyeOffOutline,
                                 color: AppColors.colorHintText,
                               ),
@@ -310,7 +310,7 @@ class _LoginfDialogState extends State<LoginfDialog> {
     );
   }
 
-  Widget signInViewVisible(BuildContext context, {Function onTapToSignIn}) {
+  Widget signInViewVisible(BuildContext context, {Function()? onTapToSignIn}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -383,34 +383,34 @@ class _LoginfDialogState extends State<LoginfDialog> {
                       const SizedBox(height: 16),
                       AdaptativeTextFormField(
                         hintText: 'Nom',
-                        validator: (value) => verifyEmpty(value),
+                        validator: (value) => verifyEmpty(value, errorMessage: ''),
                         controller: _nameController,
                       ),
                       const SizedBox(height: 8),
                       AdaptativeTextFormField(
                         hintText: 'Prénom',
-                        validator: (value) => verifyEmpty(value),
+                        validator: (value) => verifyEmpty(value, errorMessage: ''),
                         controller: _prenomController,
                       ),
                       const SizedBox(height: 8),
                       AdaptativeTextFormField(
                         hintText: 'Numèro de téléphone',
                         textInputType: TextInputType.phone,
-                        validator: (value) => verifyEmpty(value),
+                        validator: (value) => verifyEmpty(value, errorMessage: ''),
                         controller: _phoneController,
                       ),
                       const SizedBox(height: 8),
                       AdaptativeTextFormField(
                         hintText: 'Email',
                         textInputType: TextInputType.emailAddress,
-                        validator: (val) => verifyEmpty(val),
+                        validator: (val) => verifyEmpty(val, errorMessage: ''),
                         controller: _emailController,
                       ),
                       const SizedBox(height: 8),
                       TextFormField(
                         controller: _passwordController,
                         obscureText: _password1,
-                        validator: (value) => verifyEmpty(value),
+                        validator: (value) => verifyEmpty(value!, errorMessage: ''),
                         decoration: InputDecoration(
                           prefixIcon: const Icon(
                             Icons.lock,
@@ -478,7 +478,7 @@ class _LoginfDialogState extends State<LoginfDialog> {
                       TextFormField(
                         controller: _confirmPasswordController,
                         obscureText: _password2,
-                        validator: (value) => verifyEmpty(value),
+                        validator: (value) => verifyEmpty(value!, errorMessage: ''),
                         decoration: InputDecoration(
                           prefixIcon: const Icon(
                             Icons.lock,
@@ -599,7 +599,7 @@ class _LoginfDialogState extends State<LoginfDialog> {
                   textFieldHeight: 50,
                   onPressed: () {
                     final _form = _formKey.currentState;
-                    if (_form.validate()) {
+                    if (_form!.validate()) {
                       if (_passwordController.text ==
                           _confirmPasswordController.text) {
                         if (_checkedCondition == '1') {
@@ -660,8 +660,8 @@ class _LoginfDialogState extends State<LoginfDialog> {
               setState(() {
                 _ispasswordvisible = false;
                 type = state.response.data.type;
-                _headerText = state.response?.data?.headermessage;
-                _session = state.response?.data?.session;
+                _headerText = state.response.data.headermessage;
+                _session = state.response.data.session;
                 _buttonvalidationloginStartedResponse =
                     state.response.data.buttonvalidation.toList();
               });
@@ -681,8 +681,8 @@ class _LoginfDialogState extends State<LoginfDialog> {
                 } else {
                   _ispasswordvisible = !_ispasswordvisible;
                   type = state.response.data.type;
-                  _headerText = state.response?.data?.headermessage;
-                  _session = state.response?.data?.session;
+                  _headerText = state.response.data.headermessage;
+                  _session = state.response.data.session;
                   _buttonvalidationloginStartedResponse =
                       state.response.data.buttonvalidation.toList();
                 }
@@ -701,13 +701,13 @@ class _LoginfDialogState extends State<LoginfDialog> {
                     ),
                   );
                 } else {
-                  _tokenUser = state.response.data.user.tokenuser;
+                  _tokenUser = state.response.data.user!.tokenuser;
                   _object = SharePreferenceObject(
-                      token: state.response.data.user.tokenuser,
-                      email: state.response.data.user.email,
-                      firstName: state.response.data.user.nom,
-                      lastName: state.response.data.user.prenom,
-                      phoneNumber: state.response.data.user.mobile);
+                      token: state.response.data.user!.tokenuser,
+                      email: state.response.data.user!.email,
+                      firstName: state.response.data.user!.nom,
+                      lastName: state.response.data.user!.prenom,
+                      phoneNumber: state.response.data.user!.mobile);
                   BlocProvider.of<SharedPreferenceBloc>(context)
                     ..add(SetSharedPreferenceObject(
                       objectKey: PreferenceKey.objectKey,

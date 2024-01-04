@@ -25,8 +25,8 @@ class DialogSearchCityValue extends StatefulWidget {
 class _DialogSearchCityState extends State<DialogSearchCityValue> {
   TextEditingController _searchValueCity = TextEditingController();
   List<ClientInfosResponseSearchCity> clientInfoSearchCity = [];
-  String _cityId;
-  CityValue _cityValue;
+  late String _cityId;
+  late CityValue _cityValue;
   bool _loading = true;
 
   @override
@@ -114,7 +114,7 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
                           hintText: 'Code postal, ville',
                           controller: _searchValueCity,
                           autoFocus: true,
-                          validator: (value) => verifyEmpty(value),
+                          validator: (value) => verifyEmpty(value, errorMessage: ''),
                           suffixIcon: _searchValueCity.text != ''
                               ? InkWell(
                                   onTap: () {
@@ -211,5 +211,5 @@ class CityValue {
   String cityName;
   String cityId;
 
-  CityValue({required this.cityName, this.cityId});
+  CityValue({required this.cityName,required this.cityId});
 }

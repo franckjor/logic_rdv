@@ -292,14 +292,14 @@ class _LoginScreenState extends State<LoginScreen> {
                                   hintText:
                                       'Adresse email ou numéro de téléphone',
                                   controller: _loginController,
-                                  validator: (value) => verifyEmpty(value),
+                                  validator: (value) => verifyEmpty(value, errorMessage: ''),
                                 ),
                                 const SizedBox(height: 10),
                                 Visibility(
                                   visible: _ispasswordvisible,
                                   child: TextFormField(
                                     key: _key,
-                                    validator: (value) => verifyEmpty(value),
+                                    validator: (value) => verifyEmpty(value, errorMessage: ''),
                                     obscureText: _obscureText,
                                     controller: _passwordController,
                                     decoration: InputDecoration(

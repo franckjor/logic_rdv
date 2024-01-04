@@ -15,8 +15,8 @@ class DialogSearchObjectFName extends StatefulWidget {
   final String indexPage;
 
   DialogSearchObjectFName({
-    this.cityId,
-    this.indexPage,
+    required this.cityId,
+    required this.indexPage,
   });
 
   @override
@@ -27,8 +27,8 @@ class DialogSearchObjectFName extends StatefulWidget {
 class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
   TextEditingController _searchValueName = TextEditingController();
   List<ObjectNameOfSearch> objectNameOfSearch = [];
-  String _categoryId;
-  ObjectName _objectName;
+  late String _categoryId;
+  late ObjectName _objectName;
   bool _loading = true;
 
   @override
@@ -116,7 +116,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                           hintText: 'Nom, Spécialité, Téléphone',
                           autoFocus: true,
                           controller: _searchValueName,
-                          validator: (value) => verifyEmpty(value),
+                          validator: (value) => verifyEmpty(value, errorMessage: ''),
                           suffixIcon: _searchValueName.text != ''
                               ? InkWell(
                                   onTap: () {
@@ -189,10 +189,10 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                                         tokenAppointment:
                                             objectNameOfSearch[index]
                                                 .appointment
-                                                .token,
+                                                .token!,
                                         tokenDoctor: objectNameOfSearch[index]
                                             .appointment
-                                            .token));
+                                            .token!));
                               } else {
                                 _objectName = ObjectName(
                                     catId: _categoryId,
@@ -304,5 +304,5 @@ class ObjectName {
   String fullName;
   String catId;
 
-  ObjectName({required this.fullName, this.catId});
+  ObjectName({required this.fullName,required this.catId});
 }

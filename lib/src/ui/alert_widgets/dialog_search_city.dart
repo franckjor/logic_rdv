@@ -61,7 +61,7 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
                       fontWeight: FontWeight.normal,
                     ),
                   ),
-                ),
+                ), title: '', buttonLabel: '', willPop: null,
               );
             } else {
               customAlert(
@@ -72,7 +72,7 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
                     state.error,
                     textAlign: TextAlign.center,
                   ),
-                ),
+                ), title: '', action: () {  }, buttonLabel: '', willPop: null,
               );
             }
           }
@@ -114,7 +114,7 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
                           hintText: 'Code postal, ville',
                           controller: _searchValueCity,
                           autoFocus: true,
-                          validator: (value) => verifyEmpty(value, errorMessage: ''),
+                          validator: (value) => verifyEmpty(value!, errorMessage: ''),
                           suffixIcon: _searchValueCity.text != ''
                               ? InkWell(
                                   onTap: () {
@@ -141,7 +141,7 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
                                 ),
                               );
                             });
-                          },
+                          }, focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeFocusChangeHandler: () {  },
                         ),
                       ),
                       IconButton(

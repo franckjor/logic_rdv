@@ -38,16 +38,16 @@ class PatientManagement extends StatefulWidget {
 }
 
 class _PatientManagementState extends State<PatientManagement> {
-  String _tokenUser;
-  String _email;
-  String _fullName;
+  late String _tokenUser;
+  late String _email;
+  late String _fullName;
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   List<ObjectNameOfSearch> activeEtabs = [];
   List<ObjectNameOfSearch> sameCabinetEtabs = [];
   List<ObjectNameOfSearch> _activeEtabsAndSameCabinetEtabs = [];
-  ObjectNameOfSearch _sameCabinetEtabsObject;
+  late ObjectNameOfSearch _sameCabinetEtabsObject;
 
   bool isLoading = false;
 
@@ -77,7 +77,7 @@ class _PatientManagementState extends State<PatientManagement> {
           tokenUser: _tokenUser,
           page: '4',
           email: _email,
-          fullNme: _fullName,
+          fullNme: _fullName, notification: false,
         ),
       ),
       appBar: AdaptativeAppBar(
@@ -86,7 +86,7 @@ class _PatientManagementState extends State<PatientManagement> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
@@ -95,7 +95,7 @@ class _PatientManagementState extends State<PatientManagement> {
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -120,7 +120,7 @@ class _PatientManagementState extends State<PatientManagement> {
               BlocProvider.of<SharedPreferenceBloc>(context)
                 ..add(SetSharedPreferenceTokenAuthorization(
                     tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
-                    tokenAuthorization: state.getToken.data.authorization
+                    tokenAuthorization: state.getToken.data.authorization!
                         .replaceAll("X-LOGICRDV-AUTH:", "")));
             } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
               flushBarError(state.error, context);
@@ -141,7 +141,7 @@ class _PatientManagementState extends State<PatientManagement> {
                     'Ce Docteur fait parti de votre liste de medecin et '
                     'peux maintenant faire des consultations et avoir des patients',
                     textAlign: TextAlign.center,
-                  ),
+                  ), title: '', buttonLabel: '', action: () {  }, willPop: null,
                 );
               });
             } else if (state is AddDoctorFailure) {
@@ -164,7 +164,7 @@ class _PatientManagementState extends State<PatientManagement> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -184,7 +184,7 @@ class _PatientManagementState extends State<PatientManagement> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else {
                 customAlert(
@@ -195,7 +195,10 @@ class _PatientManagementState extends State<PatientManagement> {
                       state.error,
                       textAlign: TextAlign.center,
                     ),
-                  ),
+                  ), title: '', 
+                  buttonLabel: '', 
+                  action: () {  }, 
+                  willPop: null,
                 );
               }
             }
@@ -233,7 +236,7 @@ class _PatientManagementState extends State<PatientManagement> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -253,7 +256,7 @@ class _PatientManagementState extends State<PatientManagement> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else {
                 customAlert(
@@ -264,7 +267,9 @@ class _PatientManagementState extends State<PatientManagement> {
                       state.error,
                       textAlign: TextAlign.center,
                     ),
-                  ),
+                  ), title: '', 
+                  buttonLabel: '', 
+                  action: () {  }, willPop: null,
                 );
               }
             }
@@ -296,7 +301,7 @@ class _PatientManagementState extends State<PatientManagement> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else {
                 customAlert(
@@ -307,7 +312,10 @@ class _PatientManagementState extends State<PatientManagement> {
                       state.error,
                       textAlign: TextAlign.center,
                     ),
-                  ),
+                  ), title: '', 
+                  buttonLabel: '', 
+                  action: () {  }, 
+                  willPop: null,
                 );
               }
             }
@@ -318,7 +326,7 @@ class _PatientManagementState extends State<PatientManagement> {
               BlocProvider.of<SharedPreferenceBloc>(context)
                 ..add(SetSharedPreferenceTokenAuthorization(
                     tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
-                    tokenAuthorization: state.getToken.data.authorization
+                    tokenAuthorization: state.getToken.data.authorization!
                         .replaceAll("X-LOGICRDV-AUTH:", "")));
             } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
               flushBarError(state.error, context);
@@ -348,7 +356,7 @@ class _PatientManagementState extends State<PatientManagement> {
                                 addDoctor(
                                   context: context,
                                   id: _activeEtabsAndSameCabinetEtabs[i].id,
-                                  phone: _activeEtabsAndSameCabinetEtabs[i].tel,
+                                  phone: _activeEtabsAndSameCabinetEtabs[i].tel!,
                                   tokenUser: _tokenUser,
                                 );
                               },
@@ -372,9 +380,9 @@ class _AppointmentItem extends StatelessWidget {
   final Function onAddHandler;
 
   _AppointmentItem({
-    this.objectNameOfSearch,
-    this.tokenUser,
-    this.onAddHandler,
+    required this.objectNameOfSearch,
+    required this.tokenUser,
+    required this.onAddHandler,
   });
 
   @override
@@ -388,14 +396,16 @@ class _AppointmentItem extends StatelessWidget {
             content: Text(
               'Ce Docteur ne fait pas partis de vos medecins veuillez l\'ajouter.',
               textAlign: TextAlign.center,
-            ),
+            ), title: '', 
+            buttonLabel: '', 
+            action: () {  }, willPop: null,
           );
         } else {
           Navigator.of(context).pushNamed(RouteGenerator.patientListScreen,
               arguments: GetPatientPageArguments(
                   source: 'patient',
                   doctorName: objectNameOfSearch.fullName,
-                  tokenDoctor: objectNameOfSearch?.appointment?.token));
+                  tokenDoctor: objectNameOfSearch.appointment.token!, data: '', session: '', action: '', tokenappointment: '', tokenuser: ''));
         }
       },
       child: Card(
@@ -455,7 +465,7 @@ class _AppointmentItem extends StatelessWidget {
                         ),
                         const SizedBox(height: 3),
                         Text(
-                          objectNameOfSearch.category,
+                          objectNameOfSearch.category!,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             color: AppColors.primaryColor,
@@ -465,7 +475,7 @@ class _AppointmentItem extends StatelessWidget {
                         ),
                         const SizedBox(height: 2),
                         Text(
-                          objectNameOfSearch.address,
+                          objectNameOfSearch.address!,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             color: AppColors.primaryColor,
@@ -486,7 +496,7 @@ class _AppointmentItem extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          objectNameOfSearch.tel,
+                          objectNameOfSearch.tel!,
                           style: TextStyle(
                             color: AppColors.primaryColor,
                             fontWeight: FontWeight.bold,

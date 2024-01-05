@@ -61,9 +61,9 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
   TextEditingController _searchValueCity = TextEditingController();
   TextEditingController _searchValueName = TextEditingController();
   ScrollController _scrollController = new ScrollController();
-  String _cityId;
-  String _categoryId;
-  int totalOfPage;
+  late String _cityId;
+  late String _categoryId;
+  late int totalOfPage;
   bool isRefreshList = false;
 
   bool _isLoading = false;
@@ -72,17 +72,17 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
 
   List<ObjectNameOfSearch> objectNameOfSearch = [];
 
-  Position _currentPosition;
-  String _currentAddress;
+  late Position _currentPosition;
+  late String _currentAddress;
 
-  FocusNode _connectButtonFocus;
-  FocusNode _cityFocus;
-  FocusNode _nameFocus;
-  FocusNode _searchButtonFocus;
+  late FocusNode _connectButtonFocus;
+  late FocusNode _cityFocus;
+  late FocusNode _nameFocus;
+  late FocusNode _searchButtonFocus;
 
-  String _email;
-  String _fullName;
-  String _tokenUser;
+  late String _email;
+  late String _fullName;
+  late String _tokenUser;
   bool isCity = false;
   bool isSpecification = false;
   bool isCurrentPositionAsk = false;
@@ -97,9 +97,13 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
       customAlert(
           context: context,
           alertType: AlertType.info,
-          content: Text('Fontionnalite disponible uniquement sur mobile'));
+          content: Text('Fontionnalite disponible uniquement sur mobile'), 
+          title: '', 
+          buttonLabel: '', 
+          action: () {  }, 
+          willPop: null);
     } else {
-      geolocator
+      Geolocator
           .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
           .then((Position position) {
         setState(() {
@@ -143,7 +147,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
       ..add(GetSharedPreferenceObject(objectKey: PreferenceKey.objectKey));
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        _textFieldHeight = _keyTextField.currentContext.size.height;
+        _textFieldHeight = _keyTextField.currentContext!.size!.height;
       });
     });
   }
@@ -240,7 +244,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
           tokenUser: _tokenUser,
           page: '6',
           email: _email,
-          fullNme: _fullName,
+          fullNme: _fullName, notification: false,
         ),
       ),
       appBar: AdaptativeAppBar(
@@ -249,7 +253,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
@@ -258,7 +262,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -296,7 +300,9 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), 
+                  title: '', 
+                  buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -316,7 +322,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else {
                 flushBarError(state.error, context);
@@ -352,7 +358,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
               BlocProvider.of<SharedPreferenceBloc>(context)
                 ..add(SetSharedPreferenceTokenAuthorization(
                     tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
-                    tokenAuthorization: state.getToken.data.authorization
+                    tokenAuthorization: state.getToken.data.authorization!
                         .replaceAll("X-LOGICRDV-AUTH:", "")));
             } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
               flushBarError(state.error, context);
@@ -430,7 +436,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                                     onTapeFocusChangeHandler: () {
                                       _showDialogSearchCityValue(context);
                                     },
-                                    validator: (value) => verifyEmpty(value, errorMessage: ''),
+                                    validator: (value) => verifyEmpty(value!, errorMessage: ''),
                                     suffixIcon: Padding(
                                       padding: const EdgeInsets.only(
                                           right: 20, left: 10),
@@ -452,7 +458,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                                               Icons.clear,
                                               color: Colors.transparent,
                                             ),
-                                    ),
+                                    ), focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  },
                                   ),
                                 ),
                                 IconButton(
@@ -517,7 +523,9 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                                     )
                                   : Icon(Icons.clear,
                                       color: Colors.transparent),
-                              validator: (value) => verifyEmpty(value, errorMessage: ''),
+                              validator: (value) => verifyEmpty(value!, errorMessage: ''), focusNode: null, 
+                              onEditingComplete: () {  }, 
+                              textInputAction: null, onTapeChangeHandler: (String ) {  },
                             ),
                             const SizedBox(height: 20),
                             Visibility(

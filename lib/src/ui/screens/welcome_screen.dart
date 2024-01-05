@@ -87,7 +87,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       customAlert(
           context: context,
           alertType: AlertType.info,
-          content: Text('Fontionnalite disponible uniquement sur mobile'));
+          content: Text('Fontionnalite disponible uniquement sur mobile'),
+          title: '', buttonLabel: '', 
+          action: () {  }, willPop: null);
     } else {
       Geolocator
           .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
@@ -308,7 +310,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                      ),
+                      ), title: '', buttonLabel: '', willPop: null,
                     );
                   } else {
                     flushBarError(state.error, context);
@@ -342,7 +344,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           "La version ${state.response.data.version.android} est disponible vous pouvez télécharger.",
                       onYesAction: () {
                         LaunchReview.launch(androidAppId: PLAY_STORE_APP_ID);
-                      },
+                      }, alertType: null, confirmButtonLabel: '', cancelButtonLabel: '', onNoAction: () {  }, closeFunction: () {  },
                     );
                   }
                 }
@@ -412,7 +414,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                                       context);
                                                 },
                                                 validator: (value) =>
-                                                    verifyEmpty(value, errorMessage: ''),
+                                                    verifyEmpty(value!, errorMessage: ''),
                                                 suffixIcon: Padding(
                                                   padding:
                                                       const EdgeInsets.only(
@@ -440,7 +442,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                                           color: Colors
                                                               .transparent,
                                                         ),
-                                                ),
+                                                ), focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  },
                                               ),
                                             ),
                                             IconButton(
@@ -527,7 +529,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                                 color: Colors.transparent,
                                               ),
                                         validator: (value) =>
-                                            verifyEmpty(value, errorMessage: ''),
+                                            verifyEmpty(value!, errorMessage: ''), focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  },
                                       ),
                                       const SizedBox(height: 20),
                                       Visibility(
@@ -591,7 +593,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
               );
             }),
-          ),
+          ), title: '', leading: null, actions: [], scaffoldBackgroundColor: null, appBar: null,
         ),
       ),
     );

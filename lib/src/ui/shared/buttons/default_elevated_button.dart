@@ -2,13 +2,13 @@ import 'package:logic_rdv_v0/src/common.dart';
 
 class DefaultElevatedButton extends StatelessWidget {
   final String text;
-  final Function onPressed;
+  final Function()? onPressed;
   final Color primary;
   final double height;
   final Color onPrimary;
   const DefaultElevatedButton({
-    double textFieldHeight,
-    Key key,
+    double textFieldHeight = 0.0,
+    Key? key,
     required this.text,
     required this.onPressed,
     this.primary = AppColors.primaryColor,

@@ -48,13 +48,13 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
     return Scaffold(
       appBar: AdaptativeAppBar(
         leading: DefaultBackButton(),
-        title: 'Méthode de paiement',
+        title: 'Méthode de paiement', actions: [],
       ),
       body: Container(
         child: ListView.separated(
             itemBuilder: (context, i) {
-              Icon icon;
-              Text text;
+              Icon? icon;
+              Text? text;
 
               switch (i) {
                 case 0:

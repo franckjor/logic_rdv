@@ -18,12 +18,16 @@ class CheckStateRepository extends AbstractRepository {
     if (message != "" && type == TypeRdvState.apptcreneaux) {
       _rdvType = RdvType(
         message: message,
-        type: type,
+        type: type, session: '', onclickData: '', onclickAction: '', appointment: '', stripeClientSecret: '',
       );
     } else if (message != "") {
       _rdvType = RdvType(
         message: message,
         type: type,
+        session: '',
+        onclickData: '', 
+        onclickAction: '', 
+        appointment: '', stripeClientSecret: '',
       );
     } else {
       String session = response.data['data']['session'];

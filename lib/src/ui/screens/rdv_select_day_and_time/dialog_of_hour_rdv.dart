@@ -13,11 +13,11 @@ class RdvDialogHour extends StatefulWidget {
   final String doctorName;
 
   RdvDialogHour({
-    this.crenaux,
-    this.tokenUser,
-    this.tokenAppointment,
-    this.currentSession,
-    this.doctorName,
+    required this.crenaux,
+    required this.tokenUser,
+    required this.tokenAppointment,
+    required this.currentSession,
+    required this.doctorName,
   });
 
   @override
@@ -25,8 +25,8 @@ class RdvDialogHour extends StatefulWidget {
 }
 
 class _RdvDialogHourState extends State<RdvDialogHour> {
-  String onclickData;
-  String onclickAction;
+  late String onclickData;
+  late String onclickAction;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class _RdvDialogHourState extends State<RdvDialogHour> {
           children: [
             TextSpan(
               text:
-                  '${widget.crenaux.first.onclickData.split(' ')[0]} ${widget.crenaux.first.onclickData.split(' ')[1]} avec ',
+                  '${widget.crenaux.first.onclickData!.split(' ')[0]} ${widget.crenaux.first.onclickData!.split(' ')[1]} avec ',
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 color: AppColors.colorPrimary,
@@ -77,8 +77,8 @@ class _RdvDialogHourState extends State<RdvDialogHour> {
                     onTapForTakeAppointment: () {
                       setState(
                         () {
-                          onclickData = widget.crenaux[ind].onclickData;
-                          onclickAction = widget.crenaux[ind].onclickAction;
+                          onclickData = widget.crenaux[ind].onclickData!;
+                          onclickAction = widget.crenaux[ind].onclickAction!;
                           Navigator.pop(
                             context,
                             GetPatientPageArguments(

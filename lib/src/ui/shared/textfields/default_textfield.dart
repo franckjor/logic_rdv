@@ -7,16 +7,16 @@ class DefaultTextField extends StatelessWidget {
   final FocusNode focusNode;
   final TextInputAction textInputAction;
   final TextEditingController controller;
-  final Function validator;
+  final String? Function(String?)? validator;
   const DefaultTextField({
     super.key,
-    this.hintText,
-    this.suffixIcon,
+    required this.hintText,
+    required this.suffixIcon,
     this.obscureText = false,
-    this.focusNode,
-    this.textInputAction,
-    this.controller,
-    this.validator,
+    required this.focusNode,
+    required this.textInputAction,
+    required this.controller,
+    required this.validator,
   });
 
   @override

@@ -48,18 +48,18 @@ AppException handleResponseError(Response response) {
   }
 }
 
-AppException handleDioError(DioError error) {
+AppException handleDioException(DioException error) {
   switch (error.type) {
-    case DioErrorType.cancel:
+    case DioExceptionType.cancel:
       throw FetchDataException(("Votre demande a été annulée."));
-    case DioErrorType.connectionTimeout:
+    case DioExceptionType.connectionTimeout:
       throw FetchDataException(
           ("Vérifier l'état de votre connexion internet."));
-    case DioErrorType.sendTimeout:
+    case DioExceptionType.sendTimeout:
       throw FetchDataException(("Attente très longue, réessayer."));
-    case DioErrorType.receiveTimeout:
+    case DioExceptionType.receiveTimeout:
       throw FetchDataException(("Durée d'exécution de la requête terminer."));
-    case DioErrorType.badResponse:
+    case DioExceptionType.badResponse:
       throw handleResponseError(error.message as Response);
     default:
       throw AppException(("server"));

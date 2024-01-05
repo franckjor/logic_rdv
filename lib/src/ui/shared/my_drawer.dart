@@ -23,10 +23,10 @@ class MyDrawer extends StatefulWidget {
   final bool notification;
 
   MyDrawer({
-    this.fullNme,
-    this.email,
-    this.tokenUser,
-    this.notification,
+    required this.fullNme,
+    required this.email,
+    required this.tokenUser,
+    required this.notification,
     this.page = '0',
   });
 
@@ -35,14 +35,14 @@ class MyDrawer extends StatefulWidget {
 }
 
 class _MyDrawerState extends State<MyDrawer> {
-  String _installationIdKey;
-  String _isSubscribe;
-  String _tokenUser;
-  bool _notification;
+  late String _installationIdKey;
+  late String _isSubscribe;
+  late String _tokenUser;
+  late bool _notification;
 
   Future<String> getInstalationIdKey() async {
     final prefs = await SharedPreferences.getInstance();
-    _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey);
+    _installationIdKey = prefs.getString(PreferenceKey.InstallationIdKey)!;
     print("InstallationIdHome: $_installationIdKey");
     return _installationIdKey;
   }
@@ -54,7 +54,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
   Future<String> getVerifyIfIsSubscribe() async {
     final prefs = await SharedPreferences.getInstance();
-    _isSubscribe = prefs.getString(PreferenceKey.isSubscribe);
+    _isSubscribe = prefs.getString(PreferenceKey.isSubscribe)!;
     print("_isSubscribe: $_isSubscribe");
     setState(() {
       if (_isSubscribe == "0") {
@@ -117,7 +117,7 @@ class _MyDrawerState extends State<MyDrawer> {
               writeIsSubscribeInMemory("0");
               flushBarSuccess(state.subscribeResponse.message, context);
               getVerifyIfIsSubscribe();
-              if (state.subscribeResponse.data.total == "0") {
+              if (state.subscribeResponse.data!.total == "0") {
                 WonderPush.unsubscribeFromNotifications();
               }
             });
@@ -186,7 +186,7 @@ class _MyDrawerState extends State<MyDrawer> {
                                                 exit(0);
                                               }
                                             },
-                                            title: '');
+                                            title: '', confirmButtonLabel: '', cancelButtonLabel: '', closeFunction: () {  });
                                       },
                                     ),
                                   ),
@@ -405,14 +405,14 @@ class _MyDrawerState extends State<MyDrawer> {
 
 class _DrawerItem extends StatelessWidget {
   final String text;
-  final Function onTap;
+  final Function()? onTap;
   final IconData icon;
 
   const _DrawerItem({
     super.key,
-    this.text,
-    this.icon,
-    this.onTap,
+    required this.text,
+    required this.icon,
+    required this.onTap,
   });
 
   @override

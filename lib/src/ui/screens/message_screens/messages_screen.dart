@@ -37,11 +37,11 @@ class MessagesScreen extends StatefulWidget {
 
 class _MessagesScreenState extends State<MessagesScreen> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  String _tokenUser;
-  String _email;
-  String _fullName;
+  late String _tokenUser;
+  late String _email;
+  late String _fullName;
   int currentPage = 1;
-  int totalOfPage;
+  late int totalOfPage;
   bool isRefreshList = false;
   bool _isLoading = false;
   List<MessageDataResponse> message = [];
@@ -92,7 +92,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
             tokenUser: _tokenUser,
             page: '3',
             email: _email,
-            fullNme: _fullName,
+            fullNme: _fullName, notification: false,
           ),
         ),
         appBar: AdaptativeAppBar(
@@ -101,7 +101,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
           actions: [
             IconButton(
               icon: isAndroid || isWeb
-                  ? const Icon(
+                  ?  Icon(
                       MdiIcons.accountCircle,
                       color: Colors.white,
                     )
@@ -110,7 +110,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                       color: Colors.white,
                     ),
               splashRadius: 20,
-              onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+              onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
             ),
           ],
         ),
@@ -173,7 +173,9 @@ class _MessagesScreenState extends State<MessagesScreen> {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                      ),
+                      ), 
+                      title: '', 
+                      buttonLabel: '',
                     );
                   } else if (state.error == invalidTokenUser) {
                     customAlert(
@@ -193,7 +195,9 @@ class _MessagesScreenState extends State<MessagesScreen> {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                      ),
+                      ), 
+                      title: '', 
+                      buttonLabel: '',
                     );
                   } else {
                     flushBarError(state.error, context);
@@ -208,7 +212,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                   ..add(SetSharedPreferenceTokenAuthorization(
                       tokenAuthorizationKey:
                           PreferenceKey.tokenAuthorizationKey,
-                      tokenAuthorization: state.getToken.data.authorization
+                      tokenAuthorization: state.getToken.data.authorization!
                           .replaceAll("X-LOGICRDV-AUTH:", "")));
               } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
                 flushBarError(state.error, context);
@@ -227,7 +231,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                             itemCount: message.length,
                             padding: EdgeInsets.all(16),
                             itemBuilder: (context, i) => _MessageItem(
-                              messageDataResponse: message[i],
+                              messageDataResponse: message[i], onPressPdfReader: null,
                             ),
                           ),
                         )
@@ -255,11 +259,11 @@ class _MessagesScreenState extends State<MessagesScreen> {
 
 class _MessageItem extends StatelessWidget {
   final MessageDataResponse messageDataResponse;
-  final Function onPressPdfReader;
+  final Function()? onPressPdfReader;
 
   _MessageItem({
-    this.messageDataResponse,
-    this.onPressPdfReader,
+    required this.messageDataResponse,
+    required this.onPressPdfReader,
   });
 
   @override
@@ -313,8 +317,8 @@ class _MessageItem extends StatelessWidget {
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            const Icon(
-                              MdiIcons.pdfBox,
+                             Icon(
+                              MdiIcons.piBox,
                               color: Colors.blue,
                             ),
                             Container(

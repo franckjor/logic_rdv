@@ -39,26 +39,26 @@ class UserEditedProfile extends StatefulWidget {
 }
 
 class _UserEditedProfileState extends State<UserEditedProfile> {
-  String _email;
-  String _fullName;
-  String _tokenUser;
+  late String _email;
+  late String _fullName;
+  late String _tokenUser;
   final _key = GlobalKey();
   bool _obscureText = true;
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   final _formKey = GlobalKey<FormState>();
   double _textFieldHeight = 50;
-  FocusNode _focusNodeConnectButton;
+  late FocusNode _focusNodeConnectButton;
 
-  TextEditingController _nameController;
-  TextEditingController _surNameController;
-  TextEditingController _mobileController;
-  TextEditingController _emailController;
-  TextEditingController _adressController;
-  TextEditingController _villeController;
-  TextEditingController _postalCodeController;
-  TextEditingController _passwordController;
-  TextEditingController _passwordConfirmController;
+  late TextEditingController _nameController;
+  late TextEditingController _surNameController;
+  late TextEditingController _mobileController;
+  late TextEditingController _emailController;
+  late TextEditingController _adressController;
+  late TextEditingController _villeController;
+  late TextEditingController _postalCodeController;
+  late TextEditingController _passwordController;
+  late TextEditingController _passwordConfirmController;
 
   @override
   void initState() {
@@ -82,8 +82,8 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
     prefs.remove(PreferenceKey.objectKey);
   }
 
-  SharePreferenceObject _object;
-  File _image;
+  late SharePreferenceObject _object;
+  late File _image;
   final picker = ImagePicker();
 
   Future<void> _takePicture() async {
@@ -187,7 +187,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
           tokenUser: _tokenUser,
           page: '0',
           email: _email,
-          fullNme: _fullName,
+          fullNme: _fullName, notification: false,
         ),
       ),
       backgroundColor: AppColors.primaryColor,
@@ -197,7 +197,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
@@ -206,7 +206,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -253,7 +253,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
                 progressDialog.hide();
@@ -274,7 +274,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else {
                 progressDialog.hide();
@@ -283,7 +283,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                     context: context,
                     content: Container(
                       child: Text(state.error),
-                    ));
+                    ), title: '', buttonLabel: '', action: () {  }, willPop: null);
               }
             }
           }),
@@ -293,7 +293,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
               BlocProvider.of<SharedPreferenceBloc>(context)
                 ..add(SetSharedPreferenceTokenAuthorization(
                     tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
-                    tokenAuthorization: state.getToken.data.authorization
+                    tokenAuthorization: state.getToken.data.authorization!
                         .replaceAll("X-LOGICRDV-AUTH:", "")));
             } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
               flushBarError(state.error, context);
@@ -428,8 +428,12 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                             hintText: 'Nom',
                             controller: _nameController,
                             validator: (value) {
-                              return verifyEmpty(value);
-                            },
+                              return verifyEmpty(value!, errorMessage: '');
+                            }, suffixIcon: null, focusNode: null, 
+                            onEditingComplete: () {  }, 
+                            textInputAction: null, 
+                            onTapeChangeHandler: (String ) {  }, 
+                            onTapeFocusChangeHandler: () {  },
                           ),
                           const SizedBox(height: 10),
                           _LabelWidget(
@@ -438,7 +442,12 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
                             hintText: 'Prénom',
-                            controller: _surNameController,
+                            controller: _surNameController, 
+                            suffixIcon: null, 
+                            validator: (String ) {  }, 
+                            focusNode: null, onEditingComplete: () {  }, 
+                            textInputAction: null, 
+                            onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                           ),
                           const SizedBox(height: 10),
                           _LabelWidget(
@@ -449,8 +458,11 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                             hintText: 'Numero de telephone',
                             controller: _mobileController,
                             validator: (value) {
-                              return verifyEmpty(value);
-                            },
+                              return verifyEmpty(value!, errorMessage: '');
+                            }, suffixIcon: null, 
+                            focusNode: null, onEditingComplete: () {  }, 
+                            textInputAction: null, 
+                            onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                           ),
                           const SizedBox(height: 10),
                           _LabelWidget(
@@ -461,8 +473,12 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                             hintText: 'Email',
                             controller: _emailController,
                             validator: (value) {
-                              return verifyEmpty(value);
-                            },
+                              return verifyEmpty(value!, errorMessage: '');
+                            }, 
+                            suffixIcon: null, 
+                            focusNode: null, 
+                            onEditingComplete: () {  }, 
+                            textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                           ),
                           SizedBox(height: 10),
                           _LabelWidget(
@@ -471,7 +487,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
                             hintText: 'Adresse',
-                            controller: _adressController,
+                            controller: _adressController, suffixIcon: null, validator: (String ) {  }, focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                           ),
                           SizedBox(height: 10),
                           _LabelWidget(
@@ -480,7 +496,8 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
                             hintText: 'Ville',
-                            controller: _villeController,
+                            controller: _villeController, suffixIcon: null, 
+                            validator: (String ) {  }, focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                           ),
                           SizedBox(height: 10),
                           _LabelWidget(
@@ -489,7 +506,8 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
                             hintText: 'Code postal',
-                            controller: _postalCodeController,
+                            controller: _postalCodeController, suffixIcon: null, validator: (String ) {  }, 
+                            focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                           ),
                           SizedBox(height: 10),
                           _LabelWidget(
@@ -513,7 +531,11 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                                     ? MdiIcons.eyeOutline
                                     : MdiIcons.eyeOffOutline),
                               ),
-                            ),
+                            ), 
+                            validator: (String ) {  }, 
+                            focusNode: null, 
+                            onEditingComplete: () {  }, 
+                            textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                           ),
                           SizedBox(height: 10),
                           _LabelWidget(
@@ -537,7 +559,12 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                                     ? MdiIcons.eyeOutline
                                     : MdiIcons.eyeOffOutline),
                               ),
-                            ),
+                            ), validator: (String ) {  }, 
+                            focusNode: null, 
+                            onEditingComplete: () {  }, 
+                            textInputAction: null, 
+                            onTapeChangeHandler: (String ) {  }, 
+                            onTapeFocusChangeHandler: () {  },
                           ),
                           SizedBox(
                             height: 20,
@@ -621,7 +648,10 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                                       checkoutUserAccount(
                                           tokenUser: _tokenUser,
                                           context: context);
-                                    });
+                                    }, confirmButtonLabel: '', 
+                                    cancelButtonLabel: '', 
+                                    onNoAction: () {  }, 
+                                    closeFunction: () {  });
                               },
                               icon: Icon(MdiIcons.delete),
                               label: Text(
@@ -658,7 +688,7 @@ class _LabelWidget extends StatelessWidget {
   final String label;
   const _LabelWidget({
     super.key,
-    this.label,
+    required this.label,
   });
 
   @override

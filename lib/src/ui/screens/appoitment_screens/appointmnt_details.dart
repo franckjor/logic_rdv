@@ -15,9 +15,9 @@ class AppointmentDetailsPageArguments implements PagesArgumentType {
   final AppointmentDataResponse appointmentDataResponse;
 
   AppointmentDetailsPageArguments({
-    this.cabinetResponse,
-    this.patientResponse,
-    this.appointmentDataResponse,
+    required this.cabinetResponse,
+    required this.patientResponse,
+    required this.appointmentDataResponse,
   });
 
   @override
@@ -40,15 +40,15 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
 
   DateFormat format = DateFormat("dd/MM/yy");
   var formatterDate = new DateFormat('dd/MM/yy', 'fr').format(DateTime.now());
-  String _rdvDate;
-  String _dateOfAppointement;
-  DateTime _realyDateOfAppointement;
-  List<String> value;
-  double _currentTime = toDoubleHour(TimeOfDay.now());
-  TimeOfDay _startTime;
-  double _rdvTime;
+  late String _rdvDate;
+  late String _dateOfAppointement;
+  late DateTime _realyDateOfAppointement;
+  late List<String> value;
+  late double _currentTime = toDoubleHour(TimeOfDay.now());
+  late TimeOfDay _startTime;
+  late double _rdvTime;
 
-  DateTime _currentDate;
+  late DateTime _currentDate;
 
   _getRdvDate() {
     _rdvDate = widget.arguments.appointmentDataResponse.date;
@@ -129,7 +129,7 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
     return Scaffold(
       appBar: AdaptativeAppBar(
         title: 'Détails du Rdv',
-        leading: DefaultBackButton(),
+        leading: DefaultBackButton(), actions: [],
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -430,8 +430,8 @@ class _AppointmentDetailsState extends State<AppointmentDetails> {
                                 arguments: TeleconsArgument(
                                     tokentelecon: widget
                                         .arguments
-                                        ?.appointmentDataResponse
-                                        ?.tokentelecons));
+                                        .appointmentDataResponse
+                                        .tokentelecons));
                           },
                         ),
                       ),

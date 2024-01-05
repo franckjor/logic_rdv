@@ -33,10 +33,10 @@ class SearchResultPageArguments implements PagesArgumentType {
   final String nameOrSpeciality;
 
   SearchResultPageArguments({
-    this.city,
-    this.nameOrSpeciality,
-    this.cityId,
-    this.categoryId,
+    required this.city,
+    required this.nameOrSpeciality,
+    required this.cityId,
+    required this.categoryId,
   });
 
   @override
@@ -58,10 +58,10 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   ScrollController _scrollController = new ScrollController();
   int currentPage = 1;
-  int totalOfPage;
+  late int totalOfPage;
   bool isRefreshList = false;
   bool _isLoading = false;
-  String _tokenUser;
+  late String _tokenUser;
 
   List<ObjectNameOfSearch> doctors = [];
 
@@ -150,8 +150,8 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
     return false;
   }
 
-  String _email;
-  String _fullName;
+  late String _email;
+  late String _fullName;
 
   @override
   Widget build(BuildContext context) {
@@ -174,7 +174,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                   tokenUser: _tokenUser,
                   page: '0',
                   email: _email,
-                  fullNme: _fullName,
+                  fullNme: _fullName, notification: false,
                 ),
               )),
       appBar: AppBar(
@@ -192,22 +192,22 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
           _tokenUser == null
               ? IconButton(
                   icon: Platform.isAndroid
-                      ? const Icon(
+                      ?  Icon(
                           MdiIcons.menu,
                           color: Color.fromARGB(255, 255, 255, 255),
                         )
-                      : const Icon(
+                      :  Icon(
                           MdiIcons.menu,
                           color: Color.fromARGB(255, 255, 255, 255),
                         ),
                   splashRadius: 20,
-                  onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                  onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
                 )
               : Visibility(
                   visible: _tokenUser != null,
                   child: IconButton(
                     icon: isAndroid || isWeb
-                        ? const Icon(
+                        ?  Icon(
                             MdiIcons.accountCircle,
                             color: Colors.white,
                           )
@@ -216,7 +216,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                             color: Colors.white,
                           ),
                     splashRadius: 20,
-                    onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                    onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
                   ),
                 ),
         ],
@@ -252,7 +252,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
               BlocProvider.of<SharedPreferenceBloc>(context)
                 ..add(SetSharedPreferenceTokenAuthorization(
                     tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
-                    tokenAuthorization: state.getToken.data.authorization
+                    tokenAuthorization: state.getToken.data.authorization!
                         .replaceAll("X-LOGICRDV-AUTH:", "")));
             } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
               flushBarError(state.error, context);
@@ -287,7 +287,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -307,7 +307,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else {
                 flushBarError(state.error, context);
@@ -410,7 +410,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                                                                   arguments: GetDoctorIdPageArguments(
                                                                       id: doctors[
                                                                               i]
-                                                                          .id)),
+                                                                          .id, tokenAppointment: '', tokenDoctor: '')),
                                                               child: Text(
                                                                   'Profil'),
                                                               style:
@@ -487,7 +487,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                                                                   height: 2),
                                                               Text(
                                                                 doctors[i]
-                                                                    .category,
+                                                                    .category!,
                                                                 overflow:
                                                                     TextOverflow
                                                                         .ellipsis,
@@ -505,7 +505,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                                                                   height: 2),
                                                               Text(
                                                                 doctors[i]
-                                                                    .address
+                                                                    .address!
                                                                     .toUpperCase(),
                                                                 softWrap: false,
                                                                 overflow:
@@ -524,10 +524,10 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                                                               const SizedBox(
                                                                   height: 4),
                                                               Text(
-                                                                doctors[i].zip +
+                                                                doctors[i].zip! +
                                                                     " " +
                                                                     doctors[i]
-                                                                        .city,
+                                                                        .city!,
                                                                 overflow:
                                                                     TextOverflow
                                                                         .ellipsis,
@@ -553,7 +553,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                                                                   : Text(
                                                                       'à ' +
                                                                           doctors[i]
-                                                                              .kmDiff +
+                                                                              .kmDiff! +
                                                                           ' Km',
                                                                       overflow:
                                                                           TextOverflow
@@ -575,7 +575,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                                                                 children: [
                                                                   Text(
                                                                     doctors[i]
-                                                                        .tel,
+                                                                        .tel!,
                                                                     style:
                                                                         TextStyle(
                                                                       color: AppColors
@@ -619,7 +619,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                                                                               .zero,
                                                                       onPressed:
                                                                           () async =>
-                                                                              await _makeCall(doctors[i].telnospace),
+                                                                              await _makeCall(doctors[i].telnospace!),
                                                                     ),
                                                                   ),
                                                                 ],
@@ -660,10 +660,10 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                                                           _openGoogleMapApp(
                                                               double.parse(
                                                                   doctors[i]
-                                                                      .lat),
+                                                                      .lat!),
                                                               double.parse(
                                                                   doctors[i]
-                                                                      .lng)),
+                                                                      .lng!)),
                                                     ),
                                                     // Padding(
                                                     //   padding:

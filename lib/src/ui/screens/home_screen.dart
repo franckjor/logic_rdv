@@ -49,16 +49,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String _tokenUser;
-  String _email;
-  String _fullName;
+  late String _tokenUser;
+  late String _email;
+  late String _fullName;
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   List<ObjectNameOfSearch> activeEtabs = [];
   List<ObjectNameOfSearch> sameCabinetEtabs = [];
-  List<ObjectNameOfSearch> _activeEtabsAndSameCabinetEtabs = [];
-  ObjectNameOfSearch _sameCabinetEtabsObject;
+  late List<ObjectNameOfSearch> _activeEtabsAndSameCabinetEtabs = [];
+  late ObjectNameOfSearch _sameCabinetEtabsObject;
 
   bool isLoading = false;
 
@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<String> getInstalationIdKey() async{
     final prefs = await SharedPreferences.getInstance();
-    final String instalationKey = prefs.getString('InstallationIdKey');
+    final String instalationKey = prefs.getString('InstallationIdKey')!;
     print("InstallationIdHome: $instalationKey");
     return instalationKey;
   }
@@ -109,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
           tokenUser: _tokenUser,
           page: '1',
           email: _email,
-          fullNme: _fullName,
+          fullNme: _fullName, notification: false,
         ),
       ),
       appBar: AdaptativeAppBar(
@@ -121,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
@@ -130,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -165,7 +165,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     'Ce Docteur fait parti de votre liste de medecin et '
                     'peux maintenant faire des consultations et avoir des patients.',
                     textAlign: TextAlign.center,
-                  ),
+                  ), title: '', 
+                  buttonLabel: '', 
+                  action: () {  }, willPop: null,
                 );
               });
             } else if (state is AddDoctorFailure) {
@@ -188,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -208,7 +210,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else {
                 customAlert(
@@ -219,7 +221,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       state.error,
                       textAlign: TextAlign.center,
                     ),
-                  ),
+                  ), title: '', 
+                  buttonLabel: '', 
+                  action: () {  }, willPop: null,
                 );
               }
             }
@@ -257,7 +261,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -277,7 +281,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else {
                 customAlert(
@@ -288,7 +292,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       state.error,
                       textAlign: TextAlign.center,
                     ),
-                  ),
+                  ), title: '', 
+                  buttonLabel: '', 
+                  action: () {  }, 
+                  willPop: null,
                 );
               }
             }
@@ -320,7 +327,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', 
+                  buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -340,7 +348,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else {
                 customAlert(
@@ -351,7 +359,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       state.error,
                       textAlign: TextAlign.center,
                     ),
-                  ),
+                  ), title: '', 
+                  buttonLabel: '', 
+                  action: () {  }, 
+                  willPop: null,
                 );
               }
             }
@@ -363,7 +374,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ..add(
                   SetSharedPreferenceTokenAuthorization(
                     tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
-                    tokenAuthorization: state.getToken.data.authorization
+                    tokenAuthorization: state.getToken.data.authorization!
                         .replaceAll("X-LOGICRDV-AUTH:", ""),
                   ),
                 );
@@ -396,10 +407,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             addDoctor(
                               context: context,
                               id: _activeEtabsAndSameCabinetEtabs[i].id,
-                              phone: _activeEtabsAndSameCabinetEtabs[i].tel,
+                              phone: _activeEtabsAndSameCabinetEtabs[i].tel!,
                               tokenUser: _tokenUser,
                             );
-                          },
+                          }, addPaPressed: null, cabinetId: '',
                         ),
                       )
                     : EmptyApointmentWidget()
@@ -419,17 +430,17 @@ class _AppointmentItem extends StatefulWidget {
   final ObjectNameOfSearch objectNameOfSearch;
   final String cabinetId;
   final String tokenUser;
-  final Function onAddHandler;
-  final Function addPaPressed;
+  final Function()? onAddHandler;
+  final Function()? addPaPressed;
   final int length;
 
   _AppointmentItem({
-    this.objectNameOfSearch,
-    this.tokenUser,
-    this.onAddHandler,
-    this.length,
-    this.addPaPressed,
-    this.cabinetId,
+    required this.objectNameOfSearch,
+    required this.tokenUser,
+    required this.onAddHandler,
+    required this.length,
+    required this.addPaPressed,
+    required this.cabinetId,
   });
 
   @override
@@ -553,7 +564,7 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                             ),
                             const SizedBox(height: 2),
                             Text(
-                              widget.objectNameOfSearch.category,
+                              widget.objectNameOfSearch.category!,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
                                 color: AppColors.primaryColor,
@@ -563,7 +574,7 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                             ),
                             const SizedBox(height: 2),
                             Text(
-                              widget.objectNameOfSearch.address,
+                              widget.objectNameOfSearch.address!,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
                                 color: AppColors.primaryColor,
@@ -587,7 +598,7 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Text(
-                                  widget.objectNameOfSearch.tel,
+                                  widget.objectNameOfSearch.tel!,
                                   style: const TextStyle(
                                     color: AppColors.primaryColor,
                                     fontWeight: FontWeight.bold,
@@ -612,7 +623,7 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                                     padding: EdgeInsets.zero,
                                     onPressed: () async {
                                       await FlutterPhoneDirectCaller.callNumber(
-                                          widget.objectNameOfSearch.telnospace);
+                                          widget.objectNameOfSearch.telnospace!);
                                       // try {
                                       //   _makeCall(
                                       //       widget.objectNameOfSearch.telnospace);
@@ -638,18 +649,21 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                           content: Text(
                             'Ce Docteur ne fait pas partis de vos medecins veuillez l\'ajouter.',
                             textAlign: TextAlign.center,
-                          ),
+                          ), title: '', 
+                          buttonLabel: '', 
+                          action: () {  }, 
+                          willPop: null,
                         );
                       } else {
                         Navigator.pushNamed(
                           context,
                           RouteGenerator.rdvType,
                           arguments: GetRdvTypePageArguments(
-                            tel: widget.objectNameOfSearch.tel,
+                            tel: widget.objectNameOfSearch.tel!,
                             idDoctor: widget.objectNameOfSearch.id,
                             doctorName: widget.objectNameOfSearch.fullName,
                             tokenAppointment:
-                                widget.objectNameOfSearch.appointment.token,
+                                widget.objectNameOfSearch.appointment.token!,
                           ),
                         );
                       }
@@ -717,8 +731,8 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                     padding: EdgeInsets.zero,
                     constraints: BoxConstraints(),
                     onPressed: () {
-                      _sendWazeCoordonate(widget.objectNameOfSearch.lat,
-                          widget.objectNameOfSearch.lng);
+                      _sendWazeCoordonate(widget.objectNameOfSearch.lat!,
+                          widget.objectNameOfSearch.lng!);
                     },
                   ),
                   IconButton(
@@ -732,8 +746,8 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                     constraints: BoxConstraints(),
                     onPressed: () {
                       _openGoogleMapApp(
-                          double.parse(widget.objectNameOfSearch.lat),
-                          double.parse(widget.objectNameOfSearch.lng));
+                          double.parse(widget.objectNameOfSearch.lat!),
+                          double.parse(widget.objectNameOfSearch.lng!));
                     },
                   ),
                   Visibility(
@@ -748,7 +762,7 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                   ),
                   Visibility(
                     visible:
-                        widget.objectNameOfSearch?.appointment?.token != null &&
+                        widget.objectNameOfSearch.appointment.token != null &&
                             widget.length > 1,
                     child: IconButton(
                       icon: Icon(
@@ -774,7 +788,11 @@ class __AppointmentItemState extends State<_AppointmentItem> {
                               context: context,
                               idDoctor: widget.objectNameOfSearch.id,
                             );
-                          },
+                          }, 
+                          alertType: null, 
+                          confirmButtonLabel: '', 
+                          cancelButtonLabel: '', 
+                          onNoAction: () {  }, closeFunction: () {  },
                         );
                       },
                     ),

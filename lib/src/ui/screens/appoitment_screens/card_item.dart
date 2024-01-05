@@ -9,13 +9,13 @@ class CardItem extends StatefulWidget {
   final CabinetResponse cabinetResponse;
   final PatientResponse patientResponse;
   final AppointmentDataResponse appointmentDataResponse;
-  final Function onCancelAppointmentHandler;
+  final Function()? onCancelAppointmentHandler;
 
   CardItem({
-    this.cabinetResponse,
-    this.patientResponse,
-    this.appointmentDataResponse,
-    this.onCancelAppointmentHandler,
+    required this.cabinetResponse,
+    required this.patientResponse,
+    required this.appointmentDataResponse,
+    required this.onCancelAppointmentHandler,
   });
 
   @override
@@ -25,16 +25,16 @@ class CardItem extends StatefulWidget {
 class _CardItemState extends State<CardItem> {
   DateFormat format = DateFormat("dd/MM/yy");
   var formatterDate = new DateFormat('dd/MM/yy', 'fr').format(DateTime.now());
-  String _rdvDate;
-  String _dateOfAppointement;
-  DateTime _realyDateOfAppointement;
-  List<String> value;
+  late String _rdvDate;
+  late String _dateOfAppointement;
+  late DateTime _realyDateOfAppointement;
+  late List<String> value;
   bool _enableRdv = false;
   bool _isTcBtnVisible = false;
-  DateTime _currentDate;
-  double _currentTime = toDoubleHour(TimeOfDay.now());
-  TimeOfDay _startTime;
-  double _rdvTime;
+  late DateTime _currentDate;
+  late double _currentTime = toDoubleHour(TimeOfDay.now());
+  late TimeOfDay _startTime;
+  late double _rdvTime;
 
   _getRdvDate() {
     _rdvDate = widget.appointmentDataResponse.date;

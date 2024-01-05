@@ -3,8 +3,8 @@ class RdvDate {
   List<MomentRdv> momentRdv;
 
   RdvDate({
-    this.day,
-    this.momentRdv,
+    required this.day,
+    required this.momentRdv,
   });
 }
 
@@ -13,8 +13,8 @@ class MomentRdv {
   String doctorName;
 
   MomentRdv({
-    this.startedTime,
-    this.doctorName,
+    required this.startedTime,
+    required this.doctorName,
   });
 }
 

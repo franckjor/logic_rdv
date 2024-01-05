@@ -6,9 +6,9 @@ class RdvTypeModel {
   final String lieuRdv;
 
   RdvTypeModel({
-    this.icon,
-    this.rdvType,
-    this.lieuRdv,
+    required this.icon,
+    required this.rdvType,
+    required this.lieuRdv,
   });
 }
 

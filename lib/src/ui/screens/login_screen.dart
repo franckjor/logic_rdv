@@ -37,7 +37,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  FocusNode _focusNodeConnectButton;
+  late FocusNode _focusNodeConnectButton;
 
   double _textFieldHeight = 0;
   final _key = GlobalKey();
@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
   List<ButtonvalidationloginStartedResponse>
       _buttonvalidationloginStartedResponse = [];
 
-  SharePreferenceObject _object;
+  late SharePreferenceObject _object;
   TextEditingController _loginController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -64,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
     _focusNodeConnectButton = FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        _textFieldHeight = _key.currentContext.size.height;
+        _textFieldHeight = _key.currentContext!.size!.height;
       });
     });
   }
@@ -101,16 +101,16 @@ class _LoginScreenState extends State<LoginScreen> {
           actions: [
             IconButton(
               icon: Platform.isAndroid
-                  ? const Icon(
+                  ?  Icon(
                       MdiIcons.menu,
                       color: Color.fromARGB(255, 255, 255, 255),
                     )
-                  : const Icon(
+                  :  Icon(
                       MdiIcons.menu,
                       color: Color.fromARGB(255, 255, 255, 255),
                     ),
               splashRadius: 20,
-              onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+              onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
             ),
           ],
         ),
@@ -131,8 +131,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   setState(() {
                     _ispasswordvisible = false;
                     type = state.response.data.type;
-                    _headerText = state.response?.data?.headermessage;
-                    _session = state.response?.data?.session;
+                    _headerText = state.response.data.headermessage;
+                    _session = state.response.data.session;
                     _buttonvalidationloginStartedResponse =
                         state.response.data.buttonvalidation.toList();
                   });
@@ -147,13 +147,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         content: Text(
                           state.response.data.headererror,
                           textAlign: TextAlign.center,
-                        ),
+                        ), buttonLabel: '', 
+                        action: () {  }, willPop: null,
                       );
                     } else {
                       _ispasswordvisible = !_ispasswordvisible;
                       type = state.response.data.type;
-                      _headerText = state.response?.data?.headermessage;
-                      _session = state.response?.data?.session;
+                      _headerText = state.response.data.headermessage;
+                      _session = state.response.data.session;
                       _buttonvalidationloginStartedResponse =
                           state.response.data.buttonvalidation.toList();
                     }
@@ -169,15 +170,16 @@ class _LoginScreenState extends State<LoginScreen> {
                         content: Text(
                           state.response.data.headererror,
                           textAlign: TextAlign.center,
-                        ),
+                        ), buttonLabel: '', 
+                        action: () {  }, willPop: null,
                       );
                     } else {
                       _object = SharePreferenceObject(
-                          token: state.response.data.user.tokenuser,
-                          email: state.response.data.user.email,
-                          firstName: state.response.data.user.nom,
-                          lastName: state.response.data.user.prenom,
-                          phoneNumber: state.response.data.user.mobile);
+                          token: state.response.data.user!.tokenuser,
+                          email: state.response.data.user!.email,
+                          firstName: state.response.data.user!.nom,
+                          lastName: state.response.data.user!.prenom,
+                          phoneNumber: state.response.data.user!.mobile);
                       BlocProvider.of<SharedPreferenceBloc>(context)
                         ..add(SetSharedPreferenceObject(
                           objectKey: PreferenceKey.objectKey,
@@ -224,7 +226,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         content: Text(
                           state.error,
                           textAlign: TextAlign.center,
-                        ));
+                        ), buttonLabel: '', willPop: null);
                   }
                 }
               }),
@@ -249,7 +251,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ..add(SetSharedPreferenceTokenAuthorization(
                         tokenAuthorizationKey:
                             PreferenceKey.tokenAuthorizationKey,
-                        tokenAuthorization: state.getToken.data.authorization
+                        tokenAuthorization: state.getToken.data.authorization!
                             .replaceAll("X-LOGICRDV-AUTH:", "")));
                 } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
                   flushBarError(state.error, context);
@@ -292,14 +294,16 @@ class _LoginScreenState extends State<LoginScreen> {
                                   hintText:
                                       'Adresse email ou numéro de téléphone',
                                   controller: _loginController,
-                                  validator: (value) => verifyEmpty(value, errorMessage: ''),
+                                  validator: (value) => verifyEmpty(value!, errorMessage: ''), suffixIcon: null, focusNode: null, 
+                                  onEditingComplete: () {  }, 
+                                  textInputAction: null, onTapeFocusChangeHandler: () {  }, onTapeChangeHandler: (String ) {  },
                                 ),
                                 const SizedBox(height: 10),
                                 Visibility(
                                   visible: _ispasswordvisible,
                                   child: TextFormField(
                                     key: _key,
-                                    validator: (value) => verifyEmpty(value, errorMessage: ''),
+                                    validator: (value) => verifyEmpty(value!, errorMessage: ''),
                                     obscureText: _obscureText,
                                     controller: _passwordController,
                                     decoration: InputDecoration(
@@ -325,7 +329,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                   _obscureText = !_obscureText;
                                                 });
                                               },
-                                              child: const Icon(
+                                              child:  Icon(
                                                 MdiIcons.eyeOffOutline,
                                                 color: AppColors.colorHintText,
                                               ),
@@ -545,15 +549,15 @@ class CheckBoxRemenberMe extends StatefulWidget {
   final bool isChecked;
   final Duration transitionDuration;
   final Function(bool isChecked) onCheckedBoxChanged;
-  final Color inactiveColor;
+  final Color? inactiveColor;
   final Color activeColor;
 
   const CheckBoxRemenberMe({
     super.key,
-    this.isChecked,
-    this.onCheckedBoxChanged,
+    required this.isChecked,
+    required this.onCheckedBoxChanged,
     this.transitionDuration = const Duration(milliseconds: 300),
-    this.inactiveColor,
+    required this.inactiveColor,
     this.activeColor = const Color(0xFF4e8fda),
   });
 
@@ -563,7 +567,7 @@ class CheckBoxRemenberMe extends StatefulWidget {
 
 class _CheckBoxRemenberMeState extends State<CheckBoxRemenberMe>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {

@@ -81,7 +81,7 @@ class _StartedDrawerState extends State<StartedDrawer> {
                                       exit(0);
                                     }
                                   },
-                                  title: '');
+                                  title: '', confirmButtonLabel: '', cancelButtonLabel: '', closeFunction: () {  });
                             },
                           ),
                         ),
@@ -112,7 +112,7 @@ class _StartedDrawerState extends State<StartedDrawer> {
               onTap: () {
                 Navigator.of(context)
                     .popAndPushNamed(RouteGenerator.welcomeScreen);
-              },
+              }, key: null,
             ),
             _DrawerItem(
               text: 'Notification',
@@ -120,7 +120,7 @@ class _StartedDrawerState extends State<StartedDrawer> {
               onTap: () {
                 Navigator.of(context)
                     .popAndPushNamed(RouteGenerator.notificationScreen);
-              },
+              }, key: null,
             ),
             // _DrawerItem(
             //   text: 'Quitter',
@@ -169,14 +169,14 @@ class _StartedDrawerState extends State<StartedDrawer> {
 
 class _DrawerItem extends StatelessWidget {
   final String text;
-  final Function onTap;
+  final Function()? onTap;
   final IconData icon;
 
   const _DrawerItem({
-    super.key,
-    this.text,
-    this.icon,
-    this.onTap,
+    required super.key,
+    required this.text,
+    required this.icon,
+    required this.onTap,
   });
 
   @override

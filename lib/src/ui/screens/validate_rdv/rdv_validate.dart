@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_credit_card/credit_card_form.dart';
 import 'package:flutter_credit_card/credit_card_model.dart';
+import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:intl/intl.dart';
 import 'package:logic_rdv_v0/src/common.dart';
 import 'package:logic_rdv_v0/src/core/bloc/bloc_of_shapreference/shared_preference.dart';
@@ -47,10 +48,10 @@ class ValidateRdvPageArguments implements PagesArgumentType {
   final String session;
 
   ValidateRdvPageArguments({
-    this.selectedPatientResponseForRdv,
-    this.birthdate,
-    this.session,
-    this.socialNumber,
+    required this.selectedPatientResponseForRdv,
+    required this.birthdate,
+    required this.session,
+    required this.socialNumber,
   });
 
   @override
@@ -76,8 +77,8 @@ class _RdvValidateState extends State<RdvValidate> {
   TextEditingController _birthDateController = TextEditingController();
   TextEditingController _socialNumberController = TextEditingController();
   TextEditingController _rdvMotifController = TextEditingController();
-  String _data;
-  String _typState;
+  late String _data;
+  late String _typState;
 
   String cardNumber = '';
   String expiryDate = '';
@@ -85,10 +86,10 @@ class _RdvValidateState extends State<RdvValidate> {
   String cvvCode = '';
   bool isCvvFocused = false;
 
-  String _error;
+  late String _error;
 
   _dialogToSayThatThisPatientHaveOneRdv() {
-    if (widget.arguments.selectedPatientResponseForRdv.data.data.apptsinprogress
+    if (widget.arguments.selectedPatientResponseForRdv.data!.data!.apptsinprogress!
             .message !=
         "") {
       setState(() {
@@ -101,13 +102,13 @@ class _RdvValidateState extends State<RdvValidate> {
 
   @override
   void initState() {
-    widget.arguments.selectedPatientResponseForRdv.data.data.apptinput
+    widget.arguments.selectedPatientResponseForRdv.data!.data!.apptinput!
         .forEach((p0) {
       if (p0.name == "client_birthday") {
-        _birthDateController.text = p0?.value ?? widget?.arguments?.birthdate;
+        _birthDateController.text = p0.value ?? widget.arguments.birthdate;
       } else if (p0.name == "client_nir") {
         _socialNumberController.text =
-            p0?.value ?? widget?.arguments?.socialNumber;
+            p0.value ?? widget.arguments.socialNumber;
       }
     });
 
@@ -138,9 +139,9 @@ class _RdvValidateState extends State<RdvValidate> {
     });
   }
 
-  String _email;
-  String _fullName;
-  String _tokenUser;
+  late String _email;
+  late String _fullName;
+  late String _tokenUser;
   int _sendRequest = 0;
 
   @override
@@ -162,7 +163,7 @@ class _RdvValidateState extends State<RdvValidate> {
           tokenUser: _tokenUser,
           page: '0',
           email: _email,
-          fullNme: _fullName,
+          fullNme: _fullName, notification: false,
         ),
       ),
       appBar: AdaptativeAppBar(
@@ -172,7 +173,7 @@ class _RdvValidateState extends State<RdvValidate> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
@@ -181,7 +182,7 @@ class _RdvValidateState extends State<RdvValidate> {
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           )
         ],
       ),
@@ -217,7 +218,7 @@ class _RdvValidateState extends State<RdvValidate> {
                           buttonLabel: "Ok",
                           action: () {
                             Navigator.pop(context);
-                          });
+                          }, title: '', willPop: null);
                     } else if (state is AppointmentFailure) {
                       if (state.error == messageErrorTokenInvalid ||
                           state.error == messageErrorTokenExpired) {
@@ -238,7 +239,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
-                          ),
+                          ), title: '', buttonLabel: '',
                         );
                       } else if (state.error == invalidTokenUser) {
                         customAlert(
@@ -258,7 +259,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
-                          ),
+                          ), title: '', buttonLabel: '',
                         );
                       } else {
                         flushBarError(state.error, context);
@@ -283,13 +284,13 @@ class _RdvValidateState extends State<RdvValidate> {
                               tokenappointment: widget
                                   .arguments
                                   .selectedPatientResponseForRdv
-                                  .params
-                                  .tokenappointment,
+                                  .params!
+                                  .tokenappointment!,
                               tokenuser: widget
                                   .arguments
                                   .selectedPatientResponseForRdv
-                                  .params
-                                  .tokenuser,
+                                  .params!
+                                  .tokenuser!,
                               cardNumber: cardNumber,
                               ackRdvProgressDialog: _ackRdvProgressDialog,
                               expMonth: int.parse(_dateExpired[0]),
@@ -318,34 +319,34 @@ class _RdvValidateState extends State<RdvValidate> {
                                         session: widget
                                             .arguments
                                             .selectedPatientResponseForRdv
-                                            .data
-                                            .session,
+                                            .data!
+                                            .session!,
                                         data: _data,
                                         rdvType: widget
                                             .arguments
                                             .selectedPatientResponseForRdv
-                                            .data
-                                            .data
-                                            .appttovalid
-                                            .description,
+                                            .data!
+                                            .data!
+                                            .appttovalid!
+                                            .description!,
                                         tokenAppointment: widget
                                             .arguments
                                             .selectedPatientResponseForRdv
-                                            .params
-                                            .tokenappointment,
+                                            .params!
+                                            .tokenappointment!,
                                         tokenUser: widget
                                             .arguments
                                             .selectedPatientResponseForRdv
-                                            .params
-                                            .tokenuser,
+                                            .params!
+                                            .tokenuser!,
                                         action: widget
                                             .arguments
                                             .selectedPatientResponseForRdv
-                                            .data
-                                            .data
-                                            .apptbuttonvalidation
-                                            .onclickAction));
-                              });
+                                            .data!
+                                            .data!
+                                            .apptbuttonvalidation!
+                                            .onclickAction!, idDoctor: '', doctorName: '', tel: ''));
+                              }, alertType: null, title: '', buttonLabel: '', willPop: null);
                         }
                       });
                     } else if (state is CheckStateFailure) {
@@ -369,7 +370,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
-                          ),
+                          ), title: '', buttonLabel: '',
                         );
                       } else if (state.error == invalidTokenUser) {
                         customAlert(
@@ -389,7 +390,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
-                          ),
+                          ), title: '', buttonLabel: '',
                         );
                       } else {
                         if (state.error
@@ -409,7 +410,10 @@ class _RdvValidateState extends State<RdvValidate> {
                                 state.error,
                                 textAlign: TextAlign.center,
                               ),
-                            ),
+                            ), title: '', 
+                            buttonLabel: '', 
+                            action: () {  }, 
+                            willPop: null,
                           );
                         }
                       }
@@ -426,7 +430,7 @@ class _RdvValidateState extends State<RdvValidate> {
                           ModalRoute.withName(RouteGenerator.homeScreen),
                           arguments: RdvIsValidatePageArguments(
                               messageSuccess:
-                                  state.response.data.headermessage));
+                                  state.response.data.headermessage!));
                     } else if (state is ConfirmAppointmentLoadingSuccess) {
                       _ackRdvProgressDialog.hide();
 
@@ -436,7 +440,7 @@ class _RdvValidateState extends State<RdvValidate> {
                           ModalRoute.withName(RouteGenerator.homeScreen),
                           arguments: RdvIsValidatePageArguments(
                               messageSuccess:
-                                  state.response.data.headermessage));
+                                  state.response.data.headermessage!));
                     } else if (state is CreateAppointmentFailure) {
                       _ackRdvProgressDialog.hide();
                       customAlert(
@@ -447,7 +451,9 @@ class _RdvValidateState extends State<RdvValidate> {
                             state.error,
                             textAlign: TextAlign.center,
                           ),
-                        ),
+                        ), title: '', 
+                        buttonLabel: '', action: () {  }, 
+                        willPop: null,
                       );
                     }
                   }),
@@ -472,7 +478,7 @@ class _RdvValidateState extends State<RdvValidate> {
                             tokenAuthorizationKey:
                                 PreferenceKey.tokenAuthorizationKey,
                             tokenAuthorization: state
-                                .getToken.data.authorization
+                                .getToken.data.authorization!
                                 .replaceAll("X-LOGICRDV-AUTH:", ""),
                           ),
                         );
@@ -508,9 +514,9 @@ class _RdvValidateState extends State<RdvValidate> {
                                           widget
                                               .arguments
                                               .selectedPatientResponseForRdv
-                                              .data
-                                              .data
-                                              .messagenbperson,
+                                              .data!
+                                              .data!
+                                              .messagenbperson!,
                                           style: TextStyle(
                                             color: Colors.black,
                                             fontWeight: FontWeight.w600,
@@ -533,10 +539,10 @@ class _RdvValidateState extends State<RdvValidate> {
                                               widget
                                                   .arguments
                                                   .selectedPatientResponseForRdv
-                                                  .data
-                                                  .data
-                                                  .appttovalid
-                                                  .date,
+                                                  .data!
+                                                  .data!
+                                                  .appttovalid!
+                                                  .date!,
                                             ),
                                           ],
                                         ),
@@ -555,10 +561,10 @@ class _RdvValidateState extends State<RdvValidate> {
                                             Text(widget
                                                 .arguments
                                                 .selectedPatientResponseForRdv
-                                                .data
-                                                .data
-                                                .appttovalid
-                                                .doctor),
+                                                .data!
+                                                .data!
+                                                .appttovalid!
+                                                .doctor!),
                                           ],
                                         ),
                                       ),
@@ -576,10 +582,10 @@ class _RdvValidateState extends State<RdvValidate> {
                                             Text(widget
                                                 .arguments
                                                 .selectedPatientResponseForRdv
-                                                .data
-                                                .data
-                                                .appttovalid
-                                                .description),
+                                                .data!
+                                                .data!
+                                                .appttovalid!
+                                                .description!),
                                           ],
                                         ),
                                       ),
@@ -599,10 +605,10 @@ class _RdvValidateState extends State<RdvValidate> {
                                                 widget
                                                     .arguments
                                                     .selectedPatientResponseForRdv
-                                                    .data
-                                                    .data
-                                                    .appttovalid
-                                                    .patient,
+                                                    .data!
+                                                    .data!
+                                                    .appttovalid!
+                                                    .patient!,
                                                 overflow: TextOverflow.ellipsis,
                                               ),
                                             ),
@@ -718,9 +724,9 @@ class _RdvValidateState extends State<RdvValidate> {
                               visible: widget
                                       .arguments
                                       .selectedPatientResponseForRdv
-                                      .data
-                                      .data
-                                      .payment
+                                      .data!
+                                      .data!
+                                      .payment!
                                       .amount !=
                                   null,
                               child: CreditCardForm(
@@ -764,9 +770,9 @@ class _RdvValidateState extends State<RdvValidate> {
                               visible: widget
                                       .arguments
                                       .selectedPatientResponseForRdv
-                                      .data
-                                      .data
-                                      .payment
+                                      .data!
+                                      .data!
+                                      .payment!
                                       .amount !=
                                   null,
                               child: Container(
@@ -780,9 +786,9 @@ class _RdvValidateState extends State<RdvValidate> {
                                             text: widget
                                                     .arguments
                                                     .selectedPatientResponseForRdv
-                                                    .data
-                                                    .data
-                                                    .payment
+                                                    .data!
+                                                    .data!
+                                                    .payment!
                                                     .amountlabel ??
                                                 '',
                                             style: TextStyle(
@@ -827,9 +833,9 @@ class _RdvValidateState extends State<RdvValidate> {
                                     widget
                                         .arguments
                                         .selectedPatientResponseForRdv
-                                        .data
-                                        .data
-                                        .messageglobalinternet,
+                                        .data!
+                                        .data!
+                                        .messageglobalinternet!,
                                     textAlign: TextAlign.justify,
                                     style: TextStyle(color: Colors.black),
                                   ),
@@ -840,9 +846,9 @@ class _RdvValidateState extends State<RdvValidate> {
                               visible: widget
                                       .arguments
                                       .selectedPatientResponseForRdv
-                                      .data
-                                      .data
-                                      .payment
+                                      .data!
+                                      .data!
+                                      .payment!
                                       .infos !=
                                   null,
                               child: Container(
@@ -856,9 +862,9 @@ class _RdvValidateState extends State<RdvValidate> {
                                       widget
                                               .arguments
                                               .selectedPatientResponseForRdv
-                                              .data
-                                              .data
-                                              .payment
+                                              .data!
+                                              .data!
+                                              .payment!
                                               .infos ??
                                           '',
                                       textAlign: TextAlign.justify,
@@ -869,8 +875,8 @@ class _RdvValidateState extends State<RdvValidate> {
                               ),
                             ),
                             const SizedBox(height: 20),
-                            widget.arguments.selectedPatientResponseForRdv.data
-                                        .data.payment.amount !=
+                            widget.arguments.selectedPatientResponseForRdv.data!
+                                        .data!.payment!.amount !=
                                     null
                                 ? Container(
                                     height: 48,
@@ -887,17 +893,17 @@ class _RdvValidateState extends State<RdvValidate> {
                                         widget
                                             .arguments
                                             .selectedPatientResponseForRdv
-                                            .data
-                                            .data
-                                            .apptbuttonvalidation
-                                            .label,
+                                            .data!
+                                            .data!
+                                            .apptbuttonvalidation!
+                                            .label!,
                                         style: TextStyle(fontSize: 11),
                                       ),
                                       icon: const Icon(Icons.save),
                                       onPressed: () {
                                         if (_birthDateController.text.isEmpty ||
                                             _rdvMotifController.text.isEmpty ||
-                                            !formKey.currentState.validate()) {
+                                            !formKey.currentState!.validate()) {
                                           customAlert(
                                             context: context,
                                             content: const Text(
@@ -905,7 +911,8 @@ class _RdvValidateState extends State<RdvValidate> {
                                               textAlign: TextAlign.center,
                                             ),
                                             alertType: AlertType.info,
-                                            buttonLabel: "Ok",
+                                            buttonLabel: "Ok", 
+                                            title: '', action: () {  }, willPop: null,
                                           );
                                         } else {
                                           _data =
@@ -919,26 +926,26 @@ class _RdvValidateState extends State<RdvValidate> {
                                             action: widget
                                                 .arguments
                                                 .selectedPatientResponseForRdv
-                                                .data
-                                                .data
-                                                .apptbuttonvalidation
-                                                .onclickAction,
+                                                .data!
+                                                .data!
+                                                .apptbuttonvalidation!
+                                                .onclickAction!,
                                             data: _data,
                                             session: widget
                                                 .arguments
                                                 .selectedPatientResponseForRdv
-                                                .data
-                                                .session,
+                                                .data!
+                                                .session!,
                                             tokenAppointment: widget
                                                 .arguments
                                                 .selectedPatientResponseForRdv
-                                                .params
-                                                .tokenappointment,
+                                                .params!
+                                                .tokenappointment!,
                                             tokenUser: widget
                                                 .arguments
                                                 .selectedPatientResponseForRdv
-                                                .params
-                                                .tokenuser,
+                                                .params!
+                                                .tokenuser!,
                                           );
                                           // validateAppointmentWithTc(
                                           //   session: widget
@@ -985,10 +992,10 @@ class _RdvValidateState extends State<RdvValidate> {
                                         widget
                                             .arguments
                                             .selectedPatientResponseForRdv
-                                            .data
-                                            .data
-                                            .apptbuttonvalidation
-                                            .label,
+                                            .data!
+                                            .data!
+                                            .apptbuttonvalidation!
+                                            .label!,
                                         style: const TextStyle(fontSize: 11),
                                       ),
                                       icon: const Icon(Icons.save),
@@ -1002,7 +1009,7 @@ class _RdvValidateState extends State<RdvValidate> {
                                               textAlign: TextAlign.center,
                                             ),
                                             alertType: AlertType.info,
-                                            buttonLabel: "Ok",
+                                            buttonLabel: "Ok", title: '', action: () {  }, willPop: null,
                                           );
                                         } else {
                                           _ackRdvProgressDialog
@@ -1015,26 +1022,26 @@ class _RdvValidateState extends State<RdvValidate> {
                                             action: widget
                                                 .arguments
                                                 .selectedPatientResponseForRdv
-                                                .data
-                                                .data
-                                                .apptbuttonvalidation
-                                                .onclickAction,
+                                                .data!
+                                                .data!
+                                                .apptbuttonvalidation!
+                                                .onclickAction!,
                                             data: _data,
                                             session: widget
                                                 .arguments
                                                 .selectedPatientResponseForRdv
-                                                .data
-                                                .session,
+                                                .data!
+                                                .session!,
                                             tokenAppointment: widget
                                                 .arguments
                                                 .selectedPatientResponseForRdv
-                                                .params
-                                                .tokenappointment,
+                                                .params!
+                                                .tokenappointment!,
                                             tokenUser: widget
                                                 .arguments
                                                 .selectedPatientResponseForRdv
-                                                .params
-                                                .tokenuser,
+                                                .params!
+                                                .tokenuser!,
                                           );
 
                                           // validateAppointment(
@@ -1082,7 +1089,7 @@ class _RdvValidateState extends State<RdvValidate> {
                 selectedPatientResponseForRdv:
                     widget.arguments.selectedPatientResponseForRdv,
                 tokenUser: widget
-                    .arguments.selectedPatientResponseForRdv.params.tokenuser,
+                    .arguments.selectedPatientResponseForRdv.params!.tokenuser!,
                 onPressedContinueApp: () {
                   setState(() {
                     _thisPatientHaveAppointment = !_thisPatientHaveAppointment;

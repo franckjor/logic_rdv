@@ -36,7 +36,7 @@ class GetDoctorIdPageArguments implements PagesArgumentType {
   final String tokenDoctor;
 
   GetDoctorIdPageArguments(
-      {required this.id, this.tokenAppointment, this.tokenDoctor});
+      {required this.id, required this.tokenAppointment, required this.tokenDoctor});
 
   @override
   getArguments() {
@@ -54,10 +54,10 @@ class DoctorProfileScreen extends StatefulWidget {
 }
 
 class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
-  SearchDoctorDetailsResponse _searchDoctorDetailsResponse;
+  late SearchDoctorDetailsResponse _searchDoctorDetailsResponse;
   List<Chapters> _chapter = [];
   bool _isLoadingData = false;
-  String _tokenUser;
+  late String _tokenUser;
 
   @override
   void initState() {
@@ -68,8 +68,8 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
   }
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  String _email;
-  String _fullName;
+  late String _email;
+  late String _fullName;
 
   void _openWhatsApp(
     String phone,
@@ -138,7 +138,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                 tokenUser: _tokenUser,
                 page: '0',
                 email: _email,
-                fullNme: _fullName,
+                fullNme: _fullName, notification: false,
               ),
             ),
       appBar: AdaptativeAppBar(
@@ -148,22 +148,22 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
           _tokenUser == null
               ? IconButton(
                   icon: isAndroid || isWeb
-                      ? const Icon(
+                      ?  Icon(
                           MdiIcons.menu,
                           color: Color.fromARGB(255, 255, 255, 255),
                         )
-                      : const Icon(
+                      :  Icon(
                           MdiIcons.menu,
                           color: Color.fromARGB(255, 255, 255, 255),
                         ),
                   splashRadius: 20,
-                  onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                  onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
                 )
               : Visibility(
                   visible: _tokenUser != null,
                   child: IconButton(
                     icon: isAndroid || isWeb
-                        ? const Icon(
+                        ?  Icon(
                             MdiIcons.accountCircle,
                             color: Colors.white,
                           )
@@ -172,7 +172,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                             color: Colors.white,
                           ),
                     splashRadius: 20,
-                    onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                    onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
                   ),
                 ),
         ],
@@ -207,7 +207,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -227,7 +227,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else {
                 customAlert(
@@ -238,7 +238,10 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                       state.error,
                       textAlign: TextAlign.center,
                     ),
-                  ),
+                  ), title: '', 
+                  action: () {  }, 
+                  buttonLabel: '', 
+                  willPop: null,
                 );
               }
             }
@@ -442,7 +445,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                                                               'à ' +
                                                                   _searchDoctorDetailsResponse
                                                                       .data
-                                                                      .kmDiff +
+                                                                      .kmDiff! +
                                                                   ' Km',
                                                               overflow:
                                                                   TextOverflow
@@ -578,7 +581,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                                           _searchDoctorDetailsResponse.data.nom,
                                     ),
                                   );
-                                },
+                                }, textFieldHeight: 0.0,
                               ),
                             ),
                             const SizedBox(height: 8),
@@ -701,7 +704,7 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
             idDoctor: _searchDoctorDetailsResponse.data.id,
             doctorName: _searchDoctorDetailsResponse.data.nom +
                 " " +
-                _searchDoctorDetailsResponse.data.prenom,
+                _searchDoctorDetailsResponse.data.prenom!,
             tokenAppointment:
                 _searchDoctorDetailsResponse.data.appointment.token != ""
                     ? _searchDoctorDetailsResponse.data.appointment.token
@@ -746,7 +749,7 @@ class _ChaptersInfos extends StatelessWidget {
   final String title;
   final String description;
 
-  const _ChaptersInfos({required this.title, this.description});
+  const _ChaptersInfos({required this.title,required this.description});
 
   Widget build(BuildContext context) {
     return Column(

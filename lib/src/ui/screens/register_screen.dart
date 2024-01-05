@@ -34,7 +34,7 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-  FocusNode _focusNodeConnectButton;
+  late FocusNode _focusNodeConnectButton;
 
   double _textFieldHeight = 0;
   final _key = GlobalKey();
@@ -58,9 +58,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _isdoctorChecked = false;
   String _dropDownSelected = "";
 
-  Etabs _etabs;
-  String code;
-  String _idDoctor;
+  late Etabs _etabs;
+  late String code;
+  late String _idDoctor;
   String _checkedCondition = '0';
 
   @override
@@ -69,7 +69,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _focusNodeConnectButton = FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setState(() {
-        _textFieldHeight = _key.currentContext.size.height;
+        _textFieldHeight = _key.currentContext!.size!.height;
       });
     });
   }
@@ -101,16 +101,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
             actions: [
           IconButton(
             icon: Platform.isAndroid 
-                ? const Icon(
+                ?  Icon(
               MdiIcons.menu,
               color: Color.fromARGB(255, 255, 255, 255),
             )
-                : const Icon(
+                :  Icon(
               MdiIcons.menu,
               color: Color.fromARGB(255, 255, 255, 255),
             ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
         ),
@@ -124,7 +124,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   ..add(SetSharedPreferenceTokenAuthorization(
                       tokenAuthorizationKey:
                           PreferenceKey.tokenAuthorizationKey,
-                      tokenAuthorization: state.getToken.data.authorization
+                      tokenAuthorization: state.getToken.data.authorization!
                           .replaceAll("X-LOGICRDV-AUTH:", "")));
               } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
                 flushBarError(state.error, context);
@@ -178,7 +178,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                    ),
+                    ), title: '', buttonLabel: '',
                   );
                 } else if (state.error == invalidTokenUser) {
                   customAlert(
@@ -198,7 +198,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
-                    ),
+                    ), title: '', buttonLabel: '',
                   );
                 } else {
                   customAlert(
@@ -208,7 +208,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       content: Text(
                         state.error,
                         textAlign: TextAlign.center,
-                      ));
+                      ), buttonLabel: '', action: () {  }, willPop: null);
                 }
               }
             })
@@ -303,7 +303,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                             'Téléphone du cabinet médical',
                                         controller: _cabinetPhoneController,
                                         validator: (value) =>
-                                            verifyEmpty(value, errorMessage: ''),
+                                            verifyEmpty(value!, errorMessage: ''),
                                         onEditingComplete: () {
                                           final _form = _formKey1.currentState;
                                           if (_form!.validate()) {
@@ -313,7 +313,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                     _cabinetPhoneController
                                                         .text);
                                           }
-                                        },
+                                        }, suffixIcon: null, focusNode: null, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                                       ),
                                     ),
                                     const SizedBox(width: 10),
@@ -374,7 +374,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     hint: Text('selectionner une valeur'),
                                     onChanged: (value) {
                                       setState(() {
-                                        _etabs = value;
+                                        _etabs = value!;
                                         _etabsList.forEach((element) {
                                           if (element.name == value.name) {
                                             _idDoctor = element.id;
@@ -406,8 +406,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       AdaptativeTextFormField(
                                         hintText: 'Nom',
                                         validator: (value) =>
-                                            verifyEmpty(value, errorMessage: ''),
-                                        controller: _nameController,
+                                            verifyEmpty(value!, errorMessage: ''),
+                                        controller: _nameController, suffixIcon: null, focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                                       ),
                                       Visibility(
                                           visible: _isdoctorChecked &&
@@ -420,38 +420,38 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                             code != '0',
                                         child: AdaptativeTextFormField(
                                           hintText: 'Code fourni par le Dr',
-                                          controller: _codeController,
+                                          controller: _codeController, suffixIcon: null, validator: (String) {  }, onEditingComplete: () {  }, focusNode: null, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                                         ),
                                       ),
                                       const SizedBox(height: 8),
                                       AdaptativeTextFormField(
                                         hintText: 'Prénom',
                                         validator: (value) =>
-                                            verifyEmpty(value, errorMessage: ''),
-                                        controller: _prenomController,
+                                            verifyEmpty(value!, errorMessage: ''),
+                                        controller: _prenomController, suffixIcon: null, focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                                       ),
                                       const SizedBox(height: 8),
                                       AdaptativeTextFormField(
                                         hintText: 'Numèro de téléphone',
                                         textInputType: TextInputType.phone,
                                         validator: (value) =>
-                                            verifyEmpty(value, errorMessage: ''),
-                                        controller: _phoneController,
+                                            verifyEmpty(value!, errorMessage: ''),
+                                        controller: _phoneController, suffixIcon: null, focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                                       ),
                                       const SizedBox(height: 8),
                                       AdaptativeTextFormField(
                                         hintText: 'Email',
                                         textInputType:
                                             TextInputType.emailAddress,
-                                        validator: (val) => verifyEmpty(val),
-                                        controller: _emailController,
+                                        validator: (val) => verifyEmpty(val!, errorMessage: ''),
+                                        controller: _emailController, suffixIcon: null, focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                                       ),
                                       const SizedBox(height: 8),
                                       TextFormField(
                                         controller: _passwordController,
                                         obscureText: _password1,
                                         validator: (value) =>
-                                            verifyEmpty(value, errorMessage: ''),
+                                            verifyEmpty(value!, errorMessage: ''),
                                         decoration: InputDecoration(
                                           prefixIcon: const Icon(
                                             Icons.lock,
@@ -527,7 +527,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                         controller: _confirmPasswordController,
                                         obscureText: _password2,
                                         validator: (value) =>
-                                            verifyEmpty(value, errorMessage: ''),
+                                            verifyEmpty(value!, errorMessage: ''),
                                         decoration: InputDecoration(
                                           prefixIcon: const Icon(
                                             Icons.lock,
@@ -612,7 +612,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                   _checkedCondition = '0';
                                                 }
                                               });
-                                            },
+                                            }, inactiveColor: null,
                                           ),
                                           const SizedBox(width: 16),
                                           Expanded(

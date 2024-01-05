@@ -15,8 +15,8 @@ class PriseDeRdv extends StatefulWidget {
 }
 
 class _PriseDeRdvState extends State<PriseDeRdv> {
-  String _email;
-  String _fullName;
+  late String _email;
+  late String _fullName;
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -27,14 +27,14 @@ class _PriseDeRdvState extends State<PriseDeRdv> {
       endDrawer: MyDrawer(
         page: '1',
         email: _email,
-        fullNme: _fullName,
+        fullNme: _fullName, tokenUser: '', notification: false,
       ),
       appBar: AdaptativeAppBar(
         title: 'Liste des Medecins',
         actions: [
           IconButton(
             icon: Platform.isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
@@ -43,9 +43,9 @@ class _PriseDeRdvState extends State<PriseDeRdv> {
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
-        ],
+        ], leading: null,
       ),
       body: SingleChildScrollView(
         primary: true,

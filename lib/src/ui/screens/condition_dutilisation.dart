@@ -145,7 +145,7 @@ class _SectionContent extends StatelessWidget {
   final String content;
   const _SectionContent({
     super.key,
-    this.content,
+    required this.content,
   });
 
   @override

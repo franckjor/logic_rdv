@@ -17,7 +17,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  String _tokenUser;
+  late String _tokenUser;
   int i = 0;
   @override
   void initState() {
@@ -47,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen> {
             BlocProvider.of<SharedPreferenceBloc>(context)
               ..add(SetSharedPreferenceTokenAuthorization(
                   tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
-                  tokenAuthorization: state.getToken.data.authorization
+                  tokenAuthorization: state.getToken.data.authorization!
                       .replaceAll("X-LOGICRDV-AUTH:", "")));
           } else if (state is VerifyTokenStateLoadingSuccess) {
             BlocProvider.of<SharedPreferenceBloc>(context)
@@ -61,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   content: Text(
                     state.error,
                     textAlign: TextAlign.center,
-                  ));
+                  ), title: '', buttonLabel: '', action: () {  }, willPop: null);
             } else {
               setState(() {
                 i++;

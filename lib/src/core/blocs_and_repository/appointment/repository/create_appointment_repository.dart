@@ -42,7 +42,7 @@ class CreateAppointmentRepository extends AbstractRepository {
         data: createAppointmentRequest);
     String type = response.data['data']['type'];
     String message = response.data['data']['headermessage'];
-    RdvType _rdvType = RdvType(message: message, type: type);
+    RdvType _rdvType = RdvType(message: message, type: type, session: '', onclickData: '', onclickAction: '', appointment: '', stripeClientSecret: '');
     return _rdvType;
   }
 

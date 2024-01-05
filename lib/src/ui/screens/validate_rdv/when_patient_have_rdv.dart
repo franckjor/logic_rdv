@@ -20,12 +20,12 @@ class TokenAppoitment {
 class WhenPatientHaveRdv extends StatefulWidget {
   final SelectedPatientResponseForRdv selectedPatientResponseForRdv;
   final String tokenUser;
-  final Function onPressedContinueApp;
+  final Function()? onPressedContinueApp;
 
   WhenPatientHaveRdv({
-    this.selectedPatientResponseForRdv,
-    this.tokenUser,
-    this.onPressedContinueApp,
+    required this.selectedPatientResponseForRdv,
+    required this.tokenUser,
+    required this.onPressedContinueApp,
   });
 
   @override
@@ -33,17 +33,17 @@ class WhenPatientHaveRdv extends StatefulWidget {
 }
 
 class _WhenPatientHaveRdvState extends State<WhenPatientHaveRdv> {
-  TokenAppoitment _mytoken;
-  int _currentIndex;
+  late TokenAppoitment _mytoken;
+  late int _currentIndex;
   List<Appts> _myApptsList = [];
   List<Appts> _myCancelApptsList = [];
   @override
   void initState() {
     _myApptsList = widget
-        .selectedPatientResponseForRdv.data.data.apptsinprogress.appts
+        .selectedPatientResponseForRdv.data!.data!.apptsinprogress!.appts!
         .toList();
     _myCancelApptsList = widget
-        .selectedPatientResponseForRdv.data.data.apptsinprogress.appts
+        .selectedPatientResponseForRdv.data!.data!.apptsinprogress!.appts!
         .toList();
     super.initState();
   }
@@ -73,7 +73,7 @@ class _WhenPatientHaveRdvState extends State<WhenPatientHaveRdv> {
                     _myApptsList = _myCancelApptsList;
                     Navigator.pop(context);
                   });
-                });
+                }, title: '', buttonLabel: '', willPop: null);
           } else if (state is AppointmentFailure) {
             if (state.error == messageErrorTokenInvalid ||
                 state.error == messageErrorTokenExpired) {
@@ -94,7 +94,7 @@ class _WhenPatientHaveRdvState extends State<WhenPatientHaveRdv> {
                       fontWeight: FontWeight.normal,
                     ),
                   ),
-                ),
+                ), title: '', buttonLabel: '',
               );
             } else {
               flushBarError(state.error, context);
@@ -123,8 +123,8 @@ class _WhenPatientHaveRdvState extends State<WhenPatientHaveRdv> {
                     const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
                 alignment: Alignment.center,
                 child: Text(
-                  widget.selectedPatientResponseForRdv.data.data.apptsinprogress
-                      .message,
+                  widget.selectedPatientResponseForRdv.data!.data!.apptsinprogress!
+                      .message!,
                   textAlign: TextAlign.justify,
                   style: const TextStyle(
                     color: AppColors.blackColor,
@@ -163,7 +163,7 @@ class _WhenPatientHaveRdvState extends State<WhenPatientHaveRdv> {
                       appts: _myApptsList[i],
                       onCancelAppointmentHandler: () {
                         _mytoken =
-                            TokenAppoitment(tokenApp: _myApptsList[i].token);
+                            TokenAppoitment(tokenApp: _myApptsList[i].token!);
                         customConfirmAlert(
                           context: context,
                           content: const Text(
@@ -178,9 +178,9 @@ class _WhenPatientHaveRdvState extends State<WhenPatientHaveRdv> {
                             cancelAppointment(
                               context: context,
                               tokenUser: widget.tokenUser,
-                              tokenAppointment: _myApptsList[i].token,
+                              tokenAppointment: _myApptsList[i].token!,
                             );
-                          },
+                          }, alertType: null, confirmButtonLabel: '', cancelButtonLabel: '', onNoAction: () {  }, closeFunction: () {  },
                         );
                       },
                     ),

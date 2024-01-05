@@ -19,14 +19,16 @@ class CardDateItem extends StatelessWidget {
   final Function(String) actionFunction;
 
   CardDateItem(
-      {this.dataTimeRdv,
-      this.contextTimer,
-      this.currentSession,
-      this.tokenAppointment,
-      this.dataFunction,
-      this.onClickMessage,
-      this.actionFunction,
-      this.tokenUser});
+      {
+      required this.dataTimeRdv,
+      required this.contextTimer,
+      required this.currentSession,
+      required this.tokenAppointment,
+      required this.dataFunction,
+      required this.onClickMessage,
+      required this.actionFunction,
+      required this.tokenUser
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,7 @@ class CardDateItem extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                dataTimeRdv.label,
+                dataTimeRdv.label!,
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 14,
@@ -55,7 +57,7 @@ class CardDateItem extends StatelessWidget {
                   Container(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      dataTimeRdv.label2,
+                      dataTimeRdv.label2!,
                       style: TextStyle(
                         color: Colors.blueAccent,
                         fontSize: 14,
@@ -68,27 +70,27 @@ class CardDateItem extends StatelessWidget {
             ],
           ),
           const SizedBox(width: 12),
-          if (dataTimeRdv.creneaux.isNotEmpty)
+          if (dataTimeRdv.creneaux!.isNotEmpty)
             Expanded(
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: InkWell(
                   onTap: () {},
                   child: Row(
-                    children: dataTimeRdv.creneaux
+                    children: dataTimeRdv.creneaux!
                         .map(
                           (c) => _Hour(
                             actionFunction: actionFunction,
                             dataFunction: dataFunction,
-                            hour: c.fromhour,
-                            doctorName: c.doctor,
+                            hour: c.fromhour!,
+                            doctorName: c.doctor!,
                             context: contextTimer,
-                            action: c.onclickAction,
+                            action: c.onclickAction!,
                             currentSession: currentSession,
-                            data: c.onclickData,
+                            data: c.onclickData!,
                             tokenAppointment: tokenAppointment,
                             tokenUser: tokenUser,
-                            onClickMessage: c.onclickMessage,
+                            onClickMessage: c.onclickMessage!, onTap: null,
                           ),
                         )
                         .toList(),
@@ -96,7 +98,7 @@ class CardDateItem extends StatelessWidget {
                 ),
               ),
             ),
-          if (dataTimeRdv.message.isNotEmpty)
+          if (dataTimeRdv.message!.isNotEmpty)
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(8),
@@ -127,7 +129,7 @@ class _Hour extends StatefulWidget {
   final String tokenAppointment;
   final String tokenUser;
   final String onClickMessage;
-  final Function onTap;
+  final Function()? onTap;
   final BuildContext context;
   final Function(String) dataFunction;
   final Function(String) actionFunction;
@@ -145,7 +147,7 @@ class _Hour extends StatefulWidget {
     required this.onClickMessage,
     required this.dataFunction,
     required this.actionFunction,
-    this.onTap,
+    required this.onTap,
   });
 
   @override
@@ -170,7 +172,11 @@ class _HourState extends State<_Hour> {
               widget.onClickMessage,
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
-            ),
+            ), 
+            title: '', 
+            buttonLabel: '', 
+            action: () {  }, 
+            willPop: null,
           );
         } else {
           widget.dataFunction(widget.data);

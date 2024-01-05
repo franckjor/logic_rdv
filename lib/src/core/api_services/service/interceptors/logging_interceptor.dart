@@ -2,12 +2,12 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
 class LoggingInterceptor {
-  void printError(DioError dioError) {
-    final request = dioError.requestOptions;
+  void printError(DioException DioException) {
+    final request = DioException.requestOptions;
     debugPrint(
-        "<-- ${dioError.message} ${(request != null ? (request.baseUrl + request.path) : 'URL')}");
+        "<-- ${DioException.message} ${(request != null ? (request.baseUrl + request.path) : 'URL')}");
     debugPrint(
-        "${dioError.response != null ? dioError.response!.data : 'Unknown Error'}");
+        "${DioException.response != null ? DioException.response!.data : 'Unknown Error'}");
     debugPrint("<-- End error");
   }
 

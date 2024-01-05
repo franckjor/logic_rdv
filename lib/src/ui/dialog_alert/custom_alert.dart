@@ -4,11 +4,11 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 
 customAlert({
   required BuildContext context,
-  AlertType alertType,
-  String title,
-  String buttonLabel,
-  Function action,
-  bool willPop,
+  required AlertType? alertType,
+  required String title,
+  required String buttonLabel,
+  required Function()? action,
+  required bool? willPop,
   required Widget content,
   bool showCloseIcon = true,
 }) {

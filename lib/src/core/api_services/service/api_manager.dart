@@ -45,8 +45,8 @@ class ApiManager {
             await requestInterceptor.getRequestInterceptor(options),
         onResponse: (Response response) =>
             responseInterceptor.getResponseInterceptor(response),
-        onError: (DioError dioError) =>
-            errorInterceptor.getErrorInterceptors(dioError)));
+        onError: (DioException DioException) =>
+            errorInterceptor.getErrorInterceptors(DioException)));
   }
 
   String _getFullUrlPath(String path) {
@@ -103,8 +103,8 @@ class ApiManager {
   }
 
   dynamic _handleError(dynamic error, dynamic stacktrace) {
-    if (error is DioError) {
-      throw handleDioError(error);
+    if (error is DioException) {
+      throw handleDioException(error);
     } else {
       throw BadRequestException(
           "Exception occured: $error stack trace: ${stacktrace.toString()}");

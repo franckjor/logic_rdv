@@ -51,10 +51,10 @@ class GetRdvTypePageArguments implements PagesArgumentType {
   final String doctorName;
 
   GetRdvTypePageArguments({
-    this.tokenAppointment,
-    this.idDoctor,
-    this.tel,
-    this.doctorName,
+    required this.tokenAppointment,
+    required this.idDoctor,
+    required this.tel,
+    required this.doctorName,
   });
 
   @override
@@ -73,12 +73,12 @@ class RdvType extends StatefulWidget {
 }
 
 class _RdvTypeState extends State<RdvType> {
-  String _tokenUser;
+  late String _tokenUser;
   List<AppointmentTypeResponse> _appointmentType = [];
-  String _session;
-  String _email;
-  String _fullName;
-  String _typState;
+  late String _session;
+  late String _email;
+  late String _fullName;
+  late String _typState;
 
   bool _isLoading = false;
 
@@ -109,7 +109,7 @@ class _RdvTypeState extends State<RdvType> {
                 tokenUser: _tokenUser,
                 page: '0',
                 email: _email,
-                fullNme: _fullName,
+                fullNme: _fullName, notification: false,
               ),
             )
           : StartedDrawer(),
@@ -124,7 +124,7 @@ class _RdvTypeState extends State<RdvType> {
           _tokenUser != null
               ? IconButton(
                   icon: isAndroid || isWeb
-                      ? const Icon(
+                      ?  Icon(
                           MdiIcons.accountCircle,
                           color: Colors.white,
                         )
@@ -133,20 +133,20 @@ class _RdvTypeState extends State<RdvType> {
                           color: Colors.white,
                         ),
                   splashRadius: 20,
-                  onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                  onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
                 )
               : IconButton(
                   icon: isAndroid || isWeb
-                      ? const Icon(
+                      ?  Icon(
                           MdiIcons.menu,
                           color: AppColors.whiteColor,
                         )
-                      : const Icon(
+                      :  Icon(
                           MdiIcons.menu,
                           color: AppColors.whiteColor,
                         ),
                   splashRadius: 20,
-                  onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                  onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
                 ),
         ],
       ),
@@ -212,13 +212,13 @@ class _RdvTypeState extends State<RdvType> {
             } else if (state is TypeOfAppointmentLoadingSuccess) {
               setState(() {
                 _isLoading = true;
-                _appointmentType.addAll(state.response.data.data);
+                _appointmentType.addAll(state.response.data!.data!);
 
-                _session = state.response.data.session;
+                _session = state.response.data!.session!;
                 BlocProvider.of<SharedPreferenceBloc>(context)
                   ..add(SetSharedPreferenceSession(
                       sessionKey: PreferenceKey.sessionKey,
-                      session: state.response.data.session));
+                      session: state.response.data!.session!));
               });
             } else if (state is CreateAppointmentFailure) {
               _isLoading = true;
@@ -241,7 +241,7 @@ class _RdvTypeState extends State<RdvType> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -261,7 +261,7 @@ class _RdvTypeState extends State<RdvType> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else {
                 customAlert(
@@ -272,7 +272,8 @@ class _RdvTypeState extends State<RdvType> {
                         state.error,
                         textAlign: TextAlign.center,
                       ),
-                    ));
+                    ), title: '', buttonLabel: '', 
+                    action: () {  }, willPop: null);
               }
             }
           }),
@@ -282,7 +283,7 @@ class _RdvTypeState extends State<RdvType> {
               BlocProvider.of<SharedPreferenceBloc>(context)
                 ..add(SetSharedPreferenceTokenAuthorization(
                     tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
-                    tokenAuthorization: state.getToken.data.authorization
+                    tokenAuthorization: state.getToken.data.authorization!
                         .replaceAll("X-LOGICRDV-AUTH:", "")));
             } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
               flushBarError(state.error, context);
@@ -301,9 +302,9 @@ class _RdvTypeState extends State<RdvType> {
                         itemBuilder: (context, index) {
                           return RdvTypeItem(
                             color:
-                                HexColor.fromHex(_appointmentType[index].color),
-                            lieuRdv: _appointmentType[index].labelplace,
-                            motifRdv: _appointmentType[index].description,
+                                HexColor.fromHex(_appointmentType[index].color!),
+                            lieuRdv: _appointmentType[index].labelplace!,
+                            motifRdv: _appointmentType[index].description!,
                             onTapHandler: () => Navigator.pushNamed(context,
                                     RouteGenerator.rdvSelectDayAndTimeScreen,
                                     arguments: GetRdvTimeAndDayPageArguments(
@@ -312,14 +313,14 @@ class _RdvTypeState extends State<RdvType> {
                                         idDoctor: widget.arguments.idDoctor,
                                         tel: widget.arguments.tel,
                                         rdvType:
-                                            _appointmentType[index].description,
+                                            _appointmentType[index].description!,
                                         data:
-                                            _appointmentType[index].onclickData,
+                                            _appointmentType[index].onclickData!,
                                         tokenAppointment:
                                             widget.arguments.tokenAppointment,
                                         tokenUser: _tokenUser,
                                         action: _appointmentType[index]
-                                            .onclickAction))
+                                            .onclickAction!))
                                 .then((value) {
                               setState(() {
                                 _appointmentType.clear();

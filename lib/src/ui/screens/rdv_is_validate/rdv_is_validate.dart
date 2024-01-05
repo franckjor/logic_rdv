@@ -8,7 +8,7 @@ class RdvIsValidatePageArguments implements PagesArgumentType {
   final String messageSuccess;
 
   RdvIsValidatePageArguments({
-    this.messageSuccess,
+    required this.messageSuccess,
   });
 
   @override

@@ -4,11 +4,11 @@ import 'package:logic_rdv_v0/src/core/models/appointment_model/get_apointment_ti
 
 class CardHourItem extends StatelessWidget {
   final Creneaux creneaux;
-  final Function onTapForTakeAppointment;
+  final Function()? onTapForTakeAppointment;
 
   CardHourItem({
-    this.creneaux,
-    this.onTapForTakeAppointment,
+    required this.creneaux,
+    required this.onTapForTakeAppointment,
   });
 
   @override
@@ -22,9 +22,9 @@ class CardHourItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
         child: CreneauxItem(
           onTap: onTapForTakeAppointment,
-          doctorName: creneaux.doctor,
-          fromHour: creneaux.fromhour,
-          subInfo: creneaux.onclickData,
+          doctorName: creneaux.doctor!,
+          fromHour: creneaux.fromhour!,
+          subInfo: creneaux.onclickData!,
         ),
       ),
     );
@@ -35,13 +35,13 @@ class CreneauxItem extends StatelessWidget {
   final String doctorName;
   final String fromHour;
   final String subInfo;
-  final Function onTap;
+  final Function()? onTap;
   const CreneauxItem({
     super.key,
-    this.doctorName,
-    this.fromHour,
-    this.onTap,
-    this.subInfo,
+    required this.doctorName,
+    required this.fromHour,
+    required this.onTap,
+    required this.subInfo,
   });
 
   @override

@@ -43,17 +43,17 @@ class ListOfRdv extends StatefulWidget {
 }
 
 class ListOfRdvState extends State<ListOfRdv> {
-  String _tokenUser;
-  String _email;
-  String _fullName;
+  late String _tokenUser;
+  late String _email;
+  late String _fullName;
   ScrollController _scrollController = new ScrollController();
-  int currentPage = 1;
-  int totalOfPage;
-  bool isRefreshList = false;
+  late int currentPage = 1;
+  late int totalOfPage;
+  late bool isRefreshList = false;
   bool _isLoading = false;
-  String _authorizationToke;
+  late String _authorizationToke;
 
-  String _rdvDate, _doctorRdv;
+  late String _rdvDate, _doctorRdv;
 
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -109,7 +109,7 @@ class ListOfRdvState extends State<ListOfRdv> {
           tokenUser: _tokenUser,
           page: '6',
           email: _email,
-          fullNme: _fullName,
+          fullNme: _fullName, notification: true,
         ),
       ),
       appBar: AdaptativeAppBar(
@@ -118,7 +118,7 @@ class ListOfRdvState extends State<ListOfRdv> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ? const Icon(
+                ?  Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
@@ -127,7 +127,7 @@ class ListOfRdvState extends State<ListOfRdv> {
                     color: Colors.white,
                   ),
             splashRadius: 20,
-            onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+            onPressed: () => _scaffoldKey.currentState!.openEndDrawer(),
           ),
         ],
       ),
@@ -201,7 +201,9 @@ class ListOfRdvState extends State<ListOfRdv> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), 
+                  title: '', 
+                  buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -221,7 +223,7 @@ class ListOfRdvState extends State<ListOfRdv> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ),
+                  ), title: '', buttonLabel: '',
                 );
               } else {
                 flushBarError(state.error, context);
@@ -235,7 +237,7 @@ class ListOfRdvState extends State<ListOfRdv> {
               BlocProvider.of<SharedPreferenceBloc>(context)
                 ..add(SetSharedPreferenceTokenAuthorization(
                     tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
-                    tokenAuthorization: state.getToken.data.authorization
+                    tokenAuthorization: state.getToken.data.authorization!
                         .replaceAll("X-LOGICRDV-AUTH:", "")));
             } else if (state is GenerateAndCheckTokenStateLoadingFailure) {
               flushBarError(state.error, context);
@@ -346,7 +348,12 @@ class ListOfRdvState extends State<ListOfRdv> {
                                                     // );
                                                   },
                                                 );
-                                              },
+                                              }, 
+                                              alertType: null, 
+                                              confirmButtonLabel: '', 
+                                              onNoAction: () {  }, 
+                                              cancelButtonLabel: '', 
+                                              closeFunction: () {  },
                                             );
                                           },
                                           patientResponse:

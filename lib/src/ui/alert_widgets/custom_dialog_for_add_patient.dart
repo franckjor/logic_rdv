@@ -100,10 +100,10 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                       fontWeight: FontWeight.normal,
                     ),
                   ),
-                ),
+                ), title: '', buttonLabel: '', willPop: null,
               );
             } else {
-              customAlert(context: context, content: Text(state.error));
+              customAlert(context: context, content: Text(state.error), alertType: null, title: '', buttonLabel: '', action: () {  }, willPop: null);
             }
           }
         })
@@ -157,7 +157,7 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                               AdaptativeTextFormField(
                                 hintText: 'Entrez le nom du patient',
                                 controller: _nomPatientController,
-                                validator: (value) => verifyEmpty(value, errorMessage: ''),
+                                validator: (value) => verifyEmpty(value!, errorMessage: ''), suffixIcon: null, focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                               ),
                             ],
                           ),
@@ -178,7 +178,11 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                               AdaptativeTextFormField(
                                 hintText: 'Entrez le prénom du patient',
                                 controller: _preNomPatientController,
-                                validator: (value) => verifyEmpty(value, errorMessage: ''),
+                                validator: (value) => verifyEmpty(value!, errorMessage: ''), 
+                                suffixIcon: null, 
+                                focusNode: null, onEditingComplete: () {  }, 
+                                textInputAction: null, onTapeChangeHandler: (String ) {  }, 
+                                onTapeFocusChangeHandler: () {  },
                               ),
                             ],
                           ),
@@ -199,7 +203,11 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                               AdaptativeTextFormField(
                                 hintText: 'Entrez l\'adresse email du patient',
                                 controller: _emailPatientController,
-                                validator: (value) => verifyEmpty(value, errorMessage: ''),
+                                validator: (value) => verifyEmpty(value!, errorMessage: ''), 
+                                suffixIcon: null, 
+                                focusNode: null, 
+                                onEditingComplete: () {  }, 
+                                textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                               ),
                             ],
                           ),
@@ -220,7 +228,12 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                               AdaptativeTextFormField(
                                 hintText: 'Entrez le Téléphone du patient',
                                 controller: _telephonePatientController,
-                                validator: (value) => verifyEmpty(value, errorMessage: ''),
+                                validator: (value) => verifyEmpty(value!, errorMessage: ''), 
+                                suffixIcon: null, 
+                                focusNode: null, 
+                                onEditingComplete: () {  }, 
+                                textInputAction: null, 
+                                onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                               ),
                             ],
                           ),
@@ -347,7 +360,8 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                               AdaptativeTextFormField(
                                 hintText: 'Entrez le nom du patient',
                                 controller: _nomPatientController,
-                                validator: (value) => verifyEmpty(value, errorMessage: ''),
+                                validator: (value) => verifyEmpty(value!, errorMessage: ''), 
+                                suffixIcon: null, focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                               ),
                             ],
                           ),
@@ -368,7 +382,7 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                               AdaptativeTextFormField(
                                 hintText: 'Entrez le prénom du patient',
                                 controller: _preNomPatientController,
-                                validator: (value) => verifyEmpty(value, errorMessage: ''),
+                                validator: (value) => verifyEmpty(value!, errorMessage: ''), suffixIcon: null, focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                               ),
                             ],
                           ),
@@ -389,7 +403,7 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                               AdaptativeTextFormField(
                                 hintText: 'Entrez l\'adresse email du patient',
                                 controller: _emailPatientController,
-                                validator: (value) => verifyEmpty(value, errorMessage: ''),
+                                validator: (value) => verifyEmpty(value!, errorMessage: ''), suffixIcon: null, focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                               ),
                             ],
                           ),
@@ -410,7 +424,7 @@ class _DialogForCreatePatientState extends State<DialogForCreatePatient> {
                               AdaptativeTextFormField(
                                 hintText: 'Entrez le Téléphone du patient',
                                 controller: _telephonePatientController,
-                                validator: (value) => verifyEmpty(value, errorMessage: ''),
+                                validator: (value) => verifyEmpty(value!, errorMessage: ''), suffixIcon: null, focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                               ),
                             ],
                           ),

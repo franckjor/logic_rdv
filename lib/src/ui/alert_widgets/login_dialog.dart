@@ -110,7 +110,13 @@ class _LoginfDialogState extends State<LoginfDialog> {
                 AdaptativeTextFormField(
                   hintText: 'Adresse email ou numéro de téléphone',
                   controller: _loginController,
-                  validator: (value) => verifyEmpty(value, errorMessage: ''),
+                  validator: (value) => verifyEmpty(value!, errorMessage: ''), 
+                  suffixIcon: null, 
+                  focusNode: null, 
+                  onEditingComplete: () {  }, 
+                  textInputAction: null, 
+                  onTapeChangeHandler: (String ) {  }, 
+                  onTapeFocusChangeHandler: () {  },
                 ),
                 const SizedBox(height: 8),
                 Visibility(
@@ -383,28 +389,44 @@ class _LoginfDialogState extends State<LoginfDialog> {
                       const SizedBox(height: 16),
                       AdaptativeTextFormField(
                         hintText: 'Nom',
-                        validator: (value) => verifyEmpty(value, errorMessage: ''),
-                        controller: _nameController,
+                        validator: (value) => verifyEmpty(value!, errorMessage: ''),
+                        controller: _nameController, 
+                        suffixIcon: null, 
+                        focusNode: null, 
+                        onEditingComplete: () {  }, 
+                        textInputAction: null, 
+                        onTapeChangeHandler: (String ) {  }, 
+                        onTapeFocusChangeHandler: () {  },
                       ),
                       const SizedBox(height: 8),
                       AdaptativeTextFormField(
                         hintText: 'Prénom',
-                        validator: (value) => verifyEmpty(value, errorMessage: ''),
-                        controller: _prenomController,
+                        validator: (value) => verifyEmpty(value!, errorMessage: ''),
+                        controller: _prenomController, 
+                        suffixIcon: null, 
+                        focusNode: null, 
+                        onEditingComplete: () {  }, 
+                        textInputAction: null, 
+                        onTapeChangeHandler: (String ) {  }, 
+                        onTapeFocusChangeHandler: () {  },
                       ),
                       const SizedBox(height: 8),
                       AdaptativeTextFormField(
                         hintText: 'Numèro de téléphone',
                         textInputType: TextInputType.phone,
-                        validator: (value) => verifyEmpty(value, errorMessage: ''),
-                        controller: _phoneController,
+                        validator: (value) => verifyEmpty(value!, errorMessage: ''),
+                        controller: _phoneController, suffixIcon: null, focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
                       ),
                       const SizedBox(height: 8),
                       AdaptativeTextFormField(
                         hintText: 'Email',
                         textInputType: TextInputType.emailAddress,
-                        validator: (val) => verifyEmpty(val, errorMessage: ''),
-                        controller: _emailController,
+                        validator: (val) => verifyEmpty(val!, errorMessage: ''),
+                        controller: _emailController, suffixIcon: null, focusNode: null, 
+                        onEditingComplete: () {  }, 
+                        textInputAction: null, 
+                        onTapeChangeHandler: (String ) {  }, 
+                        onTapeFocusChangeHandler: () {  },
                       ),
                       const SizedBox(height: 8),
                       TextFormField(
@@ -556,7 +578,7 @@ class _LoginfDialogState extends State<LoginfDialog> {
                                   _checkedCondition = '0';
                                 }
                               });
-                            },
+                            }, inactiveColor: null,
                           ),
                           const SizedBox(width: 8),
                           Expanded(
@@ -676,7 +698,9 @@ class _LoginfDialogState extends State<LoginfDialog> {
                     content: Text(
                       state.response.data.headererror,
                       textAlign: TextAlign.center,
-                    ),
+                    ), buttonLabel: '', 
+                    action: () {  }, 
+                    willPop: null,
                   );
                 } else {
                   _ispasswordvisible = !_ispasswordvisible;
@@ -698,7 +722,7 @@ class _LoginfDialogState extends State<LoginfDialog> {
                     content: Text(
                       state.response.data.headererror,
                       textAlign: TextAlign.center,
-                    ),
+                    ), buttonLabel: '', action: () {  }, willPop: null,
                   );
                 } else {
                   _tokenUser = state.response.data.user!.tokenuser;
@@ -744,7 +768,7 @@ class _LoginfDialogState extends State<LoginfDialog> {
                   content: Text(
                     state.error,
                     textAlign: TextAlign.center,
-                  ));
+                  ), buttonLabel: '', action: () {  }, willPop: null);
             }
           }),
           BlocListener<InscriptionRapidBloc, InscriptionRapidState>(
@@ -781,7 +805,7 @@ class _LoginfDialogState extends State<LoginfDialog> {
                     state.error,
                     textAlign: TextAlign.center,
                   ),
-                  alertType: AlertType.error);
+                  alertType: AlertType.error, buttonLabel: '', action: () {  }, willPop: null);
             }
           }),
           BlocListener<SharedPreferenceBloc, SharedPreferenceState>(

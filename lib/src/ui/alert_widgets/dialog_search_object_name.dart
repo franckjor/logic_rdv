@@ -63,7 +63,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                       fontWeight: FontWeight.normal,
                     ),
                   ),
-                ),
+                ), title: '', buttonLabel: '', willPop: null,
               );
             } else {
               customAlert(
@@ -74,7 +74,8 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                     state.error,
                     textAlign: TextAlign.center,
                   ),
-                ),
+                ), title: '', buttonLabel: '', 
+                action: () {  }, willPop: null,
               );
             }
           }
@@ -116,7 +117,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                           hintText: 'Nom, Spécialité, Téléphone',
                           autoFocus: true,
                           controller: _searchValueName,
-                          validator: (value) => verifyEmpty(value, errorMessage: ''),
+                          validator: (value) => verifyEmpty(value!, errorMessage: ''),
                           suffixIcon: _searchValueName.text != ''
                               ? InkWell(
                                   onTap: () {
@@ -141,7 +142,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                                             : '0',
                                       ));
                             });
-                          },
+                          }, focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeFocusChangeHandler: () {  },
                         ),
                       ),
                       IconButton(

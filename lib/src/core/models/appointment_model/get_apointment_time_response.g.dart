@@ -1683,7 +1683,7 @@ class _$Navigation extends Navigation {
   factory _$Navigation([void Function(NavigationBuilder)? updates]) =>
       (new NavigationBuilder()..update(updates))._build();
 
-  _$Navigation._({required this.begin, this.prev, this.prevweek, this.nextweek})
+  _$Navigation._({this.begin, this.prev, this.prevweek, this.nextweek})
       : super._();
 
   @override

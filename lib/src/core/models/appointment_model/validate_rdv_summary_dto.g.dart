@@ -805,8 +805,7 @@ class _$DataValidateRdvSummaryDto2 extends DataValidateRdvSummaryDto2 {
           [void Function(DataValidateRdvSummaryDto2Builder)? updates]) =>
       (new DataValidateRdvSummaryDto2Builder()..update(updates))._build();
 
-  _$DataValidateRdvSummaryDto2._(
-      {required this.appointment, this.apptbuttonvalidation})
+  _$DataValidateRdvSummaryDto2._({this.appointment, this.apptbuttonvalidation})
       : super._();
 
   @override
@@ -916,7 +915,7 @@ class _$AppointmentSummary extends AppointmentSummary {
           [void Function(AppointmentSummaryBuilder)? updates]) =>
       (new AppointmentSummaryBuilder()..update(updates))._build();
 
-  _$AppointmentSummary._({required this.appointment}) : super._();
+  _$AppointmentSummary._({this.appointment}) : super._();
 
   @override
   AppointmentSummary rebuild(
@@ -998,7 +997,7 @@ class _$PaymentIntentSummary extends PaymentIntentSummary {
           [void Function(PaymentIntentSummaryBuilder)? updates]) =>
       (new PaymentIntentSummaryBuilder()..update(updates))._build();
 
-  _$PaymentIntentSummary._({required this.stripeClientSecret}) : super._();
+  _$PaymentIntentSummary._({this.stripeClientSecret}) : super._();
 
   @override
   PaymentIntentSummary rebuild(

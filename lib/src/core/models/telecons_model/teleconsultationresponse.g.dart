@@ -1325,8 +1325,7 @@ class _$InfosTc extends InfosTc {
   factory _$InfosTc([void Function(InfosTcBuilder)? updates]) =>
       (new InfosTcBuilder()..update(updates))._build();
 
-  _$InfosTc._(
-      {required this.buttonstarttelecons, this.buttonstartteleconsdisabled})
+  _$InfosTc._({this.buttonstarttelecons, this.buttonstartteleconsdisabled})
       : super._();
 
   @override

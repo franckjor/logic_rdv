@@ -1,15 +1,12 @@
 import 'dart:convert';
 
+import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:http/http.dart' as http;
 import 'package:logic_rdv_v0/src/common.dart';
-import 'package:logic_rdv_v0/src/core/blocs_and_repository/appointment/appointment_function/appointment_function.dart';
-import 'package:logic_rdv_v0/src/core/blocs_and_repository/appointment/appointment_function/create_appointment_function.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/telecons/telecons_function/telecons_function.dart';
 import 'package:logic_rdv_v0/src/ui/alert_widgets/progress_dialog.dart';
 import 'package:logic_rdv_v0/src/ui/dialog_alert/custom_alert.dart';
-import 'package:logic_rdv_v0/src/ui/dialog_alert/custom_confirm_alert.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:flutter_stripe/flutter_stripe.dart';
-import 'package:http/http.dart' as http;
 
 createPaymentIntent(String amount, String currency, String stripeClientSecret ) async {
   try {
@@ -85,7 +82,7 @@ class StripeServiceTc {
 
           paymentSheetParameters: SetupPaymentSheetParameters(
 
-              testEnv: true,
+              // testEnv: true,
               paymentIntentClientSecret: paymentIntent[
               'client_secret'], //Gotten from payment intent
               style: ThemeMode.light,

@@ -167,9 +167,9 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                   width: 300,
                   color: Colors.white,
                   child: Scrollbar(
-                    hoverThickness: 4,
+                    // hoverThickness: 4,
                     thickness: 4,
-                    isAlwaysShown: true,
+                    // isAlwaysShown: true,
                     child: ListView.builder(
                       shrinkWrap: true,
                       itemCount: objectNameOfSearch.length,

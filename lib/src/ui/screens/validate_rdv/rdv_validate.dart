@@ -1,10 +1,7 @@
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart' as foundation;
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_credit_card/credit_card_form.dart';
-import 'package:flutter_credit_card/credit_card_model.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:intl/intl.dart';
 import 'package:logic_rdv_v0/src/common.dart';
@@ -24,7 +21,6 @@ import 'package:logic_rdv_v0/src/core/constants/type_rdv_state.dart';
 import 'package:logic_rdv_v0/src/core/models/appointment_model/selected_patient_response_for_rdv.dart';
 import 'package:logic_rdv_v0/src/core/paiement_service/payement_service.dart';
 import 'package:logic_rdv_v0/src/core/preference_key.dart';
-import 'package:logic_rdv_v0/src/routes.dart';
 import 'package:logic_rdv_v0/src/ui/alert_widgets/custom_snackbar.dart';
 import 'package:logic_rdv_v0/src/ui/alert_widgets/progress_dialog.dart';
 import 'package:logic_rdv_v0/src/ui/dialog_alert/custom_alert.dart';
@@ -32,7 +28,6 @@ import 'package:logic_rdv_v0/src/ui/screens/rdv_is_validate/rdv_is_validate.dart
 import 'package:logic_rdv_v0/src/ui/screens/rdv_select_day_and_time/rdv_select_day_and_time_screen.dart';
 import 'package:logic_rdv_v0/src/ui/screens/validate_rdv/when_patient_have_rdv.dart';
 import 'package:logic_rdv_v0/src/ui/shared/adaptative_appbar.dart';
-import 'package:logic_rdv_v0/src/ui/shared/default_back_button.dart';
 import 'package:logic_rdv_v0/src/ui/shared/my_drawer.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
@@ -89,8 +84,8 @@ class _RdvValidateState extends State<RdvValidate> {
   late String _error;
 
   _dialogToSayThatThisPatientHaveOneRdv() {
-    if (widget.arguments.selectedPatientResponseForRdv.data!.data!.apptsinprogress!
-            .message !=
+    if (widget.arguments.selectedPatientResponseForRdv.data!.data!
+            .apptsinprogress!.message !=
         "") {
       setState(() {
         _thisPatientHaveAppointment = true;
@@ -163,7 +158,8 @@ class _RdvValidateState extends State<RdvValidate> {
           tokenUser: _tokenUser,
           page: '0',
           email: _email,
-          fullNme: _fullName, notification: false,
+          fullNme: _fullName,
+          notification: false,
         ),
       ),
       appBar: AdaptativeAppBar(
@@ -173,7 +169,7 @@ class _RdvValidateState extends State<RdvValidate> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ?  Icon(
+                ? Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
@@ -218,7 +214,9 @@ class _RdvValidateState extends State<RdvValidate> {
                           buttonLabel: "Ok",
                           action: () {
                             Navigator.pop(context);
-                          }, title: '', willPop: null);
+                          },
+                          title: '',
+                          willPop: null);
                     } else if (state is AppointmentFailure) {
                       if (state.error == messageErrorTokenInvalid ||
                           state.error == messageErrorTokenExpired) {
@@ -239,7 +237,9 @@ class _RdvValidateState extends State<RdvValidate> {
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
-                          ), title: '', buttonLabel: '',
+                          ),
+                          title: '',
+                          buttonLabel: '',
                         );
                       } else if (state.error == invalidTokenUser) {
                         customAlert(
@@ -259,7 +259,9 @@ class _RdvValidateState extends State<RdvValidate> {
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
-                          ), title: '', buttonLabel: '',
+                          ),
+                          title: '',
+                          buttonLabel: '',
                         );
                       } else {
                         flushBarError(state.error, context);
@@ -313,8 +315,8 @@ class _RdvValidateState extends State<RdvValidate> {
                                 textAlign: TextAlign.center,
                               ),
                               action: () {
-                                Navigator.pushReplacementNamed(context,
-                                    RouteGenerator.rdvSelectDayAndTimeScreen,
+                                Navigator.pushReplacementNamed(
+                                    context, RouteGenerator.rdvSelectDayAndTimeScreen,
                                     arguments: GetRdvTimeAndDayPageArguments(
                                         session: widget
                                             .arguments
@@ -345,8 +347,15 @@ class _RdvValidateState extends State<RdvValidate> {
                                             .data!
                                             .data!
                                             .apptbuttonvalidation!
-                                            .onclickAction!, idDoctor: '', doctorName: '', tel: ''));
-                              }, alertType: null, title: '', buttonLabel: '', willPop: null);
+                                            .onclickAction!,
+                                        idDoctor: '',
+                                        doctorName: '',
+                                        tel: ''));
+                              },
+                              alertType: null,
+                              title: '',
+                              buttonLabel: '',
+                              willPop: null);
                         }
                       });
                     } else if (state is CheckStateFailure) {
@@ -370,7 +379,9 @@ class _RdvValidateState extends State<RdvValidate> {
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
-                          ), title: '', buttonLabel: '',
+                          ),
+                          title: '',
+                          buttonLabel: '',
                         );
                       } else if (state.error == invalidTokenUser) {
                         customAlert(
@@ -390,7 +401,9 @@ class _RdvValidateState extends State<RdvValidate> {
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
-                          ), title: '', buttonLabel: '',
+                          ),
+                          title: '',
+                          buttonLabel: '',
                         );
                       } else {
                         if (state.error
@@ -410,9 +423,10 @@ class _RdvValidateState extends State<RdvValidate> {
                                 state.error,
                                 textAlign: TextAlign.center,
                               ),
-                            ), title: '', 
-                            buttonLabel: '', 
-                            action: () {  }, 
+                            ),
+                            title: '',
+                            buttonLabel: '',
+                            action: () {},
                             willPop: null,
                           );
                         }
@@ -451,8 +465,10 @@ class _RdvValidateState extends State<RdvValidate> {
                             state.error,
                             textAlign: TextAlign.center,
                           ),
-                        ), title: '', 
-                        buttonLabel: '', action: () {  }, 
+                        ),
+                        title: '',
+                        buttonLabel: '',
+                        action: () {},
                         willPop: null,
                       );
                     }
@@ -730,38 +746,39 @@ class _RdvValidateState extends State<RdvValidate> {
                                       .amount !=
                                   null,
                               child: CreditCardForm(
-                                cardNumber: null,
-                                expiryDate: null,
-                                cardHolderName: null,
-                                cvvCode: null,
-                                themeColor: Colors.grey,
+                                cardNumber: '',
+                                expiryDate: '',
+                                cardHolderName: '',
+                                cvvCode: '',
                                 formKey: formKey,
                                 onCreditCardModelChange:
                                     onCreditCardModelChange,
                                 obscureCvv: false,
                                 obscureNumber: false,
                                 isHolderNameVisible: false,
-                                cardNumberDecoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: 'Numéro de la carte',
-                                  hintText: 'XXXX XXXX XXXX XXXX',
-                                ),
-                                expiryDateDecoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: 'Date expiration',
-                                  hintText: 'XX/XX',
-                                ),
-                                cvvCodeDecoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: 'CVV',
-                                  hintText: 'XXX',
-                                ),
-                                cardHolderDecoration: const InputDecoration(
-                                  enabled: false,
-                                  border: InputBorder.none,
-                                  labelStyle:
-                                      TextStyle(color: Colors.transparent),
-                                  labelText: 'CVV',
+                                inputConfiguration: const InputConfiguration(
+                                  cardNumberDecoration: const InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    labelText: 'Numéro de la carte',
+                                    hintText: 'XXXX XXXX XXXX XXXX',
+                                  ),
+                                  expiryDateDecoration: const InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    labelText: 'Date expiration',
+                                    hintText: 'XX/XX',
+                                  ),
+                                  cvvCodeDecoration: const InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    labelText: 'CVV',
+                                    hintText: 'XXX',
+                                  ),
+                                  cardHolderDecoration: const InputDecoration(
+                                    enabled: false,
+                                    border: InputBorder.none,
+                                    labelStyle:
+                                        TextStyle(color: Colors.transparent),
+                                    labelText: 'CVV',
+                                  ),
                                 ),
                               ),
                             ),
@@ -911,8 +928,10 @@ class _RdvValidateState extends State<RdvValidate> {
                                               textAlign: TextAlign.center,
                                             ),
                                             alertType: AlertType.info,
-                                            buttonLabel: "Ok", 
-                                            title: '', action: () {  }, willPop: null,
+                                            buttonLabel: "Ok",
+                                            title: '',
+                                            action: () {},
+                                            willPop: null,
                                           );
                                         } else {
                                           _data =
@@ -1009,7 +1028,10 @@ class _RdvValidateState extends State<RdvValidate> {
                                               textAlign: TextAlign.center,
                                             ),
                                             alertType: AlertType.info,
-                                            buttonLabel: "Ok", title: '', action: () {  }, willPop: null,
+                                            buttonLabel: "Ok",
+                                            title: '',
+                                            action: () {},
+                                            willPop: null,
                                           );
                                         } else {
                                           _ackRdvProgressDialog

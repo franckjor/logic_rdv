@@ -19,7 +19,7 @@ class CardItemRdv extends StatefulWidget {
     required this.cabinetResponse,
     required this.patientResponse,
     required this.appointmentDataResponse,
-    required this.onCancelAppointmentHandler,
+    this.onCancelAppointmentHandler,
   });
 
   @override
@@ -306,10 +306,12 @@ class _CardItemRdvState extends State<CardItemRdv> {
                             ),
                             child: CircleAvatar(
                               radius: 20,
-                              backgroundImage: widget.patientResponse.photo ==
-                                      ""
+                              backgroundImage: widget
+                                      .patientResponse.photo.isEmpty
                                   ? AssetImage('assets/images/medecin.png')
-                                  : NetworkImage(widget.patientResponse.photo),
+                                      as ImageProvider<Object>?
+                                  : NetworkImage(widget.patientResponse.photo)
+                                      as ImageProvider<Object>?,
                               backgroundColor: Colors.white,
                             ),
                           ),
@@ -489,11 +491,8 @@ class _CardItemRdvState extends State<CardItemRdv> {
                             ),
                             label: Text(
                               widget.appointmentDataResponse
-                                          .buttonlabeltelecons !=
-                                      null
-                                  ? widget.appointmentDataResponse
-                                      .buttonlabeltelecons
-                                  : 'Téléconsultation',
+                                      .buttonlabeltelecons ??
+                                  'Téléconsultation',
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600,

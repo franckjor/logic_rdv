@@ -1,28 +1,21 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart' as foundation;
 import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:logic_rdv_v0/src/core/constants/constants.dart';
-import 'package:logic_rdv_v0/src/ui/dialog_alert/custom_alert.dart';
 import 'package:logic_rdv_v0/src/common.dart';
 import 'package:logic_rdv_v0/src/core/bloc/navigation/navigation_bloc.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/telecons/bloc/telecons.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/telecons/telecons_function/telecons_function.dart';
+import 'package:logic_rdv_v0/src/core/constants/constants.dart';
 import 'package:logic_rdv_v0/src/core/models/telecons_model/teleconsultationresponse.dart';
 import 'package:logic_rdv_v0/src/ui/alert_widgets/progress_dialog.dart';
+import 'package:logic_rdv_v0/src/ui/dialog_alert/custom_alert.dart';
 import 'package:logic_rdv_v0/src/ui/shared/adaptative_appbar.dart';
-import 'package:logic_rdv_v0/src/ui/shared/my_drawer.dart';
 import 'package:logic_rdv_v0/src/ui/stripe_paiement/stripe_tc_paiement.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:universal_io/io.dart';
-import 'package:flutter/foundation.dart' as foundation;
+
 import 'Teleconsultation_screen.dart';
 
 bool get isAndroid =>
@@ -110,7 +103,8 @@ class _CallWidgetState extends State<CallWidget> {
         leading: DefaultBackButton(
           onPressed: () => Navigator.pushReplacementNamed(
               context, RouteGenerator.appointmentScreen),
-        ), actions: [],
+        ),
+        actions: [],
       ),
       body: MultiBlocListener(
         listeners: [
@@ -149,7 +143,9 @@ class _CallWidgetState extends State<CallWidget> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
+                  title: '',
+                  buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
                 customAlert(
@@ -169,7 +165,9 @@ class _CallWidgetState extends State<CallWidget> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
+                  title: '',
+                  buttonLabel: '',
                 );
               } else {
                 customAlert(
@@ -191,7 +189,9 @@ class _CallWidgetState extends State<CallWidget> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
+                  title: '',
+                  buttonLabel: '',
                 );
               }
             }
@@ -610,42 +610,44 @@ class _CallWidgetState extends State<CallWidget> {
                                       child: Column(
                                         children: [
                                           CreditCardForm(
-                                            cardNumber: null,
-                                            expiryDate: null,
-                                            cardHolderName: null,
-                                            cvvCode: null,
-                                            themeColor: Colors.grey,
+                                            cardNumber: '',
+                                            expiryDate: '',
+                                            cardHolderName: '',
+                                            cvvCode: '',
                                             formKey: formKey,
                                             onCreditCardModelChange:
                                                 onCreditCardModelChange,
                                             obscureCvv: false,
                                             obscureNumber: false,
                                             isHolderNameVisible: false,
-                                            cardNumberDecoration:
-                                                const InputDecoration(
-                                              border: OutlineInputBorder(),
-                                              labelText: 'Numéro de la carte',
-                                              hintText: 'XXXX XXXX XXXX XXXX',
-                                            ),
-                                            expiryDateDecoration:
-                                                const InputDecoration(
-                                              border: OutlineInputBorder(),
-                                              labelText: 'Date expiration',
-                                              hintText: 'XX/XX',
-                                            ),
-                                            cvvCodeDecoration:
-                                                const InputDecoration(
-                                              border: OutlineInputBorder(),
-                                              labelText: 'CVV',
-                                              hintText: 'XXX',
-                                            ),
-                                            cardHolderDecoration:
-                                                const InputDecoration(
-                                              enabled: false,
-                                              border: InputBorder.none,
-                                              labelStyle: TextStyle(
-                                                  color: Colors.transparent),
-                                              labelText: 'CVV',
+                                            inputConfiguration:
+                                                const InputConfiguration(
+                                              cardNumberDecoration:
+                                                  const InputDecoration(
+                                                border: OutlineInputBorder(),
+                                                labelText: 'Numéro de la carte',
+                                                hintText: 'XXXX XXXX XXXX XXXX',
+                                              ),
+                                              expiryDateDecoration:
+                                                  const InputDecoration(
+                                                border: OutlineInputBorder(),
+                                                labelText: 'Date expiration',
+                                                hintText: 'XX/XX',
+                                              ),
+                                              cvvCodeDecoration:
+                                                  const InputDecoration(
+                                                border: OutlineInputBorder(),
+                                                labelText: 'CVV',
+                                                hintText: 'XXX',
+                                              ),
+                                              cardHolderDecoration:
+                                                  const InputDecoration(
+                                                enabled: false,
+                                                border: InputBorder.none,
+                                                labelStyle: TextStyle(
+                                                    color: Colors.transparent),
+                                                labelText: 'CVV',
+                                              ),
                                             ),
                                           ),
                                           const SizedBox(height: 10),

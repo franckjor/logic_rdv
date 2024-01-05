@@ -118,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
         body: WillPopScope(
           onWillPop: () async {
             Navigator.pushNamed(context, RouteGenerator.welcomeScreen);
-            return null;
+             return Future.value(false);
           },
           child: MultiBlocListener(
             listeners: [

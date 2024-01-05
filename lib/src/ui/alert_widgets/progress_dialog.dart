@@ -149,7 +149,7 @@ class MessageBox {
     _showDialog();
   }
 
-  Future _showDialog() {
+  void _showDialog() {
     showDialog(
       context: buildContext,
       barrierDismissible: false,
@@ -185,6 +185,5 @@ class MessageBox {
         );
       },
     );
-    return null;
   }
 }

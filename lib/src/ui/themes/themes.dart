@@ -6,13 +6,20 @@ class AppThemes {
         primaryColor: AppColors.primaryColor,
         scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor,
         fontFamily: 'SF-Pro-Text',
+        brightness: Brightness.dark,
 
         appBarTheme: AppBarTheme(
           elevation: 0,
           backgroundColor: AppColors.primaryColor,
-          brightness: Brightness.dark,
         ),
-        accentColor: AppColors.primaryColor,
+        // accentColor: AppColors.primaryColor,
+        textTheme: TextTheme(
+          headline6: TextStyle(
+              fontFamily: 'OpenSans',
+              fontSize: 20.0,
+              color: AppColors.primaryColor,
+              fontWeight: FontWeight.bold),
+        ),
         primaryTextTheme: TextTheme(
           headline6: TextStyle(
             color: AppColors.whiteColor,

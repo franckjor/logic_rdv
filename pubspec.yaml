@@ -41,7 +41,7 @@ dependencies:
   flutter_dash: ^1.0.0
   textfield_search: ^0.10.0
   easy_debounce: ^2.0.0
-
+  geocoding: ^2.0.0
   flutter_credit_card: ^4.0.1
 
   flutter_phone_direct_caller: ^2.0.0

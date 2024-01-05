@@ -36,6 +36,7 @@ import 'package:logic_rdv_v0/src/ui/shared/appbar_title.dart';
 import 'package:logic_rdv_v0/src/ui/shared/my_drawer.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:geocoding/geocoding.dart';
 
 import '../../../common.dart';
 
@@ -89,7 +90,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
 
   List<ObjectNameOfSearch> doctors = [];
 
-  final Geolocator geolocator = Geolocator()..forceAndroidLocationManager;
+  final Geolocator geolocator = Geolocator(); //..forceAndroidLocationManager;
   // Geolocator geolocator;
 
   void _getCurrentLocation() {
@@ -97,14 +98,13 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
       customAlert(
           context: context,
           alertType: AlertType.info,
-          content: Text('Fontionnalite disponible uniquement sur mobile'), 
-          title: '', 
-          buttonLabel: '', 
-          action: () {  }, 
+          content: Text('Fontionnalite disponible uniquement sur mobile'),
+          title: '',
+          buttonLabel: '',
+          action: () {},
           willPop: null);
     } else {
-      Geolocator
-          .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
+      Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
           .then((Position position) {
         setState(() {
           _currentPosition = position;
@@ -117,23 +117,42 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
   }
 
   _getAddressFromLatLng() async {
+    // try {
+    //   if (kIsWeb) {
+    //     print('is web platform');
+    //   } else {
+    //     List<Placemark> p = await geolocator.placemarkFromCoordinates(
+    //         _currentPosition.latitude, _currentPosition.longitude);
+    //     Placemark place = p[0];
+    //     setState(() {
+    //       _searchValueCity.text = "Ma position";
+    //       _cityId =
+    //           'p${_currentPosition.latitude},${_currentPosition.longitude}';
+    //       isCurrentPositionAsk = !isCurrentPositionAsk;
+    //     });
+    //   }
+    // } catch (e) {
+    //   print(e);
+    // }
+
     try {
-      if (kIsWeb) {
-        print('is web platform');
-      } else {
-        List<Placemark> p = await geolocator.placemarkFromCoordinates(
-            _currentPosition.latitude, _currentPosition.longitude);
-        Placemark place = p[0];
-        setState(() {
-          _searchValueCity.text = "Ma position";
-          _cityId =
-              'p${_currentPosition.latitude},${_currentPosition.longitude}';
-          isCurrentPositionAsk = !isCurrentPositionAsk;
-        });
-      }
-    } catch (e) {
-      print(e);
-    }
+  List<Placemark> placemarks = await placemarkFromCoordinates(
+    _currentPosition.latitude,
+    _currentPosition.longitude,
+  );
+
+  if (placemarks.isNotEmpty) {
+    Placemark place = placemarks[0];
+    setState(() {
+      _searchValueCity.text = "Ma position";
+      _cityId = 'p${_currentPosition.latitude},${_currentPosition.longitude}';
+      isCurrentPositionAsk = !isCurrentPositionAsk;
+    });
+  }
+} catch (e) {
+  print(e);
+}
+
   }
 
   @override
@@ -244,7 +263,8 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
           tokenUser: _tokenUser,
           page: '6',
           email: _email,
-          fullNme: _fullName, notification: false,
+          fullNme: _fullName,
+          notification: false,
         ),
       ),
       appBar: AdaptativeAppBar(
@@ -253,7 +273,7 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ?  Icon(
+                ? Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
@@ -300,8 +320,8 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), 
-                  title: '', 
+                  ),
+                  title: '',
                   buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
@@ -322,7 +342,9 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
+                  title: '',
+                  buttonLabel: '',
                 );
               } else {
                 flushBarError(state.error, context);
@@ -436,7 +458,8 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                                     onTapeFocusChangeHandler: () {
                                       _showDialogSearchCityValue(context);
                                     },
-                                    validator: (value) => verifyEmpty(value!, errorMessage: ''),
+                                    validator: (value) =>
+                                        verifyEmpty(value!, errorMessage: ''),
                                     suffixIcon: Padding(
                                       padding: const EdgeInsets.only(
                                           right: 20, left: 10),
@@ -458,7 +481,11 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                                               Icons.clear,
                                               color: Colors.transparent,
                                             ),
-                                    ), focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  },
+                                    ),
+                                    focusNode: null,
+                                    onEditingComplete: () {},
+                                    textInputAction: null,
+                                    onTapeChangeHandler: (String) {},
                                   ),
                                 ),
                                 IconButton(
@@ -523,9 +550,12 @@ class _SearchDoctorInAppState extends State<SearchDoctorInApp> {
                                     )
                                   : Icon(Icons.clear,
                                       color: Colors.transparent),
-                              validator: (value) => verifyEmpty(value!, errorMessage: ''), focusNode: null, 
-                              onEditingComplete: () {  }, 
-                              textInputAction: null, onTapeChangeHandler: (String ) {  },
+                              validator: (value) =>
+                                  verifyEmpty(value!, errorMessage: ''),
+                              focusNode: null,
+                              onEditingComplete: () {},
+                              textInputAction: null,
+                              onTapeChangeHandler: (String) {},
                             ),
                             const SizedBox(height: 20),
                             Visibility(

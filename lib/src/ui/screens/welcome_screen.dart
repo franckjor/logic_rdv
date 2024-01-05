@@ -4,8 +4,8 @@ import 'dart:io';
 import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:launch_review/launch_review.dart';
 import 'package:logic_rdv_v0/src/common.dart';
@@ -28,7 +28,6 @@ import 'package:logic_rdv_v0/src/ui/alert_widgets/get_address_dialog.dart';
 import 'package:logic_rdv_v0/src/ui/alert_widgets/progress_dialog.dart';
 import 'package:logic_rdv_v0/src/ui/dialog_alert/custom_alert.dart';
 import 'package:logic_rdv_v0/src/ui/shared/adaptative_textform_field.dart';
-import 'package:logic_rdv_v0/src/ui/shared/adaptatvive_scaffold.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wonderpush_flutter/wonderpush_flutter.dart';
@@ -76,7 +75,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   bool isCurrentPositionAsk = false;
   static const String PLAY_STORE_APP_ID = "fr.logicrdv.logicrdv";
 
-  final Geolocator geolocator = Geolocator()..forceAndroidLocationManager;
+  // final Geolocator geolocator = Geolocator()..forceAndroidLocationManager;
 
   // Geolocator geolocator;
 
@@ -88,11 +87,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           context: context,
           alertType: AlertType.info,
           content: Text('Fontionnalite disponible uniquement sur mobile'),
-          title: '', buttonLabel: '', 
-          action: () {  }, willPop: null);
+          title: '',
+          buttonLabel: '',
+          action: () {},
+          willPop: null);
     } else {
-      Geolocator
-          .getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
+      Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.best)
           .then((Position position) {
         setState(() {
           _currentPosition = position;
@@ -105,13 +105,32 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   }
 
   _getAddressFromLatLng() async {
+    // try {
+    //   if (kIsWeb) {
+    //     print('is web platform');
+    //   } else {
+    //     List<Placemark> p = await geolocator.placemarkFromCoordinates(
+    //         _currentPosition.latitude, _currentPosition.longitude);
+    //     Placemark place = p[0];
+    //     setState(() {
+    //       _searchValueCity.text = "Ma position";
+    //       _cityId =
+    //           'p${_currentPosition.latitude},${_currentPosition.longitude}';
+    //       isCurrentPositionAsk = !isCurrentPositionAsk;
+    //     });
+    //   }
+    // } catch (e) {
+    //   print(e);
+    // }
+
     try {
-      if (kIsWeb) {
-        print('is web platform');
-      } else {
-        List<Placemark> p = await geolocator.placemarkFromCoordinates(
-            _currentPosition.latitude, _currentPosition.longitude);
-        Placemark place = p[0];
+      List<Placemark> placemarks = await placemarkFromCoordinates(
+        _currentPosition.latitude,
+        _currentPosition.longitude,
+      );
+
+      if (placemarks.isNotEmpty) {
+        Placemark place = placemarks[0];
         setState(() {
           _searchValueCity.text = "Ma position";
           _cityId =
@@ -238,11 +257,11 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ?  Icon(
+                ? Icon(
                     MdiIcons.menu,
                     color: AppColors.primaryColor,
                   )
-                :  Icon(
+                : Icon(
                     MdiIcons.menu,
                     color: AppColors.primaryColor,
                   ),
@@ -310,7 +329,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             fontWeight: FontWeight.normal,
                           ),
                         ),
-                      ), title: '', buttonLabel: '', willPop: null,
+                      ),
+                      title: '',
+                      buttonLabel: '',
+                      willPop: null,
                     );
                   } else {
                     flushBarError(state.error, context);
@@ -344,7 +366,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           "La version ${state.response.data.version.android} est disponible vous pouvez télécharger.",
                       onYesAction: () {
                         LaunchReview.launch(androidAppId: PLAY_STORE_APP_ID);
-                      }, alertType: null, confirmButtonLabel: '', cancelButtonLabel: '', onNoAction: () {  }, closeFunction: () {  },
+                      },
+                      alertType: null,
+                      confirmButtonLabel: '',
+                      cancelButtonLabel: '',
+                      onNoAction: () {},
+                      closeFunction: () {},
                     );
                   }
                 }
@@ -414,7 +441,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                                       context);
                                                 },
                                                 validator: (value) =>
-                                                    verifyEmpty(value!, errorMessage: ''),
+                                                    verifyEmpty(value!,
+                                                        errorMessage: ''),
                                                 suffixIcon: Padding(
                                                   padding:
                                                       const EdgeInsets.only(
@@ -442,7 +470,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                                           color: Colors
                                                               .transparent,
                                                         ),
-                                                ), focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  },
+                                                ),
+                                                focusNode: null,
+                                                onEditingComplete: () {},
+                                                textInputAction: null,
+                                                onTapeChangeHandler:
+                                                    (String) {},
                                               ),
                                             ),
                                             IconButton(
@@ -528,8 +561,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                                 Icons.clear,
                                                 color: Colors.transparent,
                                               ),
-                                        validator: (value) =>
-                                            verifyEmpty(value!, errorMessage: ''), focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  },
+                                        validator: (value) => verifyEmpty(
+                                            value!,
+                                            errorMessage: ''),
+                                        focusNode: null,
+                                        onEditingComplete: () {},
+                                        textInputAction: null,
+                                        onTapeChangeHandler: (String) {},
                                       ),
                                       const SizedBox(height: 20),
                                       Visibility(
@@ -593,7 +631,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
               );
             }),
-          ), title: '', leading: null, actions: [], scaffoldBackgroundColor: null, appBar: null,
+          ),
+          title: '',
+          leading: null,
+          actions: [],
+          scaffoldBackgroundColor: null,
+          appBar: null,
         ),
       ),
     );
@@ -761,8 +804,7 @@ class SearchButton extends StatelessWidget {
     this.width = double.infinity,
     this.onPressed,
   })  : _textFieldHeight = textFieldHeight,
-        _searchButtonFocus = searchButtonFocus,
-        super(key: key);
+        _searchButtonFocus = searchButtonFocus;
 
   final double _textFieldHeight;
   final FocusNode _searchButtonFocus;

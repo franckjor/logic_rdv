@@ -1,10 +1,10 @@
+import 'dart:io' show Platform;
+
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logic_rdv_v0/src/common.dart';
 import 'package:logic_rdv_v0/src/core/bloc/bloc_of_shapreference/shared_preference.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/generate_and_check_token/bloc/generate_and_check_token.dart';
-import 'package:logic_rdv_v0/src/core/blocs_and_repository/generate_and_check_token/function/get_token.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/inscription_rapide/bloc/incription_rapid.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/inscription_rapide/function/inscription_rapid_function.dart';
 import 'package:logic_rdv_v0/src/core/constants/constants.dart';
@@ -14,17 +14,12 @@ import 'package:logic_rdv_v0/src/core/preference_key.dart';
 import 'package:logic_rdv_v0/src/ui/alert_widgets/custom_snackbar.dart';
 import 'package:logic_rdv_v0/src/ui/alert_widgets/progress_dialog.dart';
 import 'package:logic_rdv_v0/src/ui/dialog_alert/custom_alert.dart';
-import 'package:logic_rdv_v0/src/ui/screens/login_screen.dart';
 import 'package:logic_rdv_v0/src/ui/shared/adaptative_appbar.dart';
 import 'package:logic_rdv_v0/src/ui/shared/adaptative_textform_field.dart';
 import 'package:logic_rdv_v0/src/ui/shared/buttons/default_elevated_button.dart';
-import 'package:logic_rdv_v0/src/ui/shared/default_back_button.dart';
-import 'package:logic_rdv_v0/src/ui/themes/colors.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import '../../common.dart';
+
 import '../shared/started_drawer.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
-import 'dart:io' show Platform;
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen();
@@ -362,7 +357,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(15.0),
                                     border: Border.all(
-                                        color: Colors.grey[200],
+                                        color: Colors.grey[200] ?? Colors.transparent,
                                         style: BorderStyle.solid,
                                         width: 0.80),
                                   ),

@@ -41,12 +41,14 @@ class ApiManager {
     var requestInterceptor = getRequestInterceptor(loggingInterceptor);
 
     _dio.interceptors.add(InterceptorsWrapper(
-        onRequest: (RequestOptions options) async =>
-            await requestInterceptor.getRequestInterceptor(options),
-        onResponse: (Response response) =>
+        onRequest:
+            (RequestOptions options, RequestInterceptorHandler handler) async =>
+                await requestInterceptor.getRequestInterceptor(options),
+        onResponse: (Response response, ResponseInterceptorHandler? handler) =>
             responseInterceptor.getResponseInterceptor(response),
-        onError: (DioException DioException) =>
-            errorInterceptor.getErrorInterceptors(DioException)));
+        onError:
+            (DioException DioException, ErrorInterceptorHandler? handler) =>
+                errorInterceptor.getErrorInterceptors(DioException)));
   }
 
   String _getFullUrlPath(String path) {

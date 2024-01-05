@@ -127,13 +127,12 @@ class AppTextStyles {
   ///
   static TextStyle headerTitleStyle = TextStyle(
     fontSize: 22,
-    color: Colors.white,
+    color: const Color.fromRGBO(255, 255, 255, 1),
     fontWeight: FontWeight.bold,
   );
 
   static const AppBarTheme appBarTheme = AppBarTheme(
-    iconTheme: IconThemeData(color: whiteColor),
-    textTheme: TextTheme(headline6: display21Style),
+    iconTheme: IconThemeData(color: Colors.white), // Icon color
   );
 
   /// Font family for the button label

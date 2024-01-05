@@ -1,5 +1,4 @@
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logic_rdv_v0/src/core/bloc/bloc_of_shapreference/model/shared_preference_object.dart';
 import 'package:logic_rdv_v0/src/core/bloc/bloc_of_shapreference/shared_preference.dart';
@@ -11,13 +10,10 @@ import 'package:logic_rdv_v0/src/core/helper/validator_form.dart';
 import 'package:logic_rdv_v0/src/core/models/incription_model/inscription_check_response.dart';
 import 'package:logic_rdv_v0/src/core/models/login_model/login_started_response.dart';
 import 'package:logic_rdv_v0/src/core/preference_key.dart';
-import 'package:logic_rdv_v0/src/routes.dart';
 import 'package:logic_rdv_v0/src/ui/alert_widgets/progress_dialog.dart';
 import 'package:logic_rdv_v0/src/ui/dialog_alert/custom_alert.dart';
 import 'package:logic_rdv_v0/src/ui/shared/adaptative_textform_field.dart';
 import 'package:logic_rdv_v0/src/ui/shared/buttons/default_elevated_button.dart';
-import 'package:logic_rdv_v0/src/ui/themes/colors.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '../../common.dart';
@@ -669,7 +665,7 @@ class _LoginfDialogState extends State<LoginfDialog> {
     return WillPopScope(
       onWillPop: () async {
         Navigator.pop(context, 0);
-        return null;
+        return Future.value(false);
       },
       child: MultiBlocListener(
         listeners: [

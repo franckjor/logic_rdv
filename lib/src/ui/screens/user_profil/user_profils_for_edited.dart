@@ -89,7 +89,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
   Future<void> _takePicture() async {
     Navigator.of(context).pop();
 
-    final pickedFile = await ImagePicker.pickImage(source: ImageSource.camera);
+    final pickedFile = await picker.pickImage(source: ImageSource.camera);
 
     setState(() {
       if (pickedFile != null) {
@@ -103,7 +103,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
   Future<void> _selectFromGallerie() async {
     Navigator.of(context).pop();
 
-    final pickedFile = await ImagePicker.pickImage(source: ImageSource.gallery);
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
 
     setState(() {
       if (pickedFile != null) {
@@ -187,7 +187,8 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
           tokenUser: _tokenUser,
           page: '0',
           email: _email,
-          fullNme: _fullName, notification: false,
+          fullNme: _fullName,
+          notification: false,
         ),
       ),
       backgroundColor: AppColors.primaryColor,
@@ -197,7 +198,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
         actions: [
           IconButton(
             icon: isAndroid || isWeb
-                ?  Icon(
+                ? Icon(
                     MdiIcons.accountCircle,
                     color: Colors.white,
                   )
@@ -253,7 +254,9 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
+                  title: '',
+                  buttonLabel: '',
                 );
               } else if (state.error == invalidTokenUser) {
                 progressDialog.hide();
@@ -274,7 +277,9 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                  ), title: '', buttonLabel: '',
+                  ),
+                  title: '',
+                  buttonLabel: '',
                 );
               } else {
                 progressDialog.hide();
@@ -283,7 +288,11 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                     context: context,
                     content: Container(
                       child: Text(state.error),
-                    ), title: '', buttonLabel: '', action: () {  }, willPop: null);
+                    ),
+                    title: '',
+                    buttonLabel: '',
+                    action: () {},
+                    willPop: null);
               }
             }
           }),
@@ -361,8 +370,8 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                                           radius: 40,
                                           backgroundImage: _image == null
                                               ? AssetImage(
-                                                  'assets/images/medecin.png',
-                                                )
+                                                      'assets/images/medecin.png')
+                                                  as ImageProvider<Object>?
                                               : FileImage(_image),
                                           backgroundColor: Colors.white,
                                         ),
@@ -429,11 +438,13 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                             controller: _nameController,
                             validator: (value) {
                               return verifyEmpty(value!, errorMessage: '');
-                            }, suffixIcon: null, focusNode: null, 
-                            onEditingComplete: () {  }, 
-                            textInputAction: null, 
-                            onTapeChangeHandler: (String ) {  }, 
-                            onTapeFocusChangeHandler: () {  },
+                            },
+                            suffixIcon: null,
+                            focusNode: null,
+                            onEditingComplete: () {},
+                            textInputAction: null,
+                            onTapeChangeHandler: (String) {},
+                            onTapeFocusChangeHandler: () {},
                           ),
                           const SizedBox(height: 10),
                           _LabelWidget(
@@ -442,12 +453,14 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
                             hintText: 'Prénom',
-                            controller: _surNameController, 
-                            suffixIcon: null, 
-                            validator: (String ) {  }, 
-                            focusNode: null, onEditingComplete: () {  }, 
-                            textInputAction: null, 
-                            onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
+                            controller: _surNameController,
+                            suffixIcon: null,
+                            validator: (String) {},
+                            focusNode: null,
+                            onEditingComplete: () {},
+                            textInputAction: null,
+                            onTapeChangeHandler: (String) {},
+                            onTapeFocusChangeHandler: () {},
                           ),
                           const SizedBox(height: 10),
                           _LabelWidget(
@@ -459,10 +472,13 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                             controller: _mobileController,
                             validator: (value) {
                               return verifyEmpty(value!, errorMessage: '');
-                            }, suffixIcon: null, 
-                            focusNode: null, onEditingComplete: () {  }, 
-                            textInputAction: null, 
-                            onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
+                            },
+                            suffixIcon: null,
+                            focusNode: null,
+                            onEditingComplete: () {},
+                            textInputAction: null,
+                            onTapeChangeHandler: (String) {},
+                            onTapeFocusChangeHandler: () {},
                           ),
                           const SizedBox(height: 10),
                           _LabelWidget(
@@ -474,11 +490,13 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                             controller: _emailController,
                             validator: (value) {
                               return verifyEmpty(value!, errorMessage: '');
-                            }, 
-                            suffixIcon: null, 
-                            focusNode: null, 
-                            onEditingComplete: () {  }, 
-                            textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
+                            },
+                            suffixIcon: null,
+                            focusNode: null,
+                            onEditingComplete: () {},
+                            textInputAction: null,
+                            onTapeChangeHandler: (String) {},
+                            onTapeFocusChangeHandler: () {},
                           ),
                           SizedBox(height: 10),
                           _LabelWidget(
@@ -487,7 +505,14 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
                             hintText: 'Adresse',
-                            controller: _adressController, suffixIcon: null, validator: (String ) {  }, focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
+                            controller: _adressController,
+                            suffixIcon: null,
+                            validator: (String) {},
+                            focusNode: null,
+                            onEditingComplete: () {},
+                            textInputAction: null,
+                            onTapeChangeHandler: (String) {},
+                            onTapeFocusChangeHandler: () {},
                           ),
                           SizedBox(height: 10),
                           _LabelWidget(
@@ -496,8 +521,14 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
                             hintText: 'Ville',
-                            controller: _villeController, suffixIcon: null, 
-                            validator: (String ) {  }, focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
+                            controller: _villeController,
+                            suffixIcon: null,
+                            validator: (String) {},
+                            focusNode: null,
+                            onEditingComplete: () {},
+                            textInputAction: null,
+                            onTapeChangeHandler: (String) {},
+                            onTapeFocusChangeHandler: () {},
                           ),
                           SizedBox(height: 10),
                           _LabelWidget(
@@ -506,8 +537,14 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                           const SizedBox(height: 4),
                           AdaptativeTextFormField(
                             hintText: 'Code postal',
-                            controller: _postalCodeController, suffixIcon: null, validator: (String ) {  }, 
-                            focusNode: null, onEditingComplete: () {  }, textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
+                            controller: _postalCodeController,
+                            suffixIcon: null,
+                            validator: (String) {},
+                            focusNode: null,
+                            onEditingComplete: () {},
+                            textInputAction: null,
+                            onTapeChangeHandler: (String) {},
+                            onTapeFocusChangeHandler: () {},
                           ),
                           SizedBox(height: 10),
                           _LabelWidget(
@@ -531,11 +568,13 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                                     ? MdiIcons.eyeOutline
                                     : MdiIcons.eyeOffOutline),
                               ),
-                            ), 
-                            validator: (String ) {  }, 
-                            focusNode: null, 
-                            onEditingComplete: () {  }, 
-                            textInputAction: null, onTapeChangeHandler: (String ) {  }, onTapeFocusChangeHandler: () {  },
+                            ),
+                            validator: (String) {},
+                            focusNode: null,
+                            onEditingComplete: () {},
+                            textInputAction: null,
+                            onTapeChangeHandler: (String) {},
+                            onTapeFocusChangeHandler: () {},
                           ),
                           SizedBox(height: 10),
                           _LabelWidget(
@@ -559,12 +598,13 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                                     ? MdiIcons.eyeOutline
                                     : MdiIcons.eyeOffOutline),
                               ),
-                            ), validator: (String ) {  }, 
-                            focusNode: null, 
-                            onEditingComplete: () {  }, 
-                            textInputAction: null, 
-                            onTapeChangeHandler: (String ) {  }, 
-                            onTapeFocusChangeHandler: () {  },
+                            ),
+                            validator: (String) {},
+                            focusNode: null,
+                            onEditingComplete: () {},
+                            textInputAction: null,
+                            onTapeChangeHandler: (String) {},
+                            onTapeFocusChangeHandler: () {},
                           ),
                           SizedBox(
                             height: 20,
@@ -648,10 +688,11 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                                       checkoutUserAccount(
                                           tokenUser: _tokenUser,
                                           context: context);
-                                    }, confirmButtonLabel: '', 
-                                    cancelButtonLabel: '', 
-                                    onNoAction: () {  }, 
-                                    closeFunction: () {  });
+                                    },
+                                    confirmButtonLabel: '',
+                                    cancelButtonLabel: '',
+                                    onNoAction: () {},
+                                    closeFunction: () {});
                               },
                               icon: Icon(MdiIcons.delete),
                               label: Text(

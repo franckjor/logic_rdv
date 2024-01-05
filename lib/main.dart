@@ -1,16 +1,13 @@
 import 'dart:async';
 
-import 'package:bloc/bloc.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/date_symbol_data_local.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:logic_rdv_v0/src/common.dart';
 import 'package:logic_rdv_v0/src/core/api_services/service/blocs/simple_bloc_delegate.dart';
 import 'package:logic_rdv_v0/src/core/bloc/bloc_of_shapreference/shared_preference.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/generate_and_check_token/bloc/generate_and_check_token_bloc.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/generate_and_check_token/repository/generate_and_check_token.dart';
 import 'package:logic_rdv_v0/src/ui/themes/themes.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:wonderpush_flutter/wonderpush_flutter.dart';
 
 bool get isInDebugMode {

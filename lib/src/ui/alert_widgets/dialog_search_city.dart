@@ -166,9 +166,9 @@ class _DialogSearchCityState extends State<DialogSearchCityValue> {
                   width: 300,
                   color: Colors.white,
                   child: Scrollbar(
-                    hoverThickness: 5.0,
+                    // hoverThickness: 5.0,
                     thickness: 5.0,
-                    isAlwaysShown: true,
+                    // isAlwaysShown: true,
                     child: ListView.builder(
                       shrinkWrap: true,
                       itemCount: clientInfoSearchCity.length,

@@ -32,11 +32,11 @@ bool get isWeb => foundation.kIsWeb;
 
 class GetDoctorIdPageArguments implements PagesArgumentType {
   final String id;
-  final String tokenAppointment;
-  final String tokenDoctor;
+  final String? tokenAppointment;
+  final String? tokenDoctor;
 
   GetDoctorIdPageArguments(
-      {required this.id, required this.tokenAppointment, required this.tokenDoctor});
+      {required this.id, this.tokenAppointment,  this.tokenDoctor});
 
   @override
   getArguments() {
@@ -706,9 +706,8 @@ class _DoctorProfileScreenState extends State<DoctorProfileScreen> {
                 " " +
                 _searchDoctorDetailsResponse.data.prenom!,
             tokenAppointment:
-                _searchDoctorDetailsResponse.data.appointment.token != ""
-                    ? _searchDoctorDetailsResponse.data.appointment.token
-                    : widget.arguments.tokenAppointment));
+                _searchDoctorDetailsResponse.data.appointment.token ??
+                     widget.arguments.tokenAppointment!));
   }
 }
 

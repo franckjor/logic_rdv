@@ -7,10 +7,10 @@ class NotificationBloc extends Bloc<NotificationEvent, NotificationState> {
 
   NotificationBloc({required this.repository}) : super(NotificationLoading());
 
-  @override
+  
   NotificationState get initialState => NotificationLoading();
 
-  @override
+
   Stream<NotificationState> mapEventToState(NotificationEvent event) async* {
     yield NotificationLoading();
     if (event is GetAllNotification) {

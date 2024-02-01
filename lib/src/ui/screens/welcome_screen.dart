@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:io';
 
 import 'package:animations/animations.dart';
@@ -54,7 +53,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   TextEditingController _searchValueName = TextEditingController();
   late String _cityId;
   late String _categoryId;
-  late Timer _timer;
+  //late Timer _timer;
 
   bool _showList = false;
   bool _showListForName = false;
@@ -79,7 +78,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   // Geolocator geolocator;
 
-  late String _appVersion;
 
   void _getCurrentLocation() {
     if (kIsWeb) {
@@ -130,7 +128,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       );
 
       if (placemarks.isNotEmpty) {
-        Placemark place = placemarks[0];
         setState(() {
           _searchValueCity.text = "Ma position";
           _cityId =

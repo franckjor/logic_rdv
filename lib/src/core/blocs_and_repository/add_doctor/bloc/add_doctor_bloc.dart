@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/add_doctor/bloc/add_doctor.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/add_doctor/repository/add_doctor_repository.dart';
@@ -8,7 +7,7 @@ class AddDoctorBloc extends Bloc<AddDoctorEvent, AddDoctorState> {
 
   AddDoctorBloc({required this.repository}) : super(AddDoctorLoading());
 
-  @override
+  
   Stream<AddDoctorState> mapEventToState(AddDoctorEvent event) async* {
     yield AddDoctorLoading();
     if (event is AddDoctorRequestEvent) {

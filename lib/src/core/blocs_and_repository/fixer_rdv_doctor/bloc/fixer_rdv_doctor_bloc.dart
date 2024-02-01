@@ -9,10 +9,10 @@ class FixerRdvDoctorBloc
   FixerRdvDoctorBloc({required this.repository})
       : super(FixerRdvDoctorLoading());
 
-  @override
+  
   FixerRdvDoctorState get initialState => FixerRdvDoctorLoading();
 
-  @override
+  
   Stream<FixerRdvDoctorState> mapEventToState(
       FixerRdvDoctorEvent event) async* {
     yield FixerRdvDoctorLoading();

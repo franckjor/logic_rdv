@@ -655,7 +655,7 @@ class _UserEditedProfileState extends State<UserEditedProfile> {
                                 ),
                               ),
                               style: ElevatedButton.styleFrom(
-                                primary: AppColors.colorPrimary,
+                                backgroundColor: AppColors.colorPrimary,
                                 elevation: 0,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(12),

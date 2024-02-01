@@ -7,7 +7,7 @@ class CheckStateBloc extends Bloc<CheckStateEvent, CheckStateSate> {
 
   CheckStateBloc({required this.repository}) : super(CheckStateLoading());
 
-  @override
+  
   Stream<CheckStateSate> mapEventToState(CheckStateEvent event) async* {
     yield CheckStateLoading();
     if (event is GetStateRdv) {

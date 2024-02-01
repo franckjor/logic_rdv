@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:logic_rdv_v0/src/core/models/doctor_list_model/add_doctor_request.dart';
 
 abstract class VersionEvent extends Equatable {
   @override
@@ -17,3 +16,5 @@ class VersionRequestEvent extends VersionEvent {
   String toString() =>
       'VersionRequestEvent {addDoctorRequest:}';
 }
+
+

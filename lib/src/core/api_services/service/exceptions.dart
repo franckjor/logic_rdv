@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:logic_rdv_v0/src/core/api_services/service/error/error.dart';
 
 class AppException implements Exception {
   final _message;
@@ -29,9 +28,6 @@ class InvalidInputException extends AppException {
 
 AppException handleResponseError(Response response) {
   dynamic errorJsonValue = response.data;
-  List<dynamic>? errorFields = (errorJsonValue['fieldErrors'] as List?)
-      ?.map((e) => ErrorMessage.fromJson(e))
-      .toList();
   String errorMessage = errorJsonValue['message'] ?? errorJsonValue['message'];
 
   switch (response.statusCode) {

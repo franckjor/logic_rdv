@@ -7,7 +7,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   LoginBloc({required this.repository}) : super(LoginLoading());
 
-  @override
+ 
   Stream<LoginState> mapEventToState(LoginEvent event) async* {
     yield LoginLoading();
     if (event is Login) {

@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/search_city/bloc/search.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/search_city/search_city_repository/search_city_repository.dart';
@@ -8,10 +7,10 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
 
   SearchBloc({required this.repository}) : super(SearchStateLoading());
 
-  @override
+  
   SearchState get initialState => SearchStateLoading();
 
-  @override
+ 
   Stream<SearchState> mapEventToState(SearchEvent event) async* {
     yield SearchStateLoading();
     if (event is GetListOfCity) {

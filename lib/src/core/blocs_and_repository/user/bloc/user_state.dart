@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:logic_rdv_v0/src/core/models/remove_user/remove_user_response.dart';
 import 'package:logic_rdv_v0/src/core/models/user_model/user_response.dart';
 

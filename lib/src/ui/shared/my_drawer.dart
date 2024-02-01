@@ -204,7 +204,7 @@ class _MyDrawerState extends State<MyDrawer> {
                             ),
                             const SizedBox(height: 2),
                             Text(
-                              widget.email ?? '...',
+                              widget.email,
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.whiteColor,

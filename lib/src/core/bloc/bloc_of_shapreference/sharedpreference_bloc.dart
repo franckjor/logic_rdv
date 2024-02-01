@@ -10,10 +10,10 @@ class SharedPreferenceBloc
     extends Bloc<SharedPreferenceEvent, SharedPreferenceState> {
   SharedPreferenceBloc() : super(SharedPreferenceLoading());
 
-  @override
+  
   SharedPreferenceState get initialState => SharedPreferenceLoading();
 
-  @override
+  
   Stream<SharedPreferenceState> mapEventToState(
       SharedPreferenceEvent event) async* {
     yield SharedPreferenceLoading();

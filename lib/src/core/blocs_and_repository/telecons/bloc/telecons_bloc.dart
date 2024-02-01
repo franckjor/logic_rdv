@@ -7,10 +7,10 @@ class TeleconsBloc extends Bloc<TeleconsEvent, TeleconsState> {
 
   TeleconsBloc({required this.repository}) : super(TeleconsLoading());
 
-  @override
+  
   TeleconsState get initialState => TeleconsLoading();
 
-  @override
+  
   Stream<TeleconsState> mapEventToState(TeleconsEvent event) async* {
     yield TeleconsLoading();
     if (event is GetTeleconsEvent) {

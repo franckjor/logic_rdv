@@ -2,7 +2,6 @@ import 'package:equatable/equatable.dart';
 import 'package:logic_rdv_v0/src/core/models/patient/get_list_of_patient_request.dart';
 import 'package:logic_rdv_v0/src/core/models/patient/patient_request.dart';
 import 'package:logic_rdv_v0/src/core/models/patient/remove_patient_request.dart';
-import 'package:logic_rdv_v0/src/core/models/remove_doctor_model/remove_doctor_request.dart';
 
 abstract class PatientEvent extends Equatable {
   @override

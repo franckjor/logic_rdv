@@ -137,6 +137,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                                   () => onSearchByName(
                                         context: context,
                                         terms: _searchValueName.text,
+                                        // ignore: unnecessary_null_comparison
                                         codePostal: (widget.cityId != null)
                                             ? widget.cityId
                                             : '0',
@@ -207,7 +208,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              objectNameOfSearch[index]?.address != null
+                              objectNameOfSearch[index].address != null
                                   ? Padding(
                                       padding: const EdgeInsets.fromLTRB(
                                           14, 8, 14, 0),
@@ -217,7 +218,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Text(
-                                            '${objectNameOfSearch[index]?.civility ?? ''} ${objectNameOfSearch[index].fullName}',
+                                            '${objectNameOfSearch[index].civility ?? ''} ${objectNameOfSearch[index].fullName}',
                                             style: TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w600,
@@ -225,7 +226,7 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                                           ),
                                           const SizedBox(height: 4),
                                           Text(
-                                            '${objectNameOfSearch[index]?.address ?? ''}',
+                                            '${objectNameOfSearch[index].address ?? ''}',
                                             style: TextStyle(
                                               fontSize: 14,
                                               color: Colors.grey.shade400,
@@ -233,35 +234,35 @@ class _DialogSearchObjectFNameState extends State<DialogSearchObjectFName> {
                                           ),
                                           const SizedBox(height: 4),
                                           Text(
-                                            '${objectNameOfSearch[index]?.zip ?? ''} ${objectNameOfSearch[index]?.city}',
+                                            '${objectNameOfSearch[index].zip ?? ''} ${objectNameOfSearch[index].city}',
                                             style: TextStyle(
                                               fontSize: 16,
                                               color: Colors.grey.shade800,
                                             ),
                                           ),
                                           const SizedBox(height: 4),
-                                          (objectNameOfSearch[index]?.tel !=
+                                          (objectNameOfSearch[index].tel !=
                                                       '' ||
                                                   objectNameOfSearch[index]
-                                                          ?.tel !=
+                                                          .tel !=
                                                       null)
                                               ? SizedBox.shrink()
                                               : Text(
-                                                  '${objectNameOfSearch[index]?.tel ?? ''}',
+                                                  '${objectNameOfSearch[index].tel ?? ''}',
                                                   style: TextStyle(
                                                     fontSize: 14,
                                                     color: Colors.grey.shade800,
                                                   ),
                                                 ),
                                           const SizedBox(height: 4),
-                                          (objectNameOfSearch[index]?.kmDiff !=
+                                          (objectNameOfSearch[index].kmDiff !=
                                                       '' ||
                                                   objectNameOfSearch[index]
-                                                          ?.kmDiff !=
+                                                          .kmDiff !=
                                                       null)
                                               ? SizedBox.shrink()
                                               : Text(
-                                                  'à ${objectNameOfSearch[index]?.kmDiff ?? ''}km',
+                                                  'à ${objectNameOfSearch[index].kmDiff ?? ''}km',
                                                   style: TextStyle(
                                                     fontSize: 14,
                                                     color: Colors.grey.shade800,

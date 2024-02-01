@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:logic_rdv_v0/src/core/models/remove_doctor_model/remove_doctor_response.dart';
 
 class RemoveDoctorState extends Equatable {

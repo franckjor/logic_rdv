@@ -1,5 +1,4 @@
 import 'package:logic_rdv_v0/src/common.dart';
-import 'package:logic_rdv_v0/src/ui/themes/colors.dart';
 
 class AppThemes {
   static get lightTheme => ThemeData(
@@ -14,14 +13,14 @@ class AppThemes {
         ),
         // accentColor: AppColors.primaryColor,
         textTheme: TextTheme(
-          headline6: TextStyle(
+          titleLarge: TextStyle(
               fontFamily: 'OpenSans',
               fontSize: 20.0,
               color: AppColors.primaryColor,
               fontWeight: FontWeight.bold),
         ),
         primaryTextTheme: TextTheme(
-          headline6: TextStyle(
+          titleLarge: TextStyle(
             color: AppColors.whiteColor,
             fontSize: 16,
             fontWeight: FontWeight.w600,

@@ -29,7 +29,6 @@ abstract class AbstractRepository<D extends AbstractDto,
   }
 
   Future<void> delete(int id) async {
-    assert(id != null);
     String _deletePath = '/${getControllerName()}/delete';
     // Retrieve the token
     final String? authToken = await getAuthToken();

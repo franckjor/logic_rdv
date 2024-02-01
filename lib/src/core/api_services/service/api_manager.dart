@@ -13,6 +13,7 @@ import 'service_constant.dart';
 
 class ApiManager {
   late Dio _dio;
+  
   final Logger _logger = new Logger("ApiEndpoints");
 
   ApiManager() {
@@ -27,13 +28,24 @@ class ApiManager {
     // client.badCertificateCallback =
     //     ((X509Certificate cert, String host, int port) => true);
 
-    (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-        (client) {
+    // (_dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate =
+    //     (client) {
+    //   client.badCertificateCallback =
+    //       (X509Certificate cert, String host, int port) {
+    //     return true;
+    //   };
+    // }; 
+    //_dio.httpClientAdapter = BrowserHttpClientAdapter();
+
+  _dio.httpClientAdapter = IOHttpClientAdapter(
+    onHttpClientCreate: (client) {
       client.badCertificateCallback =
           (X509Certificate cert, String host, int port) {
         return true;
       };
-    };
+    },
+  );
+
 
     var loggingInterceptor = getLoggingInterceptor();
     var errorInterceptor = getErrorInterceptor(loggingInterceptor);
@@ -78,31 +90,22 @@ class ApiManager {
     }
   }
 
-  Map<String, String> _getHttpHeadersPayment(String authToken) {
-    return {
-      "content-type": "application/x-www-form-urlencoded",
-      "Authorization": "Bearer $authToken"
-    };
-  }
+  // Map<String, String> _getHttpHeadersPayment(String authToken) {
+  //   return {
+  //     "content-type": "application/x-www-form-urlencoded",
+  //     "Authorization": "Bearer $authToken"
+  //   };
+  // }
 
   Map<String, String> _getHttpHeadersAuthorization(String authToken) {
-    if (authToken != null) {
-      return {
-        "content-type": "application/x-www-form-urlencoded",
-        "Access-Control-Allow-Origin": "*",
-        'Charset': 'utf-8',
-        "Access-Control-Allow-Methods": "POST, GET, OPTIONS, PUT, DELETE, HEAD",
-        "X-LOGICRDV-AUTH": "$authToken"
-      };
-    } else {
-      return {
-        "content-type": "application/x-www-form-urlencoded",
-        "Access-Control-Allow-Origin": "*",
-        'Charset': 'utf-8',
-        "Access-Control-Allow-Methods": "POST, GET, OPTIONS, PUT, DELETE, HEAD",
-      };
+    return {
+      "content-type": "application/x-www-form-urlencoded",
+      "Access-Control-Allow-Origin": "*",
+      'Charset': 'utf-8',
+      "Access-Control-Allow-Methods": "POST, GET, OPTIONS, PUT, DELETE, HEAD",
+      "X-LOGICRDV-AUTH": "$authToken"
+    };
     }
-  }
 
   dynamic _handleError(dynamic error, dynamic stacktrace) {
     if (error is DioException) {
@@ -266,8 +269,8 @@ class ApiManager {
     for (MapEntry fileEntry in files.entries) {
       File file = fileEntry.value;
       String fileName = basename(file.path.split('/').last);
-      fileMap[fileEntry.key] = MultipartFile(
-        file.openRead(),
+      fileMap[fileEntry.key] = MultipartFile.fromStream(
+        () => file.openRead(),
         await file.length(),
         filename: fileName,
       );

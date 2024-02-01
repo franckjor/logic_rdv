@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:logic_rdv_v0/src/core/models/doctor_list_model/list_of_doctor_reponse.dart';
 import 'package:logic_rdv_v0/src/core/models/search_city_model/search_city_response.dart';
 import 'package:logic_rdv_v0/src/core/models/search_city_model/search_dialog_response.dart';

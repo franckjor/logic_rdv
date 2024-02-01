@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/inscription_rapide/bloc/incription_rapid.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/inscription_rapide/repositories/inscription_repository.dart';
@@ -10,10 +9,10 @@ class InscriptionRapidBloc
   InscriptionRapidBloc({required this.repository})
       : super(InscriptionRapidStateEmpty());
 
-  @override
+  
   InscriptionRapidState get initialState => InscriptionRapidStateLoading();
 
-  @override
+  
   Stream<InscriptionRapidState> mapEventToState(
       InscriptionRapidEvent event) async* {
     yield InscriptionRapidStateLoading();

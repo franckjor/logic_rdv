@@ -21,10 +21,15 @@ class _SplashScreenState extends State<SplashScreen> {
   int i = 0;
   @override
   void initState() {
-    BlocProvider.of<SharedPreferenceBloc>(context)
-      ..add(GetSharedPreferenceTokenAuthorization(
-          tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey));
     super.initState();
+
+    Future.delayed(Duration.zero, () {
+      BlocProvider.of<SharedPreferenceBloc>(context).add(
+        GetSharedPreferenceTokenAuthorization(
+          tokenAuthorizationKey: PreferenceKey.tokenAuthorizationKey,
+        ),
+      );
+    });
   }
 
   void generateAnotherToken(BuildContext context) {
@@ -61,7 +66,11 @@ class _SplashScreenState extends State<SplashScreen> {
                   content: Text(
                     state.error,
                     textAlign: TextAlign.center,
-                  ), title: '', buttonLabel: '', action: () {  }, willPop: null);
+                  ),
+                  title: '',
+                  buttonLabel: '',
+                  action: () {},
+                  willPop: null);
             } else {
               setState(() {
                 i++;

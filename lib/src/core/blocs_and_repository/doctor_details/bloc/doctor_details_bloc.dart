@@ -7,7 +7,7 @@ class DoctorDetailsBloc extends Bloc<DoctorDetailsEvent, DoctorDetailsState> {
 
   DoctorDetailsBloc({required this.repository}) : super(DoctorDetailsLoading());
 
-  @override
+  
   Stream<DoctorDetailsState> mapEventToState(DoctorDetailsEvent event) async* {
     yield DoctorDetailsLoading();
     if (event is GetDoctorDetailsEvent) {

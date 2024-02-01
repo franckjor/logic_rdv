@@ -61,7 +61,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
   late int totalOfPage;
   bool isRefreshList = false;
   bool _isLoading = false;
-  late String _tokenUser;
+  late String? _tokenUser;
 
   List<ObjectNameOfSearch> doctors = [];
 
@@ -90,9 +90,10 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
         return "whatsapp://send?text=$message";
       }
     }
+    Uri uri = Uri.parse(url());
 
-    if (await canLaunch(url())) {
-      await launch(url());
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
     } else {
       throw 'Could not launch ${url()}';
     }
@@ -103,19 +104,21 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
     String lng,
   ) async {
     if (isAndroid || isWeb) {
-      final uri = "https://waze.com/ul?ll=$lat,$lng";
-      await launch(uri);
+      final url = "https://waze.com/ul?ll=$lat,$lng";
+      Uri uri = Uri.parse(url);
+      await launchUrl(uri);
     } else if (Platform.isIOS) {
-      final uri = "https://waze.com/ul?ll=$lat,$lng";
-      await launch(uri);
+      final url = "https://waze.com/ul?ll=$lat,$lng";
+      Uri uri = Uri.parse(url);
+      await launchUrl(uri);
     }
   }
 
   void _openGoogleMapApp(double lat, double lng) async {
-    String googleUrl =
-        'https://www.google.com/maps/search/?api=1&query=$lat,$lng';
-    if (await canLaunch(googleUrl)) {
-      await launch(googleUrl);
+    String googleUrl = 'https://www.google.com/maps/search/?api=1&query=$lat,$lng';
+    Uri googleUri = Uri.parse(googleUrl);
+    if (await canLaunchUrl(googleUri)) {
+      await launchUrl(googleUri);
     } else {
       throw 'Could not open the map.';
     }
@@ -171,7 +174,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                   }),
                 ],
                 child: MyDrawer(
-                  tokenUser: _tokenUser,
+                  tokenUser: _tokenUser!,
                   page: '0',
                   email: _email,
                   fullNme: _fullName, notification: false,
@@ -326,7 +329,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                     children: [
                       Text('Résultat de recherche pour: '),
                       Text(
-                        '${widget?.arguments?.city} ${widget?.arguments?.nameOrSpeciality}',
+                        '${widget.arguments.city} ${widget.arguments.nameOrSpeciality}',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 14,
@@ -424,7 +427,7 @@ class _SearchResultScreenState extends State<SearchResultScreen> {
                                                                           .circular(
                                                                               8),
                                                                 ),
-                                                                primary: AppColors
+                                                                backgroundColor: AppColors
                                                                     .primaryColor,
                                                                 padding:
                                                                     EdgeInsets

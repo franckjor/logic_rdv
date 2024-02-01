@@ -166,7 +166,7 @@ abstract class ObjectNameOfSearch
   static Serializer<ObjectNameOfSearch> get serializer =>
       _$objectNameOfSearchSerializer;
 
-  String get fullName => nom ?? " " + " " + prenom! ?? " ";
+  String get fullName => nom ?? " " + " " + prenom!;
 }
 
 abstract class AppointmentSearchNameResponse

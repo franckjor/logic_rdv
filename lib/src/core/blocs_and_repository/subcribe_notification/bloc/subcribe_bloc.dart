@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/subcribe_notification/bloc/subcribe.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/subcribe_notification/repository/subscribe_repository.dart';
@@ -7,11 +6,10 @@ class SubscribeBloc extends Bloc<SubscribeEvent, SubscribeState> {
   final SubscribeRepository repository;
 
   SubscribeBloc({required this.repository}) : super(SubscribeStateLoading());
-
-  @override
+  
   SubscribeState get initialState => SubscribeStateLoading();
 
-  @override
+  
   Stream<SubscribeState> mapEventToState(SubscribeEvent event) async* {
     yield SubscribeStateLoading();
     if (event is Subscribe) {

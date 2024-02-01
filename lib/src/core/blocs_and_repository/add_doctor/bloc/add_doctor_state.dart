@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:logic_rdv_v0/src/core/models/doctor_list_model/add_doctor_response.dart';
 
 class AddDoctorState extends Equatable {

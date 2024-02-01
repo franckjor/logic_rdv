@@ -1,7 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:logic_rdv_v0/src/core/models/app_version/app_version_summary.dart';
-import 'package:logic_rdv_v0/src/core/models/doctor_list_model/add_doctor_response.dart';
 
 class VersionState extends Equatable {
   @override

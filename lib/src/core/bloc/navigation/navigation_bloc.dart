@@ -13,7 +13,7 @@ class NavigationBloc extends Bloc<NavigationEvent, NavigationState> {
 
   NavigationState get initialState => NavigationEmpty();
 
-  @override
+  
   Stream<NavigationState> mapEventToState(
     NavigationEvent event,
   ) async* {

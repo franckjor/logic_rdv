@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/generate_and_check_token/bloc/generate_and_check_token.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/generate_and_check_token/repository/generate_and_check_token.dart';
@@ -10,11 +9,11 @@ class GenerateAndCheckTokenBloc
   GenerateAndCheckTokenBloc({required this.repository})
       : super(GenerateAndCheckTokenStateLoading());
 
-  @override
+  
   GenerateAndCheckTokenState get initialState =>
       GenerateAndCheckTokenStateLoading();
 
-  @override
+  
   Stream<GenerateAndCheckTokenState> mapEventToState(
       GenerateAndCheckTokenEvent event) async* {
     yield GenerateAndCheckTokenStateLoading();

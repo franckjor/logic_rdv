@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/user/bloc/user.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/user/user_repository/user_repository.dart';
@@ -8,10 +7,10 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
   UserBloc({required this.repository}) : super(UserStateLoading());
 
-  @override
+  
   UserState get initialState => UserStateLoading();
 
-  @override
+  
   Stream<UserState> mapEventToState(UserEvent event) async* {
     yield UserStateLoading();
     if (event is UpdateUser) {

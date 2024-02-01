@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/patient/bloc/patient.dart';
 import 'package:logic_rdv_v0/src/core/blocs_and_repository/patient/patient_repository/patient_repository.dart';
@@ -8,10 +7,10 @@ class PatientBloc extends Bloc<PatientEvent, PatientState> {
 
   PatientBloc({required this.repository}) : super(PatientLoading());
 
-  @override
+
   PatientState get initialState => PatientLoading();
 
-  @override
+ 
   Stream<PatientState> mapEventToState(PatientEvent event) async* {
     yield PatientLoading();
     if (event is AddPatientPressed) {

@@ -7,10 +7,10 @@ class MessageBloc extends Bloc<MessageEvent, MessageState> {
 
   MessageBloc({required this.repository}) : super(MessageLoading());
 
-  @override
+ 
   MessageState get initialState => MessageLoading();
 
-  @override
+ 
   Stream<MessageState> mapEventToState(MessageEvent event) async* {
     yield MessageLoading();
     if (event is GetMessage) {

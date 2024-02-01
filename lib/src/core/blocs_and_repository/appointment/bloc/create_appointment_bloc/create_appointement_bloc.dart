@@ -9,7 +9,7 @@ class CreateAppointmentBloc
   CreateAppointmentBloc({required this.repository})
       : super(CreateAppointmentLoading());
 
-  @override
+  
   Stream<CreateAppointmentState> mapEventToState(
       CreateAppointmentEvent event) async* {
     yield CreateAppointmentLoading();

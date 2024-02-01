@@ -9,9 +9,7 @@ class FlutterVonageVideoCall {
     required String token,
     required String apiKey,
   }) async {
-    assert(session != null);
-    assert(token != null);
-    assert(apiKey != null);
+   
     try {
       await _vonageChannel.invokeMethod('initVonageVideoCall', {
         "SESSION":

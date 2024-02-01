@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:logic_rdv_v0/src/core/models/notification/notification_list_response.dart';
 
 class NotificationState extends Equatable {

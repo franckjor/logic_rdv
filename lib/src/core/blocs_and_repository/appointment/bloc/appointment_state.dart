@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:logic_rdv_v0/src/core/models/appointment_model/appointment_response.dart';
 import 'package:logic_rdv_v0/src/core/models/appointment_model/cancel_appointment_response.dart';
 

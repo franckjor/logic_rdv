@@ -10,17 +10,17 @@ class SharedPreferenceBloc
     extends Bloc<SharedPreferenceEvent, SharedPreferenceState> {
   SharedPreferenceBloc() : super(SharedPreferenceLoading());
 
-  @override
+  
   SharedPreferenceState get initialState => SharedPreferenceLoading();
 
-  @override
+  
   Stream<SharedPreferenceState> mapEventToState(
       SharedPreferenceEvent event) async* {
     yield SharedPreferenceLoading();
-    if (event is GetSharedPreferenceObject) {
-      yield* _readObject(event);
-    } else if (event is GetSharedPreferenceTokenAuthorization) {
+    if (event is GetSharedPreferenceTokenAuthorization) {
       yield* _readTokenAuthorization(event);
+    } else if (event is GetSharedPreferenceObject) {
+      yield* _readObject(event);
     } else if (event is SetSharedPreferenceTokenAuthorization) {
       yield* _writeTokenAuthorization(event);
     } else if (event is SetSharedPreferenceObject) {

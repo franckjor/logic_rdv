@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-String? verifyEmpty(String value, {required String errorMessage}) {
+String? verifyEmpty(String value, { String errorMessage = 'Ce champ est obligatoire'}) {
   return value.trim().isEmpty
-      ? (errorMessage ?? ('Ce champ est obligatoire'))
+      ? (errorMessage)
       : null;
 }
 
@@ -67,22 +67,18 @@ String? verifyEmailSyntaxe(String value) {
 }
 
 String? verifyDate(DateTime data1, DateTime data2) {
-  if (data1 == null)
-    return ('validation_error.empty');
-  else if (data1 == data2 && data1.isAfter(data2))
-    return ('birth_date_to_be_lower_than_current');
-  else
-    return null;
+  if (data1 == data2 && data1.isAfter(data2))
+  return ('birth_date_to_be_lower_than_current');
+else
+  return null;
 }
 
 String? verifyBirthDate(DateTime data1) {
   DateTime data2 = DateTime.now();
-  if (data1 == null)
-    return ('validation_error.empty');
-  else if (data1 == data2 && data1.isAfter(data2))
-    return ('birth_date_to_be_lower_than_current');
-  else
-    return null;
+  if (data1 == data2 && data1.isAfter(data2))
+  return ('birth_date_to_be_lower_than_current');
+else
+  return null;
 }
 
 String? verifyPassword(String value) {

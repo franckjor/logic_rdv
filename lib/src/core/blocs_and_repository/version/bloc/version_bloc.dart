@@ -14,6 +14,7 @@ class VersionBloc extends Bloc<VersionEvent, VersionState> {
     }
   }
 
+
   Stream<VersionState> _mapGetVersionToState(
       VersionRequestEvent event) async* {
     try {

@@ -7,10 +7,10 @@ class AppointmentBloc extends Bloc<AppointmentEvent, AppointmentState> {
 
   AppointmentBloc({required this.repository}) : super(AppointmentLoading());
 
-  @override
+  
   AppointmentState get initialState => AppointmentLoading();
 
-  @override
+  
   Stream<AppointmentState> mapEventToState(AppointmentEvent event) async* {
     yield AppointmentLoading();
     if (event is GetAppointment) {
